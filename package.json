@@ -1,0 +1,44 @@
+{
+  "name": "canvas-tokens",
+  "description": "Canvas design token infrastructure",
+  "version": "0.0.0",
+  "license": "CC-BY-ND-4.0",
+  "author": "Workday, Inc. (https://www.workday.com)",
+  "contributors": [],
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/workday/canvas-tokens"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "precommit": "lint-staged",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "nx": "16.1.2",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix",
+    "*.{ts,md}": "prettier --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
