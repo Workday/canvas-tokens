@@ -1,0 +1,220 @@
+{
+  "base-color": {
+    "cinnamon": {
+      "100": {"value": "#ffefee"},
+      "200": {"value": "#fcc9c5"},
+      "300": {"value": "#ff867d"},
+      "400": {"value": "#ff5347"},
+      "500": {"value": "#de2e21"},
+      "600": {"value": "#a31b12"}
+    },
+    "peach": {
+      "100": {"value": "#fff3f0"},
+      "200": {"value": "#ffc2b3"},
+      "300": {"value": "#ff957a"},
+      "400": {"value": "#ff643d"},
+      "500": {"value": "#de4721"},
+      "600": {"value": "#b53413"}
+    },
+    "chili-mango": {
+      "100": {"value": "#ffe6d9"},
+      "200": {"value": "#ffc7ab"},
+      "300": {"value": "#ff9b69"},
+      "400": {"value": "#ff671b"},
+      "500": {"value": "#e04b00"},
+      "600": {"value": "#a33600"}
+    },
+    "cantaloupe": {
+      "100": {"value": "#ffeed9"},
+      "200": {"value": "#fcd49f"},
+      "300": {"value": "#ffbc63"},
+      "400": {"value": "#ffa126"},
+      "500": {"value": "#f38b00"},
+      "600": {"value": "#c06c00"}
+    },
+    "sour-lemon": {
+      "100": {"value": "#fff9e6"},
+      "200": {"value": "#ffecab"},
+      "300": {"value": "#ffda61"},
+      "400": {"value": "#ffc629"},
+      "500": {"value": "#ebb400"},
+      "600": {"value": "#bd9100"}
+    },
+    "juicy-pear": {
+      "100": {"value": "#f7fae6"},
+      "200": {"value": "#e2f391"},
+      "300": {"value": "#c4de40"},
+      "400": {"value": "#a8c224"},
+      "500": {"value": "#8ea618"},
+      "600": {"value": "#687818"}
+    },
+    "kiwi": {
+      "100": {"value": "#ecfcd7"},
+      "200": {"value": "#caf593"},
+      "300": {"value": "#a7e05c"},
+      "400": {"value": "#77bc1f"},
+      "500": {"value": "#609915"},
+      "600": {"value": "#537824"}
+    },
+    "green-apple": {
+      "100": {"value": "#ebfff0"},
+      "200": {"value": "#acf5be"},
+      "300": {"value": "#5fe380"},
+      "400": {"value": "#43c463"},
+      "500": {"value": "#319c4c"},
+      "600": {"value": "#217a37"}
+    },
+    "watermelon": {
+      "100": {"value": "#ebfdf8"},
+      "200": {"value": "#b7edde"},
+      "300": {"value": "#65ccaf"},
+      "400": {"value": "#12a67c"},
+      "500": {"value": "#0c7a5b"},
+      "600": {"value": "#00573e"}
+    },
+    "jewel": {
+      "100": {"value": "#ebfdff"},
+      "200": {"value": "#acecf3"},
+      "300": {"value": "#44c8d7"},
+      "400": {"value": "#1ea4b3"},
+      "500": {"value": "#1a818c"},
+      "600": {"value": "#156973"}
+    },
+    "toothpaste": {
+      "100": {"value": "#d7f1fc"},
+      "200": {"value": "#99e0ff"},
+      "300": {"value": "#40b4e5"},
+      "400": {"value": "#1894c9"},
+      "500": {"value": "#0271a1"},
+      "600": {"value": "#005b82"}
+    },
+    "blueberry": {
+      "100": {"value": "#d7eafc"},
+      "200": {"value": "#a6d2ff"},
+      "300": {"value": "#40a0ff"},
+      "400": {"value": "#0875e1"},
+      "500": {"value": "#005cb9"},
+      "600": {"value": "#004387"}
+    },
+    "plum": {
+      "100": {"value": "#e6f1ff"},
+      "200": {"value": "#a6cdff"},
+      "300": {"value": "#529bfa"},
+      "400": {"value": "#3881e1"},
+      "500": {"value": "#3166ab"},
+      "600": {"value": "#264a7a"}
+    },
+    "berry-smoothie": {
+      "100": {"value": "#e8edff"},
+      "200": {"value": "#c2cfff"},
+      "300": {"value": "#7891ff"},
+      "400": {"value": "#5e77e6"},
+      "500": {"value": "#4b5eb3"},
+      "600": {"value": "#3b4987"}
+    },
+    "blackberry": {
+      "100": {"value": "#f0f0ff"},
+      "200": {"value": "#c3c2ff"},
+      "300": {"value": "#8483e6"},
+      "400": {"value": "#5c59e6"},
+      "500": {"value": "#413fcc"},
+      "600": {"value": "#2e2d91"}
+    },
+    "island-punch": {
+      "100": {"value": "#f5f0ff"},
+      "200": {"value": "#d2befa"},
+      "300": {"value": "#a88ae6"},
+      "400": {"value": "#8660d1"},
+      "500": {"value": "#6345a1"},
+      "600": {"value": "#503882"}
+    },
+    "grape-soda": {
+      "100": {"value": "#feebff"},
+      "200": {"value": "#fac0ff"},
+      "300": {"value": "#de8ae6"},
+      "400": {"value": "#c860d1"},
+      "500": {"value": "#97499e"},
+      "600": {"value": "#7c3882"}
+    },
+    "pomegranate": {
+      "100": {"value": "#ffebf3"},
+      "200": {"value": "#ffbdd6"},
+      "300": {"value": "#ff5c9a"},
+      "400": {"value": "#f31167"},
+      "500": {"value": "#c70550"},
+      "600": {"value": "#99003a"}
+    },
+    "fruit-punch": {
+      "100": {"value": "#ffeeee"},
+      "200": {"value": "#ffbdbd"},
+      "300": {"value": "#ff7e7e"},
+      "400": {"value": "#ff4c4c"},
+      "500": {"value": "#e12f2f"},
+      "600": {"value": "#b82828"}
+    },
+    "root-beer": {
+      "100": {"value": "#faf3f0"},
+      "200": {"value": "#ebd7cf"},
+      "300": {"value": "#dcbbad"},
+      "400": {"value": "#ba9a8c"},
+      "500": {"value": "#8c7266"},
+      "600": {"value": "#664d42"}
+    },
+    "toasted-marshmallow": {
+      "100": {"value": "#fdf6e6"},
+      "200": {"value": "#ebd6a9"},
+      "300": {"value": "#e6bf6c"},
+      "400": {"value": "#cc9e3b"},
+      "500": {"value": "#b37f10"},
+      "600": {"value": "#8c6000"}
+    },
+    "coconut": {
+      "100": {"value": "#f0eeee"},
+      "200": {"value": "#e3dfdf"},
+      "300": {"value": "#d1cbcc"},
+      "400": {"value": "#b3acac"},
+      "500": {"value": "#9e9595"},
+      "600": {"value": "#8f8687"}
+    },
+    "cappuccino": {
+      "100": {"value": "#7a7374"},
+      "200": {"value": "#706869"},
+      "300": {"value": "#5e5757"},
+      "400": {"value": "#4a4242"},
+      "500": {"value": "#352f2f"},
+      "600": {"value": "#231f20"}
+    },
+    "soap": {
+      "100": {"value": "#f6f7f8"},
+      "200": {"value": "#f0f1f2"},
+      "300": {"value": "#e8ebed"},
+      "400": {"value": "#dfe2e6"},
+      "500": {"value": "#ced3d9"},
+      "600": {"value": "#b9c0c7"}
+    },
+    "licorice": {
+      "100": {"value": "#a1aab3"},
+      "200": {"value": "#7b858f"},
+      "300": {"value": "#5e6a75"},
+      "400": {"value": "#4a5561"},
+      "500": {"value": "#333d47"},
+      "600": {"value": "#1f262e"}
+    },
+    "french-vanilla": {
+      "100": {"value": "#ffffff"},
+      "200": {"value": "#ebebeb"},
+      "300": {"value": "#d4d4d4"},
+      "400": {"value": "#bdbdbd"},
+      "500": {"value": "#a6a6a6"},
+      "600": {"value": "#8f8f8f"}
+    },
+    "black-pepper": {
+      "100": {"value": "#787878"},
+      "200": {"value": "#616161"},
+      "300": {"value": "#494949"},
+      "400": {"value": "#333333"},
+      "500": {"value": "#1e1e1e"},
+      "600": {"value": "#000000"}
+    }
+  }
+}

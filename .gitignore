@@ -8,6 +8,9 @@ tmp
 # dependencies
 node_modules
 
+# Prevent yarn.lock from accidentally being committed
+yarn.lock
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
