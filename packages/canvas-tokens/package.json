@@ -5,7 +5,7 @@
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",
   "scripts": {
-    "build": "node ./build.js",
+    "build": "ts-node ./build",
     "test": "jest"
   },
   "private": true,

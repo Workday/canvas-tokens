@@ -1,17 +1,19 @@
+import {Formatter} from 'style-dictionary';
+
 /**
  * [Style Dictionary custom format function](https://amzn.github.io/style-dictionary/#/formats?id=custom-formats) that creates typescript file structure.
  * This structure contains type definitions with type value as an actual token value.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-function formatToBasicTS({dictionary, options}) {
-  const header = options.fileHeader();
+export const formatToBasicTS: Formatter = ({dictionary, options}) => {
+  const header = typeof options.fileHeader === 'function' ? options.fileHeader([]) : [];
   let fileContent = '// ' + header.join('\n// ') + '\n\n';
   dictionary.allTokens.forEach(({name, value}) => {
     fileContent = fileContent + `export declare const ${name} = "${value}";\n`;
   });
   return fileContent;
-}
+};
 
 /**
  * Style Dictionary format function that creates common-js file structure.
@@ -19,8 +21,8 @@ function formatToBasicTS({dictionary, options}) {
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-function formatToInlineModule({dictionary, options}) {
-  const header = options.fileHeader();
+export const formatToInlineModule: Formatter = ({dictionary, options}) => {
+  const header = typeof options.fileHeader === 'function' ? options.fileHeader([]) : [];
   const headerContent = '// ' + header.join('\n// ') + '\n\n';
 
   let fileContent =
@@ -32,6 +34,4 @@ function formatToInlineModule({dictionary, options}) {
   });
 
   return fileContent;
-}
-
-module.exports = {formatToBasicTS, formatToInlineModule};
+};

@@ -1,6 +1,7 @@
-const StyleDictionary = require('style-dictionary').extend(__dirname + '/config.js');
-const {formatToBasicTS, formatToInlineModule} = require('./sd-utils/formats');
-const {transformHexToHsla, transformNameToCamelCase} = require('./sd-utils/transforms');
+import StyleDictionary from 'style-dictionary';
+import {formatToBasicTS, formatToInlineModule} from './sd-utils/formats';
+import {transformHexToHsla, transformNameToCamelCase} from './sd-utils/transforms';
+import config from './config';
 
 // Setup format to create ts file with type declarations
 StyleDictionary.registerFormat({
@@ -25,7 +26,6 @@ StyleDictionary.registerTransform({
 // Setup transform to change token name to camel case
 StyleDictionary.registerTransform({
   type: `name`,
-  transitive: true,
   name: `name/camel`,
   transformer: transformNameToCamelCase,
 });
@@ -48,4 +48,4 @@ StyleDictionary.registerFileHeader({
   },
 });
 
-StyleDictionary.buildAllPlatforms();
+StyleDictionary.extend(config).buildAllPlatforms();

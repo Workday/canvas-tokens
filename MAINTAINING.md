@@ -14,9 +14,18 @@ npm install
 All tokens are built from the `@workday/canvas-tokens` package. To build tokens, run:
 
 ```sh
-nx nx build @workday/canvas-tokens
+npx nx build @workday/canvas-tokens
 ```
 
 ## Testing
+
+### Unit Tests
+
+We use [Jest](https://jestjs.io/docs/getting-started) to unit test internal logic. To run these
+tests locally:
+
+```sh
+npm test
+```
 
 ## Publishing

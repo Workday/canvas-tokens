@@ -1,4 +1,4 @@
-const {transformHexToHsla, transformNameToCamelCase} = require('../transforms');
+import {transformHexToHsla, transformNameToCamelCase} from '../transforms';
 
 describe('transformHexToHsla', () => {
   it('should return correct hsla value', () => {
@@ -11,7 +11,10 @@ describe('transformHexToHsla', () => {
 
 describe('transformNameToCamelCase', () => {
   it('should return correct name in camel case', () => {
-    const result = transformNameToCamelCase({path: ['color', 'base', 'sour-lemon', '100']});
+    const result = transformNameToCamelCase({
+      path: ['color', 'base', 'sour-lemon', '100'],
+      value: '#fff9e6',
+    });
     const expected = 'sourLemon100';
 
     expect(result).toBe(expected);
