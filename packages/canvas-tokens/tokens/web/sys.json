@@ -1,0 +1,1242 @@
+{
+  "sys": {
+    "border": {
+      "value": {
+        "color": "{palette.soap.500}",
+        "width": "1",
+        "style": "solid"
+      },
+      "type": "border"
+    },
+    "color": {
+      "bg": {
+        "default": {
+          "value": "{palette.french-vanilla.100}",
+          "type": "color",
+          "description": "Background Default"
+        },
+        "alt": {
+          "value": "{palette.soap.200}",
+          "type": "color",
+          "description": "Background Alt"
+        },
+        "hover": {
+          "value": "{palette.soap.300}",
+          "type": "color",
+          "description": "Hover"
+        },
+        "active": {
+          "value": "{palette.soap.400}",
+          "type": "color",
+          "description": "Background Active"
+        },
+        "selected": {
+          "value": "{palette.blueberry.200}",
+          "type": "color",
+          "description": "Selected BG\n"
+        },
+        "primary": {
+          "default": {
+            "value": "{palette.blueberry.400}",
+            "type": "color",
+            "description": "Primary Default"
+          },
+          "hover": {
+            "value": "{palette.blueberry.500}",
+            "type": "color",
+            "description": "Primary Hover\n"
+          },
+          "active": {
+            "value": "{palette.blueberry.600}",
+            "type": "color",
+            "description": "Primary Active"
+          }
+        },
+        "secondary": {
+          "default": {
+            "value": "none",
+            "type": "color"
+          },
+          "focus": {
+            "value": "{palette.french-vanilla.100}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{palette.black-pepper.300}",
+            "type": "color"
+          },
+          "active": {
+            "value": "{palette.black-pepper.400}",
+            "type": "color"
+          }
+        },
+        "delete": {
+          "default": {
+            "value": "{palette.cinnamon.500}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{palette.cinnamon.600}",
+            "type": "color"
+          },
+          "active": {
+            "value": "#80160E",
+            "type": "color"
+          }
+        },
+        "status": {
+          "success": {
+            "value": "{palette.green-apple.400}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{palette.cinnamon.500}",
+            "type": "color"
+          },
+          "alert": {
+            "value": "{palette.cantaloupe.400}",
+            "type": "color"
+          }
+        },
+        "help": {
+          "value": "rgba({palette.black-pepper.600},{opacity.500})",
+          "type": "color"
+        },
+        "overlay": {
+          "value": "rgba({palette.black-pepper.600},{opacity.400})",
+          "type": "color"
+        }
+      },
+      "fg": {
+        "type": {
+          "heading": {
+            "value": "{palette.black-pepper.400}",
+            "type": "color"
+          },
+          "body": {
+            "value": "{palette.black-pepper.300}",
+            "type": "color"
+          },
+          "hint": {
+            "value": "{palette.licorice.300}",
+            "type": "color"
+          },
+          "disabled": {
+            "value": "{palette.licorice.100}",
+            "type": "color"
+          },
+          "link": {
+            "default": {
+              "value": "{palette.blueberry.400}",
+              "type": "color"
+            },
+            "focus": {
+              "value": "{palette.blueberry.400}",
+              "type": "color"
+            },
+            "active": {
+              "value": "{palette.blueberry.600}",
+              "type": "color"
+            },
+            "visited": {
+              "value": "{palette.blueberry.600}",
+              "type": "color"
+            }
+          },
+          "inverse": {
+            "value": "{palette.french-vanilla.100}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{palette.cinnamon.500}",
+            "type": "color"
+          },
+          "selected": {
+            "value": "{palette.blueberry.400}",
+            "type": "color"
+          }
+        },
+        "icon": {
+          "fill": {
+            "value": "{palette.licorice.200}",
+            "type": "color"
+          },
+          "background": {
+            "value": "{palette.licorice.200}",
+            "type": "color"
+          },
+          "accent": {
+            "value": "{palette.licorice.200}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{palette.licorice.500}",
+            "type": "color"
+          },
+          "disabled": {
+            "value": "{palette.soap.600}",
+            "type": "color"
+          },
+          "inverse": {
+            "value": "{palette.french-vanilla.100}",
+            "type": "color"
+          },
+          "primary": {
+            "value": "{palette.blueberry.400}",
+            "type": "color"
+          }
+        }
+      },
+      "border": {
+        "input": {
+          "default": {
+            "value": "{palette.licorice.200}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{palette.licorice.500}",
+            "type": "color"
+          },
+          "disabled": {
+            "value": "{palette.soap.600}",
+            "type": "color"
+          },
+          "active": {
+            "value": "{palette.blueberry.400}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{palette.cinnamon.500}",
+            "type": "color"
+          },
+          "alert": {
+            "value": "{palette.cantaloupe.600}",
+            "type": "color"
+          }
+        }
+      },
+      "shadow": {
+        "main": {
+          "value": "rgba({palette.licorice.600},{opacity.200})",
+          "type": "color"
+        },
+        "accent": {
+          "value": "rgba({palette.licorice.600},{opacity.100})",
+          "type": "color"
+        }
+      },
+      "focus-ring": {
+        "value": "{palette.blueberry.400}",
+        "type": "color"
+      },
+      "gradient": {
+        "value": "linear-gradient(90deg, {palette.blueberry.500} 0%, {palette.blueberry.400} 100%);",
+        "type": "color"
+      },
+      "overlay": {
+        "modal": {
+          "value": "rgba({palette.black-pepper.600},{opacity.400})",
+          "type": "color"
+        },
+        "tooltip": {
+          "value": "rgba({palette.black-pepper.600},{opacity.500})",
+          "type": "color"
+        }
+      },
+      "data-viz": {
+        "10": {
+          "value": "{palette.jewel.300}",
+          "type": "color"
+        },
+        "11": {
+          "value": "{palette.sour-lemon.200}",
+          "type": "color"
+        },
+        "12": {
+          "value": "{palette.sour-lemon.400}",
+          "type": "color"
+        },
+        "13": {
+          "value": "{palette.island-punch.200}",
+          "type": "color"
+        },
+        "14": {
+          "value": "{palette.island-punch.400}",
+          "type": "color"
+        },
+        "15": {
+          "value": "{palette.peach.200}",
+          "type": "color"
+        },
+        "16": {
+          "value": "{palette.peach.400}",
+          "type": "color"
+        },
+        "01": {
+          "value": "{palette.watermelon.100}",
+          "type": "color"
+        },
+        "02": {
+          "value": "{palette.watermelon.200}",
+          "type": "color"
+        },
+        "03": {
+          "value": "{palette.plum.200}",
+          "type": "color"
+        },
+        "04": {
+          "value": "{palette.plum.300}",
+          "type": "color"
+        },
+        "05": {
+          "value": "{palette.pomegranate.200}",
+          "type": "color"
+        },
+        "06": {
+          "value": "{palette.pomegranate.300}",
+          "type": "color"
+        },
+        "07": {
+          "value": "{palette.cantaloupe.200}",
+          "type": "color"
+        },
+        "08": {
+          "value": "{palette.cantaloupe.400}",
+          "type": "color"
+        },
+        "09": {
+          "value": "{palette.jewel.200}",
+          "type": "color"
+        }
+      }
+    },
+    "depth": {
+      "1": {
+        "value": "{shadow.100}",
+        "type": "boxShadow"
+      },
+      "2": {
+        "value": "{shadow.200}",
+        "type": "boxShadow"
+      },
+      "3": {
+        "value": "{shadow.300}",
+        "type": "boxShadow"
+      },
+      "4": {
+        "value": "{shadow.400}",
+        "type": "boxShadow"
+      },
+      "5": {
+        "value": "{shadow.500}",
+        "type": "boxShadow"
+      },
+      "6": {
+        "value": "{shadow.600}",
+        "type": "boxShadow"
+      }
+    },
+    "opacity": {
+      "disabled": {
+        "value": "{opacity.300}",
+        "type": "opacity"
+      }
+    },
+    "shape": {
+      "zero": {
+        "value": "0rem",
+        "type": "borderRadius"
+      },
+      "small": {
+        "value": "{base.dimension} * 0.5",
+        "type": "borderRadius",
+        "description": "Use this for subtle and small components that don’t require to group complex information like Status Indicators, Checkboxes and Color Swatches."
+      },
+      "medium": {
+        "value": "{base.dimension}",
+        "type": "borderRadius",
+        "description": "Use this for form components presenting text information or inputs: Text Inputs and Text Area, Dropdowns, Menus and Banners.\n"
+      },
+      "large": {
+        "value": "{base.dimension} * 2",
+        "type": "borderRadius",
+        "description": "Use this for all the containers and popups: All Cards, Modals, Tooltips and Toasts.\n"
+      },
+      "circle": {
+        "value": "{base.dimension} * 250",
+        "type": "borderRadius"
+      }
+    },
+    "space": {
+      "zero": {
+        "value": "0",
+        "type": "spacing"
+      },
+      "x1": {
+        "value": "{base.dimension}",
+        "type": "spacing"
+      },
+      "x2": {
+        "value": "{base.dimension} * 2",
+        "type": "spacing"
+      },
+      "x3": {
+        "value": "{base.dimension} * 3",
+        "type": "spacing"
+      },
+      "x4": {
+        "value": "{base.dimension} * 4",
+        "type": "spacing"
+      },
+      "x5": {
+        "value": "{base.dimension} * 5",
+        "type": "spacing"
+      },
+      "x6": {
+        "value": "{base.dimension} * 6",
+        "type": "spacing"
+      },
+      "x8": {
+        "value": "{base.dimension} * 8",
+        "type": "spacing"
+      },
+      "x10": {
+        "value": "{base.dimension} * 10",
+        "type": "spacing"
+      },
+      "x12": {
+        "value": "{base.dimension} * 12",
+        "type": "spacing"
+      },
+      "x14": {
+        "value": "{base.dimension} * 14",
+        "type": "spacing"
+      },
+      "x16": {
+        "value": "{base.dimension} * 16",
+        "type": "spacing"
+      },
+      "x20": {
+        "value": "{base.dimension} * 20",
+        "type": "spacing"
+      }
+    },
+    "font-family": {
+      "default": {
+        "value": "{font-family.50}",
+        "type": "fontFamilies"
+      },
+      "mono": {
+        "value": "{font-family.100}",
+        "type": "fontFamilies"
+      },
+      "global": {
+        "value": "{font-family.200}",
+        "type": "fontFamilies"
+      }
+    },
+    "font-size": {
+      "subtext": {
+        "small": {
+          "value": "{font-size.25}",
+          "type": "sizing"
+        },
+        "medium": {
+          "value": "{font-size.50}",
+          "type": "sizing"
+        },
+        "large": {
+          "value": "{font-size.25}",
+          "type": "sizing"
+        }
+      },
+      "body": {
+        "small": {
+          "value": "{font-size.100}",
+          "type": "sizing"
+        },
+        "medium": {
+          "value": "{font-size.125}",
+          "type": "sizing"
+        },
+        "large": {
+          "value": "{font-size.150}",
+          "type": "sizing"
+        }
+      },
+      "heading": {
+        "small": {
+          "value": "{font-size.200}",
+          "type": "sizing"
+        },
+        "medium": {
+          "value": "{font-size.250}",
+          "type": "sizing"
+        },
+        "large": {
+          "value": "{font-size.300}",
+          "type": "sizing"
+        }
+      },
+      "title": {
+        "small": {
+          "value": "{font-size.400}",
+          "type": "sizing"
+        },
+        "medium": {
+          "value": "{font-size.500}",
+          "type": "sizing"
+        },
+        "large": {
+          "value": "{font-size.600}",
+          "type": "sizing"
+        }
+      }
+    },
+    "line-height": {
+      "subtext": {
+        "small": {
+          "value": "{line-height.150}",
+          "type": "lineHeights"
+        },
+        "medium": {
+          "value": "{line-height.150}",
+          "type": "lineHeights"
+        },
+        "large": {
+          "value": "{line-height.200}",
+          "type": "lineHeights"
+        }
+      },
+      "body": {
+        "small": {
+          "value": "{line-height.250}",
+          "type": "lineHeights"
+        },
+        "medium": {
+          "value": "{line-height.300}",
+          "type": "lineHeights"
+        },
+        "large": {
+          "value": "{line-height.300}",
+          "type": "lineHeights"
+        }
+      },
+      "heading": {
+        "small": {
+          "value": "{line-height.350}",
+          "type": "lineHeights"
+        },
+        "medium": {
+          "value": "{line-height.400}",
+          "type": "lineHeights"
+        },
+        "large": {
+          "value": "{line-height.450}",
+          "type": "lineHeights"
+        }
+      },
+      "title": {
+        "small": {
+          "value": "{line-height.500}",
+          "type": "lineHeights"
+        },
+        "medium": {
+          "value": "{line-height.600}",
+          "type": "lineHeights"
+        },
+        "large": {
+          "value": "{line-height.700}",
+          "type": "lineHeights"
+        }
+      }
+    },
+    "font-weight": {
+      "light": {
+        "value": "{font-weight.300}",
+        "type": "fontWeights"
+      },
+      "normal": {
+        "value": "{font-weight.400}",
+        "type": "fontWeights"
+      },
+      "medium": {
+        "value": "{font-weight.500}",
+        "type": "fontWeights"
+      },
+      "bold": {
+        "value": "{font-weight.700}",
+        "type": "fontWeights"
+      }
+    },
+    "type": {
+      "subtext": {
+        "small": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.25}",
+            "letterSpacing": "{letter-spacing.50}"
+          },
+          "type": "typography"
+        },
+        "medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.50}",
+            "letterSpacing": "{letter-spacing.100}"
+          },
+          "type": "typography"
+        },
+        "large": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.75}",
+            "letterSpacing": "{letter-spacing.150}"
+          },
+          "type": "typography"
+        }
+      },
+      "body": {
+        "small": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.250}",
+            "fontSize": "{font-size.100}",
+            "letterSpacing": "{letter-spacing.200}"
+          },
+          "type": "typography"
+        },
+        "medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.125}"
+          },
+          "type": "typography"
+        },
+        "large": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.150}"
+          },
+          "type": "typography"
+        }
+      },
+      "heading": {
+        "small": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.350}",
+            "fontSize": "{font-size.200}"
+          },
+          "type": "typography"
+        },
+        "medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.400}",
+            "fontSize": "{font-size.250}"
+          },
+          "type": "typography"
+        },
+        "large": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.450}",
+            "fontSize": "{font-size.300}"
+          },
+          "type": "typography"
+        }
+      },
+      "title": {
+        "small": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.500}",
+            "fontSize": "{font-size.400}"
+          },
+          "type": "typography"
+        },
+        "medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.600}",
+            "fontSize": "{font-size.500}"
+          },
+          "type": "typography"
+        },
+        "large": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.700}",
+            "fontSize": "{font-size.600}"
+          },
+          "type": "typography"
+        }
+      }
+    },
+    "More styles": {
+      "Subtext": {
+        "Subtext S - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.25}",
+            "letterSpacing": "{letter-spacing.50}"
+          },
+          "type": "typography",
+          "description": "Subtext Small (10px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext S - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.25}",
+            "letterSpacing": "{letter-spacing.50}"
+          },
+          "type": "typography",
+          "description": "Subtext Small (10px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext S Link - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.25}",
+            "letterSpacing": "{letter-spacing.50}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Small (10px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext S Link - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.25}",
+            "letterSpacing": "{letter-spacing.50}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Small (10px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext S Link - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.25}",
+            "letterSpacing": "{letter-spacing.50}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Small (10px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext S Mono - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.100}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.25}",
+            "letterSpacing": "{letter-spacing.50}"
+          },
+          "type": "typography",
+          "description": "Subtext Small (10px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext S Mono - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.100}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.25}",
+            "letterSpacing": "{letter-spacing.50}"
+          },
+          "type": "typography",
+          "description": "Subtext Small (10px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext S Mono - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.100}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.25}",
+            "letterSpacing": "{letter-spacing.50}"
+          },
+          "type": "typography",
+          "description": "Subtext Small (10px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext M - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.50}",
+            "letterSpacing": "{letter-spacing.200}"
+          },
+          "type": "typography",
+          "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext M - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.50}",
+            "letterSpacing": "{letter-spacing.200}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext M Link - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.50}",
+            "letterSpacing": "{letter-spacing.200}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext M Link - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.50}",
+            "letterSpacing": "{letter-spacing.200}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext M Link - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.50}",
+            "letterSpacing": "{letter-spacing.200}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext M Mono - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.100}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.50}",
+            "letterSpacing": "{letter-spacing.200}"
+          },
+          "type": "typography",
+          "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext M Mono - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.100}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.50}",
+            "letterSpacing": "{letter-spacing.200}"
+          },
+          "type": "typography",
+          "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext M Mono - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.100}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.50}",
+            "letterSpacing": "{letter-spacing.200}"
+          },
+          "type": "typography",
+          "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext L - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.75}",
+            "letterSpacing": "{letter-spacing.150}"
+          },
+          "type": "typography",
+          "description": "Subtext Large (14px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext L - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.75}",
+            "letterSpacing": "{letter-spacing.150}"
+          },
+          "type": "typography",
+          "description": "Subtext Large (14px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext L Link - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.75}",
+            "letterSpacing": "{letter-spacing.150}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Large (14px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext L Link - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.75}",
+            "letterSpacing": "{letter-spacing.150}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Large (14px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext L Link - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.75}",
+            "letterSpacing": "{letter-spacing.150}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Subtext Large (14px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext L Mono - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.100}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.75}",
+            "letterSpacing": "{letter-spacing.150}"
+          },
+          "type": "typography",
+          "description": "Subtext Large (14px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext L Mono - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.100}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.75}",
+            "letterSpacing": "{letter-spacing.150}"
+          },
+          "type": "typography",
+          "description": "Subtext Large (14px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Subtext L Mono - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.100}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.75}",
+            "letterSpacing": "{letter-spacing.150}"
+          },
+          "type": "typography",
+          "description": "Subtext Large (14px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        }
+      },
+      "Body": {
+        "Body S - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.250}",
+            "fontSize": "{font-size.100}",
+            "letterSpacing": "{letter-spacing.100}"
+          },
+          "type": "typography",
+          "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body S - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.250}",
+            "fontSize": "{font-size.100}",
+            "letterSpacing": "{letter-spacing.100}"
+          },
+          "type": "typography",
+          "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body S Link - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.250}",
+            "fontSize": "{font-size.100}",
+            "letterSpacing": "{letter-spacing.100}"
+          },
+          "type": "typography",
+          "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body S Link - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.250}",
+            "fontSize": "{font-size.100}",
+            "letterSpacing": "{letter-spacing.100}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body S Link - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.250}",
+            "fontSize": "{font-size.100}",
+            "letterSpacing": "{letter-spacing.100}"
+          },
+          "type": "typography",
+          "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body S Mono - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.250}",
+            "fontSize": "{font-size.100}",
+            "letterSpacing": "{letter-spacing.100}"
+          },
+          "type": "typography",
+          "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body M - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.125}"
+          },
+          "type": "typography",
+          "description": "Body Medium (18px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body M - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.125}"
+          },
+          "type": "typography",
+          "description": "Body Medium (18px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body M Link - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.125}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Body Medium (18px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body M Link - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.125}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Body Medium (18px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body M Link - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.125}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Body Medium (18px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body L - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.150}"
+          },
+          "type": "typography",
+          "description": "Body Large (20px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body L - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.150}"
+          },
+          "type": "typography",
+          "description": "Body Large (20px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body L Link - (400) Regular": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.150}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Body Large (20px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body L Link - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.150}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Body Large (20px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Body L Link - (700) Bold": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.150}",
+            "textDecoration": "underline"
+          },
+          "type": "typography",
+          "description": "Body Large (20px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
+        }
+      },
+      "Heading": {
+        "Heading S - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.350}",
+            "fontSize": "{font-size.200}"
+          },
+          "type": "typography",
+          "description": "Heading Small (24px) - (500) Medium\n\n🧩Advised Use:\nHeadings and Subheadings\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Heading M - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.400}",
+            "fontSize": "{font-size.250}"
+          },
+          "type": "typography",
+          "description": "Heading Medium (28px) - (500) Medium\n\n🧩Advised Use:\nHeadings and Subheadings\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Heading L - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.450}",
+            "fontSize": "{font-size.300}"
+          },
+          "type": "typography",
+          "description": "Heading Large (32px) - (500) Medium\n\n🧩Advised Use:\nHeadings and Subheadings\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
+        }
+      },
+      "Title": {
+        "Title S - (300) Light": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.300}",
+            "lineHeight": "{line-height.500}",
+            "fontSize": "{font-size.400}"
+          },
+          "type": "typography",
+          "description": "Title Small (40px) - (300) Light\n\n🧩Advised Use:\nTitles\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Title S - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.500}",
+            "fontSize": "{font-size.400}"
+          },
+          "type": "typography",
+          "description": "Title Small (40px) - (500) Medium\n\n🧩Advised Use:\nTitles\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Title M - (300) Light": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.300}",
+            "fontSize": "{font-size.500}",
+            "lineHeight": "{line-height.600}"
+          },
+          "type": "typography",
+          "description": "Title Medium (48px) - (300) Light\n\n🧩Advised Use:\nTitles\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Title M - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.600}",
+            "fontSize": "{font-size.500}"
+          },
+          "type": "typography",
+          "description": "Title Medium (48px) - (500) Medium\n\n🧩Advised Use:\nTitles\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Title L - (300) Light": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.300}",
+            "lineHeight": "{line-height.700}",
+            "fontSize": "{font-size.600}"
+          },
+          "type": "typography",
+          "description": "Title Large (56px) - (300) Light\n\n🧩Advised Use:\nTitles\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
+        },
+        "Title L - (500) Medium": {
+          "value": {
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.500}",
+            "lineHeight": "{line-height.700}",
+            "fontSize": "{font-size.600}"
+          },
+          "type": "typography",
+          "description": "Title Small (56px) - (500) Medium\n\n🧩Advised Use:\nTitles\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
+        }
+      }
+    }
+  }
+}
