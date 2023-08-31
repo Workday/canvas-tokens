@@ -1,5 +1,4 @@
 import {formats} from '../formatters';
-import {commonJSExports} from '../formatters/helpers/commonJSExports';
 
 jest.mock('../tokenStudioParser', () => ({
   resolveRef: (ref: string, resolver: (full: string, ref: string) => string) =>
@@ -159,9 +158,11 @@ describe('formats', () => {
           },
         },
       });
-      const expected = headerContent + `export * from "./base";\nexport * from "./sys";\n`;
+      const expected =
+        headerContent +
+        `import * as base from "./base";\nimport * as system from "./system";\nexport {base,system}`;
 
-      expect(result).toBe(expected);
+      expect(result).toBe(expected); //?
     });
   });
 
@@ -177,10 +178,10 @@ describe('formats', () => {
           },
         },
       });
-      const headerContent = commonJSExports({file: {destination: ''}});
       const expected =
         headerContent +
-        `__exportStar(require("./base"), exports);\n__exportStar(require("./sys"), exports);\n`;
+        moduleContent +
+        `var base = require("./base");\nexports.base = base;\nvar system = require("./system");\nexports.system = system;\n`;
 
       expect(result).toBe(expected);
     });

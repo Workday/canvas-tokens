@@ -18,13 +18,13 @@ type CompositeHelper = (args: HelperArgs) => Record<string, any>;
  */
 
 export const formattedObjectValue: CompositeHelper = ({format, dictionary}) => {
-  const parsed = getParsed(dictionary.properties, format);
+  const parsed = dictionary.properties[format];
   const filteredTokens = dictionary.allTokens.filter(
     ({path: [ctg]}) => ctg !== 'base' && ctg === format
   );
 
   return filteredTokens.reduce((acc: Record<string, any>, {path}: TransformedToken) => {
-    const passedPath = format === 'sys' ? path.slice(1) : path;
+    const passedPath = path.slice(1);
 
     setProperty({
       src: parsed,
@@ -98,20 +98,3 @@ const updateCompositeValues = (
     const name = camelCase(key);
     return {...acc, [name]: `--cnvs-${ref.path.join('-')}`};
   }, {});
-
-/**
- * Utility function to get the level-specific token object
- * @param {TransformedTokens} properties the style dictionary properties object
- * @param {string} level: 'brand' or 'sys' value
- * @returns the correct token object
- */
-const getParsed = (properties: TransformedTokens, level?: 'brand' | 'sys'): Record<string, any> => {
-  switch (level) {
-    case 'sys':
-      return properties.sys;
-    case 'brand':
-      return {brand: properties.brand};
-    default:
-      return {};
-  }
-};

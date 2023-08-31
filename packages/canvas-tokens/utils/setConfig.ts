@@ -168,7 +168,7 @@ const generateFiles = ({
 };
 
 const resolveName = (name: string, platform: string, level: string) =>
-  name.replace(/{platform}/g, platform).replace(/{level}/g, level);
+  name.replace(/{platform}/g, platform).replace(/{level}/g, level === 'sys' ? 'system' : level);
 
 const validateFormat = (platform: string, level: string, format?: string | Formatter) =>
   typeof format === 'string'
