@@ -88,9 +88,9 @@ describe('format helpers', () => {
       format: 'brand',
     });
 
-    const expected = {brand: {primary: {base: '--cnvs-brand-primary-base'}}};
+    const expected = {primary: {base: '--cnvs-brand-primary-base'}};
 
-    expect(result).toStrictEqual(expected); //?
+    expect(result).toStrictEqual(expected);
   });
 
   it('should transform token objects to new values', () => {

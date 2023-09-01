@@ -1,6 +1,5 @@
 import {Formatter, formatHelpers} from 'style-dictionary';
 import {jsFileHeader} from './helpers/jsFileHeader';
-import {commonJSExports} from './helpers/commonJSExports';
 
 /**
  * Style Dictionary format function that creates common-js file structure.
@@ -53,9 +52,11 @@ export const formatES6ToObjects: Formatter = ({dictionary, file}) => {
  */
 export const formatES6Exports: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
-  return Object.keys(dictionary.properties).reduce((acc, item) => {
-    return (acc += `export * from "./${item}";\n`);
+  const packages = Object.keys(dictionary.properties).map(i => (i === 'sys' ? 'system' : i));
+  const imports = packages.reduce((acc, item) => {
+    return (acc += `import * as ${item} from "./${item}";\n`);
   }, headerContent);
+  return imports + `export {${packages}}`;
 };
 
 /**
@@ -64,8 +65,9 @@ export const formatES6Exports: Formatter = ({dictionary, file}) => {
  * @returns file content as a string
  */
 export const formatCommonJSExports: Formatter = ({dictionary, file}) => {
-  const headerContent = commonJSExports({file});
+  const headerContent = jsFileHeader({file});
   return Object.keys(dictionary.properties).reduce((acc, item) => {
-    return (acc += `__exportStar(require("./${item}"), exports);\n`);
+    const fullItem = item === 'sys' ? 'system' : item;
+    return (acc += `var ${fullItem} = require("./${fullItem}");\nexports.${fullItem} = ${fullItem};\n`);
   }, headerContent);
 };
