@@ -11,7 +11,7 @@ type Transformer = (token: DesignToken) => string;
  */
 export const transformNameToCamelCase: Transformer = token => {
   const name = token.path;
-  const [_, ...rest] = name;
+  const [, ...rest] = name;
   const [tokenName, ...restName] = rest;
 
   const value = tokenName !== 'dimension' ? (tokenName === 'palette' ? restName : rest) : name;

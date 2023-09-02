@@ -1,4 +1,4 @@
-import {Dictionary, TransformedToken, TransformedTokens} from 'style-dictionary';
+import {Dictionary, TransformedToken} from 'style-dictionary';
 import {camelCase} from 'case-anything';
 import {isComposite} from '../../filters';
 
