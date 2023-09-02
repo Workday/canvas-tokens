@@ -93,9 +93,7 @@ const replaceByFullRef = (value: string) => {
 
 // Resolving extensions
 
-type Object = Record<string, any>;
-
-const getKeys = (obj: Object): string[] => Object.keys(obj);
+const getKeys = (obj: object): string[] => Object.keys(obj);
 
 const mapObjectContent = (fn: (token: DesignToken) => DesignToken, obj: DesignToken) => {
   if (obj.value) {

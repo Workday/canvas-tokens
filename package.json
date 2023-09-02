@@ -12,9 +12,10 @@
   },
   "scripts": {
     "commit": "git-cz",
+    "build:tokens": "npx nx build @workday/canvas-tokens",
+    "lint": "eslint -c ./.eslintrc.js --ext=ts .",
     "precommit": "lint-staged",
     "prepare": "husky install",
-    "build:tokens": "npx nx build @workday/canvas-tokens",
     "test": "jest -c jest.config.ts",
     "tokens-config": "ts-node scripts/tokens-config"
   },

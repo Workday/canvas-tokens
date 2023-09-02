@@ -139,7 +139,7 @@ const generateFiles = ({
           filter,
         } = modifier;
 
-        let fileStructure = {
+        const fileStructure = {
           destination: destination
             ? resolveName(destination, platform, level) + '.' + ext
             : defDestination,
