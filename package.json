@@ -17,7 +17,8 @@
     "precommit": "lint-staged",
     "prepare": "husky install",
     "test": "jest -c jest.config.ts",
-    "tokens-config": "ts-node scripts/tokens-config"
+    "tokens-config": "ts-node scripts/tokens-config",
+    "typecheck": "tsc -p . --noEmit"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
