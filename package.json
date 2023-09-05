@@ -53,5 +53,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.26.2"
   }
 }
