@@ -9,5 +9,8 @@
   "sideEffects": false,
   "types": "dist/es6/index.d.ts",
   "scripts": {},
+  "files": [
+    "dist/"
+  ],
   "dependencies": {}
 }
