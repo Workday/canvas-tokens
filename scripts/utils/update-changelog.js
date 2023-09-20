@@ -6,7 +6,7 @@ const {PACKAGE = '', CHANGESET_BODY = '', VERSION} = process.env;
 console.log(process.env, VERSION);
 
 const header = `---
-@workday/${PACKAGE}: ${VERSION || 'patch'}
+'@workday/${PACKAGE}': ${VERSION || 'patch'}
 ---`;
 
 const [prefix] = PACKAGE.split('-').reverse();
