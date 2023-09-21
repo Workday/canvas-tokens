@@ -1,0 +1,93 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allow manual triggering of this job in case of failures
+    inputs:
+      version:
+        default: 'patch'
+        description:
+          'The version override. Example: "1.1.2". Leave blank if you want conventional commits to
+          decide which version'
+        required: false
+      package:
+        type: choice
+        description: The package name to release
+        options:
+        - canvas-tokens-web
+        - canvas-tokens-docs
+
+jobs:
+  release:
+    # Only run if:
+    # - The commit message does not contain `[skip release]`
+    # - OR the workflow was manually triggered and has a `version` string
+    if: "(contains(github.event.head_commit.message, '):') && !contains(github.event.head_commit.message, '[skip release]')) || inputs.version"
+    runs-on: ubuntu-latest
+
+    steps:
+      ## First, we'll checkout the repository. We don't persist credentials because we need a
+      ## Personal Access Token to push on a branch that is protected. See
+      ## https://github.com/cycjimmy/semantic-release-action#basic-usage
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # Used for conventional commit ranges
+
+      ## This step installs node and sets up several matchers (regex matching for Github
+      ## Annotations). See
+      ## https://github.com/actions/setup-node/blob/25316bbc1f10ac9d8798711f44914b1cf3c4e954/src/main.ts#L58-L65
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          registry-url: https://registry.npmjs.org
+
+      ## The caching steps create a cache key based on the OS and hash of the yarn.lock file. A
+      ## cache hit will copy files from Github cache into the `node_modules` and `.cache/cypress`
+      ## folders. A cache hit will skip the cache steps
+      - name: Cache node modules
+        id: npm-cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-18.x-node-modules-hash-${{ hashFiles('package-lock.json') }}
+    
+      ## If both `node_modules` and `.cache/cypress` were cache hits, we're going to skip the `yarn
+      ## install` step. This effectively saves up to 3m on a cache hit build.
+      - name: Install Packages
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm install --production=false
+
+      - name: Get package name
+        id: package
+        run: echo "package=$(node scripts/utils/get-package-name.js)" >> $GITHUB_OUTPUT
+        env:
+          HEAD_COMMIT: ${{ github.event.head_commit.message }}
+          PACKAGE: ${{inputs.package}}
+      
+      - name: Get previous tag
+        id: previous-tag
+        run: echo "tag=$(node -p 'require("./packages/${{ steps.package.outputs.package }}/package.json").version')" >> $GITHUB_OUTPUT
+
+      - name: Generate Changeset
+        uses: Workday/canvas-kit-actions/generate-changeset@v1
+        id: changeset
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fromRef: '@workday/${{steps.package.outputs.package}}@${{steps.previous-tag.outputs.tag}}'
+          toRef: 'main'
+          tagName: 'new'
+
+      - name: Update Changelog
+        run: node scripts/utils/update-changelog.js
+        env:
+          PACKAGE: ${{steps.package.outputs.package}}
+          VERSION: ${{inputs.version}}
+          CHANGESET_BODY: ${{steps.changeset.outputs.body}}
+
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_RW_TOKEN }}
