@@ -102,7 +102,7 @@ jobs:
       - name: Build
         run: npm run build:tokens
 
-      # Push both the commit and tag created by Lerna's version command using a PAT
+      # Push both the commit and tag created by changeset version command using a PAT
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
