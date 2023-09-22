@@ -110,7 +110,7 @@ jobs:
           branch: "main"
           tags: true
 
-      ## Create a release on Github. This will trigger an internal Slack message
+      ## Create a release on Github.
       - name: Create Release
         uses: softprops/action-gh-release@v1
         env:
