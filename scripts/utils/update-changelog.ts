@@ -14,6 +14,8 @@ const changelogBody = CHANGESET_BODY.split('##')
   .filter(block => regex.test(block))
   .map(b =>
     b.replace(/# [a-zA-Z0-9_ ]*\n/g, a => {
+      // Canvas Kit's changelog generator defaults section headings to "Components."
+      // We're updating that default with use "Other" instead.
       const updatedTitle = a.replace(/# |\n/g, '').replace('Components', 'Other');
       return `**${updatedTitle}**\n`;
     })
