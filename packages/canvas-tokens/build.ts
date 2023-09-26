@@ -115,7 +115,7 @@ StyleDictionary.registerTransformGroup({
     'value/hex-to-rgba',
     'value/wrapped-font-family',
     'value/math',
-    'value/spacing-em',
+    'value/spacing-rem',
     'value/flatten-rgba',
   ],
 });
