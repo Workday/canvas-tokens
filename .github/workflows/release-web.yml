@@ -124,4 +124,6 @@ jobs:
 
       # Publish to npm. Must be run after a build
       - name: Publish
-        run: npx changeset publish --otp=${{ secrets.NPM_CI_PUBLISH_TOKEN }}
+        run: npx changeset publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_CI_PUBLISH_TOKEN}}
