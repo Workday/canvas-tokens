@@ -121,9 +121,15 @@ jobs:
           body: ${{steps.changeset.outputs.body}}
           draft: false
           prerelease: false
+      
+      - name: Creating .npmrc
+        run: |
+            cat << EOF > "$HOME/.npmrc"
+              //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
 
       # Publish to npm. Must be run after a build
       - name: Publish
         run: npx changeset publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_CI_PUBLISH_TOKEN}}
