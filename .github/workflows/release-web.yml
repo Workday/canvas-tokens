@@ -1,0 +1,129 @@
+name: Web Release 
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allow manual triggering of this job in case of failures
+    inputs:
+      version:
+        default: 'patch'
+        description:
+          'The version override: patch, minor or major'
+        required: false
+
+jobs:
+  release:
+    # Only run if:
+    # - The commit message does not contain `[skip release]`
+    # - OR the workflow was manually triggered and has a `version` string
+    if: "(!contains(github.event.head_commit.message, '[skip release]') && (contains(github.event.head_commit.message, '(web)') || contains(github.event.head_commit.message, '(all)'))) || inputs.version"
+    runs-on: ubuntu-latest
+
+    steps:
+      ## First, we'll checkout the repository. We don't persist credentials because we need a
+      ## Personal Access Token to push on a branch that is protected. See
+      ## https://github.com/cycjimmy/semantic-release-action#basic-usage
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # Used for conventional commit ranges
+
+      ## This step installs node and sets up several matchers (regex matching for Github
+      ## Annotations). See
+      ## https://github.com/actions/setup-node/blob/25316bbc1f10ac9d8798711f44914b1cf3c4e954/src/main.ts#L58-L65
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: https://registry.npmjs.org
+
+      ## The caching steps create a cache key based on the OS and hash of the yarn.lock file. A
+      ## cache hit will copy files from Github cache into the `node_modules` and `.cache/cypress`
+      ## folders. A cache hit will skip the cache steps
+      - name: Cache node modules
+        id: npm-cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-18.x-node-modules-hash-${{ hashFiles('package-lock.json') }}
+
+      ## If both `node_modules` and `.cache/cypress` were cache hits, we're going to skip the `yarn
+      ## install` step. This effectively saves up to 3m on a cache hit build.
+      - name: Install Packages
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm install --production=false
+
+      - name: Config git user
+        shell: bash
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Get previous tag
+        id: previous-tag
+        run:
+          echo "tag=$(node -p 'require("./packages/canvas-tokens-web/package.json").version')" >> $GITHUB_OUTPUT
+
+      - name: Generate Changeset
+        uses: Workday/canvas-kit-actions/generate-changeset@v1
+        id: changeset
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fromRef: '@workday/canvas-tokens-web@${{steps.previous-tag.outputs.tag}}'
+          toRef: 'main'
+          tagName: 'new-release'
+
+      - name: Update Changelog
+        run: npx ts-node scripts/utils/update-changelog.ts
+        env:
+          PACKAGE: canvas-tokens-web
+          VERSION: ${{inputs.version}}
+          CHANGESET_BODY: ${{steps.changeset.outputs.body}}
+
+      - name: Bump package
+        run: npx changeset version
+  
+      - name: Get release tag
+        id: new-tag
+        run:
+          echo "tag=$(node -p 'require("./packages/canvas-tokens-web/package.json").version')" >> $GITHUB_OUTPUT
+  
+      ## So far, the changes to to the workspace have not been committed. We'll commit them now and
+      ## create a tag
+      - name: Commit and add Tag
+        shell: bash
+        run: |
+          git add . && git commit -m "chore: Release @workday/canvas-tokens-web v${{steps.new-tag.outputs.tag}} [skip release]" && git tag -a @workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}} -m "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
+
+      - name: See git log
+        run: |
+          git log --no-walk --tags --oneline -n 1
+      
+      - name: Build
+        run: npm run build:tokens
+
+      # Push both the commit and tag created by changeset version command using a PAT
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_RW_TOKEN }}
+          branch: "main"
+          tags: true
+
+      ## Create a release on Github.
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
+          name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
+          body: ${{steps.changeset.outputs.body}}
+          draft: false
+          prerelease: false
+
+      # Publish to npm. Must be run after a build
+      - name: Publish
+        run: npx changeset publish
+        env:
+          NPM_CI_PUBLISH_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN}}
