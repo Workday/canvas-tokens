@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 0.1.4
+
+### Patch Changes
+
+- **Web Infrastructure**
+
+  - fix(web): Update release job ([#33](https://github.com/Workday/canvas-tokens/pull/33))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 0.1.3
 
 ### Patch Changes
