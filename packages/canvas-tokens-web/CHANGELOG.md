@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 0.1.5
+
+### Patch Changes
+
+- **Web Infrastructure**
+
+  - feat(web): Add GH release step to release action
+    ([#35](https://github.com/Workday/canvas-tokens/pull/35))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 0.1.4
 
 ### Patch Changes
