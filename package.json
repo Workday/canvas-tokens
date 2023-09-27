@@ -18,7 +18,8 @@
     "prepare": "husky install",
     "test": "jest -c jest.config.ts",
     "tokens-config": "ts-node scripts/tokens-config",
-    "typecheck": "tsc -p . --noEmit"
+    "typecheck": "tsc -p . --noEmit",
+    "release": "npm run build:tokens && changeset publish --tags latest"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",

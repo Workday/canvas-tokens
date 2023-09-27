@@ -98,9 +98,6 @@ jobs:
       - name: See git log
         run: |
           git log --no-walk --tags --oneline -n 1
-      
-      - name: Build
-        run: npm run build:tokens
 
       # Push both the commit and tag created by changeset version command using a PAT
       - name: Push changes
@@ -109,18 +106,6 @@ jobs:
           github_token: ${{ secrets.GH_RW_TOKEN }}
           branch: "main"
           tags: true
-
-      ## Create a release on Github.
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
-          name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
-          body: ${{steps.changeset.outputs.body}}
-          draft: false
-          prerelease: false
       
       - name: Creating .npmrc
         run: |
@@ -130,6 +115,12 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
 
-      # Publish to npm. Must be run after a build
-      - name: Publish
-        run: npx changeset publish
+      - name: Build & Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
