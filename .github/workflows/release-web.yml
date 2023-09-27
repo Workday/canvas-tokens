@@ -107,6 +107,18 @@ jobs:
           branch: "main"
           tags: true
 
+      ## Create a release on Github.
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
+          name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
+          body: ${{steps.changeset.outputs.body}}
+          draft: false
+          prerelease: false
+
   publish:
     runs-on: ubuntu-latest
     needs: 'release'
