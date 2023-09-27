@@ -42,11 +42,11 @@ export const transforms: Record<string, Transform> = {
     transformer: ({value}) => `"${value}"`,
   },
   // transform function that adds em to letter spacing values
-  'value/spacing-em': {
+  'value/spacing-rem': {
     type: 'value',
     transitive: true,
     matcher: filter.isLetterSpacing,
-    transformer: ({value}) => `${value}em`,
+    transformer: ({value}) => `${value / 16}rem`,
   },
   // transform function that changes any border object value to its single line string
   'value/flatten-border': {

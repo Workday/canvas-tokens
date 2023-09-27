@@ -69,12 +69,12 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should add em to letter spacing values', () => {
-    const result = transforms['value/spacing-em'].transformer(
+  it('should convert letter spacing values from px to rem', () => {
+    const result = transforms['value/spacing-rem'].transformer(
       {...defaultToken, value: '0.4'},
       defaultOptions
     );
-    const expected = '0.4em';
+    const expected = '0.025rem';
 
     expect(result).toBe(expected);
   });
