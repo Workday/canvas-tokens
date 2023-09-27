@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 0.1.3
+
+### Patch Changes
+
+- **Web Infrastructure**
+
+  - fix(web): Fix letter-spacing transformer
+    ([#25](https://github.com/Workday/canvas-tokens/pull/25))
+    ([@alanbsmith](https://github.com/alanbsmith))
+
 ## 0.1.2
 
 ### Patch Changes
