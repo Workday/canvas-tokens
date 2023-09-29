@@ -347,6 +347,58 @@ describe('formats', () => {
     });
   });
 
+  describe('es6/types', () => {
+    it('should return correct file structure for es6', () => {
+      const result = formats['es6/types']({
+        ...defaultArgs,
+        options: {
+          formats: ['javascript/es6'],
+          level: 'sys',
+        },
+        dictionary: {
+          properties: {
+            opacity: {
+              disabled: '--cnvs-base-opacity-300',
+            },
+          },
+        },
+      });
+
+      const expected =
+        headerContent +
+        'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n} as const;' +
+        '\n';
+
+      expect(result).toBe(expected);
+    });
+  });
+
+  describe('common-js/types', () => {
+    it('should return correct file structure for es6', () => {
+      const result = formats['es6/types']({
+        ...defaultArgs,
+        options: {
+          formats: ['javascript/common-js'],
+          level: 'sys',
+        },
+        dictionary: {
+          properties: {
+            opacity: {
+              disabled: '--cnvs-base-opacity-300',
+            },
+          },
+        },
+      });
+
+      const expected =
+        headerContent +
+        'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n} as const;' +
+        '\n';
+
+      expect(result).toBe(expected);
+    });
+  });
+
   describe('merge/refs', () => {
     it('should return correct file structure for es6', () => {
       const result = formats['merge/refs']({

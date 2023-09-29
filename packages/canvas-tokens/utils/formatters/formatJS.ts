@@ -46,6 +46,19 @@ export const formatES6ToObjects: Formatter = ({dictionary, file}) => {
 };
 
 /**
+ * Style Dictionary format function that create token type definitions.
+ * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
+ * @returns file content as a string
+ */
+export const formatES6ToTypes: Formatter = ({dictionary, file}) => {
+  const headerContent = formatHelpers.fileHeader({file});
+  return Object.entries(dictionary.properties).reduce((acc: string, [key, values]) => {
+    return (acc +=
+      `export declare const ${key} = ` + JSON.stringify(values, null, 2) + ' as const;\n');
+  }, headerContent);
+};
+
+/**
  * Style Dictionary format function that create the export index file for es6 folder.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
