@@ -1,5 +1,20 @@
 # @workday/canvas-tokens-web
 
+## 0.1.6
+
+### Patch Changes
+
+- **Other**
+
+  - feat(web): Make type definitions of objects static
+    ([#42](https://github.com/Workday/canvas-tokens/pull/42))
+    ([@NicholasBoll](https://github.com/NicholasBoll), [@alanbsmith](https://github.com/alanbsmith))
+
+  **Web Infrastructure**
+
+  - chore(web): Remove publish on push ([#37](https://github.com/Workday/canvas-tokens/pull/37))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 0.1.5
 
 ### Patch Changes
