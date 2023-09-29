@@ -54,7 +54,7 @@ export const formatES6ToTypes: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   return Object.entries(dictionary.properties).reduce((acc: string, [key, values]) => {
     return (acc +=
-      `export declare const ${key} = ` + JSON.stringify(values, null, 2) + ' as const;\n');
+      `export declare const ${key} = ` + JSON.stringify(values, null, 2) + ' as const;\n\n');
   }, headerContent);
 };
 
