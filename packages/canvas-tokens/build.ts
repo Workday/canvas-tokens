@@ -64,7 +64,7 @@ const config = setConfig({
           level: ['brand', 'sys'],
           extensions: ['d.ts'],
           format: 'merge/types',
-          combineWith: ['merge/objects', '{platform}/objects'],
+          combineWith: ['merge/objects', '{platform}/types'],
         },
         {
           level: ['base'],
