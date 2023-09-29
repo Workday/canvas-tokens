@@ -367,7 +367,7 @@ describe('formats', () => {
       const expected =
         headerContent +
         'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n} as const;' +
-        '\n';
+        '\n\n';
 
       expect(result).toBe(expected);
     });
@@ -393,7 +393,7 @@ describe('formats', () => {
       const expected =
         headerContent +
         'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n} as const;' +
-        '\n';
+        '\n\n';
 
       expect(result).toBe(expected);
     });
