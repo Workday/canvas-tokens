@@ -55,11 +55,11 @@ jobs:
 
       - name: Lint
         shell: bash
-        run: npm run lint
+        run: yarn lint
 
       - name: Type Check
         shell: bash
-        run: npm run typecheck
+        run: yarn typecheck
 
       - name: Run Unit Tests
         shell: bash
