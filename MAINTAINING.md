@@ -82,7 +82,7 @@ We use [Jest](https://jestjs.io/docs/getting-started) to unit test internal logi
 tests locally:
 
 ```sh
-npm test
+yarn test
 ```
 
 ## Publishing
