@@ -6,7 +6,7 @@
 # clone the repo
 git clone https://github.com/workday/canvas-tokens.git
 # install dependencies
-npm install
+yarn install
 ```
 
 ## Building Tokens
@@ -22,7 +22,7 @@ npx nx build @workday/canvas-tokens
 Our token documentation and visual tests are rendered in Storybook. To start Storybook locally, run:
 
 ```sh
-npm run storybook
+yarn storybook
 ```
 
 ## Syncing with Tokens Studio
@@ -49,7 +49,7 @@ you're good to go.
 ### Syncing Token Configurations
 
 ```sh
-npm run tokens-config sync
+yarn tokens-config sync
 ```
 
 By default, this script fetches the config files for base, brand, and system tokens from the Canvas
@@ -60,7 +60,7 @@ If you only want to update one type of tokens, you can specify it in the script.
 
 ```sh
 # only sync base tokens
-npm run tokens-config sync base
+yarn tokens-config sync base
 ```
 
 ### Merging Configuration Updates
@@ -71,7 +71,7 @@ or you can run the script. The script below will create a pull request to merge 
 tokens-studio-sync branch into main. If a pull request already exists, it will fail.
 
 ```sh
-npm run tokens-config create-pull
+yarn tokens-config create-pull
 ```
 
 ## Testing
@@ -82,7 +82,7 @@ We use [Jest](https://jestjs.io/docs/getting-started) to unit test internal logi
 tests locally:
 
 ```sh
-npm test
+yarn test
 ```
 
 ## Publishing

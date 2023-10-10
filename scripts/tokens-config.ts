@@ -21,7 +21,7 @@ program.name('tokens-config').description(`
 // CLI Commands
 
 // Sync tokens config with Tokens Studio config
-// npm run tokens-config sync [type]
+// yarn tokens-config sync [type]
 program
   .command('sync')
   .description('Sync Canvas Tokens repo with Tokens Studio config')
@@ -46,7 +46,7 @@ program
   });
 
 // Create a pull request to merge updates
-// npm run tokens-config create-pull
+// yarn tokens-config create-pull
 program
   .command('create-pull')
   .description('Create a pull request to merge the sync updates')
