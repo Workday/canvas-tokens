@@ -1,0 +1,50 @@
+name: Merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: Workday/canvas-kit-actions/install@v1
+        with:
+          node_version: 18.x
+      
+      - name: Build Tokens
+        run: yarn build:tokens
+
+      # Build Storybook and extract component stories for Storybook aggregation. This will be used
+      # for Chromatic rebaselining and publishing to GH Pages.
+      - name: Build Storybook
+        shell: bash
+        run: |
+          yarn build-storybook --quiet
+          npx sb extract docs docs/stories.json
+
+      - name: Publish Storybook
+        if: steps.extract-branch.outputs.branch == 'main'
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          branch: gh-pages
+          folder: docs
+
+      ## Create a Chromatic baseline auto-accepting changes. Chromatic changes are already accepted
+      ## in PRs, so we don't need to manually approve them here again. This new baseline will be
+      ## used for future PRs. New PRs may show extra Chromatic changes until the "Update Branch"
+      ## button is used in PRs which will pull this new baseline.
+      - name: Update Chromatic Baseline
+        uses: chromaui/action@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: chpt_a9e354687a28e6e
+          storybookBuildDir: docs
+          exitOnceUploaded: true
+          exitZeroOnChanges: true
+          autoAcceptChanges: true
+
