@@ -1,0 +1,3 @@
+import{j as t,a as l,F as n}from"./jsx-runtime-50e9c51e.js";import{T as o}from"./index-1acdbb77.js";import{d as r}from"./index-eebf0f45.js";const s=Object.values(r).map(e=>{const a=getComputedStyle(document.documentElement).getPropertyValue(e);return{label:e,value:a.split("),").join(`),
+`)}});function i(){return t(o,{caption:"depth tokens",headings:["Sample","Name","Value"],rows:s,children:e=>l(n,{children:[t(o.RowItem,{children:t(o.Sample,{style:{boxShadow:e.value}})}),t(o.RowItem,{children:t(o.MonospaceLabel,{children:e.label})}),t(o.RowItem,{children:e.value})]})})}export{i as D};
+//# sourceMappingURL=Depth-616f86b3.js.map
