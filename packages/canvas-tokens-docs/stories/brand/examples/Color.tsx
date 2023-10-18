@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '@workday/canvas-tokens-web/dist/css/brand/_variables.css';
 import {brand} from '@workday/canvas-tokens-web';
 
 import {ColorGrid, buildColorSwatch} from '../../../components/ColorGrid';

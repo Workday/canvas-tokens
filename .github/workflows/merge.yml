@@ -25,7 +25,7 @@ jobs:
       # for Chromatic rebaselining and publishing to GH Pages.
       - name: Build Storybook
         shell: bash
-        run: yarn build-storybook
+        run: yarn build-storybook --no-cache --verbose
 
       - name: Publish Storybook
         uses: JamesIves/github-pages-deploy-action@v4.4.1
