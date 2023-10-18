@@ -5,19 +5,14 @@ import {brand} from '@workday/canvas-tokens-web';
 import {ColorGrid, buildColorSwatch} from '../../../components/ColorGrid';
 import {Stack} from '../../../components/Stack';
 
-const primary = Object.values(brand.primary).map(varName => buildColorSwatch(varName));
-const neutral = Object.values(brand.neutral).map(varName => buildColorSwatch(varName));
-const alert = Object.values(brand.alert).map(varName => buildColorSwatch(varName));
-const error = Object.values(brand.error).map(varName => buildColorSwatch(varName));
-const success = Object.values(brand.success).map(varName => buildColorSwatch(varName));
-
-const palettes = [
-  {name: 'primary', values: primary},
-  {name: 'neutral', values: neutral},
-  {name: 'alert', values: alert},
-  {name: 'error', values: error},
-  {name: 'success', values: success},
-];
+const palettes = Object.keys(brand).map(key => {
+  const tokens = brand[key as keyof typeof brand];
+  const values = Object.values(tokens).map(varName => buildColorSwatch(varName));
+  return {
+    name: key,
+    values,
+  };
+});
 
 export const ColorTokens = () => {
   return (

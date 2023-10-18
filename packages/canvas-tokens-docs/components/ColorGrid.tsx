@@ -29,6 +29,16 @@ function formatName(name: string) {
     .toLowerCase();
 }
 
+function getSwatchStyles(token: ColorSwatch) {
+  // linear gradients need to be background images
+  if (token.value.startsWith('linear-gradient(')) {
+    return {backgroundImage: `var(${token.varName})`};
+    // everything else can be a background color
+  } else {
+    return {backgroundColor: `var(${token.varName})`};
+  }
+}
+
 /** A configuration of TokenGrid to quickly build tables for colors */
 export function ColorGrid(props: ColorGridProps) {
   return (
@@ -40,7 +50,7 @@ export function ColorGrid(props: ColorGridProps) {
       {token => (
         <>
           <TokenGrid.RowItem>
-            <TokenGrid.Swatch style={{backgroundColor: `var(${token.varName})`}} />
+            <TokenGrid.Swatch style={getSwatchStyles(token)} />
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
             <TokenGrid.MonospaceLabel>{token.varName}</TokenGrid.MonospaceLabel>
