@@ -11,6 +11,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Used for conventional commit ranges
 
       - uses: Workday/canvas-kit-actions/install@v1
         with:
@@ -23,14 +25,13 @@ jobs:
       # for Chromatic rebaselining and publishing to GH Pages.
       - name: Build Storybook
         shell: bash
-        run: yarn build-storybook --quiet
+        run: yarn build-storybook
 
       - name: Publish Storybook
-        if: steps.extract-branch.outputs.branch == 'main'
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
-          folder: docs
+          folder: docs/storybook/@workday/canvas-tokens-docs/
 
       ## Create a Chromatic baseline auto-accepting changes. Chromatic changes are already accepted
       ## in PRs, so we don't need to manually approve them here again. This new baseline will be
@@ -41,8 +42,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: chpt_a9e354687a28e6e
-          storybookBuildDir: docs
+          storybookBuildDir: docs/storybook/@workday/canvas-tokens-docs/
           exitOnceUploaded: true
           exitZeroOnChanges: true
           autoAcceptChanges: true
-
