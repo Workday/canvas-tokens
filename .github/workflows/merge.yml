@@ -23,9 +23,7 @@ jobs:
       # for Chromatic rebaselining and publishing to GH Pages.
       - name: Build Storybook
         shell: bash
-        run: |
-          yarn build-storybook --quiet
-          npx sb extract docs docs/stories.json
+        run: yarn build-storybook --quiet
 
       - name: Publish Storybook
         if: steps.extract-branch.outputs.branch == 'main'
