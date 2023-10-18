@@ -14,15 +14,26 @@ yarn install
 All tokens are built from the `@workday/canvas-tokens` package. To build tokens, run:
 
 ```sh
-npx nx build @workday/canvas-tokens
+yarn build:tokens
 ```
 
 ## Storybook
+
+> To ensure you're seeing the latest token updates, run `yarn build:tokens` first.
 
 Our token documentation and visual tests are rendered in Storybook. To start Storybook locally, run:
 
 ```sh
 yarn storybook
+```
+
+Building and serving a static Storybook locally can be useful to debug issues. To do so, run:
+
+```sh
+# build static Storybook
+yarn build-storybook
+# serve locally
+yarn serve-storybook
 ```
 
 ## Syncing with Tokens Studio
@@ -84,5 +95,9 @@ tests locally:
 ```sh
 yarn test
 ```
+
+### Visual Regression Tests
+
+We use [Chromatic](https://www.chromatic.com/builds?appId=64fb84ee156f858ef9126097) for visual regression tests. Chromatic runs automatically on every pull request and requires changes to be verified before merging. When branch is merged to `main`, the baseline is updated.
 
 ## Publishing

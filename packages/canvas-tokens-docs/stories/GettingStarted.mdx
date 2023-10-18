@@ -1,0 +1,63 @@
+{/* GettingStarted.mdx */}
+
+import {Meta} from '@storybook/blocks';
+
+<Meta title="Docs/Getting Started" />
+
+# Canvas Tokens Web
+
+This package provides Canvas design tokens for web applications.
+
+## Design Tokens
+
+Design tokens are a mechanism to encapsulate and share design data such as color, space, typography,
+shape, etc. across platforms. Our Canvas Tokens infrastructure is designed to connect these tokens
+to Figma and our product platforms: web, iOS, and Android.
+
+## Getting Started
+
+### Installation
+
+```sh
+npm install @workday/canvas-tokens-web
+```
+
+### Usage
+
+#### Importing CSS Variables
+
+CSS variables can be imported directly into CSS files,
+
+```css
+/* index.css */
+@import '@workday/canvas-tokens-web/dist/css/base/_variables.css';
+@import '@workday/canvas-tokens-web/dist/css/system/_variables.css';
+@import '@workday/canvas-tokens-web/dist/css/brand/_variables.css';
+```
+
+or in JavaScript / TypeScript files.
+
+```ts
+// index.js
+import '@workday/canvas-tokens-web/dist/css/base/_variables.css';
+import '@workday/canvas-tokens-web/dist/css/system/_variables.css';
+import '@workday/canvas-tokens-web/dist/css/brand/_variables.css';
+```
+
+#### CSS
+
+```css
+.card {
+  padding: var(--cnvs-sys-space-x4);
+}
+```
+
+#### JavaScript / TypeScript
+
+```ts
+import {system} from '@workday/canvas-tokens-web';
+
+const cardStyles = {
+  padding: `var(${system.space.x4})`,
+};
+```
