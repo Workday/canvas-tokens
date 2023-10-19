@@ -132,23 +132,21 @@
     },
     "common": {
       "focus-outline": {
-        "value": "{brand.primary.base}",
+        "value": "{palette.blueberry.400}",
         "type": "color"
       },
       "error-inner": {
-        "value": "{brand.error.base}",
+        "value": "{palette.cinnamon.500}",
         "type": "color"
       },
       "alert-inner": {
-        "value": "{brand.alert.base}",
+        "value": "{palette.cantaloupe.400}",
         "type": "color"
       }
     },
     "gradient": {
-      "primary": {
-        "value": "linear-gradient(90deg, {brand.primary.base} 0%, {brand.primary.dark} 100%)",
-        "type": "color"
-      }
+      "value": "linear-gradient(90deg, {brand.primary.base} 0%, {brand.primary.dark} 100%)",
+      "type": "color"
     }
   }
 }
