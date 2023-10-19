@@ -45,13 +45,18 @@ program
     }
   });
 
+const baseBranchArg = new Argument('base', 'Specify the base branch for the sync pull request')
+  .default('main')
+  .argOptional();
+
 // Create a pull request to merge updates
 // yarn tokens-config create-pull
 program
   .command('create-pull')
+  .addArgument(baseBranchArg)
   .description('Create a pull request to merge the sync updates')
-  .action(async () => {
-    await createSyncPullRequest();
+  .action(async base => {
+    await createSyncPullRequest(base);
     return;
   });
 
