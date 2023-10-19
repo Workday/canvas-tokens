@@ -13,19 +13,23 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Used for conventional commit ranges
-
-      - uses: Workday/canvas-kit-actions/install@v1
-        with:
-          node_version: 18.x
+      
+      - name: Install
+        shell: bash
+        run: yarn install
+      # - uses: Workday/canvas-kit-actions/install@v1
+      #   with:
+      #     node_version: 18.x
       
       - name: Build Tokens
+        shell: bash
         run: yarn build:tokens
 
       # Build Storybook and extract component stories for Storybook aggregation. This will be used
       # for Chromatic rebaselining and publishing to GH Pages.
       - name: Build Storybook
         shell: bash
-        run: yarn build-storybook --no-cache --verbose
+        run: yarn build-storybook
 
       - name: Publish Storybook
         uses: JamesIves/github-pages-deploy-action@v4.4.1
