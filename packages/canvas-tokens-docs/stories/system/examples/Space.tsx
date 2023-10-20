@@ -11,8 +11,10 @@ interface SpaceToken {
 }
 
 function multiplyCalcValues(value: string) {
+  // Matches numbers such as .25, 0.25, or 25
+  const numberRegExp = new RegExp(/(0*\.)?\d+/g);
   // Find the numbers in the string value
-  const matches = value.match(/(0.)?\d+/g);
+  const matches = value.match(numberRegExp);
   if (matches) {
     // Multiply the matched values
     return matches.reduce((acc, current) => acc * Number(current), 1);

@@ -12,7 +12,7 @@ const fontFamilyTokens: FontFamilyToken[] = Object.values(system.fontFamily).map
 
   return {
     label: varName,
-    value: value,
+    value: value.replace(/"/g, ''),
   };
 });
 
