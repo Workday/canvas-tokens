@@ -14,6 +14,6 @@ export const transformNameToCamelCase: Transformer = token => {
   const [, ...rest] = name;
   const [tokenName, ...restName] = rest;
 
-  const value = tokenName !== 'dimension' ? (tokenName === 'palette' ? restName : rest) : name;
+  const value = tokenName !== 'unit' ? (tokenName === 'palette' ? restName : rest) : name;
   return camelCase(value.join('-'));
 };
