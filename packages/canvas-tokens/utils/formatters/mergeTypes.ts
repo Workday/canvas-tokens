@@ -16,10 +16,8 @@ export const mergeTypes: Formatter = params => {
 
   const content = StyleDictionary.format[defaultFormat]({
     ...params,
-    options: {...options, formats: restFormats, withoutModule: true},
+    options: {...options, formats: restFormats},
   });
 
-  return content
-    .replace(/exports.default = exports./g, 'export default')
-    .replace(/exports.|export const /g, 'export declare const ');
+  return content;
 };

@@ -20,6 +20,7 @@ export const tokenStudioParser = ({contents}: any) => {
   }
 
   const updateTokens = (token: DesignToken) => {
+    replaceDescriptionByComment(token);
     transformExtensions(token);
     transformRefs(token);
     return token;
@@ -34,6 +35,15 @@ const getLevel = (ref: string) => {
   const levels = ['base', 'brand', 'sys'];
   const [key] = ref.split('.');
   return !levels.includes(key) && 'base';
+};
+
+const replaceDescriptionByComment = (token: DesignToken) => {
+  const {description} = token;
+  if (description) {
+    delete token.description;
+    const updated = description.replace(/\n+$/g, '');
+    token.comment = updated;
+  }
 };
 
 const transformRefs = (token: DesignToken) => {

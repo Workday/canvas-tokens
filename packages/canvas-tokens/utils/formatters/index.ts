@@ -5,9 +5,9 @@ import {
   formatCommonToObjects,
   formatES6Exports,
   formatCommonJSExports,
-  formatES6ToTypes,
 } from './formatJS';
 import {formatCSSComposite, formatLessComposite, formatSassComposite} from './formatStyles';
+import {formatJSToTypes} from './formatTypes';
 import {mergeObjects} from './mergeObjects';
 import {mergeTypes} from './mergeTypes';
 import {mergeStyleReferences} from './mergeStyleReferences';
@@ -20,8 +20,7 @@ export const formats: Record<string, Formatter> = {
   // with tokens united in objects
   'es6/objects': formatES6ToObjects,
   // formatter creating the es6 and common-js types including the `as const`
-  'es6/types': formatES6ToTypes,
-  'common-js/types': formatES6ToTypes,
+  'javascript/types': formatJSToTypes,
   // formatter creating the common-js file structure
   // with tokens united in objects
   'common-js/objects': formatCommonToObjects,

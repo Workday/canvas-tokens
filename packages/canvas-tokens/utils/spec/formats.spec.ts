@@ -15,6 +15,8 @@ jest.mock('style-dictionary', () => ({
       const [first] = Object.keys(dictionary.properties);
       return `exports.${first} = ` + JSON.stringify(dictionary.properties[first], null, 2);
     },
+    'javascript/types': () =>
+      `export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}`,
     'javascript/common-js': () => `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";`,
     'css/variables': () => `:root {\n --cnvs-sys-shape-zero: 0rem;\n}`,
     'css/composite': () =>
@@ -262,7 +264,7 @@ describe('formats', () => {
       });
       const expected = '.cnvs-sys-border-input-disabled {\n  border: @cnvs-sys-line-disabled;\n}';
 
-      expect(result).toBe(expected); //?
+      expect(result).toBe(expected);
     });
   });
 
@@ -314,7 +316,7 @@ describe('formats', () => {
       const result = formats['merge/types']({
         ...defaultArgs,
         options: {
-          formats: ['javascript/es6'],
+          formats: ['javascript/types'],
           level: 'sys',
         },
         dictionary: {
@@ -329,31 +331,23 @@ describe('formats', () => {
       const expected =
         'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}';
 
-      expect(result).toBe(expected);
-    });
-
-    it('should return correct file structure for common-js', () => {
-      const result = formats['merge/types']({
-        ...defaultArgs,
-        options: {
-          formats: ['javascript/common-js'],
-          level: 'sys',
-        },
-      });
-
-      const expected = 'export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100";';
-
-      expect(result).toBe(expected); //
+      expect(result).toBe(expected); //?
     });
   });
 
-  describe('es6/types', () => {
-    it('should return correct file structure for es6', () => {
-      const result = formats['es6/types']({
+  describe('javascript/types', () => {
+    it('should return correct file structure with between line jsDoc', () => {
+      const result = formats['javascript/types']({
         ...defaultArgs,
         options: {
-          formats: ['javascript/es6'],
-          level: 'sys',
+          originalValues: {
+            opacity: {
+              disabled: {
+                comment: 'Test jsDoc',
+                value: '0.4',
+              },
+            },
+          },
         },
         dictionary: {
           properties: {
@@ -366,20 +360,22 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n} as const;' +
-        '\n\n';
+        'export declare const opacity = {\n  /**\n   * Test jsDoc\n   * 0.4 \n   */\n  disabled: "--cnvs-base-opacity-300",\n} as const;\n';
 
       expect(result).toBe(expected);
     });
-  });
 
-  describe('common-js/types', () => {
-    it('should return correct file structure for es6', () => {
-      const result = formats['es6/types']({
+    it('should have one line jsDoc for tokens without comment', () => {
+      const result = formats['javascript/types']({
         ...defaultArgs,
         options: {
-          formats: ['javascript/common-js'],
-          level: 'sys',
+          originalValues: {
+            opacity: {
+              disabled: {
+                value: '0.4',
+              },
+            },
+          },
         },
         dictionary: {
           properties: {
@@ -392,8 +388,7 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n} as const;' +
-        '\n\n';
+        'export declare const opacity = {\n  /** 0.4 */\n  disabled: "--cnvs-base-opacity-300",\n} as const;\n';
 
       expect(result).toBe(expected);
     });
