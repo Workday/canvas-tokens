@@ -13,9 +13,6 @@ const config: StorybookConfig = {
   viteFinal: async config =>
     mergeConfig(config, {
       plugins: [nxViteTsPaths()],
-      optimizeDeps: {
-        include: ['@workday/canvas-tokens-web'],
-      },
     }),
 };
 
