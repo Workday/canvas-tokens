@@ -25,10 +25,10 @@ jobs:
           node_version: 18.x
 
       - name: Build Tokens
-        run: yarn build:tokens
+        run: yarn build:tokens --no-cache
 
       - name: Build Storybook
-        run: yarn build-storybook --quiet
+        run: yarn build-storybook --no-cache
 
       - name: Cache Build
         id: build-cache
@@ -54,7 +54,7 @@ jobs:
         run: yarn lint
 
       - name: Build Tokens
-        run: yarn build:tokens
+        run: yarn build:tokens --no-cache
 
       - name: Type Check
         shell: bash

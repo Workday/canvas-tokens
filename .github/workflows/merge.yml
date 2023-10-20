@@ -19,7 +19,7 @@ jobs:
           node_version: 18.x
       
       - name: Build Tokens
-        run: yarn build:tokens
+        run: yarn build:tokens  --no-cache
 
       # Build Storybook and extract component stories for Storybook aggregation. This will be used
       # for Chromatic rebaselining and publishing to GH Pages.
