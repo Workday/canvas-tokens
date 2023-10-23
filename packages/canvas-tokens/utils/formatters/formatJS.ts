@@ -8,12 +8,45 @@ import {jsFileHeader} from './helpers/jsFileHeader';
  * options can contains `withoutModule` property js module header should not be generated.
  * @returns file content as a string
  */
-export const formatToInlineModule: Formatter = ({dictionary, file, options}) => {
+export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, options}) => {
   const headerContent = !options.withoutModule
     ? jsFileHeader({file})
     : formatHelpers.fileHeader({file});
-  return dictionary.allTokens.reduce((acc: string, {name, value}) => {
-    acc += `exports.${name} = "${value}";\n`;
+  return dictionary.allTokens.reduce((acc: string, {name, path}) => {
+    const cssVarName = path.join('-');
+    acc += `exports.${name} = "--cnvs-${cssVarName}";\n`;
+    return acc;
+  }, headerContent);
+};
+
+/**
+ * Style Dictionary format function that creates es6 file structure.
+ * This structure contains separated exports of each token.
+ * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
+ * options can contains `withoutModule` property js module header should not be generated.
+ * @returns file content as a string
+ */
+export const formatToInlineES6Module: Formatter = ({dictionary, file, options}) => {
+  const headerContent = formatHelpers.fileHeader({file});
+  return dictionary.allTokens.reduce((acc: string, {name, path}) => {
+    const cssVarName = path.join('-');
+    acc += `export const ${name} = "--cnvs-${cssVarName}";\n`;
+    return acc;
+  }, headerContent);
+};
+
+/**
+ * Style Dictionary format function that creates ts file structure.
+ * This structure contains separated exports of each token with `as const`.
+ * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
+ * options can contains `withoutModule` property js module header should not be generated.
+ * @returns file content as a string
+ */
+export const formatInlineTypes: Formatter = ({dictionary, file}) => {
+  const headerContent = formatHelpers.fileHeader({file});
+  return dictionary.allTokens.reduce((acc: string, {name, path}) => {
+    const cssVarName = path.join('-');
+    acc += `export declare const ${name} = "--cnvs-${cssVarName}" as const;\n`;
     return acc;
   }, headerContent);
 };
@@ -42,19 +75,6 @@ export const formatES6ToObjects: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   return Object.entries(dictionary.properties).reduce((acc: string, [key, values]) => {
     return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
-  }, headerContent);
-};
-
-/**
- * Style Dictionary format function that create token type definitions.
- * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
- * @returns file content as a string
- */
-export const formatES6ToTypes: Formatter = ({dictionary, file}) => {
-  const headerContent = formatHelpers.fileHeader({file});
-  return Object.entries(dictionary.properties).reduce((acc: string, [key, values]) => {
-    return (acc +=
-      `export declare const ${key} = ` + JSON.stringify(values, null, 2) + ' as const;\n\n');
   }, headerContent);
 };
 

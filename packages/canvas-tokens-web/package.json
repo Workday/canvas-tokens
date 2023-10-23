@@ -12,7 +12,10 @@
     "clean": "rimraf dist"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "css/",
+    "less/",
+    "scss/"
   ],
   "dependencies": {}
 }

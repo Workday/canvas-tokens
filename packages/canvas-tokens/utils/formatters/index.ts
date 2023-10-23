@@ -1,13 +1,15 @@
 import {Formatter} from 'style-dictionary';
 import {
-  formatToInlineModule,
+  formatToInlineCommonJSModule,
+  formatToInlineES6Module,
+  formatInlineTypes,
   formatES6ToObjects,
   formatCommonToObjects,
   formatES6Exports,
   formatCommonJSExports,
-  formatES6ToTypes,
 } from './formatJS';
 import {formatCSSComposite, formatLessComposite, formatSassComposite} from './formatStyles';
+import {formatJSToTypes} from './formatTypes';
 import {mergeObjects} from './mergeObjects';
 import {mergeTypes} from './mergeTypes';
 import {mergeStyleReferences} from './mergeStyleReferences';
@@ -15,13 +17,18 @@ import {mergeStyleReferences} from './mergeStyleReferences';
 export const formats: Record<string, Formatter> = {
   // formatter creating the inline common-js file structure
   // with separated variables of tokens
-  'javascript/common-js': formatToInlineModule,
+  'js/common-js': formatToInlineCommonJSModule,
+  // formatter creating the inline es6 file structure
+  // with separated variables of tokens
+  'js/es6': formatToInlineES6Module,
+  // formatter creating the es6 and common-js inline types including the `as const`
+  'ts/inline': formatInlineTypes,
   // formatter creating the es6 file structure
   // with tokens united in objects
   'es6/objects': formatES6ToObjects,
-  // formatter creating the es6 and common-js types including the `as const`
-  'es6/types': formatES6ToTypes,
-  'common-js/types': formatES6ToTypes,
+  // formatter creating the es6 and common-js types
+  // including the `as const` and JSDoc description
+  'ts/jsdoc-object': formatJSToTypes,
   // formatter creating the common-js file structure
   // with tokens united in objects
   'common-js/objects': formatCommonToObjects,

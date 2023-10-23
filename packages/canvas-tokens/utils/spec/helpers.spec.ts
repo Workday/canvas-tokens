@@ -1,35 +1,75 @@
 import {formattedCompositeStyles} from '../formatters/helpers/formattedCompositeStyles';
-import {formattedObjectValue} from '../formatters/helpers/formattedObjectValue';
+import {
+  formattedObjectInnerValues,
+  changeValuesToCSSVars,
+  getOriginalValues,
+} from '../formatters/helpers/formattedObjectInnerValues';
+
+const mockCompositeToken = {
+  value: {color: '{base.pallete.blueberry.400}'},
+  comment: 'Use for primary background',
+  type: 'composition',
+  filePath: 'tokens/all.json',
+  isSource: true,
+  original: {
+    value: {color: '{base.pallete.blueberry.400}'},
+    type: 'color',
+  },
+  name: 'cnvs-sys-color-primary',
+  attributes: {},
+  path: ['sys', 'color', 'primary'],
+};
+
+const mockMathToken = {
+  value: '0.25rem * 4',
+  comment: 'Use for spaces between elements',
+  type: 'space',
+  filePath: 'tokens/all.json',
+  isSource: true,
+  original: {
+    value: '{base.unit} * 4',
+    type: 'space',
+  },
+  name: 'cnvs-sys-space-x',
+  attributes: {},
+  path: ['sys', 'space', 'x'],
+};
+
+const mockBrandToken = {
+  value: 'blue',
+  type: 'color',
+  filePath: 'tokens/all.json',
+  isSource: true,
+  original: {
+    value: '{base.pallete.blueberry.400}',
+    type: 'color',
+  },
+  name: 'brandPrimaryBase',
+  attributes: {},
+  path: ['brand', 'primary', 'base'],
+};
+
+const mockBaseToken = {
+  value: '--cnvs-base-palette-blueberry-400',
+  type: 'color',
+  filePath: 'tokens/all.json',
+  isSource: true,
+  original: {
+    value: 'blue',
+    type: 'color',
+  },
+  name: 'basePaletteBlueberry400',
+  attributes: {},
+  path: ['base', 'palette', 'blueberry', '400'],
+};
 
 const mockDicttionary = {
-  allTokens: [
-    {
-      value: {border: '0.0625rem solid rgba(162,171,180,1)'},
-      type: 'composition',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      original: {value: {border: '{sys.line.disabled}'}, type: 'composition'},
-      name: 'cnvs-sys-border-input-disabled',
-      attributes: {},
-      path: ['sys', 'border', 'input', 'disabled'],
-    },
-    {
-      value: '--cnvs-brand-primary-base',
-      type: 'fontSizes',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      original: {
-        value: '{base.blueberry.400}',
-        type: 'color',
-      },
-      name: 'brandPrimaryBase',
-      attributes: {},
-      path: ['brand', 'primary', 'base'],
-    },
-  ],
+  allTokens: [mockBrandToken, mockMathToken, mockBaseToken, mockCompositeToken],
+  properties: {brand: {primary: {base: mockBrandToken}}},
   tokens: {sys: {}},
   allProperties: [],
   usesReference: () => true,
+  getReferences: () => [],
 };
 
 describe('format helpers', () => {
@@ -39,107 +79,61 @@ describe('format helpers', () => {
       format: str => `@${str}`,
     });
 
-    const expected = '.cnvs-sys-border-input-disabled {\n  border: @sys-line-disabled;\n}';
+    const expected = `.cnvs-sys-color-primary {\n  color: @base-pallete-blueberry-400;\n}`;
 
     expect(result).toStrictEqual(expected);
   });
 
   it('should transform token objects to new values', () => {
-    const token = {
-      value: '--cnvs-brand-primary-base',
-      type: 'fontSizes',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      original: {
-        value: '{base.blueberry.400}',
-        type: 'color',
-      },
-      name: 'brandPrimaryBase',
-      attributes: {},
-      path: ['brand', 'primary', 'base'],
-    };
-    const result = formattedObjectValue({
-      dictionary: {
-        ...mockDicttionary,
-        allTokens: [token],
-        properties: {
-          brand: {
-            primary: {
-              base: token,
-            },
-          },
-        },
-        getReferences: () => [
-          {
-            value: '--cnvs-base-palette-blueberry-400',
-            type: 'fontSizes',
-            filePath: 'tokens/all.json',
-            isSource: true,
-            original: {
-              value: '#0875E2',
-              type: 'color',
-            },
-            name: 'bluberry400',
-            attributes: {},
-            path: ['base', 'palette', '400'],
-          },
-        ],
-      },
+    const result = formattedObjectInnerValues({
+      dictionary: mockDicttionary,
       format: 'brand',
+      changeValueFn: () => 'testValue',
     });
 
-    const expected = {primary: {base: '--cnvs-brand-primary-base'}};
+    const expected = {primary: {base: 'testValue'}};
+
+    expect(result).toStrictEqual(expected); //?
+  });
+});
+
+describe('utils to change value', () => {
+  it('should transform single value token to css variable', () => {
+    const result = changeValuesToCSSVars(mockBrandToken, () => [mockBaseToken]);
+
+    const expected = '--cnvs-brand-primary-base';
+
+    expect(result).toStrictEqual(expected); //?
+  });
+
+  it('should transform composite tokens into css rule sets', () => {
+    const result = changeValuesToCSSVars(mockCompositeToken, () => [mockBaseToken]);
+
+    const expected = {color: '--cnvs-base-palette-blueberry-400'};
 
     expect(result).toStrictEqual(expected);
   });
 
-  it('should transform token objects to new values', () => {
-    const borderToken = {
-      value: '--cnvs-sys-border-input-disabled',
-      type: 'composition',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      original: {
-        value: '{sys.line.disabled}',
-        type: 'composition',
-      },
-      name: 'borderInputDisabled',
-      attributes: {},
-      path: ['sys', 'border', 'input', 'disabled'],
-    };
-    const result = formattedObjectValue({
-      dictionary: {
-        ...mockDicttionary,
-        allTokens: [borderToken],
-        properties: {
-          sys: {
-            border: {
-              input: {
-                disabled: borderToken,
-              },
-            },
-          },
-        },
-        getReferences: () => [
-          {
-            value: '--cnv-sys-line-disabled',
-            type: 'border',
-            filePath: 'tokens/all.json',
-            isSource: true,
-            original: {
-              value: '1px solid #0875E2',
-              type: 'color',
-            },
-            name: 'lineDefault',
-            attributes: {},
-            path: ['sys', 'line', 'disabled'],
-          },
-        ],
-      },
-      format: 'sys',
-    });
+  it('should transform to original value', () => {
+    const result = getOriginalValues(mockCompositeToken);
 
-    const expected = {border: {input: {disabled: '--cnvs-sys-border-input-disabled'}}};
+    const expected = {
+      color: {
+        comment: 'Use for primary background',
+        value: '{base.pallete.blueberry.400}',
+      },
+    };
+
+    expect(result).toStrictEqual(expected);
+  });
+
+  it('should transform to original math value', () => {
+    const result = getOriginalValues(mockMathToken);
+
+    const expected = {
+      comment: 'Use for spaces between elements',
+      value: '1rem',
+    };
 
     expect(result).toStrictEqual(expected);
   });

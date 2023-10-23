@@ -15,6 +15,8 @@ jest.mock('style-dictionary', () => ({
       const [first] = Object.keys(dictionary.properties);
       return `exports.${first} = ` + JSON.stringify(dictionary.properties[first], null, 2);
     },
+    'javascript/types': () =>
+      `export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}`,
     'javascript/common-js': () => `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";`,
     'css/variables': () => `:root {\n --cnvs-sys-shape-zero: 0rem;\n}`,
     'css/composite': () =>
@@ -40,7 +42,7 @@ describe('formats', () => {
         {
           name: 'cinnamon100',
           value: '#ffefee',
-          path: [''],
+          path: ['base', 'palette', 'cinnamon', '100'],
           filePath: '',
           isSource: true,
           original: {value: '#ffefee'},
@@ -48,20 +50,10 @@ describe('formats', () => {
         {
           name: 'cinnamon200',
           value: '#fcc9c5',
-          path: [''],
+          path: ['base', 'palette', 'cinnamon', '200'],
           filePath: '',
           isSource: true,
           original: {value: '#fcc9c5'},
-        },
-        {
-          value: {border: '0.0625rem solid rgba(162,171,180,1)'},
-          type: 'composition',
-          filePath: 'tokens/all.json',
-          isSource: true,
-          original: {value: {border: '{sys.line.disabled}'}, type: 'composition'},
-          name: 'cnvs-sys-border-input-disabled',
-          attributes: {},
-          path: ['sys', 'border', 'input', 'disabled'],
         },
       ],
       getReferences: () => [
@@ -92,15 +84,37 @@ describe('formats', () => {
     };
   });
 
-  describe('javascript/common-js', () => {
+  describe('js/common-js', () => {
     it('should return correct file structure as inline js vars', () => {
-      const result = formats['javascript/common-js'](defaultArgs);
+      const result = formats['js/common-js'](defaultArgs);
       const expected =
         headerContent +
         moduleContent +
-        `exports.cinnamon100 = "#ffefee";\nexports.cinnamon200 = "#fcc9c5";\nexports.cnvs-sys-border-input-disabled = "[object Object]";\n`;
+        `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexports.cinnamon200 = "--cnvs-base-palette-cinnamon-200";\n`;
 
       expect(result).toBe(expected);
+    });
+  });
+
+  describe('js/es6', () => {
+    it('should return correct file structure as inline js vars', () => {
+      const result = formats['js/es6'](defaultArgs);
+      const expected =
+        headerContent +
+        `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const cinnamon200 = "--cnvs-base-palette-cinnamon-200";\n`;
+
+      expect(result).toBe(expected);
+    });
+  });
+
+  describe('ts/inline', () => {
+    it('should return correct file structure as inline js vars', () => {
+      const result = formats['ts/inline'](defaultArgs);
+      const expected =
+        headerContent +
+        `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100" as const;\nexport declare const cinnamon200 = "--cnvs-base-palette-cinnamon-200" as const;\n`;
+
+      expect(result).toBe(expected); //?
     });
   });
 
@@ -262,7 +276,7 @@ describe('formats', () => {
       });
       const expected = '.cnvs-sys-border-input-disabled {\n  border: @cnvs-sys-line-disabled;\n}';
 
-      expect(result).toBe(expected); //?
+      expect(result).toBe(expected);
     });
   });
 
@@ -314,7 +328,7 @@ describe('formats', () => {
       const result = formats['merge/types']({
         ...defaultArgs,
         options: {
-          formats: ['javascript/es6'],
+          formats: ['javascript/types'],
           level: 'sys',
         },
         dictionary: {
@@ -329,31 +343,23 @@ describe('formats', () => {
       const expected =
         'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}';
 
-      expect(result).toBe(expected);
-    });
-
-    it('should return correct file structure for common-js', () => {
-      const result = formats['merge/types']({
-        ...defaultArgs,
-        options: {
-          formats: ['javascript/common-js'],
-          level: 'sys',
-        },
-      });
-
-      const expected = 'export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100";';
-
-      expect(result).toBe(expected); //
+      expect(result).toBe(expected); //?
     });
   });
 
-  describe('es6/types', () => {
-    it('should return correct file structure for es6', () => {
-      const result = formats['es6/types']({
+  describe('ts/jsdoc-object', () => {
+    it('should return correct file structure with between line JSDoc', () => {
+      const result = formats['ts/jsdoc-object']({
         ...defaultArgs,
         options: {
-          formats: ['javascript/es6'],
-          level: 'sys',
+          originalValues: {
+            opacity: {
+              disabled: {
+                comment: 'Test JSDoc',
+                value: '0.4',
+              },
+            },
+          },
         },
         dictionary: {
           properties: {
@@ -366,20 +372,22 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n} as const;' +
-        '\n\n';
+        'export declare const opacity = {\n  /**\n   * Test JSDoc\n   * 0.4 \n   */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
 
-      expect(result).toBe(expected);
+      expect(result).toBe(expected); //?
     });
-  });
 
-  describe('common-js/types', () => {
-    it('should return correct file structure for es6', () => {
-      const result = formats['es6/types']({
+    it('should have one line jsDoc for tokens without comment', () => {
+      const result = formats['ts/jsdoc-object']({
         ...defaultArgs,
         options: {
-          formats: ['javascript/common-js'],
-          level: 'sys',
+          originalValues: {
+            opacity: {
+              disabled: {
+                value: '0.4',
+              },
+            },
+          },
         },
         dictionary: {
           properties: {
@@ -392,8 +400,7 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n} as const;' +
-        '\n\n';
+        'export declare const opacity = {\n  /** 0.4 */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
 
       expect(result).toBe(expected);
     });

@@ -1,5 +1,9 @@
-import StyleDictionary, {Formatter, Options} from 'style-dictionary';
-import {formattedObjectValue} from './helpers/formattedObjectValue';
+import StyleDictionary, {Formatter, Options, TransformedToken} from 'style-dictionary';
+import {
+  formattedObjectInnerValues,
+  changeValuesToCSSVars,
+  getOriginalValues,
+} from './helpers/formattedObjectInnerValues';
 
 interface ExtendedOptions extends Options {
   formats: string | Formatter[];
@@ -25,17 +29,22 @@ export const mergeObjects: Formatter = ({dictionary, options, ...rest}) => {
     level,
   } = options as ExtendedOptions;
 
-  const properties = formattedObjectValue({
+  const properties = formattedObjectInnerValues({
     format: level,
-    dictionary: {
-      ...dictionary,
-      getReferences: value => dictionary.getReferences(value),
-    },
+    dictionary,
+    changeValueFn: (token: TransformedToken) =>
+      changeValuesToCSSVars(token, value => dictionary.getReferences(value)),
+  });
+
+  const originalValues = formattedObjectInnerValues({
+    format: level,
+    dictionary,
+    changeValueFn: getOriginalValues,
   });
 
   const params = {
     dictionary: {...dictionary, properties},
-    options,
+    options: {...options, originalValues},
     ...rest,
   };
 

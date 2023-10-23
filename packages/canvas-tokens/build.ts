@@ -9,10 +9,8 @@ const config = setConfig({
   platforms: ['css', 'scss', 'less', 'es6', 'common-js'],
   levels: ['base', 'brand', 'sys'],
   platformOptions: {
-    '*': {
-      buildPath: '../canvas-tokens-web/dist/',
-    },
     'css, scss, less': {
+      buildPath: '../canvas-tokens-web/',
       transformGroup: 'web',
       fileName: '{platform}/{level}/_variables',
       prefix: 'cnvs-',
@@ -36,22 +34,22 @@ const config = setConfig({
       extensions: ['sass', 'scss'],
     },
     'es6, common-js': {
+      buildPath: '../canvas-tokens-web/dist/',
       transformGroup: 'js',
-      transforms: ['value/variables', 'name/camel'],
+      transforms: ['value/flatten-border', 'value/flatten-base-shadow', 'name/camel'],
       fileName: '{platform}/{level}/index',
       extensions: ['js', 'd.ts'],
       modifiers: [
         {
           level: ['base'],
           extensions: ['js'],
-          format: 'javascript/{platform}',
+          format: 'js/{platform}',
           filterByLevel: true,
         },
         {
           level: ['base'],
           extensions: ['d.ts'],
-          format: 'merge/types',
-          combineWith: ['javascript/{platform}'],
+          format: 'ts/inline',
           filterByLevel: true,
         },
         {
@@ -64,7 +62,7 @@ const config = setConfig({
           level: ['brand', 'sys'],
           extensions: ['d.ts'],
           format: 'merge/types',
-          combineWith: ['merge/objects', '{platform}/types'],
+          combineWith: ['merge/objects', 'ts/jsdoc-object'],
         },
         {
           level: ['base'],
