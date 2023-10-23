@@ -3,9 +3,9 @@
 # compiled output
 dist
 docs
-css
-less
-scss
+*/canvas-tokens-web/css
+*/canvas-tokens-web/less
+*/canvas-tokens-web/scss
 tmp
 /out-tsc
 *.tsbuildinfo

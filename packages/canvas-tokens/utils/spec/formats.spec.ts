@@ -348,14 +348,14 @@ describe('formats', () => {
   });
 
   describe('ts/jsdoc-object', () => {
-    it('should return correct file structure with between line jsDoc', () => {
+    it('should return correct file structure with between line JSDoc', () => {
       const result = formats['ts/jsdoc-object']({
         ...defaultArgs,
         options: {
           originalValues: {
             opacity: {
               disabled: {
-                comment: 'Test jsDoc',
+                comment: 'Test JSDoc',
                 value: '0.4',
               },
             },
@@ -372,7 +372,7 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  /**\n   * Test jsDoc\n   * 0.4 \n   */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
+        'export declare const opacity = {\n  /**\n   * Test JSDoc\n   * 0.4 \n   */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
 
       expect(result).toBe(expected); //?
     });

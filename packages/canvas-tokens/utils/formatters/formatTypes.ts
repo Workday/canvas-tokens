@@ -1,7 +1,7 @@
 import {Formatter, formatHelpers} from 'style-dictionary';
 
 /**
- * Style Dictionary format function that create token type definitions with jsDoc.
+ * Style Dictionary format function that creates token type definitions with JSDoc.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
