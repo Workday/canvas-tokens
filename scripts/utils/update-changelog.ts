@@ -8,15 +8,17 @@ const header = `---
 ---`;
 
 const [prefix] = PACKAGE.split('-').reverse();
-const regex = new RegExp(`^# (${prefix}|all|components)`, 'i');
+const allowedTitles = [prefix, 'all', 'other', 'infrastructure', 'documentation'];
+const regex = new RegExp(`^# (${allowedTitles.join('|')})`, 'i');
 
-const changelogBody = CHANGESET_BODY.split('##')
+const changelogBody = CHANGESET_BODY.replace('# Components', '# Other')
+  .split('##')
   .filter(block => regex.test(block))
   .map(b =>
     b.replace(/# [a-zA-Z0-9_ ]*\n/g, a => {
       // Canvas Kit's changelog generator defaults section headings to "Components."
       // We're updating that default with use "Other" instead.
-      const updatedTitle = a.replace(/# |\n/g, '').replace('Components', 'Other');
+      const updatedTitle = a.replace(/# |\n/g, '');
       return `**${updatedTitle}**\n`;
     })
   )
