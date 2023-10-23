@@ -1,424 +1,121 @@
 {
   "sys": {
-    "border": {
-      "value": {
-        "color": "{palette.soap.500}",
-        "width": "1",
-        "style": "solid"
-      },
-      "type": "border"
-    },
-    "color": {
-      "bg": {
-        "default": {
-          "value": "{palette.french-vanilla.100}",
-          "type": "color",
-          "description": "Background Default"
-        },
-        "alt": {
-          "value": "{palette.soap.200}",
-          "type": "color",
-          "description": "Background Alt"
-        },
-        "hover": {
-          "value": "{palette.soap.300}",
-          "type": "color",
-          "description": "Hover"
-        },
-        "active": {
-          "value": "{palette.soap.400}",
-          "type": "color",
-          "description": "Background Active"
-        },
-        "selected": {
-          "value": "{palette.blueberry.200}",
-          "type": "color",
-          "description": "Selected BG\n"
-        },
-        "primary": {
-          "default": {
-            "value": "{palette.blueberry.400}",
-            "type": "color",
-            "description": "Primary Default"
-          },
-          "hover": {
-            "value": "{palette.blueberry.500}",
-            "type": "color",
-            "description": "Primary Hover\n"
-          },
-          "active": {
-            "value": "{palette.blueberry.600}",
-            "type": "color",
-            "description": "Primary Active"
-          }
-        },
-        "secondary": {
-          "default": {
-            "value": "none",
-            "type": "color"
-          },
-          "focus": {
-            "value": "{palette.french-vanilla.100}",
-            "type": "color"
-          },
-          "hover": {
-            "value": "{palette.black-pepper.300}",
-            "type": "color"
-          },
-          "active": {
-            "value": "{palette.black-pepper.400}",
-            "type": "color"
-          }
-        },
-        "delete": {
-          "default": {
-            "value": "{palette.cinnamon.500}",
-            "type": "color"
-          },
-          "hover": {
-            "value": "{palette.cinnamon.600}",
-            "type": "color"
-          },
-          "active": {
-            "value": "#80160E",
-            "type": "color"
-          }
-        },
-        "status": {
-          "success": {
-            "value": "{palette.green-apple.400}",
-            "type": "color"
-          },
-          "error": {
-            "value": "{palette.cinnamon.500}",
-            "type": "color"
-          },
-          "alert": {
-            "value": "{palette.cantaloupe.400}",
-            "type": "color"
-          }
-        },
-        "help": {
-          "value": "rgba({palette.black-pepper.600},{opacity.500})",
-          "type": "color"
-        },
-        "overlay": {
-          "value": "rgba({palette.black-pepper.600},{opacity.400})",
-          "type": "color"
-        }
-      },
-      "fg": {
-        "type": {
-          "heading": {
-            "value": "{palette.black-pepper.400}",
-            "type": "color"
-          },
-          "body": {
-            "value": "{palette.black-pepper.300}",
-            "type": "color"
-          },
-          "hint": {
-            "value": "{palette.licorice.300}",
-            "type": "color"
-          },
-          "disabled": {
-            "value": "{palette.licorice.100}",
-            "type": "color"
-          },
-          "link": {
-            "default": {
-              "value": "{palette.blueberry.400}",
-              "type": "color"
-            },
-            "focus": {
-              "value": "{palette.blueberry.400}",
-              "type": "color"
-            },
-            "active": {
-              "value": "{palette.blueberry.600}",
-              "type": "color"
-            },
-            "visited": {
-              "value": "{palette.blueberry.600}",
-              "type": "color"
-            }
-          },
-          "inverse": {
-            "value": "{palette.french-vanilla.100}",
-            "type": "color"
-          },
-          "error": {
-            "value": "{palette.cinnamon.500}",
-            "type": "color"
-          },
-          "selected": {
-            "value": "{palette.blueberry.400}",
-            "type": "color"
-          }
-        },
-        "icon": {
-          "fill": {
-            "value": "{palette.licorice.200}",
-            "type": "color"
-          },
-          "background": {
-            "value": "{palette.licorice.200}",
-            "type": "color"
-          },
-          "accent": {
-            "value": "{palette.licorice.200}",
-            "type": "color"
-          },
-          "hover": {
-            "value": "{palette.licorice.500}",
-            "type": "color"
-          },
-          "disabled": {
-            "value": "{palette.soap.600}",
-            "type": "color"
-          },
-          "inverse": {
-            "value": "{palette.french-vanilla.100}",
-            "type": "color"
-          },
-          "primary": {
-            "value": "{palette.blueberry.400}",
-            "type": "color"
-          }
-        }
-      },
-      "border": {
-        "input": {
-          "default": {
-            "value": "{palette.licorice.200}",
-            "type": "color"
-          },
-          "hover": {
-            "value": "{palette.licorice.500}",
-            "type": "color"
-          },
-          "disabled": {
-            "value": "{palette.soap.600}",
-            "type": "color"
-          },
-          "active": {
-            "value": "{palette.blueberry.400}",
-            "type": "color"
-          },
-          "error": {
-            "value": "{palette.cinnamon.500}",
-            "type": "color"
-          },
-          "alert": {
-            "value": "{palette.cantaloupe.600}",
-            "type": "color"
-          }
-        }
-      },
-      "shadow": {
-        "main": {
-          "value": "rgba({palette.licorice.600},{opacity.200})",
-          "type": "color"
-        },
-        "accent": {
-          "value": "rgba({palette.licorice.600},{opacity.100})",
-          "type": "color"
-        }
-      },
-      "focus-ring": {
-        "value": "{palette.blueberry.400}",
-        "type": "color"
-      },
-      "gradient": {
-        "value": "linear-gradient(90deg, {palette.blueberry.500} 0%, {palette.blueberry.400} 100%)",
-        "type": "color"
-      },
-      "overlay": {
-        "modal": {
-          "value": "rgba({palette.black-pepper.600},{opacity.400})",
-          "type": "color"
-        },
-        "tooltip": {
-          "value": "rgba({palette.black-pepper.600},{opacity.500})",
-          "type": "color"
-        }
-      },
-      "data-viz": {
-        "10": {
-          "value": "{palette.jewel.300}",
-          "type": "color"
-        },
-        "11": {
-          "value": "{palette.sour-lemon.200}",
-          "type": "color"
-        },
-        "12": {
-          "value": "{palette.sour-lemon.400}",
-          "type": "color"
-        },
-        "13": {
-          "value": "{palette.island-punch.200}",
-          "type": "color"
-        },
-        "14": {
-          "value": "{palette.island-punch.400}",
-          "type": "color"
-        },
-        "15": {
-          "value": "{palette.peach.200}",
-          "type": "color"
-        },
-        "16": {
-          "value": "{palette.peach.400}",
-          "type": "color"
-        },
-        "01": {
-          "value": "{palette.watermelon.100}",
-          "type": "color"
-        },
-        "02": {
-          "value": "{palette.watermelon.200}",
-          "type": "color"
-        },
-        "03": {
-          "value": "{palette.plum.200}",
-          "type": "color"
-        },
-        "04": {
-          "value": "{palette.plum.300}",
-          "type": "color"
-        },
-        "05": {
-          "value": "{palette.pomegranate.200}",
-          "type": "color"
-        },
-        "06": {
-          "value": "{palette.pomegranate.300}",
-          "type": "color"
-        },
-        "07": {
-          "value": "{palette.cantaloupe.200}",
-          "type": "color"
-        },
-        "08": {
-          "value": "{palette.cantaloupe.400}",
-          "type": "color"
-        },
-        "09": {
-          "value": "{palette.jewel.200}",
-          "type": "color"
-        }
-      }
-    },
     "depth": {
       "1": {
         "value": "{shadow.100}",
-        "type": "boxShadow"
+        "type": "boxShadow",
+        "description": "Standard card depth"
       },
       "2": {
         "value": "{shadow.200}",
-        "type": "boxShadow"
+        "type": "boxShadow",
+        "description": "Top navigation, Bottom Navigation"
       },
       "3": {
         "value": "{shadow.300}",
-        "type": "boxShadow"
+        "type": "boxShadow",
+        "description": "Floating Action Buttons (FAB), Menus"
       },
       "4": {
         "value": "{shadow.400}",
-        "type": "boxShadow"
+        "type": "boxShadow",
+        "description": "Bottom Sheets"
       },
       "5": {
         "value": "{shadow.500}",
-        "type": "boxShadow"
+        "type": "boxShadow",
+        "description": "Banners, Snackbars, Toast Messages, Non modal Dialogs, \nSide Panels (when opacity overlay behaviour is not applied)"
       },
       "6": {
         "value": "{shadow.600}",
-        "type": "boxShadow"
+        "type": "boxShadow",
+        "description": "Modal Dialogs, Side Panels (when opacity overlay behaviour\nis applied)"
       }
     },
     "opacity": {
       "disabled": {
         "value": "{opacity.300}",
-        "type": "opacity"
+        "type": "opacity",
+        "description": "State layer added on top of disabled elements."
       }
     },
     "shape": {
       "zero": {
         "value": "0rem",
-        "type": "borderRadius"
+        "type": "borderRadius",
+        "description": "This is the initial shape of every new element. Use this for backgrounds screens and fixed navigation containers such as headers, and side-panels."
       },
-      "small": {
-        "value": "{base.dimension} * 0.5",
+      "half": {
+        "value": "{base.unit} * 0.5",
         "type": "borderRadius",
         "description": "Use this for subtle and small components that don’t require to group complex information like Status Indicators, Checkboxes and Color Swatches."
       },
-      "medium": {
-        "value": "{base.dimension}",
+      "x1": {
+        "value": "{base.unit}",
         "type": "borderRadius",
-        "description": "Use this for form components presenting text information or inputs: Text Inputs and Text Area, Dropdowns, Menus and Banners.\n"
+        "description": "Use this for form components presenting text information or inputs: Text Inputs and Text Area, Dropdowns, Menus and Banners."
       },
-      "large": {
-        "value": "{base.dimension} * 2",
+      "x2": {
+        "value": "{base.unit} * 2",
         "type": "borderRadius",
-        "description": "Use this for all the containers and popups: All Cards, Modals, Tooltips and Toasts.\n"
+        "description": "Use this for all the containers and popups: All Cards, Modals, Tooltips and Toasts."
       },
-      "circle": {
-        "value": "{base.dimension} * 250",
-        "type": "borderRadius"
+      "round": {
+        "value": "{base.unit} * 250",
+        "type": "borderRadius",
+        "description": "Commonly used for our standard buttons and profile avatars: All Primary, Secondary Buttons, Radio Buttons and Notification Badges."
       }
     },
     "space": {
       "zero": {
         "value": "0",
-        "type": "spacing"
+        "type": "spacing",
+        "description": "Stacks, rows in tables"
       },
       "x1": {
-        "value": "{base.dimension}",
-        "type": "spacing"
+        "value": "{base.unit}",
+        "type": "spacing",
+        "description": "Compact spacing between text or icons"
       },
       "x2": {
-        "value": "{base.dimension} * 2",
-        "type": "spacing"
+        "value": "{base.unit} * 2",
+        "type": "spacing",
+        "description": "Commonly used to group compact elements like icon buttons"
       },
       "x3": {
-        "value": "{base.dimension} * 3",
-        "type": "spacing"
+        "value": "{base.unit} * 3",
+        "type": "spacing",
+        "description": "Use when compact padding is required"
       },
       "x4": {
-        "value": "{base.dimension} * 4",
-        "type": "spacing"
-      },
-      "x5": {
-        "value": "{base.dimension} * 5",
-        "type": "spacing"
+        "value": "{base.unit} * 4",
+        "type": "spacing",
+        "description": "Default space token. Used to group Inputs with related data"
       },
       "x6": {
-        "value": "{base.dimension} * 6",
-        "type": "spacing"
+        "value": "{base.unit} * 6",
+        "type": "spacing",
+        "description": "• Padding around card content\n• Related elements where more space between them can be afforded\n• Separate section headings or titles from body text or inputs"
       },
       "x8": {
-        "value": "{base.dimension} * 8",
-        "type": "spacing"
+        "value": "{base.unit} * 8",
+        "type": "spacing",
+        "description": "• Standard spacing between cards\n• Used to separate groups of content \n• Separate section headings or titles from body text or inputs"
       },
       "x10": {
-        "value": "{base.dimension} * 10",
-        "type": "spacing"
-      },
-      "x12": {
-        "value": "{base.dimension} * 12",
-        "type": "spacing"
-      },
-      "x14": {
-        "value": "{base.dimension} * 14",
-        "type": "spacing"
+        "value": "{base.unit} * 10",
+        "type": "spacing",
+        "description": "• Used for outer margins on the overall page content \n• Used for inner margins on large items such as page sections"
       },
       "x16": {
-        "value": "{base.dimension} * 16",
-        "type": "spacing"
+        "value": "{base.unit} * 16",
+        "type": "spacing",
+        "description": "- Use to de-clutter your UI when a lot of space is available\n- Separate banner sections from page content\n- Use to differentiate page content like page sections"
       },
       "x20": {
-        "value": "{base.dimension} * 20",
-        "type": "spacing"
+        "value": "{base.unit} * 20",
+        "type": "spacing",
+        "description": "- Use sparingly\n- Helps to put focus on the primary element within your page\n- Use to de-clutter your UI when a lot of space is available"
       }
     },
     "font-family": {
@@ -446,7 +143,7 @@
           "type": "sizing"
         },
         "large": {
-          "value": "{font-size.25}",
+          "value": "{font-size.75}",
           "type": "sizing"
         }
       },
@@ -496,11 +193,25 @@
     "line-height": {
       "subtext": {
         "small": {
+          "value": "{line-height.50}",
+          "type": "lineHeights"
+        },
+        "medium": {
+          "value": "{line-height.50}",
+          "type": "lineHeights"
+        },
+        "large": {
+          "value": "{line-height.100}",
+          "type": "lineHeights"
+        }
+      },
+      "body": {
+        "small": {
           "value": "{line-height.150}",
           "type": "lineHeights"
         },
         "medium": {
-          "value": "{line-height.150}",
+          "value": "{line-height.200}",
           "type": "lineHeights"
         },
         "large": {
@@ -508,7 +219,7 @@
           "type": "lineHeights"
         }
       },
-      "body": {
+      "heading": {
         "small": {
           "value": "{line-height.250}",
           "type": "lineHeights"
@@ -518,35 +229,21 @@
           "type": "lineHeights"
         },
         "large": {
-          "value": "{line-height.300}",
-          "type": "lineHeights"
-        }
-      },
-      "heading": {
-        "small": {
           "value": "{line-height.350}",
-          "type": "lineHeights"
-        },
-        "medium": {
-          "value": "{line-height.400}",
-          "type": "lineHeights"
-        },
-        "large": {
-          "value": "{line-height.450}",
           "type": "lineHeights"
         }
       },
       "title": {
         "small": {
-          "value": "{line-height.500}",
+          "value": "{line-height.400}",
           "type": "lineHeights"
         },
         "medium": {
-          "value": "{line-height.600}",
+          "value": "{line-height.500}",
           "type": "lineHeights"
         },
         "large": {
-          "value": "{line-height.700}",
+          "value": "{line-height.600}",
           "type": "lineHeights"
         }
       }
@@ -575,7 +272,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}"
           },
@@ -585,7 +282,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.50}",
             "letterSpacing": "{letter-spacing.100}"
           },
@@ -595,7 +292,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.200}",
+            "lineHeight": "{line-height.100}",
             "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}"
           },
@@ -607,7 +304,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.250}",
+            "lineHeight": "{line-height.150}",
             "fontSize": "{font-size.100}",
             "letterSpacing": "{letter-spacing.200}"
           },
@@ -617,7 +314,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.125}"
           },
           "type": "typography"
@@ -626,7 +323,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.150}"
           },
           "type": "typography"
@@ -637,7 +334,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.350}",
+            "lineHeight": "{line-height.250}",
             "fontSize": "{font-size.200}"
           },
           "type": "typography"
@@ -646,7 +343,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.400}",
+            "lineHeight": "{line-height.300}",
             "fontSize": "{font-size.250}"
           },
           "type": "typography"
@@ -655,7 +352,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.450}",
+            "lineHeight": "{line-height.350}",
             "fontSize": "{font-size.300}"
           },
           "type": "typography"
@@ -666,7 +363,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.500}",
+            "lineHeight": "{line-height.400}",
             "fontSize": "{font-size.400}"
           },
           "type": "typography"
@@ -675,7 +372,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.600}",
+            "lineHeight": "{line-height.500}",
             "fontSize": "{font-size.500}"
           },
           "type": "typography"
@@ -684,7 +381,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.700}",
+            "lineHeight": "{line-height.600}",
             "fontSize": "{font-size.600}"
           },
           "type": "typography"
@@ -697,7 +394,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}"
           },
@@ -708,7 +405,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}"
           },
@@ -719,7 +416,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}",
             "textDecoration": "underline"
@@ -731,7 +428,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}",
             "textDecoration": "underline"
@@ -743,7 +440,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}",
             "textDecoration": "underline"
@@ -755,7 +452,7 @@
           "value": {
             "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}"
           },
@@ -766,7 +463,7 @@
           "value": {
             "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}"
           },
@@ -777,7 +474,7 @@
           "value": {
             "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}"
           },
@@ -788,9 +485,9 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.50}",
-            "letterSpacing": "{letter-spacing.200}"
+            "letterSpacing": "{letter-spacing.100}"
           },
           "type": "typography",
           "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
@@ -799,10 +496,9 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.50}",
-            "letterSpacing": "{letter-spacing.200}",
-            "textDecoration": "underline"
+            "letterSpacing": "{letter-spacing.100}"
           },
           "type": "typography",
           "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
@@ -811,9 +507,9 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.50}",
-            "letterSpacing": "{letter-spacing.200}",
+            "letterSpacing": "{letter-spacing.100}",
             "textDecoration": "underline"
           },
           "type": "typography",
@@ -823,9 +519,9 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.50}",
-            "letterSpacing": "{letter-spacing.200}",
+            "letterSpacing": "{letter-spacing.100}",
             "textDecoration": "underline"
           },
           "type": "typography",
@@ -835,9 +531,9 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.50}",
-            "letterSpacing": "{letter-spacing.200}",
+            "letterSpacing": "{letter-spacing.100}",
             "textDecoration": "underline"
           },
           "type": "typography",
@@ -847,9 +543,9 @@
           "value": {
             "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.50}",
-            "letterSpacing": "{letter-spacing.200}"
+            "letterSpacing": "{letter-spacing.100}"
           },
           "type": "typography",
           "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
@@ -858,9 +554,9 @@
           "value": {
             "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.50}",
-            "letterSpacing": "{letter-spacing.200}"
+            "letterSpacing": "{letter-spacing.100}"
           },
           "type": "typography",
           "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
@@ -869,9 +565,9 @@
           "value": {
             "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.150}",
+            "lineHeight": "{line-height.50}",
             "fontSize": "{font-size.50}",
-            "letterSpacing": "{letter-spacing.200}"
+            "letterSpacing": "{letter-spacing.100}"
           },
           "type": "typography",
           "description": "Subtext Medium (12px) - (500) Medium\n\n🧩Advised Use:\nComplex data\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
@@ -880,7 +576,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.200}",
+            "lineHeight": "{line-height.100}",
             "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}"
           },
@@ -891,7 +587,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.200}",
+            "lineHeight": "{line-height.100}",
             "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}"
           },
@@ -902,7 +598,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.200}",
+            "lineHeight": "{line-height.100}",
             "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}",
             "textDecoration": "underline"
@@ -914,7 +610,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.200}",
+            "lineHeight": "{line-height.100}",
             "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}",
             "textDecoration": "underline"
@@ -926,7 +622,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.200}",
+            "lineHeight": "{line-height.100}",
             "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}",
             "textDecoration": "underline"
@@ -938,7 +634,7 @@
           "value": {
             "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.200}",
+            "lineHeight": "{line-height.100}",
             "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}"
           },
@@ -949,7 +645,7 @@
           "value": {
             "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.200}",
+            "lineHeight": "{line-height.100}",
             "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}"
           },
@@ -960,7 +656,7 @@
           "value": {
             "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.200}",
+            "lineHeight": "{line-height.100}",
             "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}"
           },
@@ -973,9 +669,9 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.250}",
+            "lineHeight": "{line-height.150}",
             "fontSize": "{font-size.100}",
-            "letterSpacing": "{letter-spacing.100}"
+            "letterSpacing": "{letter-spacing.200}"
           },
           "type": "typography",
           "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
@@ -984,9 +680,9 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.250}",
+            "lineHeight": "{line-height.150}",
             "fontSize": "{font-size.100}",
-            "letterSpacing": "{letter-spacing.100}"
+            "letterSpacing": "{letter-spacing.200}"
           },
           "type": "typography",
           "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
@@ -995,9 +691,10 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.250}",
-            "fontSize": "{font-size.100}",
-            "letterSpacing": "{letter-spacing.100}"
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.200}",
+            "letterSpacing": "{letter-spacing.100}",
+            "textDecoration": "underline"
           },
           "type": "typography",
           "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
@@ -1006,9 +703,9 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.250}",
+            "lineHeight": "{line-height.150}",
             "fontSize": "{font-size.100}",
-            "letterSpacing": "{letter-spacing.100}",
+            "letterSpacing": "{letter-spacing.200}",
             "textDecoration": "underline"
           },
           "type": "typography",
@@ -1018,18 +715,19 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.250}",
+            "lineHeight": "{line-height.150}",
             "fontSize": "{font-size.100}",
-            "letterSpacing": "{letter-spacing.100}"
+            "letterSpacing": "{letter-spacing.200}",
+            "textDecoration": "underline"
           },
           "type": "typography",
           "description": "Body Small (16px) - (500) Medium\n\n🧩Advised Use:\nParagraphs\n\n🖍Main Color:\nBlack Pepper 300\n\n✚ More Colors:\nSee Type Color Swatches"
         },
         "Body S Mono - (400) Regular": {
           "value": {
-            "fontFamily": "{font-family.50}",
+            "fontFamily": "{font-family.100}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.250}",
+            "lineHeight": "{line-height.150}",
             "fontSize": "{font-size.100}",
             "letterSpacing": "{letter-spacing.100}"
           },
@@ -1040,7 +738,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.125}"
           },
           "type": "typography",
@@ -1050,7 +748,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.125}"
           },
           "type": "typography",
@@ -1060,7 +758,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.125}",
             "textDecoration": "underline"
           },
@@ -1071,7 +769,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.125}",
             "textDecoration": "underline"
           },
@@ -1082,7 +780,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.125}",
             "textDecoration": "underline"
           },
@@ -1093,7 +791,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.150}"
           },
           "type": "typography",
@@ -1103,7 +801,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.150}"
           },
           "type": "typography",
@@ -1113,7 +811,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.150}",
             "textDecoration": "underline"
           },
@@ -1124,7 +822,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.150}",
             "textDecoration": "underline"
           },
@@ -1135,7 +833,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.700}",
-            "lineHeight": "{line-height.300}",
+            "lineHeight": "{line-height.200}",
             "fontSize": "{font-size.150}",
             "textDecoration": "underline"
           },
@@ -1148,7 +846,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.350}",
+            "lineHeight": "{line-height.250}",
             "fontSize": "{font-size.200}"
           },
           "type": "typography",
@@ -1158,7 +856,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.400}",
+            "lineHeight": "{line-height.300}",
             "fontSize": "{font-size.250}"
           },
           "type": "typography",
@@ -1168,7 +866,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.450}",
+            "lineHeight": "{line-height.350}",
             "fontSize": "{font-size.300}"
           },
           "type": "typography",
@@ -1180,7 +878,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.300}",
-            "lineHeight": "{line-height.500}",
+            "lineHeight": "{line-height.400}",
             "fontSize": "{font-size.400}"
           },
           "type": "typography",
@@ -1190,7 +888,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.500}",
+            "lineHeight": "{line-height.400}",
             "fontSize": "{font-size.400}"
           },
           "type": "typography",
@@ -1201,7 +899,7 @@
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.300}",
             "fontSize": "{font-size.500}",
-            "lineHeight": "{line-height.600}"
+            "lineHeight": "{line-height.500}"
           },
           "type": "typography",
           "description": "Title Medium (48px) - (300) Light\n\n🧩Advised Use:\nTitles\n\n🖍Main Color:\nBlack Pepper 400\n\n✚ More Colors:\nSee Type Color Swatches"
@@ -1210,7 +908,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.600}",
+            "lineHeight": "{line-height.500}",
             "fontSize": "{font-size.500}"
           },
           "type": "typography",
@@ -1220,7 +918,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.300}",
-            "lineHeight": "{line-height.700}",
+            "lineHeight": "{line-height.600}",
             "fontSize": "{font-size.600}"
           },
           "type": "typography",
@@ -1230,7 +928,7 @@
           "value": {
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.500}",
-            "lineHeight": "{line-height.700}",
+            "lineHeight": "{line-height.600}",
             "fontSize": "{font-size.600}"
           },
           "type": "typography",

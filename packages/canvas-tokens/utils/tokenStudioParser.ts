@@ -14,9 +14,9 @@ export const tokenStudioParser = ({contents}: any) => {
   }
 
   if (parsed.base) {
-    const {dimension} = parsed.base.base;
+    const {unit} = parsed.base.base;
     delete parsed.base.base;
-    parsed.base.dimension = dimension;
+    parsed.base.unit = unit;
   }
 
   const updateTokens = (token: DesignToken) => {
@@ -92,16 +92,12 @@ const replaceByFullRef = (value: string) => {
 };
 
 // Resolving extensions
-
-const getKeys = (obj: object): string[] => Object.keys(obj);
-
 const mapObjectContent = (fn: (token: DesignToken) => DesignToken, obj: DesignToken) => {
   if (obj.value) {
     return fn(obj);
   }
 
-  const keys = getKeys(obj);
-  keys.forEach(key => {
+  Object.keys(obj).forEach(key => {
     mapObjectContent(fn, obj[key]);
   });
 };
