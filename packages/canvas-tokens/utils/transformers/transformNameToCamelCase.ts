@@ -14,7 +14,6 @@ export const transformNameToCamelCase: Transformer = token => {
   const [_, ...nameWithCategory] = fullName;
   const [category, ...tokenName] = nameWithCategory;
   const isLowLevelToken = ['unit', 'level'].includes(category);
-
   const value = isLowLevelToken ? fullName : category === 'palette' ? tokenName : nameWithCategory;
   return camelCase(value.join('-'));
 };
