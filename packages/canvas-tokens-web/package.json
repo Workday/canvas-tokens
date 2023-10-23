@@ -12,8 +12,8 @@
   "files": [
     "dist/",
     "css/",
-    "less",
-    "scss"
+    "less/",
+    "scss/"
   ],
   "dependencies": {}
 }
