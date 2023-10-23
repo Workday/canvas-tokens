@@ -1,15 +1,23 @@
 ## Issue
 
 <!-- Add an issue number and link the PR with a keyword: "Fixes", "Resolves", or "Closes" -->
-<!-- E.g. Fixes #123 -->
+<!-- Resolves #123 -->
 
-## Overview
+## Summary
 
 <!-- Give a brief description of what this PR does. -->
 
+## Release Category
+
+<!-- Documentation, Infrastructure, Tokens -->
+
+---
+
+<!-- For the reviewer -->
+
 ## Where Should the Reviewer Start?
 
-<!-- e.g. `packages/canvas-tokens/index.ts` -->
+<!-- `packages/canvas-tokens/index.ts` -->
 
 ## Testing Manually
 
