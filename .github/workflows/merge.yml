@@ -23,13 +23,13 @@ jobs:
       
       - name: Build Tokens
         shell: bash
-        run: yarn build:tokens  --no-cache
+        run: yarn build:tokens --no-cache
 
       # Build Storybook and extract component stories for Storybook aggregation. This will be used
       # for Chromatic rebaselining and publishing to GH Pages.
       - name: Build Storybook
         shell: bash
-        run: yarn build-storybook
+        run: yarn build-storybook --no-cache
 
       - name: Publish Storybook
         uses: JamesIves/github-pages-deploy-action@v4.4.1
