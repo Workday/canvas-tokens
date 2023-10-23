@@ -1,10 +1,10 @@
 {
   "name": "@workday/canvas-tokens-docs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "documentation for Canvas Tokens",
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",
   "dependencies": {
-    "@workday/canvas-tokens-web": "^0.1.6"
+    "@workday/canvas-tokens-web": "^1.0.0"
   }
 }
