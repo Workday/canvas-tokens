@@ -3,6 +3,9 @@
 # compiled output
 dist
 docs
+css
+less
+scss
 tmp
 /out-tsc
 *.tsbuildinfo

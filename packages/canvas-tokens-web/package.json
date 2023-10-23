@@ -10,7 +10,10 @@
   "types": "dist/es6/index.d.ts",
   "scripts": {},
   "files": [
-    "dist/"
+    "dist/",
+    "css/",
+    "less",
+    "scss"
   ],
   "dependencies": {}
 }
