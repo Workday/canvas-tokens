@@ -60,16 +60,6 @@
         "type": "borderRadius",
         "description": "Use this for all the containers and popups: All Cards, Modals, Tooltips and Toasts."
       },
-      "x4": {
-        "value": "{base.unit} * 4",
-        "type": "borderRadius",
-        "description": "(Mobile) Primary containers that house a large amount of other elements and complex information\n"
-      },
-      "x6": {
-        "value": "{base.unit} * 6",
-        "type": "borderRadius",
-        "description": "(Mobile) Full width sheets that are temporary and modal views"
-      },
       "round": {
         "value": "{base.unit} * 250",
         "type": "borderRadius",
@@ -81,11 +71,6 @@
         "value": "0",
         "type": "spacing",
         "description": "Stacks, rows in tables"
-      },
-      "xhalf": {
-        "value": "{base.unit} * 0.5",
-        "type": "spacing",
-        "description": "Mobile"
       },
       "x1": {
         "value": "{base.unit}",
@@ -107,11 +92,6 @@
         "type": "spacing",
         "description": "Default space token. Used to group Inputs with related data"
       },
-      "x5": {
-        "value": "{base.unit} * 5",
-        "type": "spacing",
-        "description": "Mobile only\n"
-      },
       "x6": {
         "value": "{base.unit} * 6",
         "type": "spacing",
@@ -127,15 +107,10 @@
         "type": "spacing",
         "description": "• Used for outer margins on the overall page content \n• Used for inner margins on large items such as page sections"
       },
-      "x14": {
-        "value": "{base.unit} * 14",
-        "type": "spacing",
-        "description": "Mobile only\n"
-      },
       "x16": {
         "value": "{base.unit} * 16",
         "type": "spacing",
-        "description": "- Use to de-clutter your UI when alot of space is available\n- Separate banner sections from page content\n- Use to differentiate page content like page sections"
+        "description": "- Use to de-clutter your UI when a lot of space is available\n- Separate banner sections from page content\n- Use to differentiate page content like page sections"
       },
       "x20": {
         "value": "{base.unit} * 20",
