@@ -15,7 +15,7 @@ export async function createPullRequest(
 ) {
   try {
     const fullRepo = `${params.owner}/${params.repo}`;
-    console.log(`Creating a PR to merge ${params.head} to ${params.base} for ${fullRepo}.\n`);
+    console.log(`Creating a PR to merge ${params.head} to ${params.base} in ${fullRepo}.\n`);
     await ghClient.pulls.create(params);
     console.log('✅ Success!\n');
   } catch (error: any) {
@@ -23,11 +23,11 @@ export async function createPullRequest(
   }
 }
 
-export async function createSyncPullRequest() {
+export async function createSyncPullRequest(baseBranch = canvasTokensRepoParams.defaultBranch) {
   await createPullRequest({
     owner: canvasTokensRepoParams.owner,
     repo: canvasTokensRepoParams.repo,
-    base: canvasTokensRepoParams.defaultBranch,
+    base: baseBranch,
     head: canvasTokensRepoParams.syncBranch,
     maintainer_can_modify: true,
     title: 'chore: Sync Tokens Studio config 🤖',
