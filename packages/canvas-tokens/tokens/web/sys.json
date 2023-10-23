@@ -45,7 +45,7 @@
         "type": "borderRadius",
         "description": "This is the initial shape of every new element. Use this for backgrounds screens and fixed navigation containers such as headers, and side-panels."
       },
-      "xhalf": {
+      "half": {
         "value": "{base.unit} * 0.5",
         "type": "borderRadius",
         "description": "Use this for subtle and small components that don’t require to group complex information like Status Indicators, Checkboxes and Color Swatches."
