@@ -36,8 +36,8 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file, options}) 
 };
 
 /**
- * Style Dictionary format function that creates common-js file structure.
- * This structure contains separated exports of each token.
+ * Style Dictionary format function that creates ts file structure.
+ * This structure contains separated exports of each token with `as const`.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * options can contains `withoutModule` property js module header should not be generated.
  * @returns file content as a string
