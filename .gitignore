@@ -2,6 +2,7 @@
 
 # compiled output
 dist
+docs
 tmp
 /out-tsc
 *.tsbuildinfo
@@ -31,3 +32,6 @@ testem.log
 
 # Keys
 .env
+
+# Storybook
+build-storybook.log

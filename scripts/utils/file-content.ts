@@ -21,10 +21,14 @@ export async function getFileContent(
     const response = await ghClient.repos.getContent(params);
     return response.data;
   } catch (error: any) {
+    const fullRepo = `${params.owner}/${params.repo}`;
     if (error.status === 404) {
-      console.log(`⚠️  Notice: ${params.path} does not exist.\n`);
+      console.log(`⚠️  Notice: ${params.path} does not exist in ${fullRepo}.\n`);
     } else {
-      console.error(`⛔️ Error: Failed to get file content from ${params.path}.`, error.message);
+      console.error(
+        `⛔️ Error: Failed to get file content from ${params.path} in ${fullRepo}.`,
+        error.message
+      );
     }
   }
 }
@@ -45,6 +49,10 @@ export async function updateFileContent(
   try {
     await ghClient.repos.createOrUpdateFileContents(params);
   } catch (error: any) {
-    console.error(`⛔️ Error: Failed to update.`, error.message);
+    const fullRepo = `${params.owner}/${params.repo}`;
+    console.error(
+      `⛔️ Error: Failed to update file content for ${params.path} in ${fullRepo}.`,
+      error.message
+    );
   }
 }
