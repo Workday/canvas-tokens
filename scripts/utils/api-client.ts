@@ -20,14 +20,14 @@ export const tokensStudioRepoParams = {
   /** `tokens/base.json` */
   baseConfigPath: 'tokens/base.json',
   /** `tokens/brand/default.json` */
-  brandConfigPath: 'tokens/brand/default.json',
+  brandConfigPath: 'tokens/sys/brand/default.json',
   /** `tokens/sys` */
   sysConfigPath: 'tokens/sys',
 };
 
 export const canvasTokensRepoParams = {
   /** `design` */
-  owner: 'design',
+  owner: 'workday',
   /** `canvas-tokens` */
   repo: 'canvas-tokens',
   /** `main` */
