@@ -42,7 +42,7 @@ describe('formats', () => {
         {
           name: 'cinnamon100',
           value: '#ffefee',
-          path: [''],
+          path: ['base', 'palette', 'cinnamon', '100'],
           filePath: '',
           isSource: true,
           original: {value: '#ffefee'},
@@ -50,20 +50,10 @@ describe('formats', () => {
         {
           name: 'cinnamon200',
           value: '#fcc9c5',
-          path: [''],
+          path: ['base', 'palette', 'cinnamon', '200'],
           filePath: '',
           isSource: true,
           original: {value: '#fcc9c5'},
-        },
-        {
-          value: {border: '0.0625rem solid rgba(162,171,180,1)'},
-          type: 'composition',
-          filePath: 'tokens/all.json',
-          isSource: true,
-          original: {value: {border: '{sys.line.disabled}'}, type: 'composition'},
-          name: 'cnvs-sys-border-input-disabled',
-          attributes: {},
-          path: ['sys', 'border', 'input', 'disabled'],
         },
       ],
       getReferences: () => [
@@ -94,15 +84,37 @@ describe('formats', () => {
     };
   });
 
-  describe('javascript/common-js', () => {
+  describe('js/common-js', () => {
     it('should return correct file structure as inline js vars', () => {
-      const result = formats['javascript/common-js'](defaultArgs);
+      const result = formats['js/common-js'](defaultArgs);
       const expected =
         headerContent +
         moduleContent +
-        `exports.cinnamon100 = "#ffefee";\nexports.cinnamon200 = "#fcc9c5";\nexports.cnvs-sys-border-input-disabled = "[object Object]";\n`;
+        `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexports.cinnamon200 = "--cnvs-base-palette-cinnamon-200";\n`;
 
       expect(result).toBe(expected);
+    });
+  });
+
+  describe('js/es6', () => {
+    it('should return correct file structure as inline js vars', () => {
+      const result = formats['js/es6'](defaultArgs);
+      const expected =
+        headerContent +
+        `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const cinnamon200 = "--cnvs-base-palette-cinnamon-200";\n`;
+
+      expect(result).toBe(expected);
+    });
+  });
+
+  describe('ts/inline', () => {
+    it('should return correct file structure as inline js vars', () => {
+      const result = formats['ts/inline'](defaultArgs);
+      const expected =
+        headerContent +
+        `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100" as const;\nexport declare const cinnamon200 = "--cnvs-base-palette-cinnamon-200" as const;\n`;
+
+      expect(result).toBe(expected); //?
     });
   });
 
@@ -335,9 +347,9 @@ describe('formats', () => {
     });
   });
 
-  describe('javascript/types', () => {
+  describe('ts/jsdoc-object', () => {
     it('should return correct file structure with between line jsDoc', () => {
-      const result = formats['javascript/types']({
+      const result = formats['ts/jsdoc-object']({
         ...defaultArgs,
         options: {
           originalValues: {
@@ -360,13 +372,13 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  /**\n   * Test jsDoc\n   * 0.4 \n   */\n  disabled: "--cnvs-base-opacity-300",\n} as const;\n';
+        'export declare const opacity = {\n  /**\n   * Test jsDoc\n   * 0.4 \n   */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
 
-      expect(result).toBe(expected);
+      expect(result).toBe(expected); //?
     });
 
     it('should have one line jsDoc for tokens without comment', () => {
-      const result = formats['javascript/types']({
+      const result = formats['ts/jsdoc-object']({
         ...defaultArgs,
         options: {
           originalValues: {
@@ -388,7 +400,7 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  /** 0.4 */\n  disabled: "--cnvs-base-opacity-300",\n} as const;\n';
+        'export declare const opacity = {\n  /** 0.4 */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
 
       expect(result).toBe(expected);
     });

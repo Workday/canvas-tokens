@@ -43,14 +43,13 @@ const config = setConfig({
         {
           level: ['base'],
           extensions: ['js'],
-          format: 'javascript/{platform}',
+          format: 'js/{platform}',
           filterByLevel: true,
         },
         {
           level: ['base'],
           extensions: ['d.ts'],
-          format: 'merge/types',
-          combineWith: ['javascript/{platform}'],
+          format: 'ts/inline',
           filterByLevel: true,
         },
         {
@@ -63,7 +62,7 @@ const config = setConfig({
           level: ['brand', 'sys'],
           extensions: ['d.ts'],
           format: 'merge/types',
-          combineWith: ['merge/objects', 'javascript/types'],
+          combineWith: ['merge/objects', 'ts/jsdoc-object'],
         },
         {
           level: ['base'],

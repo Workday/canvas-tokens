@@ -10,10 +10,11 @@ type Transformer = (token: DesignToken) => string;
  * @returns updated token name
  */
 export const transformNameToCamelCase: Transformer = token => {
-  const name = token.path;
-  const [, ...rest] = name;
-  const [tokenName, ...restName] = rest;
+  const fullName = token.path;
+  const [_, ...nameWithCategory] = fullName;
+  const [category, ...tokenName] = nameWithCategory;
+  const isLowLevelToken = ['unit', 'level'].includes(category);
 
-  const value = tokenName !== 'unit' ? (tokenName === 'palette' ? restName : rest) : name;
+  const value = isLowLevelToken ? fullName : category === 'palette' ? tokenName : nameWithCategory;
   return camelCase(value.join('-'));
 };

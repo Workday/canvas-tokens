@@ -41,7 +41,7 @@ const replaceDescriptionByComment = (token: DesignToken) => {
   const {description} = token;
   if (description) {
     delete token.description;
-    const updated = description.replace(/\n+$/g, '');
+    const updated = description.replace(/\n+/g, '; ');
     token.comment = updated;
   }
 };

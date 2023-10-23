@@ -60,15 +60,17 @@ const recursivelyCreateFileStructure = ({
 
     if (typeof values === 'string') {
       const pxVal = original.value.includes('rem') ? parseFloat(original.value) * 16 : null;
-      const commentText = original.comment
-        ? `\n${extraSpaces}* ${original.comment}\n${extraSpaces}*`
+      const hasComment = original.comment;
+      const commentParts = hasComment ? original.comment.split('; ') : [];
+      const commentText = hasComment
+        ? `\n${extraSpaces}* ${commentParts.join(`\n${extraSpaces}* `)}\n${extraSpaces}*`
         : '';
       const valueText = ` ${original.value}${pxVal ? ` (${pxVal}px)` : ''} `;
       const jsDocText = `${spaces}/**${commentText}${valueText}${
         original.comment ? '\n' + extraSpaces : ''
       }*/\n`;
       const innerText = depth
-        ? `${spaces}${key}: "${values}",`
+        ? `${spaces}"${key}": "${values}",`
         : `${startingText} ${key} = "${values}" ${endingText}`;
       const fullInnerText = jsDocText + innerText;
 
@@ -82,7 +84,7 @@ const recursivelyCreateFileStructure = ({
 
     const innerText = !depth
       ? `${startingText} ${key} = {\n${placeholders}\n} ${endingText}`
-      : `${spaces}${key}: {\n${placeholders}\n${spaces}},`;
+      : `${spaces}"${key}": {\n${placeholders}\n${spaces}},`;
 
     updatedContent = replaceInContent(`**${key}**`, innerText);
 
