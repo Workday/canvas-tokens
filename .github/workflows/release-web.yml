@@ -49,13 +49,20 @@ jobs:
           fromRef: '@workday/canvas-tokens-web@${{steps.previous-tag.outputs.tag}}'
           toRef: 'main'
           tagName: 'new-release'
-
-      - name: Update Changelog
-        run: npx ts-node scripts/utils/update-changelog.ts
+      
+      - name: Filter changes
+        id: filter-changes
+        run: echo "changelog=$(node scripts/utils/filter-changes.js)" >> $GITHUB_OUTPUT
         env:
-          PACKAGE: canvas-tokens-web
-          VERSION: ${{inputs.version}}
+          PACKAGE: web
           CHANGESET_BODY: ${{steps.changeset.outputs.body}}
+
+      - name: Create pre-changelog for versioning
+        run: npx ts-node scripts/utils/create-prechangelog.ts
+        env:
+          PACKAGE: web
+          VERSION: ${{inputs.version}}
+          CHANGESET_BODY: ${{steps.filter-changes.outputs.changelog}}
 
       - name: Bump package
         run: npx changeset version
@@ -85,14 +92,14 @@ jobs:
           tags: true
 
       ## Create a release on Github.
-      - name: Create Release
+      - name: Create GH Release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
           name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
-          body: ${{steps.changeset.outputs.body}}
+          body: ${{steps.filter-changes.outputs.changelog}}
           draft: false
           prerelease: false
 
