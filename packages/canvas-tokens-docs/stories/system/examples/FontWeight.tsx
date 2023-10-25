@@ -1,35 +1,45 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
-import {TokenGrid} from '../../../components/TokenGrid';
+import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
 interface FontWeightToken {
-  label: string;
+  /** The name of the CSS variable */
+  cssVar: string;
+  /** The formatted name of the JS variable */
+  jsVar: React.ReactNode;
+  /** The actual string value of the token */
   value: string;
 }
 
-const fontWeightTokens: FontWeightToken[] = Object.values(system.fontWeight).map(varName => {
-  const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+const fontWeightTokens: FontWeightToken[] = Object.entries(system.fontWeight).map(
+  ([key, varName]) => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
 
-  return {
-    label: varName,
-    value: value,
-  };
-});
+    return {
+      cssVar: varName,
+      jsVar: formatJSVar(`system.fontWeight.${key}`),
+      value: value,
+    };
+  }
+);
 
 export function FontWeightTokens() {
   return (
     <TokenGrid
       caption="font weight tokens"
-      headings={['Sample', 'Name', 'Value']}
+      headings={['Sample', 'CSS Variable', 'JS Variable', 'Value']}
       rows={fontWeightTokens}
     >
       {token => (
         <>
           <TokenGrid.RowItem>
-            <span style={{fontWeight: token.value}}>Canvas</span>
+            <TokenGrid.Sample style={{fontWeight: token.value}}>Canvas</TokenGrid.Sample>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.label}</TokenGrid.MonospaceLabel>
+            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
         </>

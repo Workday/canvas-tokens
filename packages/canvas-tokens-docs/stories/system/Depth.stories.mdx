@@ -4,5 +4,45 @@ import {DepthTokens} from './examples/Depth';
 <Meta title="Docs/System Tokens/Depth" />
 
 <Unstyled>
-  <DepthTokens />
+
+# System Depth Tokens
+
+System depth tokens use box shadows to help users understand the spacial relationship of objects in
+our UI.
+
+## Usage
+
+Depth tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
+CSS variable from a base token, so you'll need to have those CSS variables imported in your
+application as well.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  boxShadow: `var(${system.depth[2]})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the
+same styles using CSS variables directly.
+
+```css
+// styles.css
+.card {
+  background-color: var(--cnvs-sys-depth-2);
+}
+```
+
+---
+
+## Tokens
+
+These tokens use a linear step scale (1-6). As the steps increase, the shadows become larger and
+more pronounced. Use more subtle shadows for components closer to the base level, and more
+pronounced shadows for components further away.
+
+<DepthTokens />
+
 </Unstyled>
