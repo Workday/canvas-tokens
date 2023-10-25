@@ -17,7 +17,7 @@ function classNames(baseClassName: string, classNames = '') {
 export function formatJSVar(varName: string) {
   return varName.split('.').map((identifier, index) => {
     // Don't add a word-break before the first identifier
-    if (index === 0) {
+    if (!index) {
       return identifier;
     }
     return (

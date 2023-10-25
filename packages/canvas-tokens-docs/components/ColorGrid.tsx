@@ -35,13 +35,12 @@ function formatName(name: string) {
 }
 
 function getSwatchStyles(token: ColorSwatch) {
-  // linear gradients need to be background images
-  if (token.value.startsWith('linear-gradient(')) {
-    return {backgroundImage: `var(${token.cssVar})`};
-    // everything else can be a background color
-  } else {
-    return {backgroundColor: `var(${token.cssVar})`};
-  }
+  // update the property to support linear gradients
+  // which need to be a background image instead of background color
+  const property = token.value.startsWith('linear-gradient(')
+    ? 'backgroundImage'
+    : 'backgroundColor';
+  return {[property]: `var(${token.cssVar})`};
 }
 
 /** A configuration of TokenGrid to quickly build tables for colors */
