@@ -1,0 +1,66 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {DepthTokens} from './examples/Depth';
+
+<Meta title="Docs/System Tokens/Overview" />
+
+<Unstyled>
+
+# System Tokens
+
+System tokens are **themed variables** intended to provide application-wide theming. They are not
+connected to brand tokens, which are tenant-specific.
+
+## Usage
+
+System tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
+CSS variable from a base token, so you'll need to have those CSS variables imported in your
+application as well. This is discussed further in the
+[Getting Started guide](/docs/docs-getting-started--docs). Unlike JavaScript variables, CSS custom
+properties (variables) need to be wrapped in `var()` to be valid. If you're new to CSS variables, it
+might take a bit for that to feel intuitive.
+
+> In the example below, we're importing CSS variables in the file directly for clarity. But you'll
+> likely want to do this at the top-level of your application to avoid redundancy and
+> unintentionally overwriting values.
+
+```ts
+// styles.ts
+import '@workday/canvas-tokens-web/css/base/_variables.css';
+import '@workday/canvas-tokens-web/css/system/_variables.css';
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  boxShadow: `var(${system.depth[2]})`,
+  padding: `var(${system.space.x4})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the
+same styles using CSS variables directly.
+
+```css
+// styles.css
+@import '@workday/canvas-tokens-web/css/base/_variables.css';
+@import '@workday/canvas-tokens-web/css/system/_variables.css';
+
+.card {
+  background-color: var(--cnvs-sys-depth-2);
+  padding: var(--cnvs-sys-space-x4);
+}
+```
+
+## Tokens
+
+There are several token collections within system tokens. You can find more documentation on them at
+the links below.
+
+- [Depth](/docs/docs-system-tokens-depth--docs)
+- [Shape](/docs/docs-system-tokens-shape--docs)
+- [Space](/docs/docs-system-tokens-space--docs)
+- [Type](/docs/docs-system-tokens-type--docs)
+  - [Type Level](/docs/docs-system-tokens-type--docs#type-level)
+  - [Font Family](/docs/docs-system-tokens-type--docs#font-family)
+  - [Font Size](/docs/docs-system-tokens-type--docs#font-size)
+  - [Font Weight](/docs/docs-system-tokens-type--docs#font-weight)
+
+</Unstyled>

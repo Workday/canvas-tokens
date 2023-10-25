@@ -1,24 +1,20 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
-import {TokenGrid} from '../../../components/TokenGrid';
+import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
 interface TypeLevelToken {
-  label: string;
-  values: object;
-  computedValues: object;
+  /** The name of the CSS class */
+  cssClass: string;
+  /** The formatted name of the JS variable */
+  jsVar: React.ReactNode;
+  /** The CSS var values for the CSS class */
+  values: string;
+  /** The formatted values for CSS Vars to render the type sample */
   formattedValues: object;
 }
 
-function getComputedStyleValues(values: object) {
-  const styles = getComputedStyle(document.documentElement);
-  let computedStyleValues = {};
-  for (const key in values) {
-    if (key in values) {
-      const value = styles.getPropertyValue(values[key as keyof typeof values]);
-      computedStyleValues = {...computedStyleValues, [key]: value};
-    }
-  }
-  return computedStyleValues;
+function getCSSVarValue(varName: string) {
+  return getComputedStyle(document.documentElement).getPropertyValue(varName).replace(/"/g, '');
 }
 
 function formatTypeLevelValues(values: object) {
@@ -35,10 +31,10 @@ const typeLevelTokens = Object.keys(system.type).reduce((acc, level) => {
   const levelTokens = Object.entries(system.type[level as keyof typeof system.type]).map(
     ([size, values]) => {
       return {
-        label: `.cnvs-sys-type-${level}-${size}`,
+        cssClass: `.cnvs-sys-type-${level}-${size}`,
+        jsVar: formatJSVar(`system.type.${level}.${size}`),
         values: values,
         formattedValues: formatTypeLevelValues(values),
-        computedValues: getComputedStyleValues(values),
       };
     }
   );
@@ -49,27 +45,27 @@ export function TypeLevelTokens() {
   return (
     <TokenGrid
       caption="Type Level Tokens"
-      headings={['Sample', 'CSS Class', 'Values', 'Computed Values']}
+      headings={['Sample', 'CSS Class', 'JS Variable', 'CSS Variables (Values)']}
       rows={typeLevelTokens}
     >
       {token => (
         <>
           <TokenGrid.RowItem>
-            <span style={{...token.formattedValues}}>Canvas</span>
+            <span style={{...token.formattedValues, fontFamily: 'var(--cnvs-base-font-family-50)'}}>
+              Canvas
+            </span>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.label}</TokenGrid.MonospaceLabel>
+            <TokenGrid.MonospaceLabel>{token.cssClass}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
             {Object.values(token.values).map((value, index) => (
-              <TokenGrid.MonospaceLabel key={index}>{value}</TokenGrid.MonospaceLabel>
-            ))}
-          </TokenGrid.RowItem>
-          <TokenGrid.RowItem>
-            {Object.entries(token.computedValues).map(([name, value], index) => (
-              <TokenGrid.MonospaceLabel key={index}>
-                {name}: {value}
-              </TokenGrid.MonospaceLabel>
+              <span key={index}>
+                {value} ({getCSSVarValue(value)})
+              </span>
             ))}
           </TokenGrid.RowItem>
         </>
