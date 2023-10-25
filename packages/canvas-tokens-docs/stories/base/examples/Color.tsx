@@ -42,7 +42,7 @@ function buildPalettes(tokens: object) {
     // If it's a color token
     if (colorRegExp.test(key)) {
       const name = key.replace(/\d+/, '');
-      const swatch = buildColorSwatch(tokens[key as keyof typeof tokens]);
+      const swatch = buildColorSwatch(tokens[key as keyof typeof tokens], `base.${key}`);
       if (name in palettes) {
         palettes[name].push(swatch);
       } else {
@@ -59,6 +59,79 @@ export const ColorTokens = () => {
   return (
     <Stack>
       {baseColorPalettes.map(([name, palette]) => (
+        <ColorGrid key={name} name={name} palette={palette} />
+      ))}
+    </Stack>
+  );
+};
+
+const primaryPaletteNames = ['blueberry'];
+const primaryColorPalettes = baseColorPalettes.filter(([name]) =>
+  primaryPaletteNames.includes(name)
+);
+
+export const PrimaryColorTokens = () => {
+  return (
+    <Stack>
+      {primaryColorPalettes.map(([name, palette]) => (
+        <ColorGrid key={name} name={name} palette={palette} />
+      ))}
+    </Stack>
+  );
+};
+
+const neutralPaletteNames = ['blackPepper', 'licorice', 'soap', 'frenchVanilla'];
+const neutralColorPalettes = baseColorPalettes.filter(([name]) =>
+  neutralPaletteNames.includes(name)
+);
+
+export const NeutralColorTokens = () => {
+  return (
+    <Stack>
+      {neutralColorPalettes.map(([name, palette]) => (
+        <ColorGrid key={name} name={name} palette={palette} />
+      ))}
+    </Stack>
+  );
+};
+
+const typePaletteNames = ['blackPepper', 'licorice', 'frenchVanilla', 'blueberry'];
+const typeColorPalettes = baseColorPalettes.filter(([name]) => typePaletteNames.includes(name));
+
+export const TypeColorTokens = () => {
+  return (
+    <Stack>
+      {typeColorPalettes.map(([name, palette]) => (
+        <ColorGrid key={name} name={name} palette={palette} />
+      ))}
+    </Stack>
+  );
+};
+
+const statusPaletteNames = ['greenApple', 'cinnamon', 'cantaloupe'];
+const statusColorPalettes = baseColorPalettes.filter(([name]) => statusPaletteNames.includes(name));
+
+export const StatusColorTokens = () => {
+  return (
+    <Stack>
+      {statusColorPalettes.map(([name, palette]) => (
+        <ColorGrid key={name} name={name} palette={palette} />
+      ))}
+    </Stack>
+  );
+};
+
+const otherPaletteNames = primaryPaletteNames.concat(
+  neutralPaletteNames,
+  typePaletteNames,
+  statusPaletteNames
+);
+const otherColorPalettes = baseColorPalettes.filter(([name]) => !otherPaletteNames.includes(name));
+
+export const OtherColorTokens = () => {
+  return (
+    <Stack>
+      {otherColorPalettes.map(([name, palette]) => (
         <ColorGrid key={name} name={name} palette={palette} />
       ))}
     </Stack>
