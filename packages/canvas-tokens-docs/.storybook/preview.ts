@@ -12,7 +12,14 @@ const preview: Preview = {
       storySort: {
         order: [
           'Docs',
-          ['Getting Started', 'Base Tokens', 'Brand Tokens', 'System Tokens', ['Overview']],
+          [
+            'Getting Started',
+            'Contributing',
+            'Base Tokens',
+            'Brand Tokens',
+            'System Tokens',
+            ['Overview'],
+          ],
           'Visual Tests',
         ],
       },
