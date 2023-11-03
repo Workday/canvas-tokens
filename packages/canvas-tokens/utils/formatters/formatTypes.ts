@@ -98,14 +98,20 @@ const recursivelyCreateFileStructure = ({
 const generateJSDoc = (original: TransformedToken, depth: number) => {
   const spaces = '  '.repeat(depth);
   const extraSpaces = spaces + ' ';
+  const newJSDocLineStart = `\n${extraSpaces}* `;
   const {value, comment} = original;
   const pxValue = value.includes('rem') ? parseFloat(value) * 16 : null;
 
   const valueText = value + (pxValue ? ` (${pxValue}px)` : '');
-  const updatedComment = comment?.replace(/; /g, `\n${extraSpaces}* `);
+  const updatedComment = comment?.replace(/; /g, newJSDocLineStart);
   const text = comment
-    ? `${valueText}\n${extraSpaces}* \n${extraSpaces}* ${updatedComment}\n${extraSpaces}`
-    : valueText;
+    ? newJSDocLineStart +
+      valueText +
+      newJSDocLineStart +
+      newJSDocLineStart +
+      updatedComment +
+      `\n${extraSpaces}`
+    : ` ${valueText} `;
 
   return `${spaces}/**${text}*/\n`;
 };
