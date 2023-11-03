@@ -1,0 +1,126 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import {
+  PrimaryColorTokens,
+  NeutralColorTokens,
+  TypeColorTokens,
+  StatusColorTokens,
+  OtherColorTokens,
+} from './examples/Color';
+import {BaseUnit} from './examples/BaseUnit';
+
+<Meta title="Docs/Base Tokens" />
+
+<Unstyled>
+
+# Base Tokens
+
+Base tokens are the foundation of our token system. They provide the core values for our brand and
+system tokens. Base tokens are **not themed variables**, so you should generally opt to use system
+and brand tokens first. However, if you're not concerned with theming a particular property, using a
+base token directly is an acceptable option.
+
+## Usage
+
+Base tokens can be consumed as a JavaScript / TypeScript object. Each token value references a CSS
+variable, so you'll need to have the CSS variables imported in your application as well. This is
+discussed further in the [Getting Started guide](/docs/docs-getting-started--docs). Unlike
+JavaScript variables, CSS custom properties (variables) need to be wrapped in `var()` to be valid.
+If you're new to CSS variables, it might take a bit for that to feel intuitive.
+
+> In the example below, we're importing CSS variables in the file directly for clarity. But you'll
+> likely want to do this at the top-level of your application to avoid redundancy and
+> unintentionally overwriting values.
+
+```ts
+// styles.ts
+import '@workday/canvas-tokens-web/css/base/_variables.css';
+import {base} from '@workday/canvas-tokens-web';
+
+const styles = {
+  backgroundColor: `var(${base.blueberry400})`,
+  color: `var(${base.frenchVanilla100})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the
+same styles using CSS variables directly.
+
+```css
+// styles.css
+@import '@workday/canvas-tokens-web/css/base/_variables.css';
+
+.button {
+  background-color: var(--cnvs-base-palette-blueberry-400);
+  color: var(--cnvs-base-palette-french-vanilla-100);
+}
+```
+
+---
+
+## Base Unit
+
+The base unit token provides a base value to derive our system space and shape tokens. You could use
+this value to build other scales, but unless you're very familiar with our token system, we
+recommend you treat this as an internal variable, as changing it could have a drastic effect on your
+UI.
+
+<BaseUnit />
+
+---
+
+## Color
+
+Base colors provide the core palettes that make up our UI. There are twenty-seven palettes in total,
+but only a handful are used regularly. These palettes don't have any inherent contextual meaning on
+when and where they should be used. However, to provide some guidance, we've grouped them
+semantically: primary, neutral, type, status, and other.
+
+### Primary
+
+Blueberry is our primary color and the most prominent palette in our UI. We use it for our primary
+buttons, links, focus outlines, and more.
+
+<PrimaryColorTokens />
+
+---
+
+### Neutral
+
+We have four neutral palettes: french vanilla, soap, licorice, and black pepper. These colors are
+used for our backgrounds, foregrounds, icons, and text.
+
+<NeutralColorTokens />
+
+---
+
+### Type
+
+Our type colors are used for headings, text, and icons. Maintaining sufficient contrast is an
+important consideration when choosing any type color. Consider where your type will render as well
+as any focus, active, and hover states.
+
+<TypeColorTokens />
+
+---
+
+### Status
+
+These palettes are reserved to indicate the status of a particular object, task, or flow. These
+palettes are generally better suited for backgrounds than text, as they have difficulty meeting our
+contrast ratios guidelines. Also remember to always communicate status with more than color alone.
+
+<StatusColorTokens />
+
+---
+
+### Other
+
+Our other palettes have little-to-no usage in our UI outside of data visualization. Please, use
+these sparingly.
+
+<OtherColorTokens />
+
+---
+
+</Unstyled>

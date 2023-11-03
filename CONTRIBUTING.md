@@ -1,5 +1,7 @@
 # Contributing
 
+Whether you're a first-time contributor or need a refresher, this guide will walk you through the process of making a contribution.
+
 ## First-Time Contributions
 
 If you're a first-time contributor, welcome! We use the
@@ -14,6 +16,8 @@ contribution.
 
 ## How to Contribute
 
+To make a contribution, you'll need to find or create an issue, fork the repo, make updates, and submit a PR. That can feel like a lot, but this guide will give you step-by-step directions.
+
 ### Finding an Issue
 
 You can find all the issues for this repository in our
@@ -26,9 +30,7 @@ If you find something you'd like added, feel free to
 sure to [review existing issues](https://github.com/workday/canvas-tokens/issues) first to
 reduce duplicates.
 
-### Making A Contribution
-
-#### Forking the Repo
+### Forking the Repo
 
 Once you have an issue, you're ready to start working your contribution! If this is your first contribution, you'll need to fork this repo. You can either do this through GitHub's UI or the [`gh` CLI](https://cli.github.com/manual/gh_repo_fork).
 
@@ -49,7 +51,7 @@ git remote rename origin upstream
 git remote add origin git@github.com:[your-username]/canvas-tokens.git
 ```
 
-#### Making Updates
+### Making Updates
 
 Before making updates, be sure you're up to date with the latest base branch and have updated your dependencies. If you are working on the current major version, please use `main` as your base branch. If you are working on the next major version, use `prerelease/major`. Below, we're pulling from the latest upstream `main` and updating dependencies.
 
@@ -68,7 +70,7 @@ git checkout -b ISSUE-4
 
 Now you're ready to make your updates! Please keep changes relevant to the issue being resolved. This streamlines the review process and creates fewer opportunities for error. As you're making changes, consider whether you should include updates to documentation and tests.
 
-#### Committing Changes
+### Committing Changes
 
 Once you complete your changes, you're ready to commit! We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to keep commit messages consistent and for automation. If you're making changes to `@workday/canvas-tokens-web`, please use the `(web)` scope. This helps us automatically generate a changelog for the change. In the example below, we're committing a non-breaking patch update to `canvas-tokens-web`.
 
@@ -81,7 +83,7 @@ git commit -m "fix(web): Fixes release action"
 git push
 ```
 
-#### Submitting a Pull Request
+### Submitting a Pull Request
 
 After committing your changes, you can push them up and create a pull request. You can either create a PR in [GitHub's UI](https://github.com/Workday/canvas-tokens/pulls) or [the `gh` CLI](https://cli.github.com/manual/gh_pr_create). When creating a PR, please allow edits by maintainers, so we can add small nits and suggestions as we review.
 
@@ -93,6 +95,6 @@ If you'd like early feedback, please create a draft PR. And when you're ready fo
 
 Please follow the provided pull request template. The Issue section connects the pull request to the associated issue. The Summary and Release Category sections are used by our release automation to generate our changelog. All other sections below are intended for the reviewer and help the review process move along smoothly.
 
-#### Thank You!
+### Thank You!
 
 We know contributions can feel intimidating, especially first one, and really appreciate your support.

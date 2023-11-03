@@ -2,8 +2,8 @@
   border: solid 1px var(--cnvs-base-palette-soap-500);
   border-radius: 0.5rem;
   display: grid;
-  min-width: 48rem;
-  max-width: 64rem;
+  min-width: 62.5rem;
+  max-width: 80rem;
   overflow-x: auto;
 }
 
@@ -46,6 +46,7 @@
 .token-grid__row-item {
   align-items: start;
   display: grid;
+  font-family: var(--cnvs-base-font-family-100);
   gap: 0.25rem;
   justify-self: start;
 }
@@ -59,7 +60,7 @@
 }
 
 .token-grid__sample {
-  background-color: var(--cnvs-base-palette-french-vanilla-100);;
+  background-color: var(--cnvs-base-palette-french-vanilla-100);
   display: grid;
   grid-template-columns: minmax(2rem, 8rem);
   height: 2rem;
@@ -67,8 +68,9 @@
 }
 
 .token-grid__monospace-label {
-  background-color: var(--cnvs-base-palette-soap-200);
-  font-family: 'Roboto Mono';
+  background-color: var(--cnvs-base-palette-blueberry-100);
+  color: var(--cnvs-base-palette-blueberry-500);
+  font-family: var(--cnvs-base-font-family-100);
   padding: 0.25rem;
   border-radius: 0.25rem;
   min-height: 1rem;

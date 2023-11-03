@@ -2,7 +2,7 @@ import {ShapeTokens} from '../examples/Shape';
 
 export default {
   component: ShapeTokens,
-  title: 'Visual Tests/System Tokens/Shape',
+  title: 'Visual Tests/System Tokens',
 };
 
 export const Shape = {

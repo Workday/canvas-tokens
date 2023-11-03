@@ -1,13 +1,18 @@
 import * as React from 'react';
 import {base, system} from '@workday/canvas-tokens-web';
-import {TokenGrid} from '../../../components/TokenGrid';
+import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
 interface SpaceToken {
-  label: string;
+  /** The name of the CSS variable */
+  cssVar: string;
+  /** The formatted name of the JS variable */
+  jsVar: React.ReactNode;
+  /** The actual string value of the token */
   value: string;
-  computedValue: string;
+  /** The value of the CSS token after calculating the base unit times the multiplier */
+  calculatedValue: string;
+  /** The value of the CSS token after converting rem to pixels */
   pxValue: string;
-  varName: string;
 }
 
 function multiplyCalcValues(value: string) {
@@ -23,15 +28,15 @@ function multiplyCalcValues(value: string) {
   return 0;
 }
 
-const spaceTokens: SpaceToken[] = Object.values(system.space).map(varName => {
+const spaceTokens: SpaceToken[] = Object.entries(system.space).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-  const computedValue = multiplyCalcValues(value);
+  const calculatedValue = multiplyCalcValues(value);
   return {
-    label: varName,
-    value: value,
-    computedValue: `${computedValue}rem`,
-    varName,
-    pxValue: `${computedValue * 16}px`,
+    cssVar: varName,
+    jsVar: formatJSVar(`system.space.${key}`),
+    value,
+    calculatedValue: `${calculatedValue}rem`,
+    pxValue: `${calculatedValue * 16}px`,
   };
 });
 
@@ -39,7 +44,14 @@ export function SpaceTokens() {
   return (
     <TokenGrid
       caption="space tokens"
-      headings={['Sample', 'Name', 'Value', 'Computed Value', 'Pixel Value']}
+      headings={[
+        'Sample',
+        'CSS Variable',
+        'JS Variable',
+        'Value',
+        'Calculated Value',
+        'Pixel Value',
+      ]}
       rows={spaceTokens}
     >
       {token => (
@@ -47,16 +59,19 @@ export function SpaceTokens() {
           <TokenGrid.RowItem>
             <TokenGrid.Sample
               style={{
-                width: token.value,
+                width: `var(${token.cssVar})`,
                 backgroundColor: `var(${base.blueberry400})`,
               }}
             />
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.label}</TokenGrid.MonospaceLabel>
+            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.computedValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
         </>
       )}

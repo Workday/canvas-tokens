@@ -6,7 +6,9 @@ import {Stack} from '../../../components/Stack';
 
 const palettes = Object.keys(brand).map(key => {
   const tokens = brand[key as keyof typeof brand];
-  const values = Object.values(tokens).map(varName => buildColorSwatch(varName));
+  const values = Object.entries(tokens).map(([value, varName]) =>
+    buildColorSwatch(varName, `brand.${key}.${value}`)
+  );
   return {
     name: key,
     values,

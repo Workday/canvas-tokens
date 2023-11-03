@@ -4,5 +4,47 @@ import {SpaceTokens} from './examples/Space';
 <Meta title="Docs/System Tokens/Space" />
 
 <Unstyled>
-  <SpaceTokens />
+
+# System Space Tokens
+
+System space tokens create consistent layout spacing across our UI.
+
+## Usage
+
+Space tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
+CSS variable from a base token, so you'll need to have those CSS variables imported in your
+application as well.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  display: 'grid',
+  gap: `var(${system.space.x1})`,
+  padding: `var(${system.space.x2})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the
+same styles using CSS variables directly.
+
+```css
+// styles.css
+.card {
+  display: grid;
+  gap: var(--cnvs-sys-space-x1);
+  padding: var(--cnvs-sys-space-x2);
+}
+```
+
+---
+
+## Tokens
+
+These tokens use a multiplier scale and reference our `baseUnit` token, which is `0.25rem` / `4px`.
+So the `system.space.x2` token has a value of `0.5rem` or `8px`.
+
+<SpaceTokens />
+
 </Unstyled>
