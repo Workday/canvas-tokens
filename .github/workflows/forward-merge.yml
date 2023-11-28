@@ -125,6 +125,7 @@ jobs:
                 git fetch upstream
                 git checkout merge/main-into-prerelease/major
                 git pull upstream merge/main-into-prerelease/major -f
+                node scripts/utils/forward-merge.js
                 ```
             2. If the previous step succeeded, skip to step 3. Resolve conflicts manually. Then run the following.
                 ```
