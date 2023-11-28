@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: var(--cnvs-base-palette-black-pepper-400);
+  margin: 0;
+}
+
+ol, ul {
+  color: var(--cnvs-base-palette-black-pepper-300);
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-400);
+  line-height: var(--cnvs-base-line-height-150);
+  font-size: var(--cnvs-base-font-size-100);
+  letter-spacing: var(--cnvs-base-letter-spacing-200);
+  margin: 0;
+  padding: 0;
+  list-style: inside;
+  margin: 1rem 0;
+}
+
+/* for nested list styles */
+ul ul {
+  margin: 0;
+  padding-inline-start: 1rem;
+}
+
+h1 {
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-700);
+  line-height: var(--cnvs-base-line-height-500);
+  font-size: var(--cnvs-base-font-size-500);
+}
+
+h2 {
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-700);
+  line-height: var(--cnvs-base-line-height-350);
+  font-size: var(--cnvs-base-font-size-300);
+}
+
+h3 {
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-700);
+  line-height: var(--cnvs-base-line-height-300);
+  font-size: var(--cnvs-base-font-size-250);
+}
+
+h4 {
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-700);
+  line-height: var(--cnvs-base-line-height-250);
+  font-size: var(--cnvs-base-font-size-200);
+}
+
+p {
+  color: var(--cnvs-base-palette-black-pepper-300);
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-400);
+  line-height: var(--cnvs-base-line-height-150);
+  font-size: var(--cnvs-base-font-size-100);
+  letter-spacing: var(--cnvs-base-letter-spacing-200);
+  margin: 1rem 0;
+}
+
+pre {
+  margin: 0;
+}
+
+pre > * {
+  font-family: var(--cnvs-base-font-family-100);
+  font-size: var(--cnvs-base-font-size-75);
+}
+
+blockquote {
+  margin: 0;
+  padding: var(--cnvs-sys-space-x2) var(--cnvs-sys-space-x6);
+  border-left: 0.25rem solid var(--cnvs-base-palette-soap-400);
+  color: var(--cnvs-base-palette-licorice-300);
+}
+
+blockquote > p {
+  margin: 0;
+}
+
+hr {
+  background-color: var(--cnvs-base-palette-soap-500);
+  border: none;
+  height: 0.0625rem;
+  margin: 2rem 0;
+}

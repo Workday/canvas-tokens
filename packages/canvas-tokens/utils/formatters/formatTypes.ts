@@ -1,4 +1,4 @@
-import {Formatter, formatHelpers} from 'style-dictionary';
+import {Formatter, TransformedToken, formatHelpers} from 'style-dictionary';
 
 /**
  * Style Dictionary format function that creates token type definitions with JSDoc.
@@ -56,19 +56,10 @@ const recursivelyCreateFileStructure = ({
   entries.forEach(([key, values]) => {
     const original = originalValues[key];
     const spaces = '  '.repeat(depth);
-    const extraSpaces = spaces + ' ';
 
     if (typeof values === 'string') {
-      const pxVal = original.value.includes('rem') ? parseFloat(original.value) * 16 : null;
-      const hasComment = original.comment;
-      const commentParts = hasComment ? original.comment.split('; ') : [];
-      const commentText = hasComment
-        ? `\n${extraSpaces}* ${commentParts.join(`\n${extraSpaces}* `)}\n${extraSpaces}*`
-        : '';
-      const valueText = ` ${original.value}${pxVal ? ` (${pxVal}px)` : ''} `;
-      const jsDocText = `${spaces}/**${commentText}${valueText}${
-        original.comment ? '\n' + extraSpaces : ''
-      }*/\n`;
+      const jsDocText = generateJSDoc(original, depth);
+
       const innerText = depth
         ? `${spaces}"${key}": "${values}",`
         : `${startingText} ${key} = "${values}" ${endingText}`;
@@ -96,4 +87,31 @@ const recursivelyCreateFileStructure = ({
       replaceInContent,
     });
   });
+};
+
+/**
+ * Utility function to generate JS Doc with value and comment
+ * @param {Object} original - Style Dictionary token.
+ * @param {number} depth - Value of iteration to generate side spaces.
+ * @returns JS Doc content as a string
+ */
+const generateJSDoc = (original: TransformedToken, depth: number) => {
+  const spaces = '  '.repeat(depth);
+  const extraSpaces = spaces + ' ';
+  const newJSDocLineStart = `\n${extraSpaces}* `;
+  const {value, comment} = original;
+  const pxValue = value.includes('rem') ? parseFloat(value) * 16 : null;
+
+  const valueText = value + (pxValue ? ` (${pxValue}px)` : '');
+  const updatedComment = comment?.replace(/; /g, newJSDocLineStart);
+  const text = comment
+    ? newJSDocLineStart +
+      valueText +
+      newJSDocLineStart +
+      newJSDocLineStart +
+      updatedComment +
+      `\n${extraSpaces}`
+    : ` ${valueText} `;
+
+  return `${spaces}/**${text}*/\n`;
 };

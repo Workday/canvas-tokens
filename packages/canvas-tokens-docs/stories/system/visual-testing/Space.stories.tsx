@@ -2,7 +2,7 @@ import {SpaceTokens} from '../examples/Space';
 
 export default {
   component: SpaceTokens,
-  title: 'Visual Tests/System Tokens/Space',
+  title: 'Visual Tests/System Tokens',
 };
 
 export const Space = {

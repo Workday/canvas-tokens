@@ -372,9 +372,9 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  /**\n   * Test JSDoc\n   * 0.4 \n   */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
+        'export declare const opacity = {\n  /**\n   * 0.4\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
 
-      expect(result).toBe(expected); //?
+      expect(result).toBe(expected);
     });
 
     it('should have one line jsDoc for tokens without comment', () => {

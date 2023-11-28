@@ -1,6 +1,5 @@
 import {Meta, Unstyled} from '@storybook/blocks';
 
-import {Stack} from '../../components/Stack';
 import {FontFamilyTokens} from './examples/FontFamily';
 import {FontSizeTokens} from './examples/FontSize';
 import {FontWeightTokens} from './examples/FontWeight';
@@ -9,10 +8,153 @@ import {TypeLevelTokens} from './examples/TypeLevel';
 <Meta title="Docs/System Tokens/Type" />
 
 <Unstyled>
-  <Stack>
-    <TypeLevelTokens />
-    <FontFamilyTokens />
-    <FontSizeTokens />
-    <FontWeightTokens />
-  </Stack>
+
+# System Type Tokens
+
+System type tokens provide consistent type styles across our UI.
+
+## Type Level
+
+Type level tokens compose our lower-level type tokens (font famiy, font size, font weight, line
+height, and letter spacing) into levels. They should be your go-to type tokens. Lower-level type
+tokens are intended for further customization when our type levels don't meet your particular use
+case.
+
+### Usage
+
+These tokens can be consumed as a JavaScript / TypeScript object.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const headingStyles = {
+  ...system.type.levels.heading.small,
+}
+
+const bodyStyles = {
+  minWidth: 48rem;
+  ...system.type.levels.body.small,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less formats. However, in CSS type level tokens are CSS
+classes, not variables. In the example below, we're applying the same type styles using CSS
+variables directly.
+
+```tsx
+<h2 className="cnvs-sys-type-heading-small">Heading</h2>
+<p className="cnvs-sys-type-body-small">Body text</p>
+```
+
+### Tokens
+
+There are four type levels: `subtext`, `body`, `heading`, and `title`. Each level has three sizes:
+`small`, `medium`, and `large`.
+
+<TypeLevelTokens />
+
+---
+
+## Font Family
+
+Font family tokens are useful for adjusting the font family without overwriting other font styles.
+
+### Usage
+
+These tokens can be consumed as a JavaScript / TypeScript object.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  fontFamily: `var(${system.fontFamily.mono})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables.
+
+```css
+// styles.css
+code {
+  font-family: var(--cnvs-sys-font-family-mono);
+}
+```
+
+### Tokens
+
+There are three font family tokens, `default`, `mono`, and `global`. You will mostly use `default`
+and `mono`, but `global` is useful for internationalization.
+
+<FontFamilyTokens />
+
+---
+
+## Font Size
+
+Font size tokens are useful for adjusting the font size without overwriting other font styles.
+
+### Usage
+
+These tokens can be consumed as a JavaScript / TypeScript object.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  fontSize: `var(${system.fontSize.heading.small})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables.
+
+```css
+// styles.css
+h2 {
+  font-size: var(--cnvs-sys-font-size-heading-small);
+}
+```
+
+### Tokens
+
+Font size token names correlate the the the type level where they're used.
+
+<FontSizeTokens />
+
+---
+
+## Font Weight
+
+Font weight tokens are useful for adjusting the font weight without overwriting other font styles.
+
+### Usage
+
+These tokens can be consumed as a JavaScript / TypeScript object.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  fontWeight: `var(${system.fontWeight.bold})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables.
+
+```css
+// styles.css
+.bold {
+  font-weight: var(--cnvs-sys-font-weight-bold);
+}
+```
+
+### Tokens
+
+Font weight token names follow web-standard font-weight names.
+
+<FontWeightTokens />
+
 </Unstyled>

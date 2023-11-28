@@ -1,25 +1,30 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
-import {TokenGrid} from '../../../components/TokenGrid';
+import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
 interface FontSizeToken {
-  label: string;
+  /** The name of the CSS variable */
+  cssVar: string;
+  /** The formatted name of the JS variable */
+  jsVar: React.ReactNode;
+  /** The actual string value of the token */
   value: string;
+  /** The value of the CSS token after converting rem to pixels */
   pxValue: string;
 }
-
+system.fontSize;
 const fontSizeTokens = Object.keys(system.fontSize).reduce((acc, level) => {
-  const levelTokens = Object.values(system.fontSize[level as keyof typeof system.fontSize]).map(
-    varName => {
-      const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-      const pxValue = Number(value.replace('rem', '')) * 16;
-      return {
-        label: varName,
-        value: value,
-        pxValue: `${pxValue}px`,
-      };
-    }
-  );
+  const levelSizes = system.fontSize[level as keyof typeof system.fontSize];
+  const levelTokens = Object.entries(levelSizes).map(([size, varName]) => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+    const pxValue = Number(value.replace('rem', '')) * 16;
+    return {
+      cssVar: varName,
+      jsVar: formatJSVar(`system.fontSize.${level}.${size}`),
+      value,
+      pxValue: `${pxValue}px`,
+    };
+  });
   return acc.concat(...levelTokens);
 }, [] as FontSizeToken[]);
 
@@ -27,17 +32,23 @@ export function FontSizeTokens() {
   return (
     <TokenGrid
       caption="font size tokens"
-      headings={['Sample', 'Name', 'Value', 'Pixel Value']}
+      headings={['Sample', 'CSS Variable', 'JS Variable', 'Value', 'Pixel Value']}
       rows={fontSizeTokens}
     >
       {token => (
         <>
           <TokenGrid.RowItem>
-            <span style={{fontSize: token.value}}>Canvas</span>
+            <TokenGrid.Sample style={{fontSize: token.value}}>Canvas</TokenGrid.Sample>
           </TokenGrid.RowItem>
+
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.label}</TokenGrid.MonospaceLabel>
+            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
+
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+
           <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
         </>

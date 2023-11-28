@@ -1,0 +1,59 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {ColorTokens} from './examples/Color';
+
+<Meta title="Docs/Brand Tokens" />
+
+<Unstyled>
+
+# Brand Tokens
+
+Brand tokens are **themed variables** designated for brand / tenant-level customization. They are
+not connected to system tokens, which are intended to be application-wide. They're used for our
+buttons, focus rings, errors, and banners.
+
+## Usage
+
+Brand tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
+CSS variable from a base token, so you'll need to have those CSS variables imported in your
+application as well. This is discussed further in the
+[Getting Started guide](/docs/docs-getting-started--docs). Unlike JavaScript variables, CSS custom
+properties (variables) need to be wrapped in `var()` to be valid. If you're new to CSS variables, it
+might take a bit for that to feel intuitive.
+
+> In the example below, we're importing CSS variables in the file directly for clarity. But you'll
+> likely want to do this at the top-level of your application to avoid redundancy and
+> unintentionally overwriting values.
+
+```ts
+// styles.ts
+import '@workday/canvas-tokens-web/css/base/_variables.css';
+import '@workday/canvas-tokens-web/css/brand/_variables.css';
+import {brand} from '@workday/canvas-tokens-web';
+
+const styles = {
+  backgroundColor: `var(${brand.primary.base})`,
+  color: `var(${brand.primary.accent})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the
+same styles using CSS variables directly.
+
+```css
+// styles.css
+@import '@workday/canvas-tokens-web/css/base/_variables.css';
+@import '@workday/canvas-tokens-web/css/brand/_variables.css';
+
+.button {
+  background-color: var(--cnvs-brand-primary-base);
+  color: var(--cnvs-brand-primary-accent);
+}
+```
+
+## Colors
+
+Currently, tenant theming is scoped to color.
+
+<ColorTokens />
+
+</Unstyled>
