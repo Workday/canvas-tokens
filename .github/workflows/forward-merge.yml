@@ -108,7 +108,7 @@ jobs:
       - uses: NicholasBoll/action-forward-merge-pr@main
         with:
           token: ${{secrets.GH_RW_TOKEN}} # use PAT to force GH Actions to run the PR verify. The regular token will not
-          branches: support+master,master+prerelease/minor,prerelease/minor+prerelease/major
+          branches: main+prerelease/major
           prefix: 'chore: '
           body: |
             This pull request was automatically created by an automated [forward-merge job](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}). The automated job failed automated checks and must be resolved manually.
