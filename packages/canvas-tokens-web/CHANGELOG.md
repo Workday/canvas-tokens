@@ -1,5 +1,30 @@
 # @workday/canvas-tokens-web
 
+## 1.0.1
+
+### Patch Changes
+
+- **Documentation**
+
+  - docs: Fix Getting Started doc ([@alanbsmith](https://github.com/alanbsmith))
+  - docs: Add consumer documentation ([#60](https://github.com/Workday/canvas-tokens/pull/60))
+    ([@alanbsmith](https://github.com/alanbsmith))
+  - docs: Fix broken doc link ([@alanbsmith](https://github.com/alanbsmith))
+  - docs: Add contributing doc to Storybook ([@alanbsmith](https://github.com/alanbsmith))
+
+  **Infrastructure**
+
+  - fix: Update release action ([#59](https://github.com/Workday/canvas-tokens/pull/59))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - feat: Add forward-merge action ([#67](https://github.com/Workday/canvas-tokens/pull/67))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  **Web Documentation**
+
+  - fix: Fix JS Doc comment and value order
+    ([#62](https://github.com/Workday/canvas-tokens/pull/62))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 1.0.0
 
 ### Major Changes
