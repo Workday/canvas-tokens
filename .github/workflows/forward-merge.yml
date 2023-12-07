@@ -1,0 +1,145 @@
+name: 'forward-merge'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-ff-only:
+    runs-on: ubuntu-latest
+
+    steps:
+      ## First, we'll checkout the repository. We don't persist credentials because we need a
+      ## Personal Access Token to push on a branch that is protected. See
+      ## https://github.com/cycjimmy/semantic-release-action#basic-usage
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          ref: prerelease/major # checkout the next branch
+          fetch-depth: 0 # Needed to do merges
+
+      ## Attempt to do a fast-forward-only merge. If this succeeds, there is no divergence
+      ## between the branches and we do not need to retest. The commit has already been
+      ## verified. If this line fails, it will trigger `verify-merge`
+      - name: Test ff-only merge
+        run: git merge origin/main --ff-only
+
+      ## If the previous step passed, push the verified commit directly to the next branch
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_RW_TOKEN }}
+          branch: refs/heads/prerelease/major
+
+  ## If the previous step failed, it means the fast-forward attempt failed. There is a
+  ## divergence and we will need to merge the branches and verify everything works.
+  verify-merge:
+    runs-on: ubuntu-latest
+    if: failure()
+    needs: ['test-ff-only']
+
+    steps:
+      ## First, we'll checkout the repository. We don't persist credentials because we need a
+      ## Personal Access Token to push on a branch that is protected. See
+      ## https://github.com/cycjimmy/semantic-release-action#basic-usage
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # Needed to do merges
+
+      - uses: Workday/canvas-kit-actions/install@v1
+        with:
+          node_version: 18.x
+
+      ## A `yarn bump` will create a commit and a tag. We need to set up the git user to do this.
+      ## We'll make that user be the github-actions user.
+      - name: Config git user
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git config --global pull.rebase false
+
+      ## Create a merge branch
+      - name: Forward merge
+        run: node scripts/utils/forward-merge.js
+
+      - name: Git Log
+        run: git log
+
+      # Keep steps separate for Github Actions annotation matching: https://github.com/actions/setup-node/blob/83c9f7a7df54d6b57455f7c57ac414f2ae5fb8de/src/setup-node.ts#L26-L33
+      - name: Lint
+        run: yarn lint
+
+      - name: Type Check
+        run: yarn typecheck
+
+      - name: Unit tests
+        run: yarn test
+
+      - name: Build Storybook
+        run: yarn build-storybook --quiet
+
+      - name: Cache Build
+        id: build-cache
+        uses: actions/cache/@v2
+        with:
+          path: docs
+          key: ${{ runner.os }}-build-${{ github.sha }}
+
+      ## Push both the commit and tag created by Lerna's version command using a PAT
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_RW_TOKEN }}
+          branch: refs/heads/prerelease/major
+
+  ## If we get here, it means the branches are not fast-forward mergeable, OR the merge commit
+  ## failed verification. We will need manual intervention, so we'll create a pull request to
+  ## be verified by a person.
+  make-pull-request:
+    runs-on: ubuntu-latest
+    # Run only if the verify-merge job failed. If the test-ff-only fails, but verify-merge passes, we should skip
+    if: failure() && needs.verify-merge.result == 'failure'
+    needs: ['verify-merge']
+
+    steps:
+      ## If we've failed any previous step, we'll need to create a PR instead
+      - uses: NicholasBoll/action-forward-merge-pr@main
+        with:
+          token: ${{secrets.GH_RW_TOKEN}} # use PAT to force GH Actions to run the PR verify. The regular token will not
+          branches: main+prerelease/major
+          prefix: 'chore: '
+          body: |
+            This pull request was automatically created by an automated [forward-merge job](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}). The automated job failed automated checks and must be resolved manually.
+            Reasons for failure may include:
+            - Merge conflicts that cannot be automatically resolved
+            - A merge resulted in check failures
+              - Lint or type errors
+              - Test failures
+              - Unexpected visual changes
+            The pull request should inform you of merge conflicts before you start if any.
+            1. Run the following commands in your terminal. If this succeeds, skip step 2. The last command will run a script that tries to merge and resolve conflicts automatically.
+                ```
+                git branch -D merge/main-into-prerelease/major || true
+                git fetch upstream
+                git checkout merge/main-into-prerelease/major
+                git pull upstream merge/main-into-prerelease/major -f
+                node scripts/utils/forward-merge.js
+                ```
+            2. If the previous step succeeded, skip to step 3. Resolve conflicts manually. Then run the following.
+                ```
+                git add .
+                git commit -m "chore: Merge main into prerelease/major"
+                ```
+            3. Push the merge commit back to the pull request
+                ```
+                git push upstream merge/main-into-prerelease/major
+                ```
+            If there were no merge conflicts, the forward-merge job failed because of a test failure. You can wait for the pull request to give errors, or you can check the logs for failures. You'll have to update code to fix errors.
+            This pull request will be merged using the `merge` strategy instead of the `squash` strategy. This means any commit in the log will show in the branch's history. Any commit you make should amend the merge commit. Use the following command:
+            ```
+            git commit --amend --no-edit
+            ```
+            You must then force-push the branch and the CI will rerun verification.
+            Use the `automerge` label like normal and the CI will pick the correct merge strategy.
