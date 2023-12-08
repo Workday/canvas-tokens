@@ -23,7 +23,7 @@
     "test": "jest -c jest.config.ts",
     "tokens-config": "ts-node scripts/tokens-config",
     "typecheck": "tsc -p . --noEmit",
-    "release": "yarn build:tokens && changeset publish --tags latest"
+    "release": "yarn build:tokens --cache=false && changeset publish --tags latest"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
