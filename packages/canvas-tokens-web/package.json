@@ -9,7 +9,7 @@
   "sideEffects": false,
   "types": "dist/es6/index.d.ts",
   "scripts": {
-    "clean": "rimraf dist"
+    "clean": "rimraf dist css less scss"
   },
   "files": [
     "dist/",
