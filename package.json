@@ -12,8 +12,8 @@
   },
   "scripts": {
     "commit": "git-cz",
-    "build:tokens": "yarn clean:tokens && npx nx build @workday/canvas-tokens",
-    "clean:tokens": "npx nx clean @workday/canvas-tokens-web",
+    "build:tokens": "nx build @workday/canvas-tokens",
+    "clean:tokens": "nx clean @workday/canvas-tokens-web",
     "lint": "eslint -c ./.eslintrc.js --ext=ts .",
     "precommit": "lint-staged",
     "prepare": "husky install",
@@ -23,7 +23,8 @@
     "test": "jest -c jest.config.ts",
     "tokens-config": "ts-node scripts/tokens-config",
     "typecheck": "tsc -p . --noEmit",
-    "release": "yarn build:tokens --cache=false && changeset publish --tags latest"
+    "prerelease": "yarn clean:tokens && yarn build:tokens",
+    "release": "changeset publish --tags latest"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
@@ -57,7 +58,7 @@
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.0",
-    "ts-node": "10.9.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.4",
     "vite": "~4.3.9"
   },

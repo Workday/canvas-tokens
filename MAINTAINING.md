@@ -101,3 +101,10 @@ yarn test
 We use [Chromatic](https://www.chromatic.com/builds?appId=64fb84ee156f858ef9126097) for visual regression tests. Chromatic runs automatically on every pull request and requires changes to be verified before merging. When branch is merged to `main`, the baseline is updated.
 
 ## Publishing
+
+Publishing is currently a manual process. But it's relatively straightforward.
+
+1. Run the [Web Release GitHub Action workflow](https://github.com/Workday/canvas-tokens/actions/workflows/release-web.yml) and choose your version override: `patch`, `minor`, or `major`.
+2. Once the action is complete, pull down the latest `main` locally.
+3. Run `yarn release` to publish to npm
+   a. You'll need a npm token to publish
