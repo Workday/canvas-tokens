@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 1.0.2
+
+### Patch Changes
+
+- **Infrastructure**
+
+  - fix: Fix release script ([#70](https://github.com/Workday/canvas-tokens/pull/70))
+    ([@alanbsmith](https://github.com/alanbsmith))
+
 ## 1.0.1
 
 ### Patch Changes
