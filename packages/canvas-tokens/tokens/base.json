@@ -1067,6 +1067,36 @@
       "value": "2",
       "type": "number",
       "description": "Used to calculate the skip level amount between levels in the type ramp, such as going from subtext to body, body to heading."
+    },
+    "extended": {
+      "palette": {
+        "dragon-fruit": {
+          "100": {
+            "value": "#FBF1FF",
+            "type": "color"
+          },
+          "200": {
+            "value": "#EFD3FF",
+            "type": "color"
+          },
+          "300": {
+            "value": "#BE61F6",
+            "type": "color"
+          },
+          "400": {
+            "value": "#8C17D2",
+            "type": "color"
+          },
+          "500": {
+            "value": "#6B11A3",
+            "type": "color"
+          },
+          "600": {
+            "value": "#4A0D71",
+            "type": "color"
+          }
+        }
+      }
     }
   }
 }
