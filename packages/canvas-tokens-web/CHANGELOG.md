@@ -1,5 +1,24 @@
 # @workday/canvas-tokens-web
 
+## 1.1.0
+
+### Minor Changes
+
+- **Infrastructure**
+
+  - chore: Update build and release scripts
+    ([#72](https://github.com/Workday/canvas-tokens/pull/72))
+    ([@alanbsmith](https://github.com/alanbsmith))
+  - feat: Add skip condition to forward merge
+    ([#74](https://github.com/Workday/canvas-tokens/pull/74))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  **Other**
+
+  - chore: Sync Tokens Studio config 🤖 ([#79](https://github.com/Workday/canvas-tokens/pull/79))
+    ([@alanbsmith](https://github.com/alanbsmith), [@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 1.0.2
 
 ### Patch Changes
