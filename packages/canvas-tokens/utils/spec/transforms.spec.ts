@@ -146,6 +146,19 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
+  it('should transform name to camel case for base level', () => {
+    const result = transforms['name/camel'].transformer(
+      {
+        ...defaultToken,
+        path: ['base', 'level'],
+      },
+      defaultOptions
+    );
+    const expected = 'baseLevel';
+
+    expect(result).toBe(expected);
+  });
+
   it('should flat shhadow value', () => {
     const token = {
       ...defaultToken,

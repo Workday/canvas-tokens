@@ -11,7 +11,8 @@ type Transformer = (token: DesignToken) => string;
  */
 export const transformNameToCamelCase: Transformer = ({path}) => {
   const lowLevelCategories = ['unit', 'level'];
-  const lowLevelPattern = new RegExp(`/${lowLevelCategories.join('|')}/`);
+  const lowLevelPattern = new RegExp(`${lowLevelCategories.join('|')}`);
+
   const isLowLevelToken = lowLevelPattern.test(path[1]);
   const isPalette = path.includes('palette');
 
