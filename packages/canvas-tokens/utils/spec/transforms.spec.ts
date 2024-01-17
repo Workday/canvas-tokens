@@ -120,6 +120,19 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
+  it('should transform name to camel case without token category for palette', () => {
+    const result = transforms['name/camel'].transformer(
+      {
+        ...defaultToken,
+        path: ['base', 'extended', 'palette', 'dragon-fruit', '100'],
+      },
+      defaultOptions
+    );
+    const expected = 'extendedDragonFruit100';
+
+    expect(result).toBe(expected);
+  });
+
   it('should transform name to camel case without level', () => {
     const result = transforms['name/camel'].transformer(
       {
@@ -129,6 +142,19 @@ describe('transforms', () => {
       defaultOptions
     );
     const expected = 'shadow100';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should transform name to camel case for base level', () => {
+    const result = transforms['name/camel'].transformer(
+      {
+        ...defaultToken,
+        path: ['base', 'level'],
+      },
+      defaultOptions
+    );
+    const expected = 'baseLevel';
 
     expect(result).toBe(expected);
   });

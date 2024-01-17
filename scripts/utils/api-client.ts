@@ -20,7 +20,7 @@ export const tokensStudioRepoParams = {
   /** `tokens/base.json` */
   baseConfigPath: 'tokens/base.json',
   /** `tokens/brand/default.json` */
-  brandConfigPath: 'tokens/sys/brand/default.json',
+  brandConfigPath: 'tokens/sys/brand/canvas.json',
   /** `tokens/sys` */
   sysConfigPath: 'tokens/sys',
 };

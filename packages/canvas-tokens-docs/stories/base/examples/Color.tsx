@@ -14,6 +14,7 @@ const colorPaletteNames = [
   'chiliMango',
   'cinnamon',
   'coconut',
+  'extendedDragonFruit',
   'frenchVanilla',
   'fruitPunch',
   'grapeSoda',
@@ -121,11 +122,25 @@ export const StatusColorTokens = () => {
   );
 };
 
+const aiPaletteNames = ['extendedDragonFruit'];
+const aiColorPalettes = baseColorPalettes.filter(([name]) => aiPaletteNames.includes(name));
+
 const otherPaletteNames = primaryPaletteNames.concat(
   neutralPaletteNames,
   typePaletteNames,
-  statusPaletteNames
+  statusPaletteNames,
+  aiPaletteNames
 );
+export const AIColorTokens = () => {
+  return (
+    <Stack>
+      {aiColorPalettes.map(([name, palette]) => (
+        <ColorGrid key={name} name={name} palette={palette} />
+      ))}
+    </Stack>
+  );
+};
+
 const otherColorPalettes = baseColorPalettes.filter(([name]) => !otherPaletteNames.includes(name));
 
 export const OtherColorTokens = () => {
