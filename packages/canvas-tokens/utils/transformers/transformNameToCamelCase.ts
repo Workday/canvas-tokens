@@ -9,11 +9,22 @@ type Transformer = (token: DesignToken) => string;
  * @param {*} Token - style dictionary token object.
  * @returns updated token name
  */
-export const transformNameToCamelCase: Transformer = token => {
-  const fullName = token.path;
-  const [_, ...nameWithCategory] = fullName;
-  const [category, ...tokenName] = nameWithCategory;
-  const isLowLevelToken = ['unit', 'level'].includes(category);
-  const value = isLowLevelToken ? fullName : category === 'palette' ? tokenName : nameWithCategory;
-  return camelCase(value.join('-'));
+export const transformNameToCamelCase: Transformer = ({path}) => {
+  const lowLevelCategories = ['unit', 'level'];
+  const lowLevelPattern = new RegExp(`/${lowLevelCategories.join('|')}/`);
+  const isLowLevelToken = lowLevelPattern.test(path[1]);
+  const isPalette = path.includes('palette');
+
+  if (isLowLevelToken) {
+    return camelCase(path.join('-'));
+  }
+
+  const tokenName = path.slice(1);
+
+  if (isPalette) {
+    const filteredPath = tokenName.filter((i: string) => i !== 'palette');
+    return camelCase(filteredPath.join('-'));
+  }
+
+  return camelCase(tokenName.join('-'));
 };
