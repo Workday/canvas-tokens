@@ -131,7 +131,6 @@ const otherPaletteNames = primaryPaletteNames.concat(
   statusPaletteNames,
   aiPaletteNames
 );
-console.log(aiColorPalettes);
 export const AIColorTokens = () => {
   return (
     <Stack>
