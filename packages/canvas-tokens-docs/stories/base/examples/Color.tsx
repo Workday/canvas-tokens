@@ -14,7 +14,7 @@ const colorPaletteNames = [
   'chiliMango',
   'cinnamon',
   'coconut',
-  'extendedPaletteDragonFruit',
+  'extendedDragonFruit',
   'frenchVanilla',
   'fruitPunch',
   'grapeSoda',
@@ -122,7 +122,7 @@ export const StatusColorTokens = () => {
   );
 };
 
-const aiPaletteNames = ['extendedPaletteDragonFruit'];
+const aiPaletteNames = ['extendedDragonFruit'];
 const aiColorPalettes = baseColorPalettes.filter(([name]) => aiPaletteNames.includes(name));
 
 const otherPaletteNames = primaryPaletteNames.concat(
