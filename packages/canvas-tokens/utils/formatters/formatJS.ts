@@ -5,7 +5,7 @@ import {jsFileHeader} from './helpers/jsFileHeader';
  * Style Dictionary format function that creates common-js file structure.
  * This structure contains separated exports of each token.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
- * options can contains `withoutModule` property js module header should not be generated.
+ * options can contain `withoutModule` property js module header should not be generated.
  * @returns file content as a string
  */
 export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, options}) => {
@@ -23,10 +23,9 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
  * Style Dictionary format function that creates es6 file structure.
  * This structure contains separated exports of each token.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
- * options can contains `withoutModule` property js module header should not be generated.
  * @returns file content as a string
  */
-export const formatToInlineES6Module: Formatter = ({dictionary, file, options}) => {
+export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   return dictionary.allTokens.reduce((acc: string, {name, path}) => {
     const cssVarName = path.join('-');
@@ -39,7 +38,6 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file, options}) 
  * Style Dictionary format function that creates ts file structure.
  * This structure contains separated exports of each token with `as const`.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
- * options can contains `withoutModule` property js module header should not be generated.
  * @returns file content as a string
  */
 export const formatInlineTypes: Formatter = ({dictionary, file}) => {
@@ -54,7 +52,7 @@ export const formatInlineTypes: Formatter = ({dictionary, file}) => {
 /**
  * Style Dictionary format function that create token objects with common-js exports.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
- * options can contains `withoutModule` property js module header should not be generated.
+ * options can contain `withoutModule` property js module header should not be generated.
  * @returns file content as a string
  */
 export const formatCommonToObjects: Formatter = ({dictionary, file, options}) => {
