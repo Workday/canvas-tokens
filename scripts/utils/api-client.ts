@@ -7,7 +7,7 @@ config();
 // Client for GitHub
 export const ghClient = new Octokit({
   auth: process.env.GITHUB_TOKEN,
-  baseUrl: process.env.GITHUB_BASE_URL,
+  baseUrl: 'https://api.github.com',
 });
 
 export const tokensStudioRepoParams = {

@@ -1,0 +1,49 @@
+name: Tokens Studio Sync
+
+on: 
+  workflow_dispatch:
+    inputs:
+      token_type:
+        description: 'Choose which tokens to sync'
+        type: choice
+        options:
+          - 'all'
+          - 'base'
+          - 'brand'
+          - 'system'
+        default: 'all'
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: Workday/canvas-kit-actions/install@v1
+        with:
+          node_version: 18.x
+
+  create_sync_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Sync Branch
+        shell: bash
+        run: echo 'hello'
+
+  sync_tokens:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Sync Tokens
+        shell: bash
+        run: yarn tokens-config sync ${{ inputs.token_type }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  create_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Sync PR
+        shell: bash
+        run: yarn tokens-config create-pull
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

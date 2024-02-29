@@ -3,6 +3,7 @@ import {syncBaseConfig} from './utils/sync-base-config';
 import {syncBrandConfig} from './utils/sync-brand-config';
 import {syncSystemConfig} from './utils/sync-sys-config';
 import {createSyncPullRequest} from './utils/pull-request';
+import {createSyncBranch} from './utils/create-sync-branch';
 
 const syncTypeArg = new Argument('type', 'Specify which type of tokens to sync')
   .choices(['all', 'base', 'brand', 'system'])
@@ -27,6 +28,7 @@ program
   .description('Sync Canvas Tokens repo with Tokens Studio config')
   .addArgument(syncTypeArg)
   .action(async type => {
+    await createSyncBranch();
     switch (type) {
       case 'base':
         await syncBaseConfig();
