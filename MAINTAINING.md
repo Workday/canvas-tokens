@@ -40,9 +40,34 @@ yarn serve-storybook
 
 Our Tokens Studio config currently lives in
 [Canvas Tokens Studio](https://github.com/workday/canvas-tokens-studio/) as a single source of truth
-for design and code. Canvas Tokens uses a script to sync the token config with that repo.
+for design and code. Canvas Tokens uses a script to sync the token config with that repo. You can either sync by triggering the [Tokens Studio Sync](https://github.com/Workday/canvas-tokens/actions/workflows/tokens-studio-sync.yml) GitHub Action, or you can run scripts manually with a key (personal access token).
 
-### Getting A Key
+Once the workflow has successfully completed, it will generate a pull request from the `tokens-studio-sync` branch to `main`. You will need to add more details to the PR description, such as the issue number, a human-readable summary, and the release category as these will be used in the changelog.
+
+```md
+## Issue
+
+Resolves #1234
+
+## Summary
+
+Description of the changes
+
+## Release Category
+
+Infrastructure
+
+```
+
+### Syncing with GitHub Actions
+
+Generally, you'll want to sync tokens with the [Tokens Studio Sync](https://github.com/Workday/canvas-tokens/actions/workflows/tokens-studio-sync.yml) action. It has everything configured to handle the sync. When you trigger the workflow, you'll want to run it from the `main` branch and choose which tokens you'd like to sync: `base`, `brand`, `system` or `all` (default).
+
+### Syncing Manually
+
+Syncing manually gives you more granular control over the process. If you need to edit or test something before submitting a pull request, this might be the best option.
+
+#### Getting A Key
 
 To run these scripts locally, you'll need to generate your own API key. You'll need a
 [GitHub personal access token](https://github.com/settings/tokens) with repo scope access.
@@ -57,7 +82,7 @@ cat .env.example > .env
 Then add your GH personal access token to its respective environment variable, and
 you're good to go.
 
-### Syncing Token Configurations
+#### Syncing Token Configurations
 
 ```sh
 yarn tokens-config sync
@@ -74,7 +99,7 @@ If you only want to update one type of tokens, you can specify it in the script.
 yarn tokens-config sync base
 ```
 
-### Merging Configuration Updates
+#### Merging Configuration Updates
 
 To merge the updates, you can either manually
 [create a pull request](https://github.com/workday/canvas-tokens/compare/main...tokens-studio-sync)
