@@ -1,5 +1,18 @@
 import {RestEndpointMethodTypes} from '@octokit/rest';
 import {ghClient, canvasTokensRepoParams} from './api-client';
+import {existsSync, readFileSync} from 'fs';
+
+/**
+ * Use the standard template as the pull request body
+ */
+function getPullRequestTemplate() {
+  const path = '.github/PULL_REQUEST_TEMPLATE.md';
+  if (existsSync(path)) {
+    return readFileSync(path).toString('utf-8');
+  } else {
+    return '';
+  }
+}
 
 /**
  *
@@ -31,5 +44,6 @@ export async function createSyncPullRequest(baseBranch = canvasTokensRepoParams.
     head: canvasTokensRepoParams.syncBranch,
     maintainer_can_modify: true,
     title: 'chore: Sync Tokens Studio config 🤖',
+    body: getPullRequestTemplate(),
   });
 }

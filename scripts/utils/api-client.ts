@@ -7,7 +7,7 @@ config();
 // Client for GitHub
 export const ghClient = new Octokit({
   auth: process.env.GITHUB_TOKEN,
-  baseUrl: process.env.GITHUB_BASE_URL,
+  baseUrl: 'https://api.github.com',
 });
 
 export const tokensStudioRepoParams = {
@@ -21,12 +21,20 @@ export const tokensStudioRepoParams = {
   baseConfigPath: 'tokens/base.json',
   /** `tokens/brand/default.json` */
   brandConfigPath: 'tokens/sys/brand/canvas.json',
-  /** `tokens/sys` */
-  sysConfigPath: 'tokens/sys',
+  /** tokens/sys/*.json and tokens/sys/color/colors */
+  sysConfigPaths: [
+    'tokens/sys/color/color.json',
+    'tokens/sys/breakpoint.json',
+    'tokens/sys/depth.json',
+    'tokens/sys/opacity.json',
+    'tokens/sys/shape.json',
+    'tokens/sys/space.json',
+    'tokens/sys/type.json',
+  ],
 };
 
 export const canvasTokensRepoParams = {
-  /** `design` */
+  /** `workday` */
   owner: 'workday',
   /** `canvas-tokens` */
   repo: 'canvas-tokens',
