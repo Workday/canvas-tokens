@@ -1,0 +1,39 @@
+name: Tokens Studio Sync
+
+on: 
+  workflow_dispatch:
+    inputs:
+      token_type:
+        description: 'Choose which tokens to sync'
+        type: choice
+        options:
+          - 'all'
+          - 'base'
+          - 'brand'
+          - 'system'
+        default: 'all'
+
+jobs:
+  sync_tokens:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Used for conventional commit ranges
+
+      - name: Install
+        shell: bash
+        run: yarn install
+
+      - name: Sync Tokens
+        shell: bash
+        run: yarn tokens-config sync ${{ inputs.token_type }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Create Sync PR
+        shell: bash
+        run: yarn tokens-config create-pull
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
