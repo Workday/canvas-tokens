@@ -345,7 +345,7 @@
           "type": "color"
         },
         "200": {
-          "value": "#c3c2ff",
+          "value": "#c2cfff",
           "type": "color"
         },
         "300": {
@@ -449,7 +449,7 @@
           "type": "color"
         },
         "200": {
-          "value": "#ffbdbd",
+          "value": "#ffbdd6",
           "type": "color"
         },
         "300": {
@@ -718,11 +718,11 @@
         "type": "number"
       },
       "400": {
-        "value": "0.65",
+        "value": "0.64",
         "type": "number"
       },
       "500": {
-        "value": "0.85",
+        "value": "0.84",
         "type": "number"
       }
     },
