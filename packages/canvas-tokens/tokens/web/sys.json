@@ -1,5 +1,32 @@
 {
   "sys": {
+    "breakpoints": {
+      "zero": {
+        "value": "0",
+        "type": "dimension",
+        "description": "Use to set a media query `min-width` below small."
+      },
+      "s": {
+        "value": "{base.unit} * 80",
+        "type": "dimension",
+        "description": "The `min-width` for mobile devices, such as phones and tablets."
+      },
+      "m": {
+        "value": "{base.unit} * 192",
+        "type": "dimension",
+        "description": "Medium screens, such as laptops."
+      },
+      "l": {
+        "value": "{base.unit} * 256",
+        "type": "dimension",
+        "description": "Large screens, such as desktops."
+      },
+      "xl": {
+        "value": "{base.unit} * 360",
+        "type": "dimension",
+        "description": "Used for extra large screens, such as wide monitors and TVs."
+      }
+    },
     "depth": {
       "1": {
         "value": "{shadow.100}",
@@ -33,10 +60,42 @@
       }
     },
     "opacity": {
+      "zero": {
+        "value": "0",
+        "type": "number",
+        "description": "Dev only"
+      },
       "disabled": {
         "value": "{opacity.300}",
-        "type": "opacity",
-        "description": "State layer added on top of disabled elements."
+        "type": "number",
+        "description": "Disabled states"
+      },
+      "overlay": {
+        "value": "{opacity.400}",
+        "type": "number",
+        "description": "Overlay"
+      },
+      "contrast": {
+        "value": "{opacity.500}",
+        "type": "number",
+        "description": "Tooltips, Status Indicator"
+      },
+      "full": {
+        "value": "1",
+        "type": "number",
+        "description": "Dev only"
+      },
+      "shadow": {
+        "first": {
+          "value": "{opacity.200}",
+          "type": "number",
+          "description": "Alpha on first shadow"
+        },
+        "second": {
+          "value": "{opacity.100}",
+          "type": "number",
+          "description": "Alpha on second shadow"
+        }
       }
     },
     "shape": {
@@ -60,6 +119,16 @@
         "type": "borderRadius",
         "description": "Use this for all the containers and popups: All Cards, Modals, Tooltips and Toasts."
       },
+      "x4": {
+        "value": "{base.unit} * 4",
+        "type": "borderRadius",
+        "description": "(Mobile) Primary containers that house a large amount of other elements and complex information\n"
+      },
+      "x6": {
+        "value": "{base.unit} * 6",
+        "type": "borderRadius",
+        "description": "(Mobile) Full width sheets that are temporary and modal views"
+      },
       "round": {
         "value": "{base.unit} * 250",
         "type": "borderRadius",
@@ -71,6 +140,11 @@
         "value": "0",
         "type": "spacing",
         "description": "Stacks, rows in tables"
+      },
+      "half": {
+        "value": "{base.unit} * 0.5",
+        "type": "spacing",
+        "description": "Mobile only"
       },
       "x1": {
         "value": "{base.unit}",
@@ -92,6 +166,11 @@
         "type": "spacing",
         "description": "Default space token. Used to group Inputs with related data"
       },
+      "x5": {
+        "value": "{base.unit} * 5",
+        "type": "spacing",
+        "description": "Mobile only"
+      },
       "x6": {
         "value": "{base.unit} * 6",
         "type": "spacing",
@@ -107,10 +186,15 @@
         "type": "spacing",
         "description": "• Used for outer margins on the overall page content \n• Used for inner margins on large items such as page sections"
       },
+      "x14": {
+        "value": "{base.unit} * 14",
+        "type": "spacing",
+        "description": "Mobile only"
+      },
       "x16": {
         "value": "{base.unit} * 16",
         "type": "spacing",
-        "description": "- Use to de-clutter your UI when a lot of space is available\n- Separate banner sections from page content\n- Use to differentiate page content like page sections"
+        "description": "- Use to de-clutter your UI when alot of space is available\n- Separate banner sections from page content\n- Use to differentiate page content like page sections"
       },
       "x20": {
         "value": "{base.unit} * 20",
@@ -692,7 +776,7 @@
             "fontFamily": "{font-family.50}",
             "fontWeight": "{font-weight.400}",
             "lineHeight": "{line-height.150}",
-            "fontSize": "{font-size.200}",
+            "fontSize": "{font-size.100}",
             "letterSpacing": "{letter-spacing.100}",
             "textDecoration": "underline"
           },
