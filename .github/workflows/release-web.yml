@@ -103,57 +103,13 @@ jobs:
           draft: false
           prerelease: false
 
-  # publish:
-  #   runs-on: ubuntu-latest
-  #   needs: 'release'
-
-  #   steps:
-  #     ## First, we'll checkout the repository. We don't persist credentials because we need a
-  #     ## Personal Access Token to push on a branch that is protected. See
-  #     ## https://github.com/cycjimmy/semantic-release-action#basic-usage
-  #     - uses: actions/checkout@v4
-  #       with:
-  #         persist-credentials: false
-  #         fetch-depth: 0 # Used for conventional commit ranges
-
-  #     ## This step installs node and sets up several matchers (regex matching for Github
-  #     ## Annotations). See
-  #     ## https://github.com/actions/setup-node/blob/25316bbc1f10ac9d8798711f44914b1cf3c4e954/src/main.ts#L58-L65
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: '18.x'
-  #         registry-url: https://registry.npmjs.org
-
-  #     ## The caching steps create a cache key based on the OS and hash of the yarn.lock file. A
-  #     ## cache hit will copy files from Github cache into the `node_modules` and `.cache/cypress`
-  #     ## folders. A cache hit will skip the cache steps
-  #     - name: Cache node modules
-  #       id: npm-cache
-  #       uses: actions/cache@v3
-  #       with:
-  #         path: node_modules
-  #         key: ${{ runner.os }}-18.x-node-modules-hash-${{ hashFiles('package-lock.json') }}
-
-  #     ## If both `node_modules` and `.cache/cypress` were cache hits, we're going to skip the `yarn
-  #     ## install` step. This effectively saves up to 3m on a cache hit build.
-  #     - name: Install Packages
-  #       if: steps.npm-cache.outputs.cache-hit != 'true'
-  #       run: npm install --production=false
-
-  #     - name: Creating .npmrc
-  #       run: |
-  #           cat << EOF > "$HOME/.npmrc"
-  #             //registry.npmjs.org/:_authToken=$NPM_TOKEN
-  #           EOF
-  #       env:
-  #         NPM_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
-
-  #     - name: Build & Publish
-  #       id: changesets
-  #       uses: changesets/action@v1
-  #       with:
-  #         # This expects you to have a script called release which does a build for your packages and calls changeset publish
-  #         publish: yarn release
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # publish:
+      - name: Build & Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
