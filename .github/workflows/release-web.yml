@@ -36,80 +36,76 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: Get previous tag
-        id: previous-tag
-        run:
-          echo "tag=$(node -p 'require("./packages/canvas-tokens-web/package.json").version')" >> $GITHUB_OUTPUT
+      # - name: Get previous tag
+      #   id: previous-tag
+      #   run:
+      #     echo "tag=$(node -p 'require("./packages/canvas-tokens-web/package.json").version')" >> $GITHUB_OUTPUT
 
-      - name: Generate Changeset
-        uses: Workday/canvas-kit-actions/generate-changeset@v1
-        id: changeset
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fromRef: '@workday/canvas-tokens-web@${{steps.previous-tag.outputs.tag}}'
-          toRef: 'main'
-          tagName: 'new-release'
+      # - name: Generate Changeset
+      #   uses: Workday/canvas-kit-actions/generate-changeset@v1
+      #   id: changeset
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     fromRef: '@workday/canvas-tokens-web@${{steps.previous-tag.outputs.tag}}'
+      #     toRef: 'main'
+      #     tagName: 'new-release'
       
-      - name: Filter changes
-        id: filter-changes
-        run: echo "changelog=$(node scripts/utils/filter-changes.js)" >> $GITHUB_OUTPUT
-        env:
-          PACKAGE: web
-          CHANGESET_BODY: ${{steps.changeset.outputs.body}}
+      # - name: Filter changes
+      #   id: filter-changes
+      #   run: echo "changelog=$(node scripts/utils/filter-changes.js)" >> $GITHUB_OUTPUT
+      #   env:
+      #     PACKAGE: web
+      #     CHANGESET_BODY: ${{steps.changeset.outputs.body}}
 
-      - name: Create pre-changelog for versioning
-        run: npx ts-node scripts/utils/create-prechangelog.ts
-        env:
-          PACKAGE: web
-          VERSION: ${{inputs.version}}
-          CHANGESET_BODY: ${{steps.filter-changes.outputs.changelog}}
+      # - name: Create pre-changelog for versioning
+      #   run: npx ts-node scripts/utils/create-prechangelog.ts
+      #   env:
+      #     PACKAGE: web
+      #     VERSION: ${{inputs.version}}
+      #     CHANGESET_BODY: ${{steps.filter-changes.outputs.changelog}}
 
-      - name: Bump package
-        run: npx changeset version
+      # - name: Bump package
+      #   run: npx changeset version
   
-      - name: Get release tag
-        id: new-tag
-        run:
-          echo "tag=$(node -p 'require("./packages/canvas-tokens-web/package.json").version')" >> $GITHUB_OUTPUT
+      # - name: Get release tag
+      #   id: new-tag
+      #   run:
+      #     echo "tag=$(node -p 'require("./packages/canvas-tokens-web/package.json").version')" >> $GITHUB_OUTPUT
   
-      ## So far, the changes to to the workspace have not been committed. We'll commit them now and
-      ## create a tag
-      - name: Commit and add Tag
-        shell: bash
-        run: |
-          git add . && git commit -m "chore: Release @workday/canvas-tokens-web v${{steps.new-tag.outputs.tag}} [skip release]" && git tag -a @workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}} -m "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
+      # ## So far, the changes to to the workspace have not been committed. We'll commit them now and
+      # ## create a tag
+      # - name: Commit and add Tag
+      #   shell: bash
+      #   run: |
+      #     git add . && git commit -m "chore: Release @workday/canvas-tokens-web v${{steps.new-tag.outputs.tag}} [skip release]" && git tag -a @workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}} -m "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
 
-      - name: See git log
-        run: |
-          git log --no-walk --tags --oneline -n 1
+      # - name: See git log
+      #   run: |
+      #     git log --no-walk --tags --oneline -n 1
 
-      # Push both the commit and tag created by changeset version command using a PAT
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GH_RW_TOKEN }}
-          branch: "main"
-          tags: true
+      # # Push both the commit and tag created by changeset version command using a PAT
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GH_RW_TOKEN }}
+      #     branch: "main"
+      #     tags: true
 
       ## Create a release on Github.
-      - name: Create GH Release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
-          name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
-          body: ${{steps.filter-changes.outputs.changelog}}
-          draft: false
-          prerelease: false
+      # - name: Create GH Release
+      #   uses: softprops/action-gh-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
+      #     name: "@workday/canvas-tokens-web@${{steps.new-tag.outputs.tag}}"
+      #     body: ${{steps.filter-changes.outputs.changelog}}
+      #     draft: false
+      #     prerelease: false
 
       # publish:
       - name: Build & Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          # This expects you to have a script called release which does a build for your packages and calls changeset publish
-          publish: yarn release
+        shell: bash
+        run: yarn release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
