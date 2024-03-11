@@ -1,5 +1,18 @@
 # @workday/canvas-tokens-web
 
+## 1.1.1
+
+### Patch Changes
+
+- **Infrastructure**
+
+  - chore: Add Token Studio sync action ([#85](https://github.com/Workday/canvas-tokens/pull/85))
+    ([@alanbsmith](https://github.com/alanbsmith))
+  - chore: Bump actions/checkout to v4 ([#89](https://github.com/Workday/canvas-tokens/pull/89))
+    ([@alanbsmith](https://github.com/alanbsmith))
+  - chore: Update Release Automation ([#91](https://github.com/Workday/canvas-tokens/pull/91))
+    ([@alanbsmith](https://github.com/alanbsmith))
+
 ## 1.1.0
 
 ### Minor Changes
