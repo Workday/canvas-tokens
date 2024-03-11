@@ -72,6 +72,9 @@ jobs:
       - name: Lint
         run: yarn lint
 
+      - name: Build Tokens
+        run: yarn build:tokens
+
       - name: Type Check
         run: yarn typecheck
 
