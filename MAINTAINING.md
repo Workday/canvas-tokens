@@ -61,7 +61,7 @@ Infrastructure
 
 ### Syncing with GitHub Actions
 
-Generally, you'll want to sync tokens with the [Tokens Studio Sync](https://github.com/Workday/canvas-tokens/actions/workflows/tokens-studio-sync.yml) action. It has everything configured to handle the sync. When you trigger the workflow, you'll want to run it from the `main` branch and choose which tokens you'd like to sync: `base`, `brand`, `system` or `all` (default).
+Generally, you'll want to sync tokens with the [Tokens Studio Sync](https://github.com/Workday/canvas-tokens/actions/workflows/tokens-studio-sync.yml) action. It has everything configured to handle the sync. When you trigger the workflow, you'll choose the base branch (`main` is the default) for the pull request and which tokens you'd like to sync: `base`, `brand`, `system` or `all` (default).
 
 ### Syncing Manually
 
@@ -104,10 +104,16 @@ yarn tokens-config sync base
 To merge the updates, you can either manually
 [create a pull request](https://github.com/workday/canvas-tokens/compare/main...tokens-studio-sync)
 or you can run the script. The script below will create a pull request to merge the
-tokens-studio-sync branch into main. If a pull request already exists, it will fail.
+`tokens-studio-sync` branch into `main`. If a pull request already exists, it will fail.
 
 ```sh
 yarn tokens-config create-pull
+```
+
+You can also specify a different branch to sync.
+
+```sh
+yarn yarn tokens-config create-pull prerelease/major
 ```
 
 ## Testing

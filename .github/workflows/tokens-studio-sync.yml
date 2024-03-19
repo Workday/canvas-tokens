@@ -3,6 +3,13 @@ name: Tokens Studio Sync
 on: 
   workflow_dispatch:
     inputs:
+      base_branch:
+        description: 'Choose the base branch for the sync pull request'
+        type: choice
+        options:
+          - 'main'
+          - 'prerelease/minor'
+          - 'prerelease/major'
       token_type:
         description: 'Choose which tokens to sync'
         type: choice
@@ -30,10 +37,10 @@ jobs:
         shell: bash
         run: yarn tokens-config sync ${{ inputs.token_type }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_RW_TOKEN }}
       
       - name: Create Sync PR
         shell: bash
-        run: yarn tokens-config create-pull
+        run: yarn tokens-config create-pull ${{ inputs.base_branch }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_RW_TOKEN }}
