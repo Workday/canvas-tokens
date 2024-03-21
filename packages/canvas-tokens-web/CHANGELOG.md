@@ -1,5 +1,18 @@
 # @workday/canvas-tokens-web
 
+## 1.2.0
+
+### Minor Changes
+
+- **Infrastructure**
+
+  - chore: Fix tokens-config sync script ([@alanbsmith](https://github.com/alanbsmith))
+
+  **Other**
+
+  - chore: Retry 1.1.1 release ([@alanbsmith](https://github.com/alanbsmith))
+  - chore: Fix forward-merge action ([@alanbsmith](https://github.com/alanbsmith))
+
 ## 1.1.1
 
 ### Patch Changes
