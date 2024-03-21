@@ -31,10 +31,34 @@ export const tokenStudioParser = ({contents}: any) => {
   return parsed;
 };
 
-const getLevel = (ref: string) => {
-  const levels = ['base', 'brand', 'sys'];
+const levelRefs = {
+  base: [
+    'palette',
+    'opacity',
+    'font-size',
+    'line-height',
+    'typescale',
+    'font-family',
+    'font-weight',
+    'letter-spacing',
+    'shadow',
+    'level',
+    'extended',
+    'unit',
+  ],
+  brand: ['primary', 'alert', 'error', 'success', 'neutral', 'common', 'gradient'],
+  sys: ['color', 'breakpoints', 'depth', 'shape', 'space', 'type'],
+};
+
+const getLevel = (ref: string): string => {
   const [key] = ref.split('.');
-  return !levels.includes(key) && 'base';
+
+  return Object.keys(levelRefs).reduce((acc: string, item: string) => {
+    if (levelRefs[item as 'base' | 'brand' | 'sys'].includes(key)) {
+      return item;
+    }
+    return acc;
+  }, '');
 };
 
 const replaceDescriptionByComment = (token: DesignToken) => {
