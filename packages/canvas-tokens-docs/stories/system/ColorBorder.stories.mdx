@@ -1,0 +1,46 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {BorderColors, BorderContrastColors, BorderInputColors, BorderStatusColors } from './examples/Color/Border';
+
+<Meta title="Docs/System Tokens/Color/Border" />
+
+<Unstyled>
+
+# System Border Color Tokens
+
+System border color tokens provide values to create clear delineations between content.
+
+## Usage
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  borderColor: `var(${system.color.border.container})`,
+};
+```
+
+```css
+// styles.css
+.card {
+  border-color: var(--cnvs-sys-color-border-container);
+}
+```
+
+## Tokens
+
+<BorderColors />
+
+---
+
+<BorderContrastColors />
+
+---
+
+<BorderInputColors />
+
+---
+
+<BorderStatusColors />
+
+</Unstyled>

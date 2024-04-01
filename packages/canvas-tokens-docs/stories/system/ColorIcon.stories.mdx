@@ -1,0 +1,45 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {IconColors, IconPrimaryColors, IconStatusColors} from './examples/Color/Icon';
+
+<Meta title="Docs/System Tokens/Color/Icon" />
+
+<Unstyled>
+
+# System Icon Color Tokens
+
+System icon color tokens provide values for icons.
+
+## Usage
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  color: `var(${system.color.fg.default})`,
+};
+```
+
+```css
+// styles.css
+.icon {
+  color: var(--cnvs-sys-color-fg-default);
+}
+```
+
+## Tokens
+
+<IconColors />
+
+---
+
+<IconPrimaryColors />
+
+---
+
+<IconStatusColors />
+
+---
+
+</Unstyled>
+

@@ -1,0 +1,42 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import { ForegroundColors, ForegroundStatusColors} from './examples/Color/Foreground';
+
+<Meta title="Docs/System Tokens/Color/Foreground" />
+
+<Unstyled>
+
+# System Foreground Color Tokens
+
+System foreground color tokens provide values for foreground elements.
+
+## Usage
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  color: `var(${system.color.fg.default})`,
+};
+```
+
+```css
+// styles.css
+.card {
+  color: var(--cnvs-sys-color-fg-default);
+}
+```
+
+## Tokens
+
+<ForegroundColors />
+
+---
+
+<ForegroundStatusColors />
+
+---
+
+</Unstyled>
+

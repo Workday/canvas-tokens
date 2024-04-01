@@ -1,0 +1,57 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import {
+  BackgroundColors,
+  BackgroundAlternateColors,
+  BackgroundMutedColors,
+  BackgroundContrastColors,
+  BackgroundStatusColors,
+} from "./examples/Color/Background"
+
+<Meta title="Docs/System Tokens/Color/Background" />
+
+<Unstyled>
+
+# System Background Color Tokens
+
+System background color tokens provide values for surfaces.
+
+## Usage
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  backgroundColor: `var(${system.color.bg.default})`,
+};
+```
+
+```css
+// styles.css
+.card {
+  background-color: var(--cnvs-sys-color-bg-default);
+}
+```
+
+## Tokens
+
+<BackgroundColors />
+
+---
+
+<BackgroundAlternateColors />
+
+---
+
+<BackgroundMutedColors />
+
+---
+
+<BackgroundContrastColors />
+
+---
+
+<BackgroundStatusColors />
+
+</Unstyled>
