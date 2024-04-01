@@ -28,6 +28,12 @@ export const transforms: Record<string, Transform> = {
     matcher: filter.isSysColor,
     transformer: flatRGBAColor,
   },
+  'value/opacity': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isBaseOpacity,
+    transformer: ({value}) => `${value / 100}`,
+  },
   // transform function that changes a value to its CSS var name
   'value/variables': {
     type: 'value',

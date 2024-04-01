@@ -39,3 +39,8 @@ export const isComposite: Matcher = ({type}) => {
 export const isNotComposite: Matcher = token => {
   return !isComposite(token);
 };
+
+export const isBaseOpacity: Matcher = token => {
+  const [level, category] = token.path;
+  return level === 'base' && category === 'opacity' && parseFloat(token.value) > 1;
+};
