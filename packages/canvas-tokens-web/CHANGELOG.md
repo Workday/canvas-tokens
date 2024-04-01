@@ -1,5 +1,19 @@
 # @workday/canvas-tokens-web
 
+## 1.3.0
+
+### Minor Changes
+
+- **Infrastructure**
+
+  - chore: Add transform to handle opacity as percentage
+    ([#100](https://github.com/Workday/canvas-tokens/pull/100))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  **Other**
+
+  - feat: Add missing system color tokens ([@alanbsmith](https://github.com/alanbsmith))
+
 ## 1.2.0
 
 ### Minor Changes
