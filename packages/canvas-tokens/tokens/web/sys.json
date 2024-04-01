@@ -33,6 +33,11 @@
             "type": "color",
             "description": "Page background"
           },
+          "softer": {
+            "value": "{palette.soap.100}",
+            "type": "color",
+            "description": "Disabled inputs and column headers"
+          },
           "strong": {
             "value": "{palette.soap.400}",
             "type": "color",
@@ -45,12 +50,16 @@
           }
         },
         "muted": {
-          "default": {
-            "value": "{palette.licorice.300}",
+          "softer": {
+            "value": "{palette.licorice.100}",
             "type": "color"
           },
           "soft": {
-            "value": "{palette.licorice.100}",
+            "value": "{palette.licorice.200}",
+            "type": "color"
+          },
+          "default": {
+            "value": "{palette.licorice.300}",
             "type": "color"
           },
           "strong": {
@@ -207,6 +216,11 @@
             "value": "{palette.blueberry.500}",
             "type": "color",
             "description": "Branded hover text"
+          },
+          "stronger": {
+            "value": "{palette.blueberry.600}",
+            "type": "color",
+            "description": "Active links"
           }
         },
         "caution": {
@@ -316,6 +330,11 @@
           }
         },
         "muted": {
+          "soft": {
+            "value": "{palette.licorice.200}",
+            "type": "color",
+            "description": "Tab item text"
+          },
           "default": {
             "value": "{palette.licorice.300}",
             "type": "color",
@@ -383,6 +402,11 @@
             "value": "{palette.licorice.500}",
             "type": "color",
             "description": "Input hover"
+          },
+          "inverse": {
+            "value": "{palette.soap.300}",
+            "type": "color",
+            "description": "Borders on checkboxes and radios"
           }
         },
         "contrast": {
@@ -498,6 +522,13 @@
             "value": "{palette.blueberry.500}",
             "type": "color",
             "description": "Stronger blue"
+          }
+        },
+        "gold": {
+          "stronger": {
+            "value": "{palette.toasted-marshmallow.600}",
+            "type": "color",
+            "description": "Foregrounds in low emphasis status indicators"
           }
         },
         "green": {
