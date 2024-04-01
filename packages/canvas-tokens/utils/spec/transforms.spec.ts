@@ -225,4 +225,14 @@ describe('transforms', () => {
 
     expect(result).toBe(expected);
   });
+
+  it('should convert opacity to number below 1', () => {
+    const result = transforms['value/opacity'].transformer(
+      {...defaultToken, value: '40'},
+      defaultOptions
+    );
+    const expected = '0.4';
+
+    expect(result).toBe(expected);
+  });
 });
