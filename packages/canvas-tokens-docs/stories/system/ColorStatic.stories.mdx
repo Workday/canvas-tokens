@@ -1,0 +1,35 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import { StaticColors } from "./examples/Color/Static"
+
+<Meta title="Docs/System Tokens/Color/Static" />
+
+<Unstyled>
+
+# System Static Color Tokens
+
+System static color tokens provide consistent color values.
+
+## Usage
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  backgroundColor: `var(${system.color.static.blue.soft})`,
+};
+```
+
+```css
+// styles.css
+.info-card {
+  background-color: var(--cnvs-sys-color-static-blue-soft);
+}
+```
+
+## Tokens
+
+<StaticColors />
+
+</Unstyled>
