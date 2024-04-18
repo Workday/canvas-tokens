@@ -138,6 +138,12 @@ const mapObjectContent = (fn: (token: DesignToken) => DesignToken, obj: DesignTo
 
 const transformExtensions = (token: DesignToken) => {
   if (token['$extensions']) {
+    const {modify} = token['$extensions']['studio.tokens'];
+
+    if (modify && modify.type === 'alpha') {
+      token.value = `rgba(${token.value},${modify.value})`;
+    }
+
     delete token['$extensions'];
   }
 };
