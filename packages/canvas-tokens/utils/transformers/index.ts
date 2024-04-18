@@ -61,7 +61,7 @@ export const transforms: Record<string, Transform> = {
     transformer: ({value}) => `"${value}"`,
   },
   // transform function that adds em to letter spacing values
-  'value/spacing-rem': {
+  'value/letter-spacing/px2rem': {
     type: 'value',
     transitive: true,
     matcher: filter.isLetterSpacing,

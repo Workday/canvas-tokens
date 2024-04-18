@@ -70,7 +70,7 @@ describe('transforms', () => {
   });
 
   it('should convert letter spacing values from px to rem', () => {
-    const result = transforms['value/spacing-rem'].transformer(
+    const result = transforms['value/letter-spacing/px2rem'].transformer(
       {...defaultToken, value: '0.4'},
       defaultOptions
     );

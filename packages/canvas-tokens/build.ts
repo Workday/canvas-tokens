@@ -113,7 +113,7 @@ StyleDictionary.registerTransformGroup({
     'value/hex-to-rgba',
     'value/wrapped-font-family',
     'value/math',
-    'value/spacing-rem',
+    'value/letter-spacing/px2rem',
     'value/flatten-rgba',
     'value/font-weight/lower-case',
     'value/line-height/px2rem',
