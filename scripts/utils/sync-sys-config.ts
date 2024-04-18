@@ -14,25 +14,28 @@ async function fetchSystemTokens(path: string) {
   });
 }
 
-// These tokens are mobile-specific and should be filtered from the web config
-const mobileOnlyTokens = {
+// These tokens are non web-specific and should be filtered from the web config
+const nonWebTokens = {
+  // mobile only tokens
   shape: ['x4', 'x6'],
   space: ['half', 'x5', 'x14'],
+  // figma only tokens
+  'layer-opacity': [],
 };
 
 /**
- * Filter out mobile-specific tokens from web token config
+ * Filter out not web tokens from web token config
  */
-function filterMobileTokens(config: Record<string, object>) {
+function filterNonWebTokens(config: Record<string, object>) {
   // Iterate over the keys in the token config object (shape, space, etc)
   for (const key in config) {
     const tokenSet = config[key as keyof typeof config];
-    // If the key is in the mobile-only tokens, iterate over its tokens
-    if (key in mobileOnlyTokens) {
+    // If the key is in the non web tokens, iterate over its tokens
+    if (key in nonWebTokens) {
       for (const token in tokenSet) {
-        const mobileTokenSet = mobileOnlyTokens[key as keyof typeof mobileOnlyTokens];
-        // If the token is mobile-specific, delete it from the config object
-        if (mobileTokenSet.includes(token)) {
+        const nonWebTokenSet = nonWebTokens[key as keyof typeof nonWebTokens];
+        // If the token is non web, delete it from the config object
+        if (!nonWebTokenSet.length || (nonWebTokenSet as string[]).includes(token)) {
           delete config[key][token as keyof typeof tokenSet];
         }
       }
@@ -70,8 +73,8 @@ export async function syncSystemConfig() {
   );
   // Merge the configs into a single object
   const mergedConfigs = fileContents.reduce((acc, item) => ({...acc, ...item}), {});
-  // Filter mobile-specific tokens
-  const filteredConfig = filterMobileTokens(mergedConfigs);
+  // Filter non web-specific tokens
+  const filteredConfig = filterNonWebTokens(mergedConfigs);
   // Format the JSON config object
   const formattedConfig = formatConfig(filteredConfig);
   // Re-encode the formatted JSON object to a Buffer string
