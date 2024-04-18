@@ -797,56 +797,56 @@
     },
     "line-height": {
       "50": {
-        "value": "1rem",
-        "type": "lineHeights"
+        "value": "16",
+        "type": "number"
       },
       "100": {
-        "value": "{line-height.50} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "20",
+        "type": "number"
       },
       "150": {
-        "value": "{line-height.100} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "24",
+        "type": "number"
       },
       "200": {
-        "value": "{line-height.150} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "28",
+        "type": "number"
       },
       "250": {
-        "value": "{line-height.200} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "32",
+        "type": "number"
       },
       "300": {
-        "value": "{line-height.250} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "36",
+        "type": "number"
       },
       "350": {
-        "value": "{line-height.300} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "40",
+        "type": "number"
       },
       "400": {
-        "value": "{line-height.350} + {typescale.height.title}",
-        "type": "lineHeights"
+        "value": "48",
+        "type": "number"
       },
       "500": {
-        "value": "{line-height.400} + {typescale.height.title}",
-        "type": "lineHeights"
+        "value": "56",
+        "type": "number"
       },
       "600": {
-        "value": "{line-height.500} + {typescale.height.title}",
-        "type": "lineHeights"
+        "value": "64",
+        "type": "number"
       },
       "750": {
-        "value": "{line-height.600} + {typescale.height.display}",
-        "type": "lineHeights"
+        "value": "72",
+        "type": "number"
       },
       "900": {
-        "value": "{line-height.750} + {typescale.height.display}",
-        "type": "lineHeights"
+        "value": "88",
+        "type": "number"
       },
       "1050": {
-        "value": "{line-height.900} + {typescale.height.display}",
-        "type": "lineHeights"
+        "value": "104",
+        "type": "number"
       }
     },
     "typescale": {
@@ -886,52 +886,52 @@
     "font-family": {
       "50": {
         "value": "Roboto",
-        "type": "fontFamilies",
+        "type": "text",
         "description": "Default font-family"
       },
       "100": {
         "value": "Roboto Mono",
-        "type": "fontFamilies"
+        "type": "text"
       },
       "200": {
         "value": "Noto Sans",
-        "type": "fontFamilies"
+        "type": "text"
       }
     },
     "font-weight": {
       "300": {
-        "value": "300",
-        "type": "fontWeights"
+        "value": "Light",
+        "type": "text"
       },
       "400": {
-        "value": "400",
-        "type": "fontWeights"
+        "value": "Regular",
+        "type": "text"
       },
       "500": {
-        "value": "500",
-        "type": "fontWeights"
+        "value": "Medium",
+        "type": "text"
       },
       "700": {
-        "value": "700",
-        "type": "fontWeights"
+        "value": "Bold",
+        "type": "text"
       }
     },
     "letter-spacing": {
       "50": {
         "value": "0.4",
-        "type": "letterSpacing"
+        "type": "number"
       },
       "100": {
         "value": "0.32",
-        "type": "letterSpacing"
+        "type": "number"
       },
       "150": {
         "value": "0.24",
-        "type": "letterSpacing"
+        "type": "number"
       },
       "200": {
         "value": "0.16",
-        "type": "letterSpacing"
+        "type": "number"
       }
     },
     "shadow": {
