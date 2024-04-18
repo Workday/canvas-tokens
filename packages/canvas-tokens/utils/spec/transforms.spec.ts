@@ -134,7 +134,7 @@ describe('transforms', () => {
       {...defaultToken, value: 'Bold'},
       defaultOptions
     );
-    const expected = 'bold';
+    const expected = '700';
 
     expect(result).toBe(expected);
   });

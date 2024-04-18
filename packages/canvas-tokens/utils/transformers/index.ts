@@ -2,6 +2,7 @@ import {Transform} from 'style-dictionary';
 import * as filter from '../filters';
 import {flatShadow} from './flatShadow';
 import {flatRGBAColor} from './flatRGBAColor';
+import {mapFontWeight} from './mapFontWeight';
 import {transformMath} from './transformMath';
 import {transformNameToCamelCase} from './transformNameToCamelCase';
 import {transformHexToRgb} from './transformHexToRgb';
@@ -26,7 +27,7 @@ export const transforms: Record<string, Transform> = {
     type: 'value',
     transitive: true,
     matcher: filter.isBaseFontWeight,
-    transformer: ({value}) => value.toLowerCase(),
+    transformer: mapFontWeight,
   },
   'value/line-height/px2rem': {
     type: 'value',
