@@ -64,6 +64,16 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
+  it('should handle space before opacity', () => {
+    const result = transforms['value/flatten-rgba'].transformer(
+      {...defaultToken, value: 'rgba(rgba(0,0,0,1),.64)'},
+      defaultOptions
+    );
+    const expected = 'rgba(0,0,0,0.64)';
+
+    expect(result).toBe(expected);
+  });
+
   it('should turn sys color to correct rgba', () => {
     const result = transforms['value/flatten-rgba'].transformer(
       {

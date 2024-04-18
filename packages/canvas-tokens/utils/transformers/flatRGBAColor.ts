@@ -11,12 +11,12 @@ export const flatRGBAColor = ({value}: DesignToken): string => {
   const rgba = value.replace(/rgba\((rgba\([,0-9]*)\),([\s.0-9%]*)\)/g, (a: string, b: string) => {
     const [alpha] = a.slice(0, -1).split(',').reverse();
     const alphaNumber: number = parseFloat(alpha);
-    const alphaResult = alpha.includes('%') || alphaNumber > 1 ? alphaNumber / 100 : alpha;
+    const alphaResult = alpha.includes('%') || alphaNumber > 1 ? alphaNumber / 100 : alphaNumber;
 
     const innerRgb = b.replace(/rgba\(([^}]+)/g, (__: string, c: string) =>
       c.split(',').slice(0, 3).toString()
     );
-    return alphaResult === '0' ? 'transparent' : `rgba(${innerRgb},${alphaResult})`;
+    return alphaResult === 0 ? 'transparent' : `rgba(${innerRgb},${alphaResult})`;
   });
 
   return rgba;
