@@ -13,7 +13,7 @@ export const flatRGBAColor = ({value}: DesignToken): string => {
     const innerRgb = b.replace(/rgba\(([^}]+)/g, (__: string, c: string) =>
       c.split(',').slice(0, 3).toString()
     );
-    return `rgba(${innerRgb},${alpha})`;
+    return alpha === '0' ? 'transparent' : `rgba(${innerRgb},${alpha})`;
   });
 
   return rgba;
