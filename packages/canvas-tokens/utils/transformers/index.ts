@@ -21,6 +21,19 @@ export const transforms: Record<string, Transform> = {
     matcher: filter.isBaseShadow,
     transformer: flatShadow,
   },
+  // transform function that changes the shadow object as value to the single line string
+  'value/font-weight/lower-case': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isBaseFontWeight,
+    transformer: ({value}) => value.toLowerCase(),
+  },
+  'value/line-height/px2rem': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isPxLineHeight,
+    transformer: ({value}) => `${parseFloat(value) / 16}rem`,
+  },
   // transform function that removes doubled rgba for tokens with references
   'value/flatten-rgba': {
     type: 'value',

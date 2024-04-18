@@ -115,6 +115,8 @@ StyleDictionary.registerTransformGroup({
     'value/math',
     'value/spacing-rem',
     'value/flatten-rgba',
+    'value/font-weight/lower-case',
+    'value/line-height/px2rem',
   ],
 });
 
