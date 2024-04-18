@@ -16,5 +16,9 @@ const mappedFontWeight = {
  * @returns updated token value
  */
 export const mapFontWeight: Transformer = ({value}) => {
-  return mappedFontWeight[value as keyof typeof mappedFontWeight];
+  if (value in mappedFontWeight) {
+    return mappedFontWeight[value as keyof typeof mappedFontWeight];
+  }
+
+  return value;
 };
