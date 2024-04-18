@@ -8,7 +8,7 @@
           "description": "Main background color\n"
         },
         "transparent": {
-          "value": "rgba({palette.french-vanilla.100}, 0)",
+          "value": "rgba({palette.french-vanilla.100},0)",
           "type": "color",
           "description": "Transparent background"
         },
@@ -18,7 +18,7 @@
           "description": "Overlay background"
         },
         "translucent": {
-          "value": "rgba({palette.black-pepper.600} ,{opacity.500})",
+          "value": "rgba({palette.black-pepper.600},{opacity.500})",
           "type": "color",
           "description": "Tooltip, Status Indicator"
         },
@@ -448,7 +448,7 @@
           }
         },
         "transparent": {
-          "value": "rgba({color.static.white}, 0%)",
+          "value": "rgba({color.static.white},0)",
           "type": "color",
           "description": "Transparent"
         },

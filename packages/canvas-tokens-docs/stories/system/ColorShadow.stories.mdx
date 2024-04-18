@@ -1,0 +1,39 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import {ShadowColors} from './examples/Color/Shadow';
+
+<Meta title="Docs/System Tokens/Color/Shadow" />
+
+<Unstyled>
+
+# System Shadow Color Tokens
+
+System shadow color tokens provide values for box shadow.
+
+## Usage
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  boxShadow: `0 0 0 var(${system.color.shadow['1']})`,
+};
+```
+
+```css
+// styles.css
+.card-text {
+  boxshadow: 0 0 0 var(--cnvs-sys-color-shadow-1);
+}
+```
+
+---
+
+## Tokens
+
+<ShadowColors />
+
+---
+
+</Unstyled>

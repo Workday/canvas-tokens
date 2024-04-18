@@ -34,6 +34,46 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
+  it('should handle percentage alpha in rgba', () => {
+    const result = transforms['value/flatten-rgba'].transformer(
+      {...defaultToken, value: 'rgba(rgba(0,0,0,1),50%)'},
+      defaultOptions
+    );
+    const expected = 'rgba(0,0,0,0.5)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should handle space before opacity', () => {
+    const result = transforms['value/flatten-rgba'].transformer(
+      {...defaultToken, value: 'rgba(rgba(0,0,0,1), 50%)'},
+      defaultOptions
+    );
+    const expected = 'rgba(0,0,0,0.5)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should handle space before opacity', () => {
+    const result = transforms['value/flatten-rgba'].transformer(
+      {...defaultToken, value: 'rgba(rgba(0,0,0,1),50)'},
+      defaultOptions
+    );
+    const expected = 'rgba(0,0,0,0.5)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should handle space before opacity', () => {
+    const result = transforms['value/flatten-rgba'].transformer(
+      {...defaultToken, value: 'rgba(rgba(0,0,0,1),.64)'},
+      defaultOptions
+    );
+    const expected = 'rgba(0,0,0,0.64)';
+
+    expect(result).toBe(expected);
+  });
+
   it('should turn sys color to correct rgba', () => {
     const result = transforms['value/flatten-rgba'].transformer(
       {
@@ -70,11 +110,31 @@ describe('transforms', () => {
   });
 
   it('should convert letter spacing values from px to rem', () => {
-    const result = transforms['value/spacing-rem'].transformer(
+    const result = transforms['value/letter-spacing/px2rem'].transformer(
       {...defaultToken, value: '0.4'},
       defaultOptions
     );
     const expected = '0.025rem';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should convert line height values from px to rem', () => {
+    const result = transforms['value/line-height/px2rem'].transformer(
+      {...defaultToken, value: '16'},
+      defaultOptions
+    );
+    const expected = '1rem';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should change font weight value to lower case', () => {
+    const result = transforms['value/font-weight/lower-case'].transformer(
+      {...defaultToken, value: 'Bold'},
+      defaultOptions
+    );
+    const expected = 'bold';
 
     expect(result).toBe(expected);
   });

@@ -4,8 +4,12 @@ export const isBaseShadow: Matcher = ({path: [level], type}) => {
   return level === 'base' && type === 'boxShadow';
 };
 
-export const isBaseFontFamily: Matcher = ({type, path: [level]}) => {
-  return level === 'base' && type === 'fontFamilies';
+export const isBaseFontFamily: Matcher = ({path: [level, category]}) => {
+  return level === 'base' && category === 'font-family';
+};
+
+export const isBaseFontWeight: Matcher = ({type, path: [level, category]}) => {
+  return level === 'base' && category === 'font-weight' && type === 'text';
 };
 
 export const isBorder: Matcher = ({type, path: [level]}) => {
@@ -16,8 +20,12 @@ export const isHexColor: Matcher = ({value}) => {
   return /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})/.test(value);
 };
 
-export const isLetterSpacing: Matcher = ({type}) => {
-  return type === 'letterSpacing';
+export const isLetterSpacing: Matcher = ({path: [level, category]}) => {
+  return level === 'base' && category === 'letter-spacing';
+};
+
+export const isPxLineHeight: Matcher = ({type, path: [level, category]}) => {
+  return level === 'base' && category === 'line-height' && type === 'number';
 };
 
 export const isSysColor: Matcher = ({original}) => {
