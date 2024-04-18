@@ -79,6 +79,26 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
+  it('should convert line height values from px to rem', () => {
+    const result = transforms['value/line-height/px2rem'].transformer(
+      {...defaultToken, value: '16'},
+      defaultOptions
+    );
+    const expected = '1rem';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should change font weight value to lower case', () => {
+    const result = transforms['value/font-weight/lower-case'].transformer(
+      {...defaultToken, value: 'Bold'},
+      defaultOptions
+    );
+    const expected = 'bold';
+
+    expect(result).toBe(expected);
+  });
+
   it('should resolve math expression for base tokens', () => {
     const result = transforms['value/math'].transformer(
       {
