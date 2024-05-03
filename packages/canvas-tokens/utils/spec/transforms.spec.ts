@@ -219,55 +219,55 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  // it('should flat shadow value', () => {
-  //   const token = {
-  //     ...defaultToken,
-  //     value: [
-  //       {
-  //         x: '0',
-  //         y: '1',
-  //         blur: '4',
-  //         spread: '0',
-  //         color: 'rgba({palette.licorice.600},{opacity.200})',
-  //         type: 'dropShadow',
-  //       },
-  //       {
-  //         x: '0',
-  //         y: '2',
-  //         blur: '16',
-  //         spread: '0',
-  //         color: 'rgba({palette.licorice.600},{opacity.100})',
-  //         type: 'dropShadow',
-  //       },
-  //     ],
-  //     original: {
-  //       value: [
-  //         {
-  //           x: '0',
-  //           y: '1',
-  //           blur: '4',
-  //           spread: '0',
-  //           color: 'rgba({palette.licorice.600},{opacity.200})',
-  //           type: 'dropShadow',
-  //         },
-  //         {
-  //           x: '0',
-  //           y: '2',
-  //           blur: '16',
-  //           spread: '0',
-  //           color: 'rgba({palette.licorice.600},{opacity.100})',
-  //           type: 'dropShadow',
-  //         },
-  //       ],
-  //     },
-  //     path: ['base', 'shadow', '100'],
-  //   };
-  //   const result = transforms['value/flatten-base-shadow'].transformer(token, defaultOptions);
-  //   const expected =
-  //     '0 1 4 0 rgba({palette.licorice.600},{opacity.200}), 0 2 16 0 rgba({palette.licorice.600},{opacity.100})';
+  it('should flat shadow value', () => {
+    const token = {
+      ...defaultToken,
+      value: [
+        {
+          x: '0',
+          y: '1',
+          blur: '4',
+          spread: '0',
+          color: 'rgba({palette.licorice.600},{opacity.200})',
+          type: 'dropShadow',
+        },
+        {
+          x: '0',
+          y: '2',
+          blur: '16',
+          spread: '0',
+          color: 'rgba({palette.licorice.600},{opacity.100})',
+          type: 'dropShadow',
+        },
+      ],
+      original: {
+        value: [
+          {
+            x: '0',
+            y: '1',
+            blur: '4',
+            spread: '0',
+            color: 'rgba({palette.licorice.600},{opacity.200})',
+            type: 'dropShadow',
+          },
+          {
+            x: '0',
+            y: '2',
+            blur: '16',
+            spread: '0',
+            color: 'rgba({palette.licorice.600},{opacity.100})',
+            type: 'dropShadow',
+          },
+        ],
+      },
+      path: ['base', 'shadow', '100'],
+    };
+    const result = transforms['value/shadow/flat-sys'].transformer(token, defaultOptions);
+    const expected =
+      '0 0.0625rem 0.25rem 0 rgba({palette.licorice.600},{opacity.200}), 0 0.125rem 1rem 0 rgba({palette.licorice.600},{opacity.100})';
 
-  //   expect(result).toBe(expected);
-  // });
+    expect(result).toBe(expected);
+  });
 
   it('should flat line value', () => {
     const result = transforms['value/flatten-border'].transformer(
