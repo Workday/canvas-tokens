@@ -744,8 +744,8 @@
           },
           {
             "x": "0",
-            "y": "{shadow.1.200.y}",
-            "blur": "{shadow.1.200.blur}",
+            "y": "{shadow.5.200.y}",
+            "blur": "{shadow.5.200.blur}",
             "spread": "0",
             "color": "{color.shadow.2}",
             "type": "dropShadow"
