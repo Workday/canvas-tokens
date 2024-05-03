@@ -107,10 +107,10 @@
             "type": "color",
             "description": "Disabled success background"
           },
-          "soft": {
+          "softer": {
             "value": "{palette.green-apple.100}",
             "type": "color",
-            "description": "Default success background"
+            "description": "Softer success background"
           },
           "strong": {
             "value": "{palette.green-apple.500}",
@@ -645,32 +645,134 @@
     },
     "depth": {
       "1": {
-        "value": "{shadow.100}",
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.1.100.y}",
+            "blur": "{shadow.1.100.blur}",
+            "spread": "0",
+            "color": "{color.shadow.1}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.1.200.y}",
+            "blur": "{shadow.1.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.2}",
+            "type": "dropShadow"
+          }
+        ],
         "type": "boxShadow",
         "description": "Standard card depth"
       },
       "2": {
-        "value": "{shadow.200}",
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.2.100.y}",
+            "blur": "{shadow.2.100.blur}",
+            "spread": "0",
+            "color": "{color.shadow.1}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.2.200.y}",
+            "blur": "{shadow.2.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.2}",
+            "type": "dropShadow"
+          }
+        ],
         "type": "boxShadow",
         "description": "Top navigation, Bottom Navigation"
       },
       "3": {
-        "value": "{shadow.300}",
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.3.100.y}",
+            "blur": "{shadow.3.100.blur}",
+            "spread": "0",
+            "color": "{color.shadow.1}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.3.200.y}",
+            "blur": "{shadow.3.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.2}",
+            "type": "dropShadow"
+          }
+        ],
         "type": "boxShadow",
         "description": "Floating Action Buttons (FAB), Menus"
       },
       "4": {
-        "value": "{shadow.400}",
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.4.100.y}",
+            "blur": "{shadow.4.100.blur}",
+            "spread": "0",
+            "color": "{color.shadow.1}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.4.200.y}",
+            "blur": "{shadow.4.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.2}",
+            "type": "dropShadow"
+          }
+        ],
         "type": "boxShadow",
         "description": "Bottom Sheets"
       },
       "5": {
-        "value": "{shadow.500}",
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.5.100.y}",
+            "blur": "{shadow.5.100.blur}",
+            "spread": "0",
+            "color": "{color.shadow.1}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.5.200.y}",
+            "blur": "{shadow.5.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.2}",
+            "type": "dropShadow"
+          }
+        ],
         "type": "boxShadow",
         "description": "Banners, Snackbars, Toast Messages, Non modal Dialogs, \nSide Panels (when opacity overlay behaviour is not applied)"
       },
       "6": {
-        "value": "{shadow.600}",
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.6.100.y}",
+            "blur": "{shadow.6.100.blur}",
+            "spread": "0",
+            "color": "{color.shadow.1}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.6.200.y}",
+            "blur": "{shadow.6.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.2}",
+            "type": "dropShadow"
+          }
+        ],
         "type": "boxShadow",
         "description": "Modal Dialogs, Side Panels (when opacity overlay behaviour\nis applied)"
       }
@@ -714,7 +816,6 @@
         }
       }
     },
-    "layer-opacity": {},
     "shape": {
       "zero": {
         "value": "0rem",

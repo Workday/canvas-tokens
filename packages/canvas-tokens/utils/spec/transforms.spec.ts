@@ -130,7 +130,7 @@ describe('transforms', () => {
   });
 
   it('should change font weight value to lower case', () => {
-    const result = transforms['value/font-weight/lower-case'].transformer(
+    const result = transforms['value/font-weight/numbers'].transformer(
       {...defaultToken, value: 'Bold'},
       defaultOptions
     );
@@ -219,7 +219,7 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should flat shhadow value', () => {
+  it('should flat shadow value', () => {
     const token = {
       ...defaultToken,
       value: [
@@ -262,9 +262,9 @@ describe('transforms', () => {
       },
       path: ['base', 'shadow', '100'],
     };
-    const result = transforms['value/flatten-base-shadow'].transformer(token, defaultOptions);
+    const result = transforms['value/shadow/flat-sys'].transformer(token, defaultOptions);
     const expected =
-      '0 1 4 0 rgba({palette.licorice.600},{opacity.200}), 0 2 16 0 rgba({palette.licorice.600},{opacity.100})';
+      '0 0.0625rem 0.25rem 0 rgba({palette.licorice.600},{opacity.200}), 0 0.125rem 1rem 0 rgba({palette.licorice.600},{opacity.100})';
 
     expect(result).toBe(expected);
   });

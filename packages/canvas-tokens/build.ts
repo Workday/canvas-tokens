@@ -19,11 +19,12 @@ const config = setConfig({
         {
           level: ['base'],
           filterByLevel: true,
+          filter: filters.filterCodeTokens,
         },
         {
           level: ['brand', 'sys'],
           format: 'merge/refs',
-          combineWith: ['{platform}/composite', '{platform}/variables'],
+          combineWith: ['{platform}/composite', '{platform}/variables', '{platform}/shadow'],
           options: {
             outputReferences: true,
           },
@@ -36,7 +37,7 @@ const config = setConfig({
     'es6, common-js': {
       buildPath: '../canvas-tokens-web/dist/',
       transformGroup: 'js',
-      transforms: ['value/flatten-border', 'value/flatten-base-shadow', 'name/camel'],
+      transforms: ['value/flatten-border', 'value/shadow/flat-sys', 'name/camel'],
       fileName: '{platform}/{level}/index',
       extensions: ['js', 'd.ts'],
       modifiers: [
@@ -45,12 +46,14 @@ const config = setConfig({
           extensions: ['js'],
           format: 'js/{platform}',
           filterByLevel: true,
+          filter: filters.filterCodeTokens,
         },
         {
           level: ['base'],
           extensions: ['d.ts'],
           format: 'ts/inline',
           filterByLevel: true,
+          filter: filters.filterCodeTokens,
         },
         {
           level: ['brand', 'sys'],
@@ -109,13 +112,13 @@ StyleDictionary.registerTransformGroup({
   transforms: [
     'name/cti/kebab',
     'value/flatten-border',
-    'value/flatten-base-shadow',
+    'value/shadow/flat-sys',
     'value/hex-to-rgba',
     'value/wrapped-font-family',
     'value/math',
     'value/letter-spacing/px2rem',
     'value/flatten-rgba',
-    'value/font-weight/lower-case',
+    'value/font-weight/numbers',
     'value/line-height/px2rem',
   ],
 });

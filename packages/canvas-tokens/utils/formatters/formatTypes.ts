@@ -99,14 +99,22 @@ const generateJSDoc = (original: TransformedToken, depth: number) => {
   const spaces = '  '.repeat(depth);
   const extraSpaces = spaces + ' ';
   const newJSDocLineStart = `\n${extraSpaces}* `;
-  const {value, comment} = original;
-  const pxValue = value.includes('rem') ? parseFloat(value) * 16 : null;
+  const {value, comment, raw} = original;
 
+  const pxValue = value.includes('rem') ? parseFloat(value) * 16 : null;
   const valueText = value + (pxValue ? ` (${pxValue}px)` : '');
+  const tokenValue =
+    typeof raw === 'string'
+      ? 'token: ' + raw.replace(/^{(.+)}$/, (_: any, b: any) => b).replace('palette.', '')
+      : '';
+
   const updatedComment = comment?.replace(/; /g, newJSDocLineStart);
   const text = comment
     ? newJSDocLineStart +
       valueText +
+      newJSDocLineStart +
+      newJSDocLineStart +
+      tokenValue +
       newJSDocLineStart +
       newJSDocLineStart +
       updatedComment +

@@ -934,139 +934,144 @@
         "type": "number"
       }
     },
-    "shadow": {
-      "100": {
-        "value": [
-          {
-            "x": "0",
-            "y": "1",
-            "blur": "4",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "2",
-            "blur": "8",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
-      },
-      "200": {
-        "value": [
-          {
-            "x": "0",
-            "y": "2",
-            "blur": "8",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "4",
-            "blur": "16",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow",
-        "description": "Top navigation, Bottom navigation"
-      },
-      "300": {
-        "value": [
-          {
-            "x": "0",
-            "y": "3",
-            "blur": "12",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "6",
-            "blur": "24",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
-      },
-      "400": {
-        "value": [
-          {
-            "x": "0",
-            "y": "4",
-            "blur": "16",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "8",
-            "blur": "32",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
-      },
-      "500": {
-        "value": [
-          {
-            "x": "0",
-            "y": "5",
-            "blur": "20",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "10",
-            "blur": "40",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
-      },
-      "600": {
-        "value": [
-          {
-            "x": "0",
-            "y": "6",
-            "blur": "24",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "12",
-            "blur": "48",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
-      }
-    },
     "level": {
       "value": "2",
       "type": "number",
       "description": "Used to calculate the skip level amount between levels in the type ramp, such as going from subtext to body, body to heading."
+    },
+    "shadow": {
+      "1": {
+        "100": {
+          "y": {
+            "value": "1",
+            "type": "number"
+          },
+          "blur": {
+            "value": "4",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "8",
+            "type": "number"
+          }
+        }
+      },
+      "2": {
+        "100": {
+          "y": {
+            "value": "2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "8",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "4",
+            "type": "number"
+          },
+          "blur": {
+            "value": "16",
+            "type": "number"
+          }
+        }
+      },
+      "3": {
+        "100": {
+          "y": {
+            "value": "3",
+            "type": "number"
+          },
+          "blur": {
+            "value": "12",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "6",
+            "type": "number"
+          },
+          "blur": {
+            "value": "24",
+            "type": "number"
+          }
+        }
+      },
+      "4": {
+        "100": {
+          "y": {
+            "value": "4",
+            "type": "number"
+          },
+          "blur": {
+            "value": "16",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "8",
+            "type": "number"
+          },
+          "blur": {
+            "value": "32",
+            "type": "number"
+          }
+        }
+      },
+      "5": {
+        "100": {
+          "y": {
+            "value": "5",
+            "type": "number"
+          },
+          "blur": {
+            "value": "20",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "10",
+            "type": "number"
+          },
+          "blur": {
+            "value": "40",
+            "type": "number"
+          }
+        }
+      },
+      "6": {
+        "100": {
+          "y": {
+            "value": "6",
+            "type": "number"
+          },
+          "blur": {
+            "value": "24",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "12",
+            "type": "number"
+          },
+          "blur": {
+            "value": "48",
+            "type": "number"
+          }
+        }
+      }
     },
     "extended": {
       "palette": {
