@@ -1,5 +1,24 @@
 # @workday/canvas-tokens-web
 
+## 2.0.0
+
+### Major Changes
+
+- **Web Tokens**
+
+  - chore: Sync tokens and update SD config to handle new changes
+    ([#115](https://github.com/Workday/canvas-tokens/pull/115))
+    ([@alanbsmith](https://github.com/alanbsmith), [@RayRedGoose](https://github.com/RayRedGoose))
+    `⚠️ BREAKING CHANGES:`
+
+    - `color.bg.positive.soft` has been renamed to `color.bg.positive.softer` for consistency.
+    - Figma specific tokens: `typescale`, `level`, `shadow` has been excluded from base web tokens.
+    - Depth token values has been updated from the base token reference to raw value.
+
+    Other Changes:
+
+    - JSDoc has been updated to include the base token info
+
 ## 1.3.1
 
 ### Patch Changes
