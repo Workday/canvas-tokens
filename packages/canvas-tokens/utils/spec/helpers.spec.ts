@@ -93,7 +93,7 @@ describe('format helpers', () => {
 
     const expected = {primary: {base: 'testValue'}};
 
-    expect(result).toStrictEqual(expected); //?
+    expect(result).toStrictEqual(expected);
   });
 });
 
@@ -103,7 +103,7 @@ describe('utils to change value', () => {
 
     const expected = '--cnvs-brand-primary-base';
 
-    expect(result).toStrictEqual(expected); //?
+    expect(result).toStrictEqual(expected);
   });
 
   it('should transform composite tokens into css rule sets', () => {
@@ -121,6 +121,9 @@ describe('utils to change value', () => {
       color: {
         comment: 'Use for primary background',
         value: '{base.pallete.blueberry.400}',
+        raw: {
+          color: '{base.pallete.blueberry.400}',
+        },
       },
     };
 
@@ -133,6 +136,7 @@ describe('utils to change value', () => {
     const expected = {
       comment: 'Use for spaces between elements',
       value: '1rem',
+      raw: '{base.unit} * 4',
     };
 
     expect(result).toStrictEqual(expected);

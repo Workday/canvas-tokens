@@ -204,7 +204,7 @@ async function updateChangelog() {
     }
   } while (lines.length);
 
-  const sortedReleases = orderBy(releases, 'date', 'desc'); //?
+  const sortedReleases = orderBy(releases, 'date', 'desc');
 
   const contents = [
     ...header,

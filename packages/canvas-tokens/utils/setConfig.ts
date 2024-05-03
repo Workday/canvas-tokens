@@ -151,7 +151,10 @@ const generateFiles = ({
 
         Object.assign(fileStructure, {
           format: format ? resolveName(format, platform, level) : defaultFormat,
-          filter: filterByLevel ? ({path: [ctg]}: DesignToken) => !level || ctg === level : filter,
+          filter: combineFilters(!filter ? [] : typeof filter === 'function' ? [filter] : filter, {
+            filtered: filterByLevel,
+            level,
+          }),
           options: {
             ...options,
             formats: formats.length ? formats : [defaultFormat],
@@ -174,3 +177,11 @@ const validateFormat = (platform: string, level: string, format?: string | Forma
   typeof format === 'string'
     ? resolveName(format, platform, level)
     : format || `${platform}/variables`;
+
+const combineFilters =
+  (filters: Function[], {filtered, level}: {filtered?: boolean; level: string}) =>
+  (token: DesignToken) => {
+    const levelFilter = ({path: [ctg]}: DesignToken) => !level || ctg === level;
+    const allFilters = filtered ? [levelFilter, ...filters] : filters;
+    return allFilters.map((filter: any) => filter(token)).every((result: boolean) => result);
+  };

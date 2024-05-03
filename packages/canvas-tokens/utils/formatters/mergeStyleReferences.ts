@@ -11,13 +11,21 @@ import {isNotComposite} from '../filters';
  */
 export const mergeStyleReferences: Formatter = ({options, dictionary, ...rest}) => {
   const {
-    formats: [compositeFormat, defaultFormat],
+    formats: [compositeFormat, defaultFormat, shadowFormat],
     level,
   } = options;
 
   const filteredTokens = dictionary.allTokens.filter(
     ({path: [ctg]}: TransformedToken) => ctg === level
   );
+
+  const shadowTokens = filteredTokens.filter(({path}: TransformedToken) => path[1] === 'depth');
+
+  const shadowContent = StyleDictionary.format[shadowFormat]({
+    dictionary: {...dictionary, allTokens: shadowTokens},
+    options,
+    ...rest,
+  });
 
   const compositeTokensContent = StyleDictionary.format[compositeFormat]({
     dictionary: {...dictionary, allTokens: filteredTokens},
@@ -34,5 +42,13 @@ export const mergeStyleReferences: Formatter = ({options, dictionary, ...rest}) 
     ...rest,
   });
 
-  return defaultContent + '\n' + compositeTokensContent;
+  if (shadowContent && defaultContent.includes(':root')) {
+    return (
+      defaultContent.replace(':root {\n', ':root {\n' + shadowContent + '\n') +
+      '\n' +
+      compositeTokensContent
+    );
+  }
+
+  return defaultContent + shadowContent + '\n\n' + compositeTokensContent;
 };

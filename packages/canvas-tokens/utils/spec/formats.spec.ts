@@ -21,6 +21,7 @@ jest.mock('style-dictionary', () => ({
     'css/variables': () => `:root {\n --cnvs-sys-shape-zero: 0rem;\n}`,
     'css/composite': () =>
       `.cnvs-sys-border-input-default {\n border: var(--cnvs-sys-line-default);\n}`,
+    'css/shadow': () => ` --cnvs-sys-depth-1: 0 0 0 0 black;`,
   },
   formatHelpers: {
     fileHeader: () => `// Test Header\n\n`,
@@ -114,7 +115,7 @@ describe('formats', () => {
         headerContent +
         `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100" as const;\nexport declare const cinnamon200 = "--cnvs-base-palette-cinnamon-200" as const;\n`;
 
-      expect(result).toBe(expected); //?
+      expect(result).toBe(expected);
     });
   });
 
@@ -176,7 +177,7 @@ describe('formats', () => {
         headerContent +
         `import * as base from "./base";\nimport * as system from "./system";\nexport {base,system}`;
 
-      expect(result).toBe(expected); //?
+      expect(result).toBe(expected);
     });
   });
 
@@ -343,7 +344,7 @@ describe('formats', () => {
       const expected =
         'export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}';
 
-      expect(result).toBe(expected); //?
+      expect(result).toBe(expected);
     });
   });
 
@@ -357,6 +358,7 @@ describe('formats', () => {
               disabled: {
                 comment: 'Test JSDoc',
                 value: '0.4',
+                raw: '{base.opacity.400}',
               },
             },
           },
@@ -372,7 +374,7 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  /**\n   * 0.4\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
+        'export declare const opacity = {\n  /**\n   * 0.4\n   * \n   * token: base.opacity.400\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
 
       expect(result).toBe(expected);
     });
@@ -411,13 +413,13 @@ describe('formats', () => {
       const result = formats['merge/refs']({
         ...defaultArgs,
         options: {
-          formats: ['css/composite', 'css/variables'],
+          formats: ['css/composite', 'css/variables', 'css/shadow'],
           level: 'sys',
         },
       });
 
       const expected =
-        `:root {\n --cnvs-sys-shape-zero: 0rem;\n}` +
+        `:root {\n --cnvs-sys-depth-1: 0 0 0 0 black;\n --cnvs-sys-shape-zero: 0rem;\n}` +
         '\n' +
         `.cnvs-sys-border-input-default {\n border: var(--cnvs-sys-line-default);\n}`;
 
