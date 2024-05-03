@@ -5,7 +5,7 @@ import {DesignToken} from 'style-dictionary/types/DesignToken';
 export interface Modifier {
   level: string[];
   format?: string;
-  filter?: Matcher;
+  filter?: Matcher | Matcher[];
   combineWith?: string[];
   transforms?: string[];
   options?: Options;
@@ -179,7 +179,7 @@ const validateFormat = (platform: string, level: string, format?: string | Forma
     : format || `${platform}/variables`;
 
 const combineFilters =
-  (filters: Function[], {filtered, level}: {filtered?: boolean; level: string}) =>
+  (filters: Matcher[], {filtered, level}: {filtered?: boolean; level: string}) =>
   (token: DesignToken) => {
     const levelFilter = ({path: [ctg]}: DesignToken) => !level || ctg === level;
     const allFilters = filtered ? [levelFilter, ...filters] : filters;

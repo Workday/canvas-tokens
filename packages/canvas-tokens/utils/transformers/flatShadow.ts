@@ -6,12 +6,8 @@ import {DesignToken} from 'style-dictionary';
  * @param {*} Token - style dictionary token object.
  * @returns updated token value
  */
-export const flatShadow = ({value, original}: DesignToken): string => {
-  const flatValue = value.map(({x, y, blur, spread, color}: any, ix: number) => {
-    // const colorVar = original.value[ix].color.replace(/^{(.+)}$/, (_: any, b: any) => {
-    //   return `var(--cnvs-${b.replace(/\./g, '-')})`;
-    // });
-
+export const flatShadow = ({value}: DesignToken): string => {
+  const flatValue = value.map(({x, y, blur, spread, color}: any) => {
     const numbers = [x, y, blur, spread].map(i => (i > 0 ? `${parseInt(i) / 16}rem` : i)).join(' ');
 
     return `${numbers} ${color}`;
