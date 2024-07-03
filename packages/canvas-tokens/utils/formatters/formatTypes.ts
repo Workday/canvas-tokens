@@ -31,7 +31,6 @@ export const formatJSToTypes: Formatter = ({dictionary, file, options}) => {
 };
 
 const startingText = 'export declare const';
-const endingText = 'as const;\n';
 
 type ReplaceFn = (pattern: string, newText: string) => string;
 
@@ -62,7 +61,7 @@ const recursivelyCreateFileStructure = ({
 
       const innerText = depth
         ? `${spaces}"${key}": "${values}",`
-        : `${startingText} ${key} = "${values}" ${endingText}`;
+        : `${startingText} ${key}: "${values}";`;
       const fullInnerText = jsDocText + innerText;
 
       updatedContent = replaceInContent(`**${key}**`, fullInnerText);
@@ -74,7 +73,7 @@ const recursivelyCreateFileStructure = ({
       .join('\n');
 
     const innerText = !depth
-      ? `${startingText} ${key} = {\n${placeholders}\n} ${endingText}`
+      ? `${startingText} ${key}: {\n${placeholders}\n};`
       : `${spaces}"${key}": {\n${placeholders}\n${spaces}},`;
 
     updatedContent = replaceInContent(`**${key}**`, innerText);
