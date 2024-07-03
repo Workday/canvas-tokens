@@ -13,6 +13,7 @@ import {formatJSToTypes} from './formatTypes';
 import {mergeObjects} from './mergeObjects';
 import {mergeTypes} from './mergeTypes';
 import {mergeStyleReferences} from './mergeStyleReferences';
+import {formatCSSShadow, formatLessShadow, formatSassShadow} from './formatShadowStyles';
 
 export const formats: Record<string, Formatter> = {
   // formatter creating the inline common-js file structure
@@ -45,6 +46,15 @@ export const formats: Record<string, Formatter> = {
   // formatter creating the less file structure
   // with composite tokens as a class
   'less/composite': formatLessComposite,
+  // formatter creating the css file structure
+  // for depth values
+  'css/shadow': formatCSSShadow,
+  // formatter creating the sass file structure
+  // for depth values
+  'scss/shadow': formatSassShadow,
+  // formatter creating the less file structure
+  // for depth values
+  'less/shadow': formatLessShadow,
   // formatter merging default format for platform
   // with format helper transforming properties to the specific object
   'merge/objects': mergeObjects,

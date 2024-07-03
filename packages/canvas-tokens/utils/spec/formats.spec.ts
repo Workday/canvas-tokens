@@ -21,6 +21,7 @@ jest.mock('style-dictionary', () => ({
     'css/variables': () => `:root {\n --cnvs-sys-shape-zero: 0rem;\n}`,
     'css/composite': () =>
       `.cnvs-sys-border-input-default {\n border: var(--cnvs-sys-line-default);\n}`,
+    'css/shadow': () => ` --cnvs-sys-depth-1: 0 0 0 0 black;`,
   },
   formatHelpers: {
     fileHeader: () => `// Test Header\n\n`,
@@ -357,6 +358,7 @@ describe('formats', () => {
               disabled: {
                 comment: 'Test JSDoc',
                 value: '0.4',
+                raw: '{base.opacity.400}',
               },
             },
           },
@@ -411,13 +413,13 @@ describe('formats', () => {
       const result = formats['merge/refs']({
         ...defaultArgs,
         options: {
-          formats: ['css/composite', 'css/variables'],
+          formats: ['css/composite', 'css/variables', 'css/shadow'],
           level: 'sys',
         },
       });
 
       const expected =
-        `:root {\n --cnvs-sys-shape-zero: 0rem;\n}` +
+        `:root {\n --cnvs-sys-depth-1: 0 0 0 0 black;\n --cnvs-sys-shape-zero: 0rem;\n}` +
         '\n' +
         `.cnvs-sys-border-input-default {\n border: var(--cnvs-sys-line-default);\n}`;
 
