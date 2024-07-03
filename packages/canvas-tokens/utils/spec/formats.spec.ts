@@ -113,7 +113,7 @@ describe('formats', () => {
       const result = formats['ts/inline'](defaultArgs);
       const expected =
         headerContent +
-        `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100" as const;\nexport declare const cinnamon200 = "--cnvs-base-palette-cinnamon-200" as const;\n`;
+        `export declare const cinnamon100: "--cnvs-base-palette-cinnamon-100";\nexport declare const cinnamon200: "--cnvs-base-palette-cinnamon-200";\n`;
 
       expect(result).toBe(expected);
     });
@@ -374,7 +374,7 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  /**\n   * 0.4\n   * \n   * token: base.opacity.400\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
+        'export declare const opacity: {\n  /**\n   * 0.4\n   * \n   * token: base.opacity.400\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n};\n';
 
       expect(result).toBe(expected);
     });
@@ -402,7 +402,7 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity = {\n  /** 0.4 */\n  "disabled": "--cnvs-base-opacity-300",\n} as const;\n';
+        'export declare const opacity: {\n  /** 0.4 */\n  "disabled": "--cnvs-base-opacity-300",\n};\n';
 
       expect(result).toBe(expected);
     });
