@@ -1,5 +1,19 @@
 # @workday/canvas-tokens-web
 
+## 2.0.1
+
+### Patch Changes
+
+- **Web Tokens**
+
+  - fix: Fix type file generation to export types instead of declarations
+    ([#120](https://github.com/Workday/canvas-tokens/pull/120))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Type generation has been updated to fix a type
+    issue happening for user who doesn't use `--skipLibCheck`. Now generated type files contains
+    types (`export declare const cinnamon100: "--cnvs-base-palette-cinnamon-100";`) instead of value
+    declarations
+    (`export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100" as const;`).
+
 ## 2.0.0
 
 ### Major Changes
