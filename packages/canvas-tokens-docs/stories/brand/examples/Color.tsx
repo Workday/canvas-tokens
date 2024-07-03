@@ -14,6 +14,7 @@ const palettes = Object.keys(brand).map(key => {
     values,
   };
 });
+
 export const ColorTokens = () => {
   return (
     <Stack>
