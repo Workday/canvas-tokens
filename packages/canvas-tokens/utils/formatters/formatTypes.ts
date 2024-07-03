@@ -61,7 +61,7 @@ const recursivelyCreateFileStructure = ({
 
       const innerText = depth
         ? `${spaces}"${key}": "${values}",`
-        : `${startingText} ${key}: "${values}";`;
+        : `${startingText} ${key}: "${values}";\n`;
       const fullInnerText = jsDocText + innerText;
 
       updatedContent = replaceInContent(`**${key}**`, fullInnerText);
@@ -73,7 +73,7 @@ const recursivelyCreateFileStructure = ({
       .join('\n');
 
     const innerText = !depth
-      ? `${startingText} ${key}: {\n${placeholders}\n};`
+      ? `${startingText} ${key}: {\n${placeholders}\n};\n`
       : `${spaces}"${key}": {\n${placeholders}\n${spaces}},`;
 
     updatedContent = replaceInContent(`**${key}**`, innerText);

@@ -15,6 +15,8 @@ const palettes = Object.keys(brand).map(key => {
   };
 });
 
+brand.alert.accent
+
 export const ColorTokens = () => {
   return (
     <Stack>
