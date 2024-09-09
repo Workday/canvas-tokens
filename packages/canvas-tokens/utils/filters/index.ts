@@ -52,3 +52,13 @@ export const isBaseOpacity: Matcher = token => {
   const [level, category] = token.path;
   return level === 'base' && category === 'opacity' && parseFloat(token.value) > 1;
 };
+
+export const isBreakpoints: Matcher = token => {
+  const [level, category] = token.path;
+  return level === 'sys' && category === 'breakpoints';
+};
+
+export const filterCodeTokens: Matcher = token => {
+  const excludedTokens = ['level', 'shadow', 'typescale'];
+  return !excludedTokens.includes(token.path[1]);
+};

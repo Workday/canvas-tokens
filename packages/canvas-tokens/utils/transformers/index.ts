@@ -1,4 +1,5 @@
 import {Transform} from 'style-dictionary';
+import * as math from 'mathjs';
 import * as filter from '../filters';
 import {flatShadow} from './flatShadow';
 import {flatRGBAColor} from './flatRGBAColor';
@@ -46,6 +47,15 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isBaseOpacity,
     transformer: ({value}) => `${value / 100}`,
+  },
+  'value/breakpoints/px': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isBreakpoints,
+    transformer: ({value}) => {
+      const expr = value.replace('0.25rem', '4');
+      return `${math.evaluate(expr)}px`;
+    },
   },
   // transform function that changes a value to its CSS var name
   'value/variables': {

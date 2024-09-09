@@ -110,6 +110,7 @@ StyleDictionary.registerTransformGroup({
     'name/cti/kebab',
     'value/flatten-border',
     'value/flatten-base-shadow',
+    'value/breakpoints/px',
     'value/hex-to-rgba',
     'value/wrapped-font-family',
     'value/math',

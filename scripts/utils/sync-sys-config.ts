@@ -1,5 +1,6 @@
 import {tokensStudioRepoParams, canvasTokensRepoParams} from './api-client';
 import {ContentFile, getFileContent, updateFileContent} from './file-content';
+import {generateRefs} from './generateRefs';
 import {decodeJSONBufferString, encodeJSONToString} from './parse-utils';
 
 /**
@@ -79,6 +80,8 @@ export async function syncSystemConfig() {
   const formattedConfig = formatConfig(filteredConfig);
   // Re-encode the formatted JSON object to a Buffer string
   const encodedConfig = encodeJSONToString(formattedConfig);
+
+  generateRefs(formattedConfig);
 
   // Fetch system token config from canvas-tokens repo
   const canvasSystemTokensConfig = (await getFileContent({
