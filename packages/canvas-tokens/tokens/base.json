@@ -797,56 +797,56 @@
     },
     "line-height": {
       "50": {
-        "value": "1rem",
-        "type": "lineHeights"
+        "value": "16",
+        "type": "number"
       },
       "100": {
-        "value": "{line-height.50} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "20",
+        "type": "number"
       },
       "150": {
-        "value": "{line-height.100} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "24",
+        "type": "number"
       },
       "200": {
-        "value": "{line-height.150} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "28",
+        "type": "number"
       },
       "250": {
-        "value": "{line-height.200} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "32",
+        "type": "number"
       },
       "300": {
-        "value": "{line-height.250} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "36",
+        "type": "number"
       },
       "350": {
-        "value": "{line-height.300} + {typescale.height.default}",
-        "type": "lineHeights"
+        "value": "40",
+        "type": "number"
       },
       "400": {
-        "value": "{line-height.350} + {typescale.height.title}",
-        "type": "lineHeights"
+        "value": "48",
+        "type": "number"
       },
       "500": {
-        "value": "{line-height.400} + {typescale.height.title}",
-        "type": "lineHeights"
+        "value": "56",
+        "type": "number"
       },
       "600": {
-        "value": "{line-height.500} + {typescale.height.title}",
-        "type": "lineHeights"
+        "value": "64",
+        "type": "number"
       },
       "750": {
-        "value": "{line-height.600} + {typescale.height.display}",
-        "type": "lineHeights"
+        "value": "72",
+        "type": "number"
       },
       "900": {
-        "value": "{line-height.750} + {typescale.height.display}",
-        "type": "lineHeights"
+        "value": "88",
+        "type": "number"
       },
       "1050": {
-        "value": "{line-height.900} + {typescale.height.display}",
-        "type": "lineHeights"
+        "value": "104",
+        "type": "number"
       }
     },
     "typescale": {
@@ -886,187 +886,192 @@
     "font-family": {
       "50": {
         "value": "Roboto",
-        "type": "fontFamilies",
+        "type": "text",
         "description": "Default font-family"
       },
       "100": {
         "value": "Roboto Mono",
-        "type": "fontFamilies"
+        "type": "text"
       },
       "200": {
         "value": "Noto Sans",
-        "type": "fontFamilies"
+        "type": "text"
       }
     },
     "font-weight": {
       "300": {
-        "value": "300",
-        "type": "fontWeights"
+        "value": "Light",
+        "type": "text"
       },
       "400": {
-        "value": "400",
-        "type": "fontWeights"
+        "value": "Regular",
+        "type": "text"
       },
       "500": {
-        "value": "500",
-        "type": "fontWeights"
+        "value": "Medium",
+        "type": "text"
       },
       "700": {
-        "value": "700",
-        "type": "fontWeights"
+        "value": "Bold",
+        "type": "text"
       }
     },
     "letter-spacing": {
       "50": {
         "value": "0.4",
-        "type": "letterSpacing"
+        "type": "number"
       },
       "100": {
         "value": "0.32",
-        "type": "letterSpacing"
+        "type": "number"
       },
       "150": {
         "value": "0.24",
-        "type": "letterSpacing"
+        "type": "number"
       },
       "200": {
         "value": "0.16",
-        "type": "letterSpacing"
-      }
-    },
-    "shadow": {
-      "100": {
-        "value": [
-          {
-            "x": "0",
-            "y": "1",
-            "blur": "4",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "2",
-            "blur": "8",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
-      },
-      "200": {
-        "value": [
-          {
-            "x": "0",
-            "y": "2",
-            "blur": "8",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "4",
-            "blur": "16",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow",
-        "description": "Top navigation, Bottom navigation"
-      },
-      "300": {
-        "value": [
-          {
-            "x": "0",
-            "y": "3",
-            "blur": "12",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "6",
-            "blur": "24",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
-      },
-      "400": {
-        "value": [
-          {
-            "x": "0",
-            "y": "4",
-            "blur": "16",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "8",
-            "blur": "32",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
-      },
-      "500": {
-        "value": [
-          {
-            "x": "0",
-            "y": "5",
-            "blur": "20",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "10",
-            "blur": "40",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
-      },
-      "600": {
-        "value": [
-          {
-            "x": "0",
-            "y": "6",
-            "blur": "24",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.200})",
-            "type": "dropShadow"
-          },
-          {
-            "x": "0",
-            "y": "12",
-            "blur": "48",
-            "spread": "0",
-            "color": "rgba({palette.licorice.600},{opacity.100})",
-            "type": "dropShadow"
-          }
-        ],
-        "type": "boxShadow"
+        "type": "number"
       }
     },
     "level": {
       "value": "2",
       "type": "number",
       "description": "Used to calculate the skip level amount between levels in the type ramp, such as going from subtext to body, body to heading."
+    },
+    "shadow": {
+      "1": {
+        "100": {
+          "y": {
+            "value": "1",
+            "type": "number"
+          },
+          "blur": {
+            "value": "4",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "8",
+            "type": "number"
+          }
+        }
+      },
+      "2": {
+        "100": {
+          "y": {
+            "value": "2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "8",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "4",
+            "type": "number"
+          },
+          "blur": {
+            "value": "16",
+            "type": "number"
+          }
+        }
+      },
+      "3": {
+        "100": {
+          "y": {
+            "value": "3",
+            "type": "number"
+          },
+          "blur": {
+            "value": "12",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "6",
+            "type": "number"
+          },
+          "blur": {
+            "value": "24",
+            "type": "number"
+          }
+        }
+      },
+      "4": {
+        "100": {
+          "y": {
+            "value": "4",
+            "type": "number"
+          },
+          "blur": {
+            "value": "16",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "8",
+            "type": "number"
+          },
+          "blur": {
+            "value": "32",
+            "type": "number"
+          }
+        }
+      },
+      "5": {
+        "100": {
+          "y": {
+            "value": "5",
+            "type": "number"
+          },
+          "blur": {
+            "value": "20",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "10",
+            "type": "number"
+          },
+          "blur": {
+            "value": "40",
+            "type": "number"
+          }
+        }
+      },
+      "6": {
+        "100": {
+          "y": {
+            "value": "6",
+            "type": "number"
+          },
+          "blur": {
+            "value": "24",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "12",
+            "type": "number"
+          },
+          "blur": {
+            "value": "48",
+            "type": "number"
+          }
+        }
+      }
     },
     "extended": {
       "palette": {

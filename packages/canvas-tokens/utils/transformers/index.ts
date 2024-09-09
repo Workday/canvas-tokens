@@ -3,6 +3,7 @@ import * as math from 'mathjs';
 import * as filter from '../filters';
 import {flatShadow} from './flatShadow';
 import {flatRGBAColor} from './flatRGBAColor';
+import {mapFontWeight} from './mapFontWeight';
 import {transformMath} from './transformMath';
 import {transformNameToCamelCase} from './transformNameToCamelCase';
 import {transformHexToRgb} from './transformHexToRgb';
@@ -15,19 +16,18 @@ export const transforms: Record<string, Transform> = {
     matcher: filter.isHexColor,
     transformer: transformHexToRgb,
   },
-  // transform function that changes the shadow object as value to the single line string
-  'value/flatten-base-shadow': {
+  'value/shadow/flat-sys': {
     type: 'value',
     transitive: true,
-    matcher: filter.isBaseShadow,
+    matcher: filter.isSysShadow,
     transformer: flatShadow,
   },
   // transform function that changes the shadow object as value to the single line string
-  'value/font-weight/lower-case': {
+  'value/font-weight/numbers': {
     type: 'value',
     transitive: true,
     matcher: filter.isBaseFontWeight,
-    transformer: ({value}) => value.toLowerCase(),
+    transformer: mapFontWeight,
   },
   'value/line-height/px2rem': {
     type: 'value',

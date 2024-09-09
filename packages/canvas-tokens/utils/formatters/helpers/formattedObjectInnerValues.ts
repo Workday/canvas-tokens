@@ -120,11 +120,11 @@ export const changeValuesToCSSVars = (
  * @param {Function} getRefs: style dictionary getReferences function
  * @returns the updated token composite value
  */
-type ReturnValues = {value: string; comment?: string};
+type ReturnValues = {value: string; comment?: string; raw?: TransformedToken['original']};
 export const getOriginalValues = (
   token: TransformedToken
 ): Record<string, ReturnValues> | ReturnValues => {
-  const {value: tokenValue, comment} = token;
+  const {value: tokenValue, comment, original} = token;
 
   if (isComposite(token) && typeof tokenValue !== 'string') {
     return Object.entries<string>(tokenValue).reduce(
@@ -132,14 +132,14 @@ export const getOriginalValues = (
         const name = camelCase(key);
         return {
           ...acc,
-          [name]: {value: resolveMathExpressions(value), comment},
+          [name]: {value: resolveMathExpressions(value), comment, raw: original.value},
         };
       },
       {}
     );
   }
 
-  return {value: resolveMathExpressions(tokenValue), comment};
+  return {value: resolveMathExpressions(tokenValue), comment, raw: original.value};
 };
 
 const resolveMathExpressions = (value: string): string => {

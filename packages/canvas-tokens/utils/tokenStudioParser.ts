@@ -41,6 +41,7 @@ const getLevel = (ref: string): string | void => {
 
 const replaceDescriptionByComment = (token: DesignToken) => {
   const {description} = token;
+
   if (description) {
     delete token.description;
     const updated = description.replace(/\n+/g, '; ');
@@ -51,10 +52,9 @@ const replaceDescriptionByComment = (token: DesignToken) => {
 const transformRefs = (token: DesignToken) => {
   const {value} = token;
 
-  const replacePx = (value: string, key: string) =>
-    ['x', 'y', 'blur', 'spread', 'width'].includes(key) && value !== '0'
-      ? `${parseFloat(value) / 16}rem`
-      : value;
+  const replacePx = (value: string, key: string) => {
+    return ['width'].includes(key) && value !== '0' ? `${parseFloat(value) / 16}rem` : value;
+  };
 
   const updateInnerValue = (value: string, key: string): string => {
     const noRefValue = replaceByFullRef(value);

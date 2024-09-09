@@ -31,7 +31,6 @@ export const formatJSToTypes: Formatter = ({dictionary, file, options}) => {
 };
 
 const startingText = 'export declare const';
-const endingText = 'as const;\n';
 
 type ReplaceFn = (pattern: string, newText: string) => string;
 
@@ -62,7 +61,7 @@ const recursivelyCreateFileStructure = ({
 
       const innerText = depth
         ? `${spaces}"${key}": "${values}",`
-        : `${startingText} ${key} = "${values}" ${endingText}`;
+        : `${startingText} ${key}: "${values}";\n`;
       const fullInnerText = jsDocText + innerText;
 
       updatedContent = replaceInContent(`**${key}**`, fullInnerText);
@@ -74,7 +73,7 @@ const recursivelyCreateFileStructure = ({
       .join('\n');
 
     const innerText = !depth
-      ? `${startingText} ${key} = {\n${placeholders}\n} ${endingText}`
+      ? `${startingText} ${key}: {\n${placeholders}\n};\n`
       : `${spaces}"${key}": {\n${placeholders}\n${spaces}},`;
 
     updatedContent = replaceInContent(`**${key}**`, innerText);
@@ -99,14 +98,22 @@ const generateJSDoc = (original: TransformedToken, depth: number) => {
   const spaces = '  '.repeat(depth);
   const extraSpaces = spaces + ' ';
   const newJSDocLineStart = `\n${extraSpaces}* `;
-  const {value, comment} = original;
-  const pxValue = value.includes('rem') ? parseFloat(value) * 16 : null;
+  const {value, comment, raw} = original;
 
+  const pxValue = value.includes('rem') ? parseFloat(value) * 16 : null;
   const valueText = value + (pxValue ? ` (${pxValue}px)` : '');
+  const tokenValue =
+    typeof raw === 'string'
+      ? 'token: ' + raw.replace(/^{(.+)}$/, (_: any, b: any) => b).replace('palette.', '')
+      : '';
+
   const updatedComment = comment?.replace(/; /g, newJSDocLineStart);
   const text = comment
     ? newJSDocLineStart +
       valueText +
+      newJSDocLineStart +
+      newJSDocLineStart +
+      tokenValue +
       newJSDocLineStart +
       newJSDocLineStart +
       updatedComment +

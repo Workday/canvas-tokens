@@ -1,7 +1,7 @@
 import {Matcher} from 'style-dictionary';
 
-export const isBaseShadow: Matcher = ({path: [level], type}) => {
-  return level === 'base' && type === 'boxShadow';
+export const isSysShadow: Matcher = ({path: [level, type]}) => {
+  return level === 'sys' && type === 'depth';
 };
 
 export const isBaseFontFamily: Matcher = ({path: [level, category]}) => {
@@ -45,7 +45,7 @@ export const isComposite: Matcher = ({type}) => {
 };
 
 export const isNotComposite: Matcher = token => {
-  return !isComposite(token);
+  return !isComposite(token) && token.path[1] !== 'depth';
 };
 
 export const isBaseOpacity: Matcher = token => {

@@ -36,7 +36,7 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
 
 /**
  * Style Dictionary format function that creates ts file structure.
- * This structure contains separated exports of each token with `as const`.
+ * This structure contains separated type exports of each token.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
@@ -44,7 +44,7 @@ export const formatInlineTypes: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   return dictionary.allTokens.reduce((acc: string, {name, path}) => {
     const cssVarName = path.join('-');
-    acc += `export declare const ${name} = "--cnvs-${cssVarName}" as const;\n`;
+    acc += `export declare const ${name}: "--cnvs-${cssVarName}";\n`;
     return acc;
   }, headerContent);
 };

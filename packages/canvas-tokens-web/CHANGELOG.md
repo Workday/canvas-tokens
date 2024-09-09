@@ -1,5 +1,69 @@
 # @workday/canvas-tokens-web
 
+## 2.0.1
+
+### Patch Changes
+
+- **Web Tokens**
+
+  - fix: Fix type file generation to export types instead of declarations
+    ([#120](https://github.com/Workday/canvas-tokens/pull/120))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Type generation has been updated to fix a type
+    issue happening for user who doesn't use `--skipLibCheck`. Now generated type files contains
+    types (`export declare const cinnamon100: "--cnvs-base-palette-cinnamon-100";`) instead of value
+    declarations
+    (`export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100" as const;`).
+
+## 2.0.0
+
+### Major Changes
+
+- **Web Tokens**
+
+  - chore: Sync tokens and update SD config to handle new changes
+    ([#115](https://github.com/Workday/canvas-tokens/pull/115))
+    ([@alanbsmith](https://github.com/alanbsmith), [@RayRedGoose](https://github.com/RayRedGoose))
+    `⚠️ BREAKING CHANGES:`
+
+    - `color.bg.positive.soft` has been renamed to `color.bg.positive.softer` for consistency.
+    - Figma specific tokens: `typescale`, `level`, `shadow` has been excluded from base web tokens.
+    - Depth token values has been updated from the base token reference to raw value.
+
+    Other Changes:
+
+    - JSDoc has been updated to include the base token info
+
+## 1.3.1
+
+### Patch Changes
+
+- **Documentation**
+
+  - docs: Add system color stories ([#102](https://github.com/Workday/canvas-tokens/pull/102))
+    ([@alanbsmith](https://github.com/alanbsmith))
+
+  **Infrastructure**
+
+  - chore: Add workflow for project board
+    ([#104](https://github.com/Workday/canvas-tokens/pull/104))
+    ([@jaclynjessup](https://github.com/jaclynjessup))
+  - chore: Add Figma-only tokens to filter out
+    ([#108](https://github.com/Workday/canvas-tokens/pull/108))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Sync script has been updated by adding
+    Figma-only token to filter. This change will exclude Figma-only tokens from the web token json.
+  - chore: Update Style Dictionary transform
+    ([#110](https://github.com/Workday/canvas-tokens/pull/110))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Bug fixing of generating wrong value for colors
+    with alpha and replacing transparent colors by `transparent` value. New transforms has been
+    added to handle text values of `font-weight` and px values of `line-height`. Transforms for
+    `font-family` and `letter-spacing` have been updated to support different token types, transform
+    for `flatten-rgba` has been updated to handle spaces and percentage alpha.
+  - chore: Sync Tokens Studio config 🤖 ([#112](https://github.com/Workday/canvas-tokens/pull/112))
+    ([@alanbsmith](https://github.com/alanbsmith), [@RayRedGoose](https://github.com/RayRedGoose))
+    Incorrect value of `sys.color.static.orange.default` token has been changed to the correct
+    `cantaloupe.400`. Token Studio structure has been updated for Figma only (types and
+    `font-weight`, `line-height` values changes).
+
 ## 1.3.0
 
 ### Minor Changes

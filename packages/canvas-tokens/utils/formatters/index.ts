@@ -13,6 +13,7 @@ import {formatJSToTypes} from './formatTypes';
 import {mergeObjects} from './mergeObjects';
 import {mergeTypes} from './mergeTypes';
 import {mergeStyleReferences} from './mergeStyleReferences';
+import {formatCSSShadow, formatLessShadow, formatSassShadow} from './formatShadowStyles';
 
 export const formats: Record<string, Formatter> = {
   // formatter creating the inline common-js file structure
@@ -21,13 +22,13 @@ export const formats: Record<string, Formatter> = {
   // formatter creating the inline es6 file structure
   // with separated variables of tokens
   'js/es6': formatToInlineES6Module,
-  // formatter creating the es6 and common-js inline types including the `as const`
+  // formatter creating the es6 and common-js inline types
   'ts/inline': formatInlineTypes,
   // formatter creating the es6 file structure
   // with tokens united in objects
   'es6/objects': formatES6ToObjects,
   // formatter creating the es6 and common-js types
-  // including the `as const` and JSDoc description
+  // including types and JSDoc description
   'ts/jsdoc-object': formatJSToTypes,
   // formatter creating the common-js file structure
   // with tokens united in objects
@@ -45,6 +46,15 @@ export const formats: Record<string, Formatter> = {
   // formatter creating the less file structure
   // with composite tokens as a class
   'less/composite': formatLessComposite,
+  // formatter creating the css file structure
+  // for depth values
+  'css/shadow': formatCSSShadow,
+  // formatter creating the sass file structure
+  // for depth values
+  'scss/shadow': formatSassShadow,
+  // formatter creating the less file structure
+  // for depth values
+  'less/shadow': formatLessShadow,
   // formatter merging default format for platform
   // with format helper transforming properties to the specific object
   'merge/objects': mergeObjects,
