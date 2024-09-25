@@ -41,8 +41,7 @@ export const generateRefs = async (file: any) => {
     if (err || !data) {
       fs.writeFileSync(refsFileName, JSON.stringify(tokens));
     } else {
-      // @ts-ignore
-      const content = decodeJSONBufferString(data);
+      const content = decodeJSONBufferString(data as any);
       fs.writeFileSync(refsFileName, JSON.stringify({...content, ...tokens}));
     }
   });

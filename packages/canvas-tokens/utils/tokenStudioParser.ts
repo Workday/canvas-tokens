@@ -1,6 +1,5 @@
 import {kebabCase} from 'case-anything';
 import {DesignToken} from 'style-dictionary/types/DesignToken';
-// @ts-ignore
 import refsList from '../_refs.json';
 
 export function resolveRef(ref: string, resolver: (full: string, ref: string) => string) {
@@ -35,7 +34,7 @@ export const tokenStudioParser = ({contents}: any) => {
 
 const getLevel = (ref: string): string | void => {
   return Object.keys(refsList).find((key: string) =>
-    refsList[key].some((item: string) => item.startsWith(ref))
+    (refsList as any)[key].some((item: string) => item.startsWith(ref))
   );
 };
 
