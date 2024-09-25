@@ -1,26 +1,29 @@
 import fs from 'fs';
 import {decodeJSONBufferString} from './parse-utils';
-const path = require('path');
+import path from 'path';
 
-const transformToRefs = (tokens: any, parsed = {}, level = '') => {
+type Transform = (
+  tokens: Record<string, any>,
+  parsed?: any,
+  level?: string
+) => Record<string, string[]>;
+
+const transformToRefs: Transform = (tokens, parsed = {}, level = '') => {
   const keys = Object.keys(tokens);
 
   keys.forEach(key => {
     const isHighestLevel = /base|brand|sys/.test(key);
     if (isHighestLevel) {
-      // @ts-ignore
       parsed[key] = [];
     }
 
     if (keys.includes('value')) {
-      // @ts-ignore
-      parsed.push(level);
+      parsed?.push(level);
       return parsed;
     }
 
     transformToRefs(
       tokens[key],
-      // @ts-ignore
       isHighestLevel ? parsed[key] : parsed,
       isHighestLevel ? '' : level ? `${level}.${key}` : key
     );
@@ -36,11 +39,11 @@ export const generateRefs = async (file: any) => {
     const tokens = transformToRefs(file);
 
     if (err || !data) {
-      fs.writeFile(refsFileName, JSON.stringify(tokens), () => {});
+      fs.writeFileSync(refsFileName, JSON.stringify(tokens));
     } else {
       // @ts-ignore
       const content = decodeJSONBufferString(data);
-      fs.writeFile(refsFileName, JSON.stringify({...content, ...tokens}), () => {});
+      fs.writeFileSync(refsFileName, JSON.stringify({...content, ...tokens}));
     }
   });
 };
