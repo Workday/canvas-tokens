@@ -1,5 +1,22 @@
 # @workday/canvas-tokens-web
 
+## 2.0.2
+
+### Patch Changes
+
+- **Documentation**
+
+  - docs: Add Version Support SLA ([#123](https://github.com/Workday/canvas-tokens/pull/123))
+    ([@alanbsmith](https://github.com/alanbsmith))
+
+  **Web Tokens**
+
+  - fix(web): Fix type and breakpoints tokens
+    ([#124](https://github.com/Workday/canvas-tokens/pull/124))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova) Type tokens have been fixed to
+    refer to system font tokens instead of base. Breakpoints tokens have been fixed to have px value
+    instead of rem.
+
 ## 2.0.1
 
 ### Patch Changes
