@@ -1,5 +1,6 @@
 import {kebabCase} from 'case-anything';
 import {DesignToken} from 'style-dictionary/types/DesignToken';
+import refsList from '../_refs.json';
 
 export function resolveRef(ref: string, resolver: (full: string, ref: string) => string) {
   // comment explaining what this RegExp does.
@@ -31,34 +32,10 @@ export const tokenStudioParser = ({contents}: any) => {
   return parsed;
 };
 
-const levelRefs = {
-  base: [
-    'palette',
-    'opacity',
-    'font-size',
-    'line-height',
-    'typescale',
-    'font-family',
-    'font-weight',
-    'letter-spacing',
-    'shadow',
-    'level',
-    'extended',
-    'unit',
-  ],
-  brand: ['primary', 'alert', 'error', 'success', 'neutral', 'common', 'gradient'],
-  sys: ['color', 'breakpoints', 'depth', 'shape', 'space', 'type'],
-};
-
-const getLevel = (ref: string): string => {
-  const [key] = ref.split('.');
-
-  return Object.keys(levelRefs).reduce((acc: string, item: string) => {
-    if (levelRefs[item as 'base' | 'brand' | 'sys'].includes(key)) {
-      return item;
-    }
-    return acc;
-  }, '');
+const getLevel = (ref: string): string | void => {
+  return Object.keys(refsList).find((key: string) =>
+    (refsList as any)[key].some((item: string) => item.startsWith(ref))
+  );
 };
 
 const replaceDescriptionByComment = (token: DesignToken) => {

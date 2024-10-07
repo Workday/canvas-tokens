@@ -1,5 +1,6 @@
 import {tokensStudioRepoParams, canvasTokensRepoParams} from './api-client';
 import {ContentFile, getFileContent, updateFileContent} from './file-content';
+import {generateRefs} from './generateRefs';
 import {decodeJSONBufferString, encodeJSONToString} from './parse-utils';
 
 // Format the config object into the shape expected by the consumer
@@ -44,6 +45,8 @@ export async function syncBrandConfig() {
   const formattedConfig = formatConfig(parsedContent);
   // Re-encode the formatted JSON object to a Buffer string
   const encodedConfig = encodeJSONToString(formattedConfig);
+
+  generateRefs(formattedConfig);
 
   // Sync Canvas Tokens config file with the updated config
   updateFileContent({
