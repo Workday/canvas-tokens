@@ -51,7 +51,7 @@ export async function syncBrandConfig() {
     repo: canvasTokensRepoParams.repo,
     path: canvasTokensRepoParams.brandConfigPath,
     branch: canvasTokensRepoParams.syncBranch,
-    message: 'chore: Sync brand tokens config',
+    message: 'chore(web): Sync brand tokens config',
     // If this is a new file, there will be no existing sha to reference.
     sha: canvasTokensConfig ? canvasTokensConfig.sha : undefined,
     content: encodedConfig,

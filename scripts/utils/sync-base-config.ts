@@ -51,7 +51,7 @@ export async function syncBaseConfig() {
     repo: canvasTokensRepoParams.repo,
     path: canvasTokensRepoParams.baseConfigPath,
     branch: canvasTokensRepoParams.syncBranch,
-    message: 'chore: Sync base tokens config',
+    message: 'chore(web): Sync base tokens config',
     // If this is a new file, there will be no existing sha to reference.
     sha: canvasTokensConfig ? canvasTokensConfig.sha : undefined,
     content: encodedConfig,

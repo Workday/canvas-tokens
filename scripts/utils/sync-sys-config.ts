@@ -33,9 +33,12 @@ function filterNonWebTokens(config: Record<string, object>) {
     // If the key is in the non web tokens, iterate over its tokens
     if (key in nonWebTokens) {
       for (const token in tokenSet) {
-        const nonWebTokenSet = nonWebTokens[key as keyof typeof nonWebTokens];
+        const nonWebTokenSet: string[] = nonWebTokens[key as keyof typeof nonWebTokens];
+        if (!nonWebTokenSet.length) {
+          delete config[key];
+        }
         // If the token is non web, delete it from the config object
-        if (!nonWebTokenSet.length || (nonWebTokenSet as string[]).includes(token)) {
+        if (nonWebTokenSet.includes(token)) {
           delete config[key][token as keyof typeof tokenSet];
         }
       }
@@ -93,7 +96,7 @@ export async function syncSystemConfig() {
     repo: canvasTokensRepoParams.repo,
     path: canvasTokensRepoParams.sysConfigPath,
     branch: canvasTokensRepoParams.syncBranch,
-    message: 'chore: Sync system tokens config',
+    message: 'chore(web): Sync system tokens config',
     // If this is a new file, there will be no existing sha to reference.
     sha: canvasSystemTokensConfig ? canvasSystemTokensConfig.sha : undefined,
     content: encodedConfig,
