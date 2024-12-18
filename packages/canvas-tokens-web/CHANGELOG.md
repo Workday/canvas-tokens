@@ -1,5 +1,29 @@
 # @workday/canvas-tokens-web
 
+## 2.1.0
+
+### Minor Changes
+
+- **Infrastructure**
+
+  - fix: Fix issue with layer opacity presenting in json
+    ([#135](https://github.com/Workday/canvas-tokens/pull/135))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
+  **Web Tokens**
+
+  - chore: Sync Tokens Studio config 🤖 ([#137](https://github.com/Workday/canvas-tokens/pull/137))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) We've added new `action` tokens to brand. While
+    these tokens are available, limit their use and in most cases the default brand tokens should be
+    used for theming.
+
+    - `brand.action.lightest`
+    - `brand.action.light`
+    - `brand.action.base`
+    - `brand.action.dark`
+    - `brand.action.darkest`
+    - `brand.action.accent`
+
 ## 2.0.2
 
 ### Patch Changes
