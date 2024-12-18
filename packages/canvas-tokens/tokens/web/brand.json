@@ -130,6 +130,38 @@
         "type": "color"
       }
     },
+    "action": {
+      "lightest": {
+        "value": "{brand.primary.lightest}",
+        "type": "color",
+        "description": "Lightest action color"
+      },
+      "light": {
+        "value": "{brand.primary.light}",
+        "type": "color",
+        "description": "Light action color"
+      },
+      "base": {
+        "value": "{brand.primary.base}",
+        "type": "color",
+        "description": "Base action color"
+      },
+      "dark": {
+        "value": "{brand.primary.dark}",
+        "type": "color",
+        "description": "Dark action color"
+      },
+      "darkest": {
+        "value": "{brand.primary.darkest}",
+        "type": "color",
+        "description": "Darkest action color"
+      },
+      "accent": {
+        "value": "{brand.primary.accent}",
+        "type": "color",
+        "description": "Foreground color in actions"
+      }
+    },
     "common": {
       "focus-outline": {
         "value": "{palette.blueberry.400}",
