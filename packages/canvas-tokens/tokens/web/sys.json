@@ -816,6 +816,7 @@
         }
       }
     },
+    "layer-opacity": {},
     "shape": {
       "zero": {
         "value": "0rem",
@@ -1047,30 +1048,30 @@
       "subtext": {
         "small": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.normal}",
-            "lineHeight": "{line-height.subtext.small}",
-            "fontSize": "{font-size.subtext.small}",
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.50}",
+            "fontSize": "{font-size.25}",
             "letterSpacing": "{letter-spacing.50}"
           },
           "type": "typography"
         },
         "medium": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.normal}",
-            "lineHeight": "{line-height.subtext.medium}",
-            "fontSize": "{font-size.subtext.medium}",
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.50}",
+            "fontSize": "{font-size.50}",
             "letterSpacing": "{letter-spacing.100}"
           },
           "type": "typography"
         },
         "large": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.normal}",
-            "lineHeight": "{line-height.subtext.large}",
-            "fontSize": "{font-size.subtext.large}",
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.100}",
+            "fontSize": "{font-size.75}",
             "letterSpacing": "{letter-spacing.150}"
           },
           "type": "typography"
@@ -1079,29 +1080,29 @@
       "body": {
         "small": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.normal}",
-            "lineHeight": "{line-height.body.small}",
-            "fontSize": "{font-size.body.small}",
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.150}",
+            "fontSize": "{font-size.100}",
             "letterSpacing": "{letter-spacing.200}"
           },
           "type": "typography"
         },
         "medium": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.normal}",
-            "lineHeight": "{line-height.body.medium}",
-            "fontSize": "{font-size.body.medium}"
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.125}"
           },
           "type": "typography"
         },
         "large": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.normal}",
-            "lineHeight": "{line-height.body.large}",
-            "fontSize": "{font-size.body.large}"
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.400}",
+            "lineHeight": "{line-height.200}",
+            "fontSize": "{font-size.150}"
           },
           "type": "typography"
         }
@@ -1109,28 +1110,28 @@
       "heading": {
         "small": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.bold}",
-            "lineHeight": "{line-height.heading.small}",
-            "fontSize": "{font-size.heading.small}"
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.250}",
+            "fontSize": "{font-size.200}"
           },
           "type": "typography"
         },
         "medium": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.bold}",
-            "lineHeight": "{line-height.heading.medium}",
-            "fontSize": "{font-size.heading.medium}"
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.300}",
+            "fontSize": "{font-size.250}"
           },
           "type": "typography"
         },
         "large": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.bold}",
-            "lineHeight": "{line-height.heading.large}",
-            "fontSize": "{font-size.heading.large}"
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.350}",
+            "fontSize": "{font-size.300}"
           },
           "type": "typography"
         }
@@ -1138,28 +1139,28 @@
       "title": {
         "small": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.bold}",
-            "lineHeight": "{line-height.title.small}",
-            "fontSize": "{font-size.title.small}"
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.400}",
+            "fontSize": "{font-size.400}"
           },
           "type": "typography"
         },
         "medium": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.bold}",
-            "lineHeight": "{line-height.title.medium}",
-            "fontSize": "{font-size.title.medium}"
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.500}",
+            "fontSize": "{font-size.500}"
           },
           "type": "typography"
         },
         "large": {
           "value": {
-            "fontFamily": "{font-family.default}",
-            "fontWeight": "{font-weight.bold}",
-            "lineHeight": "{line-height.title.large}",
-            "fontSize": "{font-size.title.large}"
+            "fontFamily": "{font-family.50}",
+            "fontWeight": "{font-weight.700}",
+            "lineHeight": "{line-height.600}",
+            "fontSize": "{font-size.600}"
           },
           "type": "typography"
         }
