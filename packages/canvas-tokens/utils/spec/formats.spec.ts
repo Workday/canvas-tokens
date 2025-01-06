@@ -1,10 +1,5 @@
 import {formats} from '../formatters';
 
-jest.mock('../tokenStudioParser', () => ({
-  resolveRef: (ref: string, resolver: (full: string, ref: string) => string) =>
-    ref.replace(/\{([^}]+)\}/gi, resolver),
-}));
-
 jest.mock('style-dictionary', () => ({
   format: {
     'es6/objects': ({dictionary}: any) => {
