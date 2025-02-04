@@ -25,7 +25,7 @@ const config = setConfig({
           level: ['brand', 'sys'],
           format: 'merge/refs',
           combineWith: ['{platform}/composite', '{platform}/variables', '{platform}/shadow'],
-          filter: filters.filterActionTokens,
+          filter: filters.filterCSSActionToken,
           options: {
             outputReferences: true,
           },

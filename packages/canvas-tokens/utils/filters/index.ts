@@ -63,7 +63,7 @@ export const filterCodeTokens: Matcher = token => {
   return !excludedTokens.includes(token.path[1]);
 };
 
-export const filterActionTokens: Matcher = token => {
-  const excludedTokens = ['action'];
-  return !excludedTokens.includes(token.path[1]);
+export const filterCSSActionToken: Matcher = token => {
+  const [level, category] = token.path;
+  return level === 'brand' && category === 'action';
 };
