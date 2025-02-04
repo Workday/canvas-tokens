@@ -726,72 +726,65 @@
         "type": "number"
       }
     },
-    "base": {
-      "unit": {
-        "value": "0.25rem",
-        "type": "dimension",
-        "description": "The base unit used in the grid system.\n"
-      }
-    },
     "font-size": {
       "25": {
         "value": "0.625rem",
         "type": "fontSizes"
       },
       "50": {
-        "value": "{font-size.25} + {typescale.size.default}",
+        "value": "{base.font-size.25} + {base.typescale.size.default}",
         "type": "fontSizes"
       },
       "75": {
-        "value": "{font-size.50} + {typescale.size.default}",
+        "value": "{base.font-size.50} + {base.typescale.size.default}",
         "type": "fontSizes"
       },
       "100": {
-        "value": "{font-size.75} + {typescale.size.default}",
+        "value": "{base.font-size.75} + {base.typescale.size.default}",
         "type": "fontSizes"
       },
       "125": {
-        "value": "{font-size.100} + {typescale.size.default}",
+        "value": "{base.font-size.100} + {base.typescale.size.default}",
         "type": "fontSizes"
       },
       "150": {
-        "value": "{font-size.125} + {typescale.size.default}",
+        "value": "{base.font-size.125} + {base.typescale.size.default}",
         "type": "fontSizes"
       },
       "200": {
-        "value": "{font-size.150} + {typescale.size.heading}",
+        "value": "{base.font-size.150} + {base.typescale.size.heading}",
         "type": "fontSizes"
       },
       "250": {
-        "value": "{font-size.200} + {typescale.size.heading}",
+        "value": "{base.font-size.200} + {base.typescale.size.heading}",
         "type": "fontSizes"
       },
       "300": {
-        "value": "{font-size.250} + {typescale.size.heading}",
+        "value": "{base.font-size.250} + {base.typescale.size.heading}",
         "type": "fontSizes"
       },
       "400": {
-        "value": "{font-size.300} + {typescale.size.title}",
+        "value": "{base.font-size.300} + {base.typescale.size.title}",
         "type": "fontSizes"
       },
       "500": {
-        "value": "{font-size.400} + {typescale.size.title}",
+        "value": "{base.font-size.400} + {base.typescale.size.title}",
         "type": "fontSizes"
       },
       "600": {
-        "value": "{font-size.500} + {typescale.size.title}",
+        "value": "{base.font-size.500} + {base.typescale.size.title}",
         "type": "fontSizes"
       },
       "750": {
-        "value": "{font-size.600} + {typescale.size.display}",
+        "value": "{base.font-size.600} + {base.typescale.size.display}",
         "type": "fontSizes"
       },
       "900": {
-        "value": "{font-size.750} + {typescale.size.display}",
+        "value": "{base.font-size.750} + {base.typescale.size.display}",
         "type": "fontSizes"
       },
       "1050": {
-        "value": "{font-size.900} + {typescale.size.display}",
+        "value": "{base.font-size.900} + {base.typescale.size.display}",
         "type": "fontSizes"
       }
     },
@@ -856,15 +849,15 @@
           "type": "dimension"
         },
         "heading": {
-          "value": "{typescale.size.default}  *  {level}",
+          "value": "{base.typescale.size.default}  *  {base.level}",
           "type": "dimension"
         },
         "title": {
-          "value": "{typescale.size.heading} * {level}",
+          "value": "{base.typescale.size.heading} * {base.level}",
           "type": "dimension"
         },
         "display": {
-          "value": "{typescale.size.title} * {level}",
+          "value": "{base.typescale.size.title} * {base.level}",
           "type": "dimension"
         }
       },
@@ -874,7 +867,7 @@
           "type": "dimension"
         },
         "title": {
-          "value": "{typescale.height.default} * {level}",
+          "value": "{base.typescale.height.default} * {base.level}",
           "type": "dimension"
         },
         "display": {
@@ -887,7 +880,7 @@
       "50": {
         "value": "Roboto",
         "type": "text",
-        "description": "Default font-family"
+        "comment": "Default font-family"
       },
       "100": {
         "value": "Roboto Mono",
@@ -937,7 +930,7 @@
     "level": {
       "value": "2",
       "type": "number",
-      "description": "Used to calculate the skip level amount between levels in the type ramp, such as going from subtext to body, body to heading."
+      "comment": "Used to calculate the skip level amount between levels in the type ramp, such as going from subtext to body, body to heading."
     },
     "shadow": {
       "1": {
@@ -1102,6 +1095,11 @@
           }
         }
       }
+    },
+    "unit": {
+      "value": "0.25rem",
+      "type": "dimension",
+      "comment": "The base unit used in the grid system.; "
     }
   }
 }
