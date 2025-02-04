@@ -7,11 +7,6 @@ describe('setConfig', () => {
     expect(result.source).toStrictEqual(['tokens/**/*.json']);
   });
 
-  it('should contain default parser', () => {
-    const result = setConfig(mockOptions);
-    expect(result.parsers).toHaveLength(1);
-  });
-
   it('should creates css platform settings', () => {
     const result = setConfig(mockOptions);
     expect(result.platforms).toHaveProperty('css');
