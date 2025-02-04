@@ -59,6 +59,13 @@ export const isBreakpoints: Matcher = token => {
 };
 
 export const filterCodeTokens: Matcher = token => {
-  const excludedTokens = ['level', 'shadow', 'typescale'];
+  console.log('token>>', token);
+  const excludedTokens = ['level', 'shadow', 'typescale', 'action'];
+  return !excludedTokens.includes(token.path[1]);
+};
+
+export const filterActionTokens: Matcher = token => {
+  console.log('token>>', token);
+  const excludedTokens = ['action'];
   return !excludedTokens.includes(token.path[1]);
 };
