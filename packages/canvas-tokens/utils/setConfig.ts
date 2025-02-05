@@ -1,5 +1,4 @@
 import {Config, Platform, File, Formatter, Options, Matcher} from 'style-dictionary';
-import {tokenStudioParser} from './tokenStudioParser';
 import {DesignToken} from 'style-dictionary/types/DesignToken';
 
 export interface Modifier {
@@ -49,13 +48,11 @@ export const setConfig = ({
   levels,
   ...restOptions
 }: ConfigOptions): Config => {
-  const parser = {pattern: /\.json$/, parse: tokenStudioParser};
   // Generate platform settings based on given options
   const generatedPlats = generatePlatforms({platforms, platformOptions, levels});
 
   return {
     platforms: generatedPlats,
-    parsers: [parser],
     ...restOptions,
   };
 };
