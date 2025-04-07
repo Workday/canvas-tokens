@@ -3,10 +3,9 @@ name: Release
 on:
   push:
     branches: 
-      # - main
+      - main
       - prerelease/major
       - prerelease/minor
-
 
   workflow_dispatch:
     inputs:
