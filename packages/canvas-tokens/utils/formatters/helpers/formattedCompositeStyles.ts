@@ -1,6 +1,10 @@
 import {Dictionary, TransformedToken} from 'style-dictionary';
 import {isComposite} from '../../filters';
-import {resolveRef} from '../../tokenStudioParser';
+
+export function resolveRef(ref: string, resolver: (full: string, ref: string) => string) {
+  // comment explaining what this RegExp does.
+  return ref.replace(/\{([^}]+)\}/gi, resolver);
+}
 
 interface HelperDictionary extends Partial<Dictionary> {
   allTokens: TransformedToken[];

@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 2.1.1
+
+### Patch Changes
+
+- **Infrastructure**
+
+  - chore: Remove parser ([#139](https://github.com/Workday/canvas-tokens/pull/139))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 2.1.0
 
 ### Minor Changes

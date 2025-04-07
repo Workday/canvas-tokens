@@ -1,6 +1,6 @@
 {
   "name": "@workday/canvas-tokens-web",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Canvas design tokens for web",
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",

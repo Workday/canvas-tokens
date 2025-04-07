@@ -2,71 +2,71 @@
   "brand": {
     "primary": {
       "lightest": {
-        "value": "{palette.blueberry.100}",
+        "value": "{base.palette.blueberry.100}",
         "type": "color"
       },
       "light": {
-        "value": "{palette.blueberry.200}",
+        "value": "{base.palette.blueberry.200}",
         "type": "color"
       },
       "base": {
-        "value": "{palette.blueberry.400}",
+        "value": "{base.palette.blueberry.400}",
         "type": "color"
       },
       "dark": {
-        "value": "{palette.blueberry.500}",
+        "value": "{base.palette.blueberry.500}",
         "type": "color"
       },
       "darkest": {
-        "value": "{palette.blueberry.600}",
+        "value": "{base.palette.blueberry.600}",
         "type": "color"
       },
       "accent": {
-        "value": "{palette.french-vanilla.100}",
+        "value": "{base.palette.french-vanilla.100}",
         "type": "color"
       }
     },
     "alert": {
       "lightest": {
-        "value": "{palette.cantaloupe.100}",
+        "value": "{base.palette.cantaloupe.100}",
         "type": "color"
       },
       "light": {
-        "value": "{palette.cantaloupe.200}",
+        "value": "{base.palette.cantaloupe.200}",
         "type": "color"
       },
       "base": {
-        "value": "{palette.cantaloupe.400}",
+        "value": "{base.palette.cantaloupe.400}",
         "type": "color"
       },
       "dark": {
-        "value": "{palette.cantaloupe.500}",
+        "value": "{base.palette.cantaloupe.500}",
         "type": "color"
       },
       "darkest": {
-        "value": "{palette.cantaloupe.600}",
+        "value": "{base.palette.cantaloupe.600}",
         "type": "color"
       },
       "accent": {
-        "value": "{palette.french-vanilla.100}",
+        "value": "{base.palette.french-vanilla.100}",
         "type": "color"
       }
     },
     "error": {
       "lightest": {
-        "value": "{palette.cinnamon.100}",
+        "value": "{base.palette.cinnamon.100}",
         "type": "color"
       },
       "light": {
-        "value": "{palette.cinnamon.200}",
+        "value": "{base.palette.cinnamon.200}",
         "type": "color"
       },
       "base": {
-        "value": "{palette.cinnamon.500}",
+        "value": "{base.palette.cinnamon.500}",
         "type": "color"
       },
       "dark": {
-        "value": "{palette.cinnamon.600}",
+        "value": "{base.palette.cinnamon.600}",
         "type": "color"
       },
       "darkest": {
@@ -74,59 +74,59 @@
         "type": "color"
       },
       "accent": {
-        "value": "{palette.french-vanilla.100}",
+        "value": "{base.palette.french-vanilla.100}",
         "type": "color"
       }
     },
     "success": {
       "lightest": {
-        "value": "{palette.green-apple.100}",
+        "value": "{base.palette.green-apple.100}",
         "type": "color"
       },
       "light": {
-        "value": "{palette.green-apple.300}",
+        "value": "{base.palette.green-apple.300}",
         "type": "color"
       },
       "base": {
-        "value": "{palette.green-apple.400}",
+        "value": "{base.palette.green-apple.400}",
         "type": "color"
       },
       "dark": {
-        "value": "{palette.green-apple.500}",
+        "value": "{base.palette.green-apple.500}",
         "type": "color"
       },
       "darkest": {
-        "value": "{palette.green-apple.600}",
+        "value": "{base.palette.green-apple.600}",
         "type": "color"
       },
       "accent": {
-        "value": "{palette.french-vanilla.100}",
+        "value": "{base.palette.french-vanilla.100}",
         "type": "color"
       }
     },
     "neutral": {
       "lightest": {
-        "value": "{palette.soap.200}",
+        "value": "{base.palette.soap.200}",
         "type": "color"
       },
       "light": {
-        "value": "{palette.soap.300}",
+        "value": "{base.palette.soap.300}",
         "type": "color"
       },
       "base": {
-        "value": "{palette.soap.600}",
+        "value": "{base.palette.soap.600}",
         "type": "color"
       },
       "dark": {
-        "value": "{palette.licorice.300}",
+        "value": "{base.palette.licorice.300}",
         "type": "color"
       },
       "darkest": {
-        "value": "{palette.licorice.400}",
+        "value": "{base.palette.licorice.400}",
         "type": "color"
       },
       "accent": {
-        "value": "{palette.french-vanilla.100}",
+        "value": "{base.palette.french-vanilla.100}",
         "type": "color"
       }
     },
@@ -134,45 +134,45 @@
       "lightest": {
         "value": "{brand.primary.lightest}",
         "type": "color",
-        "description": "Lightest action color"
+        "comment": "Lightest action color"
       },
       "light": {
         "value": "{brand.primary.light}",
         "type": "color",
-        "description": "Light action color"
+        "comment": "Light action color"
       },
       "base": {
         "value": "{brand.primary.base}",
         "type": "color",
-        "description": "Base action color"
+        "comment": "Base action color"
       },
       "dark": {
         "value": "{brand.primary.dark}",
         "type": "color",
-        "description": "Dark action color"
+        "comment": "Dark action color"
       },
       "darkest": {
         "value": "{brand.primary.darkest}",
         "type": "color",
-        "description": "Darkest action color"
+        "comment": "Darkest action color"
       },
       "accent": {
         "value": "{brand.primary.accent}",
         "type": "color",
-        "description": "Foreground color in actions"
+        "comment": "Foreground color in actions"
       }
     },
     "common": {
       "focus-outline": {
-        "value": "{palette.blueberry.400}",
+        "value": "{base.palette.blueberry.400}",
         "type": "color"
       },
       "error-inner": {
-        "value": "{palette.cinnamon.500}",
+        "value": "{base.palette.cinnamon.500}",
         "type": "color"
       },
       "alert-inner": {
-        "value": "{palette.cantaloupe.400}",
+        "value": "{base.palette.cantaloupe.400}",
         "type": "color"
       }
     },
