@@ -54,7 +54,7 @@ jobs:
         run: |
           VERSION=""
           # BRANCH="${GITHUB_REF##*/}"
-          BRANCH="main"
+          BRANCH="prerelease/minor"
           COMMIT_MSG=$(git log -1 --pretty=%s)
       
           if [ -n "${{ inputs.version }}" ]; then

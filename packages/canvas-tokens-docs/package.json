@@ -4,6 +4,7 @@
   "description": "documentation for Canvas Tokens",
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",
+  "private": true,
   "dependencies": {
     "@workday/canvas-tokens-web": "^2.0.0"
   }
