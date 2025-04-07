@@ -4,7 +4,6 @@ on:
   push:
     branches: 
       # - main
-      - ISSUE144-*
       - prerelease/major
       - prerelease/minor
 
@@ -53,8 +52,7 @@ jobs:
         id: set_version
         run: |
           VERSION=""
-          # BRANCH="${GITHUB_REF##*/}"
-          BRANCH="prerelease/minor"
+          BRANCH="${GITHUB_REF##*/}"
           COMMIT_MSG=$(git log -1 --pretty=%s)
       
           if [ -n "${{ inputs.version }}" ]; then
@@ -73,9 +71,9 @@ jobs:
 
       - name: Get preid
         id: get_preid
-        if: ${{ contains(github.ref_name, 'prerelease/') }}
+        if: ${{ contains(github.ref_name, 'prerelease/') && steps.set_version.outputs.version }}
         run: |
-          VERSION="${{ steps.set_version.output.version }}"
+          VERSION="${{ steps.set_version.outputs.version }}"
 
           if [[ "$VERSION" == "major" ]]; then
             echo "preid=alpha" >> "$GITHUB_OUTPUT"
@@ -93,8 +91,6 @@ jobs:
           packagePath: packages/canvas-tokens-web
           prerelease: ${{ contains(github.ref_name, 'prerelease/') }}
           preid: ${{ steps.get_preid.outputs.preid }}
-          # skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
+          skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
           buildScript: yarn build:tokens
-          releaseScript: ""
-          skipPush: true
-          skipGithubRelease: true
+          releaseScript: yarn release
