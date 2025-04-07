@@ -80,7 +80,7 @@ jobs:
             echo "preid=beta" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: Workday/canvas-kit-actions/do-release@ISSUE21_changeset-release
+      - uses: Workday/canvas-kit-actions/do-release@v1
         if: ${{ steps.set_version.outputs.version }}
         id: release
         with:
