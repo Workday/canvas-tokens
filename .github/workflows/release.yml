@@ -93,6 +93,8 @@ jobs:
           packagePath: packages/canvas-tokens-web
           prerelease: ${{ contains(github.ref_name, 'prerelease/') }}
           preid: ${{ steps.get_preid.outputs.preid }}
-          skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
+          # skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
           buildScript: yarn build:tokens
           releaseScript: ""
+          skipPush: true
+          skipGithubRelease: true
