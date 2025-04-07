@@ -1,0 +1,98 @@
+name: Release 
+
+on:
+  push:
+    branches: 
+      # - main
+      - ISSUE144-*
+      - prerelease/major
+      - prerelease/minor
+
+
+  workflow_dispatch:
+    inputs:
+      version:
+        default: 'patch'
+        description:
+          'The version override: patch, minor or major'
+        required: false
+
+jobs:
+  release:
+    # Only run if:
+    # - The commit message does not contain `[skip release]`
+    # - OR the workflow was manually triggered and has a `version` string
+    if: ${{!contains(github.event.head_commit.message, '[skip release]')}}
+    runs-on: ubuntu-latest
+
+    steps:
+      ## First, we'll checkout the repository. We don't persist credentials because we need a
+      ## Personal Access Token to push on a branch that is protected. See
+      ## https://github.com/cycjimmy/semantic-release-action#basic-usage
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # Used for conventional commit ranges
+
+      - uses: Workday/canvas-kit-actions/install@v1
+        with:
+          node_version: 18.x
+
+      - name: Config git user
+        shell: bash
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Pull prerelease branch
+        if: ${{  inputs.version == 'minor' || inputs.version == 'major' }}
+        run: |
+          git pull origin prerelease/${{ inputs.version }}
+      
+      - name: Set version output
+        id: set_version
+        run: |
+          VERSION=""
+          # BRANCH="${GITHUB_REF##*/}"
+          BRANCH="main"
+          COMMIT_MSG=$(git log -1 --pretty=%s)
+      
+          if [ -n "${{ inputs.version }}" ]; then
+            VERSION="${{ inputs.version }}"
+          elif [[ "$BRANCH" == prerelease/* ]]; then
+            VERSION="${BRANCH#prerelease/}"
+          elif [[ "$BRANCH" == "main" ]]; then
+            if [[ "$COMMIT_MSG" == feat* ]]; then
+              VERSION="minor"
+            elif [[ "$COMMIT_MSG" == fix* ]]; then
+              VERSION="patch"
+            fi
+          fi
+      
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Get preid
+        id: get_preid
+        if: ${{ contains(github.ref_name, 'prerelease/') }}
+        run: |
+          VERSION="${{ steps.set_version.output.version }}"
+
+          if [[ "$VERSION" == "major" ]]; then
+            echo "preid=alpha" >> "$GITHUB_OUTPUT"
+          elif [[ "$VERSION" == "minor" ]]; then
+            echo "preid=beta" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: Workday/canvas-kit-actions/do-release@ISSUE21_changeset-release
+        if: ${{ steps.set_version.outputs.version }}
+        id: release
+        with:
+          ghToken: ${{ secrets.GITHUB_TOKEN }}
+          package: "@workday/canvas-tokens-web"
+          version: ${{ steps.set_version.outputs.version }}
+          packagePath: packages/canvas-tokens-web
+          prerelease: ${{ contains(github.ref_name, 'prerelease/') }}
+          preid: ${{ steps.get_preid.outputs.preid }}
+          skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
+          buildScript: yarn build:tokens
+          releaseScript: ""
