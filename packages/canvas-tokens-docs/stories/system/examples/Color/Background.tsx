@@ -42,6 +42,15 @@ const contrastPalette = buildPalette('system.color.bg.contrast', system.color.bg
 export const BackgroundContrastColors = () => (
   <ColorGrid name="Background Contrast Colors" palette={contrastPalette} />
 );
+
+const primaryPalette = buildPalette('system.color.bg.primary', system.color.bg.primary).sort(
+  sortSystemColorPalette
+);
+
+export const BackgroundPrimaryColors = () => (
+  <ColorGrid name="Background Primary Colors" palette={primaryPalette} />
+);
+
 const statusPalettes = buildPaletteGroup(
   'system.color.bg',
   {
@@ -54,4 +63,12 @@ const statusPalettes = buildPaletteGroup(
 
 export const BackgroundStatusColors = () => (
   <ColorGrid name="Background Status Colors" palette={statusPalettes} />
+);
+
+const aiPalette = buildPalette('system.color.bg.ai', system.color.bg.ai).sort(
+  sortSystemColorPalette
+);
+
+export const BackgroundAIColors = () => (
+  <ColorGrid name="Background AI Colors" palette={aiPalette} />
 );

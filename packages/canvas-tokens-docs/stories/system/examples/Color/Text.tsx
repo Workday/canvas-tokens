@@ -15,6 +15,7 @@ const textPalette = buildPalette('system.color.text', {
   hint: system.color.text.hint,
   disabled: system.color.text.disabled,
   inverse: system.color.text.inverse,
+  ai: system.color.text.ai,
 }).sort(sortSystemColorPalette);
 
 export const TextColors = () => <ColorGrid name="Text Default Colors" palette={textPalette} />;
@@ -31,4 +32,12 @@ const statusPalettes = buildPaletteGroup(
 
 export const TextStatusColors = () => (
   <ColorGrid name="Text Status Colors" palette={statusPalettes} />
+);
+
+const primaryPalette = buildPalette('system.color.text.primary', system.color.text.primary).sort(
+  sortSystemColorPalette
+);
+
+export const TextPrimaryColors = () => (
+  <ColorGrid name="Text Primary Colors" palette={primaryPalette} />
 );

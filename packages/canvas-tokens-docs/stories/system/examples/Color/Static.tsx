@@ -11,6 +11,6 @@ const staticPalettes = buildPaletteGroup(
   'system.color.static',
   system.color.static,
   sortSystemColorPalette
-);
+).sort((a, b) => (a.cssVar > b.cssVar ? 1 : -1));
 
 export const StaticColors = () => <ColorGrid name="Static Colors" palette={staticPalettes} />;
