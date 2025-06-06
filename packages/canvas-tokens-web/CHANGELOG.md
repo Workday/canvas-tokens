@@ -1,5 +1,25 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.0
+
+### Major Changes
+
+- ### Components
+
+  - chore: Fix release ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Use npm tokens ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - chore: Add updated release action ([#145](https://github.com/Workday/canvas-tokens/pull/145))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
+  ### Tokens
+
+  - chore: Sync tokens from canvas-tokens-studio
+    ([#151](https://github.com/Workday/canvas-tokens/pull/151))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Alpha version of new color tokens.
+
 ## 2.1.1
 
 ### Patch Changes
