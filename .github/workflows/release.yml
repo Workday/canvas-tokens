@@ -93,3 +93,4 @@ jobs:
           skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
           buildScript: yarn build:tokens
           releaseScript: yarn release
+          skipTagsPush: false
