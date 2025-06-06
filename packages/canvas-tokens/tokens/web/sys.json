@@ -216,6 +216,10 @@
         "type": "borderRadius",
         "comment": "Use this for form components presenting text information or inputs: Text Inputs and Text Area, Dropdowns, Menus and Banners."
       },
+      "x1-half": {
+        "value": "{base.unit} * 1.5",
+        "type": "borderRadius"
+      },
       "x2": {
         "value": "{base.unit} * 2",
         "type": "borderRadius",
