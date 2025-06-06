@@ -50,6 +50,7 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isSysColor,
     transformer: token => {
+      //eslint-disable-line
       return token.original.value.replace(/{[\w\.]*}/g, (a: string) => {
         const cssVar = `var(--cnvs-${a.replace(/{|}/g, '').replace(/\./g, '-')})`;
 
