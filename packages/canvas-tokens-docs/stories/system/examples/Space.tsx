@@ -60,7 +60,7 @@ export function SpaceTokens() {
             <TokenGrid.Sample
               style={{
                 width: `var(${token.cssVar})`,
-                backgroundColor: `var(${base.blueberry400})`,
+                backgroundColor: `var(${system.color.bg.primary.default})`,
               }}
             />
           </TokenGrid.RowItem>

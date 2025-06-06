@@ -2,29 +2,29 @@
   "sys": {
     "breakpoints": {
       "zero": {
-        "value": 0,
-        "type": "number",
-        "comment": "Use to set a media query `min-width` below small."
+        "value": "0",
+        "type": "dimension",
+        "description": "Use to set a media query `min-width` below small."
       },
       "s": {
-        "value": 320,
-        "type": "number",
-        "comment": "The `min-width` for mobile devices, such as phones and tablets."
+        "value": "{base.unit} * 80",
+        "type": "dimension",
+        "description": "The `min-width` for mobile devices, such as phones and tablets."
       },
       "m": {
-        "value": 768,
-        "type": "number",
-        "comment": "Medium screens, such as laptops."
+        "value": "{base.unit} * 192",
+        "type": "dimension",
+        "description": "Medium screens, such as laptops."
       },
       "l": {
-        "value": 1024,
-        "type": "number",
-        "comment": "Large screens, such as desktops."
+        "value": "{base.unit} * 256",
+        "type": "dimension",
+        "description": "Large screens, such as desktops."
       },
       "xl": {
-        "value": 1440,
-        "type": "number",
-        "comment": "Used for extra large screens, such as wide monitors and TVs."
+        "value": "{base.unit} * 360",
+        "type": "dimension",
+        "description": "Used for extra large screens, such as wide monitors and TVs."
       }
     },
     "depth": {
@@ -202,79 +202,80 @@
     },
     "shape": {
       "zero": {
-        "value": 0,
-        "type": "number"
+        "value": "0rem",
+        "type": "borderRadius",
+        "comment": "This is the initial shape of every new element. Use this for backgrounds screens and fixed navigation containers such as headers, and side-panels."
       },
       "half": {
-        "value": 2,
-        "type": "number"
+        "value": "{base.unit} * 0.5",
+        "type": "borderRadius",
+        "comment": "Use this for subtle and small components that don’t require to group complex information like Status Indicators, Checkboxes and Color Swatches."
       },
       "x1": {
         "value": "{base.unit}",
-        "type": "number"
-      },
-      "x1-half": {
-        "value": 6,
-        "type": "number"
+        "type": "borderRadius",
+        "comment": "Use this for form components presenting text information or inputs: Text Inputs and Text Area, Dropdowns, Menus and Banners."
       },
       "x2": {
-        "value": 8,
-        "type": "number"
+        "value": "{base.unit} * 2",
+        "type": "borderRadius",
+        "comment": "Use this for all the containers and popups: All Cards, Modals, Tooltips and Toasts."
       },
       "round": {
-        "value": 1000,
-        "type": "number"
+        "value": "{base.unit} * 250",
+        "type": "borderRadius",
+        "comment": "Commonly used for our standard buttons and profile avatars: All Primary, Secondary Buttons, Radio Buttons and Notification Badges."
       }
     },
     "space": {
       "zero": {
-        "value": 0,
-        "type": "number",
+        "value": "0",
+        "type": "spacing",
         "comment": "Stacks, rows in tables"
       },
       "x1": {
         "value": "{base.unit}",
-        "type": "number",
+        "type": "spacing",
         "comment": "Compact spacing between text or icons"
       },
       "x2": {
-        "value": 8,
-        "type": "number",
+        "value": "{base.unit} * 2",
+        "type": "spacing",
         "comment": "Commonly used to group compact elements like icon buttons"
       },
       "x3": {
-        "value": 12,
-        "type": "number",
+        "value": "{base.unit} * 3",
+        "type": "spacing",
         "comment": "Use when compact padding is required"
       },
       "x4": {
-        "value": 16,
-        "type": "number",
+        "value": "{base.unit} * 4",
+        "type": "spacing",
         "comment": "Default space token. Used to group Inputs with related data"
       },
       "x6": {
-        "value": 24,
-        "type": "number",
+        "value": "{base.unit} * 6",
+        "type": "spacing",
         "comment": "• Padding around card content; • Related elements where more space between them can be afforded; • Separate section headings or titles from body text or inputs"
       },
       "x8": {
-        "value": 32,
-        "type": "number",
+        "value": "{base.unit} * 8",
+        "type": "spacing",
         "comment": "• Standard spacing between cards; • Used to separate groups of content ; • Separate section headings or titles from body text or inputs"
       },
       "x10": {
-        "value": 40,
-        "type": "number",
+        "value": "{base.unit} * 10",
+        "type": "spacing",
         "comment": "• Used for outer margins on the overall page content ; • Used for inner margins on large items such as page sections"
       },
       "x16": {
-        "value": 64,
-        "type": "number",
+        "value": "{base.unit} * 16",
+        "type": "spacing",
         "comment": "- Use to de-clutter your UI when a lot of space is available; - Separate banner sections from page content; - Use to differentiate page content like page sections"
       },
       "x20": {
-        "value": 80,
-        "type": "number",
+        "value": "{base.unit} * 20",
+        "type": "spacing",
         "comment": "- Use sparingly; - Helps to put focus on the primary element within your page; - Use to de-clutter your UI when a lot of space is available"
       }
     },

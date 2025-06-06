@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {base} from '@workday/canvas-tokens-web';
+import {base, system} from '@workday/canvas-tokens-web';
 import {TokenGrid} from '../../../components/TokenGrid';
 
 function getPixelValue(value: string) {
@@ -29,7 +29,7 @@ export const BaseUnit = () => {
             <TokenGrid.Sample
               style={{
                 width: `var(${token.label})`,
-                backgroundColor: `var(${base.blueberry400})`,
+                backgroundColor: `var(${system.color.bg.primary.default})`,
               }}
             />
           </TokenGrid.RowItem>

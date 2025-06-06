@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {base, system} from '@workday/canvas-tokens-web';
+import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
 interface ShapeToken {
@@ -61,7 +61,7 @@ export function ShapeTokens() {
             <TokenGrid.Sample
               style={{
                 borderRadius: `var(${token.cssVar})`,
-                border: `solid 0.0625rem var(${base.blackPepper300})`,
+                border: `solid 0.0625rem var(${system.color.border.divider})`,
               }}
             />
           </TokenGrid.RowItem>

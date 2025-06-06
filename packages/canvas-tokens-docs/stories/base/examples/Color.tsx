@@ -5,34 +5,16 @@ import {Stack} from '../../../components/Stack';
 import {ColorGrid, buildColorSwatch, ColorSwatch} from '../../../components/ColorGrid';
 
 const colorPaletteNames = [
-  'berrySmoothie',
-  'blackPepper',
-  'blackberry',
-  'blueberry',
-  'cantaloupe',
-  'cappuccino',
-  'chiliMango',
-  'cinnamon',
-  'coconut',
-  'extendedDragonFruit',
-  'frenchVanilla',
-  'fruitPunch',
-  'grapeSoda',
-  'greenApple',
-  'islandPunch',
-  'jewel',
-  'juicyPear',
-  'kiwi',
-  'licorice',
-  'peach',
-  'plum',
-  'pomegranate',
-  'rootBeer',
-  'soap',
-  'sourLemon',
-  'toastedMarshmallow',
-  'toothpaste',
-  'watermelon',
+  'neutral',
+  'red',
+  'orange',
+  'amber',
+  'green',
+  'teal',
+  'blue',
+  'purple',
+  'pink',
+  'slate',
 ] as const;
 
 const colorRegExp = new RegExp(colorPaletteNames.join('|'));
@@ -49,6 +31,15 @@ function buildPalettes(tokens: object) {
       } else {
         palettes[name] = [swatch];
       }
+
+      palettes[name] = palettes[name].sort((a, b) => {
+        const aNumber = parseInt(a.cssVar.split('-').reverse()[0]);
+        const bNumber = parseInt(b.cssVar.split('-').reverse()[0]);
+
+        console.log(aNumber, bNumber);
+
+        return aNumber > bNumber ? 1 : -1;
+      });
     }
   }
   return Object.entries(palettes);
@@ -66,7 +57,7 @@ export const ColorTokens = () => {
   );
 };
 
-const primaryPaletteNames = ['blueberry'];
+const primaryPaletteNames = ['blue'];
 const primaryColorPalettes = baseColorPalettes.filter(([name]) =>
   primaryPaletteNames.includes(name)
 );

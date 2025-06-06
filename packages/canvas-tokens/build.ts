@@ -1,7 +1,7 @@
 import StyleDictionary from 'style-dictionary';
+import * as filters from './utils/filters';
 import {formats} from './utils/formatters';
 import {transforms} from './utils/transformers';
-import * as filters from './utils/filters';
 import {setConfig} from './utils/setConfig';
 
 const config = setConfig({
@@ -25,7 +25,6 @@ const config = setConfig({
           level: ['brand', 'sys'],
           format: 'merge/refs',
           combineWith: ['{platform}/composite', '{platform}/variables', '{platform}/shadow'],
-          filter: filters.filterActionTokens,
           options: {
             outputReferences: true,
           },
@@ -113,13 +112,12 @@ StyleDictionary.registerTransformGroup({
   transforms: [
     'name/cti/kebab',
     'value/flatten-border',
+    'value/flatten-oklch',
     'value/shadow/flat-sys',
     'value/breakpoints/px',
-    'value/hex-to-rgba',
     'value/wrapped-font-family',
     'value/math',
     'value/letter-spacing/px2rem',
-    'value/flatten-rgba',
     'value/font-weight/numbers',
     'value/line-height/px2rem',
   ],
