@@ -35,9 +35,6 @@ function buildPalettes(tokens: object) {
       palettes[name] = palettes[name].sort((a, b) => {
         const aNumber = parseInt(a.cssVar.split('-').reverse()[0]);
         const bNumber = parseInt(b.cssVar.split('-').reverse()[0]);
-
-        console.log(aNumber, bNumber);
-
         return aNumber > bNumber ? 1 : -1;
       });
     }
