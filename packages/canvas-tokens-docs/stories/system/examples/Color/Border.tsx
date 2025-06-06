@@ -14,6 +14,7 @@ const borderPalette = buildPalette('system.color.border', {
   primary: system.color.border.primary.default,
   inverse: system.color.border.inverse,
   transparent: system.color.border.transparent,
+  ai: system.color.border.ai,
 }).sort(sortSystemColorPalette);
 
 export const BorderColors = () => <ColorGrid name="Border Colors" palette={borderPalette} />;

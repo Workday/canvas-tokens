@@ -4,27 +4,27 @@
       "zero": {
         "value": "0",
         "type": "dimension",
-        "comment": "Use to set a media query `min-width` below small."
+        "description": "Use to set a media query `min-width` below small."
       },
       "s": {
         "value": "{base.unit} * 80",
         "type": "dimension",
-        "comment": "The `min-width` for mobile devices, such as phones and tablets."
+        "description": "The `min-width` for mobile devices, such as phones and tablets."
       },
       "m": {
         "value": "{base.unit} * 192",
         "type": "dimension",
-        "comment": "Medium screens, such as laptops."
+        "description": "Medium screens, such as laptops."
       },
       "l": {
         "value": "{base.unit} * 256",
         "type": "dimension",
-        "comment": "Large screens, such as desktops."
+        "description": "Large screens, such as desktops."
       },
       "xl": {
         "value": "{base.unit} * 360",
         "type": "dimension",
-        "comment": "Used for extra large screens, such as wide monitors and TVs."
+        "description": "Used for extra large screens, such as wide monitors and TVs."
       }
     },
     "depth": {
@@ -163,7 +163,7 @@
     },
     "opacity": {
       "zero": {
-        "value": "0",
+        "value": 0,
         "type": "number",
         "comment": "Dev only"
       },
@@ -177,13 +177,13 @@
         "type": "number",
         "comment": "Overlay"
       },
-      "contrast": {
+      "transclucent": {
         "value": "{base.opacity.500}",
         "type": "number",
         "comment": "Tooltips, Status Indicator"
       },
       "full": {
-        "value": "1",
+        "value": 1,
         "type": "number",
         "comment": "Dev only"
       },
@@ -215,6 +215,10 @@
         "value": "{base.unit}",
         "type": "borderRadius",
         "comment": "Use this for form components presenting text information or inputs: Text Inputs and Text Area, Dropdowns, Menus and Banners."
+      },
+      "x1-half": {
+        "value": "{base.unit} * 1.5",
+        "type": "borderRadius"
       },
       "x2": {
         "value": "{base.unit} * 2",
@@ -297,57 +301,57 @@
       "subtext": {
         "small": {
           "value": "{base.font-size.25}",
-          "type": "sizing"
+          "type": "number"
         },
         "medium": {
           "value": "{base.font-size.50}",
-          "type": "sizing"
+          "type": "number"
         },
         "large": {
           "value": "{base.font-size.75}",
-          "type": "sizing"
+          "type": "number"
         }
       },
       "body": {
         "small": {
           "value": "{base.font-size.100}",
-          "type": "sizing"
+          "type": "number"
         },
         "medium": {
           "value": "{base.font-size.125}",
-          "type": "sizing"
+          "type": "number"
         },
         "large": {
           "value": "{base.font-size.150}",
-          "type": "sizing"
+          "type": "number"
         }
       },
       "heading": {
         "small": {
           "value": "{base.font-size.200}",
-          "type": "sizing"
+          "type": "number"
         },
         "medium": {
           "value": "{base.font-size.250}",
-          "type": "sizing"
+          "type": "number"
         },
         "large": {
           "value": "{base.font-size.300}",
-          "type": "sizing"
+          "type": "number"
         }
       },
       "title": {
         "small": {
           "value": "{base.font-size.400}",
-          "type": "sizing"
+          "type": "number"
         },
         "medium": {
           "value": "{base.font-size.500}",
-          "type": "sizing"
+          "type": "number"
         },
         "large": {
           "value": "{base.font-size.600}",
-          "type": "sizing"
+          "type": "number"
         }
       }
     },
@@ -552,484 +556,577 @@
     "color": {
       "bg": {
         "default": {
-          "value": "{base.palette.french-vanilla.100}",
+          "value": "{base.palette.neutral.0}",
           "type": "color",
-          "comment": "Main background color; "
+          "comment": "Main background color"
         },
         "transparent": {
-          "value": "rgba({base.palette.french-vanilla.100},0)",
+          "value": "oklch({base.palette.neutral.0}/{base.opacity.0})",
           "type": "color",
           "comment": "Transparent background"
         },
         "overlay": {
-          "value": "rgba({sys.color.static.black},{base.opacity.400})",
+          "value": "oklch({base.palette.neutral.1000}/{base.opacity.400})",
           "type": "color",
           "comment": "Overlay background"
         },
         "translucent": {
-          "value": "rgba({base.palette.black-pepper.600},{base.opacity.500})",
+          "value": "oklch({base.palette.neutral.1000}/{base.opacity.500})",
           "type": "color",
           "comment": "Tooltip, Status Indicator"
         },
         "alt": {
-          "default": {
-            "value": "{base.palette.soap.300}",
+          "softer": {
+            "value": "{base.palette.slate.25}",
             "type": "color",
-            "comment": "Hover states"
+            "comment": "Disabled inputs"
           },
           "soft": {
-            "value": "{base.palette.soap.200}",
+            "value": "{base.palette.slate.50}",
             "type": "color",
-            "comment": "Page background"
+            "comment": "Alternative page background"
           },
-          "softer": {
-            "value": "{base.palette.soap.100}",
+          "default": {
+            "value": "{base.palette.slate.100}",
             "type": "color",
-            "comment": "Disabled inputs and column headers"
+            "comment": "Surface hover, Secondary surfaces"
           },
           "strong": {
-            "value": "{base.palette.soap.400}",
+            "value": "{base.palette.slate.150}",
             "type": "color",
-            "comment": "Active states"
+            "comment": "Dividers"
           },
           "stronger": {
-            "value": "{base.palette.soap.500}",
+            "value": "{base.palette.slate.200}",
             "type": "color",
-            "comment": "Active states"
+            "comment": "Active state for segmented control, Pill"
           }
         },
         "muted": {
           "softer": {
-            "value": "{base.palette.licorice.100}",
+            "value": "{base.palette.slate.250}",
             "type": "color"
           },
           "soft": {
-            "value": "{base.palette.licorice.200}",
+            "value": "{base.palette.slate.300}",
             "type": "color"
           },
           "default": {
-            "value": "{base.palette.licorice.300}",
+            "value": "{base.palette.slate.400}",
             "type": "color"
           },
           "strong": {
-            "value": "{base.palette.licorice.500}",
+            "value": "{base.palette.slate.500}",
             "type": "color"
           }
         },
         "contrast": {
           "default": {
-            "value": "{base.palette.black-pepper.400}",
+            "value": "{base.palette.neutral.850}",
             "type": "color",
             "comment": "Contrast backgrounds, like Secondary Buttons"
           },
           "strong": {
-            "value": "{base.palette.black-pepper.500}",
+            "value": "{base.palette.neutral.900}",
             "type": "color",
             "comment": "Contrast backgrounds, like Secondary Buttons"
           }
         },
         "primary": {
           "default": {
-            "value": "{base.palette.blueberry.400}",
+            "value": "{base.palette.blue.600}",
             "type": "color",
             "comment": "Primary brand color"
           },
-          "soft": {
-            "value": "{base.palette.blueberry.200}",
+          "softer": {
+            "value": "{base.palette.blue.100}",
             "type": "color",
-            "comment": "Brand selected background"
+            "comment": "Select"
           },
           "strong": {
-            "value": "{base.palette.blueberry.500}",
+            "value": "{base.palette.blue.700}",
             "type": "color",
             "comment": "Brand hover background"
           },
           "stronger": {
-            "value": "{base.palette.blueberry.600}",
+            "value": "{base.palette.blue.800}",
             "type": "color",
             "comment": "Brand active background"
+          },
+          "softest": {
+            "value": "{base.palette.blue.25}",
+            "type": "color",
+            "comment": "Surface"
+          },
+          "soft": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "comment": "Disabled"
           }
         },
         "positive": {
           "default": {
-            "value": "{base.palette.green-apple.400}",
+            "value": "{base.palette.green.600}",
             "type": "color",
             "comment": "Disabled success background"
           },
-          "softer": {
-            "value": "{base.palette.green-apple.100}",
-            "type": "color",
-            "comment": "Softer success background"
-          },
           "strong": {
-            "value": "{base.palette.green-apple.500}",
+            "value": "{base.palette.green.700}",
             "type": "color",
             "comment": "Hover success background"
           },
           "stronger": {
-            "value": "{base.palette.green-apple.600}",
+            "value": "{base.palette.green.800}",
             "type": "color",
             "comment": "Active success background"
+          },
+          "softest": {
+            "value": "{base.palette.green.25}",
+            "type": "color",
+            "comment": "Lightest surface success background"
+          },
+          "soft": {
+            "value": "{base.palette.green.200}",
+            "type": "color",
+            "comment": "Disabled success background"
+          },
+          "softer": {
+            "value": "{base.palette.green.100}",
+            "type": "color",
+            "comment": "Surface success background"
           }
         },
         "caution": {
           "default": {
-            "value": "{base.palette.cantaloupe.400}",
+            "value": "{base.palette.amber.400}",
             "type": "color",
             "comment": "Default warning background"
           },
-          "softer": {
-            "value": "{base.palette.cantaloupe.100}",
+          "softest": {
+            "value": "{base.palette.amber.25}",
             "type": "color",
             "comment": "Disabled warning background"
           },
           "strong": {
-            "value": "{base.palette.cantaloupe.500}",
+            "value": "{base.palette.amber.500}",
             "type": "color",
             "comment": "Strong warning background"
           },
           "stronger": {
-            "value": "{base.palette.cantaloupe.600}",
+            "value": "{base.palette.amber.600}",
             "type": "color",
             "comment": "Stronger warning background"
+          },
+          "softer": {
+            "value": "{base.palette.amber.50}",
+            "type": "color",
+            "comment": "Softer warning background"
+          },
+          "soft": {
+            "value": "{base.palette.amber.100}",
+            "type": "color",
+            "comment": "Softer warning background"
           }
         },
         "critical": {
           "default": {
-            "value": "{base.palette.cinnamon.500}",
+            "value": "{base.palette.red.600}",
             "type": "color",
             "comment": "Default error background"
           },
-          "softer": {
-            "value": "{base.palette.cinnamon.100}",
+          "softest": {
+            "value": "{base.palette.red.25}",
             "type": "color",
             "comment": "Disabled error background"
           },
           "strong": {
-            "value": "{base.palette.cinnamon.600}",
+            "value": "{base.palette.red.700}",
             "type": "color",
             "comment": "Strong error background"
           },
           "stronger": {
-            "value": "#80160E",
+            "value": "{base.palette.red.800}",
             "type": "color",
             "comment": "Stronger error background"
+          },
+          "softer": {
+            "value": "{base.palette.red.100}",
+            "type": "color",
+            "comment": "Disabled error background"
+          },
+          "soft": {
+            "value": "{base.palette.red.200}",
+            "type": "color",
+            "comment": "Disabled error background"
+          }
+        },
+        "ai": {
+          "default": {
+            "value": "{base.palette.blue.100}",
+            "type": "color",
+            "comment": "AI container"
+          },
+          "strong": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "comment": "Hover on AI container"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "comment": "Active state on AI containers"
+          },
+          "strongest": {
+            "value": "{base.palette.blue.950}",
+            "type": "color",
+            "comment": "AI surfaces"
           }
         }
       },
       "text": {
         "default": {
-          "value": "{base.palette.black-pepper.300}",
+          "value": "{base.palette.neutral.850}",
           "type": "color",
           "comment": "Default text color"
         },
         "disabled": {
-          "value": "{base.palette.licorice.100}",
+          "value": "{base.palette.slate.400}",
           "type": "color",
           "comment": "Disabled text color"
         },
         "hint": {
-          "value": "{base.palette.licorice.300}",
+          "value": "{base.palette.slate.600}",
           "type": "color",
           "comment": "Hint text color"
         },
         "strong": {
-          "value": "{base.palette.black-pepper.400}",
+          "value": "{base.palette.neutral.900}",
           "type": "color",
-          "comment": "Heading text color"
+          "comment": "Heading color"
         },
         "stronger": {
-          "value": "{base.palette.black-pepper.500}",
+          "value": "{base.palette.neutral.950}",
           "type": "color",
-          "comment": "Heading hover text color"
+          "comment": "Stronger heading color"
         },
         "inverse": {
-          "value": "{base.palette.french-vanilla.100}",
+          "value": "{base.palette.neutral.0}",
           "type": "color",
           "comment": "Inverse text color"
         },
         "critical": {
           "default": {
-            "value": "{base.palette.cinnamon.500}",
+            "value": "{base.palette.red.600}",
             "type": "color",
             "comment": "Error text"
           }
         },
         "primary": {
           "default": {
-            "value": "{base.palette.blueberry.400}",
+            "value": "{base.palette.blue.600}",
             "type": "color",
-            "comment": "Branded text"
+            "comment": "Links"
           },
           "strong": {
-            "value": "{base.palette.blueberry.500}",
+            "value": "{base.palette.blue.700}",
             "type": "color",
-            "comment": "Branded hover text"
+            "comment": "Links on hover"
           },
           "stronger": {
-            "value": "{base.palette.blueberry.600}",
+            "value": "{base.palette.blue.800}",
             "type": "color",
             "comment": "Active links"
           }
         },
         "caution": {
           "default": {
-            "value": "{sys.color.text.strong}",
+            "value": "{base.palette.neutral.900}",
             "type": "color",
             "comment": "Warning text"
           },
           "strong": {
-            "value": "{sys.color.text.stronger}",
+            "value": "{base.palette.neutral.950}",
             "type": "color",
             "comment": "Strong warning text"
           }
+        },
+        "ai": {
+          "value": "{base.palette.blue.950}",
+          "type": "color"
         }
       },
       "icon": {
         "default": {
-          "value": "{base.palette.licorice.200}",
+          "value": "{base.palette.neutral.850}",
           "type": "color",
           "comment": "Default icon color"
         },
         "soft": {
-          "value": "{base.palette.licorice.100}",
+          "value": "{base.palette.slate.600}",
           "type": "color",
           "comment": "Disabled icon color"
         },
         "strong": {
-          "value": "{base.palette.licorice.500}",
+          "value": "{base.palette.neutral.900}",
           "type": "color",
           "comment": "Hover icon color"
         },
         "inverse": {
-          "value": "{base.palette.french-vanilla.100}",
+          "value": "{base.palette.neutral.0}",
           "type": "color",
           "comment": "Inverse icon color"
         },
         "primary": {
           "default": {
-            "value": "{base.palette.blueberry.400}",
+            "value": "{base.palette.blue.600}",
             "type": "color",
             "comment": "Brand icon color"
           },
           "strong": {
-            "value": "{base.palette.blueberry.500}",
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "comment": "Stronger brand icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
             "type": "color",
             "comment": "Stronger brand icon color"
           }
         },
         "positive": {
           "default": {
-            "value": "{base.palette.green-apple.500}",
+            "value": "{base.palette.green.600}",
             "type": "color",
             "comment": "Success icon color"
           }
         },
         "critical": {
           "default": {
-            "value": "{base.palette.cinnamon.500}",
+            "value": "{base.palette.red.600}",
             "type": "color",
             "comment": "Error icon color"
           }
         },
         "caution": {
           "default": {
-            "value": "{base.palette.black-pepper.400}",
+            "value": "{base.palette.neutral.900}",
             "type": "color",
             "comment": "Caution icon color"
           },
           "strong": {
-            "value": "{base.palette.black-pepper.500}",
+            "value": "{base.palette.neutral.950}",
             "type": "color",
             "comment": "Strong caution icon color"
           }
+        },
+        "disabled": {
+          "value": "{base.palette.slate.400}",
+          "type": "color",
+          "comment": "Disabled icon color"
         }
       },
       "fg": {
         "default": {
-          "value": "{base.palette.black-pepper.300}",
+          "value": "{base.palette.neutral.850}",
           "type": "color",
           "comment": "Body"
         },
         "strong": {
-          "value": "{base.palette.black-pepper.400}",
+          "value": "{base.palette.neutral.900}",
           "type": "color",
           "comment": "Headings"
         },
         "stronger": {
-          "value": "{base.palette.black-pepper.500}",
+          "value": "{base.palette.neutral.950}",
           "type": "color",
           "comment": "Heading on hover"
         },
         "disabled": {
-          "value": "{base.palette.licorice.100}",
+          "value": "{base.palette.slate.400}",
           "type": "color",
           "comment": "Disabled"
         },
         "inverse": {
-          "value": "{base.palette.french-vanilla.100}",
+          "value": "{base.palette.neutral.0}",
           "type": "color",
           "comment": "Inverse"
         },
         "critical": {
-          "default": {
-            "value": "{base.palette.cinnamon.500}",
-            "type": "color",
-            "comment": "Error"
-          }
+          "value": "{base.palette.red.600}",
+          "type": "color",
+          "comment": "Error"
         },
         "muted": {
           "soft": {
-            "value": "{base.palette.licorice.200}",
+            "value": "{base.palette.slate.400}",
             "type": "color",
-            "comment": "Tab item text"
+            "comment": "Tab item foreground"
           },
           "default": {
-            "value": "{base.palette.licorice.300}",
+            "value": "{base.palette.slate.600}",
             "type": "color",
             "comment": "Hint text"
           },
           "strong": {
-            "value": "{base.palette.licorice.400}",
+            "value": "{base.palette.slate.700}",
             "type": "color"
           },
           "stronger": {
-            "value": "{base.palette.licorice.500}",
+            "value": "{base.palette.slate.800}",
             "type": "color"
           }
         },
         "primary": {
           "default": {
-            "value": "{base.palette.blueberry.400}",
+            "value": "{base.palette.blue.600}",
             "type": "color",
-            "comment": "Interactive foreground elements"
+            "comment": "Links, Accent"
           },
           "strong": {
-            "value": "{base.palette.blueberry.500}",
+            "value": "{base.palette.blue.700}",
             "type": "color",
-            "comment": "Hover interactive foregrounds"
+            "comment": "Links on hover"
+          },
+          "soft": {
+            "value": "{base.palette.blue.300}",
+            "type": "color"
+          },
+          "softer": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "comment": "Link Inverse, Disabled"
           }
         },
         "caution": {
           "default": {
-            "value": "{base.palette.black-pepper.400}",
+            "value": "{base.palette.neutral.900}",
             "type": "color",
             "comment": "Warning"
           },
           "strong": {
-            "value": "{base.palette.black-pepper.500}",
+            "value": "{base.palette.neutral.950}",
             "type": "color",
             "comment": "Warning on hover"
           }
         },
         "contrast": {
           "default": {
-            "value": "{base.palette.black-pepper.400}",
+            "value": "{base.palette.neutral.900}",
             "type": "color",
             "comment": "Contrast"
           },
           "strong": {
-            "value": "{base.palette.black-pepper.500}",
+            "value": "{base.palette.neutral.950}",
             "type": "color",
             "comment": "Strong contrast"
           }
+        },
+        "ai": {
+          "value": "{base.palette.blue.950}",
+          "type": "color",
+          "comment": "AI icons and text"
         }
       },
       "border": {
         "input": {
           "disabled": {
-            "value": "{base.palette.licorice.100}",
+            "value": "{base.palette.slate.400}",
             "type": "color",
             "comment": "Disabled inputs"
           },
           "default": {
-            "value": "{base.palette.licorice.200}",
+            "value": "{base.palette.slate.500}",
             "type": "color",
             "comment": "Inputs"
           },
           "strong": {
-            "value": "{base.palette.licorice.500}",
+            "value": "{base.palette.slate.700}",
             "type": "color",
             "comment": "Input hover"
           },
           "inverse": {
-            "value": "{base.palette.soap.300}",
+            "value": "{base.palette.neutral.0}",
             "type": "color",
             "comment": "Borders on checkboxes and radios"
           }
         },
         "contrast": {
           "default": {
-            "value": "{base.palette.black-pepper.400}",
+            "value": "{base.palette.neutral.900}",
             "type": "color",
             "comment": "Secondary Button"
           },
           "strong": {
-            "value": "{base.palette.black-pepper.500}",
+            "value": "{base.palette.neutral.950}",
             "type": "color",
             "comment": "Secondary Button Hover"
           }
         },
         "primary": {
           "default": {
-            "value": "{base.palette.blueberry.400}",
+            "value": "{base.palette.blue.500}",
             "type": "color",
             "comment": "Brand, Focus"
           }
         },
         "critical": {
           "default": {
-            "value": "{base.palette.cinnamon.500}",
+            "value": "{base.palette.red.500}",
             "type": "color",
             "comment": "Error"
           }
         },
         "caution": {
           "default": {
-            "value": "{base.palette.cantaloupe.400}",
+            "value": "{base.palette.amber.400}",
             "type": "color",
             "comment": "Warning inner"
           },
           "strong": {
-            "value": "{base.palette.cantaloupe.600}",
+            "value": "{base.palette.amber.500}",
             "type": "color",
             "comment": "Warning outer (box shadow)"
           }
         },
         "transparent": {
-          "value": "rgba({sys.color.static.white},0%)",
+          "value": "oklch({base.palette.neutral.1000}/{base.opacity.0})",
           "type": "color",
           "comment": "Transparent"
         },
         "inverse": {
-          "value": "{base.palette.french-vanilla.100}",
+          "value": "{base.palette.neutral.0}",
           "type": "color",
-          "comment": "Inverse"
+          "comment": "Borders on accent colors"
         },
         "divider": {
-          "value": "{base.palette.soap.400}",
+          "value": "{base.palette.slate.150}",
           "type": "color",
           "comment": "Dividers"
         },
         "container": {
-          "value": "{base.palette.soap.500}",
+          "value": "{base.palette.slate.250}",
           "type": "color",
-          "comment": "Cards, Toasts"
+          "comment": "Cards, Tables, Surfaces"
+        },
+        "ai": {
+          "value": "{base.palette.blue.950}",
+          "type": "color",
+          "comment": "Active state on AI"
         }
       },
       "shadow": {
         "1": {
-          "value": "rgba({sys.color.shadow.default},{base.opacity.200})",
+          "value": "oklch({base.palette.slate.850}/{base.opacity.200})",
           "type": "color",
           "comment": "First shadow color"
         },
         "2": {
-          "value": "rgba({base.palette.licorice.600},{base.opacity.100})",
+          "value": "oklch({base.palette.slate.850}/{base.opacity.100})",
           "type": "color",
           "comment": "Second shadow color"
         },
         "default": {
-          "value": "{base.palette.licorice.600}",
+          "value": "{base.palette.slate.850}",
           "type": "color",
           "comment": "Main shadow color"
         }
@@ -1037,110 +1134,163 @@
       "static": {
         "blue": {
           "default": {
-            "value": "{base.palette.blueberry.400}",
+            "value": "{base.palette.blue.600}",
             "type": "color",
             "comment": "Blue"
           },
           "soft": {
-            "value": "{base.palette.blueberry.100}",
+            "value": "{base.palette.blue.100}",
             "type": "color",
             "comment": "Light blue"
           },
           "strong": {
-            "value": "{base.palette.blueberry.500}",
+            "value": "{base.palette.blue.700}",
             "type": "color",
             "comment": "Stronger blue"
-          }
-        },
-        "gold": {
+          },
           "stronger": {
-            "value": "{base.palette.toasted-marshmallow.600}",
+            "value": "{base.palette.blue.800}",
             "type": "color",
-            "comment": "Foregrounds in low emphasis status indicators"
+            "comment": "Stronger blue"
+          },
+          "softer": {
+            "value": "{base.palette.blue.300}",
+            "type": "color",
+            "comment": "Light blue"
           }
         },
         "green": {
           "default": {
-            "value": "{base.palette.green-apple.400}",
+            "value": "{base.palette.green.600}",
             "type": "color",
             "comment": "Default green"
           },
           "soft": {
-            "value": "{base.palette.green-apple.100}",
+            "value": "{base.palette.green.300}",
             "type": "color",
             "comment": "Light green"
           },
           "strong": {
-            "value": "{base.palette.green-apple.600}",
+            "value": "{base.palette.green.700}",
+            "type": "color",
+            "comment": "Stronger green"
+          },
+          "softer": {
+            "value": "{base.palette.green.100}",
+            "type": "color",
+            "comment": "Light green"
+          },
+          "stronger": {
+            "value": "{base.palette.green.800}",
             "type": "color",
             "comment": "Stronger green"
           }
         },
         "red": {
           "default": {
-            "value": "{base.palette.cinnamon.500}",
+            "value": "{base.palette.red.600}",
             "type": "color",
             "comment": "Red"
           },
           "soft": {
-            "value": "{base.palette.cinnamon.100}",
+            "value": "{base.palette.red.300}",
             "type": "color",
             "comment": "Light red"
           },
           "strong": {
-            "value": "{base.palette.cinnamon.600}",
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "comment": "Strong red"
+          },
+          "stronger": {
+            "value": "{base.palette.red.800}",
+            "type": "color",
+            "comment": "Strong red"
+          },
+          "softer": {
+            "value": "{base.palette.red.100}",
+            "type": "color",
+            "comment": "Light red"
+          },
+          "strongest": {
+            "value": "{base.palette.red.950}",
             "type": "color",
             "comment": "Strong red"
           }
         },
-        "orange": {
-          "default": {
-            "value": "{base.palette.cantaloupe.400}",
-            "type": "color",
-            "comment": "Orange"
-          },
-          "soft": {
-            "value": "{base.palette.cantaloupe.100}",
-            "type": "color",
-            "comment": "Soft orange"
-          },
-          "strong": {
-            "value": "{base.palette.cantaloupe.600}",
-            "type": "color",
-            "comment": "Stronger orange"
-          }
-        },
-        "gray": {
-          "default": {
-            "value": "{base.palette.licorice.300}",
-            "type": "color",
-            "comment": "Gray"
-          },
-          "soft": {
-            "value": "{base.palette.soap.300}",
-            "type": "color",
-            "comment": "Light gray"
-          },
-          "strong": {
-            "value": "{base.palette.licorice.400}",
-            "type": "color",
-            "comment": "Stronger gray"
-          },
-          "stronger": {
-            "value": "{base.palette.licorice.500}",
-            "type": "color",
-            "comment": "Strongerer gray"
-          }
-        },
         "white": {
-          "value": "{base.palette.french-vanilla.100}",
+          "value": "{base.palette.neutral.0}",
           "type": "color",
           "comment": "Just white"
         },
         "black": {
-          "value": "{base.palette.black-pepper.600}",
+          "value": "{base.palette.neutral.1000}",
           "type": "color",
           "comment": "Just black"
+        },
+        "gray": {
+          "default": {
+            "value": "{base.palette.slate.600}",
+            "type": "color",
+            "comment": "Gray"
+          },
+          "soft": {
+            "value": "{base.palette.slate.300}",
+            "type": "color",
+            "comment": "Light gray"
+          },
+          "strong": {
+            "value": "{base.palette.slate.700}",
+            "type": "color",
+            "comment": "Stronger gray"
+          },
+          "stronger": {
+            "value": "{base.palette.slate.800}",
+            "type": "color",
+            "comment": "Strongerer gray"
+          },
+          "strongest": {
+            "value": "{base.palette.slate.900}",
+            "type": "color",
+            "comment": "Strongerer gray"
+          },
+          "softer": {
+            "value": "{base.palette.slate.100}",
+            "type": "color",
+            "comment": "Light gray"
+          }
+        },
+        "amber": {
+          "default": {
+            "value": "{base.palette.amber.400}",
+            "type": "color",
+            "comment": "amber"
+          },
+          "softer": {
+            "value": "{base.palette.amber.50}",
+            "type": "color",
+            "comment": "Soft amber"
+          },
+          "strong": {
+            "value": "{base.palette.amber.500}",
+            "type": "color",
+            "comment": "Stronger amber"
+          },
+          "stronger": {
+            "value": "{base.palette.amber.600}",
+            "type": "color",
+            "comment": "Stronger amber"
+          },
+          "soft": {
+            "value": "{base.palette.amber.200}",
+            "type": "color",
+            "comment": "Soft amber"
+          },
+          "strongest": {
+            "value": "{base.palette.amber.700}",
+            "type": "color",
+            "comment": "Stronger amber"
+          }
         }
       }
     }

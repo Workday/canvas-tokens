@@ -4,6 +4,8 @@ import {
   BackgroundMutedColors,
   BackgroundContrastColors,
   BackgroundStatusColors,
+  BackgroundAIColors,
+  BackgroundPrimaryColors,
 } from '../examples/Color/Background';
 import {
   BorderColors,
@@ -11,11 +13,18 @@ import {
   BorderInputColors,
   BorderStatusColors,
 } from '../examples/Color/Border';
-import {ForegroundColors, ForegroundStatusColors} from '../examples/Color/Foreground';
+import {
+  ForegroundColors,
+  ForegroundAIColors,
+  ForegroundContrastColors,
+  ForegroundMutedColors,
+  ForegroundPrimaryColors,
+  ForegroundStatusColors,
+} from '../examples/Color/Foreground';
 import {IconColors, IconPrimaryColors, IconStatusColors} from '../examples/Color/Icon';
 import {ShadowColors} from '../examples/Color/Shadow';
 import {StaticColors} from '../examples/Color/Static';
-import {TextColors, TextStatusColors} from '../examples/Color/Text';
+import {TextColors, TextStatusColors, TextPrimaryColors} from '../examples/Color/Text';
 
 export default {
   title: 'Visual Tests/System Tokens/Colors',
@@ -29,6 +38,10 @@ export const Background = {
   render: BackgroundColors,
 };
 
+export const BackgroundAI = {
+  render: BackgroundAIColors,
+};
+
 export const BackgroundAlternate = {
   render: BackgroundAlternateColors,
 };
@@ -39,6 +52,10 @@ export const BackgroundMuted = {
 
 export const BackgroundContrast = {
   render: BackgroundContrastColors,
+};
+
+export const BackgroundPrimary = {
+  render: BackgroundPrimaryColors,
 };
 
 export const BackgroundStatus = {
@@ -66,6 +83,22 @@ export const Foreground = {
 };
 export const ForegroundStatus = {
   render: ForegroundStatusColors,
+};
+
+export const ForegroundMuted = {
+  render: ForegroundMutedColors,
+};
+
+export const ForegroundPrimary = {
+  render: ForegroundPrimaryColors,
+};
+
+export const ForegroundContrast = {
+  render: ForegroundContrastColors,
+};
+
+export const ForegroundAI = {
+  render: ForegroundAIColors,
 };
 
 // ICON COLORS TESTS
@@ -97,4 +130,8 @@ export const Text = {
 
 export const TextStatus = {
   render: TextStatusColors,
+};
+
+export const TextPrimary = {
+  render: TextPrimaryColors,
 };

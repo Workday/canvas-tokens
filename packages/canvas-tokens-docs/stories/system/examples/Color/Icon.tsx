@@ -32,6 +32,7 @@ const iconStatusPalettes = buildPaletteGroup(
     positive: system.color.icon.positive,
     caution: system.color.icon.caution,
     critical: system.color.icon.critical,
+    disabled: system.color.icon.disabled,
   },
   sortSystemColorPalette
 );

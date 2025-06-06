@@ -122,7 +122,7 @@ export function ColorGrid({name, variableType = 'all', palette}: ColorGridProps)
               </TokenGrid.RowItem>
             ))}
           <TokenGrid.RowItem>
-            <span>{token.value}</span>
+            <span>{token.value || 'transparent'}</span>
           </TokenGrid.RowItem>
         </>
       )}
