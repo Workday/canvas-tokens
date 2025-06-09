@@ -1,6 +1,6 @@
-import {expectTransformFactory} from '../../utils/expectTransformFactory';
-import transform from '../tokens';
 import {stripIndent} from 'common-tags';
+import {expectTransformFactory} from '../../utils/expectTransformFactory';
+import transform from '../migrateOldTokens';
 
 const expectTransform = expectTransformFactory(transform);
 
@@ -15,7 +15,7 @@ describe('colors', () => {
           import { colors, depth } from "@other-package";
         `;
 
-      expectTransform(input, expected);
+      expectTransform(input, expected, {});
     });
   });
 });

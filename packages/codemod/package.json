@@ -31,11 +31,11 @@
   "homepage": "https://github.com/Workday/canvas-kit#readme",
   "dependencies": {
     "chalk": "4.1.2",
-    "jscodeshift": "^17.1.0",
+    "jscodeshift": "^17.3.0",
     "yargs": "^16.2.0"
   },
   "devDependencies": {
-    "@types/jscodeshift": "^0.11.3"
+    "@types/jscodeshift": "^17.3.0"
   },
   "scripts": {
     "clean": "rimraf dist && rimraf .build-info && mkdirp dist",

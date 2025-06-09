@@ -1,6 +1,7 @@
-import {runInlineTest} from 'jscodeshift/dist/testUtils';
+import {Options, Transform} from 'jscodeshift';
+import {runInlineTest} from 'jscodeshift/src/testUtils';
 
 export const expectTransformFactory =
-  (fn: Function) => (input: string, expected: string, options?: Record<string, any>) => {
+  (fn: Transform) => (input: string, expected: string, options: Options) => {
     return runInlineTest(fn, options, {source: input}, expected, {parser: 'tsx'});
   };

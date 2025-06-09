@@ -9,7 +9,7 @@ const transform: Transform = (file, api) => {
 
   root
     .find(j.ImportDeclaration, {
-      source: {value: (value: string) => value.includes('@workday/canvas-kit-preview-react')},
+      source: {value: (value: string) => value.includes('@workday/canvas-kit-react/tokens')},
     })
     .forEach(nodePath => {
       nodePath.value.specifiers = nodePath.value.specifiers?.filter(specifier => {});
