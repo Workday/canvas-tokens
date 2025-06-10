@@ -952,9 +952,11 @@
           "comment": "Inverse"
         },
         "critical": {
-          "value": "{base.palette.red.600}",
-          "type": "color",
-          "comment": "Error"
+          "default": {
+            "value": "{base.palette.red.600}",
+            "type": "color",
+            "comment": "Error"
+          }
         },
         "muted": {
           "soft": {
