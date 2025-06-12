@@ -1,8 +1,8 @@
 # Canvas Kit Tokens Migration Codemod
 
-This codemod helps migrate Canvas Kit tokens from
-`@workday/canvas-kit-react/tokens/ to `@workday/canvas-tokens-web` v2 format. It automatically
-transforms token usage in your codebase to use the new token system.
+This codemod helps migrate Canvas Kit tokens from `@workday/canvas-kit-react/tokens` to
+`@workday/canvas-tokens-web` v2 format. It automatically transforms token usage in your codebase to
+use the new token system.
 
 ## Important Notes
 
@@ -78,17 +78,81 @@ The codemod performs the following transformations:
 - Maps old color tokens to new semantic color tokens
 - Adds required imports for `cssVar` and new token packages
 
-#### Color Token Mappings
+#### Color Token Mappings to System
 
-| Property Type | Old Token                 | New Token                           |
-| ------------- | ------------------------- | ----------------------------------- |
-| Background    | `colors.frenchVanilla100` | `system.color.bg.default`           |
-| Background    | `colors.blueberry400`     | `system.color.bg.primary.default`   |
-| Background    | `colors.licorice300`      | `system.color.bg.muted.default`     |
-| Text/Fill     | `colors.blackPepper300`   | `system.color.fg.default`           |
-| Text/Fill     | `colors.blueberry400`     | `system.color.fg.primary.default`   |
-| Border        | `colors.licorice200`      | `system.color.border.input.default` |
-| Border        | `colors.soap400`          | `system.color.border.divider`       |
+##### Background Colors
+
+| Old Token                 | New Token                           |
+| ------------------------- | ----------------------------------- |
+| `colors.frenchVanilla100` | `system.color.bg.default`           |
+| `colors.blueberry200`     | `system.color.bg.primary.soft`      |
+| `colors.blueberry400`     | `system.color.bg.primary.default`   |
+| `colors.blueberry500`     | `system.color.bg.primary.strong`    |
+| `colors.blueberry600`     | `system.color.bg.primary.stronger`  |
+| `colors.cantaloupe100`    | `system.color.bg.caution.softer`    |
+| `colors.cantaloupe400`    | `system.color.bg.caution.default`   |
+| `colors.cantaloupe500`    | `system.color.bg.caution.strong`    |
+| `colors.cantaloupe600`    | `system.color.bg.caution.stronger`  |
+| `colors.cinnamon100`      | `system.color.bg.critical.softer`   |
+| `colors.cinnamon500`      | `system.color.bg.critical.default`  |
+| `colors.cinnamon600`      | `system.color.bg.critical.strong`   |
+| `colors.greenApple100`    | `system.color.bg.positive.softer`   |
+| `colors.greenApple400`    | `system.color.bg.positive.default`  |
+| `colors.greenApple500`    | `system.color.bg.positive.strong`   |
+| `colors.greenApple600`    | `system.color.bg.positive.stronger` |
+| `colors.licorice100`      | `system.color.bg.muted.softer`      |
+| `colors.licorice200`      | `system.color.bg.muted.soft`        |
+| `colors.licorice300`      | `system.color.bg.muted.default`     |
+| `colors.licorice500`      | `system.color.bg.muted.strong`      |
+| `colors.soap100`          | `system.color.bg.alt.softer`        |
+| `colors.soap200`          | `system.color.bg.alt.soft`          |
+| `colors.soap300`          | `system.color.bg.alt.default`       |
+| `colors.soap400`          | `system.color.bg.alt.strong`        |
+| `colors.soap500`          | `system.color.bg.alt.stronger`      |
+| `colors.blackPepper400`   | `system.color.bg.contrast.default`  |
+| `colors.blackPepper500`   | `system.color.bg.contrast.strong`   |
+
+##### Foreground Colors
+
+| Old Token                 | New Token                          |
+| ------------------------- | ---------------------------------- |
+| `colors.blackPepper300`   | `system.color.fg.default`          |
+| `colors.blackPepper400`   | `system.color.fg.strong`           |
+| `colors.blackPepper500`   | `system.color.fg.stronger`         |
+| `colors.blueberry400`     | `system.color.fg.primary.default`  |
+| `colors.blueberry500`     | `system.color.fg.primary.strong`   |
+| `colors.cinnamon500`      | `system.color.fg.critical.default` |
+| `colors.frenchVanilla100` | `system.color.fg.inverse`          |
+| `colors.licorice100`      | `system.color.fg.disabled`         |
+| `colors.licorice200`      | `system.color.fg.muted.soft`       |
+| `colors.licorice300`      | `system.color.fg.muted.default`    |
+| `colors.licorice400`      | `system.color.fg.muted.strong`     |
+| `colors.licorice500`      | `system.color.fg.muted.stronger`   |
+
+##### Border Colors
+
+| Old Token                 | New Token                              |
+| ------------------------- | -------------------------------------- |
+| `colors.blackPepper400`   | `system.color.border.contrast.default` |
+| `colors.blackPepper500`   | `system.color.border.contrast.strong`  |
+| `colors.blueberry400`     | `system.color.border.primary.default`  |
+| `colors.cantaloupe400`    | `system.color.border.caution.default`  |
+| `colors.cantaloupe600`    | `system.color.border.caution.strong`   |
+| `colors.cinnamon500`      | `system.color.border.critical.default` |
+| `colors.frenchVanilla100` | `system.color.border.inverse`          |
+| `colors.licorice100`      | `system.color.border.input.disabled`   |
+| `colors.licorice200`      | `system.color.border.input.default`    |
+| `colors.licorice500`      | `system.color.border.input.strong`     |
+| `colors.soap300`          | `system.color.border.input.inverse`    |
+| `colors.soap400`          | `system.color.border.divider`          |
+| `colors.soap500`          | `system.color.border.container`        |
+
+##### Other Colors
+
+| Old Token                      | New Token                           |
+| ------------------------------ | ----------------------------------- |
+| `colors.blackPepper600`        | `system.color.static.black`         |
+| `colors.toastedMarshmallow600` | `system.color.static.gold.stronger` |
 
 ### Border Radius
 
@@ -218,3 +282,15 @@ The codemod requires the following packages to be installed:
 
 - `@workday/canvas-kit-styling`
 - `@workday/canvas-tokens-web`
+
+Additionally, you need to import the following CSS variable files in your application's root file
+(e.g., `index.ts` or `App.tsx`):
+
+```ts
+import '@workday/canvas-tokens-web/css/base/_variables.css';
+import '@workday/canvas-tokens-web/css/system/_variables.css';
+import '@workday/canvas-tokens-web/css/brand/_variables.css';
+```
+
+These imports are required to ensure the CSS variables are properly attached to the root and
+available throughout your application.
