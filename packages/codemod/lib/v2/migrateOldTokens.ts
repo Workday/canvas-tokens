@@ -1,6 +1,6 @@
 import {Identifier, MemberExpression, Transform} from 'jscodeshift';
 import {addMissingImports} from '../utils/addMissingImports';
-import {mapping, typeProps} from './mapping';
+import {mapping, systemColors, typeProps} from './mapping';
 
 type DeclarationType = {[key: string]: any};
 
@@ -23,6 +23,21 @@ const transform: Transform = (file, api) => {
 
   root
     .find(j.ImportDeclaration, {
+      source: {value: (value: string) => value.includes('@workday/canvas-kit-styling')},
+    })
+    .forEach(nodePath => {
+      nodePath.value.specifiers?.forEach(specifier => {
+        if (specifier.type === 'ImportSpecifier' && specifier.local) {
+          const localName = specifier.local.name.toString();
+          const importedName = specifier.imported.name.toString();
+
+          importDeclaration[localName] = importedName;
+        }
+      });
+    });
+
+  root
+    .find(j.ImportDeclaration, {
       source: {value: (value: string) => value.includes('@workday/canvas-kit-react/tokens')},
     })
     .forEach(nodePath => {
@@ -38,7 +53,6 @@ const transform: Transform = (file, api) => {
         if (specifier.type === 'ImportSpecifier' && specifier.local) {
           const localName = specifier.local.name.toString();
           const importedName = specifier.imported.name.toString();
-          const type = mapping[importedName as keyof typeof mapping].type;
 
           importDeclaration[localName] = importedName;
 
@@ -46,7 +60,7 @@ const transform: Transform = (file, api) => {
             {j, root, nodePath},
             {
               importPath: '@workday/canvas-tokens-web',
-              specifiers: [type],
+              specifiers: importedName === 'colors' ? ['base', 'system'] : ['system'],
             }
           );
 
@@ -57,6 +71,97 @@ const transform: Transform = (file, api) => {
 
       if (!nodePath.value.specifiers?.length) {
         nodePath.prune();
+      }
+    });
+
+  root
+    .find(j.CallExpression, {
+      callee: {
+        type: 'Identifier',
+      },
+    })
+    .forEach(nodePath => {
+      const name = (nodePath.value.callee as Identifier).name;
+      const stylesDeclaration = nodePath.value.arguments[0];
+      const isCanvasKitStyling =
+        importDeclaration[name] === 'createStyles' || importDeclaration[name] === 'createStencil';
+
+      if (stylesDeclaration.type === 'ObjectExpression') {
+        const transformProperty = (property: any): any => {
+          if (
+            property.type === 'ObjectProperty' &&
+            property.key.type === 'Identifier' &&
+            property.value.type === 'MemberExpression' &&
+            property.value.object.type === 'Identifier' &&
+            property.value.property.type === 'Identifier' &&
+            importDeclaration[property.value.object.name] === 'colors'
+          ) {
+            const key = property.key.name;
+            const tokens = Object.entries(systemColors).find(([blockKey]) =>
+              blockKey.split(',').some(prop => prop === key)
+            )?.[1];
+
+            const {property: value} = property.value;
+            const colorToken = tokens
+              ? tokens[value.name as keyof typeof tokens]
+              : systemColors.static[value.name as keyof typeof systemColors.static];
+
+            if (colorToken) {
+              return j.objectProperty(
+                j.identifier(key),
+                isCanvasKitStyling
+                  ? varToMemberExpression(j, colorToken)
+                  : j.callExpression(j.identifier('cssVar'), [varToMemberExpression(j, colorToken)])
+              );
+            }
+          }
+
+          if (property.type === 'ObjectProperty' && property.value.type === 'TemplateLiteral') {
+            const templateLiteral = property.value;
+            const transformedQuasis = templateLiteral.quasis.map((quasi: string) => quasi);
+            const transformedExpressions = templateLiteral.expressions.map(
+              (expr: MemberExpression) => {
+                if (
+                  expr.type === 'MemberExpression' &&
+                  expr.object.type === 'Identifier' &&
+                  expr.property.type === 'Identifier' &&
+                  importDeclaration[expr.object.name] === 'colors'
+                ) {
+                  const tokens = Object.entries(systemColors).find(([blockKey]) =>
+                    blockKey.split(',').some(prop => prop === property.key.name)
+                  )?.[1];
+
+                  const colorToken = tokens
+                    ? tokens[expr.property.name as keyof typeof tokens]
+                    : systemColors.static[expr.property.name as keyof typeof systemColors.static];
+
+                  if (colorToken) {
+                    return j.callExpression(j.identifier('cssVar'), [
+                      varToMemberExpression(j, colorToken),
+                    ]);
+                  }
+                }
+                return expr;
+              }
+            );
+
+            return j.objectProperty(
+              property.key,
+              j.templateLiteral(transformedQuasis, transformedExpressions)
+            );
+          }
+
+          if (property.type === 'ObjectProperty' && property.value.type === 'ObjectExpression') {
+            return j.objectProperty(
+              property.key,
+              j.objectExpression(property.value.properties.map(transformProperty))
+            );
+          }
+
+          return property;
+        };
+
+        stylesDeclaration.properties = stylesDeclaration.properties.map(transformProperty);
       }
     });
 

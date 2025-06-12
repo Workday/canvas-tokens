@@ -25,7 +25,7 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
 
       const expected = stripIndent`
           import { cssVar } from "@workday/canvas-kit-styling";
-          import { base } from "@workday/canvas-tokens-web";
+          import { base, system } from "@workday/canvas-tokens-web";
         `;
 
       expectTransform(input, expected);
@@ -40,7 +40,7 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
 
       const expected = stripIndent`
           import { cssVar } from "@workday/canvas-kit-styling";
-          import { base } from "@workday/canvas-tokens-web";
+          import { base, system } from "@workday/canvas-tokens-web";
 
           const color = cssVar(base.blueberry400);
         `;
@@ -60,10 +60,101 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
       const expected = stripIndent`
           import { colors } from "@other-package";
           import { cssVar } from "@workday/canvas-kit-styling";
-          import { base } from "@workday/canvas-tokens-web";
+          import { base, system } from "@workday/canvas-tokens-web";
 
           const color1 = colors.blueberry400;
           const color2 = cssVar(base.blueberry400);
+        `;
+
+      expectTransform(input, expected);
+    });
+
+    it('should transform color tokens in createStyles', () => {
+      const input = stripIndent`
+          import { createStyles } from "@workday/canvas-kit-styling";
+          import { colors } from "@workday/canvas-kit-react/tokens";
+
+          const styles = createStyles({
+            background: colors.frenchVanilla100,
+            color: colors.blueberry400
+          });
+        `;
+
+      const expected = stripIndent`
+          import { createStyles, cssVar } from "@workday/canvas-kit-styling";
+          import { base, system } from "@workday/canvas-tokens-web";
+
+          const styles = createStyles({
+            background: system.color.bg.default,
+            color: system.color.fg.primary.default
+          });
+      `;
+
+      expectTransform(input, expected);
+    });
+
+    it('should transform color tokens in createStencil', () => {
+      const input = stripIndent`
+          import { createStencil } from "@workday/canvas-kit-styling";
+          import { colors } from "@workday/canvas-kit-react/tokens";
+
+          const styles = createStencil({
+            base: {
+              background: colors.frenchVanilla100,
+              color: colors.blueberry400,
+              svg: {
+                fill: colors.blueberry400
+              }
+            }
+          });
+        `;
+
+      const expected = stripIndent`
+          import { createStencil, cssVar } from "@workday/canvas-kit-styling";
+          import { base, system } from "@workday/canvas-tokens-web";
+
+          const styles = createStencil({
+            base: {
+              background: system.color.bg.default,
+              color: system.color.fg.primary.default,
+
+              svg: {
+                fill: system.color.fg.primary.default
+              }
+            }
+          });
+        `;
+
+      expectTransform(input, expected);
+    });
+
+    it('should transform color tokens in createStencil', () => {
+      const input = stripIndent`
+          import { createStencil } from "@workday/canvas-kit-styling";
+          import { colors } from "@workday/canvas-kit-react/tokens";
+
+          const styles = css({
+            background: colors.frenchVanilla100,
+            color: colors.blueberry400,
+            border: \`1px solid \${colors.blueberry400}\`,
+            svg: {
+              fill: colors.blueberry400
+            }
+          });
+        `;
+
+      const expected = stripIndent`
+          import { createStencil, cssVar } from "@workday/canvas-kit-styling";
+          import { base, system } from "@workday/canvas-tokens-web";
+
+          const styles = css({
+            background: cssVar(system.color.bg.default),
+            color: cssVar(system.color.fg.primary.default),
+            border: \`1px solid \${cssVar(system.color.border.primary.default)}\`,
+            svg: {
+              fill: cssVar(system.color.fg.primary.default)
+            }
+          });
         `;
 
       expectTransform(input, expected);
@@ -120,6 +211,29 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
           const spacingXl = cssVar(system.space.x10);
           const spacingXxl = cssVar(system.space.x16);
           const spacingXxxl = cssVar(system.space.x20);
+        `;
+
+      expectTransform(input, expected);
+    });
+
+    it('should convert space tokens in css object', () => {
+      const input = stripIndent`
+          import { space } from "@workday/canvas-kit-react/tokens";
+
+          const styles = css({
+            margin: space.m,
+            padding: \`\${space.m} \${space.l}\`,
+          });
+        `;
+
+      const expected = stripIndent`
+          import { cssVar } from "@workday/canvas-kit-styling";
+          import { system } from "@workday/canvas-tokens-web";
+
+          const styles = css({
+            margin: cssVar(system.space.x6),
+            padding: \`\${cssVar(system.space.x6)} \${cssVar(system.space.x8)}\`,
+          });
         `;
 
       expectTransform(input, expected);
@@ -424,6 +538,33 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
               boxShadow: cssVar(system.depth[1])
             }
           });
+        `;
+
+      expectTransform(input, expected);
+    });
+
+    it('should transform depth in component props', () => {
+      const input = stripIndent`
+          import { depth } from "@workday/canvas-kit-react/tokens";
+          
+          <>
+            <Component depth={depth[1]} />
+            <OtherComponent css={{...depth[1]}} />
+          </>
+        `;
+
+      const expected = stripIndent`
+          import { cssVar } from "@workday/canvas-kit-styling";
+          import { system } from "@workday/canvas-tokens-web";
+
+          <>
+            <Component depth={{
+              boxShadow: cssVar(system.depth[1])
+            }} />
+            <OtherComponent css={{
+              boxShadow: cssVar(system.depth[1])
+            }} />
+          </>
         `;
 
       expectTransform(input, expected);
