@@ -59,7 +59,7 @@ const {
 const transform = commands[0];
 // Only add an ignore-config if one is provided
 const ignoreConfigArg = ignoreConfig ? `--ignore-config=${ignoreConfig}` : '';
-console.log(ignorePattern);
+console.log('Files to ignore: ', ignorePattern);
 
 console.log(chalk.blueBright(`\nApplying ${transform} transform to '${path}'\n`));
 const args =

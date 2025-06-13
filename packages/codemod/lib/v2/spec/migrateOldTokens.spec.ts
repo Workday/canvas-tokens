@@ -1,5 +1,5 @@
 import {stripIndent} from 'common-tags';
-import {expectTransformFactory} from '../../utils/expectTransformFactory';
+import {expectTransformFactory} from '../../utils';
 import transform from '../migrateOldTokens';
 
 const expectTransform = expectTransformFactory(transform);
@@ -18,19 +18,6 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
   });
 
   describe('colors', () => {
-    it('should add cssVar and base token imports', () => {
-      const input = stripIndent`
-          import { colors } from "@workday/canvas-kit-react/tokens";
-        `;
-
-      const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
-          import { base, system } from "@workday/canvas-tokens-web";
-        `;
-
-      expectTransform(input, expected);
-    });
-
     it('should convert color tokens to base tokens', () => {
       const input = stripIndent`
           import { colors } from "@workday/canvas-kit-react/tokens";
@@ -39,8 +26,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
+          import { base } from "@workday/canvas-tokens-web";
           import { cssVar } from "@workday/canvas-kit-styling";
-          import { base, system } from "@workday/canvas-tokens-web";
 
           const color = cssVar(base.blueberry400);
         `;
@@ -60,7 +47,7 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
       const expected = stripIndent`
           import { colors } from "@other-package";
           import { cssVar } from "@workday/canvas-kit-styling";
-          import { base, system } from "@workday/canvas-tokens-web";
+          import { base } from "@workday/canvas-tokens-web";
 
           const color1 = colors.blueberry400;
           const color2 = cssVar(base.blueberry400);
@@ -81,8 +68,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { createStyles, cssVar } from "@workday/canvas-kit-styling";
-          import { base, system } from "@workday/canvas-tokens-web";
+          import { createStyles } from "@workday/canvas-kit-styling";
+          import { system } from "@workday/canvas-tokens-web";
 
           const styles = createStyles({
             background: system.color.bg.default,
@@ -110,8 +97,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { createStencil, cssVar } from "@workday/canvas-kit-styling";
-          import { base, system } from "@workday/canvas-tokens-web";
+          import { createStencil } from "@workday/canvas-kit-styling";
+          import { system } from "@workday/canvas-tokens-web";
 
           const styles = createStencil({
             base: {
@@ -130,7 +117,6 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
 
     it('should transform color tokens in createStencil', () => {
       const input = stripIndent`
-          import { createStencil } from "@workday/canvas-kit-styling";
           import { colors } from "@workday/canvas-kit-react/tokens";
 
           const styles = css({
@@ -144,8 +130,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { createStencil, cssVar } from "@workday/canvas-kit-styling";
-          import { base, system } from "@workday/canvas-tokens-web";
+          import { system } from "@workday/canvas-tokens-web";
+          import { cssVar } from "@workday/canvas-kit-styling";
 
           const styles = css({
             background: cssVar(system.color.bg.default),
@@ -227,8 +213,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
           import { system } from "@workday/canvas-tokens-web";
+          import { cssVar } from "@workday/canvas-kit-styling";
 
           const styles = css({
             margin: cssVar(system.space.x6),
@@ -267,8 +253,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
           import { system } from "@workday/canvas-tokens-web";
+          import { cssVar } from "@workday/canvas-kit-styling";
 
           const fontFamily = cssVar(system.fontFamily.default);
           const fontFamilyMono = cssVar(system.fontFamily.mono);
@@ -285,8 +271,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
           import { system } from "@workday/canvas-tokens-web";
+          import { cssVar } from "@workday/canvas-kit-styling";
 
           const fontSize = cssVar(system.fontSize.subtext.small);
         `;
@@ -302,8 +288,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
           import { system } from "@workday/canvas-tokens-web";
+          import { cssVar } from "@workday/canvas-kit-styling";
 
           const fontWeight = cssVar(system.fontWeight.regular);
         `;
@@ -320,8 +306,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
           `;
 
         const expected = stripIndent`
-            import { cssVar } from "@workday/canvas-kit-styling";
             import { system } from "@workday/canvas-tokens-web";
+            import { cssVar } from "@workday/canvas-kit-styling";
             
             const styles = {
               fontFamily: cssVar(system.fontFamily.default),
@@ -343,8 +329,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
           `;
 
         const expected = stripIndent`
-            import { cssVar } from "@workday/canvas-kit-styling";
             import { system } from "@workday/canvas-tokens-web";
+            import { cssVar } from "@workday/canvas-kit-styling";
             
             const styles = {
               fontFamily: cssVar(system.fontFamily.default),
@@ -367,8 +353,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
           `;
 
         const expected = stripIndent`
-            import { cssVar } from "@workday/canvas-kit-styling";
             import { system } from "@workday/canvas-tokens-web";
+            import { cssVar } from "@workday/canvas-kit-styling";
 
             const color = cssVar(system.color.fg.default);
             const fontSize = cssVar(system.fontSize.subtext.small);
@@ -387,8 +373,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
           `;
 
         const expected = stripIndent`
-            import { cssVar } from "@workday/canvas-kit-styling";
             import { system } from "@workday/canvas-tokens-web";
+            import { cssVar } from "@workday/canvas-kit-styling";
 
             const styles = css({
               ...system.type.subtext.small,
@@ -468,8 +454,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
           import { system } from "@workday/canvas-tokens-web";
+          import { cssVar } from "@workday/canvas-kit-styling";
 
           const styles = css({
             boxShadow: cssVar(system.depth[1]),
@@ -490,7 +476,6 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
           import { system } from "@workday/canvas-tokens-web";
 
           const styles = css({
@@ -509,9 +494,6 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
-          import { system } from "@workday/canvas-tokens-web";
-
           const depth = {
             boxShadow: "none"
           };
@@ -530,8 +512,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
           import { system } from "@workday/canvas-tokens-web";
+          import { cssVar } from "@workday/canvas-kit-styling";
 
           const styles = css({
             '&:hover': {
@@ -554,8 +536,8 @@ describe('Canvas Kit Tokens > Canvas Tokens v2', () => {
         `;
 
       const expected = stripIndent`
-          import { cssVar } from "@workday/canvas-kit-styling";
           import { system } from "@workday/canvas-tokens-web";
+          import { cssVar } from "@workday/canvas-kit-styling";
 
           <>
             <Component depth={{

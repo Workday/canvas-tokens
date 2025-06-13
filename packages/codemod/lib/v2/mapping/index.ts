@@ -1,27 +1,4 @@
-export const typeProps = ['fontFamily', 'fontSize', 'lineHeight', 'fontWeight', 'color'] as const;
-
-const generateLevelTokens = ([level, size]: string[]) => {
-  return typeProps.reduce((acc: {[key in (typeof typeProps)[number]]?: string}, prop) => {
-    if (prop === 'color') {
-      acc.color = ['heading', 'title'].includes(level)
-        ? 'system.color.fg.strong'
-        : 'system.color.fg.default';
-      return acc;
-    }
-    if (prop === 'fontWeight') {
-      acc.fontWeight = ['heading', 'title'].includes(level)
-        ? 'system.fontWeight.bold'
-        : 'system.fontWeight.regular';
-      return acc;
-    } else if (prop === 'fontFamily') {
-      acc.fontFamily = 'system.fontFamily.default';
-      return acc;
-    } else {
-      acc[prop] = `system.${prop}.${level}.${size}`;
-      return acc;
-    }
-  }, {});
-};
+import {generateLevelTokens} from '../../utils/generateLevelTokens';
 
 const typeLevelsMap = {
   subtext: {
