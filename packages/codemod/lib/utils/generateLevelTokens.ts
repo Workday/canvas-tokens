@@ -1,4 +1,4 @@
-import {typeProps} from './typeProps';
+import {typeProps} from '../v2/mapping/typeProps';
 
 export const generateLevelTokens = ([level, size]: string[]) => {
   const isHeadingStyle = ['heading', 'title'].includes(level);
