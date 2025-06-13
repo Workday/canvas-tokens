@@ -13,7 +13,7 @@ const transform: Transform = (file, api) => {
 
   root
     .find(j.ImportDeclaration, {
-      source: {value: (value: string) => value.includes('@workday/canvas-kit-styling')},
+      source: {value: (value: string) => /^@workday\/canvas-kit-/.test(value)},
     })
     .forEach(nodePath => {
       nodePath.value.specifiers?.forEach(specifier => {
@@ -24,26 +24,8 @@ const transform: Transform = (file, api) => {
           importDeclaration[localName] = importedName;
         }
       });
-    });
 
-  root
-    .find(j.ImportDeclaration, {
-      source: {value: (value: string) => value.includes('@workday/canvas-kit-react/tokens')},
-    })
-    .forEach(nodePath => {
-      nodePath.value.specifiers = nodePath.value.specifiers?.filter(specifier => {
-        if (specifier.type === 'ImportSpecifier' && specifier.local) {
-          const localName = specifier.local.name.toString();
-          const importedName = specifier.imported.name.toString();
-
-          importDeclaration[localName] = importedName;
-
-          return false;
-        }
-        return true;
-      });
-
-      if (!nodePath.value.specifiers?.length) {
+      if (nodePath.value.source.value === '@workday/canvas-kit-react/tokens') {
         nodePath.prune();
       }
     });

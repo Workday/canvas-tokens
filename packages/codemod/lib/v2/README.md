@@ -11,6 +11,25 @@ use the new token system.
 - **Use Semantic Tokens**: Always prefer system (semantic) tokens over base tokens. This simplifies
   future migrations to new branding colors and maintains better consistency across your application.
 
+## Required Dependencies
+
+The codemod requires the following packages to be installed:
+
+- `@workday/canvas-kit-styling`
+- `@workday/canvas-tokens-web`
+
+Additionally, you need to import the following CSS variable files in your application's root file
+(e.g., `index.ts` or `App.tsx`):
+
+```ts
+import '@workday/canvas-tokens-web/css/base/_variables.css';
+import '@workday/canvas-tokens-web/css/system/_variables.css';
+import '@workday/canvas-tokens-web/css/brand/_variables.css';
+```
+
+These imports are required to ensure the CSS variables are properly attached to the root and
+available throughout your application.
+
 ## Installation
 
 You can run the codemod using npx:
@@ -24,41 +43,6 @@ Or install the package and run it directly:
 ```sh
 yarn add @workday/canvas-tokens-codemod
 canvas-tokens-codemod v2 [path]
-```
-
-## Usage Options
-
-### Basic Usage
-
-```sh
-canvas-tokens-codemod v2 [path]
-```
-
-### Ignore Config
-
-If you'd like to provide a configuration for files to ignore instead of a glob, use
-`--ignore-config`:
-
-```sh
-canvas-tokens-codemod v2 [path] --ignore-config=.gitignore
-```
-
-### Ignore Pattern
-
-If you'd like to provide a glob to ignore files, use `--ignore-pattern`. By default, this is set to
-ignore all `node_modules` directories:
-
-```sh
-canvas-tokens-codemod v2 [path] --ignore-pattern=**/dist/**
-```
-
-### Verbose Output
-
-If you'd like to have more verbose logging to know which files are being parsed, use `--verbose`:
-
-```sh
-# See all files being parsed
-canvas-tokens-codemod v2 [path] --verbose=2
 ```
 
 > Note: These codemods only work on .js, .jsx, .ts, and .tsx extensions. You may need to make some
@@ -268,29 +252,10 @@ const styles = createStyles({
 });
 ```
 
-## Notes
+## Summary
 
 - The codemod handles various edge cases including aliased imports and nested CSS selectors
 - It preserves existing code structure while updating token usage
 - It adds necessary imports automatically
 - It handles template literals and spread operators in CSS objects
 - It maintains proper type safety through the transformation process
-
-## Required Dependencies
-
-The codemod requires the following packages to be installed:
-
-- `@workday/canvas-kit-styling`
-- `@workday/canvas-tokens-web`
-
-Additionally, you need to import the following CSS variable files in your application's root file
-(e.g., `index.ts` or `App.tsx`):
-
-```ts
-import '@workday/canvas-tokens-web/css/base/_variables.css';
-import '@workday/canvas-tokens-web/css/system/_variables.css';
-import '@workday/canvas-tokens-web/css/brand/_variables.css';
-```
-
-These imports are required to ensure the CSS variables are properly attached to the root and
-available throughout your application.
