@@ -32,7 +32,7 @@ const {
       choices: [0, 1, 2],
     },
   })
-  .command('v2 [path]', chalk.gray('Canvas Kit Tokens > Canvas Tokens v2'), yargs => {
+  .command('v3 [path]', chalk.gray('Canvas Tokens v2 > Canvas Tokens v3'), yargs => {
     yargs.positional('path', {
       type: 'string',
       default: '.',
