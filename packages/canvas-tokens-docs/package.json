@@ -5,7 +5,7 @@
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",
   "dependencies": {
-    "@workday/canvas-tokens-web": "^2.0.0"
+    "@workday/canvas-tokens-web": "3.0.0-alpha.1"
   },
   "private": true
 }

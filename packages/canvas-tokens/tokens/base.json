@@ -46,10 +46,6 @@
           "type": "color",
           "value": "oklch(0.51 0 0 / 1)"
         },
-        "700": {
-          "type": "color",
-          "value": "oklch(0.45 0 0 / 1)"
-        },
         "800": {
           "type": "color",
           "value": "oklch(0.351 0 0 / 1)"
@@ -652,6 +648,1032 @@
           "value": "oklch(0.11 0.006 255.5 / 1)",
           "comment": "Passes on: white"
         }
+      },
+      "cinnamon": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9759 0.0173 51.968 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.9297 0.047 34.89 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.100 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.795 0.149 28.619 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.729 0.213 29.281 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.400 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.664 0.234 28.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.500 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.458 0.191 26 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.700 color"
+        }
+      },
+      "peach": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9759 0.0173 51.968 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.864 0.094 31.01 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.795 0.149 28.619 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.729 0.213 29.281 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.400 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.664 0.234 28.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.500 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.538 0.188 39.18 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the orange.600 color"
+        }
+      },
+      "fruit-punch": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9759 0.0173 51.968 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.864 0.094 31.01 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.795 0.149 28.619 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.729 0.213 29.281 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.400 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.664 0.234 28.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.500 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.458 0.191 26 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.700 color"
+        }
+      },
+      "pomegranate": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.974 0.028 329.217 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.887 0.103 327.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.726 0.145 338.9 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.400 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.525 0.141 345.2 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.600 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.464 0.124 348.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.700 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.373 0.103 350 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.800 color"
+        }
+      },
+      "chili-mango": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9519 0.0325 41.292 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.50 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.864 0.094 31.01 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.795 0.149 28.619 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.678 0.21 40.37 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the orange.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.678 0.21 40.37 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the orange.500 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.488 0.16 38.07 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the orange.700 color"
+        }
+      },
+      "cantaloupe": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9519 0.0325 41.292 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the red.50 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.9297 0.0771 77.91 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the orange.100 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.884 0.116 72.291 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the orange.200 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.815 0.174 65.612 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the orange.300 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.762 0.182 70.69 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.400 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.5381 0.1616 50.073 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.600 color"
+        }
+      },
+      "sour-lemon": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.978 0.025 95.3 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.957 0.095 100.2 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.50 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.919 0.155 99.7 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.200 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.815 0.174 65.612 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the orange.300 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.843 0.175 85.2 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.300 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.6682 0.1876 55.52 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.500 color"
+        }
+      },
+      "toasted-marshmallow": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.978 0.025 95.3 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.9341 0.1327 99.571 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.100 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.919 0.155 99.7 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.200 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.762 0.182 70.69 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.400 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.5381 0.1616 50.073 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.483 0.142 48.997 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the amber.700 color"
+        }
+      },
+      "juicy-pear": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.985 0.025 145.2 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.87 0.135 146.564 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.725 0.178 147.473 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.400 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.638 0.192 147.927 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.507 0.175 148.382 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.443 0.156 148.836 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.700 color"
+        }
+      },
+      "kiwi": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.931 0.088 146.109 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.100 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.87 0.135 146.564 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.792 0.158 147.018 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.638 0.192 147.927 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.507 0.175 148.382 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.443 0.156 148.836 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.700 color"
+        }
+      },
+      "green-apple": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.985 0.025 145.2 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.87 0.135 146.564 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.725 0.178 147.473 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.400 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.638 0.192 147.927 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.507 0.175 148.382 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.443 0.156 148.836 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the green.700 color"
+        }
+      },
+      "watermelon": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9717 0.0389 199.269 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.858 0.075 204.3 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.784 0.087 204.89 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.606 0.115 205.31 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.508 0.107 206.42 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.441 0.093 207.51 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.700 color"
+        }
+      },
+      "jewel": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9717 0.0389 199.269 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.858 0.075 204.3 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.718 0.102 205.12 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.400 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.606 0.115 205.31 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.508 0.107 206.42 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.441 0.093 207.51 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the teal.700 color"
+        }
+      },
+      "toothpaste": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.931 0.04 240.111 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.100 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.8619 0.0786 247.216 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.714 0.166 252.066 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.400 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.622 0.196 255.3 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.518 0.181 255.4 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.466 0.156 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.700 color"
+        }
+      },
+      "blueberry": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.931 0.04 240.111 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.100 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.8619 0.0786 247.216 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.714 0.166 252.066 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.400 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.622 0.196 255.3 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.518 0.181 255.4 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.466 0.156 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.700 color"
+        }
+      },
+      "plum": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.959 0.026 231.237 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.50 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.8619 0.0786 247.216 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.714 0.166 252.066 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.400 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.622 0.196 255.3 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.518 0.181 255.4 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.466 0.156 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the blue.700 color"
+        }
+      },
+      "berry-smoothie": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.929 0.058 317.538 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.100 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.868 0.1 312.379 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.724 0.152 312.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.400 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.628 0.168 312.7 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.529 0.157 312.4 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.455 0.135 312.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.700 color"
+        }
+      },
+      "blackberry": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.959 0.032 316.515 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.50 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.868 0.1 312.379 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.724 0.152 312.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.400 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.628 0.168 312.7 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.500 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.529 0.157 312.4 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.455 0.135 312.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.700 color"
+        }
+      },
+      "island-punch": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.959 0.032 316.515 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.50 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.868 0.1 312.379 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.808 0.131 311.7 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.724 0.152 312.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.400 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.529 0.157 312.4 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.455 0.135 312.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the purple.700 color"
+        }
+      },
+      "grape-soda": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.94 0.067 329.515 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.100 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.887 0.103 327.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.808 0.124 333.7 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.726 0.145 338.9 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.400 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.525 0.141 345.2 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.600 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.464 0.124 348.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the pink.700 color"
+        }
+      },
+      "root-beer": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.985 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.25 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.944 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.100 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.871 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.200 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.803 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.300 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.63 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.500 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.51 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.600 color"
+        }
+      },
+      "coconut": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.944 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.100 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.871 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.803 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.72 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.400 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.63 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.500 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.51 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.600 color"
+        }
+      },
+      "soap": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.969 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.50 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.944 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.100 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.871 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.200 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.835 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.250 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.803 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.300 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.72 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.400 color"
+        }
+      },
+      "french-vanilla": {
+        "100": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.0 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.871 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.200 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.803 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.300 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.72 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.400 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.63 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.500 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.51 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.600 color"
+        }
+      },
+      "cappuccino": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.51 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.600 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.51 0.025 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.600 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.45 0.022 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.700 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.351 0.018 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.800 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.21 0.012 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.900 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.15 0.008 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.950 color"
+        }
+      },
+      "licorice": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.72 0.025 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.400 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.63 0.028 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.500 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.51 0.025 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.600 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.45 0.022 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.700 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.351 0.018 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.800 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.21 0.012 255.5 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the slate.900 color"
+        }
+      },
+      "black-pepper": {
+        "100": {
+          "type": "color",
+          "value": "oklch(0.51 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.600 color"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.45 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.700 color"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.351 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.800 color"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.29 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.850 color"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.21 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.900 color"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0 0 0 / 1)",
+          "deprecated": true,
+          "deprecated_comment": "replace with the neutral.1000 color"
+        }
       }
     },
     "opacity": {
@@ -1016,6 +2038,36 @@
           "blur": {
             "value": "48",
             "type": "number"
+          }
+        }
+      }
+    },
+    "extended": {
+      "palette": {
+        "dragon-fruit": {
+          "100": {
+            "value": "#FBF1FF",
+            "type": "color"
+          },
+          "200": {
+            "value": "#EFD3FF",
+            "type": "color"
+          },
+          "300": {
+            "value": "#BE61F6",
+            "type": "color"
+          },
+          "400": {
+            "value": "#8C17D2",
+            "type": "color"
+          },
+          "500": {
+            "value": "#6B11A3",
+            "type": "color"
+          },
+          "600": {
+            "value": "#4A0D71",
+            "type": "color"
           }
         }
       }

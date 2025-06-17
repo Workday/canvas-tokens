@@ -17,6 +17,15 @@ export const transforms: Record<string, Transform> = {
     matcher: filter.isHexColor,
     transformer: transformHexToRgb,
   },
+  'value/hex-to-var': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isHexColor,
+    transformer: ({value, fallback}) => {
+      const fbValue = fallback?.match(/{(?<token>.+)}/)?.groups?.token;
+      return fbValue ? `var(--cnvs-${fbValue.split('.').join('-')})` : value;
+    },
+  },
   'value/shadow/flat-sys': {
     type: 'value',
     transitive: true,
