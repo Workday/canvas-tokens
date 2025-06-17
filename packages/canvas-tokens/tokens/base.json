@@ -652,1027 +652,1189 @@
       "cinnamon": {
         "100": {
           "type": "color",
-          "value": "oklch(0.9759 0.0173 51.968 / 1)",
+          "value": "#ffefee",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.25 color"
+          "deprecatedComment": "replace with the red.25 color",
+          "fallback": "{base.palette.red.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.9297 0.047 34.89 / 1)",
+          "value": "#FCC9C5",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.100 color"
+          "deprecatedComment": "replace with the red.100 color",
+          "fallback": "{base.palette.red.100}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.795 0.149 28.619 / 1)",
+          "value": "#ff867d",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.300 color"
+          "deprecatedComment": "replace with the red.300 color",
+          "fallback": "{base.palette.red.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.729 0.213 29.281 / 1)",
+          "value": "#ff5347",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.400 color"
+          "deprecatedComment": "replace with the red.400 color",
+          "fallback": "{base.palette.red.400}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.664 0.234 28.5 / 1)",
+          "value": "#de2e21",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.500 color"
+          "deprecatedComment": "replace with the red.500 color",
+          "fallback": "{base.palette.red.500}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.458 0.191 26 / 1)",
+          "value": "#a31b12",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.700 color"
+          "deprecatedComment": "replace with the red.700 color",
+          "fallback": "{base.palette.red.700}"
         }
       },
       "peach": {
         "100": {
           "type": "color",
-          "value": "oklch(0.9759 0.0173 51.968 / 1)",
+          "value": "#fff3f0",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.25 color"
+          "deprecatedComment": "replace with the red.25 color",
+          "fallback": "{base.palette.red.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.864 0.094 31.01 / 1)",
+          "value": "#ffc2b3",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.200 color"
+          "deprecatedComment": "replace with the red.200 color",
+          "fallback": "{base.palette.red.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.795 0.149 28.619 / 1)",
+          "value": "#ff957a",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.300 color"
+          "deprecatedComment": "replace with the red.300 color",
+          "fallback": "{base.palette.red.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.729 0.213 29.281 / 1)",
+          "value": "#ff643d",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.400 color"
+          "deprecatedComment": "replace with the red.400 color",
+          "fallback": "{base.palette.red.400}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.664 0.234 28.5 / 1)",
+          "value": "#de4721",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.500 color"
+          "deprecatedComment": "replace with the red.500 color",
+          "fallback": "{base.palette.red.500}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.538 0.188 39.18 / 1)",
+          "value": "#b53413",
           "deprecated": true,
-          "deprecated_comment": "replace with the orange.600 color"
+          "deprecatedComment": "replace with the orange.600 color",
+          "fallback": "{base.palette.orange.600}"
         }
       },
       "fruit-punch": {
         "100": {
           "type": "color",
-          "value": "oklch(0.9759 0.0173 51.968 / 1)",
+          "value": "#FFEEEE",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.25 color"
+          "deprecatedComment": "replace with the red.25 color",
+          "fallback": "{base.palette.red.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.864 0.094 31.01 / 1)",
+          "value": "#ffbdbd",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.200 color"
+          "deprecatedComment": "replace with the red.200 color",
+          "fallback": "{base.palette.red.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.795 0.149 28.619 / 1)",
+          "value": "#FF7E7E",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.300 color"
+          "deprecatedComment": "replace with the red.300 color",
+          "fallback": "{base.palette.red.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.729 0.213 29.281 / 1)",
+          "value": "#ff4c4c",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.400 color"
+          "deprecatedComment": "replace with the red.400 color",
+          "fallback": "{base.palette.red.400}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.664 0.234 28.5 / 1)",
+          "value": "#e12f2f",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.500 color"
+          "deprecatedComment": "replace with the red.500 color",
+          "fallback": "{base.palette.red.500}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.458 0.191 26 / 1)",
+          "value": "#b82828",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.700 color"
+          "deprecatedComment": "replace with the red.700 color",
+          "fallback": "{base.palette.red.700}"
         }
       },
       "pomegranate": {
         "100": {
           "type": "color",
-          "value": "oklch(0.974 0.028 329.217 / 1)",
+          "value": "#ffebf3",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.25 color"
+          "deprecatedComment": "replace with the pink.25 color",
+          "fallback": "{base.palette.pink.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.887 0.103 327.5 / 1)",
+          "value": "#ffbdd6",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.200 color"
+          "deprecatedComment": "replace with the pink.200 color",
+          "fallback": "{base.palette.pink.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.726 0.145 338.9 / 1)",
+          "value": "#ff5c9a",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.400 color"
+          "deprecatedComment": "replace with the pink.400 color",
+          "fallback": "{base.palette.pink.400}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.525 0.141 345.2 / 1)",
+          "value": "#f31167",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.600 color"
+          "deprecatedComment": "replace with the pink.600 color",
+          "fallback": "{base.palette.pink.600}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.464 0.124 348.5 / 1)",
+          "value": "#c70550",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.700 color"
+          "deprecatedComment": "replace with the pink.700 color",
+          "fallback": "{base.palette.pink.700}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.373 0.103 350 / 1)",
+          "value": "#99003a",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.800 color"
+          "deprecatedComment": "replace with the pink.800 color",
+          "fallback": "{base.palette.pink.800}"
         }
       },
       "chili-mango": {
         "100": {
           "type": "color",
-          "value": "oklch(0.9519 0.0325 41.292 / 1)",
+          "value": "#ffe6d9",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.50 color"
+          "deprecatedComment": "replace with the red.50 color",
+          "fallback": "{base.palette.red.50}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.864 0.094 31.01 / 1)",
+          "value": "#ffc7ab",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.200 color"
+          "deprecatedComment": "replace with the red.200 color",
+          "fallback": "{base.palette.red.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.795 0.149 28.619 / 1)",
+          "value": "#ff9b69",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.300 color"
+          "deprecatedComment": "replace with the red.300 color",
+          "fallback": "{base.palette.red.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.678 0.21 40.37 / 1)",
+          "value": "#ff671b",
           "deprecated": true,
-          "deprecated_comment": "replace with the orange.500 color"
+          "deprecatedComment": "replace with the orange.500 color",
+          "fallback": "{base.palette.orange.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.678 0.21 40.37 / 1)",
+          "value": "#e04b00",
           "deprecated": true,
-          "deprecated_comment": "replace with the orange.500 color"
+          "deprecatedComment": "replace with the orange.500 color",
+          "fallback": "{base.palette.orange.500}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.488 0.16 38.07 / 1)",
+          "value": "#a33600",
           "deprecated": true,
-          "deprecated_comment": "replace with the orange.700 color"
+          "deprecatedComment": "replace with the orange.700 color",
+          "fallback": "{base.palette.orange.700}"
         }
       },
       "cantaloupe": {
         "100": {
           "type": "color",
-          "value": "oklch(0.9519 0.0325 41.292 / 1)",
+          "value": "#ffeed9",
           "deprecated": true,
-          "deprecated_comment": "replace with the red.50 color"
+          "deprecatedComment": "replace with the red.50 color",
+          "fallback": "{base.palette.red.50}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.9297 0.0771 77.91 / 1)",
+          "value": "#fcd49f",
           "deprecated": true,
-          "deprecated_comment": "replace with the orange.100 color"
+          "deprecatedComment": "replace with the orange.100 color",
+          "fallback": "{base.palette.orange.100}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.884 0.116 72.291 / 1)",
+          "value": "#ffbc63",
           "deprecated": true,
-          "deprecated_comment": "replace with the orange.200 color"
+          "deprecatedComment": "replace with the orange.200 color",
+          "fallback": "{base.palette.orange.200}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.815 0.174 65.612 / 1)",
+          "value": "#ffa126",
           "deprecated": true,
-          "deprecated_comment": "replace with the orange.300 color"
+          "deprecatedComment": "replace with the orange.300 color",
+          "fallback": "{base.palette.orange.300}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.762 0.182 70.69 / 1)",
+          "value": "#f38b00",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.400 color"
+          "deprecatedComment": "replace with the amber.400 color",
+          "fallback": "{base.palette.amber.400}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.5381 0.1616 50.073 / 1)",
+          "value": "#c06c00",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.600 color"
+          "deprecatedComment": "replace with the amber.600 color",
+          "fallback": "{base.palette.amber.600}"
         }
       },
       "sour-lemon": {
         "100": {
           "type": "color",
-          "value": "oklch(0.978 0.025 95.3 / 1)",
+          "value": "#fff9e6",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.25 color"
+          "deprecatedComment": "replace with the amber.25 color",
+          "fallback": "{base.palette.amber.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.957 0.095 100.2 / 1)",
+          "value": "#ffecab",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.50 color"
+          "deprecatedComment": "replace with the amber.50 color",
+          "fallback": "{base.palette.amber.50}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.919 0.155 99.7 / 1)",
+          "value": "#ffda61",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.200 color"
+          "deprecatedComment": "replace with the amber.200 color",
+          "fallback": "{base.palette.amber.200}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.815 0.174 65.612 / 1)",
+          "value": "#ffc629",
           "deprecated": true,
-          "deprecated_comment": "replace with the orange.300 color"
+          "deprecatedComment": "replace with the orange.300 color",
+          "fallback": "{base.palette.orange.300}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.843 0.175 85.2 / 1)",
+          "value": "#ebb400",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.300 color"
+          "deprecatedComment": "replace with the amber.300 color",
+          "fallback": "{base.palette.amber.300}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.6682 0.1876 55.52 / 1)",
+          "value": "#bd9100",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.500 color"
+          "deprecatedComment": "replace with the amber.500 color",
+          "fallback": "{base.palette.amber.500}"
         }
       },
       "toasted-marshmallow": {
         "100": {
           "type": "color",
-          "value": "oklch(0.978 0.025 95.3 / 1)",
+          "value": "#fdf6e6",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.25 color"
+          "deprecatedComment": "replace with the amber.25 color",
+          "fallback": "{base.palette.amber.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.9341 0.1327 99.571 / 1)",
+          "value": "#ebd6a9",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.100 color"
+          "deprecatedComment": "replace with the amber.100 color",
+          "fallback": "{base.palette.amber.100}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.919 0.155 99.7 / 1)",
+          "value": "#e6bf6c",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.200 color"
+          "deprecatedComment": "replace with the amber.200 color",
+          "fallback": "{base.palette.amber.200}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.762 0.182 70.69 / 1)",
+          "value": "#CC9E3B",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.400 color"
+          "deprecatedComment": "replace with the amber.400 color",
+          "fallback": "{base.palette.amber.400}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.5381 0.1616 50.073 / 1)",
+          "value": "#b37f10",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.600 color"
+          "deprecatedComment": "replace with the amber.600 color",
+          "fallback": "{base.palette.amber.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.483 0.142 48.997 / 1)",
+          "value": "#8C6000",
           "deprecated": true,
-          "deprecated_comment": "replace with the amber.700 color"
+          "deprecatedComment": "replace with the amber.700 color",
+          "fallback": "{base.palette.amber.700}"
         }
       },
       "juicy-pear": {
         "100": {
           "type": "color",
-          "value": "oklch(0.985 0.025 145.2 / 1)",
+          "value": "#f7fae6",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.25 color"
+          "deprecatedComment": "replace with the green.25 color",
+          "fallback": "{base.palette.green.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.87 0.135 146.564 / 1)",
+          "value": "#e2f391",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.200 color"
+          "deprecatedComment": "replace with the green.200 color",
+          "fallback": "{base.palette.green.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.725 0.178 147.473 / 1)",
+          "value": "#c4de40",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.400 color"
+          "deprecatedComment": "replace with the green.400 color",
+          "fallback": "{base.palette.green.400}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.638 0.192 147.927 / 1)",
+          "value": "#a8c224",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.500 color"
+          "deprecatedComment": "replace with the green.500 color",
+          "fallback": "{base.palette.green.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.507 0.175 148.382 / 1)",
+          "value": "#8ea618",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.600 color"
+          "deprecatedComment": "replace with the green.600 color",
+          "fallback": "{base.palette.green.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.443 0.156 148.836 / 1)",
+          "value": "#687818",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.700 color"
+          "deprecatedComment": "replace with the green.700 color",
+          "fallback": "{base.palette.green.700}"
         }
       },
       "kiwi": {
         "100": {
           "type": "color",
-          "value": "oklch(0.931 0.088 146.109 / 1)",
+          "value": "#ecfcd7",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.100 color"
+          "deprecatedComment": "replace with the green.100 color",
+          "fallback": "{base.palette.green.100}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.87 0.135 146.564 / 1)",
+          "value": "#caf593",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.200 color"
+          "deprecatedComment": "replace with the green.200 color",
+          "fallback": "{base.palette.green.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.792 0.158 147.018 / 1)",
+          "value": "#a7e05c",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.300 color"
+          "deprecatedComment": "replace with the green.300 color",
+          "fallback": "{base.palette.green.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.638 0.192 147.927 / 1)",
+          "value": "#77bc1f",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.500 color"
+          "deprecatedComment": "replace with the green.500 color",
+          "fallback": "{base.palette.green.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.507 0.175 148.382 / 1)",
+          "value": "#609915",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.600 color"
+          "deprecatedComment": "replace with the green.600 color",
+          "fallback": "{base.palette.green.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.443 0.156 148.836 / 1)",
+          "value": "#537824",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.700 color"
+          "deprecatedComment": "replace with the green.700 color",
+          "fallback": "{base.palette.green.700}"
         }
       },
       "green-apple": {
         "100": {
           "type": "color",
-          "value": "oklch(0.985 0.025 145.2 / 1)",
+          "value": "#ebfff0",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.25 color"
+          "deprecatedComment": "replace with the green.25 color",
+          "fallback": "{base.palette.green.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.87 0.135 146.564 / 1)",
+          "value": "#acf5be",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.200 color"
+          "deprecatedComment": "replace with the green.200 color",
+          "fallback": "{base.palette.green.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.725 0.178 147.473 / 1)",
+          "value": "#5fe380",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.400 color"
+          "deprecatedComment": "replace with the green.400 color",
+          "fallback": "{base.palette.green.400}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.638 0.192 147.927 / 1)",
+          "value": "#43c463",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.500 color"
+          "deprecatedComment": "replace with the green.500 color",
+          "fallback": "{base.palette.green.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.507 0.175 148.382 / 1)",
+          "value": "#319c4c",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.600 color"
+          "deprecatedComment": "replace with the green.600 color",
+          "fallback": "{base.palette.green.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.443 0.156 148.836 / 1)",
+          "value": "#217a37",
           "deprecated": true,
-          "deprecated_comment": "replace with the green.700 color"
+          "deprecatedComment": "replace with the green.700 color",
+          "fallback": "{base.palette.green.700}"
         }
       },
       "watermelon": {
         "100": {
           "type": "color",
-          "value": "oklch(0.9717 0.0389 199.269 / 1)",
+          "value": "#ebfdf8",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.25 color"
+          "deprecatedComment": "replace with the teal.25 color",
+          "fallback": "{base.palette.teal.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.858 0.075 204.3 / 1)",
+          "value": "#b7edde",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.200 color"
+          "deprecatedComment": "replace with the teal.200 color",
+          "fallback": "{base.palette.teal.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.784 0.087 204.89 / 1)",
+          "value": "#65ccaf",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.300 color"
+          "deprecatedComment": "replace with the teal.300 color",
+          "fallback": "{base.palette.teal.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.606 0.115 205.31 / 1)",
+          "value": "#12a67c",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.500 color"
+          "deprecatedComment": "replace with the teal.500 color",
+          "fallback": "{base.palette.teal.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.508 0.107 206.42 / 1)",
+          "value": "#0c7a5b",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.600 color"
+          "deprecatedComment": "replace with the teal.600 color",
+          "fallback": "{base.palette.teal.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.441 0.093 207.51 / 1)",
+          "value": "#00573e",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.700 color"
+          "deprecatedComment": "replace with the teal.700 color",
+          "fallback": "{base.palette.teal.700}"
         }
       },
       "jewel": {
         "100": {
           "type": "color",
-          "value": "oklch(0.9717 0.0389 199.269 / 1)",
+          "value": "#ebfdff",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.25 color"
+          "deprecatedComment": "replace with the teal.25 color",
+          "fallback": "{base.palette.teal.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.858 0.075 204.3 / 1)",
+          "value": "#acecf3",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.200 color"
+          "deprecatedComment": "replace with the teal.200 color",
+          "fallback": "{base.palette.teal.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.718 0.102 205.12 / 1)",
+          "value": "#44c8d7",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.400 color"
+          "deprecatedComment": "replace with the teal.400 color",
+          "fallback": "{base.palette.teal.400}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.606 0.115 205.31 / 1)",
+          "value": "#1ea4b3",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.500 color"
+          "deprecatedComment": "replace with the teal.500 color",
+          "fallback": "{base.palette.teal.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.508 0.107 206.42 / 1)",
+          "value": "#1a818c",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.600 color"
+          "deprecatedComment": "replace with the teal.600 color",
+          "fallback": "{base.palette.teal.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.441 0.093 207.51 / 1)",
+          "value": "#156973",
           "deprecated": true,
-          "deprecated_comment": "replace with the teal.700 color"
+          "deprecatedComment": "replace with the teal.700 color",
+          "fallback": "{base.palette.teal.700}"
         }
       },
       "toothpaste": {
         "100": {
           "type": "color",
-          "value": "oklch(0.931 0.04 240.111 / 1)",
+          "value": "#d7f1fc",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.100 color"
+          "deprecatedComment": "replace with the blue.100 color",
+          "fallback": "{base.palette.blue.100}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.8619 0.0786 247.216 / 1)",
+          "value": "#99e0ff",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.200 color"
+          "deprecatedComment": "replace with the blue.200 color",
+          "fallback": "{base.palette.blue.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.714 0.166 252.066 / 1)",
+          "value": "#40b4e5",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.400 color"
+          "deprecatedComment": "replace with the blue.400 color",
+          "fallback": "{base.palette.blue.400}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.622 0.196 255.3 / 1)",
+          "value": "#1894c9",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.500 color"
+          "deprecatedComment": "replace with the blue.500 color",
+          "fallback": "{base.palette.blue.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.518 0.181 255.4 / 1)",
+          "value": "#0271a1",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.600 color"
+          "deprecatedComment": "replace with the blue.600 color",
+          "fallback": "{base.palette.blue.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.466 0.156 255.5 / 1)",
+          "value": "#005B82",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.700 color"
+          "deprecatedComment": "replace with the blue.700 color",
+          "fallback": "{base.palette.blue.700}"
         }
       },
       "blueberry": {
         "100": {
           "type": "color",
-          "value": "oklch(0.931 0.04 240.111 / 1)",
+          "value": "#D7EAFC",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.100 color"
+          "deprecatedComment": "replace with the blue.100 color",
+          "fallback": "{base.palette.blue.100}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.8619 0.0786 247.216 / 1)",
+          "value": "#A6D2FF",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.200 color"
+          "deprecatedComment": "replace with the blue.200 color",
+          "fallback": "{base.palette.blue.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.714 0.166 252.066 / 1)",
+          "value": "#40A0FF",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.400 color"
+          "deprecatedComment": "replace with the blue.400 color",
+          "fallback": "{base.palette.blue.400}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.622 0.196 255.3 / 1)",
+          "value": "#0875E1",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.500 color"
+          "deprecatedComment": "replace with the blue.500 color",
+          "fallback": "{base.palette.blue.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.518 0.181 255.4 / 1)",
+          "value": "#005cb9",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.600 color"
+          "deprecatedComment": "replace with the blue.600 color",
+          "fallback": "{base.palette.blue.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.466 0.156 255.5 / 1)",
+          "value": "#004387",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.700 color"
+          "deprecatedComment": "replace with the blue.700 color",
+          "fallback": "{base.palette.blue.700}"
         }
       },
       "plum": {
         "100": {
           "type": "color",
-          "value": "oklch(0.959 0.026 231.237 / 1)",
+          "value": "#e6f1ff",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.50 color"
+          "deprecatedComment": "replace with the blue.50 color",
+          "fallback": "{base.palette.blue.50}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.8619 0.0786 247.216 / 1)",
+          "value": "#A6CDFF",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.200 color"
+          "deprecatedComment": "replace with the blue.200 color",
+          "fallback": "{base.palette.blue.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.714 0.166 252.066 / 1)",
+          "value": "#529bfa",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.400 color"
+          "deprecatedComment": "replace with the blue.400 color",
+          "fallback": "{base.palette.blue.400}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.622 0.196 255.3 / 1)",
+          "value": "#3881E1",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.500 color"
+          "deprecatedComment": "replace with the blue.500 color",
+          "fallback": "{base.palette.blue.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.518 0.181 255.4 / 1)",
+          "value": "#3166ab",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.600 color"
+          "deprecatedComment": "replace with the blue.600 color",
+          "fallback": "{base.palette.blue.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.466 0.156 255.5 / 1)",
+          "value": "#264a7a",
           "deprecated": true,
-          "deprecated_comment": "replace with the blue.700 color"
+          "deprecatedComment": "replace with the blue.700 color",
+          "fallback": "{base.palette.blue.700}"
         }
       },
       "berry-smoothie": {
         "100": {
           "type": "color",
-          "value": "oklch(0.929 0.058 317.538 / 1)",
+          "value": "#e8edff",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.100 color"
+          "deprecatedComment": "replace with the purple.100 color",
+          "fallback": "{base.palette.purple.100}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.868 0.1 312.379 / 1)",
+          "value": "#c2cfff",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.200 color"
+          "deprecatedComment": "replace with the purple.200 color",
+          "fallback": "{base.palette.purple.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.724 0.152 312.5 / 1)",
+          "value": "#7891FF",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.400 color"
+          "deprecatedComment": "replace with the purple.400 color",
+          "fallback": "{base.palette.purple.400}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.628 0.168 312.7 / 1)",
+          "value": "#5E77E6",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.500 color"
+          "deprecatedComment": "replace with the purple.500 color",
+          "fallback": "{base.palette.purple.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.529 0.157 312.4 / 1)",
+          "value": "#4b5eb3",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.600 color"
+          "deprecatedComment": "replace with the purple.600 color",
+          "fallback": "{base.palette.purple.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.455 0.135 312.5 / 1)",
+          "value": "#3b4987",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.700 color"
+          "deprecatedComment": "replace with the purple.700 color",
+          "fallback": "{base.palette.purple.700}"
         }
       },
       "blackberry": {
         "100": {
           "type": "color",
-          "value": "oklch(0.959 0.032 316.515 / 1)",
+          "value": "#f0f0ff",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.50 color"
+          "deprecatedComment": "replace with the purple.50 color",
+          "fallback": "{base.palette.purple.50}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.868 0.1 312.379 / 1)",
+          "value": "#c3c2ff",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.200 color"
+          "deprecatedComment": "replace with the purple.200 color",
+          "fallback": "{base.palette.purple.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.724 0.152 312.5 / 1)",
+          "value": "#8483e6",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.400 color"
+          "deprecatedComment": "replace with the purple.400 color",
+          "fallback": "{base.palette.purple.400}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.628 0.168 312.7 / 1)",
+          "value": "#5c59e6",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.500 color"
+          "deprecatedComment": "replace with the purple.500 color",
+          "fallback": "{base.palette.purple.500}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.529 0.157 312.4 / 1)",
+          "value": "#413fcc",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.600 color"
+          "deprecatedComment": "replace with the purple.600 color",
+          "fallback": "{base.palette.purple.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.455 0.135 312.5 / 1)",
+          "value": "#2e2d91",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.700 color"
+          "deprecatedComment": "replace with the purple.700 color",
+          "fallback": "{base.palette.purple.700}"
         }
       },
       "island-punch": {
         "100": {
           "type": "color",
-          "value": "oklch(0.959 0.032 316.515 / 1)",
+          "value": "#f5f0ff",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.50 color"
+          "deprecatedComment": "replace with the purple.50 color",
+          "fallback": "{base.palette.purple.50}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.868 0.1 312.379 / 1)",
+          "value": "#d2befa",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.200 color"
+          "deprecatedComment": "replace with the purple.200 color",
+          "fallback": "{base.palette.purple.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.808 0.131 311.7 / 1)",
+          "value": "#a88ae6",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.300 color"
+          "deprecatedComment": "replace with the purple.300 color",
+          "fallback": "{base.palette.purple.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.724 0.152 312.5 / 1)",
+          "value": "#8660d1",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.400 color"
+          "deprecatedComment": "replace with the purple.400 color",
+          "fallback": "{base.palette.purple.400}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.529 0.157 312.4 / 1)",
+          "value": "#6345a1",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.600 color"
+          "deprecatedComment": "replace with the purple.600 color",
+          "fallback": "{base.palette.purple.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.455 0.135 312.5 / 1)",
+          "value": "#503882",
           "deprecated": true,
-          "deprecated_comment": "replace with the purple.700 color"
+          "deprecatedComment": "replace with the purple.700 color",
+          "fallback": "{base.palette.purple.700}"
         }
       },
       "grape-soda": {
         "100": {
           "type": "color",
-          "value": "oklch(0.94 0.067 329.515 / 1)",
+          "value": "#feebff",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.100 color"
+          "deprecatedComment": "replace with the pink.100 color",
+          "fallback": "{base.palette.pink.100}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.887 0.103 327.5 / 1)",
+          "value": "#fac0ff",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.200 color"
+          "deprecatedComment": "replace with the pink.200 color",
+          "fallback": "{base.palette.pink.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.808 0.124 333.7 / 1)",
+          "value": "#de8ae6",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.300 color"
+          "deprecatedComment": "replace with the pink.300 color",
+          "fallback": "{base.palette.pink.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.726 0.145 338.9 / 1)",
+          "value": "#c860d1",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.400 color"
+          "deprecatedComment": "replace with the pink.400 color",
+          "fallback": "{base.palette.pink.400}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.525 0.141 345.2 / 1)",
+          "value": "#97499e",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.600 color"
+          "deprecatedComment": "replace with the pink.600 color",
+          "fallback": "{base.palette.pink.600}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.464 0.124 348.5 / 1)",
+          "value": "#7C3882",
           "deprecated": true,
-          "deprecated_comment": "replace with the pink.700 color"
+          "deprecatedComment": "replace with the pink.700 color",
+          "fallback": "{base.palette.pink.700}"
         }
       },
       "root-beer": {
         "100": {
           "type": "color",
-          "value": "oklch(0.985 0 0 / 1)",
+          "value": "#faf3f0",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.25 color"
+          "deprecatedComment": "replace with the neutral.25 color",
+          "fallback": "{base.palette.neutral.25}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.944 0 0 / 1)",
+          "value": "#EBD7CF",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.100 color"
+          "deprecatedComment": "replace with the neutral.100 color",
+          "fallback": "{base.palette.neutral.100}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.871 0 0 / 1)",
+          "value": "#dcbbad",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.200 color"
+          "deprecatedComment": "replace with the neutral.200 color",
+          "fallback": "{base.palette.neutral.200}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.803 0 0 / 1)",
+          "value": "#ba9a8c",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.300 color"
+          "deprecatedComment": "replace with the neutral.300 color",
+          "fallback": "{base.palette.neutral.300}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.63 0 0 / 1)",
+          "value": "#8C7266",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.500 color"
+          "deprecatedComment": "replace with the neutral.500 color",
+          "fallback": "{base.palette.neutral.500}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.51 0 0 / 1)",
+          "value": "#664d42",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.600 color"
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
         }
       },
       "coconut": {
         "100": {
           "type": "color",
-          "value": "oklch(0.944 0 0 / 1)",
+          "value": "#F0EEEE",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.100 color"
+          "deprecatedComment": "replace with the neutral.100 color",
+          "fallback": "{base.palette.neutral.100}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.871 0 0 / 1)",
+          "value": "#e3dfdf",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.200 color"
+          "deprecatedComment": "replace with the neutral.200 color",
+          "fallback": "{base.palette.neutral.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.803 0 0 / 1)",
+          "value": "#d1cbcc",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.300 color"
+          "deprecatedComment": "replace with the neutral.300 color",
+          "fallback": "{base.palette.neutral.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.72 0 0 / 1)",
+          "value": "#b3acac",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.400 color"
+          "deprecatedComment": "replace with the neutral.400 color",
+          "fallback": "{base.palette.neutral.400}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.63 0 0 / 1)",
+          "value": "#9e9595",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.500 color"
+          "deprecatedComment": "replace with the neutral.500 color",
+          "fallback": "{base.palette.neutral.500}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.51 0 0 / 1)",
+          "value": "#8F8687",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.600 color"
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
         }
       },
       "soap": {
         "100": {
           "type": "color",
-          "value": "oklch(0.969 0 0 / 1)",
+          "value": "#f6f7f8",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.50 color"
+          "deprecatedComment": "replace with the neutral.50 color",
+          "fallback": "{base.palette.neutral.50}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.944 0 0 / 1)",
+          "value": "#F0F1F2",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.100 color"
+          "deprecatedComment": "replace with the neutral.100 color",
+          "fallback": "{base.palette.neutral.100}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.871 0 0 / 1)",
+          "value": "#e8ebed",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.200 color"
+          "deprecatedComment": "replace with the neutral.200 color",
+          "fallback": "{base.palette.neutral.200}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.835 0 0 / 1)",
+          "value": "#DFE2E6",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.250 color"
+          "deprecatedComment": "replace with the neutral.250 color",
+          "fallback": "{base.palette.neutral.250}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.803 0 0 / 1)",
+          "value": "#ced3d9",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.300 color"
+          "deprecatedComment": "replace with the neutral.300 color",
+          "fallback": "{base.palette.neutral.300}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.72 0 0 / 1)",
+          "value": "#B9C0C7",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.400 color"
+          "deprecatedComment": "replace with the neutral.400 color",
+          "fallback": "{base.palette.neutral.400}"
         }
       },
       "french-vanilla": {
         "100": {
           "type": "color",
-          "value": "oklch(1 0 0 / 1)",
+          "value": "#ffffff",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.0 color"
+          "deprecatedComment": "replace with the neutral.0 color",
+          "fallback": "{base.palette.neutral.0}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.871 0 0 / 1)",
+          "value": "#ebebeb",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.200 color"
+          "deprecatedComment": "replace with the neutral.200 color",
+          "fallback": "{base.palette.neutral.200}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.803 0 0 / 1)",
+          "value": "#d4d4d4",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.300 color"
+          "deprecatedComment": "replace with the neutral.300 color",
+          "fallback": "{base.palette.neutral.300}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.72 0 0 / 1)",
+          "value": "#bdbdbd",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.400 color"
+          "deprecatedComment": "replace with the neutral.400 color",
+          "fallback": "{base.palette.neutral.400}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.63 0 0 / 1)",
+          "value": "#a6a6a6",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.500 color"
+          "deprecatedComment": "replace with the neutral.500 color",
+          "fallback": "{base.palette.neutral.500}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.51 0 0 / 1)",
+          "value": "#8f8f8f",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.600 color"
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
         }
       },
       "cappuccino": {
         "100": {
           "type": "color",
-          "value": "oklch(0.51 0 0 / 1)",
+          "value": "#7A7374",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.600 color"
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.51 0.025 255.5 / 1)",
+          "value": "#706869",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.600 color"
+          "deprecatedComment": "replace with the slate.600 color",
+          "fallback": "{base.palette.slate.600}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.45 0.022 255.5 / 1)",
+          "value": "#5E5757",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.700 color"
+          "deprecatedComment": "replace with the slate.700 color",
+          "fallback": "{base.palette.slate.700}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.351 0.018 255.5 / 1)",
+          "value": "#4A4242",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.800 color"
+          "deprecatedComment": "replace with the slate.800 color",
+          "fallback": "{base.palette.slate.800}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.21 0.012 255.5 / 1)",
+          "value": "#352f2f",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.900 color"
+          "deprecatedComment": "replace with the slate.900 color",
+          "fallback": "{base.palette.slate.900}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.15 0.008 255.5 / 1)",
+          "value": "#231f20",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.950 color"
+          "deprecatedComment": "replace with the slate.950 color",
+          "fallback": "{base.palette.slate.950}"
         }
       },
       "licorice": {
         "100": {
           "type": "color",
-          "value": "oklch(0.72 0.025 255.5 / 1)",
+          "value": "#A1AAB3",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.400 color"
+          "deprecatedComment": "replace with the slate.400 color",
+          "fallback": "{base.palette.slate.400}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.63 0.028 255.5 / 1)",
+          "value": "#7b858f",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.500 color"
+          "deprecatedComment": "replace with the slate.500 color",
+          "fallback": "{base.palette.slate.500}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.51 0.025 255.5 / 1)",
+          "value": "#5E6A75",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.600 color"
+          "deprecatedComment": "replace with the slate.600 color",
+          "fallback": "{base.palette.slate.600}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.45 0.022 255.5 / 1)",
+          "value": "#4a5561",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.700 color"
+          "deprecatedComment": "replace with the slate.700 color",
+          "fallback": "{base.palette.slate.700}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.351 0.018 255.5 / 1)",
+          "value": "#333d47",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.800 color"
+          "deprecatedComment": "replace with the slate.800 color",
+          "fallback": "{base.palette.slate.800}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.21 0.012 255.5 / 1)",
+          "value": "#1f262e",
           "deprecated": true,
-          "deprecated_comment": "replace with the slate.900 color"
+          "deprecatedComment": "replace with the slate.900 color",
+          "fallback": "{base.palette.slate.900}"
         }
       },
       "black-pepper": {
         "100": {
           "type": "color",
-          "value": "oklch(0.51 0 0 / 1)",
+          "value": "#787878",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.600 color"
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.45 0 0 / 1)",
+          "value": "#616161",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.700 color"
+          "deprecatedComment": "replace with the neutral.700 color",
+          "fallback": "{base.palette.neutral.700}"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.351 0 0 / 1)",
+          "value": "#494949",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.800 color"
+          "deprecatedComment": "replace with the neutral.800 color",
+          "fallback": "{base.palette.neutral.800}"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.29 0 0 / 1)",
+          "value": "#333333",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.850 color"
+          "deprecatedComment": "replace with the neutral.850 color",
+          "fallback": "{base.palette.neutral.850}"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.21 0 0 / 1)",
+          "value": "#1e1e1e",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.900 color"
+          "deprecatedComment": "replace with the neutral.900 color",
+          "fallback": "{base.palette.neutral.900}"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0 0 0 / 1)",
+          "value": "#000000",
           "deprecated": true,
-          "deprecated_comment": "replace with the neutral.1000 color"
+          "deprecatedComment": "replace with the neutral.1000 color",
+          "fallback": "{base.palette.neutral.1000}"
         }
       }
     },
