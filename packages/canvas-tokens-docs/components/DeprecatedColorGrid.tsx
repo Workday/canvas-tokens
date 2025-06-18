@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {TokenGrid, formatJSVar} from './TokenGrid';
+import {DeprecatedTokenGrid, formatJSVar} from './TokenGrid/DeprecatedTokenGird';
 
 const sortMap: Record<string, number> = {
   softer: 0,
@@ -30,6 +30,7 @@ export function buildPaletteGroup(
 ) {
   return Object.entries(tokens)
     .map(([key, value]) => {
+      //   console.log(key, value);
       if (typeof value === 'string') {
         return buildColorSwatch(value, `${prefix}.${key}`);
       } else {
@@ -50,7 +51,8 @@ export interface ColorSwatch {
   jsVar: React.ReactNode;
   /** The actual string value of the token */
   value: string;
-  newValue: React.ReactNode;
+  /** The new token value */
+  newValue: string;
 }
 
 /** builds color swatch objects for ColorGrid */
@@ -61,12 +63,11 @@ export function buildColorSwatch(
 ): ColorSwatch {
   // Get the CSS var's value from the :root element
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-  // console.log(value);
   return {
     value,
     cssVar: varName,
     jsVar: formatJSVar(jsVarName),
-    newValue: formatJSVar(jsVarName),
+    newValue: '',
   };
 }
 
@@ -74,6 +75,7 @@ type VariableType = 'css' | 'javascript' | 'all';
 
 interface ColorGridProps {
   name: string;
+  deprecatedPalette: ColorSwatch[];
   palette: ColorSwatch[];
   variableType?: VariableType;
 }
@@ -96,43 +98,57 @@ function getSwatchStyles(token: ColorSwatch) {
 }
 
 function getHeadings(type: VariableType) {
-  const defaultHeadings = ['Swatch', 'Value'];
+  const defaultHeadings = ['Swatch', 'New Value', 'Use This JS Variable Instead'];
   if (type === 'css') {
-    defaultHeadings.splice(1, 0, 'CSS Variable');
+    defaultHeadings.splice(1, 0, 'Deprecated CSS Variable Name');
   } else if (type === 'javascript') {
-    defaultHeadings.splice(1, 0, 'JS Variable');
+    defaultHeadings.splice(1, 0, 'Deprecated JS Variable Name');
   } else {
-    defaultHeadings.splice(1, 0, 'CSS Variable', 'JS Variable');
+    defaultHeadings.splice(1, 0, 'Deprecated CSS Variable Name', 'Deprecated JS Variable Name');
   }
   return defaultHeadings;
 }
 
 /** A configuration of TokenGrid to quickly build tables for colors */
-export function ColorGrid({name, variableType = 'all', palette}: ColorGridProps) {
+export function DeprecatedColorGrid({name, variableType = 'all', palette}: ColorGridProps) {
   return (
-    <TokenGrid caption={formatName(name)} headings={getHeadings(variableType)} rows={palette}>
-      {token => (
-        <>
-          <TokenGrid.RowItem>
-            <TokenGrid.Swatch style={getSwatchStyles(token)} />
-          </TokenGrid.RowItem>
-          {variableType === 'css' ||
-            ('all' && (
-              <TokenGrid.RowItem>
-                <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
-              </TokenGrid.RowItem>
-            ))}
-          {variableType === 'javascript' ||
-            ('all' && (
-              <TokenGrid.RowItem>
-                <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
-              </TokenGrid.RowItem>
-            ))}
-          <TokenGrid.RowItem>
-            <span>{token.value || 'transparent'}</span>
-          </TokenGrid.RowItem>
-        </>
-      )}
-    </TokenGrid>
+    <DeprecatedTokenGrid
+      caption={formatName(name)}
+      headings={getHeadings(variableType)}
+      rows={palette}
+    >
+      {token => {
+        // console.log(token);
+        return (
+          <>
+            <DeprecatedTokenGrid.RowItem>
+              <DeprecatedTokenGrid.Swatch style={getSwatchStyles(token)} />
+            </DeprecatedTokenGrid.RowItem>
+            {variableType === 'css' ||
+              ('all' && (
+                <DeprecatedTokenGrid.RowItem>
+                  <DeprecatedTokenGrid.MonospaceLabel>
+                    {token.cssVar}
+                  </DeprecatedTokenGrid.MonospaceLabel>
+                </DeprecatedTokenGrid.RowItem>
+              ))}
+            {variableType === 'javascript' ||
+              ('all' && (
+                <DeprecatedTokenGrid.RowItem>
+                  <DeprecatedTokenGrid.MonospaceLabel>
+                    {token.jsVar}
+                  </DeprecatedTokenGrid.MonospaceLabel>
+                </DeprecatedTokenGrid.RowItem>
+              ))}
+            <DeprecatedTokenGrid.RowItem>
+              <span>{token.value || 'transparent'}</span>
+            </DeprecatedTokenGrid.RowItem>
+            <DeprecatedTokenGrid.RowItem>
+              <span>{token.newValue || 'transparent'}</span>
+            </DeprecatedTokenGrid.RowItem>
+          </>
+        );
+      }}
+    </DeprecatedTokenGrid>
   );
 }

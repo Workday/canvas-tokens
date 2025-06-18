@@ -46,6 +46,10 @@
           "type": "color",
           "value": "oklch(0.51 0 0 / 1)"
         },
+        "700": {
+          "type": "color",
+          "value": "oklch(0.45 0 0 / 1)"
+        },
         "800": {
           "type": "color",
           "value": "oklch(0.351 0 0 / 1)"

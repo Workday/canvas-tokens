@@ -3,6 +3,8 @@ import {base} from '@workday/canvas-tokens-web';
 
 import {Stack} from '../../../components/Stack';
 import {ColorGrid, buildColorSwatch, ColorSwatch} from '../../../components/ColorGrid';
+import {DeprecatedColorGrid} from '../../../components/DeprecatedColorGrid';
+import {formatJSVar} from '../../../components/TokenGrid';
 
 const colorPaletteNames = [
   'neutral',
@@ -17,15 +19,52 @@ const colorPaletteNames = [
   'slate',
 ] as const;
 
-const colorRegExp = new RegExp(colorPaletteNames.join('|'));
+const deprecatedColorPaletteNames = [
+  'berrySmoothie',
+  'blackPepper',
+  'blackberry',
+  'blueberry',
+  'cantaloupe',
+  'cappuccino',
+  'chiliMango',
+  'cinnamon',
+  'coconut',
+  'extendedDragonFruit',
+  'frenchVanilla',
+  'fruitPunch',
+  'grapeSoda',
+  'greenApple',
+  'islandPunch',
+  'jewel',
+  'juicyPear',
+  'kiwi',
+  'licorice',
+  'peach',
+  'plum',
+  'pomegranate',
+  'rootBeer',
+  'soap',
+  'sourLemon',
+  'toastedMarshmallow',
+  'toothpaste',
+  'watermelon',
+] as const;
 
-function buildPalettes(tokens: object) {
+const colorRegExp = new RegExp(colorPaletteNames.join('|'));
+const deprecatedColorRegExp = new RegExp(deprecatedColorPaletteNames.join('|'));
+function buildPalettes(tokens: object, isDeprecated: boolean) {
   const palettes: Record<string, ColorSwatch[]> = {};
+
   for (const key in tokens) {
     // If it's a color token
-    if (colorRegExp.test(key)) {
+
+    if (isDeprecated ? deprecatedColorRegExp.test(key) : colorRegExp.test(key)) {
       const name = key.replace(/\d+/, '');
+
+      // console.log(tokens[key as keyof typeof tokens]);
       const swatch = buildColorSwatch(tokens[key as keyof typeof tokens], `base.${key}`);
+      console.log(swatch);
+      // console.log('swatch', swatch);
       if (name in palettes) {
         palettes[name].push(swatch);
       } else {
@@ -42,14 +81,36 @@ function buildPalettes(tokens: object) {
   return Object.entries(palettes);
 }
 
-const baseColorPalettes = buildPalettes(base);
+const baseColorPalettes = buildPalettes(base, false);
+const deprecatedColorPalette = buildPalettes(base, true);
+
+const flatBaseColors = baseColorPalettes.map(([name, palette]) => palette).flat();
+deprecatedColorPalette.map(([name, palette]) => {
+  palette.map(swatch => {
+    const found = flatBaseColors.find(el => el.value === swatch.value);
+    console.log(found?.value && found);
+    swatch.newValue = <span>{found?.jsVar}</span>;
+  });
+});
 
 export const ColorTokens = () => {
   return (
     <Stack>
+      foo
       {baseColorPalettes.map(([name, palette]) => (
         <ColorGrid key={name} name={name} palette={palette} />
       ))}
+    </Stack>
+  );
+};
+
+export const DeprecatedColorTokens = () => {
+  return (
+    <Stack>
+      foo
+      {deprecatedColorPalette.map(([name, palette]) => {
+        return <DeprecatedColorGrid key={name} name={name} palette={palette} />;
+      })}
     </Stack>
   );
 };
