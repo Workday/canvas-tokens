@@ -116,8 +116,9 @@ const flatBaseColors = baseColorPalettes.map(([name, palette]) => palette).flat(
 
 deprecatedColorPalette.map(([name, palette]) => {
   palette.map(swatch => {
-    const found = flatBaseColors.find(el => el.value === swatch.value);
-    swatch.newValue = <span>{found?.jsVar}</span>;
+    const found = flatBaseColors.find(el => el.value === swatch.newCSSVar);
+    swatch.newJsVar = <span>{found?.jsVar}</span>;
+    swatch.newCSSVar = found?.cssVar || '';
   });
 });
 

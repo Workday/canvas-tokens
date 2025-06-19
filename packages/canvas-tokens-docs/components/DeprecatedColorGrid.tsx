@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {DeprecatedTokenGrid, formatJSVar} from './TokenGrid/DeprecatedTokenGird';
+import {TokenGrid, formatJSVar} from './TokenGrid';
 import {formatName} from './ColorGrid';
 
 const sortMap: Record<string, number> = {
@@ -20,7 +20,7 @@ export function sortSystemColorPalette(a: DeprecatedColorSwatch, b: DeprecatedCo
 
 export function buildPalette(prefix: string, tokens: Record<string, string>) {
   return Object.entries(tokens).map(([value, varName]) =>
-    buildColorSwatch(varName, `${prefix}.${value}`)
+    buildDeprecatedColorSwatch(varName, `${prefix}.${value}`)
   );
 }
 
@@ -32,7 +32,7 @@ export function buildPaletteGroup(
   return Object.entries(tokens)
     .map(([key, value]) => {
       if (typeof value === 'string') {
-        return buildColorSwatch(value, `${prefix}.${key}`);
+        return buildDeprecatedColorSwatch(value, `${prefix}.${key}`);
       } else {
         const palette = buildPalette(`${prefix}.${key}`, value);
         if (sortFn) {
@@ -50,24 +50,24 @@ export interface DeprecatedColorSwatch {
   /** The formatted name of the JS variable */
   jsVar: React.ReactNode;
   /** The actual string value of the token */
-  value: string;
+  newCSSVar: string;
   /** The new token value */
-  newValue: React.ReactNode;
+  newJsVar: React.ReactNode;
 }
 
 /** builds color swatch objects for ColorGrid */
 export function buildDeprecatedColorSwatch(
   varName: string,
   jsVarName: string,
-  newValue?: string
+  newJsVar?: string
 ): DeprecatedColorSwatch {
   // Get the CSS var's value from the :root element
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   return {
-    value,
+    newCSSVar: value,
     cssVar: varName,
     jsVar: formatJSVar(jsVarName),
-    newValue: formatJSVar(jsVarName),
+    newJsVar: formatJSVar(jsVarName),
   };
 }
 
@@ -82,14 +82,14 @@ interface DeprecatedColorGridProps {
 function getSwatchStyles(token: DeprecatedColorSwatch) {
   // update the property to support linear gradients
   // which need to be a background image instead of background color
-  const property = token.value.startsWith('linear-gradient(')
+  const property = token.newCSSVar.startsWith('linear-gradient(')
     ? 'backgroundImage'
     : 'backgroundColor';
   return {[property]: `var(${token.cssVar})`};
 }
 
 function getHeadings(type: VariableType) {
-  const defaultHeadings = ['Swatch', 'New Value', 'Use This JS Variable Instead'];
+  const defaultHeadings = ['Swatch', 'New CSS Variable', 'New JS Variable'];
   if (type === 'css') {
     defaultHeadings.splice(1, 0, 'Deprecated CSS Variable Name');
   } else if (type === 'javascript') {
@@ -107,42 +107,36 @@ export function DeprecatedColorGrid({
   palette,
 }: DeprecatedColorGridProps) {
   return (
-    <DeprecatedTokenGrid
-      caption={formatName(name)}
-      headings={getHeadings(variableType)}
-      rows={palette}
-    >
+    <TokenGrid caption={formatName(name)} headings={getHeadings(variableType)} rows={palette}>
       {token => {
         return (
           <>
-            <DeprecatedTokenGrid.RowItem>
-              <DeprecatedTokenGrid.Swatch style={getSwatchStyles(token)} />
-            </DeprecatedTokenGrid.RowItem>
+            <TokenGrid.RowItem>
+              <TokenGrid.Swatch style={getSwatchStyles(token)} />
+            </TokenGrid.RowItem>
             {variableType === 'css' ||
               ('all' && (
-                <DeprecatedTokenGrid.RowItem>
-                  <DeprecatedTokenGrid.MonospaceLabel>
-                    {token.cssVar}
-                  </DeprecatedTokenGrid.MonospaceLabel>
-                </DeprecatedTokenGrid.RowItem>
+                <TokenGrid.RowItem>
+                  <TokenGrid.MonospaceLabel isDeprecated>{token.cssVar}</TokenGrid.MonospaceLabel>
+                </TokenGrid.RowItem>
               ))}
             {variableType === 'javascript' ||
               ('all' && (
-                <DeprecatedTokenGrid.RowItem>
-                  <DeprecatedTokenGrid.MonospaceLabel>
-                    {token.jsVar}
-                  </DeprecatedTokenGrid.MonospaceLabel>
-                </DeprecatedTokenGrid.RowItem>
+                <TokenGrid.RowItem>
+                  <TokenGrid.MonospaceLabel isDeprecated>{token.jsVar}</TokenGrid.MonospaceLabel>
+                </TokenGrid.RowItem>
               ))}
-            <DeprecatedTokenGrid.RowItem>
-              <span>{token.value || 'transparent'}</span>
-            </DeprecatedTokenGrid.RowItem>
-            <DeprecatedTokenGrid.RowItem>
-              <span>{token.newValue || 'transparent'}</span>
-            </DeprecatedTokenGrid.RowItem>
+            <TokenGrid.RowItem>
+              <TokenGrid.MonospaceLabel>
+                {token.newCSSVar || 'transparent'}
+              </TokenGrid.MonospaceLabel>
+            </TokenGrid.RowItem>
+            <TokenGrid.RowItem>
+              <TokenGrid.MonospaceLabel>{token.newJsVar || 'transparent'}</TokenGrid.MonospaceLabel>
+            </TokenGrid.RowItem>
           </>
         );
       }}
-    </DeprecatedTokenGrid>
+    </TokenGrid>
   );
 }

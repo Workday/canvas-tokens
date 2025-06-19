@@ -75,3 +75,8 @@
   border-radius: 0.25rem;
   min-height: 1rem;
 }
+
+.token-grid__deprecate-monospace-label {
+  background-color: var(--cnvs-sys-color-bg-critical-softest);
+  color: var(--cnvs-sys-color-fg-critical-default);
+}
