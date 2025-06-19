@@ -50,15 +50,10 @@ export interface ColorSwatch {
   jsVar: React.ReactNode;
   /** The actual string value of the token */
   value: string;
-  newValue: React.ReactNode;
 }
 
 /** builds color swatch objects for ColorGrid */
-export function buildColorSwatch(
-  varName: string,
-  jsVarName: string,
-  newValue?: string
-): ColorSwatch {
+export function buildColorSwatch(varName: string, jsVarName: string): ColorSwatch {
   // Get the CSS var's value from the :root element
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   // console.log(value);
@@ -66,20 +61,19 @@ export function buildColorSwatch(
     value,
     cssVar: varName,
     jsVar: formatJSVar(jsVarName),
-    newValue: formatJSVar(jsVarName),
   };
 }
 
 type VariableType = 'css' | 'javascript' | 'all';
 
-interface ColorGridProps {
+export interface ColorGridProps {
   name: string;
   palette: ColorSwatch[];
   variableType?: VariableType;
 }
 
 /** transform 'camelCase' names into 'spaced case' */
-function formatName(name: string) {
+export function formatName(name: string) {
   return name
     .split(/(?=[A-Z])/)
     .join(' ')

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {DeprecatedTokenGrid, formatJSVar} from './TokenGrid/DeprecatedTokenGird';
+import {formatName} from './ColorGrid';
 
 const sortMap: Record<string, number> = {
   softer: 0,
@@ -9,7 +10,7 @@ const sortMap: Record<string, number> = {
   stronger: 4,
 };
 
-export function sortSystemColorPalette(a: ColorSwatch, b: ColorSwatch) {
+export function sortSystemColorPalette(a: DeprecatedColorSwatch, b: DeprecatedColorSwatch) {
   const aLevel = a.cssVar.split('-').at(-1) || '';
   const bLevel = b.cssVar.split('-').at(-1) || '';
   const first = aLevel in sortMap ? sortMap[aLevel] : Infinity;
@@ -26,11 +27,10 @@ export function buildPalette(prefix: string, tokens: Record<string, string>) {
 export function buildPaletteGroup(
   prefix: string,
   tokens: object,
-  sortFn?: (a: ColorSwatch, b: ColorSwatch) => number
+  sortFn?: (a: DeprecatedColorSwatch, b: DeprecatedColorSwatch) => number
 ) {
   return Object.entries(tokens)
     .map(([key, value]) => {
-      //   console.log(key, value);
       if (typeof value === 'string') {
         return buildColorSwatch(value, `${prefix}.${key}`);
       } else {
@@ -44,7 +44,7 @@ export function buildPaletteGroup(
     .flat();
 }
 
-export interface ColorSwatch {
+export interface DeprecatedColorSwatch {
   /** The name of the CSS variable */
   cssVar: string;
   /** The formatted name of the JS variable */
@@ -52,43 +52,34 @@ export interface ColorSwatch {
   /** The actual string value of the token */
   value: string;
   /** The new token value */
-  newValue: string;
+  newValue: React.ReactNode;
 }
 
 /** builds color swatch objects for ColorGrid */
-export function buildColorSwatch(
+export function buildDeprecatedColorSwatch(
   varName: string,
   jsVarName: string,
   newValue?: string
-): ColorSwatch {
+): DeprecatedColorSwatch {
   // Get the CSS var's value from the :root element
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   return {
     value,
     cssVar: varName,
     jsVar: formatJSVar(jsVarName),
-    newValue: '',
+    newValue: formatJSVar(jsVarName),
   };
 }
 
 type VariableType = 'css' | 'javascript' | 'all';
 
-interface ColorGridProps {
+interface DeprecatedColorGridProps {
   name: string;
-  deprecatedPalette: ColorSwatch[];
-  palette: ColorSwatch[];
+  palette: DeprecatedColorSwatch[];
   variableType?: VariableType;
 }
 
-/** transform 'camelCase' names into 'spaced case' */
-function formatName(name: string) {
-  return name
-    .split(/(?=[A-Z])/)
-    .join(' ')
-    .toLowerCase();
-}
-
-function getSwatchStyles(token: ColorSwatch) {
+function getSwatchStyles(token: DeprecatedColorSwatch) {
   // update the property to support linear gradients
   // which need to be a background image instead of background color
   const property = token.value.startsWith('linear-gradient(')
@@ -110,7 +101,11 @@ function getHeadings(type: VariableType) {
 }
 
 /** A configuration of TokenGrid to quickly build tables for colors */
-export function DeprecatedColorGrid({name, variableType = 'all', palette}: ColorGridProps) {
+export function DeprecatedColorGrid({
+  name,
+  variableType = 'all',
+  palette,
+}: DeprecatedColorGridProps) {
   return (
     <DeprecatedTokenGrid
       caption={formatName(name)}
@@ -118,7 +113,6 @@ export function DeprecatedColorGrid({name, variableType = 'all', palette}: Color
       rows={palette}
     >
       {token => {
-        // console.log(token);
         return (
           <>
             <DeprecatedTokenGrid.RowItem>
