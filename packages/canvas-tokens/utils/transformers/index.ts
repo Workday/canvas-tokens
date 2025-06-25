@@ -51,11 +51,12 @@ export const transforms: Record<string, Transform> = {
     matcher: filter.isSysColor,
     transformer: token => {
       // eslint-disable-next-line no-useless-escape
-      return token.original.value.replace(/{[\w\.]*}/g, (a: string) => {
+      const newV = token.original.value.replace(/{[\w\.]*}/g, (a: string) => {
         const cssVar = `var(--cnvs-${a.replace(/{|}/g, '').replace(/\./g, '-')})`;
-
         return cssVar.includes('palette') ? `from ${cssVar} l c h ` : ' ' + cssVar;
       });
+
+      return token.name.includes('transparent') ? 'transparent' : newV;
     },
   },
   'value/opacity': {
