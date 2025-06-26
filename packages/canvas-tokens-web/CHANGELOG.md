@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.1
+
+### Major Changes
+
+- ### Components
+
+  - chore: Skip release on chore commits ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Return default token for fg critical ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Fix release script ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0-alpha.0
 
 ### Major Changes
