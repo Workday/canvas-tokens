@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.2
+
+### Major Changes
+
+- ### Tokens
+
+  - fix: Fix transparent values ([#162](https://github.com/Workday/canvas-tokens/pull/162))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) values with opacity 0 have been changed to
+    'transparent' value in css.
+
 ## 3.0.0-alpha.1
 
 ### Major Changes
