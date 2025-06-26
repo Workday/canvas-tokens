@@ -62,11 +62,11 @@
         "type": "color"
       },
       "base": {
-        "value": "{base.palette.red.700}",
+        "value": "{base.palette.red.600}",
         "type": "color"
       },
       "dark": {
-        "value": "{base.palette.red.600}",
+        "value": "{base.palette.red.700}",
         "type": "color"
       },
       "darkest": {
