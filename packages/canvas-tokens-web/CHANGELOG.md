@@ -1,5 +1,13 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.4
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update red base color to be 600 ([@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 3.0.0-alpha.3
 
 ### Major Changes
