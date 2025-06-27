@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.5
+
+### Major Changes
+
+- ### Components
+
+  - chore: Sync tokens from canvas-tokens-studio
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - feat: Sync tokens from canvas-tokens-studio ([@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 3.0.0-alpha.4
 
 ### Major Changes
