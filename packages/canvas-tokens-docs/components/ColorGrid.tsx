@@ -56,7 +56,6 @@ export interface ColorSwatch {
 export function buildColorSwatch(varName: string, jsVarName: string): ColorSwatch {
   // Get the CSS var's value from the :root element
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-  // console.log(value);
   return {
     value,
     cssVar: varName,
