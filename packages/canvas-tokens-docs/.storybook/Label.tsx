@@ -12,7 +12,7 @@ const flexStyles = {
 const deprecatedBoxStyles = {
   padding: '0 8px',
   backgroundColor: 'rgba(219, 225, 233, 1)',
-  color: 'rgba(93, 103, 117, 1)1)',
+  color: 'rgba(93, 103, 117, 1)',
   borderRadius: '40px',
   fontSize: '12px',
   fontWeight: 'bold',
