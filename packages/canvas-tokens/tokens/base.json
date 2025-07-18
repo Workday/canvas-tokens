@@ -1143,42 +1143,42 @@
           "value": "#ebfdf8",
           "deprecated": true,
           "deprecatedComment": "replace with the teal.25 color",
-          "fallback": "{base.palette.teal.25}"
+          "fallback": "{base.palette.green.50}"
         },
         "200": {
           "type": "color",
           "value": "#b7edde",
           "deprecated": true,
           "deprecatedComment": "replace with the teal.200 color",
-          "fallback": "{base.palette.teal.200}"
+          "fallback": "{base.palette.green.50}"
         },
         "300": {
           "type": "color",
           "value": "#65ccaf",
           "deprecated": true,
           "deprecatedComment": "replace with the teal.300 color",
-          "fallback": "{base.palette.teal.300}"
+          "fallback": "{base.palette.green.100}"
         },
         "400": {
           "type": "color",
           "value": "#12a67c",
           "deprecated": true,
           "deprecatedComment": "replace with the teal.500 color",
-          "fallback": "{base.palette.teal.500}"
+          "fallback": "{base.palette.green.300}"
         },
         "500": {
           "type": "color",
           "value": "#0c7a5b",
           "deprecated": true,
           "deprecatedComment": "replace with the teal.600 color",
-          "fallback": "{base.palette.teal.600}"
+          "fallback": "{base.palette.green.800}"
         },
         "600": {
           "type": "color",
           "value": "#00573e",
           "deprecated": true,
           "deprecatedComment": "replace with the teal.700 color",
-          "fallback": "{base.palette.teal.700}"
+          "fallback": "{base.palette.green.900}"
         }
       },
       "jewel": {
