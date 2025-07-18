@@ -82,9 +82,9 @@ const TokenGridMonospaceLabel: React.FC<
   return (
     <span
       className={classNames(
-        `token-grid__monospace-label cnvs-sys-type-subtext-medium ${
-          isDeprecated ? 'token-grid__deprecate-monospace-label' : ''
-        }`,
+        'token-grid__monospace-label', 
+        'cnvs-sys-type-subtext-medium',
+        {'token-grid__deprecate-monospace-label': isDeprecated}
         className
       )}
       {...props}
