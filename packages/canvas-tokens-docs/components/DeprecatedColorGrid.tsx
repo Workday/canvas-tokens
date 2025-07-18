@@ -35,10 +35,7 @@ export function buildPaletteGroup(
         return buildDeprecatedColorSwatch(value, `${prefix}.${key}`);
       } else {
         const palette = buildPalette(`${prefix}.${key}`, value);
-        if (sortFn) {
-          return palette.sort(sortFn);
-        }
-        return palette;
+        return sortFn ? palette.sort(sortFn) : palette;
       }
     })
 }
