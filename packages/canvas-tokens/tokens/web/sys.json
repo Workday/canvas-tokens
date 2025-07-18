@@ -4,27 +4,27 @@
       "zero": {
         "value": "0",
         "type": "dimension",
-        "description": "Use to set a media query `min-width` below small."
+        "comment": "Use to set a media query `min-width` below small."
       },
       "s": {
         "value": "{base.unit} * 80",
         "type": "dimension",
-        "description": "The `min-width` for mobile devices, such as phones and tablets."
+        "comment": "The `min-width` for mobile devices, such as phones and tablets."
       },
       "m": {
         "value": "{base.unit} * 192",
         "type": "dimension",
-        "description": "Medium screens, such as laptops."
+        "comment": "Medium screens, such as laptops."
       },
       "l": {
         "value": "{base.unit} * 256",
         "type": "dimension",
-        "description": "Large screens, such as desktops."
+        "comment": "Large screens, such as desktops."
       },
       "xl": {
         "value": "{base.unit} * 360",
         "type": "dimension",
-        "description": "Used for extra large screens, such as wide monitors and TVs."
+        "comment": "Used for extra large screens, such as wide monitors and TVs."
       }
     },
     "depth": {
@@ -163,7 +163,7 @@
     },
     "opacity": {
       "zero": {
-        "value": 0,
+        "value": "0",
         "type": "number",
         "comment": "Dev only"
       },
@@ -177,13 +177,13 @@
         "type": "number",
         "comment": "Overlay"
       },
-      "transclucent": {
+      "contrast": {
         "value": "{base.opacity.500}",
         "type": "number",
         "comment": "Tooltips, Status Indicator"
       },
       "full": {
-        "value": 1,
+        "value": "1",
         "type": "number",
         "comment": "Dev only"
       },
@@ -213,8 +213,7 @@
       },
       "x1": {
         "value": "{base.unit}",
-        "type": "borderRadius",
-        "comment": "Use this for form components presenting text information or inputs: Text Inputs and Text Area, Dropdowns, Menus and Banners."
+        "type": "borderRadius"
       },
       "x1-half": {
         "value": "{base.unit} * 1.5",
@@ -301,57 +300,57 @@
       "subtext": {
         "small": {
           "value": "{base.font-size.25}",
-          "type": "number"
+          "type": "sizing"
         },
         "medium": {
           "value": "{base.font-size.50}",
-          "type": "number"
+          "type": "sizing"
         },
         "large": {
           "value": "{base.font-size.75}",
-          "type": "number"
+          "type": "sizing"
         }
       },
       "body": {
         "small": {
           "value": "{base.font-size.100}",
-          "type": "number"
+          "type": "sizing"
         },
         "medium": {
           "value": "{base.font-size.125}",
-          "type": "number"
+          "type": "sizing"
         },
         "large": {
           "value": "{base.font-size.150}",
-          "type": "number"
+          "type": "sizing"
         }
       },
       "heading": {
         "small": {
           "value": "{base.font-size.200}",
-          "type": "number"
+          "type": "sizing"
         },
         "medium": {
           "value": "{base.font-size.250}",
-          "type": "number"
+          "type": "sizing"
         },
         "large": {
           "value": "{base.font-size.300}",
-          "type": "number"
+          "type": "sizing"
         }
       },
       "title": {
         "small": {
           "value": "{base.font-size.400}",
-          "type": "number"
+          "type": "sizing"
         },
         "medium": {
           "value": "{base.font-size.500}",
-          "type": "number"
+          "type": "sizing"
         },
         "large": {
           "value": "{base.font-size.600}",
-          "type": "number"
+          "type": "sizing"
         }
       }
     },

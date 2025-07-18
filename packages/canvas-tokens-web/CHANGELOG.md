@@ -1,5 +1,43 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.5
+
+### Major Changes
+
+- ### Components
+
+  - chore: Sync tokens from canvas-tokens-studio
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - feat: Sync tokens from canvas-tokens-studio ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.4
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update red base color to be 600 ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.3
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#163](https://github.com/Workday/canvas-tokens/pull/163))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.2
+
+### Major Changes
+
+- ### Tokens
+
+  - fix: Fix transparent values ([#162](https://github.com/Workday/canvas-tokens/pull/162))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) values with opacity 0 have been changed to
+    'transparent' value in css.
+
 ## 3.0.0-alpha.1
 
 ### Major Changes
