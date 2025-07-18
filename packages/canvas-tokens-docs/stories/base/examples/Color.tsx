@@ -135,9 +135,9 @@ export const ColorTokens = () => {
 export const DeprecatedColorTokens = () => {
   return (
     <Stack>
-      {deprecatedColorPalette.map(([name, palette]) => {
-        return <DeprecatedColorGrid key={name} name={name} palette={palette} />;
-      })}
+      {deprecatedColorPalette.map(([name, palette]) => (
+        <DeprecatedColorGrid key={name} name={name} palette={palette} />
+      ))}
     </Stack>
   );
 };
