@@ -30,7 +30,7 @@ export function buildPaletteGroup(
   sortFn?: (a: DeprecatedColorSwatch, b: DeprecatedColorSwatch) => number
 ) {
   return Object.entries(tokens)
-    .map(([key, value]) => {
+    .flatMap(([key, value]) => {
       if (typeof value === 'string') {
         return buildDeprecatedColorSwatch(value, `${prefix}.${key}`);
       } else {
@@ -41,7 +41,6 @@ export function buildPaletteGroup(
         return palette;
       }
     })
-    .flat();
 }
 
 export interface DeprecatedColorSwatch {
