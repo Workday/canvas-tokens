@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.7
+
+### Major Changes
+
+- ### Web Tokens
+
+  - fix: Filter action tokens from css files
+    ([#171](https://github.com/Workday/canvas-tokens/pull/171))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
 ## 3.0.0-alpha.6
 
 ### Major Changes
