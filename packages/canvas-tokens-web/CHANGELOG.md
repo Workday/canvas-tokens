@@ -1,5 +1,18 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.6
+
+### Major Changes
+
+- ### Components
+
+  - feat: Deprecate old fruit based tokens and map them to new color palette value
+    ([#159](https://github.com/Workday/canvas-tokens/pull/159))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera,
+    [@alanbsmith](https://github.com/alanbsmith), [@RayRedGoose](https://github.com/RayRedGoose))
+    We've deprecated the fruit based color tokens and provided a mapping to new base tokens for the
+    new color palette. In the docs, we provide a mapping of the new CSS token and JS token.
+
 ## 3.0.0-alpha.5
 
 ### Major Changes
