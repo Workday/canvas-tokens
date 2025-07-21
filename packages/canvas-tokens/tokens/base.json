@@ -652,6 +652,1194 @@
           "value": "oklch(0.11 0.006 255.5 / 1)",
           "comment": "Passes on: white"
         }
+      },
+      "cinnamon": {
+        "100": {
+          "type": "color",
+          "value": "#ffefee",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.25 color",
+          "fallback": "{base.palette.red.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#FCC9C5",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.100 color",
+          "fallback": "{base.palette.red.100}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#ff867d",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.300 color",
+          "fallback": "{base.palette.red.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#ff5347",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.400 color",
+          "fallback": "{base.palette.red.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#de2e21",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.500 color",
+          "fallback": "{base.palette.red.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#a31b12",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.700 color",
+          "fallback": "{base.palette.red.700}"
+        }
+      },
+      "peach": {
+        "100": {
+          "type": "color",
+          "value": "#fff3f0",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.25 color",
+          "fallback": "{base.palette.red.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#ffc2b3",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.200 color",
+          "fallback": "{base.palette.red.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#ff957a",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.300 color",
+          "fallback": "{base.palette.red.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#ff643d",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.400 color",
+          "fallback": "{base.palette.red.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#de4721",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.500 color",
+          "fallback": "{base.palette.red.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#b53413",
+          "deprecated": true,
+          "deprecatedComment": "replace with the orange.600 color",
+          "fallback": "{base.palette.orange.600}"
+        }
+      },
+      "fruit-punch": {
+        "100": {
+          "type": "color",
+          "value": "#FFEEEE",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.25 color",
+          "fallback": "{base.palette.red.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#ffbdbd",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.200 color",
+          "fallback": "{base.palette.red.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#FF7E7E",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.300 color",
+          "fallback": "{base.palette.red.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#ff4c4c",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.400 color",
+          "fallback": "{base.palette.red.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#e12f2f",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.500 color",
+          "fallback": "{base.palette.red.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#b82828",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.700 color",
+          "fallback": "{base.palette.red.700}"
+        }
+      },
+      "pomegranate": {
+        "100": {
+          "type": "color",
+          "value": "#ffebf3",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.25 color",
+          "fallback": "{base.palette.pink.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#ffbdd6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.200 color",
+          "fallback": "{base.palette.pink.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#ff5c9a",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.400 color",
+          "fallback": "{base.palette.pink.400}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#f31167",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.600 color",
+          "fallback": "{base.palette.pink.600}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#c70550",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.700 color",
+          "fallback": "{base.palette.pink.700}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#99003a",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.800 color",
+          "fallback": "{base.palette.pink.800}"
+        }
+      },
+      "chili-mango": {
+        "100": {
+          "type": "color",
+          "value": "#ffe6d9",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.50 color",
+          "fallback": "{base.palette.red.50}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#ffc7ab",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.200 color",
+          "fallback": "{base.palette.red.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#ff9b69",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.300 color",
+          "fallback": "{base.palette.red.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#ff671b",
+          "deprecated": true,
+          "deprecatedComment": "replace with the orange.500 color",
+          "fallback": "{base.palette.orange.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#e04b00",
+          "deprecated": true,
+          "deprecatedComment": "replace with the orange.500 color",
+          "fallback": "{base.palette.orange.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#a33600",
+          "deprecated": true,
+          "deprecatedComment": "replace with the orange.700 color",
+          "fallback": "{base.palette.orange.700}"
+        }
+      },
+      "cantaloupe": {
+        "100": {
+          "type": "color",
+          "value": "#ffeed9",
+          "deprecated": true,
+          "deprecatedComment": "replace with the red.50 color",
+          "fallback": "{base.palette.red.50}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#fcd49f",
+          "deprecated": true,
+          "deprecatedComment": "replace with the orange.100 color",
+          "fallback": "{base.palette.orange.100}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#ffbc63",
+          "deprecated": true,
+          "deprecatedComment": "replace with the orange.200 color",
+          "fallback": "{base.palette.orange.200}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#ffa126",
+          "deprecated": true,
+          "deprecatedComment": "replace with the orange.300 color",
+          "fallback": "{base.palette.orange.300}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#f38b00",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.400 color",
+          "fallback": "{base.palette.amber.400}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#c06c00",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.600 color",
+          "fallback": "{base.palette.amber.600}"
+        }
+      },
+      "sour-lemon": {
+        "100": {
+          "type": "color",
+          "value": "#fff9e6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.25 color",
+          "fallback": "{base.palette.amber.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#ffecab",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.50 color",
+          "fallback": "{base.palette.amber.50}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#ffda61",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.200 color",
+          "fallback": "{base.palette.amber.200}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#ffc629",
+          "deprecated": true,
+          "deprecatedComment": "replace with the orange.300 color",
+          "fallback": "{base.palette.orange.300}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#ebb400",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.300 color",
+          "fallback": "{base.palette.amber.300}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#bd9100",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.500 color",
+          "fallback": "{base.palette.amber.500}"
+        }
+      },
+      "toasted-marshmallow": {
+        "100": {
+          "type": "color",
+          "value": "#fdf6e6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.25 color",
+          "fallback": "{base.palette.amber.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#ebd6a9",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.100 color",
+          "fallback": "{base.palette.amber.100}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#e6bf6c",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.200 color",
+          "fallback": "{base.palette.amber.200}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#CC9E3B",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.400 color",
+          "fallback": "{base.palette.amber.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#b37f10",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.600 color",
+          "fallback": "{base.palette.amber.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#8C6000",
+          "deprecated": true,
+          "deprecatedComment": "replace with the amber.700 color",
+          "fallback": "{base.palette.amber.700}"
+        }
+      },
+      "juicy-pear": {
+        "100": {
+          "type": "color",
+          "value": "#f7fae6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.25 color",
+          "fallback": "{base.palette.green.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#e2f391",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.200 color",
+          "fallback": "{base.palette.green.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#c4de40",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.400 color",
+          "fallback": "{base.palette.green.400}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#a8c224",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.500 color",
+          "fallback": "{base.palette.green.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#8ea618",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.600 color",
+          "fallback": "{base.palette.green.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#687818",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.700 color",
+          "fallback": "{base.palette.green.700}"
+        }
+      },
+      "kiwi": {
+        "100": {
+          "type": "color",
+          "value": "#ecfcd7",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.100 color",
+          "fallback": "{base.palette.green.100}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#caf593",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.200 color",
+          "fallback": "{base.palette.green.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#a7e05c",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.300 color",
+          "fallback": "{base.palette.green.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#77bc1f",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.500 color",
+          "fallback": "{base.palette.green.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#609915",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.600 color",
+          "fallback": "{base.palette.green.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#537824",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.700 color",
+          "fallback": "{base.palette.green.700}"
+        }
+      },
+      "green-apple": {
+        "100": {
+          "type": "color",
+          "value": "#ebfff0",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.25 color",
+          "fallback": "{base.palette.green.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#acf5be",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.200 color",
+          "fallback": "{base.palette.green.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#5fe380",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.400 color",
+          "fallback": "{base.palette.green.400}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#43c463",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.500 color",
+          "fallback": "{base.palette.green.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#319c4c",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.600 color",
+          "fallback": "{base.palette.green.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#217a37",
+          "deprecated": true,
+          "deprecatedComment": "replace with the green.700 color",
+          "fallback": "{base.palette.green.700}"
+        }
+      },
+      "watermelon": {
+        "100": {
+          "type": "color",
+          "value": "#ebfdf8",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.25 color",
+          "fallback": "{base.palette.green.50}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#b7edde",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.200 color",
+          "fallback": "{base.palette.green.50}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#65ccaf",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.300 color",
+          "fallback": "{base.palette.green.100}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#12a67c",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.500 color",
+          "fallback": "{base.palette.green.300}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#0c7a5b",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.600 color",
+          "fallback": "{base.palette.green.800}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#00573e",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.700 color",
+          "fallback": "{base.palette.green.900}"
+        }
+      },
+      "jewel": {
+        "100": {
+          "type": "color",
+          "value": "#ebfdff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.25 color",
+          "fallback": "{base.palette.teal.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#acecf3",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.200 color",
+          "fallback": "{base.palette.teal.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#44c8d7",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.400 color",
+          "fallback": "{base.palette.teal.400}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#1ea4b3",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.500 color",
+          "fallback": "{base.palette.teal.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#1a818c",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.600 color",
+          "fallback": "{base.palette.teal.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#156973",
+          "deprecated": true,
+          "deprecatedComment": "replace with the teal.700 color",
+          "fallback": "{base.palette.teal.700}"
+        }
+      },
+      "toothpaste": {
+        "100": {
+          "type": "color",
+          "value": "#d7f1fc",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.100 color",
+          "fallback": "{base.palette.blue.100}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#99e0ff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.200 color",
+          "fallback": "{base.palette.blue.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#40b4e5",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.400 color",
+          "fallback": "{base.palette.blue.400}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#1894c9",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.500 color",
+          "fallback": "{base.palette.blue.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#0271a1",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.600 color",
+          "fallback": "{base.palette.blue.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#005B82",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.700 color",
+          "fallback": "{base.palette.blue.700}"
+        }
+      },
+      "blueberry": {
+        "100": {
+          "type": "color",
+          "value": "#D7EAFC",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.100 color",
+          "fallback": "{base.palette.blue.100}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#A6D2FF",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.200 color",
+          "fallback": "{base.palette.blue.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#40A0FF",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.400 color",
+          "fallback": "{base.palette.blue.400}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#0875E1",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.500 color",
+          "fallback": "{base.palette.blue.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#005cb9",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.600 color",
+          "fallback": "{base.palette.blue.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#004387",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.700 color",
+          "fallback": "{base.palette.blue.700}"
+        }
+      },
+      "plum": {
+        "100": {
+          "type": "color",
+          "value": "#e6f1ff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.50 color",
+          "fallback": "{base.palette.blue.50}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#A6CDFF",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.200 color",
+          "fallback": "{base.palette.blue.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#529bfa",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.400 color",
+          "fallback": "{base.palette.blue.400}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#3881E1",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.500 color",
+          "fallback": "{base.palette.blue.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#3166ab",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.600 color",
+          "fallback": "{base.palette.blue.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#264a7a",
+          "deprecated": true,
+          "deprecatedComment": "replace with the blue.700 color",
+          "fallback": "{base.palette.blue.700}"
+        }
+      },
+      "berry-smoothie": {
+        "100": {
+          "type": "color",
+          "value": "#e8edff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.100 color",
+          "fallback": "{base.palette.purple.100}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#c2cfff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.200 color",
+          "fallback": "{base.palette.purple.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#7891FF",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.400 color",
+          "fallback": "{base.palette.purple.400}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#5E77E6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.500 color",
+          "fallback": "{base.palette.purple.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#4b5eb3",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.600 color",
+          "fallback": "{base.palette.purple.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#3b4987",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.700 color",
+          "fallback": "{base.palette.purple.700}"
+        }
+      },
+      "blackberry": {
+        "100": {
+          "type": "color",
+          "value": "#f0f0ff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.50 color",
+          "fallback": "{base.palette.purple.50}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#c3c2ff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.200 color",
+          "fallback": "{base.palette.purple.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#8483e6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.400 color",
+          "fallback": "{base.palette.purple.400}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#5c59e6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.500 color",
+          "fallback": "{base.palette.purple.500}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#413fcc",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.600 color",
+          "fallback": "{base.palette.purple.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#2e2d91",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.700 color",
+          "fallback": "{base.palette.purple.700}"
+        }
+      },
+      "island-punch": {
+        "100": {
+          "type": "color",
+          "value": "#f5f0ff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.50 color",
+          "fallback": "{base.palette.purple.50}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#d2befa",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.200 color",
+          "fallback": "{base.palette.purple.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#a88ae6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.300 color",
+          "fallback": "{base.palette.purple.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#8660d1",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.400 color",
+          "fallback": "{base.palette.purple.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#6345a1",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.600 color",
+          "fallback": "{base.palette.purple.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#503882",
+          "deprecated": true,
+          "deprecatedComment": "replace with the purple.700 color",
+          "fallback": "{base.palette.purple.700}"
+        }
+      },
+      "grape-soda": {
+        "100": {
+          "type": "color",
+          "value": "#feebff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.100 color",
+          "fallback": "{base.palette.pink.100}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#fac0ff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.200 color",
+          "fallback": "{base.palette.pink.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#de8ae6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.300 color",
+          "fallback": "{base.palette.pink.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#c860d1",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.400 color",
+          "fallback": "{base.palette.pink.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#97499e",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.600 color",
+          "fallback": "{base.palette.pink.600}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#7C3882",
+          "deprecated": true,
+          "deprecatedComment": "replace with the pink.700 color",
+          "fallback": "{base.palette.pink.700}"
+        }
+      },
+      "root-beer": {
+        "100": {
+          "type": "color",
+          "value": "#faf3f0",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.25 color",
+          "fallback": "{base.palette.neutral.25}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#EBD7CF",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.100 color",
+          "fallback": "{base.palette.neutral.100}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#dcbbad",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.200 color",
+          "fallback": "{base.palette.neutral.200}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#ba9a8c",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.300 color",
+          "fallback": "{base.palette.neutral.300}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#8C7266",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.500 color",
+          "fallback": "{base.palette.neutral.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#664d42",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
+        }
+      },
+      "coconut": {
+        "100": {
+          "type": "color",
+          "value": "#F0EEEE",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.100 color",
+          "fallback": "{base.palette.neutral.100}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#e3dfdf",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.200 color",
+          "fallback": "{base.palette.neutral.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#d1cbcc",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.300 color",
+          "fallback": "{base.palette.neutral.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#b3acac",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.400 color",
+          "fallback": "{base.palette.neutral.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#9e9595",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.500 color",
+          "fallback": "{base.palette.neutral.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#8F8687",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
+        }
+      },
+      "soap": {
+        "100": {
+          "type": "color",
+          "value": "#f6f7f8",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.50 color",
+          "fallback": "{base.palette.neutral.50}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#F0F1F2",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.100 color",
+          "fallback": "{base.palette.neutral.100}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#e8ebed",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.200 color",
+          "fallback": "{base.palette.neutral.200}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#DFE2E6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.250 color",
+          "fallback": "{base.palette.neutral.250}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#ced3d9",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.300 color",
+          "fallback": "{base.palette.neutral.300}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#B9C0C7",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.400 color",
+          "fallback": "{base.palette.neutral.400}"
+        }
+      },
+      "french-vanilla": {
+        "100": {
+          "type": "color",
+          "value": "#ffffff",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.0 color",
+          "fallback": "{base.palette.neutral.0}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#ebebeb",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.200 color",
+          "fallback": "{base.palette.neutral.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#d4d4d4",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.300 color",
+          "fallback": "{base.palette.neutral.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#bdbdbd",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.400 color",
+          "fallback": "{base.palette.neutral.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#a6a6a6",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.500 color",
+          "fallback": "{base.palette.neutral.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#8f8f8f",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
+        }
+      },
+      "cappuccino": {
+        "100": {
+          "type": "color",
+          "value": "#7A7374",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#706869",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.600 color",
+          "fallback": "{base.palette.slate.600}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#5E5757",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.700 color",
+          "fallback": "{base.palette.slate.700}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#4A4242",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.800 color",
+          "fallback": "{base.palette.slate.800}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#352f2f",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.900 color",
+          "fallback": "{base.palette.slate.900}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#231f20",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.950 color",
+          "fallback": "{base.palette.slate.950}"
+        }
+      },
+      "licorice": {
+        "100": {
+          "type": "color",
+          "value": "#A1AAB3",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.400 color",
+          "fallback": "{base.palette.slate.400}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#7b858f",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.500 color",
+          "fallback": "{base.palette.slate.500}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#5E6A75",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.600 color",
+          "fallback": "{base.palette.slate.600}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#4a5561",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.700 color",
+          "fallback": "{base.palette.slate.700}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#333d47",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.800 color",
+          "fallback": "{base.palette.slate.800}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#1f262e",
+          "deprecated": true,
+          "deprecatedComment": "replace with the slate.900 color",
+          "fallback": "{base.palette.slate.900}"
+        }
+      },
+      "black-pepper": {
+        "100": {
+          "type": "color",
+          "value": "#787878",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.600 color",
+          "fallback": "{base.palette.neutral.600}"
+        },
+        "200": {
+          "type": "color",
+          "value": "#616161",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.700 color",
+          "fallback": "{base.palette.neutral.700}"
+        },
+        "300": {
+          "type": "color",
+          "value": "#494949",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.800 color",
+          "fallback": "{base.palette.neutral.800}"
+        },
+        "400": {
+          "type": "color",
+          "value": "#333333",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.850 color",
+          "fallback": "{base.palette.neutral.850}"
+        },
+        "500": {
+          "type": "color",
+          "value": "#1e1e1e",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.900 color",
+          "fallback": "{base.palette.neutral.900}"
+        },
+        "600": {
+          "type": "color",
+          "value": "#000000",
+          "deprecated": true,
+          "deprecatedComment": "replace with the neutral.1000 color",
+          "fallback": "{base.palette.neutral.1000}"
+        }
       }
     },
     "opacity": {
@@ -1016,6 +2204,36 @@
           "blur": {
             "value": "48",
             "type": "number"
+          }
+        }
+      }
+    },
+    "extended": {
+      "palette": {
+        "dragon-fruit": {
+          "100": {
+            "value": "#FBF1FF",
+            "type": "color"
+          },
+          "200": {
+            "value": "#EFD3FF",
+            "type": "color"
+          },
+          "300": {
+            "value": "#BE61F6",
+            "type": "color"
+          },
+          "400": {
+            "value": "#8C17D2",
+            "type": "color"
+          },
+          "500": {
+            "value": "#6B11A3",
+            "type": "color"
+          },
+          "600": {
+            "value": "#4A0D71",
+            "type": "color"
           }
         }
       }

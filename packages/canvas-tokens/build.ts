@@ -60,6 +60,7 @@ const config = setConfig({
           extensions: ['js'],
           format: 'merge/objects',
           combineWith: ['{platform}/objects'],
+          filter: filters.filterActionTokens,
         },
         {
           level: ['brand', 'sys'],
@@ -113,6 +114,7 @@ StyleDictionary.registerTransformGroup({
     'name/cti/kebab',
     'value/flatten-border',
     'value/flatten-oklch',
+    'value/hex-to-var',
     'value/shadow/flat-sys',
     'value/breakpoints/px',
     'value/wrapped-font-family',

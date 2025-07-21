@@ -65,14 +65,14 @@ export function buildColorSwatch(varName: string, jsVarName: string): ColorSwatc
 
 type VariableType = 'css' | 'javascript' | 'all';
 
-interface ColorGridProps {
+export interface ColorGridProps {
   name: string;
   palette: ColorSwatch[];
   variableType?: VariableType;
 }
 
 /** transform 'camelCase' names into 'spaced case' */
-function formatName(name: string) {
+export function formatName(name: string) {
   return name
     .split(/(?=[A-Z])/)
     .join(' ')
