@@ -28,6 +28,7 @@ const config = setConfig({
           options: {
             outputReferences: true,
           },
+          filter: filters.filterActionTokens,
         },
       ],
     },
@@ -60,7 +61,6 @@ const config = setConfig({
           extensions: ['js'],
           format: 'merge/objects',
           combineWith: ['{platform}/objects'],
-          filter: filters.filterActionTokens,
         },
         {
           level: ['brand', 'sys'],
