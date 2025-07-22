@@ -10,11 +10,21 @@ import {transformHexToRgb} from './transformHexToRgb';
 
 export const transforms: Record<string, Transform> = {
   // transform function that changes any hex color value to rgba
+  // not used now in web
   'value/hex-to-rgba': {
     type: 'value',
     transitive: true,
     matcher: filter.isHexColor,
     transformer: transformHexToRgb,
+  },
+  'value/hex-to-var': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isHexColor,
+    transformer: ({value, fallback}) => {
+      const fbValue = fallback?.match(/{(?<token>.+)}/)?.groups?.token;
+      return fbValue ? `var(--cnvs-${fbValue.split('.').join('-')})` : value;
+    },
   },
   'value/shadow/flat-sys': {
     type: 'value',
@@ -36,11 +46,27 @@ export const transforms: Record<string, Transform> = {
     transformer: ({value}) => `${parseFloat(value) / 16}rem`,
   },
   // transform function that removes doubled rgba for tokens with references
+  // not used now in web
   'value/flatten-rgba': {
     type: 'value',
     transitive: true,
     matcher: filter.isSysColor,
     transformer: flatRGBAColor,
+  },
+  //  transform function that removes doubled rgba for tokens with references
+  'value/flatten-oklch': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isSysColor,
+    transformer: token => {
+      // eslint-disable-next-line no-useless-escape
+      const updatedValue = token.original.value.replace(/{[\w\.]*}/g, (a: string) => {
+        const cssVar = `var(--cnvs-${a.replace(/{|}/g, '').replace(/\./g, '-')})`;
+        return cssVar.includes('palette') ? `from ${cssVar} l c h ` : ' ' + cssVar;
+      });
+
+      return token.name.includes('transparent') ? 'transparent' : updatedValue;
+    },
   },
   'value/opacity': {
     type: 'value',
@@ -53,7 +79,7 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isBreakpoints,
     transformer: ({value}) => {
-      const expr = value.replace('0.25rem', '4');
+      const expr = `${value}`.replace('0.25rem', '4');
       return `${math.evaluate(expr)}px`;
     },
   },

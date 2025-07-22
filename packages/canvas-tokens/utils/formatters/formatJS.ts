@@ -42,9 +42,11 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
  */
 export const formatInlineTypes: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
-  return dictionary.allTokens.reduce((acc: string, {name, path}) => {
+  return dictionary.allTokens.reduce((acc: string, token) => {
+    const {name, path, deprecated, deprecatedComment} = token;
     const cssVarName = path.join('-');
-    acc += `export declare const ${name}: "--cnvs-${cssVarName}";\n`;
+    const deprecatedText = deprecated ? `/** @deprecated ${deprecatedComment} */\n` : '';
+    acc += `${deprecatedText}export declare const ${name}: "--cnvs-${cssVarName}";\n`;
     return acc;
   }, headerContent);
 };

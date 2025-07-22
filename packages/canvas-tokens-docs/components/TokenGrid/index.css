@@ -1,5 +1,5 @@
 .token-grid {
-  border: solid 1px var(--cnvs-base-palette-soap-500);
+  border: solid 1px var(--cnvs-sys-color-border-divider);
   border-radius: 0.5rem;
   display: grid;
   min-width: 62.5rem;
@@ -8,20 +8,20 @@
 }
 
 .token-grid__caption {
-  border-bottom: solid 0.0625rem var(--cnvs-base-palette-soap-500);
+  border-bottom: solid 0.0625rem var(--cnvs-sys-color-border-divider);
   display: flex;
   padding: 0.5rem 1rem;
   text-transform: capitalize;
 }
 
 .token-grid__head {
-  background-color: var(--cnvs-base-palette-soap-100);
+  background-color: var(--cnvs-sys-color-bg-alt-softer);
   display: grid;
 }
 
 .token-grid__head-item {
   display: grid;
-  color: var(--cnvs-base-palette-black-pepper-300);
+  color: var(--cnvs-sys-color-text-default);
   align-items: center;
   justify-content: start;
   font-weight: var(--cnvs-base-font-weight-700);
@@ -29,7 +29,7 @@
 
 .token-grid__row {
   align-items: center;
-  border-bottom: solid 0.0625rem var(--cnvs-base-palette-soap-500);
+  border-bottom: solid 0.0625rem var(--cnvs-sys-color-border-divider);
   display: grid;
   gap: 1rem;
   grid-auto-flow: column;
@@ -56,11 +56,11 @@
   grid-template-columns: minmax(2rem, 8rem);
   height: 2rem;
   padding: 0.5rem;
-  border: 0.0625rem solid var(--cnvs-base-palette-soap-500);
+  border: 0.0625rem solid var(--cnvs-sys-color-border-divider);
 }
 
 .token-grid__sample {
-  background-color: var(--cnvs-base-palette-french-vanilla-100);
+  background-color: var(--cnvs-sys-color-bg-default);
   display: grid;
   grid-template-columns: minmax(2rem, 8rem);
   height: 2rem;
@@ -68,10 +68,15 @@
 }
 
 .token-grid__monospace-label {
-  background-color: var(--cnvs-base-palette-blueberry-100);
-  color: var(--cnvs-base-palette-blueberry-500);
+  background-color: var(--cnvs-sys-color-bg-primary-softest);
+  color: var(--cnvs-sys-color-fg-primary-default);
   font-family: var(--cnvs-base-font-family-100);
   padding: 0.25rem;
   border-radius: 0.25rem;
   min-height: 1rem;
+}
+
+.token-grid__deprecate-monospace-label {
+  background-color: var(--cnvs-sys-color-bg-critical-softest);
+  color: var(--cnvs-sys-color-fg-critical-default);
 }

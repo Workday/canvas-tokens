@@ -7,6 +7,7 @@ import {
   TypeColorTokens,
   StatusColorTokens,
   OtherColorTokens,
+  DeprecatedColorTokens,
 } from './examples/Color';
 import {BaseUnit} from './examples/BaseUnit';
 
@@ -39,8 +40,8 @@ import '@workday/canvas-tokens-web/css/base/_variables.css';
 import {base} from '@workday/canvas-tokens-web';
 
 const styles = {
-  backgroundColor: `var(${base.blueberry400})`,
-  color: `var(${base.frenchVanilla100})`,
+  backgroundColor: `var(${base.blue400})`,
+  color: `var(${base.neutral0})`,
 };
 ```
 
@@ -52,8 +53,8 @@ same styles using CSS variables directly.
 @import '@workday/canvas-tokens-web/css/base/_variables.css';
 
 .button {
-  background-color: var(--cnvs-base-palette-blueberry-400);
-  color: var(--cnvs-base-palette-french-vanilla-100);
+  background-color: var(--cnvs-base-palette-blue-400);
+  color: var(--cnvs-base-palette-neutral-0);
 }
 ```
 
@@ -117,7 +118,8 @@ contrast ratios guidelines. Also remember to always communicate status with more
 
 ### AI
 
-This palette is reserved to indicate the use of artificial intelligence, such as loading or generating content.
+This palette is reserved to indicate the use of artificial intelligence, such as loading or
+generating content.
 
 <AIColorTokens />
 
@@ -131,5 +133,13 @@ these sparingly.
 <OtherColorTokens />
 
 ---
+
+### Deprecated
+
+The following fruit based palettes are deprecated and will be removed in a future release. Please use the new color palette. While the base tokens are deprecated, we advise to use system tokens instead for better future proofing. 
+
+For more information on how to migrate, please view our [Token Migration guide](https://workday.github.io/canvas-kit/?path=/docs/guides-tokens-migration-overview--docs).
+
+<DeprecatedColorTokens />
 
 </Unstyled>

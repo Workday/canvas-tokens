@@ -30,14 +30,18 @@ export const isPxLineHeight: Matcher = ({type, path: [level, category]}) => {
 
 export const isSysColor: Matcher = ({original}) => {
   return typeof original.value === 'string'
-    ? original.value.includes('rgba')
+    ? original.value.includes('oklch({')
     : original.value.length &&
-        original.value.some((v: Record<string, string>) => v.color.includes('rgba'));
+        original.value.some((v: Record<string, string>) => v.color.includes('oklch({'));
 };
 
 export const isMathExpression: Matcher = ({value}) => {
   const mathChars = [' + ', ' - ', ' * ', ' / '];
-  return typeof value === 'string' && mathChars.some(char => value.includes(char));
+  return (
+    typeof value === 'string' &&
+    !value.includes('oklch') &&
+    mathChars.some(char => value.includes(char))
+  );
 };
 
 export const isComposite: Matcher = ({type}) => {
@@ -60,5 +64,10 @@ export const isBreakpoints: Matcher = token => {
 
 export const filterCodeTokens: Matcher = token => {
   const excludedTokens = ['level', 'shadow', 'typescale'];
+  return !excludedTokens.includes(token.path[1]);
+};
+
+export const filterActionTokens: Matcher = token => {
+  const excludedTokens = ['action'];
   return !excludedTokens.includes(token.path[1]);
 };

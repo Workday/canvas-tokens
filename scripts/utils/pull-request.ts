@@ -43,7 +43,7 @@ export async function createSyncPullRequest(baseBranch = canvasTokensRepoParams.
     base: baseBranch,
     head: canvasTokensRepoParams.syncBranch,
     maintainer_can_modify: true,
-    title: 'chore: Sync Tokens Studio config 🤖',
+    title: 'chore(web): Sync Tokens Studio config 🤖',
     body: getPullRequestTemplate(),
   });
 }

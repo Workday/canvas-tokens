@@ -1,5 +1,129 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.7
+
+### Major Changes
+
+- ### Web Tokens
+
+  - fix: Filter action tokens from css files
+    ([#171](https://github.com/Workday/canvas-tokens/pull/171))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+## 3.0.0-alpha.6
+
+### Major Changes
+
+- ### Components
+
+  - feat: Deprecate old fruit based tokens and map them to new color palette value
+    ([#159](https://github.com/Workday/canvas-tokens/pull/159))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera,
+    [@alanbsmith](https://github.com/alanbsmith), [@RayRedGoose](https://github.com/RayRedGoose))
+    We've deprecated the fruit based color tokens and provided a mapping to new base tokens for the
+    new color palette. In the docs, we provide a mapping of the new CSS token and JS token.
+
+## 3.0.0-alpha.5
+
+### Major Changes
+
+- ### Components
+
+  - chore: Sync tokens from canvas-tokens-studio
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - feat: Sync tokens from canvas-tokens-studio ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.4
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update red base color to be 600 ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.3
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#163](https://github.com/Workday/canvas-tokens/pull/163))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.2
+
+### Major Changes
+
+- ### Tokens
+
+  - fix: Fix transparent values ([#162](https://github.com/Workday/canvas-tokens/pull/162))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) values with opacity 0 have been changed to
+    'transparent' value in css.
+
+## 3.0.0-alpha.1
+
+### Major Changes
+
+- ### Components
+
+  - chore: Skip release on chore commits ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Return default token for fg critical ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Fix release script ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.0
+
+### Major Changes
+
+- ### Components
+
+  - chore: Fix release ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Use npm tokens ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - chore: Add updated release action ([#145](https://github.com/Workday/canvas-tokens/pull/145))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
+  ### Tokens
+
+  - chore: Sync tokens from canvas-tokens-studio
+    ([#151](https://github.com/Workday/canvas-tokens/pull/151))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Alpha version of new color tokens.
+
+## 2.1.1
+
+### Patch Changes
+
+- **Infrastructure**
+
+  - chore: Remove parser ([#139](https://github.com/Workday/canvas-tokens/pull/139))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 2.1.0
+
+### Minor Changes
+
+- **Infrastructure**
+
+  - fix: Fix issue with layer opacity presenting in json
+    ([#135](https://github.com/Workday/canvas-tokens/pull/135))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
+  **Web Tokens**
+
+  - chore: Sync Tokens Studio config 🤖 ([#137](https://github.com/Workday/canvas-tokens/pull/137))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) We've added new `action` tokens to brand. While
+    these tokens are available, limit their use and in most cases the default brand tokens should be
+    used for theming.
+
+    - `brand.action.lightest`
+    - `brand.action.light`
+    - `brand.action.base`
+    - `brand.action.dark`
+    - `brand.action.darkest`
+    - `brand.action.accent`
+
 ## 2.0.2
 
 ### Patch Changes
