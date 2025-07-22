@@ -1173,34 +1173,31 @@
           "comment": "Inverse"
         },
         "critical": {
-          "value": "{base.palette.red.600}",
-          "type": "color",
           "default": {
-            "value": "{palette.red.600}",
+            "value": "{base.palette.red.600}",
             "type": "color",
-            "description": "Error"
+            "comment": "Error"
           },
           "strong": {
-            "value": "{palette.red.700}",
+            "value": "{base.palette.red.700}",
             "type": "color",
-            "description": "Error"
+            "comment": "Error"
           },
           "stronger": {
-            "value": "{palette.red.800}",
+            "value": "{base.palette.red.800}",
             "type": "color",
-            "description": "Error"
+            "comment": "Error"
           },
           "soft": {
-            "value": "{palette.red.400}",
+            "value": "{base.palette.red.400}",
             "type": "color",
-            "description": "Error"
+            "comment": "Error"
           },
           "softer": {
-            "value": "{palette.red.200}",
+            "value": "{base.palette.red.200}",
             "type": "color",
-            "description": "Error"
-          },
-          "comment": "Error"
+            "comment": "Error"
+          }
         },
         "muted": {
           "default": {
