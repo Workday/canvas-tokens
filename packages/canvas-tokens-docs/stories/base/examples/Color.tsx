@@ -18,7 +18,10 @@ const colorPaletteNames = [
   'teal',
   'blue',
   'purple',
-  'pink',
+  'magenta',
+  'azure',
+  'coral',
+  'indigo',
   'slate',
 ] as const;
 
