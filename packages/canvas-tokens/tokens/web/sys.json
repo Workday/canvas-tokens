@@ -560,73 +560,73 @@
           "comment": "Main background color"
         },
         "transparent": {
-          "value": "oklch({base.palette.neutral.0}/{base.opacity.0})",
+          "value": "oklch({base.palette.neutral.0} / {base.opacity.0})",
           "type": "color",
           "comment": "Transparent background"
         },
         "overlay": {
-          "value": "oklch({base.palette.neutral.1000}/{base.opacity.400})",
+          "value": "oklch({base.palette.neutral.1000} / {base.opacity.400})",
           "type": "color",
           "comment": "Overlay background"
         },
         "translucent": {
-          "value": "oklch({base.palette.neutral.1000}/{base.opacity.500})",
+          "value": "oklch({base.palette.neutral.1000} / {base.opacity.500})",
           "type": "color",
           "comment": "Tooltip, Status Indicator"
         },
         "alt": {
-          "softer": {
-            "value": "{base.palette.slate.25}",
+          "default": {
+            "value": "{base.palette.slate.100}",
             "type": "color",
-            "comment": "Disabled inputs"
+            "comment": "Surface hover, Secondary surfaces"
           },
           "soft": {
             "value": "{base.palette.slate.50}",
             "type": "color",
             "comment": "Alternative page background"
           },
-          "default": {
-            "value": "{base.palette.slate.100}",
-            "type": "color",
-            "comment": "Surface hover, Secondary surfaces"
-          },
           "strong": {
-            "value": "{base.palette.slate.150}",
-            "type": "color",
-            "comment": "Dividers"
-          },
-          "stronger": {
             "value": "{base.palette.slate.200}",
             "type": "color",
+            "comment": "Active states"
+          },
+          "stronger": {
+            "value": "{base.palette.slate.300}",
+            "type": "color",
             "comment": "Active state for segmented control, Pill"
+          },
+          "softer": {
+            "value": "{base.palette.slate.25}",
+            "type": "color",
+            "comment": "Disabled inputs"
           }
         },
         "muted": {
-          "softer": {
-            "value": "{base.palette.slate.250}",
-            "type": "color"
-          },
           "soft": {
-            "value": "{base.palette.slate.300}",
+            "value": "{base.palette.slate.500}",
             "type": "color"
           },
           "default": {
-            "value": "{base.palette.slate.400}",
+            "value": "{base.palette.slate.600}",
             "type": "color"
           },
           "strong": {
-            "value": "{base.palette.slate.500}",
+            "value": "{base.palette.slate.700}",
+            "type": "color"
+          },
+          "softer": {
+            "value": "{base.palette.slate.400}",
             "type": "color"
           }
         },
         "contrast": {
           "default": {
-            "value": "{base.palette.neutral.850}",
+            "value": "{base.palette.neutral.900}",
             "type": "color",
             "comment": "Contrast backgrounds, like Secondary Buttons"
           },
           "strong": {
-            "value": "{base.palette.neutral.900}",
+            "value": "{base.palette.neutral.950}",
             "type": "color",
             "comment": "Contrast backgrounds, like Secondary Buttons"
           }
@@ -638,7 +638,7 @@
             "comment": "Primary brand color"
           },
           "softer": {
-            "value": "{base.palette.blue.100}",
+            "value": "{base.palette.blue.50}",
             "type": "color",
             "comment": "Select"
           },
@@ -658,7 +658,7 @@
             "comment": "Surface"
           },
           "soft": {
-            "value": "{base.palette.blue.200}",
+            "value": "{base.palette.blue.100}",
             "type": "color",
             "comment": "Disabled"
           }
@@ -685,12 +685,12 @@
             "comment": "Lightest surface success background"
           },
           "soft": {
-            "value": "{base.palette.green.200}",
+            "value": "{base.palette.green.100}",
             "type": "color",
             "comment": "Disabled success background"
           },
           "softer": {
-            "value": "{base.palette.green.100}",
+            "value": "{base.palette.green.50}",
             "type": "color",
             "comment": "Surface success background"
           }
@@ -736,7 +736,7 @@
           "softest": {
             "value": "{base.palette.red.25}",
             "type": "color",
-            "comment": "Disabled error background"
+            "comment": "Input error background"
           },
           "strong": {
             "value": "{base.palette.red.700}",
@@ -749,12 +749,12 @@
             "comment": "Stronger error background"
           },
           "softer": {
-            "value": "{base.palette.red.100}",
+            "value": "{base.palette.red.50}",
             "type": "color",
             "comment": "Disabled error background"
           },
           "soft": {
-            "value": "{base.palette.red.200}",
+            "value": "{base.palette.red.100}",
             "type": "color",
             "comment": "Disabled error background"
           }
@@ -780,13 +780,54 @@
             "type": "color",
             "comment": "AI surfaces"
           }
+        },
+        "translucent-inverse": {
+          "value": "oklch({base.palette.neutral.0} / {base.opacity.250})",
+          "type": "color"
+        },
+        "overlay-inverse": {
+          "value": "oklch({base.palette.neutral.0} / {base.opacity.200})",
+          "type": "color",
+          "comment": "Inverse overlay background"
+        },
+        "info": {
+          "softest": {
+            "value": "{base.palette.blue.25}",
+            "type": "color",
+            "comment": "Surface"
+          },
+          "softer": {
+            "value": "{base.palette.blue.50}",
+            "type": "color",
+            "comment": "Select"
+          },
+          "soft": {
+            "value": "{base.palette.blue.100}",
+            "type": "color",
+            "comment": "Disabled"
+          },
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "comment": "Primary brand color"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "comment": "Brand hover background"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "comment": "Brand active background"
+          }
         }
       },
       "text": {
         "default": {
-          "value": "{base.palette.neutral.850}",
+          "value": "{base.palette.neutral.900}",
           "type": "color",
-          "comment": "Default text color"
+          "comment": "Body text"
         },
         "disabled": {
           "value": "{base.palette.slate.400}",
@@ -799,14 +840,14 @@
           "comment": "Hint text color"
         },
         "strong": {
-          "value": "{base.palette.neutral.900}",
-          "type": "color",
-          "comment": "Heading color"
-        },
-        "stronger": {
           "value": "{base.palette.neutral.950}",
           "type": "color",
-          "comment": "Stronger heading color"
+          "comment": "Heading text"
+        },
+        "stronger": {
+          "value": "{base.palette.neutral.975}",
+          "type": "color",
+          "comment": "Display text"
         },
         "inverse": {
           "value": "{base.palette.neutral.0}",
@@ -818,33 +859,78 @@
             "value": "{base.palette.red.600}",
             "type": "color",
             "comment": "Error text"
+          },
+          "strong": {
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "comment": "Error text"
+          },
+          "stronger": {
+            "value": "{base.palette.red.800}",
+            "type": "color",
+            "comment": "Error text"
+          },
+          "soft": {
+            "value": "{base.palette.red.400}",
+            "type": "color",
+            "comment": "Error text"
+          },
+          "softer": {
+            "value": "{base.palette.red.200}",
+            "type": "color",
+            "comment": "Error text"
           }
         },
         "primary": {
           "default": {
             "value": "{base.palette.blue.600}",
             "type": "color",
-            "comment": "Links"
+            "comment": "Branded text"
           },
           "strong": {
             "value": "{base.palette.blue.700}",
             "type": "color",
-            "comment": "Links on hover"
+            "comment": "Branded hover text"
           },
           "stronger": {
             "value": "{base.palette.blue.800}",
+            "type": "color",
+            "comment": "Active links"
+          },
+          "soft": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "comment": "Active links"
+          },
+          "softer": {
+            "value": "{base.palette.blue.200}",
             "type": "color",
             "comment": "Active links"
           }
         },
         "caution": {
           "default": {
-            "value": "{base.palette.neutral.900}",
+            "value": "{base.palette.amber.900}",
             "type": "color",
             "comment": "Warning text"
           },
           "strong": {
-            "value": "{base.palette.neutral.950}",
+            "value": "{base.palette.amber.950}",
+            "type": "color",
+            "comment": "Strong warning text"
+          },
+          "soft": {
+            "value": "{base.palette.amber.700}",
+            "type": "color",
+            "comment": "Strong warning text"
+          },
+          "stronger": {
+            "value": "{base.palette.amber.975}",
+            "type": "color",
+            "comment": "Strong warning text"
+          },
+          "softer": {
+            "value": "{base.palette.amber.500}",
             "type": "color",
             "comment": "Strong warning text"
           }
@@ -852,11 +938,65 @@
         "ai": {
           "value": "{base.palette.blue.950}",
           "type": "color"
+        },
+        "positive": {
+          "default": {
+            "value": "{base.palette.green.600}",
+            "type": "color",
+            "comment": "Branded text"
+          },
+          "strong": {
+            "value": "{base.palette.green.700}",
+            "type": "color",
+            "comment": "Branded hover text"
+          },
+          "stronger": {
+            "value": "{base.palette.green.800}",
+            "type": "color",
+            "comment": "Active links"
+          },
+          "soft": {
+            "value": "{base.palette.green.400}",
+            "type": "color",
+            "comment": "Active links"
+          },
+          "softer": {
+            "value": "{base.palette.green.200}",
+            "type": "color",
+            "comment": "Active links"
+          }
+        },
+        "info": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "comment": "Branded text"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "comment": "Branded hover text"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "comment": "Active links"
+          },
+          "soft": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "comment": "Active links"
+          },
+          "softer": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "comment": "Active links"
+          }
         }
       },
       "icon": {
         "default": {
-          "value": "{base.palette.neutral.850}",
+          "value": "{base.palette.neutral.900}",
           "type": "color",
           "comment": "Default icon color"
         },
@@ -866,7 +1006,7 @@
           "comment": "Disabled icon color"
         },
         "strong": {
-          "value": "{base.palette.neutral.900}",
+          "value": "{base.palette.neutral.950}",
           "type": "color",
           "comment": "Hover icon color"
         },
@@ -890,11 +1030,41 @@
             "value": "{base.palette.blue.800}",
             "type": "color",
             "comment": "Stronger brand icon color"
+          },
+          "soft": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "comment": "Stronger brand icon color"
+          },
+          "softer": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "comment": "Stronger brand icon color"
           }
         },
         "positive": {
           "default": {
             "value": "{base.palette.green.600}",
+            "type": "color",
+            "comment": "Success icon color"
+          },
+          "strong": {
+            "value": "{base.palette.green.700}",
+            "type": "color",
+            "comment": "Success icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.green.800}",
+            "type": "color",
+            "comment": "Success icon color"
+          },
+          "soft": {
+            "value": "{base.palette.green.400}",
+            "type": "color",
+            "comment": "Success icon color"
+          },
+          "softer": {
+            "value": "{base.palette.green.200}",
             "type": "color",
             "comment": "Success icon color"
           }
@@ -904,16 +1074,51 @@
             "value": "{base.palette.red.600}",
             "type": "color",
             "comment": "Error icon color"
+          },
+          "strong": {
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "comment": "Error icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.red.800}",
+            "type": "color",
+            "comment": "Error icon color"
+          },
+          "soft": {
+            "value": "{base.palette.red.400}",
+            "type": "color",
+            "comment": "Error icon color"
+          },
+          "softer": {
+            "value": "{base.palette.red.200}",
+            "type": "color",
+            "comment": "Error icon color"
           }
         },
         "caution": {
           "default": {
-            "value": "{base.palette.neutral.900}",
+            "value": "{base.palette.amber.900}",
             "type": "color",
             "comment": "Caution icon color"
           },
           "strong": {
-            "value": "{base.palette.neutral.950}",
+            "value": "{base.palette.amber.950}",
+            "type": "color",
+            "comment": "Strong caution icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.amber.975}",
+            "type": "color",
+            "comment": "Strong caution icon color"
+          },
+          "soft": {
+            "value": "{base.palette.amber.700}",
+            "type": "color",
+            "comment": "Strong caution icon color"
+          },
+          "softer": {
+            "value": "{base.palette.amber.500}",
             "type": "color",
             "comment": "Strong caution icon color"
           }
@@ -922,21 +1127,38 @@
           "value": "{base.palette.slate.400}",
           "type": "color",
           "comment": "Disabled icon color"
+        },
+        "info": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "comment": "Brand icon color"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "comment": "Stronger brand icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "comment": "Stronger brand icon color"
+          }
         }
       },
       "fg": {
         "default": {
-          "value": "{base.palette.neutral.850}",
+          "value": "{base.palette.neutral.900}",
           "type": "color",
           "comment": "Body"
         },
         "strong": {
-          "value": "{base.palette.neutral.900}",
+          "value": "{base.palette.neutral.950}",
           "type": "color",
           "comment": "Headings"
         },
         "stronger": {
-          "value": "{base.palette.neutral.950}",
+          "value": "{base.palette.neutral.975}",
           "type": "color",
           "comment": "Heading on hover"
         },
@@ -955,14 +1177,29 @@
             "value": "{base.palette.red.600}",
             "type": "color",
             "comment": "Error"
+          },
+          "strong": {
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "comment": "Error"
+          },
+          "stronger": {
+            "value": "{base.palette.red.800}",
+            "type": "color",
+            "comment": "Error"
+          },
+          "soft": {
+            "value": "{base.palette.red.400}",
+            "type": "color",
+            "comment": "Error"
+          },
+          "softer": {
+            "value": "{base.palette.red.200}",
+            "type": "color",
+            "comment": "Error"
           }
         },
         "muted": {
-          "soft": {
-            "value": "{base.palette.slate.400}",
-            "type": "color",
-            "comment": "Tab item foreground"
-          },
           "default": {
             "value": "{base.palette.slate.600}",
             "type": "color",
@@ -975,6 +1212,11 @@
           "stronger": {
             "value": "{base.palette.slate.800}",
             "type": "color"
+          },
+          "soft": {
+            "value": "{base.palette.slate.400}",
+            "type": "color",
+            "comment": "Tab item foreground"
           }
         },
         "primary": {
@@ -989,35 +1231,55 @@
             "comment": "Links on hover"
           },
           "soft": {
-            "value": "{base.palette.blue.300}",
+            "value": "{base.palette.blue.400}",
             "type": "color"
           },
           "softer": {
             "value": "{base.palette.blue.200}",
             "type": "color",
             "comment": "Link Inverse, Disabled"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "comment": "Links on hover"
           }
         },
         "caution": {
           "default": {
-            "value": "{base.palette.neutral.900}",
+            "value": "{base.palette.amber.900}",
             "type": "color",
             "comment": "Warning"
           },
           "strong": {
-            "value": "{base.palette.neutral.950}",
+            "value": "{base.palette.amber.950}",
             "type": "color",
             "comment": "Warning on hover"
+          },
+          "soft": {
+            "value": "{base.palette.amber.700}",
+            "type": "color",
+            "comment": "Warning"
+          },
+          "stronger": {
+            "value": "{base.palette.amber.975}",
+            "type": "color",
+            "comment": "Warning on hover"
+          },
+          "softer": {
+            "value": "{base.palette.amber.200}",
+            "type": "color",
+            "comment": "Warning"
           }
         },
         "contrast": {
           "default": {
-            "value": "{base.palette.neutral.900}",
+            "value": "{base.palette.neutral.950}",
             "type": "color",
             "comment": "Contrast"
           },
           "strong": {
-            "value": "{base.palette.neutral.950}",
+            "value": "{base.palette.neutral.975}",
             "type": "color",
             "comment": "Strong contrast"
           }
@@ -1026,6 +1288,59 @@
           "value": "{base.palette.blue.950}",
           "type": "color",
           "comment": "AI icons and text"
+        },
+        "info": {
+          "softer": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "comment": "Link Inverse, Disabled"
+          },
+          "soft": {
+            "value": "{base.palette.blue.400}",
+            "type": "color"
+          },
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "comment": "Links, Accent"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "comment": "Links on hover"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "comment": "Links on hover"
+          }
+        },
+        "positive": {
+          "default": {
+            "value": "{base.palette.green.600}",
+            "type": "color",
+            "comment": "Error"
+          },
+          "softer": {
+            "value": "{base.palette.green.200}",
+            "type": "color",
+            "comment": "Error"
+          },
+          "soft": {
+            "value": "{base.palette.green.400}",
+            "type": "color",
+            "comment": "Error"
+          },
+          "strong": {
+            "value": "{base.palette.green.700}",
+            "type": "color",
+            "comment": "Error"
+          },
+          "stronger": {
+            "value": "{base.palette.green.800}",
+            "type": "color",
+            "comment": "Error"
+          }
         }
       },
       "border": {
@@ -1090,7 +1405,7 @@
           }
         },
         "transparent": {
-          "value": "oklch({base.palette.neutral.1000}/{base.opacity.0})",
+          "value": "oklch({base.palette.neutral.0} / {base.opacity.0})",
           "type": "color",
           "comment": "Transparent"
         },
@@ -1100,34 +1415,41 @@
           "comment": "Borders on accent colors"
         },
         "divider": {
-          "value": "{base.palette.slate.150}",
+          "value": "{base.palette.slate.200}",
           "type": "color",
           "comment": "Dividers"
         },
         "container": {
-          "value": "{base.palette.slate.250}",
+          "value": "{base.palette.slate.300}",
           "type": "color",
-          "comment": "Cards, Tables, Surfaces"
+          "comment": "Cards, Toasts, Surfaces"
         },
         "ai": {
           "value": "{base.palette.blue.950}",
           "type": "color",
-          "comment": "Active state on AI"
+          "comment": "Active state on AI borders"
+        },
+        "info": {
+          "default": {
+            "value": "{base.palette.blue.500}",
+            "type": "color",
+            "comment": "Brand, Focus"
+          }
         }
       },
       "shadow": {
         "1": {
-          "value": "oklch({base.palette.slate.850}/{base.opacity.200})",
+          "value": "oklch({base.palette.slate.900} / {base.opacity.200})",
           "type": "color",
           "comment": "First shadow color"
         },
         "2": {
-          "value": "oklch({base.palette.slate.850}/{base.opacity.100})",
+          "value": "oklch({base.palette.slate.900} / {base.opacity.100})",
           "type": "color",
           "comment": "Second shadow color"
         },
         "default": {
-          "value": "{base.palette.slate.850}",
+          "value": "{base.palette.slate.900}",
           "type": "color",
           "comment": "Main shadow color"
         }
@@ -1139,8 +1461,8 @@
             "type": "color",
             "comment": "Blue"
           },
-          "soft": {
-            "value": "{base.palette.blue.100}",
+          "softest": {
+            "value": "{base.palette.blue.25}",
             "type": "color",
             "comment": "Light blue"
           },
@@ -1155,9 +1477,19 @@
             "comment": "Stronger blue"
           },
           "softer": {
-            "value": "{base.palette.blue.300}",
+            "value": "{base.palette.blue.50}",
             "type": "color",
             "comment": "Light blue"
+          },
+          "soft": {
+            "value": "{base.palette.blue.100}",
+            "type": "color",
+            "comment": "Light blue"
+          },
+          "strongest": {
+            "value": "{base.palette.blue.950}",
+            "type": "color",
+            "comment": "Stronger blue"
           }
         },
         "green": {
@@ -1167,7 +1499,7 @@
             "comment": "Default green"
           },
           "soft": {
-            "value": "{base.palette.green.300}",
+            "value": "{base.palette.green.100}",
             "type": "color",
             "comment": "Light green"
           },
@@ -1177,12 +1509,22 @@
             "comment": "Stronger green"
           },
           "softer": {
-            "value": "{base.palette.green.100}",
+            "value": "{base.palette.green.50}",
             "type": "color",
             "comment": "Light green"
           },
           "stronger": {
             "value": "{base.palette.green.800}",
+            "type": "color",
+            "comment": "Stronger green"
+          },
+          "softest": {
+            "value": "{base.palette.green.25}",
+            "type": "color",
+            "comment": "Light green"
+          },
+          "strongest": {
+            "value": "{base.palette.green.950}",
             "type": "color",
             "comment": "Stronger green"
           }
@@ -1194,7 +1536,7 @@
             "comment": "Red"
           },
           "soft": {
-            "value": "{base.palette.red.300}",
+            "value": "{base.palette.red.100}",
             "type": "color",
             "comment": "Light red"
           },
@@ -1208,8 +1550,8 @@
             "type": "color",
             "comment": "Strong red"
           },
-          "softer": {
-            "value": "{base.palette.red.100}",
+          "softest": {
+            "value": "{base.palette.red.25}",
             "type": "color",
             "comment": "Light red"
           },
@@ -1217,6 +1559,11 @@
             "value": "{base.palette.red.950}",
             "type": "color",
             "comment": "Strong red"
+          },
+          "softer": {
+            "value": "{base.palette.red.50}",
+            "type": "color",
+            "comment": "Light red"
           }
         },
         "white": {
@@ -1236,7 +1583,7 @@
             "comment": "Gray"
           },
           "soft": {
-            "value": "{base.palette.slate.300}",
+            "value": "{base.palette.slate.200}",
             "type": "color",
             "comment": "Light gray"
           },
@@ -1251,9 +1598,14 @@
             "comment": "Strongerer gray"
           },
           "strongest": {
-            "value": "{base.palette.slate.900}",
+            "value": "{base.palette.slate.950}",
             "type": "color",
             "comment": "Strongerer gray"
+          },
+          "softest": {
+            "value": "{base.palette.slate.50}",
+            "type": "color",
+            "comment": "Light gray"
           },
           "softer": {
             "value": "{base.palette.slate.100}",
@@ -1267,8 +1619,8 @@
             "type": "color",
             "comment": "amber"
           },
-          "softer": {
-            "value": "{base.palette.amber.50}",
+          "softest": {
+            "value": "{base.palette.amber.25}",
             "type": "color",
             "comment": "Soft amber"
           },
@@ -1282,15 +1634,20 @@
             "type": "color",
             "comment": "Stronger amber"
           },
-          "soft": {
-            "value": "{base.palette.amber.200}",
+          "softer": {
+            "value": "{base.palette.amber.50}",
             "type": "color",
             "comment": "Soft amber"
           },
           "strongest": {
-            "value": "{base.palette.amber.700}",
+            "value": "{base.palette.amber.950}",
             "type": "color",
             "comment": "Stronger amber"
+          },
+          "soft": {
+            "value": "{base.palette.amber.100}",
+            "type": "color",
+            "comment": "Soft amber"
           }
         }
       }

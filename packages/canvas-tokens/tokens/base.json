@@ -1,6 +1,330 @@
 {
   "base": {
     "palette": {
+      "amber": {
+        "25": {
+          "type": "color",
+          "value": "oklch(0.9779 0.0214 95.33 / 1)"
+        },
+        "50": {
+          "type": "color",
+          "value": "oklch(0.969 0.0619 101.63 / 1)"
+        },
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9567 0.0948 100.22 / 1)"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.9191 0.1547 99.7 / 1)"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.8432 0.1713 85.24 / 1)"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.7909 0.1711 70.15 / 1)"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.6601 0.1537 60.7 / 1)"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.5505 0.1439 50.78 / 1)"
+        },
+        "700": {
+          "type": "color",
+          "value": "oklch(0.4824 0.1353 46.11 / 1)"
+        },
+        "800": {
+          "type": "color",
+          "value": "oklch(0.4143 0.1245 42.21 / 1)"
+        },
+        "900": {
+          "type": "color",
+          "value": "oklch(0.32 0.098 41.19 / 1)"
+        },
+        "950": {
+          "type": "color",
+          "value": "oklch(0.2489 0.0771 40.64 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.2165 0.0674 40.35 / 1)"
+        }
+      },
+      "azure": {
+        "25": {
+          "type": "color",
+          "value": "oklch(0.981 0.0131 220.96 / 1)"
+        },
+        "50": {
+          "type": "color",
+          "value": "oklch(0.9549 0.0295 223.86 / 1)"
+        },
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9321 0.0425 227.25 / 1)"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.8594 0.0867 230.07 / 1)"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.7991 0.107 239.24 / 1)"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.7283 0.1377 242.63 / 1)"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.6555 0.1553 244.48 / 1)"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.5174 0.1257 243.24 / 1)"
+        },
+        "700": {
+          "type": "color",
+          "value": "oklch(0.4618 0.1098 242.11 / 1)"
+        },
+        "800": {
+          "type": "color",
+          "value": "oklch(0.3912 0.0855 237.05 / 1)"
+        },
+        "900": {
+          "type": "color",
+          "value": "oklch(0.326 0.07 235.91 / 1)"
+        },
+        "950": {
+          "type": "color",
+          "value": "oklch(0.249 0.053 235.41 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.2138 0.0455 235.23 / 1)"
+        }
+      },
+      "blue": {
+        "25": {
+          "type": "color",
+          "value": "oklch(0.969 0.0155 248.07 / 1)"
+        },
+        "50": {
+          "type": "color",
+          "value": "oklch(0.9523 0.0239 248.12 / 1)"
+        },
+        "100": {
+          "type": "color",
+          "value": "oklch(0.928 0.0359 250.6 / 1)"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.8627 0.0701 250.6 / 1)"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.7933 0.1076 252.08 / 1)"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.708 0.1549 255.41 / 1)"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.6023 0.2032 255.68 / 1)"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.5198 0.1782 256.11 / 1)"
+        },
+        "700": {
+          "type": "color",
+          "value": "oklch(0.4658 0.1562 255.5 / 1)"
+        },
+        "800": {
+          "type": "color",
+          "value": "oklch(0.3908 0.128 256 / 1)"
+        },
+        "900": {
+          "type": "color",
+          "value": "oklch(0.3152 0.1054 261.09 / 1)"
+        },
+        "950": {
+          "type": "color",
+          "value": "oklch(0.2452 0.0752 254.55 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.209 0.07 255.61 / 1)"
+        }
+      },
+      "coral": {
+        "25": {
+          "type": "color",
+          "value": "oklch(0.9837 0.0085 44.54 / 1)"
+        },
+        "50": {
+          "type": "color",
+          "value": "oklch(0.9659 0.0171 35.14 / 1)"
+        },
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9344 0.0339 35.8 / 1)"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.8476 0.0856 37.59 / 1)"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.7671 0.1418 38.37 / 1)"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.7279 0.1703 38.58 / 1)"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.6779 0.2096 40.36 / 1)"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.5394 0.1828 36.43 / 1)"
+        },
+        "700": {
+          "type": "color",
+          "value": "oklch(0.4616 0.1629 34.74 / 1)"
+        },
+        "800": {
+          "type": "color",
+          "value": "oklch(0.393 0.143 33.49 / 1)"
+        },
+        "900": {
+          "type": "color",
+          "value": "oklch(0.3043 0.1137 32.49 / 1)"
+        },
+        "950": {
+          "type": "color",
+          "value": "oklch(0.236 0.0899 31.8 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.2114 0.07 29.72 / 1)"
+        }
+      },
+      "green": {
+        "25": {
+          "type": "color",
+          "value": "oklch(0.9824 0.0282 148.77 / 1)"
+        },
+        "50": {
+          "type": "color",
+          "value": "oklch(0.9655 0.0561 149.93 / 1)"
+        },
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9278 0.1024 149.88 / 1)"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.8506 0.1804 149.93 / 1)"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.7817 0.1928 150.67 / 1)"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.702 0.1952 148.39 / 1)"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.6362 0.1974 145.47 / 1)"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.5069 0.1569 145.56 / 1)"
+        },
+        "700": {
+          "type": "color",
+          "value": "oklch(0.4463 0.1422 144.58 / 1)"
+        },
+        "800": {
+          "type": "color",
+          "value": "oklch(0.3955 0.1156 147.66 / 1)"
+        },
+        "900": {
+          "type": "color",
+          "value": "oklch(0.3197 0.0997 145.3 / 1)"
+        },
+        "950": {
+          "type": "color",
+          "value": "oklch(0.2548 0.0796 145.23 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.2118 0.0653 145.69 / 1)"
+        }
+      },
+      "indigo": {
+        "25": {
+          "type": "color",
+          "value": "oklch(0.9703 0.0147 286 / 1)"
+        },
+        "50": {
+          "type": "color",
+          "value": "oklch(0.9499 0.0243 280.81 / 1)"
+        },
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9201 0.0395 282.43 / 1)"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.8503 0.0754 280.52 / 1)"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.7625 0.1242 281 / 1)"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.712 0.1531 280.1 / 1)"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.615 0.2131 280.7 / 1)"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.5289 0.2241 281.65 / 1)"
+        },
+        "700": {
+          "type": "color",
+          "value": "oklch(0.466 0.1961 280.9 / 1)"
+        },
+        "800": {
+          "type": "color",
+          "value": "oklch(0.379 0.1771 278.1 / 1)"
+        },
+        "900": {
+          "type": "color",
+          "value": "oklch(0.317 0.142 278.2 / 1)"
+        },
+        "950": {
+          "type": "color",
+          "value": "oklch(0.2448 0.1108 277.85 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.1951 0.0693 277.85 / 1)"
+        }
+      },
       "neutral": {
         "0": {
           "type": "color",
@@ -8,31 +332,23 @@
         },
         "25": {
           "type": "color",
-          "value": "oklch(0.985 0 0 / 1)"
+          "value": "oklch(0.9851 0 0 / 1)"
         },
         "50": {
           "type": "color",
-          "value": "oklch(0.969 0 0 / 1)"
+          "value": "oklch(0.9702 0 0 / 1)"
         },
         "100": {
           "type": "color",
-          "value": "oklch(0.944 0 0 / 1)"
-        },
-        "150": {
-          "type": "color",
-          "value": "oklch(0.908 0 0 / 1)"
+          "value": "oklch(0.9431 0 0 / 1)"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.871 0 0 / 1)"
-        },
-        "250": {
-          "type": "color",
-          "value": "oklch(0.835 0 0 / 1)"
+          "value": "oklch(0.8699 0 0 / 1)"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.803 0 0 / 1)"
+          "value": "oklch(0.8015 0 0 / 1)"
         },
         "400": {
           "type": "color",
@@ -40,1805 +356,359 @@
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.63 0 0 / 1)"
+          "value": "oklch(0.6234 0 0 / 1)"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.51 0 0 / 1)"
+          "value": "oklch(0.5103 0 0 / 1)"
         },
         "700": {
           "type": "color",
-          "value": "oklch(0.45 0 0 / 1)"
+          "value": "oklch(0.4494 0 0 / 1)"
         },
         "800": {
           "type": "color",
-          "value": "oklch(0.351 0 0 / 1)"
-        },
-        "850": {
-          "type": "color",
-          "value": "oklch(0.29 0 0 / 1)"
+          "value": "oklch(0.3523 0 0 / 1)"
         },
         "900": {
           "type": "color",
-          "value": "oklch(0.21 0 0 / 1)"
+          "value": "oklch(0.2891 0 0 / 1)"
         },
         "950": {
           "type": "color",
-          "value": "oklch(0.15 0 0 / 1)"
+          "value": "oklch(0.2308 0 0 / 1)"
         },
         "975": {
           "type": "color",
-          "value": "oklch(0.11 0 0 / 1)"
+          "value": "oklch(0.1591 0 0 / 1)"
         },
         "1000": {
           "type": "color",
           "value": "oklch(0 0 0 / 1)"
         }
       },
-      "red": {
-        "25": {
-          "type": "color",
-          "value": "oklch(0.9759 0.0173 51.968 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.39) | 3:1 pair: 500 (contrast: 3.17) | Passes on: black"
-        },
-        "50": {
-          "type": "color",
-          "value": "oklch(0.9519 0.0325 41.292 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.00) | 3:1 pair: 600 (contrast: 5.00) | Passes on: black"
-        },
-        "100": {
-          "type": "color",
-          "value": "oklch(0.9297 0.047 34.89 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.65) | 3:1 pair: 600 (contrast: 4.65) | Passes on: black"
-        },
-        "200": {
-          "type": "color",
-          "value": "oklch(0.864 0.094 31.01 / 1)",
-          "comment": "4.5:1 pair: 700 (contrast: 5.10) | 3:1 pair: 600 (contrast: 3.72) | Passes on: black"
-        },
-        "300": {
-          "type": "color",
-          "value": "oklch(0.795 0.149 28.619 / 1)",
-          "comment": "4.5:1 pair: 800 (contrast: 5.56) | 3:1 pair: 700 (contrast: 3.95) | Passes on: black"
-        },
-        "400": {
-          "type": "color",
-          "value": "oklch(0.729 0.213 29.281 / 1)",
-          "comment": "4.5:1 pair: 900 (contrast: 5.36) | 3:1 pair: 800 (contrast: 4.26) | Passes on: black"
-        },
-        "500": {
-          "type": "color",
-          "value": "oklch(0.664 0.234 28.5 / 1)",
-          "comment": "3:1 pair: 900 (contrast: 4.13) | Passes on: black"
-        },
-        "600": {
-          "type": "color",
-          "value": "oklch(0.535 0.221 26.8 / 1)",
-          "comment": "Passes on: white"
-        },
-        "700": {
-          "type": "color",
-          "value": "oklch(0.458 0.191 26 / 1)",
-          "comment": "Passes on: white"
-        },
-        "800": {
-          "type": "color",
-          "value": "oklch(0.372 0.158 25.5 / 1)",
-          "comment": "Passes on: white"
-        },
-        "900": {
-          "type": "color",
-          "value": "oklch(0.304 0.112 25 / 1)",
-          "comment": "Passes on: white"
-        },
-        "950": {
-          "type": "color",
-          "value": "oklch(0.251 0.073 25.5 / 1)",
-          "comment": "Passes on: white"
-        }
-      },
       "orange": {
         "25": {
           "type": "color",
-          "value": "oklch(0.977 0.033 88.018 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.21) | 3:1 pair: 600 (contrast: 5.21) | Passes on: black"
+          "value": "oklch(0.9673 0.0205 67.52 / 1)"
         },
         "50": {
           "type": "color",
-          "value": "oklch(0.9549 0.0549 82.559 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.88) | 3:1 pair: 600 (contrast: 4.88) | Passes on: black"
+          "value": "oklch(0.9523 0.0366 72.6 / 1)"
         },
         "100": {
           "type": "color",
-          "value": "oklch(0.9297 0.0771 77.91 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.50) | 3:1 pair: 600 (contrast: 4.50) | Passes on: black"
+          "value": "oklch(0.9243 0.0542 67.95 / 1)"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.884 0.116 72.291 / 1)",
-          "comment": "4.5:1 pair: 700 (contrast: 4.74) | 3:1 pair: 600 (contrast: 3.87) | Passes on: black"
+          "value": "oklch(0.8606 0.1002 65.34 / 1)"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.815 0.174 65.612 / 1)",
-          "comment": "4.5:1 pair: 800 (contrast: 5.42) | 3:1 pair: 700 (contrast: 3.70) | Passes on: black"
+          "value": "oklch(0.7839 0.1608 63.57 / 1)"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.726 0.185 52.588 / 1)",
-          "comment": "4.5:1 pair: 900 (contrast: 4.73) | 3:1 pair: 800 (contrast: 3.88) | Passes on: black"
+          "value": "oklch(0.7261 0.1852 52.58 / 1)"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.678 0.21 40.37 / 1)",
-          "comment": "3:1 pair: 900 (contrast: 3.85) | Passes on: black"
+          "value": "oklch(0.6617 0.1893 44.93 / 1)"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.538 0.188 39.18 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.53 0.165 40.39 / 1)"
         },
         "700": {
           "type": "color",
-          "value": "oklch(0.488 0.16 38.07 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.4689 0.1456 40.5 / 1)"
         },
         "800": {
           "type": "color",
-          "value": "oklch(0.394 0.121 37.21 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.4077 0.1336 37.92 / 1)"
         },
         "900": {
           "type": "color",
-          "value": "oklch(0.341 0.093 36.41 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.3243 0.1084 37.05 / 1)"
         },
         "950": {
           "type": "color",
-          "value": "oklch(0.283 0.061 36.2 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.2421 0.082 36.47 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.2121 0.0706 37.19 / 1)"
         }
       },
-      "amber": {
+      "magenta": {
         "25": {
           "type": "color",
-          "value": "oklch(0.978 0.025 95.3 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.11) | 3:1 pair: 500 (contrast: 3.01) | Passes on: black"
+          "value": "oklch(0.9782 0.0191 325.55 / 1)"
         },
         "50": {
           "type": "color",
-          "value": "oklch(0.957 0.095 100.2 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.83) | 3:1 pair: 600 (contrast: 4.83) | Passes on: black"
+          "value": "oklch(0.9637 0.0322 325.69 / 1)"
         },
         "100": {
           "type": "color",
-          "value": "oklch(0.9341 0.1327 99.571 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.51) | 3:1 pair: 600 (contrast: 4.51) | Passes on: black"
+          "value": "oklch(0.9253 0.0627 329.34 / 1)"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.919 0.155 99.7 / 1)",
-          "comment": "4.5:1 pair: 700 (contrast: 5.42) | 3:1 pair: 600 (contrast: 4.31) | Passes on: black"
+          "value": "oklch(0.887 0.1029 327.44 / 1)"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.843 0.175 85.2 / 1)",
-          "comment": "4.5:1 pair: 800 (contrast: 5.19) | 3:1 pair: 700 (contrast: 4.18) | Passes on: black"
+          "value": "oklch(0.807 0.166 333.78 / 1)"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.762 0.182 70.69 / 1)",
-          "comment": "4.5:1 pair: 900 (contrast: 5.13) | 3:1 pair: 800 (contrast: 3.85) | Passes on: black"
+          "value": "oklch(0.737 0.198 341.58 / 1)"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.6682 0.1876 55.52 / 1)",
-          "comment": "3:1 pair: 900 (contrast: 3.54) | Passes on: black"
+          "value": "oklch(0.6557 0.2007 346.62 / 1)"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.5381 0.1616 50.073 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.534 0.183 344.19 / 1)"
         },
         "700": {
           "type": "color",
-          "value": "oklch(0.483 0.142 48.997 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.4641 0.1602 344.45 / 1)"
         },
         "800": {
           "type": "color",
-          "value": "oklch(0.432 0.129 46.202 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.4011 0.1269 344.4 / 1)"
         },
         "900": {
           "type": "color",
-          "value": "oklch(0.358 0.093 48.903 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.297 0.095 343.19 / 1)"
         },
         "950": {
           "type": "color",
-          "value": "oklch(0.305 0.061 49.636 / 1)",
-          "comment": "Passes on: white"
-        }
-      },
-      "green": {
-        "25": {
-          "type": "color",
-          "value": "oklch(0.985 0.025 145.2 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.20) | 3:1 pair: 500 (contrast: 3.03) | Passes on: black"
+          "value": "oklch(0.2332 0.0908 343.78 / 1)"
         },
-        "50": {
+        "975": {
           "type": "color",
-          "value": "oklch(0.963 0.056 145.655 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.93) | 3:1 pair: 600 (contrast: 4.93) | Passes on: black"
-        },
-        "100": {
-          "type": "color",
-          "value": "oklch(0.931 0.088 146.109 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.53) | 3:1 pair: 600 (contrast: 4.53) | Passes on: black"
-        },
-        "200": {
-          "type": "color",
-          "value": "oklch(0.87 0.135 146.564 / 1)",
-          "comment": "4.5:1 pair: 700 (contrast: 5.05) | 3:1 pair: 600 (contrast: 3.81) | Passes on: black"
-        },
-        "300": {
-          "type": "color",
-          "value": "oklch(0.792 0.158 147.018 / 1)",
-          "comment": "4.5:1 pair: 800 (contrast: 5.41) | 3:1 pair: 700 (contrast: 3.94) | Passes on: black"
-        },
-        "400": {
-          "type": "color",
-          "value": "oklch(0.725 0.178 147.473 / 1)",
-          "comment": "4.5:1 pair: 900 (contrast: 5.53) | 3:1 pair: 800 (contrast: 4.31) | Passes on: black"
-        },
-        "500": {
-          "type": "color",
-          "value": "oklch(0.638 0.192 147.927 / 1)",
-          "comment": "3:1 pair: 900 (contrast: 4.01) | Passes on: black"
-        },
-        "600": {
-          "type": "color",
-          "value": "oklch(0.507 0.175 148.382 / 1)",
-          "comment": "Passes on: white"
-        },
-        "700": {
-          "type": "color",
-          "value": "oklch(0.443 0.156 148.836 / 1)",
-          "comment": "Passes on: white"
-        },
-        "800": {
-          "type": "color",
-          "value": "oklch(0.372 0.125 149.291 / 1)",
-          "comment": "Passes on: white"
-        },
-        "900": {
-          "type": "color",
-          "value": "oklch(0.312 0.095 149.745 / 1)",
-          "comment": "Passes on: white"
-        },
-        "950": {
-          "type": "color",
-          "value": "oklch(0.247 0.066 150.2 / 1)",
-          "comment": "Passes on: white"
-        }
-      },
-      "teal": {
-        "25": {
-          "type": "color",
-          "value": "oklch(0.9717 0.0389 199.269 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.17) | 3:1 pair: 500 (contrast: 3.43) | Passes on: black"
-        },
-        "50": {
-          "type": "color",
-          "value": "oklch(0.961 0.044 203.92 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.01) | 3:1 pair: 500 (contrast: 3.33) | Passes on: black"
-        },
-        "100": {
-          "type": "color",
-          "value": "oklch(0.928 0.058 204.1 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.56) | 3:1 pair: 500 (contrast: 3.03) | Passes on: black"
-        },
-        "200": {
-          "type": "color",
-          "value": "oklch(0.858 0.075 204.3 / 1)",
-          "comment": "4.5:1 pair: 700 (contrast: 4.95) | 3:1 pair: 600 (contrast: 3.69) | Passes on: black"
-        },
-        "300": {
-          "type": "color",
-          "value": "oklch(0.784 0.087 204.89 / 1)",
-          "comment": "4.5:1 pair: 800 (contrast: 5.16) | 3:1 pair: 700 (contrast: 3.89) | Passes on: black"
-        },
-        "400": {
-          "type": "color",
-          "value": "oklch(0.718 0.102 205.12 / 1)",
-          "comment": "4.5:1 pair: 900 (contrast: 5.20) | 3:1 pair: 800 (contrast: 4.10) | Passes on: black"
-        },
-        "500": {
-          "type": "color",
-          "value": "oklch(0.606 0.115 205.31 / 1)",
-          "comment": "3:1 pair: 900 (contrast: 3.40) | Passes on: black"
-        },
-        "600": {
-          "type": "color",
-          "value": "oklch(0.508 0.107 206.42 / 1)",
-          "comment": "Passes on: white"
-        },
-        "700": {
-          "type": "color",
-          "value": "oklch(0.441 0.093 207.51 / 1)",
-          "comment": "Passes on: white"
-        },
-        "800": {
-          "type": "color",
-          "value": "oklch(0.376 0.079 208.44 / 1)",
-          "comment": "Passes on: white"
-        },
-        "900": {
-          "type": "color",
-          "value": "oklch(0.318 0.062 209.18 / 1)",
-          "comment": "Passes on: white"
-        },
-        "950": {
-          "type": "color",
-          "value": "oklch(0.253 0.041 210.53 / 1)",
-          "comment": "Passes on: white"
-        }
-      },
-      "blue": {
-        "25": {
-          "type": "color",
-          "value": "oklch(0.981 0.014 218.951 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.38) | 3:1 pair: 500 (contrast: 3.49) | Passes on: black"
-        },
-        "50": {
-          "type": "color",
-          "value": "oklch(0.959 0.026 231.237 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.06) | 3:1 pair: 500 (contrast: 3.27) | Passes on: black"
-        },
-        "100": {
-          "type": "color",
-          "value": "oklch(0.931 0.04 240.111 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.65) | 3:1 pair: 500 (contrast: 3.01) | Passes on: black"
-        },
-        "200": {
-          "type": "color",
-          "value": "oklch(0.8619 0.0786 247.216 / 1)",
-          "comment": "4.5:1 pair: 700 (contrast: 4.67) | 3:1 pair: 600 (contrast: 3.75) | Passes on: black"
-        },
-        "300": {
-          "type": "color",
-          "value": "oklch(0.7908 0.1195 250.418 / 1)",
-          "comment": "4.5:1 pair: 800 (contrast: 4.78) | 3:1 pair: 700 (contrast: 3.68) | Passes on: black"
-        },
-        "400": {
-          "type": "color",
-          "value": "oklch(0.714 0.166 252.066 / 1)",
-          "comment": "4.5:1 pair: 900 (contrast: 5.17) | 3:1 pair: 800 (contrast: 3.61) | Passes on: black"
-        },
-        "500": {
-          "type": "color",
-          "value": "oklch(0.622 0.196 255.3 / 1)",
-          "comment": "3:1 pair: 900 (contrast: 3.57) | Passes on: black"
-        },
-        "600": {
-          "type": "color",
-          "value": "oklch(0.518 0.181 255.4 / 1)",
-          "comment": "Passes on: white"
-        },
-        "700": {
-          "type": "color",
-          "value": "oklch(0.466 0.156 255.5 / 1)",
-          "comment": "Passes on: white"
-        },
-        "800": {
-          "type": "color",
-          "value": "oklch(0.404 0.123 257.4 / 1)",
-          "comment": "Passes on: white"
-        },
-        "900": {
-          "type": "color",
-          "value": "oklch(0.315 0.105 261.1 / 1)",
-          "comment": "Passes on: white"
-        },
-        "950": {
-          "type": "color",
-          "value": "oklch(0.245 0.075 254.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.2016 0.0706 345.97 / 1)"
         }
       },
       "purple": {
         "25": {
           "type": "color",
-          "value": "oklch(0.976 0.018 315.668 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.32) | 3:1 pair: 500 (contrast: 3.54) | Passes on: black"
+          "value": "oklch(0.9776 0.0147 312 / 1)"
         },
         "50": {
           "type": "color",
-          "value": "oklch(0.959 0.032 316.515 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.04) | 3:1 pair: 500 (contrast: 3.35) | Passes on: black"
+          "value": "oklch(0.951 0.0321 311.49 / 1)"
         },
         "100": {
           "type": "color",
-          "value": "oklch(0.929 0.058 317.538 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.57) | 3:1 pair: 500 (contrast: 3.04) | Passes on: black"
+          "value": "oklch(0.909 0.0637 314.43 / 1)"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.868 0.1 312.379 / 1)",
-          "comment": "4.5:1 pair: 700 (contrast: 5.06) | 3:1 pair: 600 (contrast: 3.72) | Passes on: black"
+          "value": "oklch(0.8701 0.0965 316.6 / 1)"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.808 0.131 311.7 / 1)",
-          "comment": "4.5:1 pair: 800 (contrast: 5.43) | 3:1 pair: 700 (contrast: 4.09) | Passes on: black"
+          "value": "oklch(0.8108 0.1412 315.48 / 1)"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.724 0.152 312.5 / 1)",
-          "comment": "4.5:1 pair: 900 (contrast: 5.15) | 3:1 pair: 800 (contrast: 3.98) | Passes on: black"
+          "value": "oklch(0.734 0.1621 315.88 / 1)"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.628 0.168 312.7 / 1)",
-          "comment": "3:1 pair: 900 (contrast: 3.51) | Passes on: black"
+          "value": "oklch(0.628 0.1681 312.69 / 1)"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.529 0.157 312.4 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.5177 0.162 313.92 / 1)"
         },
         "700": {
           "type": "color",
-          "value": "oklch(0.455 0.135 312.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.476 0.156 313.2 / 1)"
         },
         "800": {
           "type": "color",
-          "value": "oklch(0.385 0.112 312.4 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.422 0.136 315.49 / 1)"
         },
         "900": {
           "type": "color",
-          "value": "oklch(0.315 0.086 311.1 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.3143 0.0996 313.76 / 1)"
         },
         "950": {
           "type": "color",
-          "value": "oklch(0.255 0.065 312.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.2351 0.0734 313.34 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.194 0.062 312.79 / 1)"
         }
       },
-      "pink": {
+      "red": {
         "25": {
           "type": "color",
-          "value": "oklch(0.974 0.028 329.217 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.36) | 3:1 pair: 500 (contrast: 3.37) | Passes on: black"
+          "value": "oklch(0.9667 0.0163 21.82 / 1)"
         },
         "50": {
           "type": "color",
-          "value": "oklch(0.9577 0.047 329.385 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.07) | 3:1 pair: 500 (contrast: 3.19) | Passes on: black"
+          "value": "oklch(0.9533 0.0231 23.95 / 1)"
         },
         "100": {
           "type": "color",
-          "value": "oklch(0.94 0.067 329.515 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.78) | 3:1 pair: 500 (contrast: 3.01) | Passes on: black"
+          "value": "oklch(0.9225 0.0394 25.51 / 1)"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.887 0.103 327.5 / 1)",
-          "comment": "4.5:1 pair: 700 (contrast: 5.15) | 3:1 pair: 600 (contrast: 4.00) | Passes on: black"
+          "value": "oklch(0.8339 0.092 28.19 / 1)"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.808 0.124 333.7 / 1)",
-          "comment": "4.5:1 pair: 800 (contrast: 5.68) | 3:1 pair: 700 (contrast: 3.92) | Passes on: black"
+          "value": "oklch(0.7533 0.1484 28.45 / 1)"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.726 0.145 338.9 / 1)",
-          "comment": "4.5:1 pair: 900 (contrast: 5.13) | 3:1 pair: 800 (contrast: 4.19) | Passes on: black"
+          "value": "oklch(0.6857 0.2037 29.76 / 1)"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.637 0.148 338.9 / 1)",
-          "comment": "3:1 pair: 900 (contrast: 3.63) | Passes on: black"
+          "value": "oklch(0.6495 0.2369 30.04 / 1)"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.525 0.141 345.2 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.5342 0.2172 29.53 / 1)"
         },
         "700": {
           "type": "color",
-          "value": "oklch(0.464 0.124 348.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.4517 0.1847 28.2 / 1)"
         },
         "800": {
           "type": "color",
-          "value": "oklch(0.373 0.103 350 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.3712 0.1509 26.08 / 1)"
         },
         "900": {
           "type": "color",
-          "value": "oklch(0.317 0.082 350.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.291 0.118 25.59 / 1)"
         },
         "950": {
           "type": "color",
-          "value": "oklch(0.267 0.052 350.1 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.2318 0.0937 24.02 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.1988 0.0718 20.63 / 1)"
         }
       },
       "slate": {
         "25": {
           "type": "color",
-          "value": "oklch(0.985 0.003 255.5 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.50) | 3:1 pair: 500 (contrast: 3.35) | Passes on: black"
+          "value": "oklch(0.9846 0.0018 248.57 / 1)"
         },
         "50": {
           "type": "color",
-          "value": "oklch(0.969 0.005 255.5 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 5.25) | 3:1 pair: 500 (contrast: 3.19) | Passes on: black"
+          "value": "oklch(0.9692 0.0035 248.23 / 1)"
         },
         "100": {
           "type": "color",
-          "value": "oklch(0.944 0.008 255.5 / 1)",
-          "comment": "4.5:1 pair: 600 (contrast: 4.87) | 3:1 pair: 600 (contrast: 4.87) | Passes on: black"
-        },
-        "150": {
-          "type": "color",
-          "value": "oklch(0.908 0.012 255.5 / 1)",
-          "comment": "Passes on: black"
+          "value": "oklch(0.9447 0.0053 248.12 / 1)"
         },
         "200": {
           "type": "color",
-          "value": "oklch(0.871 0.015 255.5 / 1)",
-          "comment": "4.5:1 pair: 700 (contrast: 5.03) | 3:1 pair: 600 (contrast: 3.89) | Passes on: black"
-        },
-        "250": {
-          "type": "color",
-          "value": "oklch(0.835 0.018 255.5 / 1)",
-          "comment": "Passes on: black"
+          "value": "oklch(0.917 0.0081 254 / 1)"
         },
         "300": {
           "type": "color",
-          "value": "oklch(0.803 0.022 255.5 / 1)",
-          "comment": "4.5:1 pair: 800 (contrast: 6.09) | 3:1 pair: 700 (contrast: 4.02) | Passes on: black"
+          "value": "oklch(0.856 0.0111 256.85 / 1)"
         },
         "400": {
           "type": "color",
-          "value": "oklch(0.72 0.025 255.5 / 1)",
-          "comment": "4.5:1 pair: 900 (contrast: 7.15) | 3:1 pair: 800 (contrast: 4.54) | Passes on: black"
+          "value": "oklch(0.754 0.0181 256.33 / 1)"
         },
         "500": {
           "type": "color",
-          "value": "oklch(0.63 0.028 255.5 / 1)",
-          "comment": "3:1 pair: 900 (contrast: 5.07) | Passes on: black"
+          "value": "oklch(0.629 0.0281 255.62 / 1)"
         },
         "600": {
           "type": "color",
-          "value": "oklch(0.51 0.025 255.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.5103 0.0255 256.8 / 1)"
         },
         "700": {
           "type": "color",
-          "value": "oklch(0.45 0.022 255.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.45 0.022 255.52 / 1)"
         },
         "800": {
           "type": "color",
-          "value": "oklch(0.351 0.018 255.5 / 1)",
-          "comment": "Passes on: white"
-        },
-        "850": {
-          "type": "color",
-          "value": "oklch(0.29 0.015 255.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.3685 0.0218 256.4 / 1)"
         },
         "900": {
           "type": "color",
-          "value": "oklch(0.21 0.012 255.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.278 0.0156 252.4 / 1)"
         },
         "950": {
           "type": "color",
-          "value": "oklch(0.15 0.008 255.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.2453 0.0136 253.1 / 1)"
         },
         "975": {
           "type": "color",
-          "value": "oklch(0.11 0.006 255.5 / 1)",
-          "comment": "Passes on: white"
+          "value": "oklch(0.18 0.008 248.33 / 1)"
         }
       },
-      "cinnamon": {
+      "teal": {
+        "25": {
+          "type": "color",
+          "value": "oklch(0.9827 0.021 200.66 / 1)"
+        },
+        "50": {
+          "type": "color",
+          "value": "oklch(0.9575 0.0424 203.83 / 1)"
+        },
         "100": {
           "type": "color",
-          "value": "#ffefee",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.25 color",
-          "fallback": "{base.palette.red.25}"
+          "value": "oklch(0.935 0.046 205.09 / 1)"
         },
         "200": {
           "type": "color",
-          "value": "#FCC9C5",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.100 color",
-          "fallback": "{base.palette.red.100}"
+          "value": "oklch(0.8766 0.0677 204.24 / 1)"
         },
         "300": {
           "type": "color",
-          "value": "#ff867d",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.300 color",
-          "fallback": "{base.palette.red.300}"
+          "value": "oklch(0.7836 0.0874 204.93 / 1)"
         },
         "400": {
           "type": "color",
-          "value": "#ff5347",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.400 color",
-          "fallback": "{base.palette.red.400}"
+          "value": "oklch(0.7154 0.1006 206.05 / 1)"
         },
         "500": {
           "type": "color",
-          "value": "#de2e21",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.500 color",
-          "fallback": "{base.palette.red.500}"
+          "value": "oklch(0.6385 0.1093 205.92 / 1)"
         },
         "600": {
           "type": "color",
-          "value": "#a31b12",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.700 color",
-          "fallback": "{base.palette.red.700}"
-        }
-      },
-      "peach": {
-        "100": {
-          "type": "color",
-          "value": "#fff3f0",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.25 color",
-          "fallback": "{base.palette.red.25}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#ffc2b3",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.200 color",
-          "fallback": "{base.palette.red.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#ff957a",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.300 color",
-          "fallback": "{base.palette.red.300}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#ff643d",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.400 color",
-          "fallback": "{base.palette.red.400}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#de4721",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.500 color",
-          "fallback": "{base.palette.red.500}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#b53413",
-          "deprecated": true,
-          "deprecatedComment": "replace with the orange.600 color",
-          "fallback": "{base.palette.orange.600}"
-        }
-      },
-      "fruit-punch": {
-        "100": {
-          "type": "color",
-          "value": "#FFEEEE",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.25 color",
-          "fallback": "{base.palette.red.25}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#ffbdbd",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.200 color",
-          "fallback": "{base.palette.red.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#FF7E7E",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.300 color",
-          "fallback": "{base.palette.red.300}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#ff4c4c",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.400 color",
-          "fallback": "{base.palette.red.400}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#e12f2f",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.500 color",
-          "fallback": "{base.palette.red.500}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#b82828",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.700 color",
-          "fallback": "{base.palette.red.700}"
-        }
-      },
-      "pomegranate": {
-        "100": {
-          "type": "color",
-          "value": "#ffebf3",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.25 color",
-          "fallback": "{base.palette.pink.25}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#ffbdd6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.200 color",
-          "fallback": "{base.palette.pink.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#ff5c9a",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.400 color",
-          "fallback": "{base.palette.pink.400}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#f31167",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.600 color",
-          "fallback": "{base.palette.pink.600}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#c70550",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.700 color",
-          "fallback": "{base.palette.pink.700}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#99003a",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.800 color",
-          "fallback": "{base.palette.pink.800}"
-        }
-      },
-      "chili-mango": {
-        "100": {
-          "type": "color",
-          "value": "#ffe6d9",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.50 color",
-          "fallback": "{base.palette.red.50}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#ffc7ab",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.200 color",
-          "fallback": "{base.palette.red.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#ff9b69",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.300 color",
-          "fallback": "{base.palette.red.300}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#ff671b",
-          "deprecated": true,
-          "deprecatedComment": "replace with the orange.500 color",
-          "fallback": "{base.palette.orange.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#e04b00",
-          "deprecated": true,
-          "deprecatedComment": "replace with the orange.500 color",
-          "fallback": "{base.palette.orange.500}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#a33600",
-          "deprecated": true,
-          "deprecatedComment": "replace with the orange.700 color",
-          "fallback": "{base.palette.orange.700}"
-        }
-      },
-      "cantaloupe": {
-        "100": {
-          "type": "color",
-          "value": "#ffeed9",
-          "deprecated": true,
-          "deprecatedComment": "replace with the red.50 color",
-          "fallback": "{base.palette.red.50}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#fcd49f",
-          "deprecated": true,
-          "deprecatedComment": "replace with the orange.100 color",
-          "fallback": "{base.palette.orange.100}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#ffbc63",
-          "deprecated": true,
-          "deprecatedComment": "replace with the orange.200 color",
-          "fallback": "{base.palette.orange.200}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#ffa126",
-          "deprecated": true,
-          "deprecatedComment": "replace with the orange.300 color",
-          "fallback": "{base.palette.orange.300}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#f38b00",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.400 color",
-          "fallback": "{base.palette.amber.400}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#c06c00",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.600 color",
-          "fallback": "{base.palette.amber.600}"
-        }
-      },
-      "sour-lemon": {
-        "100": {
-          "type": "color",
-          "value": "#fff9e6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.25 color",
-          "fallback": "{base.palette.amber.25}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#ffecab",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.50 color",
-          "fallback": "{base.palette.amber.50}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#ffda61",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.200 color",
-          "fallback": "{base.palette.amber.200}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#ffc629",
-          "deprecated": true,
-          "deprecatedComment": "replace with the orange.300 color",
-          "fallback": "{base.palette.orange.300}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#ebb400",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.300 color",
-          "fallback": "{base.palette.amber.300}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#bd9100",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.500 color",
-          "fallback": "{base.palette.amber.500}"
-        }
-      },
-      "toasted-marshmallow": {
-        "100": {
-          "type": "color",
-          "value": "#fdf6e6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.25 color",
-          "fallback": "{base.palette.amber.25}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#ebd6a9",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.100 color",
-          "fallback": "{base.palette.amber.100}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#e6bf6c",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.200 color",
-          "fallback": "{base.palette.amber.200}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#CC9E3B",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.400 color",
-          "fallback": "{base.palette.amber.400}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#b37f10",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.600 color",
-          "fallback": "{base.palette.amber.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#8C6000",
-          "deprecated": true,
-          "deprecatedComment": "replace with the amber.700 color",
-          "fallback": "{base.palette.amber.700}"
-        }
-      },
-      "juicy-pear": {
-        "100": {
-          "type": "color",
-          "value": "#f7fae6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.25 color",
-          "fallback": "{base.palette.green.25}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#e2f391",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.200 color",
-          "fallback": "{base.palette.green.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#c4de40",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.400 color",
-          "fallback": "{base.palette.green.400}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#a8c224",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.500 color",
-          "fallback": "{base.palette.green.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#8ea618",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.600 color",
-          "fallback": "{base.palette.green.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#687818",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.700 color",
-          "fallback": "{base.palette.green.700}"
-        }
-      },
-      "kiwi": {
-        "100": {
-          "type": "color",
-          "value": "#ecfcd7",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.100 color",
-          "fallback": "{base.palette.green.100}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#caf593",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.200 color",
-          "fallback": "{base.palette.green.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#a7e05c",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.300 color",
-          "fallback": "{base.palette.green.300}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#77bc1f",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.500 color",
-          "fallback": "{base.palette.green.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#609915",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.600 color",
-          "fallback": "{base.palette.green.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#537824",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.700 color",
-          "fallback": "{base.palette.green.700}"
-        }
-      },
-      "green-apple": {
-        "100": {
-          "type": "color",
-          "value": "#ebfff0",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.25 color",
-          "fallback": "{base.palette.green.25}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#acf5be",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.200 color",
-          "fallback": "{base.palette.green.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#5fe380",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.400 color",
-          "fallback": "{base.palette.green.400}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#43c463",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.500 color",
-          "fallback": "{base.palette.green.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#319c4c",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.600 color",
-          "fallback": "{base.palette.green.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#217a37",
-          "deprecated": true,
-          "deprecatedComment": "replace with the green.700 color",
-          "fallback": "{base.palette.green.700}"
-        }
-      },
-      "watermelon": {
-        "100": {
-          "type": "color",
-          "value": "#ebfdf8",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.25 color",
-          "fallback": "{base.palette.green.50}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#b7edde",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.200 color",
-          "fallback": "{base.palette.green.50}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#65ccaf",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.300 color",
-          "fallback": "{base.palette.green.100}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#12a67c",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.500 color",
-          "fallback": "{base.palette.green.300}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#0c7a5b",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.600 color",
-          "fallback": "{base.palette.green.800}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#00573e",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.700 color",
-          "fallback": "{base.palette.green.900}"
-        }
-      },
-      "jewel": {
-        "100": {
-          "type": "color",
-          "value": "#ebfdff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.25 color",
-          "fallback": "{base.palette.teal.25}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#acecf3",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.200 color",
-          "fallback": "{base.palette.teal.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#44c8d7",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.400 color",
-          "fallback": "{base.palette.teal.400}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#1ea4b3",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.500 color",
-          "fallback": "{base.palette.teal.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#1a818c",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.600 color",
-          "fallback": "{base.palette.teal.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#156973",
-          "deprecated": true,
-          "deprecatedComment": "replace with the teal.700 color",
-          "fallback": "{base.palette.teal.700}"
-        }
-      },
-      "toothpaste": {
-        "100": {
-          "type": "color",
-          "value": "#d7f1fc",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.100 color",
-          "fallback": "{base.palette.blue.100}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#99e0ff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.200 color",
-          "fallback": "{base.palette.blue.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#40b4e5",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.400 color",
-          "fallback": "{base.palette.blue.400}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#1894c9",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.500 color",
-          "fallback": "{base.palette.blue.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#0271a1",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.600 color",
-          "fallback": "{base.palette.blue.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#005B82",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.700 color",
-          "fallback": "{base.palette.blue.700}"
-        }
-      },
-      "blueberry": {
-        "100": {
-          "type": "color",
-          "value": "#D7EAFC",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.100 color",
-          "fallback": "{base.palette.blue.100}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#A6D2FF",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.200 color",
-          "fallback": "{base.palette.blue.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#40A0FF",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.400 color",
-          "fallback": "{base.palette.blue.400}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#0875E1",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.500 color",
-          "fallback": "{base.palette.blue.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#005cb9",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.600 color",
-          "fallback": "{base.palette.blue.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#004387",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.700 color",
-          "fallback": "{base.palette.blue.700}"
-        }
-      },
-      "plum": {
-        "100": {
-          "type": "color",
-          "value": "#e6f1ff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.50 color",
-          "fallback": "{base.palette.blue.50}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#A6CDFF",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.200 color",
-          "fallback": "{base.palette.blue.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#529bfa",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.400 color",
-          "fallback": "{base.palette.blue.400}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#3881E1",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.500 color",
-          "fallback": "{base.palette.blue.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#3166ab",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.600 color",
-          "fallback": "{base.palette.blue.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#264a7a",
-          "deprecated": true,
-          "deprecatedComment": "replace with the blue.700 color",
-          "fallback": "{base.palette.blue.700}"
-        }
-      },
-      "berry-smoothie": {
-        "100": {
-          "type": "color",
-          "value": "#e8edff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.100 color",
-          "fallback": "{base.palette.purple.100}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#c2cfff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.200 color",
-          "fallback": "{base.palette.purple.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#7891FF",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.400 color",
-          "fallback": "{base.palette.purple.400}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#5E77E6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.500 color",
-          "fallback": "{base.palette.purple.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#4b5eb3",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.600 color",
-          "fallback": "{base.palette.purple.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#3b4987",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.700 color",
-          "fallback": "{base.palette.purple.700}"
-        }
-      },
-      "blackberry": {
-        "100": {
-          "type": "color",
-          "value": "#f0f0ff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.50 color",
-          "fallback": "{base.palette.purple.50}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#c3c2ff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.200 color",
-          "fallback": "{base.palette.purple.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#8483e6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.400 color",
-          "fallback": "{base.palette.purple.400}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#5c59e6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.500 color",
-          "fallback": "{base.palette.purple.500}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#413fcc",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.600 color",
-          "fallback": "{base.palette.purple.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#2e2d91",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.700 color",
-          "fallback": "{base.palette.purple.700}"
-        }
-      },
-      "island-punch": {
-        "100": {
-          "type": "color",
-          "value": "#f5f0ff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.50 color",
-          "fallback": "{base.palette.purple.50}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#d2befa",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.200 color",
-          "fallback": "{base.palette.purple.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#a88ae6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.300 color",
-          "fallback": "{base.palette.purple.300}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#8660d1",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.400 color",
-          "fallback": "{base.palette.purple.400}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#6345a1",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.600 color",
-          "fallback": "{base.palette.purple.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#503882",
-          "deprecated": true,
-          "deprecatedComment": "replace with the purple.700 color",
-          "fallback": "{base.palette.purple.700}"
-        }
-      },
-      "grape-soda": {
-        "100": {
-          "type": "color",
-          "value": "#feebff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.100 color",
-          "fallback": "{base.palette.pink.100}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#fac0ff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.200 color",
-          "fallback": "{base.palette.pink.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#de8ae6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.300 color",
-          "fallback": "{base.palette.pink.300}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#c860d1",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.400 color",
-          "fallback": "{base.palette.pink.400}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#97499e",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.600 color",
-          "fallback": "{base.palette.pink.600}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#7C3882",
-          "deprecated": true,
-          "deprecatedComment": "replace with the pink.700 color",
-          "fallback": "{base.palette.pink.700}"
-        }
-      },
-      "root-beer": {
-        "100": {
-          "type": "color",
-          "value": "#faf3f0",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.25 color",
-          "fallback": "{base.palette.neutral.25}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#EBD7CF",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.100 color",
-          "fallback": "{base.palette.neutral.100}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#dcbbad",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.200 color",
-          "fallback": "{base.palette.neutral.200}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#ba9a8c",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.300 color",
-          "fallback": "{base.palette.neutral.300}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#8C7266",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.500 color",
-          "fallback": "{base.palette.neutral.500}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#664d42",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.600 color",
-          "fallback": "{base.palette.neutral.600}"
-        }
-      },
-      "coconut": {
-        "100": {
-          "type": "color",
-          "value": "#F0EEEE",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.100 color",
-          "fallback": "{base.palette.neutral.100}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#e3dfdf",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.200 color",
-          "fallback": "{base.palette.neutral.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#d1cbcc",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.300 color",
-          "fallback": "{base.palette.neutral.300}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#b3acac",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.400 color",
-          "fallback": "{base.palette.neutral.400}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#9e9595",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.500 color",
-          "fallback": "{base.palette.neutral.500}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#8F8687",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.600 color",
-          "fallback": "{base.palette.neutral.600}"
-        }
-      },
-      "soap": {
-        "100": {
-          "type": "color",
-          "value": "#f6f7f8",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.50 color",
-          "fallback": "{base.palette.neutral.50}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#F0F1F2",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.100 color",
-          "fallback": "{base.palette.neutral.100}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#e8ebed",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.200 color",
-          "fallback": "{base.palette.neutral.200}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#DFE2E6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.250 color",
-          "fallback": "{base.palette.neutral.250}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#ced3d9",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.300 color",
-          "fallback": "{base.palette.neutral.300}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#B9C0C7",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.400 color",
-          "fallback": "{base.palette.neutral.400}"
-        }
-      },
-      "french-vanilla": {
-        "100": {
-          "type": "color",
-          "value": "#ffffff",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.0 color",
-          "fallback": "{base.palette.neutral.0}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#ebebeb",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.200 color",
-          "fallback": "{base.palette.neutral.200}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#d4d4d4",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.300 color",
-          "fallback": "{base.palette.neutral.300}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#bdbdbd",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.400 color",
-          "fallback": "{base.palette.neutral.400}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#a6a6a6",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.500 color",
-          "fallback": "{base.palette.neutral.500}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#8f8f8f",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.600 color",
-          "fallback": "{base.palette.neutral.600}"
-        }
-      },
-      "cappuccino": {
-        "100": {
-          "type": "color",
-          "value": "#7A7374",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.600 color",
-          "fallback": "{base.palette.neutral.600}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#706869",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.600 color",
-          "fallback": "{base.palette.slate.600}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#5E5757",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.700 color",
-          "fallback": "{base.palette.slate.700}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#4A4242",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.800 color",
-          "fallback": "{base.palette.slate.800}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#352f2f",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.900 color",
-          "fallback": "{base.palette.slate.900}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#231f20",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.950 color",
-          "fallback": "{base.palette.slate.950}"
-        }
-      },
-      "licorice": {
-        "100": {
-          "type": "color",
-          "value": "#A1AAB3",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.400 color",
-          "fallback": "{base.palette.slate.400}"
-        },
-        "200": {
-          "type": "color",
-          "value": "#7b858f",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.500 color",
-          "fallback": "{base.palette.slate.500}"
-        },
-        "300": {
-          "type": "color",
-          "value": "#5E6A75",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.600 color",
-          "fallback": "{base.palette.slate.600}"
-        },
-        "400": {
-          "type": "color",
-          "value": "#4a5561",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.700 color",
-          "fallback": "{base.palette.slate.700}"
-        },
-        "500": {
-          "type": "color",
-          "value": "#333d47",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.800 color",
-          "fallback": "{base.palette.slate.800}"
-        },
-        "600": {
-          "type": "color",
-          "value": "#1f262e",
-          "deprecated": true,
-          "deprecatedComment": "replace with the slate.900 color",
-          "fallback": "{base.palette.slate.900}"
-        }
-      },
-      "black-pepper": {
-        "100": {
-          "type": "color",
-          "value": "#787878",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.600 color",
-          "fallback": "{base.palette.neutral.600}"
+          "value": "oklch(0.5141 0.0882 207.28 / 1)"
         },
-        "200": {
+        "700": {
           "type": "color",
-          "value": "#616161",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.700 color",
-          "fallback": "{base.palette.neutral.700}"
+          "value": "oklch(0.4634 0.0796 207.82 / 1)"
         },
-        "300": {
+        "800": {
           "type": "color",
-          "value": "#494949",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.800 color",
-          "fallback": "{base.palette.neutral.800}"
+          "value": "oklch(0.3982 0.0687 209.08 / 1)"
         },
-        "400": {
+        "900": {
           "type": "color",
-          "value": "#333333",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.850 color",
-          "fallback": "{base.palette.neutral.850}"
+          "value": "oklch(0.3052 0.0529 210.69 / 1)"
         },
-        "500": {
+        "950": {
           "type": "color",
-          "value": "#1e1e1e",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.900 color",
-          "fallback": "{base.palette.neutral.900}"
+          "value": "oklch(0.2425 0.042 210.69 / 1)"
         },
-        "600": {
+        "975": {
           "type": "color",
-          "value": "#000000",
-          "deprecated": true,
-          "deprecatedComment": "replace with the neutral.1000 color",
-          "fallback": "{base.palette.neutral.1000}"
+          "value": "oklch(0.2037 0.0354 211.24 / 1)"
         }
       }
     },
@@ -1853,6 +723,10 @@
       },
       "200": {
         "value": "0.12",
+        "type": "number"
+      },
+      "250": {
+        "value": "0.2",
         "type": "number"
       },
       "300": {
@@ -2204,36 +1078,6 @@
           "blur": {
             "value": "48",
             "type": "number"
-          }
-        }
-      }
-    },
-    "extended": {
-      "palette": {
-        "dragon-fruit": {
-          "100": {
-            "value": "#FBF1FF",
-            "type": "color"
-          },
-          "200": {
-            "value": "#EFD3FF",
-            "type": "color"
-          },
-          "300": {
-            "value": "#BE61F6",
-            "type": "color"
-          },
-          "400": {
-            "value": "#8C17D2",
-            "type": "color"
-          },
-          "500": {
-            "value": "#6B11A3",
-            "type": "color"
-          },
-          "600": {
-            "value": "#4A0D71",
-            "type": "color"
           }
         }
       }

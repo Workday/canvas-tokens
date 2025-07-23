@@ -1,72 +1,42 @@
 {
   "brand": {
     "primary": {
-      "lightest": {
-        "value": "{base.palette.blue.25}",
-        "type": "color"
-      },
-      "lighter": {
-        "value": "{base.palette.blue.100}",
-        "type": "color"
-      },
-      "light": {
-        "value": "{base.palette.blue.200}",
-        "type": "color"
-      },
       "base": {
         "value": "{base.palette.blue.600}",
         "type": "color"
       },
-      "dark": {
-        "value": "{base.palette.blue.700}",
+      "lightest": {
+        "value": "{base.palette.blue.25}",
         "type": "color"
       },
       "darkest": {
         "value": "{base.palette.blue.800}",
         "type": "color"
       },
+      "dark": {
+        "value": "{base.palette.blue.700}",
+        "type": "color"
+      },
       "accent": {
         "value": "{base.palette.neutral.0}",
         "type": "color"
-      }
-    },
-    "alert": {
-      "lightest": {
-        "value": "{base.palette.amber.25}",
+      },
+      "lighter": {
+        "value": "{base.palette.blue.50}",
         "type": "color"
       },
       "light": {
-        "value": "{base.palette.amber.50}",
-        "type": "color"
-      },
-      "base": {
-        "value": "{base.palette.amber.400}",
-        "type": "color"
-      },
-      "dark": {
-        "value": "{base.palette.amber.500}",
-        "type": "color"
-      },
-      "darkest": {
-        "value": "{base.palette.amber.600}",
-        "type": "color"
-      },
-      "accent": {
-        "value": "{base.palette.neutral.900}",
+        "value": "{base.palette.blue.200}",
         "type": "color"
       }
     },
     "error": {
-      "lightest": {
-        "value": "{base.palette.red.25}",
-        "type": "color"
-      },
-      "light": {
-        "value": "{base.palette.red.100}",
-        "type": "color"
-      },
       "base": {
         "value": "{base.palette.red.600}",
+        "type": "color"
+      },
+      "lightest": {
+        "value": "{base.palette.red.25}",
         "type": "color"
       },
       "dark": {
@@ -80,19 +50,57 @@
       "accent": {
         "value": "{base.palette.neutral.0}",
         "type": "color"
+      },
+      "lighter": {
+        "value": "{base.palette.red.50}",
+        "type": "color"
+      },
+      "light": {
+        "value": "{base.palette.red.200}",
+        "type": "color"
+      }
+    },
+    "alert": {
+      "base": {
+        "value": "{base.palette.amber.400}",
+        "type": "color"
+      },
+      "lighter": {
+        "value": "{base.palette.amber.50}",
+        "type": "color"
+      },
+      "lightest": {
+        "value": "{base.palette.amber.25}",
+        "type": "color"
+      },
+      "dark": {
+        "value": "{base.palette.amber.500}",
+        "type": "color"
+      },
+      "darkest": {
+        "value": "{base.palette.amber.600}",
+        "type": "color"
+      },
+      "accent": {
+        "value": "{base.palette.neutral.950}",
+        "type": "color"
+      },
+      "light": {
+        "value": "{base.palette.amber.200}",
+        "type": "color"
       }
     },
     "success": {
+      "base": {
+        "value": "{base.palette.green.600}",
+        "type": "color"
+      },
       "lightest": {
         "value": "{base.palette.green.25}",
         "type": "color"
       },
-      "light": {
-        "value": "{base.palette.green.100}",
-        "type": "color"
-      },
-      "base": {
-        "value": "{base.palette.green.600}",
+      "lighter": {
+        "value": "{base.palette.green.50}",
         "type": "color"
       },
       "dark": {
@@ -106,15 +114,15 @@
       "accent": {
         "value": "{base.palette.neutral.0}",
         "type": "color"
+      },
+      "light": {
+        "value": "{base.palette.green.200}",
+        "type": "color"
       }
     },
     "neutral": {
       "lightest": {
-        "value": "{base.palette.slate.50}",
-        "type": "color"
-      },
-      "light": {
-        "value": "{base.palette.slate.150}",
+        "value": "{base.palette.slate.25}",
         "type": "color"
       },
       "base": {
@@ -132,43 +140,14 @@
       "accent": {
         "value": "{base.palette.neutral.0}",
         "type": "color"
-      }
-    },
-    "action": {
-      "lightest": {
-        "value": "{base.palette.blue.25}",
-        "type": "color",
-        "comment": "Lightest action color"
       },
       "lighter": {
-        "value": "{base.palette.blue.100}",
-        "type": "color",
-        "comment": "Lighter action color"
+        "value": "{base.palette.slate.50}",
+        "type": "color"
       },
       "light": {
-        "value": "{base.palette.blue.200}",
-        "type": "color",
-        "comment": "Light action color"
-      },
-      "base": {
-        "value": "{base.palette.blue.600}",
-        "type": "color",
-        "comment": "Base action color"
-      },
-      "dark": {
-        "value": "{base.palette.blue.700}",
-        "type": "color",
-        "comment": "Dark action color"
-      },
-      "darkest": {
-        "value": "{base.palette.blue.800}",
-        "type": "color",
-        "comment": "Darkest action color"
-      },
-      "accent": {
-        "value": "{base.palette.neutral.0}",
-        "type": "color",
-        "comment": "Foreground color in actions"
+        "value": "{base.palette.slate.200}",
+        "type": "color"
       }
     },
     "common": {
@@ -189,10 +168,46 @@
         "type": "color"
       }
     },
-    "gradient": {
-      "primary": {
-        "value": "linear-gradient(90deg, {brand.primary.base} 0%, {brand.primary.dark} 100%)",
-        "type": "color"
+    "action": {
+      "base": {
+        "value": "{base.palette.blue.600}",
+        "type": "color",
+        "comment": "Base action color"
+      },
+      "lightest": {
+        "value": "{base.palette.blue.25}",
+        "type": "color",
+        "comment": "Lightest action color"
+      },
+      "light": {
+        "value": "{base.palette.blue.200}",
+        "type": "color",
+        "comment": "Light action color"
+      },
+      "darkest": {
+        "value": "{base.palette.blue.950}",
+        "type": "color",
+        "comment": "Darkest action color"
+      },
+      "dark": {
+        "value": "{base.palette.blue.700}",
+        "type": "color",
+        "comment": "Dark action color"
+      },
+      "accent": {
+        "value": "{base.palette.neutral.0}",
+        "type": "color",
+        "comment": "Foreground color in actions"
+      },
+      "darker": {
+        "value": "{base.palette.blue.800}",
+        "type": "color",
+        "comment": "Dark action color"
+      },
+      "lighter": {
+        "value": "{base.palette.blue.50}",
+        "type": "color",
+        "comment": "Lightest action color"
       }
     }
   }
