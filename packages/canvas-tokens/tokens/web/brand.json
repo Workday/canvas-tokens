@@ -209,6 +209,12 @@
         "type": "color",
         "comment": "Lightest action color"
       }
+    },
+    "gradient": {
+      "primary": {
+        "value": "linear-gradient(90deg, {brand.primary.base} 0%, {brand.primary.dark} 100%)",
+        "type": "color"
+      }
     }
   }
 }
