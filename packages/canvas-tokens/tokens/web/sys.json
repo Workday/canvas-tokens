@@ -574,6 +574,15 @@
           "type": "color",
           "comment": "Tooltip, Status Indicator"
         },
+        "translucent-inverse": {
+          "value": "oklch({base.palette.neutral.1000} / {base.opacity.250})",
+          "type": "color"
+        },
+        "overlay-inverse": {
+          "value": "oklch({base.palette.neutral.1000} / {base.opacity.200})",
+          "type": "color",
+          "comment": "Inverse overlay background"
+        },
         "alt": {
           "default": {
             "value": "{base.palette.slate.100}",
@@ -780,15 +789,6 @@
             "type": "color",
             "comment": "AI surfaces"
           }
-        },
-        "translucent-inverse": {
-          "value": "oklch({base.palette.neutral.0} / {base.opacity.250})",
-          "type": "color"
-        },
-        "overlay-inverse": {
-          "value": "oklch({base.palette.neutral.0} / {base.opacity.200})",
-          "type": "color",
-          "comment": "Inverse overlay background"
         },
         "info": {
           "softest": {
