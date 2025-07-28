@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.10
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#176](https://github.com/Workday/canvas-tokens/pull/176))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0-alpha.9
 
 ### Major Changes
