@@ -560,21 +560,9 @@
           "comment": "Main background color"
         },
         "transparent": {
-          "default": {
-            "value": "oklch({base.palette.neutral.1000} / {base.opacity.0})",
-            "type": "color",
-            "comment": "Transparent background"
-          },
-          "strong": {
-            "value": "oklch({base.palette.neutral.1000} / {base.opacity.200})",
-            "type": "color",
-            "comment": "Inverse Secondary Button Hover state"
-          },
-          "stronger": {
-            "value": "oklch({base.palette.neutral.1000} / {base.opacity.250})",
-            "type": "color",
-            "comment": "Inverse Secondary Button Active state"
-          }
+          "value": "oklch({base.palette.neutral.0} / {base.opacity.0})",
+          "type": "color",
+          "comment": "Transparent background"
         },
         "overlay": {
           "value": "oklch({base.palette.neutral.1000} / {base.opacity.400})",
@@ -585,6 +573,15 @@
           "value": "oklch({base.palette.neutral.1000} / {base.opacity.500})",
           "type": "color",
           "comment": "Tooltip, Status Indicator"
+        },
+        "translucent-inverse": {
+          "value": "oklch({base.palette.neutral.1000} / {base.opacity.250})",
+          "type": "color"
+        },
+        "overlay-inverse": {
+          "value": "oklch({base.palette.neutral.1000} / {base.opacity.200})",
+          "type": "color",
+          "comment": "Inverse overlay background"
         },
         "alt": {
           "default": {
