@@ -58,14 +58,14 @@ export const transforms: Record<string, Transform> = {
     type: 'value',
     transitive: true,
     matcher: filter.isSysColor,
-    transformer: token => {
+    transformer: ({original: {value}}) => {
       // eslint-disable-next-line no-useless-escape
-      const updatedValue = token.original.value.replace(/{[\w\.]*}/g, (a: string) => {
+      const updatedValue = value.replace(/{[\w\.]*}/g, (a: string) => {
         const cssVar = `var(--cnvs-${a.replace(/{|}/g, '').replace(/\./g, '-')})`;
         return cssVar.includes('palette') ? `from ${cssVar} l c h ` : ' ' + cssVar;
       });
 
-      return token.name.includes('transparent') ? 'transparent' : updatedValue;
+      return value.includes('{base.opacity.0}') ? 'transparent' : updatedValue;
     },
   },
   'value/opacity': {
