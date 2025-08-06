@@ -10,7 +10,9 @@ import {
 
 const backgroundPalette = buildPalette('system.color.bg', {
   default: system.color.bg.default,
-  transparent: system.color.bg.transparent,
+  transparent: system.color.bg.transparent.default,
+  transparentStrong: system.color.bg.transparent.strong,
+  transparentStronger: system.color.bg.transparent.stronger,
   translucent: system.color.bg.translucent,
   overlay: system.color.bg.overlay,
 }).sort(sortSystemColorPalette);
