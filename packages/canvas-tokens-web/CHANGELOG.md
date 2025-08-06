@@ -1,5 +1,13 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.12
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix transparent transform ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0-alpha.11
 
 ### Major Changes
