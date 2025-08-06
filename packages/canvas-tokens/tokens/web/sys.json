@@ -568,12 +568,12 @@
           "strong": {
             "value": "oklch({base.palette.neutral.1000} / {base.opacity.200})",
             "type": "color",
-            "comment": "Inverse Button Hover state"
+            "comment": "Inverse Secondary Button Hover state"
           },
           "stronger": {
             "value": "oklch({base.palette.neutral.1000} / {base.opacity.250})",
             "type": "color",
-            "comment": "Inverse Button Active state"
+            "comment": "Inverse Secondary Button Active state"
           }
         },
         "overlay": {
