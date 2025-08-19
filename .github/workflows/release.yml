@@ -87,7 +87,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
         with:
-          ghToken: ${{ secrets.GITHUB_TOKEN }}
+          ghToken: ${{ secrets.GH_RW_TOKEN }}
           package: "@workday/canvas-tokens-web"
           version: ${{ steps.set_version.outputs.version }}
           buildScript: echo "Building..."
