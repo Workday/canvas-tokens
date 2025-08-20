@@ -6,14 +6,14 @@
           "value": "#ffefee",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cinnamon100 with {base.palette.red.25}",
-          "fallback": "{base.palette.red.25}"
+          "deprecatedComment": "replace cinnamon100 with {base.palette.red.50}. Prefer to replace with `sys.color.bg.critical.softer` if used as a background color.",
+          "fallback": "{base.palette.red.50}"
         },
         "200": {
           "value": "#FCC9C5",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cinnamon200 with {base.palette.red.100}",
+          "deprecatedComment": "replace cinnamon200 with {base.palette.red.100}. Prefer to replace with `sys.color.bg.critical.soft` if used as a background color.",
           "fallback": "{base.palette.red.100}"
         },
         "300": {
@@ -27,21 +27,21 @@
           "value": "#ff5347",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cinnamon400 with {base.palette.red.400}",
+          "deprecatedComment": "replace cinnamon400 with {base.palette.red.400}. Prefer to replace with `sys.color.fg.critical.soft` if used as a foreground (text/icon) color.",
           "fallback": "{base.palette.red.400}"
         },
         "500": {
           "value": "#de2e21",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cinnamon500 with {base.palette.red.600}",
+          "deprecatedComment": "replace cinnamon500 with {base.palette.red.600}. Prefer to replace with `sys.color.bg.critical.default` if used as a background color, or `sys.color.fg.critical.default` if used as a foreground (text/icon) color, or `sys.color.border.critical.default` if used as a border color.",
           "fallback": "{base.palette.red.600}"
         },
         "600": {
           "value": "#a31b12",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cinnamon600 with {base.palette.red.700}",
+          "deprecatedComment": "replace cinnamon600 with {base.palette.red.700}. Prefer to replace with `sys.color.bg.critical.strong` if used as a background color, or `sys.color.fg.critical.strong` if used as a foreground (text/icon) color.",
           "fallback": "{base.palette.red.700}"
         }
       },
@@ -138,43 +138,43 @@
           "value": "#ffeed9",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cantaloupe100 with {base.palette.orange.50}",
-          "fallback": "{base.palette.orange.50}"
+          "deprecatedComment": "replace cantaloupe100 with {base.palette.amber.50}. Prefer to replace with `sys.color.bg.caution.softer` if used as a background color.",
+          "fallback": "{base.palette.amber.50}"
         },
         "200": {
           "value": "#fcd49f",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cantaloupe200 with {base.palette.orange.200}",
-          "fallback": "{base.palette.orange.200}"
+          "deprecatedComment": "replace cantaloupe200 with {base.palette.amber.200}. Prefer to replace with `sys.color.fg.caution.softer` if used as a foreground (text/icon) color.",
+          "fallback": "{base.palette.amber.200}"
         },
         "300": {
           "value": "#ffbc63",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cantaloupe300 with {base.palette.orange.200}",
-          "fallback": "{base.palette.orange.200}"
+          "deprecatedComment": "replace cantaloupe300 with {base.palette.amber.300}. Prefer to replace with `sys.color.bg.caution.soft` if used as a background color.",
+          "fallback": "{base.palette.amber.300}"
         },
         "400": {
           "value": "#ffa126",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cantaloupe400 with {base.palette.orange.300}",
-          "fallback": "{base.palette.orange.300}"
+          "deprecatedComment": "replace cantaloupe400 with {base.palette.amber.400}. Prefer to replace with `sys.color.bg.caution.default` if used as a background color, or `sys.color.border.caution.default` if used as a border color.",
+          "fallback": "{base.palette.amber.400}"
         },
         "500": {
           "value": "#f38b00",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cantaloupe500 with {base.palette.orange.400}",
-          "fallback": "{base.palette.orange.400}"
+          "deprecatedComment": "replace cantaloupe500 with {base.palette.amber.500}. Prefer to replace with `sys.color.bg.caution.strong` if used as a background color.",
+          "fallback": "{base.palette.amber.500}"
         },
         "600": {
           "value": "#c06c00",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace cantaloupe600 with {base.palette.amber.500}",
-          "fallback": "{base.palette.amber.500}"
+          "deprecatedComment": "replace cantaloupe600 with {base.palette.amber.600}. Prefer to replace with `sys.color.bg.caution.stronger` if used as a background color, or with `sys.color.border.caution.strong` if used as a border color.",
+          "fallback": "{base.palette.amber.600}"
         }
       },
       "sour-lemon": {
@@ -314,43 +314,43 @@
           "value": "#ebfff0",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace green-apple100 with {base.palette.green.25}",
-          "fallback": "{base.palette.green.25}"
+          "deprecatedComment": "replace green-apple100 with {base.palette.green.50}. Prefer to replace with `sys.color.bg.positive.softer` if used as a background color.",
+          "fallback": "{base.palette.green.50}"
         },
         "200": {
           "value": "#acf5be",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace green-apple200 with {base.palette.green.100}",
+          "deprecatedComment": "replace green-apple200 with {base.palette.green.100}. Prefer to replace with `sys.color.bg.positive.soft` if used as a background color.",
           "fallback": "{base.palette.green.100}"
         },
         "300": {
           "value": "#5fe380",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace green-apple300 with {base.palette.green.200}",
+          "deprecatedComment": "replace green-apple300 with {base.palette.green.200}. Prefer to replace `sys.color.fg.positive.soft` if used as a foreground (text/icon) color.",
           "fallback": "{base.palette.green.200}"
         },
         "400": {
           "value": "#43c463",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace green-apple400 with {base.palette.green.400}",
-          "fallback": "{base.palette.green.400}"
+          "deprecatedComment": "replace green-apple400 with {base.palette.green.600}. Prefer to replace with `sys.color.bg.positive.default` if used as a background color, or `sys.color.fg.positive.default` if used as a foreground (text/icon) color.",
+          "fallback": "{base.palette.green.600}"
         },
         "500": {
           "value": "#319c4c",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace green-apple500 with {base.palette.green.600}",
-          "fallback": "{base.palette.green.600}"
+          "deprecatedComment": "replace green-apple500 with {base.palette.green.700}. Prefer to replace with `sys.color.bg.positive.strong` if used as a background color, or `sys.color.fg.positive.strong` if used as a foreground (text/icon) color.",
+          "fallback": "{base.palette.green.700}"
         },
         "600": {
           "value": "#217a37",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace green-apple600 with {base.palette.green.700}",
-          "fallback": "{base.palette.green.700}"
+          "deprecatedComment": "replace green-apple600 with {base.palette.green.800}. Prefer to replace with `sys.color.bg.positive.stronger` if used as a background color, or `sys.color.text.positive.stronger` if used as a text color.",
+          "fallback": "{base.palette.green.800}"
         }
       },
       "watermelon": {
@@ -490,42 +490,42 @@
           "value": "#D7EAFC",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace blueberry100 with {base.palette.blue.50}",
-          "fallback": "{base.palette.blue.50}"
+          "deprecatedComment": "replace blueberry100 with {base.palette.blue.25}",
+          "fallback": "{base.palette.blue.25}"
         },
         "200": {
           "value": "#A6D2FF",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace blueberry200 with {base.palette.blue.200}",
-          "fallback": "{base.palette.blue.200}"
+          "deprecatedComment": "replace blueberry200 with {base.palette.blue.100}. Prefer to replace with `sys.color.bg.primary.soft` if used as a background color.",
+          "fallback": "{base.palette.blue.100}"
         },
         "300": {
           "value": "#40A0FF",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace blueberry300 with {base.palette.blue.400}",
+          "deprecatedComment": "replace blueberry300 with {base.palette.blue.400}. Prefer to replace with `sys.color.bg.primary.default` if used as a background color, or `sys.color.fg.primary.soft` if used as a foreground (text/icon) color.",
           "fallback": "{base.palette.blue.400}"
         },
         "400": {
           "value": "#0875E1",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace blueberry400 with {base.palette.blue.600}",
+          "deprecatedComment": "replace blueberry400 with {base.palette.blue.600}. Prefer to replace with `sys.color.bg.primary.default` if used as a background color, or `sys.color.fg.primary.default` if used as a foreground (text/icon) color, or `sys.color.border.primary.default` if used as a border color.",
           "fallback": "{base.palette.blue.600}"
         },
         "500": {
           "value": "#005cb9",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace blueberry500 with {base.palette.blue.700}",
+          "deprecatedComment": "replace blueberry500 with {base.palette.blue.700}. Prefer to replace with `sys.color.bg.primary.strong` if used as a background color, or `sys.color.fg.primary.strong` if used as a foreground (text/icon) color.",
           "fallback": "{base.palette.blue.700}"
         },
         "600": {
           "value": "#004387",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace blueberry600 with {base.palette.blue.800}",
+          "deprecatedComment": "replace blueberry600 with {base.palette.blue.800}. Prefer to replace with `sys.color.bg.primary.stronger` if used as a background color, or `sys.color.text.primary.stronger` if used as a text color.",
           "fallback": "{base.palette.blue.800}"
         }
       },
@@ -930,35 +930,35 @@
           "value": "#A1AAB3",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace licorice100 with {base.palette.slate.400}",
+          "deprecatedComment": "replace licorice100 with {base.palette.slate.400}. Prefer to replace with `sys.color.bg.muted.softer` if used as a background color, or `sys.color.fg.disabled` if used as a foreground (text/icon) color, or `sys.color.border.input.disabled` if used as a border color.",
           "fallback": "{base.palette.slate.400}"
         },
         "200": {
           "value": "#7b858f",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace licorice200 with {base.palette.slate.500}",
+          "deprecatedComment": "replace licorice200 with {base.palette.slate.500}. Prefer to replace with `sys.color.bg.muted.soft` if used as a background color, or `sys.color.fg.muted.soft` if used as a foreground (text/icon) color, or `sys.color.border.input.default` if used as a border color.",
           "fallback": "{base.palette.slate.500}"
         },
         "300": {
           "value": "#5E6A75",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace licorice300 with {base.palette.slate.600}",
+          "deprecatedComment": "replace licorice300 with {base.palette.slate.600}. Prefer to replace with `sys.color.bg.muted.default` if used as a background color, or `sys.color.fg.muted.default` if used as a foreground (text/icon) color, or `sys.color.text.hint` if used as a text hint color.",
           "fallback": "{base.palette.slate.600}"
         },
         "400": {
           "value": "#4a5561",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace licorice400 with {base.palette.slate.700}",
+          "deprecatedComment": "replace licorice400 with {base.palette.slate.700}. Prefer to replace with `sys.color.fg.muted.strong` if used as a foreground (text/icon) color.",
           "fallback": "{base.palette.slate.700}"
         },
         "500": {
           "value": "#333d47",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace licorice500 with {base.palette.slate.800}",
+          "deprecatedComment": "replace licorice500 with {base.palette.slate.800}. Prefer to replace with `sys.color.bg.muted.strong` if used as a background color, or `sys.color.fg.muted.stronger` if used as a foreground (text/icon) color, or `sys.color.border.input.strong` if used as a border color.",
           "fallback": "{base.palette.slate.800}"
         },
         "600": {
@@ -974,35 +974,35 @@
           "value": "#f6f7f8",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace soap100 with {base.palette.slate.25}",
+          "deprecatedComment": "replace soap100 with {base.palette.slate.25}. Prefer to replace with `sys.color.bg.alt.softer` if used as a background color.",
           "fallback": "{base.palette.slate.25}"
         },
         "200": {
           "value": "#F0F1F2",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace soap200 with {base.palette.slate.50}",
+          "deprecatedComment": "replace soap200 with {base.palette.slate.50}. Prefer to replace with `sys.color.bg.alt.soft` if used as a background color.",
           "fallback": "{base.palette.slate.50}"
         },
         "300": {
           "value": "#e8ebed",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace soap300 with {base.palette.slate.100}",
+          "deprecatedComment": "replace soap300 with {base.palette.slate.100}. Prefer to replace with `sys.color.bg.alt.default` if used as a background color, or `sys.color.border.input.inverse` if used as a border color.",
           "fallback": "{base.palette.slate.100}"
         },
         "400": {
           "value": "#DFE2E6",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace soap400 with {base.palette.slate.200}",
+          "deprecatedComment": "replace soap400 with {base.palette.slate.200}. Prefer to replace with `sys.color.bg.alt.strong` if used as a background color, or `sys.color.border.divider` if used as a border color.",
           "fallback": "{base.palette.slate.200}"
         },
         "500": {
           "value": "#ced3d9",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace soap500 with {base.palette.slate.300}",
+          "deprecatedComment": "replace soap500 with {base.palette.slate.300}. Prefer to replace with `sys.color.bg.alt.stronger` if used as a background color, or `sys.color.border.container` if used as a border color.",
           "fallback": "{base.palette.slate.300}"
         },
         "600": {
@@ -1010,7 +1010,7 @@
           "type": "color",
           "deprecated": true,
           "deprecatedComment": "replace soap600 with {base.palette.slate.300}",
-          "fallback": "{base.palette.slate.300}"
+          "fallback": "{base.palette.slate.600}"
         }
       },
       "french-vanilla": {
@@ -1018,7 +1018,7 @@
           "value": "#ffffff",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace french-vanilla100 with {base.palette.neutral.0}",
+          "deprecatedComment": "replace french-vanilla100 with {base.palette.neutral.0}. Prefer to replace with `sys.color.bg.default` if used as a background color, or `sys.color.fg.default` if used as a foreground (text/icon) color, or `sys.color.border.default` if used as a border color.",
           "fallback": "{base.palette.neutral.0}"
         },
         "200": {
@@ -1057,50 +1057,6 @@
           "fallback": "{base.palette.neutral.400}"
         }
       },
-      "dragon-fruit": {
-        "100": {
-          "value": "",
-          "type": "color",
-          "deprecated": true,
-          "deprecatedComment": "replace dragon-fruit100 with {base.palette.purple.25}",
-          "fallback": "{base.palette.purple.25}"
-        },
-        "200": {
-          "value": "",
-          "type": "color",
-          "deprecated": true,
-          "deprecatedComment": "replace dragon-fruit200 with {base.palette.purple.100}",
-          "fallback": "{base.palette.purple.100}"
-        },
-        "300": {
-          "value": "",
-          "type": "color",
-          "deprecated": true,
-          "deprecatedComment": "replace dragon-fruit300 with {base.palette.indigo.500}",
-          "fallback": "{base.palette.indigo.500}"
-        },
-        "400": {
-          "value": "",
-          "type": "color",
-          "deprecated": true,
-          "deprecatedComment": "replace dragon-fruit400 with {base.palette.indigo.600}",
-          "fallback": "{base.palette.indigo.600}"
-        },
-        "500": {
-          "value": "",
-          "type": "color",
-          "deprecated": true,
-          "deprecatedComment": "replace dragon-fruit500 with {base.palette.indigo.700}",
-          "fallback": "{base.palette.indigo.700}"
-        },
-        "600": {
-          "value": "",
-          "type": "color",
-          "deprecated": true,
-          "deprecatedComment": "replace dragon-fruit600 with {base.palette.indigo.900}",
-          "fallback": "{base.palette.indigo.900}"
-        }
-      },
       "black-pepper": {
         "100": {
           "value": "#787878",
@@ -1120,22 +1076,22 @@
           "value": "#494949",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace black-pepper300 with {base.palette.neutral.800}",
-          "fallback": "{base.palette.neutral.800}"
+          "deprecatedComment": "replace black-pepper300 with {base.palette.neutral.800}. Prefer to replace with `sys.color.fg.default` if used as a foreground (text/icon) color.",
+          "fallback": "{base.palette.neutral.900}"
         },
         "400": {
           "value": "#333333",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace black-pepper400 with {base.palette.neutral.900}",
-          "fallback": "{base.palette.neutral.900}"
+          "deprecatedComment": "replace black-pepper400 with {base.palette.neutral.900}. Prefer to replace with `sys.color.bg.contrast.default` if used as a contrast background color, or `sys.color.fg.strong` if used as a foreground (text/icon) color, or `sys.color.border.contrast.default` if used as a border color.",
+          "fallback": "{base.palette.neutral.950}"
         },
         "500": {
           "value": "#1e1e1e",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace black-pepper500 with {base.palette.neutral.950}",
-          "fallback": "{base.palette.neutral.950}"
+          "deprecatedComment": "replace black-pepper500 with {base.palette.neutral.950}. Prefer to replace with `sys.color.bg.contrast.strong` if used as a contrast background color, or `sys.color.fg.stronger` if used as a foreground (text/icon) color, or `sys.color.border.contrast.strong` if used as a border color.",
+          "fallback": "{base.palette.neutral.975}"
         },
         "600": {
           "value": "#000000",
@@ -1219,6 +1175,54 @@
           "type": "color",
           "deprecated": true,
           "deprecatedComment": "replace cappuccino600 with appropriate replacement color"
+        }
+      }
+    },
+    "extended": {
+      "palette": {
+        "dragon-fruit": {
+          "100": {
+            "value": "",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace dragon-fruit100 with {base.palette.purple.25}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
+            "fallback": "{base.palette.purple.25}"
+          },
+          "200": {
+            "value": "",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace dragon-fruit200 with {base.palette.purple.100}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
+            "fallback": "{base.palette.purple.100}"
+          },
+          "300": {
+            "value": "",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace dragon-fruit300 with {base.palette.indigo.500}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
+            "fallback": "{base.palette.indigo.500}"
+          },
+          "400": {
+            "value": "",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace dragon-fruit400 with {base.palette.indigo.600}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
+            "fallback": "{base.palette.indigo.600}"
+          },
+          "500": {
+            "value": "",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace dragon-fruit500 with {base.palette.indigo.700}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
+            "fallback": "{base.palette.indigo.700}"
+          },
+          "600": {
+            "value": "",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace dragon-fruit600 with {base.palette.indigo.900}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
+            "fallback": "{base.palette.indigo.900}"
+          }
         }
       }
     }
