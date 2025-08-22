@@ -1,0 +1,22 @@
+import {Markdown, Meta, Unstyled} from '@storybook/blocks';
+import {NavCard} from '../../components/NavCard';
+import {DeprecatedTokens} from './examples/DeprecatedTokens';
+
+<Meta title="Guides/Migartion [v2 > v3]/Visual Changes/Deprecated Palette" />
+
+<Unstyled>
+
+# Deprecated Base Tokens
+
+Many color tokens from previous versions have been deprecated or replaced in v3 to align with the
+new color system and improve consistency, accessibility, and brand alignment. Deprecated tokens are
+mapped to new palette values or system tokens where possible. When migrating, review the table below
+to find the recommended replacements for each deprecated token.
+
+Note that the new color values may not be exact visual matches due to the switch to the OKLCH color
+space and the expanded palette scale. We recommend updating your usage to the system tokens for the
+best results and future compatibility.
+
+<DeprecatedTokens />
+
+</Unstyled>

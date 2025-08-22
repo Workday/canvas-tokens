@@ -29,15 +29,14 @@ export function buildPaletteGroup(
   tokens: object,
   sortFn?: (a: DeprecatedColorSwatch, b: DeprecatedColorSwatch) => number
 ) {
-  return Object.entries(tokens)
-    .flatMap(([key, value]) => {
-      if (typeof value === 'string') {
-        return buildDeprecatedColorSwatch(value, `${prefix}.${key}`);
-      } else {
-        const palette = buildPalette(`${prefix}.${key}`, value);
-        return sortFn ? palette.sort(sortFn) : palette;
-      }
-    })
+  return Object.entries(tokens).flatMap(([key, value]) => {
+    if (typeof value === 'string') {
+      return buildDeprecatedColorSwatch(value, `${prefix}.${key}`);
+    } else {
+      const palette = buildPalette(`${prefix}.${key}`, value);
+      return sortFn ? palette.sort(sortFn) : palette;
+    }
+  });
 }
 
 export interface DeprecatedColorSwatch {
@@ -110,21 +109,19 @@ export function DeprecatedColorGrid({
             <TokenGrid.RowItem>
               <TokenGrid.Swatch style={getSwatchStyles(token)} />
             </TokenGrid.RowItem>
-            {variableType === 'css' ||
-              ('all' && (
-                <TokenGrid.RowItem>
-                  <TokenGrid.MonospaceLabel isDeprecated>{token.cssVar}</TokenGrid.MonospaceLabel>
-                </TokenGrid.RowItem>
-              ))}
-            {variableType === 'javascript' ||
-              ('all' && (
-                <TokenGrid.RowItem>
-                  <TokenGrid.MonospaceLabel isDeprecated>{token.jsVar}</TokenGrid.MonospaceLabel>
-                </TokenGrid.RowItem>
-              ))}
+            {(variableType === 'css' || variableType === 'all') && (
+              <TokenGrid.RowItem>
+                <TokenGrid.MonospaceLabel isDeprecated>{token.cssVar}</TokenGrid.MonospaceLabel>
+              </TokenGrid.RowItem>
+            )}
+            {(variableType === 'javascript' || variableType === 'all') && (
+              <TokenGrid.RowItem>
+                <TokenGrid.MonospaceLabel isDeprecated>{token.jsVar}</TokenGrid.MonospaceLabel>
+              </TokenGrid.RowItem>
+            )}
             <TokenGrid.RowItem>
               <TokenGrid.MonospaceLabel>
-                {token.newCSSVar || 'transparent'}
+                {token.newCSSVar || 'not specified'}
               </TokenGrid.MonospaceLabel>
             </TokenGrid.RowItem>
             <TokenGrid.RowItem>

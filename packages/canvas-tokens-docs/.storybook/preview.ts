@@ -20,6 +20,8 @@ const preview: Preview = {
             'System Tokens',
             ['Overview'],
           ],
+          'Guides',
+          ['Upgrade Guides', 'Migrations'],
           'Visual Tests',
         ],
       },
