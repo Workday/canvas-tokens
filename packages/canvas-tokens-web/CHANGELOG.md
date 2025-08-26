@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.16
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add v3 Upgrade guide ([#184](https://github.com/Workday/canvas-tokens/pull/184))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 3.0.0-alpha.15
 
 ### Major Changes
