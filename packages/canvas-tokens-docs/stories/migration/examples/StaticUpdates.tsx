@@ -21,7 +21,7 @@ export const StaticUpdates = () => {
               <Swatch color={token.oldColor} name={token.old} withWhiteText={token.withWhiteText} />
               <Swatch color={token.new} withWhiteText={token.withWhiteText} />
               <TokenGrid.RowItem>
-                {!token.old ? 'Added' : !token.new ? 'Removed' : 'Updated'}
+                {!token.old ? '➕Added' : !token.new ? '❌ Removed' : '✅ Updated'}
               </TokenGrid.RowItem>
             </>
           )}
