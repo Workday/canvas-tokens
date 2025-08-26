@@ -108,7 +108,7 @@ export const TextUpdates = () => {
               <TextBlock token={token.name} name={token.old} color={token.oldColor} />
               <TextBlock token={token.name} name={token.new} color={token.new} />
               <TokenGrid.RowItem>
-                {!token.old ? 'Added' : !token.new ? 'Removed' : 'Updated'}
+                {!token.old ? '➕Added' : !token.new ? '❌ Removed' : '✅ Updated'}
               </TokenGrid.RowItem>
             </>
           )}
