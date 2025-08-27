@@ -84,18 +84,6 @@ function getSwatchStyles(token: DeprecatedColorSwatch) {
   return {[property]: `var(${token.cssVar})`};
 }
 
-function getHeadings(type: VariableType) {
-  const defaultHeadings = ['Swatch', 'Deprecated CSS Variable Name', 'Deprecated JS Variable Name'];
-  if (type === 'css') {
-    defaultHeadings.splice(1, 0, 'Deprecated CSS Variable Name');
-  } else if (type === 'javascript') {
-    defaultHeadings.splice(1, 0, 'Deprecated JS Variable Name');
-  } else {
-    defaultHeadings.splice(1, 0, 'Deprecated CSS Variable Name', 'Deprecated JS Variable Name');
-  }
-  return defaultHeadings;
-}
-
 /** A configuration of TokenGrid to quickly build tables for colors */
 export function DeprecatedColorGrid({
   name,
