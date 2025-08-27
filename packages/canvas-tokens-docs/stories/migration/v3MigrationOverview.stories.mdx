@@ -1,5 +1,7 @@
 import {Markdown, Meta, Unstyled} from '@storybook/blocks';
+import {DownloadLLMFile} from '../../components/DownloadLLMFile';
 import {NavCard} from '../../components/NavCard';
+import {StatusIndicator} from '../../components/StatusIndicator';
 import {DeprecatedTokens} from './examples/DeprecatedTokens';
 
 <Meta title="Guides/Upgrade Guides/v3/Overview" />
@@ -36,6 +38,31 @@ guide that provides step-by-step migration process instructions.
 <NavCard
   title="React Tokens Migration Guide"
   link="https://workday.github.io/canvas-kit/?path=/docs/guides-tokens-migration-overview--docs"
+/>
+
+#### LLM Assisted Migration <StatusIndicator type="ai" content="AI Content" />
+
+We provide a **LLM migration mapping file** (`llm-token-migration.txt`) specifically designed for
+use with LLM-based code assistants (such as [Cursor](https://www.cursor.so/) or similar tools). This
+file is not intended for direct human reference or team documentation, but rather as structured
+input for LLMs to automate and assist with your token migration process.
+
+> **Important**: LLMs can make mistakes. Please review changes to be sure they are correct using our
+> docs and upgrade guides
+
+This file contains a comprehensive mapping of deprected base palette token usages to their new
+equivalents in v3, along with migration tips and examples and formatted for optimal LLM consumption.
+
+**How to use:**
+
+- **View raw file**: Open the file in a new tab to see the complete migration mapping
+- **Download as txt**: Save the file locally to upload or paste into your LLM/code assistant
+- **Use with LLM**: Provide the raw content to your LLM/code assistant as context for automated
+  migration
+
+<DownloadLLMFile
+  rawFileLink="https://raw.githubusercontent.com/Workday/canvas-tokens/master/modules/docs/llm-txt/llm-token-migration.txt"
+  filename="llm-token-migration-3.0.0.txt"
 />
 
 ### RGBA to OKLCH
