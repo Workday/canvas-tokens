@@ -2,12 +2,18 @@
   box-sizing: border-box;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--cnvs-base-palette-black-pepper-400);
   margin: 0;
 }
 
-ol, ul {
+ol,
+ul {
   color: var(--cnvs-base-palette-black-pepper-300);
   font-family: var(--cnvs-base-font-family-50);
   font-weight: var(--cnvs-base-font-weight-400);
@@ -62,6 +68,17 @@ p {
   font-size: var(--cnvs-base-font-size-100);
   letter-spacing: var(--cnvs-base-letter-spacing-200);
   margin: 1rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 pre {
