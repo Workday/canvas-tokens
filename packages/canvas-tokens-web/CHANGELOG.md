@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.17
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add llm txt file to overview page
+    ([#187](https://github.com/Workday/canvas-tokens/pull/187))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0-alpha.16
 
 ### Major Changes
