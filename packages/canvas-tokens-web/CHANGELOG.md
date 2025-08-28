@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.18
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Update base token section with deprecated
+    ([#189](https://github.com/Workday/canvas-tokens/pull/189))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0-alpha.17
 
 ### Major Changes
