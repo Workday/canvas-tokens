@@ -17,7 +17,7 @@ const foregroundPalette = buildPalette('system.color.fg', {
 }).sort(sortSystemColorPalette);
 
 export const ForegroundColors = () => (
-  <ColorGrid name="Foreground Default Colors" palette={foregroundPalette} />
+  <ColorGrid name="Foreground Default Colors" palette={foregroundPalette} variableType="system" />
 );
 
 const statusPalettes = buildPaletteGroup(
@@ -30,7 +30,7 @@ const statusPalettes = buildPaletteGroup(
 );
 
 export const ForegroundStatusColors = () => (
-  <ColorGrid name="Foreground Status Colors" palette={statusPalettes} />
+  <ColorGrid name="Foreground Status Colors" palette={statusPalettes} variableType="system" />
 );
 
 const mutedPalette = buildPalette('system.color.fg.muted', system.color.fg.muted).sort(
@@ -38,7 +38,7 @@ const mutedPalette = buildPalette('system.color.fg.muted', system.color.fg.muted
 );
 
 export const ForegroundMutedColors = () => (
-  <ColorGrid name="Foreground Muted Colors" palette={mutedPalette} />
+  <ColorGrid name="Foreground Muted Colors" palette={mutedPalette} variableType="system" />
 );
 
 const primaryPalette = buildPalette('system.color.fg.primary', system.color.fg.primary).sort(
@@ -46,7 +46,7 @@ const primaryPalette = buildPalette('system.color.fg.primary', system.color.fg.p
 );
 
 export const ForegroundPrimaryColors = () => (
-  <ColorGrid name="Foreground Primary Colors" palette={primaryPalette} />
+  <ColorGrid name="Foreground Primary Colors" palette={primaryPalette} variableType="system" />
 );
 
 const contrastPalette = buildPalette('system.color.fg.contrast', system.color.fg.contrast).sort(
@@ -54,7 +54,7 @@ const contrastPalette = buildPalette('system.color.fg.contrast', system.color.fg
 );
 
 export const ForegroundContrastColors = () => (
-  <ColorGrid name="Foreground Contrast Colors" palette={contrastPalette} />
+  <ColorGrid name="Foreground Contrast Colors" palette={contrastPalette} variableType="system" />
 );
 
 const aiPalette = buildPalette('system.color.fg', {
@@ -62,5 +62,5 @@ const aiPalette = buildPalette('system.color.fg', {
 }).sort(sortSystemColorPalette);
 
 export const ForegroundAIColors = () => (
-  <ColorGrid name="Foreground AI Colors" palette={aiPalette} />
+  <ColorGrid name="Foreground AI Colors" palette={aiPalette} variableType="system" />
 );
