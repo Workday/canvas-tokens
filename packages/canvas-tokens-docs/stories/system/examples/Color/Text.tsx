@@ -23,7 +23,7 @@ export const TextColors = () => <ColorGrid name="Text Default Colors" palette={t
 const statusPalettes = buildPaletteGroup(
   'system.color.text',
   {
-    primary: system.color.text.primary,
+    positive: system.color.text.positive,
     caution: system.color.text.caution,
     critical: system.color.text.critical,
   },
@@ -41,3 +41,9 @@ const primaryPalette = buildPalette('system.color.text.primary', system.color.te
 export const TextPrimaryColors = () => (
   <ColorGrid name="Text Primary Colors" palette={primaryPalette} />
 );
+
+const infoPalette = buildPalette('system.color.text.info', system.color.text.info).sort(
+  sortSystemColorPalette
+);
+
+export const TextInfoColors = () => <ColorGrid name="Text Info Colors" palette={infoPalette} />;

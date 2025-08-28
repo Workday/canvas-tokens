@@ -25,6 +25,7 @@ const statusPalettes = buildPaletteGroup(
   {
     caution: system.color.fg.caution,
     critical: system.color.fg.critical,
+    positive: system.color.fg.positive,
   },
   sortSystemColorPalette
 );
@@ -47,6 +48,14 @@ const primaryPalette = buildPalette('system.color.fg.primary', system.color.fg.p
 
 export const ForegroundPrimaryColors = () => (
   <ColorGrid name="Foreground Primary Colors" palette={primaryPalette} variableType="system" />
+);
+
+const infoPalette = buildPalette('system.color.fg.info', system.color.fg.info).sort(
+  sortSystemColorPalette
+);
+
+export const ForegroundInfoColors = () => (
+  <ColorGrid name="Foreground Info Colors" palette={infoPalette} variableType="system" />
 );
 
 const contrastPalette = buildPalette('system.color.fg.contrast', system.color.fg.contrast).sort(

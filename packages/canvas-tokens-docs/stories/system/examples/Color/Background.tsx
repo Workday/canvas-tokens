@@ -64,6 +64,14 @@ export const BackgroundPrimaryColors = () => (
   <ColorGrid name="Background Primary Colors" palette={primaryPalette} variableType="system" />
 );
 
+const infoPalette = buildPalette('system.color.bg.info', system.color.bg.info).sort(
+  sortSystemColorPalette
+);
+
+export const BackgroundInfoColors = () => (
+  <ColorGrid name="Background Info Colors" palette={infoPalette} variableType="system" />
+);
+
 const statusPalettes = buildPaletteGroup(
   'system.color.bg',
   {

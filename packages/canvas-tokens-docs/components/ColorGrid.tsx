@@ -98,8 +98,6 @@ export function buildPaletteGroup(
 ) {
   return Object.entries(tokens)
     .map(([key, value]) => {
-      console.log(prefix, key, value);
-
       if (typeof value === 'string') {
         return buildColorSwatch(value, `${prefix}.${key}`);
       } else {
@@ -185,14 +183,12 @@ export function ColorGrid({name, variableType = 'all', palette}: ColorGridProps)
           <TokenGrid.RowItem>
             <TokenGrid.Swatch style={getSwatchStyles(token)} />
           </TokenGrid.RowItem>
-          {(variableType === 'css' || variableType === 'all' || variableType === 'system') && (
+          {variableType !== 'javascript' && (
             <TokenGrid.RowItem>
               <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
             </TokenGrid.RowItem>
           )}
-          {(variableType === 'javascript' ||
-            variableType === 'all' ||
-            variableType === 'system') && (
+          {variableType !== 'css' && (
             <TokenGrid.RowItem>
               <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
             </TokenGrid.RowItem>

@@ -12,6 +12,7 @@ const borderPalette = buildPalette('system.color.border', {
   container: system.color.border.container,
   divider: system.color.border.divider,
   'primary.default': system.color.border.primary.default,
+  'info.default': system.color.border.info.default,
   inverse: system.color.border.inverse,
   transparent: system.color.border.transparent,
   ai: system.color.border.ai,
