@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {updatedBrandTokens} from './data/deprecatedMapping';
 import {TokenGrid} from '../../../components/TokenGrid';
-import {Swatch} from './DeprecatedTokens';
+import {SwatchWithText} from '../../../components/SwatchWithText';
 
 export const BrandUpdates = () => {
   const names = Object.keys(updatedBrandTokens);
@@ -17,8 +17,12 @@ export const BrandUpdates = () => {
           {(token: any) => (
             <>
               <TokenGrid.RowItem>{token.name}</TokenGrid.RowItem>
-              <Swatch color={token.oldColor} name={token.old} withWhiteText={token.withWhiteText} />
-              <Swatch color={token.new} withWhiteText={token.withWhiteText} />
+              <SwatchWithText
+                color={token.oldColor}
+                name={token.old}
+                withWhiteText={token.withWhiteText}
+              />
+              <SwatchWithText color={token.new} withWhiteText={token.withWhiteText} />
               <TokenGrid.RowItem>
                 {!token.old ? '➕Added' : !token.new ? '❌ Removed' : '✅ Updated'}
               </TokenGrid.RowItem>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {updatedSystemTokens} from './data/deprecatedMapping';
 import {TokenGrid} from '../../../components/TokenGrid';
-import {Swatch} from './DeprecatedTokens';
+import {SwatchWithText} from '../../../components/SwatchWithText';
 
 const TextBlock = ({token, name, color}) => {
   const textColor =
@@ -77,8 +77,12 @@ export const ForegroundUpdates = () => {
           {(token: any) => (
             <>
               <TokenGrid.RowItem>{token.name}</TokenGrid.RowItem>
-              <Swatch color={token.oldColor} name={token.old} withWhiteText={token.withWhiteText} />
-              <Swatch color={token.new} withWhiteText={token.withWhiteText} />
+              <SwatchWithText
+                color={token.oldColor}
+                name={token.old}
+                withWhiteText={token.withWhiteText}
+              />
+              <SwatchWithText color={token.new} withWhiteText={token.withWhiteText} />
               <TokenGrid.RowItem>
                 {!token.old ? '➕Added' : !token.new ? '❌ Removed' : '✅ Updated'}
               </TokenGrid.RowItem>

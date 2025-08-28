@@ -11,13 +11,16 @@ import {
 const borderPalette = buildPalette('system.color.border', {
   container: system.color.border.container,
   divider: system.color.border.divider,
-  primary: system.color.border.primary.default,
+  'primary.default': system.color.border.primary.default,
+  'info.default': system.color.border.info.default,
   inverse: system.color.border.inverse,
   transparent: system.color.border.transparent,
   ai: system.color.border.ai,
 }).sort(sortSystemColorPalette);
 
-export const BorderColors = () => <ColorGrid name="Border Colors" palette={borderPalette} />;
+export const BorderColors = () => (
+  <ColorGrid name="Border Colors" palette={borderPalette} variableType="system" />
+);
 
 const contrastPalette = buildPalette(
   'system.color.border.contrast',
@@ -25,7 +28,7 @@ const contrastPalette = buildPalette(
 ).sort(sortSystemColorPalette);
 
 export const BorderContrastColors = () => (
-  <ColorGrid name="Border Contrast Colors" palette={contrastPalette} />
+  <ColorGrid name="Border Contrast Colors" palette={contrastPalette} variableType="system" />
 );
 
 const inputPalette = buildPalette('system.color.border.input', system.color.border.input).sort(
@@ -33,7 +36,7 @@ const inputPalette = buildPalette('system.color.border.input', system.color.bord
 );
 
 export const BorderInputColors = () => (
-  <ColorGrid name="Border Input Colors" palette={inputPalette} />
+  <ColorGrid name="Border Input Colors" palette={inputPalette} variableType="system" />
 );
 
 const statusPalettes = buildPaletteGroup(
@@ -46,5 +49,5 @@ const statusPalettes = buildPaletteGroup(
 );
 
 export const BorderStatusColors = () => (
-  <ColorGrid name="Border Status Colors" palette={statusPalettes} />
+  <ColorGrid name="Border Status Colors" palette={statusPalettes} variableType="system" />
 );

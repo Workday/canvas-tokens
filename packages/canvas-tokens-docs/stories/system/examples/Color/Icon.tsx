@@ -26,6 +26,12 @@ export const IconPrimaryColors = () => (
   <ColorGrid name="Icon Primary Colors" palette={iconPrimaryPalette} />
 );
 
+const iconInfoPalette = buildPalette('system.color.icon.info', system.color.icon.info).sort(
+  sortSystemColorPalette
+);
+
+export const IconInfoColors = () => <ColorGrid name="Icon Info Colors" palette={iconInfoPalette} />;
+
 const iconStatusPalettes = buildPaletteGroup(
   'system.color.icon',
   {

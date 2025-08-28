@@ -58,11 +58,12 @@ export function buildDeprecatedColorSwatch(
 ): DeprecatedColorSwatch {
   // Get the CSS var's value from the :root element
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+
   return {
     newCSSVar: value,
     cssVar: varName,
     jsVar: formatJSVar(jsVarName),
-    newJsVar: formatJSVar(jsVarName),
+    newJsVar: newJsVar ? formatJSVar(newJsVar) : 'none',
   };
 }
 
@@ -83,18 +84,6 @@ function getSwatchStyles(token: DeprecatedColorSwatch) {
   return {[property]: `var(${token.cssVar})`};
 }
 
-function getHeadings(type: VariableType) {
-  const defaultHeadings = ['Swatch', 'New CSS Variable', 'New JS Variable'];
-  if (type === 'css') {
-    defaultHeadings.splice(1, 0, 'Deprecated CSS Variable Name');
-  } else if (type === 'javascript') {
-    defaultHeadings.splice(1, 0, 'Deprecated JS Variable Name');
-  } else {
-    defaultHeadings.splice(1, 0, 'Deprecated CSS Variable Name', 'Deprecated JS Variable Name');
-  }
-  return defaultHeadings;
-}
-
 /** A configuration of TokenGrid to quickly build tables for colors */
 export function DeprecatedColorGrid({
   name,
@@ -102,7 +91,11 @@ export function DeprecatedColorGrid({
   palette,
 }: DeprecatedColorGridProps) {
   return (
-    <TokenGrid caption={formatName(name)} headings={getHeadings(variableType)} rows={palette}>
+    <TokenGrid
+      caption={formatName(name)}
+      headings={['Swatch', 'Deprecated CSS Variable Name', 'Deprecated JS Variable Name']}
+      rows={palette}
+    >
       {token => {
         return (
           <>
@@ -119,14 +112,6 @@ export function DeprecatedColorGrid({
                 <TokenGrid.MonospaceLabel isDeprecated>{token.jsVar}</TokenGrid.MonospaceLabel>
               </TokenGrid.RowItem>
             )}
-            <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel>
-                {token.newCSSVar || 'not specified'}
-              </TokenGrid.MonospaceLabel>
-            </TokenGrid.RowItem>
-            <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel>{token.newJsVar || 'transparent'}</TokenGrid.MonospaceLabel>
-            </TokenGrid.RowItem>
           </>
         );
       }}
