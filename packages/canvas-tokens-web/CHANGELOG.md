@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.20
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add js var names ([#191](https://github.com/Workday/canvas-tokens/pull/191))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0-alpha.19
 
 ### Major Changes
