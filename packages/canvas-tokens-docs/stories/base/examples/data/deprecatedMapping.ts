@@ -80,7 +80,7 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.chili-mango.100',
       old: '#ffe6d9',
-      new: 'base.palette.coral.25',
+      new: 'base.palette.coral.100',
     },
     {
       name: 'base.palette.chili-mango.200',
@@ -121,13 +121,12 @@ export const deprecatedBaseTokens = {
       name: 'base.palette.cantaloupe.200',
       old: '#fcd49f',
       new: 'base.palette.amber.200',
-      systemTokens: ['sys.color.fg.caution.softer'],
+      systemTokens: ['sys.color.bg.caution.soft', 'sys.color.fg.caution.softer'],
     },
     {
       name: 'base.palette.cantaloupe.300',
       old: '#ffbc63',
       new: 'base.palette.amber.300',
-      systemTokens: ['sys.color.bg.caution.soft'],
     },
     {
       name: 'base.palette.cantaloupe.400',
@@ -292,12 +291,12 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.watermelon.100',
       old: '#ebfdf8',
-      new: 'base.palette.neutral.50',
+      new: 'base.palette.teal.25',
     },
     {
       name: 'base.palette.watermelon.200',
       old: '#b7edde',
-      new: 'base.palette.neutral.100',
+      new: 'base.palette.teal.100',
     },
     {
       name: 'base.palette.watermelon.300',
@@ -375,7 +374,7 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.toothpaste.400',
       old: '#1894c9',
-      new: 'base.palette.azure.400',
+      new: 'base.palette.azure.500',
     },
     {
       name: 'base.palette.toothpaste.500',
@@ -394,7 +393,7 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.blueberry.100',
       old: '#D7EAFC',
-      new: 'base.palette.blue.25',
+      new: 'base.palette.blue.100',
     },
     {
       name: 'base.palette.blueberry.200',
@@ -553,7 +552,7 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.island-punch.300',
       old: '#a88ae6',
-      new: 'base.palette.indigo.400',
+      new: 'base.palette.purple.500',
     },
     {
       name: 'base.palette.island-punch.400',
@@ -627,7 +626,7 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.pomegranate.400',
       old: '#f31167',
-      new: 'base.palette.red.400',
+      new: 'base.palette.magenta.500',
       withWhiteText: true,
     },
     {
@@ -701,7 +700,7 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.root-beer.500',
       old: '#8C7266',
-      new: 'base.palette.coral.200',
+      new: 'base.palette.amber.900',
       withWhiteText: true,
     },
     {
@@ -835,7 +834,7 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.soap.600',
       old: '#B9C0C7',
-      new: 'base.palette.slate.600',
+      new: 'base.palette.slate.300',
     },
   ],
   'french-vanilla': [
@@ -848,27 +847,27 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.french-vanilla.200',
       old: '#ebebeb',
-      new: 'base.palette.neutral.50',
+      new: 'base.palette.neutral.100',
     },
     {
       name: 'base.palette.french-vanilla.300',
       old: '#d4d4d4',
-      new: 'base.palette.neutral.100',
+      new: 'base.palette.neutral.200',
     },
     {
       name: 'base.palette.french-vanilla.400',
       old: '#bdbdbd',
-      new: 'base.palette.neutral.200',
+      new: 'base.palette.neutral.300',
     },
     {
       name: 'base.palette.french-vanilla.500',
       old: '#a6a6a6',
-      new: 'base.palette.neutral.300',
+      new: 'base.palette.neutral.400',
     },
     {
       name: 'base.palette.french-vanilla.600',
       old: '#8f8f8f',
-      new: 'base.palette.neutral.400',
+      new: 'base.palette.neutral.500',
     },
   ],
   'black-pepper': [
