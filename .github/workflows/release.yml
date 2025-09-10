@@ -82,6 +82,8 @@ jobs:
 
       - uses: Workday/canvas-kit-actions/do-release@v1
         if: ${{ steps.set_version.outputs.version }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
         id: release
         env:
           NPM_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
