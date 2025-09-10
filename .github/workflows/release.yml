@@ -85,9 +85,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
         id: release
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
         with:
           ghToken: ${{ secrets.GH_RW_TOKEN }}
           package: "@workday/canvas-tokens-web"
