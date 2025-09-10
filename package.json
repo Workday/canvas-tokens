@@ -23,7 +23,7 @@
     "test": "jest -c jest.config.ts",
     "typecheck": "tsc -p . --noEmit",
     "prerelease": "yarn clean:tokens && yarn build:tokens",
-    "release": "changeset publish --access public --tags latest"
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
