@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0
+
+### Major Changes
+
+- ### Components
+
+  - chore: Remove options ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Set node var ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Update release action ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0-alpha.21
 
 ### Major Changes
