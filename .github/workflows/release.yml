@@ -94,5 +94,5 @@ jobs:
           prerelease: ${{ contains(github.ref_name, 'prerelease/') }}
           preid: ${{ steps.get_preid.outputs.preid }}
           skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
-          releaseScript: yarn release
+          releaseScript: echo "Releasing..."
           skipTagsPush: false
