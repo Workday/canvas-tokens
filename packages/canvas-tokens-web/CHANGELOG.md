@@ -1,5 +1,18 @@
 # @workday/canvas-tokens-web
 
+## 3.0.0-alpha.21
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix wording ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - fix: Remove sync script ([#156](https://github.com/Workday/canvas-tokens/pull/156))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0-alpha.20
 
 ### Major Changes
