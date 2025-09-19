@@ -1,5 +1,21 @@
 # @workday/canvas-tokens-web
 
+## 3.1.1
+
+### Patch Changes
+
+- ### Documentation
+
+  - docs: Fix inverse token ([#198](https://github.com/Workday/canvas-tokens/pull/198))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Tokens
+
+  - fix: Update caution color mapping ([#200](https://github.com/Workday/canvas-tokens/pull/200))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+    - / : base color has been reverted from to
+    - / : base color has been reverted from to
+
 ## 3.1.0
 
 ### Minor Changes
