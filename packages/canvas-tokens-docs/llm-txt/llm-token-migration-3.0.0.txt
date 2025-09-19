@@ -35,8 +35,8 @@ This document outlines the migration from design tokens v2 to v3. Many color tok
 | base.palette.cantaloupe.100          | #ffeed9   | base.palette.amber.50     | sys.color.bg.caution.softer                                                                     |
 | base.palette.cantaloupe.200          | #fcd49f   | base.palette.amber.200    | sys.color.bg.caution.soft, sys.color.fg.caution.softer                                          |
 | base.palette.cantaloupe.300          | #ffbc63   | base.palette.amber.300    |                                                                                                 |
-| base.palette.cantaloupe.400          | #ffa126   | base.palette.amber.400    | sys.color.bg.caution.default, sys.color.fg.caution.soft, sys.color.border.caution.default       |
-| base.palette.cantaloupe.500          | #f38b00   | base.palette.amber.500    | sys.color.bg.caution.strong                                                                     |
+| base.palette.cantaloupe.400          | #ffa126   | base.palette.amber.400    | sys.color.bg.caution.default, sys.color.border.caution.default                                  |
+| base.palette.cantaloupe.500          | #f38b00   | base.palette.amber.500    | sys.color.bg.caution.strong, sys.color.fg.caution.softer,                                       |
 | base.palette.cantaloupe.600          | #c06c00   | base.palette.amber.600    | sys.color.bg.caution.stronger, sys.color.border.caution.strong                                  |
 | base.palette.sour-lemon.100          | #fff9e6   | base.palette.amber.25     | -                                                                                               |
 | base.palette.sour-lemon.200          | #ffecab   | base.palette.amber.100    | -                                                                                               |

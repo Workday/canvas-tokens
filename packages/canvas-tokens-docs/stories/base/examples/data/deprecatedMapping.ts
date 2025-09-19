@@ -121,7 +121,7 @@ export const deprecatedBaseTokens = {
       name: 'base.palette.cantaloupe.200',
       old: '#fcd49f',
       new: 'base.palette.amber.200',
-      systemTokens: ['sys.color.bg.caution.soft', 'sys.color.fg.caution.softer'],
+      systemTokens: ['sys.color.bg.caution.soft'],
     },
     {
       name: 'base.palette.cantaloupe.300',
@@ -132,17 +132,13 @@ export const deprecatedBaseTokens = {
       name: 'base.palette.cantaloupe.400',
       old: '#ffa126',
       new: 'base.palette.amber.400',
-      systemTokens: [
-        'sys.color.bg.caution.default',
-        'sys.color.fg.caution.soft',
-        'sys.color.border.caution.default',
-      ],
+      systemTokens: ['sys.color.bg.caution.default', 'sys.color.border.caution.default'],
     },
     {
       name: 'base.palette.cantaloupe.500',
       old: '#f38b00',
       new: 'base.palette.amber.500',
-      systemTokens: ['sys.color.bg.caution.strong'],
+      systemTokens: ['sys.color.bg.caution.strong', 'sys.color.fg.caution.softer'],
     },
     {
       name: 'base.palette.cantaloupe.600',
