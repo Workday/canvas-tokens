@@ -1,5 +1,29 @@
 # @workday/canvas-tokens-web
 
+## 3.1.0
+
+### Minor Changes
+
+- ### Documentation
+
+  - docs: Token v3 announcement ([#194](https://github.com/Workday/canvas-tokens/pull/194))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Fix docs links ([#195](https://github.com/Workday/canvas-tokens/pull/195))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Tokens
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#197](https://github.com/Workday/canvas-tokens/pull/197))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) The following tokens have been fixed to match a
+    figma value:
+    - : color alpha has been changed from to .
+    - / / : base color has been changed from to .
+    - / / / : base color has been changed from to .
+    - / / : base color has been changed from to .
+    - / / : base color has been changed from to
+    - / : base color has been changed from to
+
 ## 3.0.0
 
 ### Major Changes
