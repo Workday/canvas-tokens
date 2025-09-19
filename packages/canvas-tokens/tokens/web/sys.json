@@ -657,7 +657,7 @@
           "soft": {
             "value": "{base.palette.blue.100}",
             "type": "color",
-            "comment": "Disabled"
+            "comment": "Primary disabled"
           },
           "default": {
             "value": "{base.palette.blue.600}",
