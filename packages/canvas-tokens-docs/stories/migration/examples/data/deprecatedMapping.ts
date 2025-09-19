@@ -571,21 +571,21 @@ export const updatedSystemTokens = {
         name: 'sys.color.fg.default',
         old: 'base.palette.black-pepper.300',
         oldColor: '#494949',
-        new: 'base.palette.neutral.900',
+        new: 'base.palette.neutral.800',
         withWhiteText: true,
       },
       {
         name: 'sys.color.fg.strong',
         old: 'base.palette.black-pepper.400',
         oldColor: '#333333',
-        new: 'base.palette.neutral.950',
+        new: 'base.palette.neutral.900',
         withWhiteText: true,
       },
       {
         name: 'sys.color.fg.stronger',
         old: 'base.palette.black-pepper.500',
         oldColor: '#1e1e1e',
-        new: 'base.palette.neutral.975',
+        new: 'base.palette.neutral.950',
         withWhiteText: true,
       },
       {
@@ -665,7 +665,7 @@ export const updatedSystemTokens = {
       },
       {
         name: 'sys.color.fg.caution.soft',
-        new: 'base.palette.amber.700',
+        new: 'base.palette.amber.400',
       },
       {
         name: 'sys.color.fg.caution.default',
@@ -716,14 +716,14 @@ export const updatedSystemTokens = {
         name: 'sys.color.fg.contrast.default',
         old: 'base.palette.black-pepper.400',
         oldColor: '#333333',
-        new: 'base.palette.neutral.950',
+        new: 'base.palette.neutral.900',
         withWhiteText: true,
       },
       {
         name: 'sys.color.fg.contrast.strong',
         old: 'base.palette.black-pepper.500',
         oldColor: '#1e1e1e',
-        new: 'base.palette.neutral.975',
+        new: 'base.palette.neutral.950',
         withWhiteText: true,
       },
     ],
@@ -784,7 +784,7 @@ export const updatedSystemTokens = {
         name: 'sys.color.text.default',
         old: 'base.palette.black-pepper.300',
         oldColor: '#494949',
-        new: 'base.palette.neutral.900',
+        new: 'base.palette.neutral.800',
         withWhiteText: true,
       },
       {
@@ -804,14 +804,14 @@ export const updatedSystemTokens = {
         name: 'sys.color.text.strong',
         old: 'base.palette.black-pepper.400',
         oldColor: '#333333',
-        new: 'base.palette.neutral.950',
+        new: 'base.palette.neutral.900',
         withWhiteText: true,
       },
       {
         name: 'sys.color.text.stronger',
         old: 'base.palette.black-pepper.500',
         oldColor: '#1e1e1e',
-        new: 'base.palette.neutral.975',
+        new: 'base.palette.neutral.950',
         withWhiteText: true,
       },
       {
@@ -884,11 +884,11 @@ export const updatedSystemTokens = {
     caution: [
       {
         name: 'sys.color.text.caution.softer',
-        new: 'base.palette.amber.500',
+        new: 'base.palette.amber.200',
       },
       {
         name: 'sys.color.text.caution.soft',
-        new: 'base.palette.amber.700',
+        new: 'base.palette.amber.400',
       },
       {
         name: 'sys.color.text.caution.default',
@@ -966,11 +966,11 @@ export const updatedSystemTokens = {
         name: 'sys.color.icon.default',
         old: 'base.palette.licorice.200',
         oldColor: '#7b858f',
-        new: 'base.palette.neutral.900',
+        new: 'base.palette.neutral.800',
       },
       {
         name: 'sys.color.icon.strong',
-        new: 'base.palette.neutral.950',
+        new: 'base.palette.neutral.900',
         old: 'base.palette.licorice.500',
         oldColor: '#333d47',
         withWhiteText: true,
@@ -1067,11 +1067,11 @@ export const updatedSystemTokens = {
     caution: [
       {
         name: 'sys.color.icon.caution.softer',
-        new: 'base.palette.amber.500',
+        new: 'base.palette.amber.200',
       },
       {
         name: 'sys.color.icon.caution.soft',
-        new: 'base.palette.amber.700',
+        new: 'base.palette.amber.400',
       },
       {
         name: 'sys.color.icon.caution.default',
