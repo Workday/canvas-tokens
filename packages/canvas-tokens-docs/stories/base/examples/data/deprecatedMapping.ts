@@ -846,7 +846,7 @@ export const deprecatedBaseTokens = {
       name: 'base.palette.french-vanilla.100',
       old: '#ffffff',
       new: 'base.palette.neutral.0',
-      systemTokens: ['sys.color.bg.default', 'sys.color.fg.inverse', 'sys.color.border.default'],
+      systemTokens: ['sys.color.bg.default', 'sys.color.fg.inverse', 'sys.color.border.inverse'],
     },
     {
       name: 'base.palette.french-vanilla.200',
