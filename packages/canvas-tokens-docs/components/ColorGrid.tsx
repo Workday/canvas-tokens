@@ -78,8 +78,8 @@ const purposeMap: Record<string, string> = {
 };
 
 export function sortSystemColorPalette(a: ColorSwatch, b: ColorSwatch) {
-  const aLevel = typeof a.cssVar === 'string' ? a.cssVar.split('-').at(-1) : '';
-  const bLevel = typeof b.cssVar === 'string' ? b.cssVar.split('-').at(-1) : '';
+  const aLevel = aLevel = a.cssVar.split('-').at(-1) || '';
+  const bLevel = b.cssVar.split('-').at(-1) || '';
   const first = aLevel in sortMap ? sortMap[aLevel] : Infinity;
   const second = bLevel in sortMap ? sortMap[bLevel] : Infinity;
   return first - second;
@@ -177,7 +177,6 @@ function getHeadings(type: VariableType) {
 const deprecatedTokens = ['oragne', 'gold'];
 
 const handleDeprecatedTokenClass = (token: string) => {
-  console.log('token', token);
   return deprecatedTokens.some(deprecatedToken => token.includes(deprecatedToken));
 };
 
