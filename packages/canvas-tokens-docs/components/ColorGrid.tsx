@@ -177,7 +177,7 @@ function getHeadings(type: VariableType) {
 const deprecatedTokens = ['orange', 'gold'];
 
 const handleDeprecatedTokenClass = (token: string) => {
-  return deprecatedTokens.every(deprecatedToken => token.includes(deprecatedToken));
+  return deprecatedTokens.some(deprecatedToken => token.includes(deprecatedToken));
 };
 
 /** A configuration of TokenGrid to quickly build tables for colors */
