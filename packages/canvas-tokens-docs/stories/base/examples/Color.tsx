@@ -94,6 +94,8 @@ function buildDeprecatedPalettes(tokens: object) {
     if (deprecatedColorRegExp.test(key)) {
       const name = key.replace(/\d+/, '');
 
+      console.log(key);
+
       const swatch = buildDeprecatedColorSwatch(tokens[key as keyof typeof tokens], `base.${key}`);
 
       if (name in palettes) {
@@ -125,6 +127,20 @@ deprecatedColorPalette.map(([name, palette]) => {
     swatch.newCSSVar = found?.cssVar || '';
   });
 });
+
+const allColorPalettes = baseColorPalettes.filter(([name]) =>
+  colorPaletteNames.includes(name as (typeof colorPaletteNames)[number])
+);
+
+export const BaseColorTokens = () => {
+  return (
+    <Stack>
+      {allColorPalettes.map(([name, palette]) => (
+        <ColorGrid key={name} name={name} palette={palette} />
+      ))}
+    </Stack>
+  );
+};
 
 export const ColorTokens = () => {
   return (

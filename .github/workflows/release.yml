@@ -82,12 +82,11 @@ jobs:
 
       - uses: Workday/canvas-kit-actions/do-release@v1
         if: ${{ steps.set_version.outputs.version }}
-        id: release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
+        id: release
         with:
-          ghToken: ${{ secrets.GITHUB_TOKEN }}
+          ghToken: ${{ secrets.GH_RW_TOKEN }}
           package: "@workday/canvas-tokens-web"
           version: ${{ steps.set_version.outputs.version }}
           buildScript: echo "Building..."

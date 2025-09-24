@@ -33,7 +33,7 @@
   display: grid;
   gap: 1rem;
   grid-auto-flow: column;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
   min-height: 4rem;
   padding: 1rem;
   justify-content: start;

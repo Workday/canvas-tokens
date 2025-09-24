@@ -29,15 +29,14 @@ export function buildPaletteGroup(
   tokens: object,
   sortFn?: (a: DeprecatedColorSwatch, b: DeprecatedColorSwatch) => number
 ) {
-  return Object.entries(tokens)
-    .flatMap(([key, value]) => {
-      if (typeof value === 'string') {
-        return buildDeprecatedColorSwatch(value, `${prefix}.${key}`);
-      } else {
-        const palette = buildPalette(`${prefix}.${key}`, value);
-        return sortFn ? palette.sort(sortFn) : palette;
-      }
-    })
+  return Object.entries(tokens).flatMap(([key, value]) => {
+    if (typeof value === 'string') {
+      return buildDeprecatedColorSwatch(value, `${prefix}.${key}`);
+    } else {
+      const palette = buildPalette(`${prefix}.${key}`, value);
+      return sortFn ? palette.sort(sortFn) : palette;
+    }
+  });
 }
 
 export interface DeprecatedColorSwatch {
@@ -59,11 +58,12 @@ export function buildDeprecatedColorSwatch(
 ): DeprecatedColorSwatch {
   // Get the CSS var's value from the :root element
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+
   return {
     newCSSVar: value,
     cssVar: varName,
     jsVar: formatJSVar(jsVarName),
-    newJsVar: formatJSVar(jsVarName),
+    newJsVar: newJsVar ? formatJSVar(newJsVar) : 'none',
   };
 }
 
@@ -84,18 +84,6 @@ function getSwatchStyles(token: DeprecatedColorSwatch) {
   return {[property]: `var(${token.cssVar})`};
 }
 
-function getHeadings(type: VariableType) {
-  const defaultHeadings = ['Swatch', 'New CSS Variable', 'New JS Variable'];
-  if (type === 'css') {
-    defaultHeadings.splice(1, 0, 'Deprecated CSS Variable Name');
-  } else if (type === 'javascript') {
-    defaultHeadings.splice(1, 0, 'Deprecated JS Variable Name');
-  } else {
-    defaultHeadings.splice(1, 0, 'Deprecated CSS Variable Name', 'Deprecated JS Variable Name');
-  }
-  return defaultHeadings;
-}
-
 /** A configuration of TokenGrid to quickly build tables for colors */
 export function DeprecatedColorGrid({
   name,
@@ -103,33 +91,27 @@ export function DeprecatedColorGrid({
   palette,
 }: DeprecatedColorGridProps) {
   return (
-    <TokenGrid caption={formatName(name)} headings={getHeadings(variableType)} rows={palette}>
+    <TokenGrid
+      caption={formatName(name)}
+      headings={['Swatch', 'Deprecated CSS Variable Name', 'Deprecated JS Variable Name']}
+      rows={palette}
+    >
       {token => {
         return (
           <>
             <TokenGrid.RowItem>
               <TokenGrid.Swatch style={getSwatchStyles(token)} />
             </TokenGrid.RowItem>
-            {variableType === 'css' ||
-              ('all' && (
-                <TokenGrid.RowItem>
-                  <TokenGrid.MonospaceLabel isDeprecated>{token.cssVar}</TokenGrid.MonospaceLabel>
-                </TokenGrid.RowItem>
-              ))}
-            {variableType === 'javascript' ||
-              ('all' && (
-                <TokenGrid.RowItem>
-                  <TokenGrid.MonospaceLabel isDeprecated>{token.jsVar}</TokenGrid.MonospaceLabel>
-                </TokenGrid.RowItem>
-              ))}
-            <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel>
-                {token.newCSSVar || 'transparent'}
-              </TokenGrid.MonospaceLabel>
-            </TokenGrid.RowItem>
-            <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel>{token.newJsVar || 'transparent'}</TokenGrid.MonospaceLabel>
-            </TokenGrid.RowItem>
+            {(variableType === 'css' || variableType === 'all') && (
+              <TokenGrid.RowItem>
+                <TokenGrid.MonospaceLabel isDeprecated>{token.cssVar}</TokenGrid.MonospaceLabel>
+              </TokenGrid.RowItem>
+            )}
+            {(variableType === 'javascript' || variableType === 'all') && (
+              <TokenGrid.RowItem>
+                <TokenGrid.MonospaceLabel isDeprecated>{token.jsVar}</TokenGrid.MonospaceLabel>
+              </TokenGrid.RowItem>
+            )}
           </>
         );
       }}

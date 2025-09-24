@@ -1,0 +1,21 @@
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  border-radius: var(--cnvs-sys-shape-round);
+  margin-inline-start: 8px;
+}
+
+.status-indicator-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.status-indicator-icon path {
+  fill: currentColor;
+}
+
+.status-indicator-content {
+  font-weight: 600;
+}

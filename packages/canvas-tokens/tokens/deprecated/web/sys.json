@@ -1,0 +1,36 @@
+{
+  "sys": {
+    "color": {
+      "static": {
+        "gold": {
+          "stronger": {
+            "value": "{base.palette.amber.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace static.gold.stronger with {sys.color.static.amber.stronger}. Prefer to replace with `sys.color.bg.caution.stronger` if used as a background color."
+          }
+        },
+        "orange": {
+          "default": {
+            "value": "{base.palette.amber.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace static.orange.default with {sys.color.static.amber.default}. Prefer to replace with `sys.color.bg.caution.default` if used as a background color."
+          },
+          "soft": {
+            "value": "{base.palette.amber.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace static.orange.soft with {sys.color.static.amber.soft}. Prefer to replace with `sys.color.bg.caution.soft` if used as a background color."
+          },
+          "strong": {
+            "value": "{base.palette.amber.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace static.orange.strong with {sys.color.static.amber.strong}. Prefer to replace with `sys.color.bg.caution.strong` if used as a background color."
+          }
+        }
+      }
+    }
+  }
+}

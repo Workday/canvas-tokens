@@ -1,5 +1,137 @@
 # @workday/canvas-tokens-web
 
+## 3.1.1
+
+### Patch Changes
+
+- ### Documentation
+
+  - docs: Fix inverse token ([#198](https://github.com/Workday/canvas-tokens/pull/198))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Tokens
+
+  - fix: Update caution color mapping ([#200](https://github.com/Workday/canvas-tokens/pull/200))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+    - / : base color has been reverted from to
+    - / : base color has been reverted from to
+
+## 3.1.0
+
+### Minor Changes
+
+- ### Documentation
+
+  - docs: Token v3 announcement ([#194](https://github.com/Workday/canvas-tokens/pull/194))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Fix docs links ([#195](https://github.com/Workday/canvas-tokens/pull/195))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Tokens
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#197](https://github.com/Workday/canvas-tokens/pull/197))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) The following tokens have been fixed to match a
+    figma value:
+    - : color alpha has been changed from to .
+    - / / : base color has been changed from to .
+    - / / / : base color has been changed from to .
+    - / / : base color has been changed from to .
+    - / / : base color has been changed from to
+    - / : base color has been changed from to
+
+## 3.0.0
+
+### Major Changes
+
+- ### Components
+
+  - chore: Remove options ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Set node var ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Update release action ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.21
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix wording ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - fix: Remove sync script ([#156](https://github.com/Workday/canvas-tokens/pull/156))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.20
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add js var names ([#191](https://github.com/Workday/canvas-tokens/pull/191))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.19
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#190](https://github.com/Workday/canvas-tokens/pull/190))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.18
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Update base token section with deprecated
+    ([#189](https://github.com/Workday/canvas-tokens/pull/189))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.17
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add llm txt file to overview page
+    ([#187](https://github.com/Workday/canvas-tokens/pull/187))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.16
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add v3 Upgrade guide ([#184](https://github.com/Workday/canvas-tokens/pull/184))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.15
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#183](https://github.com/Workday/canvas-tokens/pull/183))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.13
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#181](https://github.com/Workday/canvas-tokens/pull/181))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0-alpha.12
 
 ### Major Changes
