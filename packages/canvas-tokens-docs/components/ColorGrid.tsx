@@ -10,8 +10,8 @@ const sortMap: Record<string, number> = {
 };
 
 export function sortSystemColorPalette(a: ColorSwatch, b: ColorSwatch) {
-  const aLevel = a.cssVar.split('-').at(-1) || '';
-  const bLevel = b.cssVar.split('-').at(-1) || '';
+  const aLevel = typeof a.cssVar === 'string' ? a.cssVar.split('-').at(-1) : '';
+  const bLevel = typeof b.cssVar === 'string' ? b.cssVar.split('-').at(-1) : '';
   const first = aLevel in sortMap ? sortMap[aLevel] : Infinity;
   const second = bLevel in sortMap ? sortMap[bLevel] : Infinity;
   return first - second;
@@ -100,32 +100,48 @@ function getHeadings(type: VariableType) {
   return defaultHeadings;
 }
 
+const deprecatedTokens = ['oragne', 'gold'];
+
+const handleDeprecatedTokenClass = (token: string) => {
+  console.log('token', token);
+  return deprecatedTokens.some(deprecatedToken => token.includes(deprecatedToken));
+};
+
 /** A configuration of TokenGrid to quickly build tables for colors */
 export function ColorGrid({name, variableType = 'all', palette}: ColorGridProps) {
   return (
     <TokenGrid caption={formatName(name)} headings={getHeadings(variableType)} rows={palette}>
-      {token => (
-        <>
-          <TokenGrid.RowItem>
-            <TokenGrid.Swatch style={getSwatchStyles(token)} />
-          </TokenGrid.RowItem>
-          {variableType === 'css' ||
-            ('all' && (
-              <TokenGrid.RowItem>
-                <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
-              </TokenGrid.RowItem>
-            ))}
-          {variableType === 'javascript' ||
-            ('all' && (
-              <TokenGrid.RowItem>
-                <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
-              </TokenGrid.RowItem>
-            ))}
-          <TokenGrid.RowItem>
-            <span>{token.value || 'transparent'}</span>
-          </TokenGrid.RowItem>
-        </>
-      )}
+      {token => {
+        console.log('token', token.cssVar);
+        console.log('jsVar', token.jsVar);
+        return (
+          <>
+            <TokenGrid.RowItem>
+              <TokenGrid.Swatch style={getSwatchStyles(token)} />
+            </TokenGrid.RowItem>
+            {variableType === 'css' ||
+              ('all' && (
+                <TokenGrid.RowItem>
+                  <TokenGrid.MonospaceLabel
+                    id="foo"
+                    isDeprecated={handleDeprecatedTokenClass(token.cssVar)}
+                  >
+                    {token.cssVar}
+                  </TokenGrid.MonospaceLabel>
+                </TokenGrid.RowItem>
+              ))}
+            {variableType === 'javascript' ||
+              ('all' && (
+                <TokenGrid.RowItem>
+                  <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+                </TokenGrid.RowItem>
+              ))}
+            <TokenGrid.RowItem>
+              <span>{token.value || 'transparent'}</span>
+            </TokenGrid.RowItem>
+          </>
+        );
+      }}
     </TokenGrid>
   );
 }

@@ -113,6 +113,7 @@ function buildDeprecatedPalettes(tokens: object) {
 }
 
 const baseColorPalettes = buildPalettes(base);
+
 const deprecatedColorPalette = buildDeprecatedPalettes(base);
 
 const flatBaseColors = baseColorPalettes.map(([name, palette]) => palette).flat();
@@ -160,7 +161,7 @@ export const PrimaryColorTokens = () => {
   );
 };
 
-const neutralPaletteNames = ['blackPepper', 'licorice', 'soap', 'frenchVanilla'];
+const neutralPaletteNames = ['slate', 'neutral'];
 const neutralColorPalettes = baseColorPalettes.filter(([name]) =>
   neutralPaletteNames.includes(name)
 );
@@ -188,37 +189,7 @@ export const TypeColorTokens = () => {
   );
 };
 
-const statusPaletteNames = ['greenApple', 'cinnamon', 'cantaloupe'];
-const statusColorPalettes = baseColorPalettes.filter(([name]) => statusPaletteNames.includes(name));
-
-export const StatusColorTokens = () => {
-  return (
-    <Stack>
-      {statusColorPalettes.map(([name, palette]) => (
-        <ColorGrid key={name} name={name} palette={palette} />
-      ))}
-    </Stack>
-  );
-};
-
-const aiPaletteNames = ['extendedDragonFruit'];
-const aiColorPalettes = baseColorPalettes.filter(([name]) => aiPaletteNames.includes(name));
-
-const otherPaletteNames = primaryPaletteNames.concat(
-  neutralPaletteNames,
-  typePaletteNames,
-  statusPaletteNames,
-  aiPaletteNames
-);
-export const AIColorTokens = () => {
-  return (
-    <Stack>
-      {aiColorPalettes.map(([name, palette]) => (
-        <ColorGrid key={name} name={name} palette={palette} />
-      ))}
-    </Stack>
-  );
-};
+const otherPaletteNames = primaryPaletteNames.concat(neutralPaletteNames, typePaletteNames);
 
 const otherColorPalettes = baseColorPalettes.filter(([name]) => !otherPaletteNames.includes(name));
 
