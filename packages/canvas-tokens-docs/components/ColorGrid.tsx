@@ -78,7 +78,7 @@ const purposeMap: Record<string, string> = {
 };
 
 export function sortSystemColorPalette(a: ColorSwatch, b: ColorSwatch) {
-  const aLevel = (aLevel = a.cssVar.split('-').at(-1) || '');
+  const aLevel = a.cssVar.split('-').at(-1) || '';
   const bLevel = b.cssVar.split('-').at(-1) || '';
   const first = aLevel in sortMap ? sortMap[aLevel] : Infinity;
   const second = bLevel in sortMap ? sortMap[bLevel] : Infinity;
