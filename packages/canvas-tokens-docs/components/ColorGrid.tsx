@@ -174,6 +174,13 @@ function getHeadings(type: VariableType) {
   return defaultHeadings;
 }
 
+const deprecatedTokens = ['sys-color-static-orange', 'sys-color-static-gold'];
+
+const handleDeprecatedTokenClass = (token: string) => {
+  console.log('token', token);
+  return deprecatedTokens.some(deprecatedToken => token.includes(deprecatedToken));
+};
+
 /** A configuration of TokenGrid to quickly build tables for colors */
 export function ColorGrid({name, variableType = 'all', palette}: ColorGridProps) {
   return (
@@ -185,7 +192,9 @@ export function ColorGrid({name, variableType = 'all', palette}: ColorGridProps)
           </TokenGrid.RowItem>
           {variableType !== 'javascript' && (
             <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+              <TokenGrid.MonospaceLabel isDeprecated={handleDeprecatedTokenClass(token.cssVar)}>
+                {token.cssVar}
+              </TokenGrid.MonospaceLabel>
             </TokenGrid.RowItem>
           )}
           {variableType !== 'css' && (

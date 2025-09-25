@@ -115,6 +115,7 @@ function buildDeprecatedPalettes(tokens: object) {
 }
 
 const baseColorPalettes = buildPalettes(base);
+
 const deprecatedColorPalette = buildDeprecatedPalettes(base);
 
 const flatBaseColors = baseColorPalettes.map(([name, palette]) => palette).flat();
