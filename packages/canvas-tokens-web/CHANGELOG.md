@@ -1,5 +1,17 @@
 # @workday/canvas-tokens-web
 
+## 3.1.2
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Add deprecated static tokens back in
+    ([#202](https://github.com/Workday/canvas-tokens/pull/202))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera,
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 3.1.1
 
 ### Patch Changes
