@@ -1077,21 +1077,21 @@
           "type": "color",
           "deprecated": true,
           "deprecatedComment": "replace black-pepper300 with {base.palette.neutral.800}. Prefer to replace with `sys.color.fg.default` if used as a foreground (text/icon) color.",
-          "fallback": "{base.palette.neutral.900}"
+          "fallback": "{base.palette.neutral.800}"
         },
         "400": {
           "value": "#333333",
           "type": "color",
           "deprecated": true,
           "deprecatedComment": "replace black-pepper400 with {base.palette.neutral.900}. Prefer to replace with `sys.color.bg.contrast.default` if used as a contrast background color, or `sys.color.fg.strong` if used as a foreground (text/icon) color, or `sys.color.border.contrast.default` if used as a border color.",
-          "fallback": "{base.palette.neutral.950}"
+          "fallback": "{base.palette.neutral.900}"
         },
         "500": {
           "value": "#1e1e1e",
           "type": "color",
           "deprecated": true,
           "deprecatedComment": "replace black-pepper500 with {base.palette.neutral.950}. Prefer to replace with `sys.color.bg.contrast.strong` if used as a contrast background color, or `sys.color.fg.stronger` if used as a foreground (text/icon) color, or `sys.color.border.contrast.strong` if used as a border color.",
-          "fallback": "{base.palette.neutral.975}"
+          "fallback": "{base.palette.neutral.950}"
         },
         "600": {
           "value": "#000000",
