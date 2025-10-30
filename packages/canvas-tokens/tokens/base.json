@@ -1,5 +1,45 @@
 {
   "base": {
+    "fontSize": {
+      "value": "16",
+      "type": "sizing",
+      "comment": "Default fontSize for the browser, may be overriden by user preferences"
+    },
+    "baseline": {
+      "value": "{base.fontSize} / 2",
+      "type": "sizing",
+      "comment": "Baseline unit used for the 8pt sizing grid"
+    },
+    "opacity": {
+      "0": {
+        "value": "0",
+        "type": "number"
+      },
+      "100": {
+        "value": "0.08",
+        "type": "number"
+      },
+      "200": {
+        "value": "0.12",
+        "type": "number"
+      },
+      "250": {
+        "value": "0.2",
+        "type": "number"
+      },
+      "300": {
+        "value": "0.4",
+        "type": "number"
+      },
+      "400": {
+        "value": "0.64",
+        "type": "number"
+      },
+      "500": {
+        "value": "0.84",
+        "type": "number"
+      }
+    },
     "palette": {
       "amber": {
         "25": {
@@ -712,184 +752,265 @@
         }
       }
     },
-    "opacity": {
+    "shadow": {
+      "1": {
+        "100": {
+          "y": {
+            "value": 1,
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.50}",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "{base.shadow.1.100.y} * 2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.100}",
+            "type": "number"
+          }
+        }
+      },
+      "2": {
+        "100": {
+          "y": {
+            "value": 2,
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.100}",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "{base.shadow.2.100.y} * 2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.200}",
+            "type": "number"
+          }
+        }
+      },
+      "3": {
+        "100": {
+          "y": {
+            "value": 3,
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.150}",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "{base.shadow.3.100.y} * 2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.300}",
+            "type": "number"
+          }
+        }
+      },
+      "4": {
+        "100": {
+          "y": {
+            "value": 4,
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.200}",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "{base.shadow.4.100.y} * 2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.400}",
+            "type": "number"
+          }
+        }
+      },
+      "5": {
+        "100": {
+          "y": {
+            "value": 5,
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.250}",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "{base.shadow.5.100.y} * 2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.500}",
+            "type": "number"
+          }
+        }
+      },
+      "6": {
+        "100": {
+          "y": {
+            "value": 6,
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.300}",
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "{base.shadow.6.100.y} * 2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.600}",
+            "type": "number"
+          }
+        }
+      }
+    },
+    "size": {
       "0": {
         "value": "0",
-        "type": "number"
+        "type": "sizing",
+        "comment": "0px / 0rem"
       },
-      "100": {
-        "value": "0.08",
-        "type": "number"
-      },
-      "200": {
-        "value": "0.12",
-        "type": "number"
-      },
-      "250": {
-        "value": "0.2",
-        "type": "number"
-      },
-      "300": {
-        "value": "0.4",
-        "type": "number"
-      },
-      "400": {
-        "value": "0.64",
-        "type": "number"
-      },
-      "500": {
-        "value": "0.84",
-        "type": "number"
-      }
-    },
-    "font-size": {
       "25": {
-        "value": "0.625rem",
-        "type": "fontSizes"
+        "value": "{base.baseline} * 0.25",
+        "type": "sizing",
+        "comment": "2px / 0.125rem"
       },
       "50": {
-        "value": "{base.font-size.25} + {base.typescale.size.default}",
-        "type": "fontSizes"
+        "value": "{base.baseline} * 0.50",
+        "type": "sizing",
+        "comment": "4px / 0.25rem"
       },
       "75": {
-        "value": "{base.font-size.50} + {base.typescale.size.default}",
-        "type": "fontSizes"
+        "value": "{base.baseline} * 0.75",
+        "type": "sizing",
+        "comment": "6px / 0.375rem"
       },
       "100": {
-        "value": "{base.font-size.75} + {base.typescale.size.default}",
-        "type": "fontSizes"
+        "value": "{base.baseline} * 1.00",
+        "type": "sizing",
+        "comment": "8px / 0.5rem"
       },
       "125": {
-        "value": "{base.font-size.100} + {base.typescale.size.default}",
-        "type": "fontSizes"
+        "value": "{base.baseline} * 1.25",
+        "type": "sizing",
+        "comment": "10px / 0.625rem"
       },
       "150": {
-        "value": "{base.font-size.125} + {base.typescale.size.default}",
-        "type": "fontSizes"
+        "value": "{base.baseline} * 1.50",
+        "type": "sizing",
+        "comment": "12px / 0.75rem"
+      },
+      "175": {
+        "value": "{base.baseline} * 1.75",
+        "type": "sizing",
+        "comment": "14px / 0.875rem"
       },
       "200": {
-        "value": "{base.font-size.150} + {base.typescale.size.heading}",
-        "type": "fontSizes"
+        "value": "{base.baseline} * 2.00",
+        "type": "sizing",
+        "comment": "16px / 1rem"
+      },
+      "225": {
+        "value": "{base.baseline} * 2.25",
+        "type": "sizing",
+        "comment": "18px / 1.125rem"
       },
       "250": {
-        "value": "{base.font-size.200} + {base.typescale.size.heading}",
-        "type": "fontSizes"
+        "value": "{base.baseline} * 2.50",
+        "type": "sizing",
+        "comment": "20px / 1.25rem"
       },
       "300": {
-        "value": "{base.font-size.250} + {base.typescale.size.heading}",
-        "type": "fontSizes"
-      },
-      "400": {
-        "value": "{base.font-size.300} + {base.typescale.size.title}",
-        "type": "fontSizes"
-      },
-      "500": {
-        "value": "{base.font-size.400} + {base.typescale.size.title}",
-        "type": "fontSizes"
-      },
-      "600": {
-        "value": "{base.font-size.500} + {base.typescale.size.title}",
-        "type": "fontSizes"
-      },
-      "750": {
-        "value": "{base.font-size.600} + {base.typescale.size.display}",
-        "type": "fontSizes"
-      },
-      "900": {
-        "value": "{base.font-size.750} + {base.typescale.size.display}",
-        "type": "fontSizes"
-      },
-      "1050": {
-        "value": "{base.font-size.900} + {base.typescale.size.display}",
-        "type": "fontSizes"
-      }
-    },
-    "line-height": {
-      "50": {
-        "value": "16",
-        "type": "number"
-      },
-      "100": {
-        "value": "20",
-        "type": "number"
-      },
-      "150": {
-        "value": "24",
-        "type": "number"
-      },
-      "200": {
-        "value": "28",
-        "type": "number"
-      },
-      "250": {
-        "value": "32",
-        "type": "number"
-      },
-      "300": {
-        "value": "36",
-        "type": "number"
+        "value": "{base.baseline} * 3.00",
+        "type": "sizing",
+        "comment": "24px / 1.5rem"
       },
       "350": {
-        "value": "40",
-        "type": "number"
+        "value": "{base.baseline} * 3.50",
+        "type": "sizing",
+        "comment": "28px / 1.75rem"
       },
       "400": {
-        "value": "48",
-        "type": "number"
+        "value": "{base.baseline} * 4.00",
+        "type": "sizing",
+        "comment": "32px / 2rem"
+      },
+      "450": {
+        "value": "{base.baseline} * 4.50",
+        "type": "sizing",
+        "comment": "36px / 2.25rem"
       },
       "500": {
-        "value": "56",
-        "type": "number"
+        "value": "{base.baseline} * 5.00",
+        "type": "sizing",
+        "comment": "40px / 2.5rem"
       },
       "600": {
-        "value": "64",
-        "type": "number"
+        "value": "{base.baseline} * 6.00",
+        "type": "sizing",
+        "comment": "48px / 3rem"
       },
-      "750": {
-        "value": "72",
-        "type": "number"
+      "700": {
+        "value": "{base.baseline} * 7.00",
+        "type": "sizing",
+        "comment": "56px / 3.5rem"
+      },
+      "800": {
+        "value": "{base.baseline} * 8.00",
+        "type": "sizing",
+        "comment": "64px / 4rem"
       },
       "900": {
-        "value": "88",
-        "type": "number"
+        "value": "{base.baseline} * 9.00",
+        "type": "sizing",
+        "comment": "72px / 4.5rem"
       },
-      "1050": {
-        "value": "104",
-        "type": "number"
-      }
-    },
-    "typescale": {
-      "size": {
-        "default": {
-          "value": "0.125rem",
-          "type": "dimension"
-        },
-        "heading": {
-          "value": "{base.typescale.size.default}  *  {base.level}",
-          "type": "dimension"
-        },
-        "title": {
-          "value": "{base.typescale.size.heading} * {base.level}",
-          "type": "dimension"
-        },
-        "display": {
-          "value": "{base.typescale.size.title} * {base.level}",
-          "type": "dimension"
-        }
+      "1000": {
+        "value": "{base.baseline} * 10.00",
+        "type": "sizing",
+        "comment": "80px / 5rem"
       },
-      "height": {
-        "default": {
-          "value": "0.25rem",
-          "type": "dimension"
-        },
-        "title": {
-          "value": "{base.typescale.height.default} * {base.level}",
-          "type": "dimension"
-        },
-        "display": {
-          "value": "1rem",
-          "type": "dimension"
-        }
+      "1100": {
+        "value": "{base.baseline} * 11.00",
+        "type": "sizing",
+        "comment": "88px / 5.5rem"
+      },
+      "1200": {
+        "value": "{base.baseline} * 12.00",
+        "type": "sizing",
+        "comment": "96px / 6rem"
+      },
+      "1300": {
+        "value": "{base.baseline} * 13.00",
+        "type": "sizing",
+        "comment": "104px / 6.5rem"
+      },
+      "1400": {
+        "value": "{base.baseline} * 14.00",
+        "type": "sizing",
+        "comment": "112px / 7rem"
       }
     },
     "font-family": {
@@ -927,165 +1048,21 @@
     },
     "letter-spacing": {
       "50": {
-        "value": "0.4",
+        "value": 0.4,
         "type": "number"
       },
       "100": {
-        "value": "0.32",
+        "value": 0.32,
         "type": "number"
       },
       "150": {
-        "value": "0.24",
+        "value": 0.24,
         "type": "number"
       },
       "200": {
-        "value": "0.16",
+        "value": 0.16,
         "type": "number"
       }
-    },
-    "level": {
-      "value": "2",
-      "type": "number",
-      "comment": "Used to calculate the skip level amount between levels in the type ramp, such as going from subtext to body, body to heading."
-    },
-    "shadow": {
-      "1": {
-        "100": {
-          "y": {
-            "value": "1",
-            "type": "number"
-          },
-          "blur": {
-            "value": "4",
-            "type": "number"
-          }
-        },
-        "200": {
-          "y": {
-            "value": "2",
-            "type": "number"
-          },
-          "blur": {
-            "value": "8",
-            "type": "number"
-          }
-        }
-      },
-      "2": {
-        "100": {
-          "y": {
-            "value": "2",
-            "type": "number"
-          },
-          "blur": {
-            "value": "8",
-            "type": "number"
-          }
-        },
-        "200": {
-          "y": {
-            "value": "4",
-            "type": "number"
-          },
-          "blur": {
-            "value": "16",
-            "type": "number"
-          }
-        }
-      },
-      "3": {
-        "100": {
-          "y": {
-            "value": "3",
-            "type": "number"
-          },
-          "blur": {
-            "value": "12",
-            "type": "number"
-          }
-        },
-        "200": {
-          "y": {
-            "value": "6",
-            "type": "number"
-          },
-          "blur": {
-            "value": "24",
-            "type": "number"
-          }
-        }
-      },
-      "4": {
-        "100": {
-          "y": {
-            "value": "4",
-            "type": "number"
-          },
-          "blur": {
-            "value": "16",
-            "type": "number"
-          }
-        },
-        "200": {
-          "y": {
-            "value": "8",
-            "type": "number"
-          },
-          "blur": {
-            "value": "32",
-            "type": "number"
-          }
-        }
-      },
-      "5": {
-        "100": {
-          "y": {
-            "value": "5",
-            "type": "number"
-          },
-          "blur": {
-            "value": "20",
-            "type": "number"
-          }
-        },
-        "200": {
-          "y": {
-            "value": "10",
-            "type": "number"
-          },
-          "blur": {
-            "value": "40",
-            "type": "number"
-          }
-        }
-      },
-      "6": {
-        "100": {
-          "y": {
-            "value": "6",
-            "type": "number"
-          },
-          "blur": {
-            "value": "24",
-            "type": "number"
-          }
-        },
-        "200": {
-          "y": {
-            "value": "12",
-            "type": "number"
-          },
-          "blur": {
-            "value": "48",
-            "type": "number"
-          }
-        }
-      }
-    },
-    "unit": {
-      "value": "0.25rem",
-      "type": "dimension",
-      "comment": "The base unit used in the grid system.; "
     }
   }
 }
