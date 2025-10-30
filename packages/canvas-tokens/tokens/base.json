@@ -1,7 +1,7 @@
 {
   "base": {
     "fontSize": {
-      "value": "16",
+      "value": "1rem",
       "type": "sizing",
       "comment": "Default fontSize for the browser, may be overriden by user preferences"
     },

@@ -35,7 +35,9 @@ export const isSysColor: Matcher = ({original}) => {
         original.value.some((v: Record<string, string>) => v.color.includes('oklch({'));
 };
 
-export const isMathExpression: Matcher = ({value}) => {
+export const isMathExpression: Matcher = ({path, value}) => {
+  if (!path) return false;
+
   const mathChars = [' + ', ' - ', ' * ', ' / '];
   return (
     typeof value === 'string' &&
