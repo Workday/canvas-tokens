@@ -79,8 +79,10 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isBreakpoints,
     transformer: ({value}) => {
-      const expr = `${value}`.replace('0.25rem', '4');
-      return `${math.evaluate(expr)}px`;
+      const isRem = value.includes('rem');
+      const expression = isRem ? value.replace('rem', '') : value;
+      const mathValue = math.evaluate(expression);
+      return isRem ? `${mathValue * 16}px` : mathValue;
     },
   },
   // transform function that changes a value to its CSS var name

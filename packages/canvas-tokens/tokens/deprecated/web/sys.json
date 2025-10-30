@@ -1,0 +1,378 @@
+{
+  "sys": {
+    "breakpoints": {
+      "s": {
+        "value": "{base.unit} * 80",
+        "type": "dimension",
+        "deprecated": true,
+        "comment": "The `min-width` for mobile devices, such as phones and tablets."
+      },
+      "m": {
+        "value": "{base.unit} * 192",
+        "type": "dimension",
+        "deprecated": true,
+        "comment": "Medium screens, such as laptops."
+      },
+      "l": {
+        "value": "{base.unit} * 256",
+        "type": "dimension",
+        "deprecated": true,
+        "comment": "Large screens, such as desktops."
+      },
+      "xl": {
+        "value": "{base.unit} * 360",
+        "type": "dimension",
+        "deprecated": true,
+        "comment": "Used for extra large screens, such as wide monitors and TVs."
+      }
+    },
+    "shape": {
+      "half": {
+        "value": "{base.unit} * 0.5",
+        "type": "borderRadius",
+        "deprecated": true,
+        "comment": "Use this for subtle and small components that don't require to group complex information like Status Indicators, Checkboxes and Color Swatches."
+      },
+      "x1": {
+        "value": "{base.unit}",
+        "type": "borderRadius",
+        "deprecated": true
+      },
+      "x1-half": {
+        "value": "{base.unit} * 1.5",
+        "type": "borderRadius",
+        "deprecated": true
+      },
+      "x2": {
+        "value": "{base.unit} * 2",
+        "type": "borderRadius",
+        "deprecated": true,
+        "comment": "Use this for all the containers and popups: All Cards, Modals, Tooltips and Toasts."
+      },
+      "x4": {
+        "value": "{base.unit} * 4",
+        "type": "borderRadius",
+        "deprecated": true,
+        "comment": "(Mobile) Primary containers that house a large amount of other elements and complex information"
+      },
+      "x6": {
+        "value": "{base.unit} * 6",
+        "type": "borderRadius",
+        "deprecated": true,
+        "comment": "(Mobile) Full width sheets that are temporary and modal views"
+      },
+      "round": {
+        "value": "{base.unit} * 250",
+        "type": "borderRadius",
+        "deprecated": true,
+        "comment": "Commonly used for our standard buttons and profile avatars: All Primary, Secondary Buttons, Radio Buttons and Notification Badges."
+      }
+    },
+    "font-size": {
+      "subtext": {
+        "small": {
+          "value": "{base.font-size.25}",
+          "type": "sizing",
+          "deprecated": true
+        },
+        "medium": {
+          "value": "{base.font-size.50}",
+          "type": "sizing",
+          "deprecated": true
+        },
+        "large": {
+          "value": "{base.font-size.75}",
+          "type": "sizing",
+          "deprecated": true
+        }
+      },
+      "body": {
+        "small": {
+          "value": "{base.font-size.100}",
+          "type": "sizing",
+          "deprecated": true
+        },
+        "medium": {
+          "value": "{base.font-size.125}",
+          "type": "sizing",
+          "deprecated": true
+        },
+        "large": {
+          "value": "{base.font-size.150}",
+          "type": "sizing",
+          "deprecated": true
+        }
+      },
+      "heading": {
+        "small": {
+          "value": "{base.font-size.200}",
+          "type": "sizing",
+          "deprecated": true
+        },
+        "medium": {
+          "value": "{base.font-size.250}",
+          "type": "sizing",
+          "deprecated": true
+        },
+        "large": {
+          "value": "{base.font-size.300}",
+          "type": "sizing",
+          "deprecated": true
+        }
+      },
+      "title": {
+        "small": {
+          "value": "{base.font-size.400}",
+          "type": "sizing",
+          "deprecated": true
+        },
+        "medium": {
+          "value": "{base.font-size.500}",
+          "type": "sizing",
+          "deprecated": true
+        },
+        "large": {
+          "value": "{base.font-size.600}",
+          "type": "sizing",
+          "deprecated": true
+        }
+      }
+    },
+    "line-height": {
+      "subtext": {
+        "small": {
+          "value": "{base.line-height.50}",
+          "type": "number",
+          "deprecated": true
+        },
+        "medium": {
+          "value": "{base.line-height.50}",
+          "type": "number",
+          "deprecated": true
+        },
+        "large": {
+          "value": "{base.line-height.100}",
+          "type": "number",
+          "deprecated": true
+        }
+      },
+      "body": {
+        "small": {
+          "value": "{base.line-height.150}",
+          "type": "number",
+          "deprecated": true
+        },
+        "medium": {
+          "value": "{base.line-height.200}",
+          "type": "number",
+          "deprecated": true
+        },
+        "large": {
+          "value": "{base.line-height.200}",
+          "type": "number",
+          "deprecated": true
+        }
+      },
+      "heading": {
+        "small": {
+          "value": "{base.line-height.250}",
+          "type": "number",
+          "deprecated": true
+        },
+        "medium": {
+          "value": "{base.line-height.300}",
+          "type": "number",
+          "deprecated": true
+        },
+        "large": {
+          "value": "{base.line-height.350}",
+          "type": "number",
+          "deprecated": true
+        }
+      },
+      "title": {
+        "small": {
+          "value": "{base.line-height.400}",
+          "type": "number",
+          "deprecated": true
+        },
+        "medium": {
+          "value": "{base.line-height.500}",
+          "type": "number",
+          "deprecated": true
+        },
+        "large": {
+          "value": "{base.line-height.600}",
+          "type": "number",
+          "deprecated": true
+        }
+      }
+    },
+    "type": {
+      "subtext": {
+        "small": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.normal}",
+            "line-height": "{sys.line-height.subtext.small}",
+            "font-size": "{sys.font-size.subtext.small}",
+            "letter-spacing": "{base.letter-spacing.50}"
+          },
+          "type": "typography",
+          "deprecated": true
+        },
+        "medium": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.normal}",
+            "line-height": "{sys.line-height.subtext.medium}",
+            "font-size": "{sys.font-size.subtext.medium}",
+            "letter-spacing": "{base.letter-spacing.100}"
+          },
+          "type": "typography",
+          "deprecated": true
+        },
+        "large": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.normal}",
+            "line-height": "{sys.line-height.subtext.large}",
+            "font-size": "{sys.font-size.subtext.large}",
+            "letter-spacing": "{base.letter-spacing.150}"
+          },
+          "type": "typography",
+          "deprecated": true
+        }
+      },
+      "body": {
+        "small": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.normal}",
+            "line-height": "{sys.line-height.body.small}",
+            "font-size": "{sys.font-size.body.small}",
+            "letter-spacing": "{base.letter-spacing.200}"
+          },
+          "type": "typography",
+          "deprecated": true
+        },
+        "medium": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.normal}",
+            "line-height": "{sys.line-height.body.medium}",
+            "font-size": "{sys.font-size.body.medium}"
+          },
+          "type": "typography",
+          "deprecated": true
+        },
+        "large": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.normal}",
+            "line-height": "{sys.line-height.body.large}",
+            "font-size": "{sys.font-size.body.large}"
+          },
+          "type": "typography",
+          "deprecated": true
+        }
+      },
+      "heading": {
+        "small": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.bold}",
+            "line-height": "{sys.line-height.heading.small}",
+            "font-size": "{sys.font-size.heading.small}"
+          },
+          "type": "typography",
+          "deprecated": true
+        },
+        "medium": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.bold}",
+            "line-height": "{sys.line-height.heading.medium}",
+            "font-size": "{sys.font-size.heading.medium}"
+          },
+          "type": "typography",
+          "deprecated": true
+        },
+        "large": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.bold}",
+            "line-height": "{sys.line-height.heading.large}",
+            "font-size": "{sys.font-size.heading.large}"
+          },
+          "type": "typography",
+          "deprecated": true
+        }
+      },
+      "title": {
+        "small": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.bold}",
+            "line-height": "{sys.line-height.title.small}",
+            "font-size": "{sys.font-size.title.small}"
+          },
+          "type": "typography",
+          "deprecated": true
+        },
+        "medium": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.bold}",
+            "line-height": "{sys.line-height.title.medium}",
+            "font-size": "{sys.font-size.title.medium}"
+          },
+          "type": "typography",
+          "deprecated": true
+        },
+        "large": {
+          "value": {
+            "font-family": "{sys.font-family.default}",
+            "font-weight": "{sys.font-weight.bold}",
+            "line-height": "{sys.line-height.title.large}",
+            "font-size": "{sys.font-size.title.large}"
+          },
+          "type": "typography",
+          "deprecated": true
+        }
+      }
+    },
+    "color": {
+      "static": {
+        "gold": {
+          "stronger": {
+            "value": "{base.palette.amber.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace static.gold.stronger with {sys.color.static.amber.stronger}. Prefer to replace with `sys.color.bg.caution.stronger` if used as a background color."
+          }
+        },
+        "orange": {
+          "default": {
+            "value": "{base.palette.amber.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace static.orange.default with {sys.color.static.amber.default}. Prefer to replace with `sys.color.bg.caution.default` if used as a background color."
+          },
+          "soft": {
+            "value": "{base.palette.amber.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace static.orange.soft with {sys.color.static.amber.soft}. Prefer to replace with `sys.color.bg.caution.soft` if used as a background color."
+          },
+          "strong": {
+            "value": "{base.palette.amber.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "replace static.orange.strong with {sys.color.static.amber.strong}. Prefer to replace with `sys.color.bg.caution.strong` if used as a background color."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,12 @@
 {
   "base": {
+    "unit": {
+      "value": "0.25rem",
+      "type": "dimension",
+      "deprecated": true,
+      "deprecatedComment": "Use {base.baseline} instead for consistent sizing calculations",
+      "comment": "The base unit used for the typographic grid system.; "
+    },
     "palette": {
       "cinnamon": {
         "100": {
@@ -1077,21 +1084,21 @@
           "type": "color",
           "deprecated": true,
           "deprecatedComment": "replace black-pepper300 with {base.palette.neutral.800}. Prefer to replace with `sys.color.fg.default` if used as a foreground (text/icon) color.",
-          "fallback": "{base.palette.neutral.900}"
+          "fallback": "{base.palette.neutral.800}"
         },
         "400": {
           "value": "#333333",
           "type": "color",
           "deprecated": true,
           "deprecatedComment": "replace black-pepper400 with {base.palette.neutral.900}. Prefer to replace with `sys.color.bg.contrast.default` if used as a contrast background color, or `sys.color.fg.strong` if used as a foreground (text/icon) color, or `sys.color.border.contrast.default` if used as a border color.",
-          "fallback": "{base.palette.neutral.950}"
+          "fallback": "{base.palette.neutral.900}"
         },
         "500": {
           "value": "#1e1e1e",
           "type": "color",
           "deprecated": true,
           "deprecatedComment": "replace black-pepper500 with {base.palette.neutral.950}. Prefer to replace with `sys.color.bg.contrast.strong` if used as a contrast background color, or `sys.color.fg.stronger` if used as a foreground (text/icon) color, or `sys.color.border.contrast.strong` if used as a border color.",
-          "fallback": "{base.palette.neutral.975}"
+          "fallback": "{base.palette.neutral.950}"
         },
         "600": {
           "value": "#000000",
@@ -1223,6 +1230,226 @@
             "deprecatedComment": "replace dragon-fruit600 with {base.palette.indigo.900}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
             "fallback": "{base.palette.indigo.900}"
           }
+        }
+      }
+    },
+    "level": {
+      "value": 2,
+      "type": "number",
+      "deprecated": true,
+      "deprecatedComment": "Use explicit size tokens instead of calculated type ramp values",
+      "comment": "Used to calculate the skip level amount between levels in the type ramp, such as going from subtext to body, body to heading."
+    },
+    "font-size": {
+      "25": {
+        "value": "0.625rem",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "50": {
+        "value": "{base.font-size.25} + {base.typescale.size.default}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "75": {
+        "value": "{base.font-size.50} + {base.typescale.size.default}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "100": {
+        "value": "{base.font-size.75} + {base.typescale.size.default}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "125": {
+        "value": "{base.font-size.100} + {base.typescale.size.default}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "150": {
+        "value": "{base.font-size.125} + {base.typescale.size.default}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "200": {
+        "value": "{base.font-size.150} + {base.typescale.size.heading}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "250": {
+        "value": "{base.font-size.200} + {base.typescale.size.heading}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "300": {
+        "value": "{base.font-size.250} + {base.typescale.size.heading}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "400": {
+        "value": "{base.font-size.300} + {base.typescale.size.title}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "500": {
+        "value": "{base.font-size.400} + {base.typescale.size.title}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "600": {
+        "value": "{base.font-size.500} + {base.typescale.size.title}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "750": {
+        "value": "{base.font-size.600} + {base.typescale.size.display}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "900": {
+        "value": "{base.font-size.750} + {base.typescale.size.display}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "1050": {
+        "value": "{base.font-size.900} + {base.typescale.size.display}",
+        "type": "fontSizes",
+        "deprecated": true,
+        "deprecatedComment": "Use {base.size.1100} for consistent spacing and sizing"
+      }
+    },
+    "line-height": {
+      "50": {
+        "value": 16,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "100": {
+        "value": 20,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "150": {
+        "value": 24,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "200": {
+        "value": 28,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "250": {
+        "value": 32,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "300": {
+        "value": 36,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "350": {
+        "value": 40,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "400": {
+        "value": 48,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "500": {
+        "value": 56,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "600": {
+        "value": 64,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "750": {
+        "value": 72,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "900": {
+        "value": 88,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      },
+      "1050": {
+        "value": 104,
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use system instead"
+      }
+    },
+    "typescale": {
+      "size": {
+        "default": {
+          "value": "0.125rem",
+          "type": "dimension",
+          "deprecated": true
+        },
+        "heading": {
+          "value": "{base.typescale.size.default} * {base.level}",
+          "type": "dimension",
+          "deprecated": true
+        },
+        "title": {
+          "value": "{base.typescale.size.heading} * {base.level}",
+          "type": "dimension",
+          "deprecated": true
+        },
+        "display": {
+          "value": "{base.typescale.size.title} * {base.level}",
+          "type": "dimension",
+          "deprecated": true
+        }
+      },
+      "height": {
+        "default": {
+          "value": "0.25rem",
+          "type": "dimension",
+          "deprecated": true
+        },
+        "title": {
+          "value": "{base.typescale.height.default} * {base.level}",
+          "type": "dimension",
+          "deprecated": true
+        },
+        "display": {
+          "value": "1rem",
+          "type": "dimension",
+          "deprecated": true
         }
       }
     }
