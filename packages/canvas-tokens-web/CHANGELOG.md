@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.0
+
+### Major Changes
+
+- ### Components
+
+  - feat: Add new base size and shape tokens
+    ([#214](https://github.com/Workday/canvas-tokens/pull/214))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.0.0
 
 ### Major Changes
