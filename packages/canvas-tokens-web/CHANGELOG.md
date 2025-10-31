@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 3.1.3
+
+### Patch Changes
+
+- ### Infrastructure
+
+  - fix: Fix value transforms ([#215](https://github.com/Workday/canvas-tokens/pull/215))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.1.2
 
 ### Patch Changes
