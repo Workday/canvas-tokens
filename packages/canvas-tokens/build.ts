@@ -112,9 +112,9 @@ StyleDictionary.registerTransformGroup({
   name: 'web',
   transforms: [
     'name/cti/kebab',
+    'value/deprecated',
     'value/flatten-border',
     'value/flatten-oklch',
-    'value/hex-to-var',
     'value/shadow/flat-sys',
     'value/breakpoints/px',
     'value/wrapped-font-family',

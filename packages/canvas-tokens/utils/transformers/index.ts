@@ -9,6 +9,14 @@ import {transformNameToCamelCase} from './transformNameToCamelCase';
 import {transformHexToRgb} from './transformHexToRgb';
 
 export const transforms: Record<string, Transform> = {
+  'value/deprecated': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isDeprecated,
+    transformer: ({value, fallback}) => {
+      return fallback || value;
+    },
+  },
   // transform function that changes any hex color value to rgba
   // not used now in web
   'value/hex-to-rgba': {
@@ -16,15 +24,6 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isHexColor,
     transformer: transformHexToRgb,
-  },
-  'value/hex-to-var': {
-    type: 'value',
-    transitive: true,
-    matcher: filter.isHexColor,
-    transformer: ({value, fallback}) => {
-      const fbValue = fallback?.match(/{(?<token>.+)}/)?.groups?.token;
-      return fbValue ? `var(--cnvs-${fbValue.split('.').join('-')})` : value;
-    },
   },
   'value/shadow/flat-sys': {
     type: 'value',
@@ -60,11 +59,9 @@ export const transforms: Record<string, Transform> = {
     matcher: filter.isSysColor,
     transformer: ({original: {value}}) => {
       // eslint-disable-next-line no-useless-escape
-      const updatedValue = value.replace(/{[\w\.]*}/g, (a: string) => {
-        const cssVar = `var(--cnvs-${a.replace(/{|}/g, '').replace(/\./g, '-')})`;
-        return cssVar.includes('palette') ? `from ${cssVar} l c h ` : ' ' + cssVar;
-      });
-
+      const updatedValue = value.replace(/{[\w\.]*}/g, (a: string) =>
+        a.includes('palette') ? `from ${a} l c h ` : ' ' + a
+      );
       return value.includes('{base.opacity.0}') ? 'transparent' : updatedValue;
     },
   },
