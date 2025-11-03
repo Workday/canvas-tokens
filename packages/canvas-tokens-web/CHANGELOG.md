@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.1.4
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Add value to deprecated dragon fruit to build correctly
+    ([#216](https://github.com/Workday/canvas-tokens/pull/216))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.1.3
 
 ### Patch Changes
