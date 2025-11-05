@@ -1189,42 +1189,42 @@
       "palette": {
         "dragon-fruit": {
           "100": {
-            "value": "#fbf5ff",
+            "value": "",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "replace dragon-fruit100 with {base.palette.purple.25}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
             "fallback": "{base.palette.purple.25}"
           },
           "200": {
-            "value": "#f1d5ff",
+            "value": "",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "replace dragon-fruit200 with {base.palette.purple.100}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
             "fallback": "{base.palette.purple.100}"
           },
           "300": {
-            "value": "#736bff",
+            "value": "",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "replace dragon-fruit300 with {base.palette.indigo.500}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
             "fallback": "{base.palette.indigo.500}"
           },
           "400": {
-            "value": "#5f4ae6",
+            "value": "",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "replace dragon-fruit400 with {base.palette.indigo.600}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
             "fallback": "{base.palette.indigo.600}"
           },
           "500": {
-            "value": "4e3ec2",
+            "value": "",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "replace dragon-fruit500 with {base.palette.indigo.700}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
             "fallback": "{base.palette.indigo.700}"
           },
           "600": {
-            "value": "#272077",
+            "value": "",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "replace dragon-fruit600 with {base.palette.indigo.900}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
