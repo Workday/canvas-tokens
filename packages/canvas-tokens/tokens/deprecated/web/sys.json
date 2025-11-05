@@ -68,6 +68,99 @@
         "comment": "Commonly used for our standard buttons and profile avatars: All Primary, Secondary Buttons, Radio Buttons and Notification Badges."
       }
     },
+    "space": {
+      "zero": {
+        "value": "0",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "Stacks, rows in tables"
+      },
+      "half": {
+        "value": "{base.unit} * 0.5",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "Mobile only"
+      },
+      "x1": {
+        "value": "{base.unit}",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "Compact spacing between text or icons"
+      },
+      "x2": {
+        "value": "{base.unit} * 2",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "Commonly used to group compact elements like icon buttons"
+      },
+      "x3": {
+        "value": "{base.unit} * 3",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "Use when compact padding is required"
+      },
+      "x4": {
+        "value": "{base.unit} * 4",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "Default space token. Used to group Inputs with related data"
+      },
+      "x5": {
+        "value": "{base.unit} * 5",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "Mobile only"
+      },
+      "x6": {
+        "value": "{base.unit} * 6",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "• Padding around card content; • Related elements where more space between them can be afforded; • Separate section headings or titles from body text or inputs"
+      },
+      "x8": {
+        "value": "{base.unit} * 8",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "• Standard spacing between cards; • Used to separate groups of content ; • Separate section headings or titles from body text or inputs"
+      },
+      "x10": {
+        "value": "{base.unit} * 10",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "• Used for outer margins on the overall page content ; • Used for inner margins on large items such as page sections"
+      },
+      "x14": {
+        "value": "{base.unit} * 14",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "Mobile only"
+      },
+      "x16": {
+        "value": "{base.unit} * 16",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "- Use to de-clutter your UI when a lot of space is available; - Separate banner sections from page content; - Use to differentiate page content like page sections"
+      },
+      "x20": {
+        "value": "{base.unit} * 20",
+        "type": "spacing",
+        "deprecated": true,
+        "deprecatedComment": "Use semantic padding and gap values instead",
+        "comment": "- Use sparingly; - Helps to put focus on the primary element within your page; - Use to de-clutter your UI when a lot of space is available"
+      }
+    },
     "font-size": {
       "subtext": {
         "small": {

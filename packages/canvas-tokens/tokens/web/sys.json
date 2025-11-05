@@ -232,56 +232,125 @@
         "comment": "Full rounding is reserved high-visibility components. This shape is intended to draw attention. Buttons, Badge, Status Indicator, Essential Inputs, Border Containers (Not Cards)"
       }
     },
-    "space": {
-      "zero": {
-        "value": "0",
-        "type": "spacing",
-        "comment": "Stacks, rows in tables"
+    "size": {
+      "2xs": {
+        "value": "{base.size.200}",
+        "type": "size",
+        "comment": "Switch Track"
       },
-      "x1": {
-        "value": "{base.unit}",
-        "type": "spacing",
-        "comment": "Compact spacing between text or icons"
+      "xs": {
+        "value": "{base.size.250}",
+        "type": "size",
+        "comment": "Count Badge"
       },
-      "x2": {
-        "value": "{base.unit} * 2",
-        "type": "spacing",
-        "comment": "Commonly used to group compact elements like icon buttons"
+      "sm": {
+        "value": "{base.size.300}",
+        "type": "size",
+        "comment": "X-Small Buttons, Pills, Checkboxes, Radio Buttons"
       },
-      "x3": {
-        "value": "{base.unit} * 3",
-        "type": "spacing",
-        "comment": "Use when compact padding is required"
+      "md": {
+        "value": "{base.size.400}",
+        "type": "size",
+        "comment": "Small Buttons, Segmented Control, Tooltip, Avatar"
       },
-      "x4": {
-        "value": "{base.unit} * 4",
-        "type": "spacing",
-        "comment": "Default space token. Used to group Inputs with related data"
+      "lg": {
+        "value": "{base.size.500}",
+        "type": "size",
+        "comment": "Default height for most components, like Medium Buttons, Segmented Control, Banner, Input Fields, and Menu List Items"
       },
-      "x6": {
-        "value": "{base.unit} * 6",
-        "type": "spacing",
-        "comment": "• Padding around card content; • Related elements where more space between them can be afforded; • Separate section headings or titles from body text or inputs"
+      "xl": {
+        "value": "{base.size.600}",
+        "type": "size",
+        "comment": "Large size used in Large Buttons, Segmented Controls, Expandable Container Trigger, Tabs, and Avatar"
       },
-      "x8": {
-        "value": "{base.unit} * 8",
-        "type": "spacing",
-        "comment": "• Standard spacing between cards; • Used to separate groups of content ; • Separate section headings or titles from body text or inputs"
+      "2xl": {
+        "value": "{base.size.700}",
+        "type": "size",
+        "comment": "Table Cell, Toast"
       },
-      "x10": {
-        "value": "{base.unit} * 10",
+      "3xl": {
+        "value": "{base.size.800}",
+        "type": "size",
+        "comment": "Expandable Container"
+      }
+    },
+    "padding": {
+      "none": {
+        "value": "{base.size.0}",
         "type": "spacing",
-        "comment": "• Used for outer margins on the overall page content ; • Used for inner margins on large items such as page sections"
+        "comment": "Use when there should be no space between content and element's edges."
       },
-      "x16": {
-        "value": "{base.unit} * 16",
+      "2xs": {
+        "value": "{base.size.50}",
         "type": "spacing",
-        "comment": "- Use to de-clutter your UI when a lot of space is available; - Separate banner sections from page content; - Use to differentiate page content like page sections"
+        "description": ""
       },
-      "x20": {
-        "value": "{base.unit} * 20",
+      "xs": {
+        "value": "{base.size.100}",
         "type": "spacing",
-        "comment": "- Use sparingly; - Helps to put focus on the primary element within your page; - Use to de-clutter your UI when a lot of space is available"
+        "comment": "Horizontal padding on Input Fields"
+      },
+      "sm": {
+        "value": "{base.size.150}",
+        "type": "spacing",
+        "comment": "Compact padding, used in Rich Text Editor, or X-Small Buttons"
+      },
+      "md": {
+        "value": "{base.size.200}",
+        "type": "spacing",
+        "comment": "Default padding used for components used around Small Button content."
+      },
+      "lg": {
+        "value": "{base.size.250}",
+        "type": "spacing",
+        "comment": "Large padding, used in Medium Buttons with Icons"
+      },
+      "xl": {
+        "value": "{base.size.300}",
+        "type": "spacing",
+        "comment": "Padding used around Card and Medium Button content"
+      },
+      "2xl": {
+        "value": "{base.size.400}",
+        "type": "spacing",
+        "comment": "Padding used around Modal and Large Button content"
+      }
+    },
+    "gap": {
+      "none": {
+        "value": "{base.size.0}",
+        "type": "spacing",
+        "comment": "Use when there is no space between elements"
+      },
+      "xs": {
+        "value": "{base.size.50}",
+        "type": "spacing",
+        "comment": "Compact spacing from icon to text, labels to inputs, between tab items."
+      },
+      "sm": {
+        "value": "{base.size.100}",
+        "type": "spacing",
+        "comment": "Horizontal space between pills, tighter space between buttons, inline icon to text, segmented controls."
+      },
+      "md": {
+        "value": "{base.size.200}",
+        "type": "spacing",
+        "comment": "Use the default inline spacing when other gap tokens may not fit."
+      },
+      "lg": {
+        "value": "{base.size.300}",
+        "type": "spacing",
+        "comment": "Use this for tighter spacing between cards. Cards are self contained blocks of content."
+      },
+      "xl": {
+        "value": "{base.size.400}",
+        "type": "spacing",
+        "comment": "Use this for the default spacing between cards, as well as the gutter width used in the large 12-column grid."
+      },
+      "2xl": {
+        "value": "{base.size.800}",
+        "type": "spacing",
+        "comment": "Use this for the space between content sections"
       }
     },
     "font-family": {
@@ -445,7 +514,7 @@
         "value": "{base.font-weight.400}",
         "type": "text"
       },
-      "md": {
+      "medium": {
         "value": "{base.font-weight.500}",
         "type": "text"
       },
