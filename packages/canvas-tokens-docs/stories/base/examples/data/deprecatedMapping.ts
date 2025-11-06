@@ -121,7 +121,7 @@ export const deprecatedBaseTokens = {
       name: 'base.palette.cantaloupe.200',
       old: '#fcd49f',
       new: 'base.palette.amber.200',
-      systemTokens: ['sys.color.bg.caution.soft', 'sys.color.fg.caution.softer'],
+      systemTokens: ['sys.color.bg.caution.soft'],
     },
     {
       name: 'base.palette.cantaloupe.300',
@@ -138,7 +138,7 @@ export const deprecatedBaseTokens = {
       name: 'base.palette.cantaloupe.500',
       old: '#f38b00',
       new: 'base.palette.amber.500',
-      systemTokens: ['sys.color.bg.caution.strong'],
+      systemTokens: ['sys.color.bg.caution.strong', 'sys.color.fg.caution.softer'],
     },
     {
       name: 'base.palette.cantaloupe.600',
@@ -405,7 +405,7 @@ export const deprecatedBaseTokens = {
       name: 'base.palette.blueberry.300',
       old: '#40A0FF',
       new: 'base.palette.blue.400',
-      systemTokens: ['sys.color.bg.primary.default', 'sys.color.fg.primary.soft'],
+      systemTokens: ['sys.color.fg.primary.soft'],
     },
     {
       name: 'base.palette.blueberry.400',
@@ -842,7 +842,7 @@ export const deprecatedBaseTokens = {
       name: 'base.palette.french-vanilla.100',
       old: '#ffffff',
       new: 'base.palette.neutral.0',
-      systemTokens: ['sys.color.bg.default', 'sys.color.fg.default', 'sys.color.border.default'],
+      systemTokens: ['sys.color.bg.default', 'sys.color.fg.inverse', 'sys.color.border.inverse'],
     },
     {
       name: 'base.palette.french-vanilla.200',
@@ -886,14 +886,14 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.black-pepper.300',
       old: '#494949',
-      new: 'base.palette.neutral.900',
+      new: 'base.palette.neutral.800',
       systemTokens: ['sys.color.fg.default'],
       withWhiteText: true,
     },
     {
       name: 'base.palette.black-pepper.400',
       old: '#333333',
-      new: 'base.palette.neutral.950',
+      new: 'base.palette.neutral.900',
       systemTokens: [
         'sys.color.bg.contrast.default',
         'sys.color.fg.strong',
@@ -904,7 +904,7 @@ export const deprecatedBaseTokens = {
     {
       name: 'base.palette.black-pepper.500',
       old: '#1e1e1e',
-      new: 'base.palette.neutral.975',
+      new: 'base.palette.neutral.950',
       systemTokens: [
         'sys.color.bg.contrast.strong',
         'sys.color.fg.stronger',

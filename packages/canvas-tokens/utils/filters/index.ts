@@ -46,6 +46,10 @@ export const isMathExpression: Matcher = ({path, value}) => {
   );
 };
 
+export const isDeprecated: Matcher = ({original}) => {
+  return original.deprecated;
+};
+
 export const isComposite: Matcher = ({type}) => {
   return /composition|typography/g.test(type);
 };
