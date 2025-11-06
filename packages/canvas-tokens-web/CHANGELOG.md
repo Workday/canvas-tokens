@@ -1,5 +1,52 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.1
+
+### Major Changes
+
+- ### Components
+
+  - fix: Add deprecated static tokens back in
+    ([#202](https://github.com/Workday/canvas-tokens/pull/202))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera,
+    [@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Add value to deprecated dragon fruit to build correctly
+    ([#216](https://github.com/Workday/canvas-tokens/pull/216))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Update comment ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Documentation
+
+  - docs: Token v3 announcement ([#194](https://github.com/Workday/canvas-tokens/pull/194))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Fix docs links ([#195](https://github.com/Workday/canvas-tokens/pull/195))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - docs: Fix inverse token ([#198](https://github.com/Workday/canvas-tokens/pull/198))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - fix: Fix value transforms ([#215](https://github.com/Workday/canvas-tokens/pull/215))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Tokens
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#197](https://github.com/Workday/canvas-tokens/pull/197))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) The following tokens have been fixed to match a
+    figma value:
+    - : color alpha has been changed from to .
+    - / / : base color has been changed from to .
+    - / / / : base color has been changed from to .
+    - / / : base color has been changed from to .
+    - / / : base color has been changed from to
+    - / : base color has been changed from to
+  - fix: Update caution color mapping ([#200](https://github.com/Workday/canvas-tokens/pull/200))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+    - / : base color has been reverted from to
+    - / : base color has been reverted from to
+
 ## 4.0.0-alpha.0
 
 ### Major Changes
