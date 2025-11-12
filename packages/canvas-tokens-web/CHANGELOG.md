@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.1.5
+
+### Patch Changes
+
+- ### Documentation
+
+  - fix: Remove deprecated values from base tokens
+    ([#221](https://github.com/Workday/canvas-tokens/pull/221))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
 ## 3.1.4
 
 ### Patch Changes
