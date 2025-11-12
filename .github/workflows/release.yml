@@ -15,6 +15,9 @@ on:
           'The version override: patch, minor or major'
         required: false
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
 jobs:
   release:
     # Only run if:
@@ -82,8 +85,6 @@ jobs:
 
       - uses: Workday/canvas-kit-actions/do-release@v1
         if: ${{ steps.set_version.outputs.version }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_CI_PUBLISH_TOKEN }}
         id: release
         with:
           ghToken: ${{ secrets.GH_RW_TOKEN }}
