@@ -62,9 +62,11 @@ function buildPalettes(tokens: object) {
   const palettes: Record<string, ColorSwatch[]> = {};
 
   for (const key in tokens) {
-    // If it's a color token
-
-    if (colorRegExp.test(key)) {
+    // Exclude deprecated color palette names
+    if (
+      colorRegExp.test(key) &&
+      !deprecatedColorPaletteNames.some(deprecatedName => key.startsWith(deprecatedName))
+    ) {
       const name = key.replace(/\d+/, '');
 
       const swatch = buildColorSwatch(tokens[key as keyof typeof tokens], `base.${key}`);
@@ -128,13 +130,18 @@ deprecatedColorPalette.map(([name, palette]) => {
   });
 });
 
-const allColorPalettes = baseColorPalettes.filter(([name]) =>
-  colorPaletteNames.includes(name as (typeof colorPaletteNames)[number])
+const allColorPalettes = baseColorPalettes.filter(
+  ([name]) => {
+    console.log(name);
+    return colorPaletteNames.indexOf(name as (typeof colorPaletteNames)[number]) !== -1;
+  }
+  // colorPaletteNames.indexOf(name as (typeof colorPaletteNames)[number])
 );
 
 export const BaseColorTokens = () => {
   return (
     <Stack>
+      foo
       {allColorPalettes.map(([name, palette]) => (
         <ColorGrid key={name} name={name} palette={palette} />
       ))}
