@@ -130,12 +130,8 @@ deprecatedColorPalette.map(([name, palette]) => {
   });
 });
 
-const allColorPalettes = baseColorPalettes.filter(
-  ([name]) => {
-    console.log(name);
-    return colorPaletteNames.indexOf(name as (typeof colorPaletteNames)[number]) !== -1;
-  }
-  // colorPaletteNames.indexOf(name as (typeof colorPaletteNames)[number])
+const allColorPalettes = baseColorPalettes.filter(([name]) =>
+  colorPaletteNames.includes(name as (typeof colorPaletteNames)[number])
 );
 
 export const BaseColorTokens = () => {
