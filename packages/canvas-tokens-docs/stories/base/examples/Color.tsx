@@ -140,7 +140,6 @@ const allColorPalettes = baseColorPalettes.filter(([name]) =>
 export const BaseColorTokens = () => {
   return (
     <Stack>
-      foo
       {allColorPalettes.map(([name, palette]) => (
         <ColorGrid key={name} name={name} palette={palette} />
       ))}
