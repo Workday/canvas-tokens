@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {system} from '@workday/canvas-tokens-web';
+import {base, system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
-interface ShapeToken {
+interface SizeToken {
   /** The name of the CSS variable */
   cssVar: string;
   /** The formatted name of the JS variable */
@@ -33,28 +33,60 @@ function multiplyCalcValues(value: string) {
   return 0;
 }
 
-// Only show non-deprecated shape tokens
-const allowedShapeKeys = ['zero', 'xs', 'sm', 'md', 'lg', 'full'];
+// Only show non-deprecated size tokens
+const allowedSizeKeys = [
+  '0',
+  '25',
+  '50',
+  '75',
+  '100',
+  '125',
+  '150',
+  '175',
+  '200',
+  '225',
+  '250',
+  '300',
+  '350',
+  '400',
+  '450',
+  '500',
+  '600',
+  '700',
+  '800',
+  '900',
+  '1000',
+  '1100',
+  '1200',
+  '1300',
+  '1400',
+];
 
-const shapeTokens: ShapeToken[] = Object.entries(system.shape)
-  .filter(([key]) => allowedShapeKeys.includes(key))
-  .map(([key, varName]) => {
-    const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-    const calculatedValue = multiplyCalcValues(value);
+// Construct size object from individual base.size* properties
+const baseSize: Record<string, string> = {};
+allowedSizeKeys.forEach(key => {
+  const propName = `size${key}` as keyof typeof base;
+  if (propName in base) {
+    baseSize[key] = base[propName] as string;
+  }
+});
 
-    return {
-      cssVar: varName,
-      jsVar: formatJSVar(`system.shape.${key}`),
-      value,
-      calculatedValue: `${calculatedValue}rem`,
-      pxValue: `${calculatedValue * 16}px`,
-    };
-  });
+const sizeTokens: SizeToken[] = Object.entries(baseSize).map(([key, varName]) => {
+  const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+  const calculatedValue = multiplyCalcValues(value);
+  return {
+    cssVar: varName,
+    jsVar: formatJSVar(`base.size.${key}`),
+    value,
+    calculatedValue: `${calculatedValue}rem`,
+    pxValue: `${calculatedValue * 16}px`,
+  };
+});
 
-export function ShapeTokens() {
+export function BaseSizeTokens() {
   return (
     <TokenGrid
-      caption="shape tokens"
+      caption="size tokens"
       headings={[
         'Sample',
         'CSS Variable',
@@ -63,17 +95,15 @@ export function ShapeTokens() {
         'Calculated Value',
         'Pixel Value',
       ]}
-      rows={shapeTokens}
+      rows={sizeTokens}
     >
       {token => (
         <>
           <TokenGrid.RowItem>
             <TokenGrid.Sample
               style={{
-                borderRadius: `var(${token.cssVar})`,
-                border: `solid 0.0625rem var(${system.color.border.container})`,
-                height: '5rem',
-                width: '5rem',
+                width: `var(${token.cssVar})`,
+                backgroundColor: `var(${system.color.bg.primary.default})`,
               }}
             />
           </TokenGrid.RowItem>

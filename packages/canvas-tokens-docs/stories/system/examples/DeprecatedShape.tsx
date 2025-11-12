@@ -34,10 +34,10 @@ function multiplyCalcValues(value: string) {
 }
 
 // Only show non-deprecated shape tokens
-const allowedShapeKeys = ['zero', 'xs', 'sm', 'md', 'lg', 'full'];
+const notAllowedShapeKeys = ['zero', 'xs', 'sm', 'md', 'lg', 'full'];
 
 const shapeTokens: ShapeToken[] = Object.entries(system.shape)
-  .filter(([key]) => allowedShapeKeys.includes(key))
+  .filter(([key]) => !notAllowedShapeKeys.includes(key))
   .map(([key, varName]) => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
     const calculatedValue = multiplyCalcValues(value);
@@ -51,7 +51,7 @@ const shapeTokens: ShapeToken[] = Object.entries(system.shape)
     };
   });
 
-export function ShapeTokens() {
+export function DeprecatedShapeTokens() {
   return (
     <TokenGrid
       caption="shape tokens"

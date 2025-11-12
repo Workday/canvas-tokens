@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {system} from '@workday/canvas-tokens-web';
+import {base, system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
-interface ShapeToken {
+interface DeprecatedSpaceToken {
   /** The name of the CSS variable */
   cssVar: string;
   /** The formatted name of the JS variable */
@@ -16,45 +16,36 @@ interface ShapeToken {
 }
 
 function multiplyCalcValues(value: string) {
-  // Extract the multiplier from calc expressions like "calc(var(--cnvs-base-baseline) * 2.00)"
-  // The pattern matches: * followed by optional whitespace, then a number (with optional decimal)
-  const multiplierMatch = value.match(/\*\s*([\d.]+)/);
-  if (multiplierMatch) {
-    const multiplier = parseFloat(multiplierMatch[1]);
-    // base.baseline is 0.5rem, so multiply by 0.5 to get the final rem value
-    return multiplier * 0.5;
-  }
-  // If no multiplier found, try to parse as a direct rem value
-  const remMatch = value.match(/([\d.]+)rem/);
-  if (remMatch) {
-    return parseFloat(remMatch[1]);
+  // Matches numbers such as .25, 0.25, or 25
+  const numberRegExp = new RegExp(/(0*\.)?\d+/g);
+  // Find the numbers in the string value
+  const matches = value.match(numberRegExp);
+  if (matches) {
+    // Multiply the matched values
+    return matches.reduce((acc, current) => acc * Number(current), 1);
   }
   // If none exist, return 0
   return 0;
 }
 
-// Only show non-deprecated shape tokens
-const allowedShapeKeys = ['zero', 'xs', 'sm', 'md', 'lg', 'full'];
-
-const shapeTokens: ShapeToken[] = Object.entries(system.shape)
-  .filter(([key]) => allowedShapeKeys.includes(key))
-  .map(([key, varName]) => {
+const deprecatedSpaceTokens: DeprecatedSpaceToken[] = Object.entries(system.space).map(
+  ([key, varName]) => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
     const calculatedValue = multiplyCalcValues(value);
-
     return {
       cssVar: varName,
-      jsVar: formatJSVar(`system.shape.${key}`),
+      jsVar: formatJSVar(`system.space.${key}`),
       value,
       calculatedValue: `${calculatedValue}rem`,
       pxValue: `${calculatedValue * 16}px`,
     };
-  });
+  }
+);
 
-export function ShapeTokens() {
+export function DeprecatedSpaceTokens() {
   return (
     <TokenGrid
-      caption="shape tokens"
+      caption="space tokens"
       headings={[
         'Sample',
         'CSS Variable',
@@ -63,17 +54,15 @@ export function ShapeTokens() {
         'Calculated Value',
         'Pixel Value',
       ]}
-      rows={shapeTokens}
+      rows={deprecatedSpaceTokens}
     >
       {token => (
         <>
           <TokenGrid.RowItem>
             <TokenGrid.Sample
               style={{
-                borderRadius: `var(${token.cssVar})`,
-                border: `solid 0.0625rem var(${system.color.border.container})`,
-                height: '5rem',
-                width: '5rem',
+                width: `var(${token.cssVar})`,
+                backgroundColor: `var(${system.color.bg.primary.default})`,
               }}
             />
           </TokenGrid.RowItem>

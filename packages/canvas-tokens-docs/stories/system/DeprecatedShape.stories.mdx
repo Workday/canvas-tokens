@@ -1,17 +1,18 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-import {DeprecatedSpaceTokens} from './examples/DeprecatedSpace';
+import {DeprecatedShapeTokens} from './examples/DeprecatedShape';
 
-<Meta title="Docs/System Tokens/Space (Deprecated)" />
+<Meta title="Docs/System Tokens/Shape (Deprecated)" />
 
 <Unstyled>
 
-# Deprecated System Space Tokens
+# System Shape Tokens
 
-System space tokens create consistent layout spacing across our UI.
+System shape tokens provide consistent shapes across our UI. They're used in our buttons, labels,
+cards, and more.
 
 ## Usage
 
-Space tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
+Shape tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
 CSS variable from a base token, so you'll need to have those CSS variables imported in your
 application as well.
 
@@ -20,9 +21,7 @@ application as well.
 import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
-  display: 'grid',
-  gap: `var(${system.space.x1})`,
-  padding: `var(${system.space.x2})`,
+  borderRadius: `var(${system.shape.x2})`,
 };
 ```
 
@@ -32,9 +31,7 @@ same styles using CSS variables directly.
 ```css
 // styles.css
 .card {
-  display: grid;
-  gap: var(--cnvs-sys-space-x1);
-  padding: var(--cnvs-sys-space-x2);
+  border-radius: var(--cnvs-sys-shape-x2);
 }
 ```
 
@@ -43,8 +40,8 @@ same styles using CSS variables directly.
 ## Tokens
 
 These tokens use a multiplier scale and reference our `baseUnit` token, which is `0.25rem` / `4px`.
-So the `system.space.x2` token has a value of `0.5rem` or `8px`.
+So the `system.shape.x2` token has a value of `0.5rem` or `8px`.
 
-<DeprecatedSpaceTokens />
+<DeprecatedShapeTokens />
 
 </Unstyled>

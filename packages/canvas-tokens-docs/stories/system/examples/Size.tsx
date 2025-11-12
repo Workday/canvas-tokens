@@ -2,7 +2,7 @@ import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
-interface ShapeToken {
+interface SizeToken {
   /** The name of the CSS variable */
   cssVar: string;
   /** The formatted name of the JS variable */
@@ -33,28 +33,22 @@ function multiplyCalcValues(value: string) {
   return 0;
 }
 
-// Only show non-deprecated shape tokens
-const allowedShapeKeys = ['zero', 'xs', 'sm', 'md', 'lg', 'full'];
+const sizeTokens: SizeToken[] = Object.entries(system.size).map(([key, varName]) => {
+  const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+  const calculatedValue = multiplyCalcValues(value);
+  return {
+    cssVar: varName,
+    jsVar: formatJSVar(`system.size.${key}`),
+    value,
+    calculatedValue: `${calculatedValue}rem`,
+    pxValue: `${calculatedValue * 16}px`,
+  };
+});
 
-const shapeTokens: ShapeToken[] = Object.entries(system.shape)
-  .filter(([key]) => allowedShapeKeys.includes(key))
-  .map(([key, varName]) => {
-    const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-    const calculatedValue = multiplyCalcValues(value);
-
-    return {
-      cssVar: varName,
-      jsVar: formatJSVar(`system.shape.${key}`),
-      value,
-      calculatedValue: `${calculatedValue}rem`,
-      pxValue: `${calculatedValue * 16}px`,
-    };
-  });
-
-export function ShapeTokens() {
+export function SizeTokens() {
   return (
     <TokenGrid
-      caption="shape tokens"
+      caption="size tokens"
       headings={[
         'Sample',
         'CSS Variable',
@@ -63,17 +57,15 @@ export function ShapeTokens() {
         'Calculated Value',
         'Pixel Value',
       ]}
-      rows={shapeTokens}
+      rows={sizeTokens}
     >
       {token => (
         <>
           <TokenGrid.RowItem>
             <TokenGrid.Sample
               style={{
-                borderRadius: `var(${token.cssVar})`,
-                border: `solid 0.0625rem var(${system.color.border.container})`,
-                height: '5rem',
-                width: '5rem',
+                width: `var(${token.cssVar})`,
+                backgroundColor: `var(${system.color.bg.primary.default})`,
               }}
             />
           </TokenGrid.RowItem>

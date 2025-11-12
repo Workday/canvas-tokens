@@ -8,10 +8,10 @@ function getPixelValue(value: string) {
   return `${pxValue}px`;
 }
 
-const value = getComputedStyle(document.documentElement).getPropertyValue(base.baseUnit);
+const value = getComputedStyle(document.documentElement).getPropertyValue(base.baseline);
 const pxValue = getPixelValue(value);
 const baseUnitToken = {
-  label: base.baseUnit,
+  label: base.baseline,
   value,
   pxValue,
 };
