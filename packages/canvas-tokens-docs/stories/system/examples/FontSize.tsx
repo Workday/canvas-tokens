@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
+import {isTokenDeprecated} from './utils/tokenMetadata';
 
 interface FontSizeToken {
   /** The name of the CSS variable */
@@ -12,21 +13,30 @@ interface FontSizeToken {
   /** The value of the CSS token after converting rem to pixels */
   pxValue: string;
 }
-system.fontSize;
-const fontSizeTokens = Object.keys(system.fontSize).reduce((acc, level) => {
-  const levelSizes = system.fontSize[level as keyof typeof system.fontSize];
-  const levelTokens = Object.entries(levelSizes).map(([size, varName]) => {
-    const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-    const pxValue = Number(value.replace('rem', '')) * 16;
-    return {
-      cssVar: varName,
-      jsVar: formatJSVar(`system.fontSize.${level}.${size}`),
-      value,
-      pxValue: `${pxValue}px`,
-    };
-  });
-  return acc.concat(...levelTokens);
-}, [] as FontSizeToken[]);
+
+// Deprecated size keys that should be filtered out
+const deprecatedSizeKeys = ['small', 'medium', 'large'];
+
+// Get all font-size tokens and filter out deprecated ones
+const fontSizeTokens: FontSizeToken[] = Object.entries(system.fontSize).flatMap(
+  ([level, levelSizes]) => {
+    return Object.entries(levelSizes as Record<string, string>)
+      .filter(
+        ([size]) =>
+          !deprecatedSizeKeys.includes(size) && !isTokenDeprecated('font-size', level, size)
+      )
+      .map(([size, varName]) => {
+        const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+        const pxValue = Number(value.replace('rem', '')) * 16;
+        return {
+          cssVar: varName,
+          jsVar: formatJSVar(`system.fontSize.${level}.${size}`),
+          value,
+          pxValue: `${pxValue}px`,
+        };
+      });
+  }
+);
 
 export function FontSizeTokens() {
   return (

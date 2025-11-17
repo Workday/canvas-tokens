@@ -29,12 +29,12 @@ These tokens can be consumed as a JavaScript / TypeScript object.
 import {system} from '@workday/canvas-tokens-web';
 
 const headingStyles = {
-  ...system.type.levels.heading.small,
+  ...system.type.heading.sm,
 }
 
 const bodyStyles = {
   minWidth: 48rem;
-  ...system.type.levels.body.small,
+  ...system.type.body.sm,
 };
 ```
 
@@ -43,14 +43,14 @@ classes, not variables. In the example below, we're applying the same type style
 variables directly.
 
 ```tsx
-<h2 className="cnvs-sys-type-heading-small">Heading</h2>
-<p className="cnvs-sys-type-body-small">Body text</p>
+<h2 className="cnvs-sys-type-heading-sm">Heading</h2>
+<p className="cnvs-sys-type-body-sm">Body text</p>
 ```
 
 ### Tokens
 
 There are four type levels: `subtext`, `body`, `heading`, and `title`. Each level has three sizes:
-`small`, `medium`, and `large`.
+`sm`, `md`, and `lg`.
 
 <TypeLevelTokens />
 
@@ -104,7 +104,7 @@ These tokens can be consumed as a JavaScript / TypeScript object.
 import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
-  fontSize: `var(${system.fontSize.heading.small})`,
+  fontSize: `var(${system.fontSize.heading.sm})`,
 };
 ```
 
@@ -113,7 +113,7 @@ They can also be consumed as CSS, Sass, or Less variables.
 ```css
 // styles.css
 h2 {
-  font-size: var(--cnvs-sys-font-size-heading-small);
+  font-size: var(--cnvs-sys-font-size-heading-sm);
 }
 ```
 

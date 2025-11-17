@@ -1,17 +1,17 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-import {GapTokens} from './examples/Gap';
+import {PaddingTokens} from './examples/Padding';
 
-<Meta title="Docs/System Tokens/Gap" />
+<Meta title="Docs/System Tokens/Padding" />
 
 <Unstyled>
 
-# System Gap Tokens
+# System Padding Tokens
 
 
 
 ## Usage
 
-Gap tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
+Padding tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
 CSS variable from a base token, so you'll need to have those CSS variables imported in your
 application as well.
 
@@ -20,8 +20,7 @@ application as well.
 import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
-  display: 'grid',
-  gap: `var(${system.gap.sm})`,
+  padding: `var(${system.padding.sm})`,
 };
 ```
 
@@ -31,8 +30,7 @@ same styles using CSS variables directly.
 ```css
 // styles.css
 .card {
-  display: grid;
-  gap: var(--cnvs-sys-gap-sm);
+  padding: var(--cnvs-sys-padding-sm);
 }
 ```
 
@@ -41,8 +39,8 @@ same styles using CSS variables directly.
 ## Tokens
 
 These tokens use a multiplier scale and reference our `base.baseline` token, which is `0.5rem` / `8px`.
-So the `system.gap.sm` token has a value calculated from the baseline multiplier.
+So the `system.padding.sm` token has a value calculated from the baseline multiplier.
 
-<GapTokens />
+<PaddingTokens />
 
 </Unstyled>

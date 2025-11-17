@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
+import {isTokenDeprecated} from './utils/tokenMetadata';
 
 interface FontWeightToken {
   /** The name of the CSS variable */
@@ -11,8 +12,9 @@ interface FontWeightToken {
   value: string;
 }
 
-const fontWeightTokens: FontWeightToken[] = Object.entries(system.fontWeight).map(
-  ([key, varName]) => {
+const fontWeightTokens: FontWeightToken[] = Object.entries(system.fontWeight)
+  .filter(([key]) => !isTokenDeprecated('font-weight', undefined, key))
+  .map(([key, varName]) => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
 
     return {
@@ -20,8 +22,7 @@ const fontWeightTokens: FontWeightToken[] = Object.entries(system.fontWeight).ma
       jsVar: formatJSVar(`system.fontWeight.${key}`),
       value: value,
     };
-  }
-);
+  });
 
 export function FontWeightTokens() {
   return (

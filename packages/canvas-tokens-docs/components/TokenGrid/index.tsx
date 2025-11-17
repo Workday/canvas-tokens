@@ -23,7 +23,7 @@ export function formatJSVar(varName: string) {
     return (
       <span key={index}>
         .<wbr />
-        {identifier}
+        {identifier.toLowerCase()}
       </span>
     );
   });

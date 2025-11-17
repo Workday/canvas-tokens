@@ -11,7 +11,7 @@ import {SizeTokens} from './examples/Size';
 
 ## Usage
 
-Space tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
+Size tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
 CSS variable from a base token, so you'll need to have those CSS variables imported in your
 application as well.
 
@@ -20,9 +20,8 @@ application as well.
 import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
-  display: 'grid',
-  gap: `var(${system.space.x1})`,
-  padding: `var(${system.space.x2})`,
+  width: `var(${system.size.sm})`,
+  height: `var(${system.size.md})`,
 };
 ```
 
@@ -31,10 +30,9 @@ same styles using CSS variables directly.
 
 ```css
 // styles.css
-.card {
-  display: grid;
-  gap: var(--cnvs-sys-space-x1);
-  padding: var(--cnvs-sys-space-x2);
+.button {
+  width: var(--cnvs-sys-size-sm);
+  height: var(--cnvs-sys-size-md);
 }
 ```
 
@@ -42,8 +40,8 @@ same styles using CSS variables directly.
 
 ## Tokens
 
-These tokens use a multiplier scale and reference our `baseUnit` token, which is `0.25rem` / `4px`.
-So the `system.space.x2` token has a value of `0.5rem` or `8px`.
+These tokens use a multiplier scale and reference our `base.baseline` token, which is `0.5rem` / `8px`.
+So the `system.size.sm` token has a value calculated from the baseline multiplier.
 
 <SizeTokens />
 

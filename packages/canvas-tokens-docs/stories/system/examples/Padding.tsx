@@ -3,7 +3,7 @@ import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 import {getTokenDescription} from './utils/tokenMetadata';
 
-interface GapToken {
+interface PaddingToken {
   /** The name of the CSS variable */
   cssVar: string;
   /** The formatted name of the JS variable */
@@ -36,14 +36,14 @@ function multiplyCalcValues(value: string) {
   return 0;
 }
 
-const gapTokens: GapToken[] = Object.entries(system.gap).map(([key, varName]) => {
+const paddingTokens: PaddingToken[] = Object.entries(system.padding).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
-  const description = getTokenDescription('gap', key);
+  const description = getTokenDescription('padding', key);
 
   return {
     cssVar: varName,
-    jsVar: formatJSVar(`system.gap.${key}`),
+    jsVar: formatJSVar(`system.padding.${key}`),
     value,
     calculatedValue: `${calculatedValue}rem`,
     pxValue: `${calculatedValue * 16}px`,
@@ -51,12 +51,12 @@ const gapTokens: GapToken[] = Object.entries(system.gap).map(([key, varName]) =>
   };
 });
 
-export function GapTokens() {
+export function PaddingTokens() {
   return (
     <TokenGrid
-      caption="gap tokens"
+      caption="padding tokens"
       headings={['Sample', 'CSS Variable', 'JS Variable', 'Value', 'Pixel Value', 'Description']}
-      rows={gapTokens}
+      rows={paddingTokens}
     >
       {token => (
         <>

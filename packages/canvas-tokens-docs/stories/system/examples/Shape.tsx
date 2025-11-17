@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
+import {getTokenDescription} from './utils/tokenMetadata';
 
 interface ShapeToken {
   /** The name of the CSS variable */
@@ -13,6 +14,8 @@ interface ShapeToken {
   calculatedValue: string;
   /** The value of the CSS token after converting rem to pixels */
   pxValue: string;
+  /** The description/comment from the token definition */
+  description?: string;
 }
 
 function multiplyCalcValues(value: string) {
@@ -48,6 +51,7 @@ const shapeTokens: ShapeToken[] = Object.entries(system.shape)
       value,
       calculatedValue: `${calculatedValue}rem`,
       pxValue: `${calculatedValue * 16}px`,
+      description: getTokenDescription('shape', key),
     };
   });
 
@@ -62,6 +66,7 @@ export function ShapeTokens() {
         'Value',
         'Calculated Value',
         'Pixel Value',
+        'Description',
       ]}
       rows={shapeTokens}
     >
@@ -86,6 +91,7 @@ export function ShapeTokens() {
           <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.description || '—'}</TokenGrid.RowItem>
         </>
       )}
     </TokenGrid>

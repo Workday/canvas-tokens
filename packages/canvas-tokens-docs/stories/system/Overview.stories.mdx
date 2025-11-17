@@ -31,7 +31,7 @@ import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
   boxShadow: `var(${system.depth[2]})`,
-  padding: `var(${system.space.x4})`,
+  padding: `var(${system.padding.md})`,
 };
 ```
 
@@ -44,8 +44,8 @@ same styles using CSS variables directly.
 @import '@workday/canvas-tokens-web/css/system/_variables.css';
 
 .card {
-  background-color: var(--cnvs-sys-depth-2);
-  padding: var(--cnvs-sys-space-x4);
+  box-shadow: var(--cnvs-sys-depth-2);
+  padding: var(--cnvs-sys-padding-md);
 }
 ```
 
@@ -56,7 +56,9 @@ the links below.
 
 - [Depth](/docs/docs-system-tokens-depth--docs)
 - [Shape](/docs/docs-system-tokens-shape--docs)
-- [Space](/docs/docs-system-tokens-space--docs)
+- [Size](/docs/docs-system-tokens-size--docs)
+- [Gap](/docs/docs-system-tokens-gap--docs)
+- [Padding](/docs/docs-system-tokens-padding--docs)
 - [Type](/docs/docs-system-tokens-type--docs)
   - [Type Level](/docs/docs-system-tokens-type--docs#type-level)
   - [Font Family](/docs/docs-system-tokens-type--docs#font-family)

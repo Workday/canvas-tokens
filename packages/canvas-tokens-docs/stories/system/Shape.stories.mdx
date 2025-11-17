@@ -21,7 +21,7 @@ application as well.
 import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
-  borderRadius: `var(${system.shape.x2})`,
+  borderRadius: `var(${system.shape.sm})`,
 };
 ```
 
@@ -31,7 +31,7 @@ same styles using CSS variables directly.
 ```css
 // styles.css
 .card {
-  border-radius: var(--cnvs-sys-shape-x2);
+  border-radius: var(--cnvs-sys-shape-sm);
 }
 ```
 
@@ -39,8 +39,8 @@ same styles using CSS variables directly.
 
 ## Tokens
 
-These tokens use a multiplier scale and reference our `baseUnit` token, which is `0.25rem` / `4px`.
-So the `system.shape.x2` token has a value of `0.5rem` or `8px`.
+These tokens use a multiplier scale and reference our `base.baseline` token, which is `0.5rem` / `8px`.
+So the `system.shape.sm` token has a value calculated from the baseline multiplier.
 
 <ShapeTokens />
 

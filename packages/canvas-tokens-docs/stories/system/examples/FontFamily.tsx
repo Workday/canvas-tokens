@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
+import {isTokenDeprecated} from './utils/tokenMetadata';
 
 interface FontFamilyToken {
   /** The name of the CSS variable */
@@ -11,8 +12,9 @@ interface FontFamilyToken {
   value: string;
 }
 
-const fontFamilyTokens: FontFamilyToken[] = Object.entries(system.fontFamily).map(
-  ([familyName, varName]) => {
+const fontFamilyTokens: FontFamilyToken[] = Object.entries(system.fontFamily)
+  .filter(([familyName]) => !isTokenDeprecated('font-family', undefined, familyName))
+  .map(([familyName, varName]) => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
 
     return {
@@ -20,8 +22,7 @@ const fontFamilyTokens: FontFamilyToken[] = Object.entries(system.fontFamily).ma
       jsVar: formatJSVar(`system.fontFamily.${familyName}`),
       value: value.replace(/"/g, ''),
     };
-  }
-);
+  });
 
 export function FontFamilyTokens() {
   return (

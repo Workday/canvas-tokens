@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
+import {isTokenDeprecated} from './utils/tokenMetadata';
 
 interface TypeLevelToken {
   /** The name of the CSS class */
@@ -27,17 +28,22 @@ function formatTypeLevelValues(values: object) {
   return formattedValues;
 }
 
+// Deprecated size keys that should be filtered out
+const deprecatedSizeKeys = ['small', 'medium', 'large'];
+
 const typeLevelTokens = Object.keys(system.type).reduce((acc, level) => {
-  const levelTokens = Object.entries(system.type[level as keyof typeof system.type]).map(
-    ([size, values]) => {
+  const levelTokens = Object.entries(system.type[level as keyof typeof system.type])
+    .filter(
+      ([size]) => !deprecatedSizeKeys.includes(size) && !isTokenDeprecated('type', level, size)
+    )
+    .map(([size, values]) => {
       return {
         cssClass: `.cnvs-sys-type-${level}-${size}`,
         jsVar: formatJSVar(`system.type.${level}.${size}`),
         values: values,
         formattedValues: formatTypeLevelValues(values),
       };
-    }
-  );
+    });
   return acc.concat(levelTokens);
 }, [] as TypeLevelToken[]);
 

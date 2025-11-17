@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
+import {getTokenDescription} from './utils/tokenMetadata';
 
 interface SizeToken {
   /** The name of the CSS variable */
@@ -13,6 +14,8 @@ interface SizeToken {
   calculatedValue: string;
   /** The value of the CSS token after converting rem to pixels */
   pxValue: string;
+  /** The description/comment from the token definition */
+  description?: string;
 }
 
 function multiplyCalcValues(value: string) {
@@ -36,12 +39,15 @@ function multiplyCalcValues(value: string) {
 const sizeTokens: SizeToken[] = Object.entries(system.size).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
+  const description = getTokenDescription('size', key);
+
   return {
     cssVar: varName,
     jsVar: formatJSVar(`system.size.${key}`),
     value,
     calculatedValue: `${calculatedValue}rem`,
     pxValue: `${calculatedValue * 16}px`,
+    description,
   };
 });
 
@@ -56,6 +62,7 @@ export function SizeTokens() {
         'Value',
         'Calculated Value',
         'Pixel Value',
+        'Description',
       ]}
       rows={sizeTokens}
     >
@@ -64,7 +71,7 @@ export function SizeTokens() {
           <TokenGrid.RowItem>
             <TokenGrid.Sample
               style={{
-                width: `var(${token.cssVar})`,
+                height: `var(${token.cssVar})`,
                 backgroundColor: `var(${system.color.bg.primary.default})`,
               }}
             />
@@ -78,6 +85,7 @@ export function SizeTokens() {
           <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.description || '—'}</TokenGrid.RowItem>
         </>
       )}
     </TokenGrid>
