@@ -1,24 +1,17 @@
 import * as React from 'react';
 import {base} from '@workday/canvas-tokens-web';
-import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
-
-interface DeprecatedBaseToken {
-  /** The name of the CSS variable */
-  cssVar: string;
-  /** The formatted name of the JS variable */
-  jsVar: React.ReactNode;
-  /** The actual string value of the token */
-  value: string;
-}
+import {TokenGrid} from '../../../components/TokenGrid';
+import {BaseToken} from './utils/tokenUtils';
+import {formatJSVar} from '../../../components/TokenGrid';
 
 // Deprecated unit token
-const deprecatedUnitToken: DeprecatedBaseToken = {
+const deprecatedUnitToken: BaseToken = {
   cssVar: base.baseUnit as string,
   jsVar: formatJSVar('base.unit'),
   value: getComputedStyle(document.documentElement).getPropertyValue(base.baseUnit as string),
 };
 
-const deprecatedTokens: DeprecatedBaseToken[] = [deprecatedUnitToken];
+const deprecatedTokens: BaseToken[] = [deprecatedUnitToken];
 
 export const DeprecatedBaseTokens = () => {
   return (

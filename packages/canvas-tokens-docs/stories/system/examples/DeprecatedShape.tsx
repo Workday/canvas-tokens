@@ -13,6 +13,8 @@ interface ShapeToken {
   calculatedValue: string;
   /** The value of the CSS token after converting rem to pixels */
   pxValue: string;
+  /** The recommended replacement token based on pixel value */
+  recommendedReplacement?: React.ReactNode;
 }
 
 function multiplyCalcValues(value: string) {
@@ -33,7 +35,47 @@ function multiplyCalcValues(value: string) {
   return 0;
 }
 
-// Only show non-deprecated shape tokens
+/**
+ * Finds the closest new shape token based on pixel value.
+ * Returns the JS variable name of the recommended replacement.
+ */
+function findClosestShapeToken(deprecatedPxValue: number): string | null {
+  // Get all new (non-deprecated) shape tokens with their pixel values
+  const allowedShapeKeys = ['zero', 'xs', 'sm', 'md', 'lg', 'full'];
+
+  const newShapeTokens = allowedShapeKeys
+    .map(key => {
+      const varName = system.shape[key as keyof typeof system.shape];
+      if (!varName) return null;
+
+      const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+      const calculatedValue = multiplyCalcValues(value);
+      const pxValue = calculatedValue * 16;
+
+      return {
+        key,
+        pxValue,
+        jsVar: `system.shape.${key}`,
+      };
+    })
+    .filter((token): token is NonNullable<typeof token> => token !== null);
+
+  // Find the closest match
+  let closest = newShapeTokens[0];
+  let minDiff = Math.abs(deprecatedPxValue - closest.pxValue);
+
+  for (const token of newShapeTokens) {
+    const diff = Math.abs(deprecatedPxValue - token.pxValue);
+    if (diff < minDiff) {
+      minDiff = diff;
+      closest = token;
+    }
+  }
+
+  return closest.jsVar;
+}
+
+// Only show deprecated shape tokens
 const notAllowedShapeKeys = ['zero', 'xs', 'sm', 'md', 'lg', 'full'];
 
 const shapeTokens: ShapeToken[] = Object.entries(system.shape)
@@ -41,13 +83,18 @@ const shapeTokens: ShapeToken[] = Object.entries(system.shape)
   .map(([key, varName]) => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
     const calculatedValue = multiplyCalcValues(value);
+    const pxValue = calculatedValue * 16;
+    const recommendedReplacement = findClosestShapeToken(pxValue);
 
     return {
       cssVar: varName,
       jsVar: formatJSVar(`system.shape.${key}`),
       value,
       calculatedValue: `${calculatedValue}rem`,
-      pxValue: `${calculatedValue * 16}px`,
+      pxValue: `${pxValue}px`,
+      recommendedReplacement: recommendedReplacement
+        ? formatJSVar(recommendedReplacement)
+        : undefined,
     };
   });
 
@@ -62,6 +109,7 @@ export function DeprecatedShapeTokens() {
         'Value',
         'Calculated Value',
         'Pixel Value',
+        'Recommended Replacement',
       ]}
       rows={shapeTokens}
     >
@@ -86,6 +134,13 @@ export function DeprecatedShapeTokens() {
           <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            {token.recommendedReplacement ? (
+              <TokenGrid.MonospaceLabel>{token.recommendedReplacement}</TokenGrid.MonospaceLabel>
+            ) : (
+              '—'
+            )}
+          </TokenGrid.RowItem>
         </>
       )}
     </TokenGrid>

@@ -1,37 +1,8 @@
 import * as React from 'react';
 import {base, system} from '@workday/canvas-tokens-web';
-import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
-
-interface SizeToken {
-  /** The name of the CSS variable */
-  cssVar: string;
-  /** The formatted name of the JS variable */
-  jsVar: React.ReactNode;
-  /** The actual string value of the token */
-  value: string;
-  /** The value of the CSS token after calculating the base unit times the multiplier */
-  calculatedValue: string;
-  /** The value of the CSS token after converting rem to pixels */
-  pxValue: string;
-}
-
-function multiplyCalcValues(value: string) {
-  // Extract the multiplier from calc expressions like "calc(var(--cnvs-base-baseline) * 2.00)"
-  // The pattern matches: * followed by optional whitespace, then a number (with optional decimal)
-  const multiplierMatch = value.match(/\*\s*([\d.]+)/);
-  if (multiplierMatch) {
-    const multiplier = parseFloat(multiplierMatch[1]);
-    // base.baseline is 0.5rem, so multiply by 0.5 to get the final rem value
-    return multiplier * 0.5;
-  }
-  // If no multiplier found, try to parse as a direct rem value
-  const remMatch = value.match(/([\d.]+)rem/);
-  if (remMatch) {
-    return parseFloat(remMatch[1]);
-  }
-  // If none exist, return 0
-  return 0;
-}
+import {TokenGrid} from '../../../components/TokenGrid';
+import {buildTokensFromBase, extractRemValue} from './utils/tokenUtils';
+import {SizeToken} from './utils/tokenTypes';
 
 // Only show non-deprecated size tokens
 const allowedSizeKeys = [
@@ -62,25 +33,17 @@ const allowedSizeKeys = [
   '1400',
 ];
 
-// Construct size object from individual base.size* properties
-const baseSize: Record<string, string> = {};
-allowedSizeKeys.forEach(key => {
-  const propName = `size${key}` as keyof typeof base;
-  if (propName in base) {
-    baseSize[key] = base[propName] as string;
-  }
-});
-
-const sizeTokens: SizeToken[] = Object.entries(baseSize).map(([key, varName]) => {
-  const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-  const calculatedValue = multiplyCalcValues(value);
-  return {
-    cssVar: varName,
-    jsVar: formatJSVar(`base.size.${key}`),
-    value,
-    calculatedValue: `${calculatedValue}rem`,
-    pxValue: `${calculatedValue * 16}px`,
-  };
+const sizeTokens: SizeToken[] = buildTokensFromBase<SizeToken>(base, {
+  keys: allowedSizeKeys,
+  propertyPrefix: 'size',
+  jsPathPrefix: 'base.size',
+  computeProperties: value => {
+    const remValue = extractRemValue(value);
+    return {
+      calculatedValue: `${remValue}rem`,
+      pxValue: `${remValue * 16}px`,
+    };
+  },
 });
 
 export function BaseSizeTokens() {

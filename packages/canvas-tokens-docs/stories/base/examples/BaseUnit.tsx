@@ -1,15 +1,10 @@
 import * as React from 'react';
 import {base, system} from '@workday/canvas-tokens-web';
 import {TokenGrid} from '../../../components/TokenGrid';
-
-function getPixelValue(value: string) {
-  // Strip 'rem' from the string, convert to a number, and multiply by 16
-  const pxValue = Number(value.replace('rem', '')) * 16;
-  return `${pxValue}px`;
-}
+import {remToPx} from './utils/tokenUtils';
 
 const value = getComputedStyle(document.documentElement).getPropertyValue(base.baseline);
-const pxValue = getPixelValue(value);
+const pxValue = remToPx(value);
 const baseUnitToken = {
   label: base.baseline,
   value,

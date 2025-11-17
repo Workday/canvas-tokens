@@ -1,38 +1,19 @@
 import * as React from 'react';
 import {base, system} from '@workday/canvas-tokens-web';
-import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
-
-interface OpacityToken {
-  /** The name of the CSS variable */
-  cssVar: string;
-  /** The formatted name of the JS variable */
-  jsVar: React.ReactNode;
-  /** The actual string value of the token */
-  value: string;
-  /** The numeric opacity value */
-  opacityValue: string;
-}
+import {TokenGrid} from '../../../components/TokenGrid';
+import {buildTokensFromBase} from './utils/tokenUtils';
+import {OpacityToken} from './utils/tokenTypes';
 
 // Only show opacity tokens
 const allowedOpacityKeys = ['0', '100', '200', '250', '300', '400', '500'];
 
-// Construct opacity object from individual base.opacity* properties
-const baseOpacity: Record<string, string> = {};
-allowedOpacityKeys.forEach(key => {
-  const propName = `opacity${key}` as keyof typeof base;
-  if (propName in base) {
-    baseOpacity[key] = base[propName] as string;
-  }
-});
-
-const opacityTokens: OpacityToken[] = Object.entries(baseOpacity).map(([key, varName]) => {
-  const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-  return {
-    cssVar: varName,
-    jsVar: formatJSVar(`base.opacity.${key}`),
-    value,
+const opacityTokens: OpacityToken[] = buildTokensFromBase<OpacityToken>(base, {
+  keys: allowedOpacityKeys,
+  propertyPrefix: 'opacity',
+  jsPathPrefix: 'base.opacity',
+  computeProperties: value => ({
     opacityValue: value,
-  };
+  }),
 });
 
 export const BaseOpacityTokens = () => {
