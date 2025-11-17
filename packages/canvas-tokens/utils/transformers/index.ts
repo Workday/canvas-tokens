@@ -86,7 +86,13 @@ export const transforms: Record<string, Transform> = {
   'value/variables': {
     type: 'value',
     transitive: true,
-    transformer: ({path}) => `--cnvs-${path.join('-')}`,
+    transformer: ({path}) => {
+      // Convert each path segment from camelCase to kebab-case
+      const kebabPath = path.map(segment =>
+        segment.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+      );
+      return `--cnvs-${kebabPath.join('-')}`;
+    },
   },
   // transform function that adds qoutes to font family values
   'value/wrapped-font-family': {

@@ -1,0 +1,62 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import {DeprecatedColorTokens} from './examples/Color';
+import {DeprecatedTokens} from './examples/DeprecatedTokens';
+import {DeprecatedFontSizeTokens} from './examples/DeprecatedSize';
+import {DeprecatedBaseTokens} from './examples/DeprecatedBase';
+import {NavCard} from '../../components/NavCard';
+
+<Meta title="Docs/Base Tokens/Base Tokens (Deprecated)" />
+
+<Unstyled>
+
+# Deprecated Base Tokens
+
+These base tokens have been deprecated and will be removed in a future release. Please migrate to the recommended replacements.
+
+> **Note:** Consumers should try to avoid using base tokens and instead use system tokens to future-proof theming.
+
+---
+
+## Deprecated Colors
+
+The fruit-based palettes are deprecated and will be removed in a future release. Please use the new color palette. While the base tokens are deprecated, we advise using system tokens instead for better future proofing.
+
+<DeprecatedColorTokens />
+
+<NavCard
+  title="Deprecated Base Tokens"
+  link="https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-visual-changes-base-deprecated-palette--docs"
+/>
+
+For more information on how to migrate, please view our
+[Token Migration guide](https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-overview--docs).
+
+---
+
+## Deprecated Size Tokens
+
+### Font Size
+
+These font-size tokens are deprecated. Use system tokens instead.
+
+<DeprecatedFontSizeTokens />
+
+---
+
+## Deprecated Base Tokens
+
+These foundational tokens are deprecated. Use the recommended replacements.
+
+<DeprecatedBaseTokens />
+
+---
+
+## All Deprecated Tokens
+
+This comprehensive table shows all deprecated base tokens with their recommended replacements.
+
+<DeprecatedTokens />
+
+</Unstyled>
+

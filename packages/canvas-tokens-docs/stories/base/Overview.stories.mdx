@@ -4,9 +4,10 @@ import {ColorTokens, DeprecatedColorTokens} from './examples/Color';
 import {BaseSizeTokens} from './examples/BaseSize';
 import {DeprecatedTokens} from './examples/DeprecatedTokens';
 import {BaseUnit} from './examples/BaseUnit';
+import {BaseFontSize} from './examples/BaseFontSize';
 import {NavCard} from '../../components/NavCard';
 
-<Meta title="Docs/Base Tokens" />
+<Meta title="Docs/Base Tokens/Overview" />
 
 <Unstyled>
 
@@ -16,6 +17,8 @@ Base tokens are the foundation of our token system. They provide the core values
 system tokens. Base tokens are **not themed variables**, so you should generally opt to use system
 and brand tokens first. However, if you're not concerned with theming a particular property, using a
 base token directly is an acceptable option.
+
+> **Note:** Consumers should try to avoid using base tokens and instead use system tokens to future-proof theming.
 
 ## Usage
 
@@ -66,36 +69,10 @@ UI.
 
 ---
 
-## Color
+## Base Font Size 
 
-Base colors provide the core palettes that make up our UI. There are thirteen palettes in total and
-they don't have any inherent contextual meaning on when and where they should be used.
+Default fontSize for the browser, may be overriden by user preferences
 
-<br />
-<ColorTokens />
-
----
-
-## Base Size
-
-Base size tokens provide the core sizes that make up our UI. They are used to build our system tokens.
-
-<BaseSizeTokens />
-
----
-
-### Deprecated
-
-The fruit based palettes are deprecated and will be removed in a future release. Please use the new
-color palette. While the base tokens are deprecated, we advise to use system tokens instead for
-better future proofing.
-
-<NavCard
-  title="Deprecated Base Tokens"
-  link="https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-visual-changes-base-deprecated-palette--docs"
-/>
-
-For more information on how to migrate, please view our
-[Token Migration guide](https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-overview--docs).
+<BaseFontSize />
 
 </Unstyled>

@@ -2,6 +2,15 @@ import {Formatter, formatHelpers} from 'style-dictionary';
 import {jsFileHeader} from './helpers/jsFileHeader';
 
 /**
+ * Converts a path array to a kebab-case CSS variable name
+ * @param {string[]} path - Array of path segments (may contain camelCase)
+ * @returns {string} Kebab-case path joined with hyphens
+ */
+const pathToKebabCase = (path: string[]): string => {
+  return path.map(segment => segment.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()).join('-');
+};
+
+/**
  * Style Dictionary format function that creates common-js file structure.
  * This structure contains separated exports of each token.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
@@ -13,7 +22,7 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
     ? jsFileHeader({file})
     : formatHelpers.fileHeader({file});
   return dictionary.allTokens.reduce((acc: string, {name, path}) => {
-    const cssVarName = path.join('-');
+    const cssVarName = pathToKebabCase(path);
     acc += `exports.${name} = "--cnvs-${cssVarName}";\n`;
     return acc;
   }, headerContent);
@@ -28,7 +37,7 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
 export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   return dictionary.allTokens.reduce((acc: string, {name, path}) => {
-    const cssVarName = path.join('-');
+    const cssVarName = pathToKebabCase(path);
     acc += `export const ${name} = "--cnvs-${cssVarName}";\n`;
     return acc;
   }, headerContent);
@@ -44,7 +53,7 @@ export const formatInlineTypes: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   return dictionary.allTokens.reduce((acc: string, token) => {
     const {name, path, deprecated, deprecatedComment} = token;
-    const cssVarName = path.join('-');
+    const cssVarName = pathToKebabCase(path);
     const deprecatedText = deprecated ? `/** @deprecated ${deprecatedComment} */\n` : '';
     acc += `${deprecatedText}export declare const ${name}: "--cnvs-${cssVarName}";\n`;
     return acc;

@@ -1,0 +1,39 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import {ColorTokens, DeprecatedColorTokens} from './examples/Color';
+import {DeprecatedTokens} from './examples/DeprecatedTokens';
+import {BaseUnit} from './examples/BaseUnit';
+import {NavCard} from '../../components/NavCard';
+
+<Meta title="Docs/Base Tokens/Colors" />
+
+<Unstyled>
+
+## Color
+
+Base colors provide the core palettes that make up our UI. There are thirteen palettes in total and
+they don't have any inherent contextual meaning on when and where they should be used.
+
+<br />
+
+> **Note:** Consumers should try to avoid using base tokens and instead use system tokens to future-proof theming.
+
+<ColorTokens />
+
+---
+
+### Deprecated Colors
+
+The fruit based palettes are deprecated and will be removed in a future release. Please use the new
+color palette. While the base tokens are deprecated, we advise to use system tokens instead for
+better future proofing.
+
+<NavCard
+  title="Deprecated Base Tokens"
+  link="https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-visual-changes-base-deprecated-palette--docs"
+/>
+
+For more information on how to migrate, please view our
+[Token Migration guide](https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-overview--docs).
+
+</Unstyled>

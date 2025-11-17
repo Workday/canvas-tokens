@@ -88,6 +88,17 @@ const setProperty = ({src, output, path, changeValueFn}: RecursionHelperArgs): v
 // ** UTILITIES **
 
 /**
+ * Converts a path array to a kebab-case CSS variable name
+ * @param {string[]} path - Array of path segments (may contain camelCase)
+ * @returns {string} Kebab-case path joined with hyphens
+ */
+const pathToKebabCase = (path: string[]): string => {
+  return path
+    .map(segment => segment.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase())
+    .join('-');
+};
+
+/**
  * Utility function to change token composite values to css var and keys to camel case and regular token value to CSS var name
  * @param {Object} token the token object
  * @param {Function} getRefs: style dictionary getReferences function
@@ -105,13 +116,13 @@ export const changeValuesToCSSVars = (
         // composite values have single reference
         const [ref] = getRefs(value);
         const name = camelCase(key);
-        return {...acc, [name]: `--cnvs-${ref.path.join('-')}`};
+        return {...acc, [name]: `--cnvs-${pathToKebabCase(ref.path)}`};
       },
       {}
     );
   }
 
-  return `--cnvs-${token.path.join('-')}`;
+  return `--cnvs-${pathToKebabCase(token.path)}`;
 };
 
 /**
