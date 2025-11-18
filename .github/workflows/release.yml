@@ -39,6 +39,7 @@ jobs:
         with:
           node_version: 22.x
           registry-url: 'https://registry.npmjs.org'
+          scope: '@workday'
 
       - name: Config git user
         shell: bash
