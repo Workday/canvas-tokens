@@ -15,6 +15,9 @@ on:
           'The version override: patch, minor or major'
         required: false
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: write
 jobs:
   release:
     # Only run if:
