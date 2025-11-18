@@ -41,6 +41,12 @@ jobs:
         with:
           node_version: 22.x
       
+      # Upgrade npm to 11.5.1+ for OIDC support (Node.js 22.x comes with npm 10.x)
+      - name: Upgrade npm for OIDC support
+        run: |
+          npm install -g npm@latest
+          npm --version
+      
       # Configure npm for OIDC authentication with trusted publishers
       # OIDC authentication works automatically when:
       # 1. Package has trusted publisher configured on npm
@@ -59,13 +65,21 @@ jobs:
       # Verify npm version (OIDC requires npm 11.5.1+)
       - name: Verify npm version and OIDC setup
         run: |
-          npm --version
-          npm_version=$(npm --version | cut -d. -f1)
-          if [ "$npm_version" -lt 11 ]; then
-            echo "Error: npm version must be 11.5.1+ for OIDC support. Current: $(npm --version)"
+          npm_version=$(npm --version)
+          echo "Current npm version: $npm_version"
+          
+          # Check if version is 11.5.1 or higher
+          # Compare version strings: extract major.minor.patch and compare
+          major=$(echo "$npm_version" | cut -d. -f1)
+          minor=$(echo "$npm_version" | cut -d. -f2)
+          patch=$(echo "$npm_version" | cut -d. -f3 | sed 's/[^0-9].*//')
+          
+          if [ "$major" -lt 11 ] || ([ "$major" -eq 11 ] && ([ "$minor" -lt 5 ] || ([ "$minor" -eq 5 ] && [ "$patch" -lt 1 ]))); then
+            echo "Error: npm version must be 11.5.1+ for OIDC support. Current: $npm_version"
             exit 1
           fi
-          echo "✓ npm version $(npm --version) supports OIDC"
+          
+          echo "✓ npm version $npm_version supports OIDC"
           echo "✓ GitHub Actions OIDC token should be available via ACTIONS_ID_TOKEN_REQUEST_TOKEN"
           if [ -z "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" ]; then
             echo "Warning: ACTIONS_ID_TOKEN_REQUEST_TOKEN not set - OIDC may not work"
