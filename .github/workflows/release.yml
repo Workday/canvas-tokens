@@ -197,12 +197,60 @@ jobs:
           preid: ${{ steps.get_preid.outputs.preid }}
           skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
           releaseScript: |
-            # npm will automatically use OIDC in GitHub Actions when:
-            # 1. Package has trusted publisher configured on npm
-            # 2. npm CLI version is 11.5.1+
-            # 3. Workflow has id-token: write permission
-            # Note: changeset publish doesn't support --provenance flag directly,
-            # but npm should still use OIDC for authentication automatically
-            # The --access public flag is required for scoped packages to be published publicly
-            yarn changeset publish --access public
+            # Publish using npm directly with OIDC authentication
+            # OIDC authentication works automatically when:
+            # 1. npm 11.5.1+ is installed
+            # 2. Trusted publisher is configured on npm
+            # 3. Running in GitHub Actions with id-token: write permission
+            echo "=== OIDC Authentication Debug Info ==="
+            echo "GitHub Actions Environment:"
+            echo "  GITHUB_ACTIONS: ${GITHUB_ACTIONS:-not set}"
+            echo "  GITHUB_REPOSITORY: ${GITHUB_REPOSITORY:-not set}"
+            echo "  GITHUB_WORKFLOW: ${GITHUB_WORKFLOW:-not set}"
+            echo "  ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN:+set (hidden)}"
+            echo "  ACTIONS_ID_TOKEN_REQUEST_URL: ${ACTIONS_ID_TOKEN_REQUEST_URL:+set}"
+            echo ""
+            echo "npm Configuration:"
+            echo "  npm version: $(npm --version)"
+            echo "  registry: $(npm config get registry)"
+            echo ""
+            
+            # Ensure we're in the repo root
+            if [ ! -f "package.json" ] || [ ! -d "packages/canvas-tokens-web" ]; then
+              echo "Error: Not in repository root"
+              exit 1
+            fi
+            
+            # Navigate to package directory
+            cd packages/canvas-tokens-web
+            
+            if [ ! -f "package.json" ]; then
+              echo "Error: package.json not found in packages/canvas-tokens-web"
+              exit 1
+            fi
+            
+            echo "Publishing from: $(pwd)"
+            PACKAGE_VERSION=$(node -p "require('./package.json').version")
+            PACKAGE_NAME=$(node -p "require('./package.json').name")
+            echo "Package: $PACKAGE_NAME@$PACKAGE_VERSION"
+            echo ""
+            
+            # Determine tag based on version (alpha/beta for prerelease, latest otherwise)
+            if [[ "$PACKAGE_VERSION" == *"-alpha."* ]]; then
+              TAG="alpha"
+            elif [[ "$PACKAGE_VERSION" == *"-beta."* ]]; then
+              TAG="beta"
+            else
+              TAG="latest"
+            fi
+            
+            echo "Publishing with tag: $TAG"
+            echo "Using OIDC authentication (trusted publisher)"
+            echo ""
+            echo "=== Publishing ==="
+            
+            # Publish with OIDC authentication
+            # --provenance is optional - adds provenance attestations for supply chain security
+            # OIDC authentication works without it, but provenance is recommended for security
+            npm publish --provenance --access public --tag "$TAG"
           skipTagsPush: false
