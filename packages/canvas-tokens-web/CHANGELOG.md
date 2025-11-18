@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 3.1.6
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Update release.yml to include permissions
+    ([#228](https://github.com/Workday/canvas-tokens/pull/228))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 3.1.5
 
 ### Patch Changes
