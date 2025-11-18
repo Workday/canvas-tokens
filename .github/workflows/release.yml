@@ -1,12 +1,10 @@
 name: Release 
-
 on:
   push:
     branches: 
       - main
       - prerelease/major
       - prerelease/minor
-
   workflow_dispatch:
     inputs:
       version:
@@ -14,7 +12,6 @@ on:
         description:
           'The version override: patch, minor or major'
         required: false
-
 permissions:
   id-token: write  # Required for OIDC
   contents: write
@@ -25,7 +22,6 @@ jobs:
     # - OR the workflow was manually triggered and has a `version` string
     if: ${{!contains(github.event.head_commit.message, '[skip release]') && !startsWith(github.event.head_commit.message, 'chore') && !startsWith(github.event.head_commit.message, 'Merge')}}
     runs-on: ubuntu-latest
-
     steps:
       ## First, we'll checkout the repository. We don't persist credentials because we need a
       ## Personal Access Token to push on a branch that is protected. See
@@ -34,17 +30,23 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0 # Used for conventional commit ranges
-
+      
+      # ADD THIS: Setup Node with npm registry URL for OIDC
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          registry-url: 'https://registry.npmjs.org'
+      
       - uses: Workday/canvas-kit-actions/install@v1
         with:
           node_version: 22.x
-
+      
       - name: Config git user
         shell: bash
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
+      
       - name: Pull prerelease branch
         if: ${{  inputs.version == 'minor' || inputs.version == 'major' }}
         run: |
@@ -70,19 +72,18 @@ jobs:
           fi
       
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-
+      
       - name: Get preid
         id: get_preid
         if: ${{ contains(github.ref_name, 'prerelease/') && steps.set_version.outputs.version }}
         run: |
           VERSION="${{ steps.set_version.outputs.version }}"
-
           if [[ "$VERSION" == "major" ]]; then
             echo "preid=alpha" >> "$GITHUB_OUTPUT"
           elif [[ "$VERSION" == "minor" ]]; then
             echo "preid=beta" >> "$GITHUB_OUTPUT"
           fi
-
+      
       - uses: Workday/canvas-kit-actions/do-release@v1
         if: ${{ steps.set_version.outputs.version }}
         id: release
@@ -95,5 +96,5 @@ jobs:
           prerelease: ${{ contains(github.ref_name, 'prerelease/') }}
           preid: ${{ steps.get_preid.outputs.preid }}
           skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
-          releaseScript: yarn release
+          releaseScript: yarn release --provenance  # ADD --provenance flag
           skipTagsPush: false
