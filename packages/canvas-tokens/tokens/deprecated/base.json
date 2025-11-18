@@ -5,7 +5,7 @@
       "type": "dimension",
       "deprecated": true,
       "deprecatedComment": "Use {base.baseline} instead for consistent sizing calculations",
-      "comment": "The base unit used for the typographic grid system."
+      "comment": "The base unit used for the typographic grid system. "
     },
     "palette": {
       "cinnamon": {
