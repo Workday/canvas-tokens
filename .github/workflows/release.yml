@@ -34,8 +34,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          registry-url: 'https://registry.npmjs.org'
-          # OIDC authentication is handled automatically by npm when using trusted publishers
+          # Do NOT set registry-url here - it creates token-based auth that conflicts with OIDC
       
       - uses: Workday/canvas-kit-actions/install@v1
         with:
@@ -53,14 +52,42 @@ jobs:
       # 2. npm CLI version is 11.5.1+
       # 3. Workflow has id-token: write permission (already set above)
       # 4. Running in GitHub Actions environment (detected automatically)
-      - name: Configure npm for OIDC
+      # IMPORTANT: Remove any token-based auth that setup-node might have created
+      - name: Configure npm for OIDC (remove token-based auth)
         run: |
+          # Remove any token-based auth that might have been set by setup-node
+          # setup-node creates .npmrc in NPM_CONFIG_USERCONFIG location
+          # OIDC will handle authentication automatically
+          
+          # Clean up token-based auth from user config (if set by setup-node)
+          if [ -n "$NPM_CONFIG_USERCONFIG" ] && [ -f "$NPM_CONFIG_USERCONFIG" ]; then
+            echo "Removing token-based auth from: $NPM_CONFIG_USERCONFIG"
+            sed -i '/_authToken/d' "$NPM_CONFIG_USERCONFIG" || true
+            sed -i '/\/\/registry\.npmjs\.org\/:_authToken/d' "$NPM_CONFIG_USERCONFIG" || true
+          fi
+          
+          # Also clean up $HOME/.npmrc if it exists
+          if [ -f "$HOME/.npmrc" ]; then
+            echo "Removing token-based auth from: $HOME/.npmrc"
+            sed -i '/_authToken/d' "$HOME/.npmrc" || true
+            sed -i '/\/\/registry\.npmjs\.org\/:_authToken/d' "$HOME/.npmrc" || true
+          fi
+          
+          # Configure registry for @workday scope (without token-based auth)
           echo "@workday:registry=https://registry.npmjs.org" >> $HOME/.npmrc
-          echo "//registry.npmjs.org/:always-auth=true" >> $HOME/.npmrc
+          
           # Ensure npm can detect GitHub Actions environment for OIDC
           echo "GitHub Actions environment detected: ${{ github.actions }}"
           echo "Repository: ${{ github.repository }}"
           echo "Workflow: ${{ github.workflow }}"
+          echo ""
+          echo "Final .npmrc contents:"
+          cat $HOME/.npmrc || true
+          if [ -n "$NPM_CONFIG_USERCONFIG" ] && [ -f "$NPM_CONFIG_USERCONFIG" ]; then
+            echo ""
+            echo "NPM_CONFIG_USERCONFIG contents:"
+            cat "$NPM_CONFIG_USERCONFIG" || true
+          fi
       
       # Verify npm version (OIDC requires npm 11.5.1+)
       - name: Verify npm version and OIDC setup
@@ -134,10 +161,27 @@ jobs:
       - name: Test npm OIDC authentication
         if: ${{ steps.set_version.outputs.version }}
         run: |
-          echo "Testing npm authentication..."
-          # Try to access the package to verify authentication works
-          # This will fail if OIDC isn't working, but won't fail if package doesn't exist (which is OK for first publish)
-          npm view @workday/canvas-tokens-web || echo "Package may not exist yet (OK for first publish)"
+          echo "Testing npm OIDC authentication..."
+          echo "Environment variables:"
+          echo "  GITHUB_ACTIONS: ${GITHUB_ACTIONS:-not set}"
+          echo "  GITHUB_REPOSITORY: ${GITHUB_REPOSITORY:-not set}"
+          echo "  ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN:+set (hidden)}"
+          echo "  ACTIONS_ID_TOKEN_REQUEST_URL: ${ACTIONS_ID_TOKEN_REQUEST_URL:+set}"
+          echo ""
+          
+          # Verify npm can access the registry (this tests OIDC authentication)
+          # For existing packages, this will work if OIDC is configured correctly
+          # For new packages, this might fail but that's OK - the publish will still work
+          echo "Testing npm registry access..."
+          npm whoami --registry=https://registry.npmjs.org || {
+            echo "Warning: 'npm whoami' failed - this might be OK if OIDC is configured for publishing only"
+            echo "OIDC authentication will be attempted during publish"
+          }
+          
+          # Try to view the package (this requires authentication for private packages)
+          # For public packages, this works without auth, but for scoped packages it might require auth
+          npm view @workday/canvas-tokens-web 2>&1 || echo "Note: Package view failed (may not exist or require auth)"
+          
           echo "✓ npm authentication test completed"
       
       - uses: Workday/canvas-kit-actions/do-release@v1
