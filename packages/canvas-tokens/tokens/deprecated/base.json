@@ -5,7 +5,7 @@
       "type": "dimension",
       "deprecated": true,
       "deprecatedComment": "Use {base.baseline} instead for consistent sizing calculations",
-      "comment": "The base unit used for the typographic grid system.; "
+      "comment": "The base unit used for the typographic grid system. "
     },
     "palette": {
       "cinnamon": {
@@ -1217,7 +1217,7 @@
             "fallback": "{base.palette.indigo.600}"
           },
           "500": {
-            "value": "4e3ec2",
+            "value": "#4e3ec2",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "replace dragon-fruit500 with {base.palette.indigo.700}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`.",
