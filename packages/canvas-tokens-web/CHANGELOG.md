@@ -1,5 +1,41 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.2
+
+### Major Changes
+
+- ### Components
+
+  - fix: Changes sizes to be xxl or xxs instead of number
+    ([#225](https://github.com/Workday/canvas-tokens/pull/225))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Change contents permission from read to write
+    ([#226](https://github.com/Workday/canvas-tokens/pull/226))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Remove npm registry and scope from release.yml
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Test updated release ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml and revert to original state
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update package.json ([@mannycarrera4](https://github.com/mannycarrera4))
+
+  ### Infrastructure
+
+  - chore: Update release action to use OpenID Connect
+    ([#223](https://github.com/Workday/canvas-tokens/pull/223))
+    ([@alanbsmith](https://github.com/alanbsmith), Alan Smith)
+
+  ### Try to add url registry and scope
+
+  - fix: Add registry URL ([#227](https://github.com/Workday/canvas-tokens/pull/227))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.0-alpha.1
 
 ### Major Changes
