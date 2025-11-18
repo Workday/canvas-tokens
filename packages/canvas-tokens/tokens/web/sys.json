@@ -233,7 +233,7 @@
       }
     },
     "size": {
-      "2xs": {
+      "xxs": {
         "value": "{base.size.200}",
         "type": "size",
         "comment": "Switch Track"
@@ -263,12 +263,12 @@
         "type": "size",
         "comment": "Large size used in Large Buttons, Segmented Controls, Expandable Container Trigger, Tabs, and Avatar"
       },
-      "2xl": {
+      "xxl": {
         "value": "{base.size.700}",
         "type": "size",
         "comment": "Table Cell, Toast"
       },
-      "3xl": {
+      "xxxl": {
         "value": "{base.size.800}",
         "type": "size",
         "comment": "Expandable Container"
@@ -280,7 +280,7 @@
         "type": "spacing",
         "comment": "Use when there should be no space between content and element's edges."
       },
-      "2xs": {
+      "xxs": {
         "value": "{base.size.50}",
         "type": "spacing",
         "description": ""
@@ -310,7 +310,7 @@
         "type": "spacing",
         "comment": "Padding used around Card and Medium Button content"
       },
-      "2xl": {
+      "xxl": {
         "value": "{base.size.400}",
         "type": "spacing",
         "comment": "Padding used around Modal and Large Button content"
@@ -347,7 +347,7 @@
         "type": "spacing",
         "comment": "Use this for the default spacing between cards, as well as the gutter width used in the large 12-column grid."
       },
-      "2xl": {
+      "xxl": {
         "value": "{base.size.800}",
         "type": "spacing",
         "comment": "Use this for the space between content sections"
