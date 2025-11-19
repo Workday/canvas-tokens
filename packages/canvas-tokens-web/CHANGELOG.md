@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.3
+
+### Major Changes
+
+- ### Components
+
+  - fix: Remove repository url ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Remove provenance flag ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update package.json for prevenance ([@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.0-alpha.2
 
 ### Major Changes
