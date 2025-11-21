@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.4
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update GettingStarted.mdx ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update GettingStarted.mdx ([@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.0-alpha.3
 
 ### Major Changes
