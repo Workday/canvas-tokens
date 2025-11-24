@@ -23,6 +23,7 @@ export const formatJSToTypes: Formatter = ({dictionary, file, options}) => {
   recursivelyCreateFileStructure({
     originalValues,
     tokens: dictionary.properties,
+    allTokens: dictionary.allTokens,
     content,
     replaceInContent,
   });
@@ -35,6 +36,7 @@ const startingText = 'export declare const';
 type ReplaceFn = (pattern: string, newText: string) => string;
 
 type HelperArgs = {
+  allTokens: Record<string, any>[];
   originalValues: Record<string, any>;
   tokens: Record<string, any>;
   depth?: number;
@@ -43,6 +45,7 @@ type HelperArgs = {
 };
 
 const recursivelyCreateFileStructure = ({
+  allTokens,
   originalValues,
   tokens,
   content,
@@ -57,7 +60,8 @@ const recursivelyCreateFileStructure = ({
     const spaces = '  '.repeat(depth);
 
     if (typeof values === 'string') {
-      const jsDocText = generateJSDoc(original, depth);
+      const token = allTokens.find(token => `--cnvs-${token.path.join('-')}` === values);
+      const jsDocText = generateJSDoc(token?.original || original, depth);
 
       const innerText = depth
         ? `${spaces}"${key}": "${values}",`
@@ -79,6 +83,7 @@ const recursivelyCreateFileStructure = ({
     updatedContent = replaceInContent(`**${key}**`, innerText);
 
     recursivelyCreateFileStructure({
+      allTokens,
       originalValues: original,
       tokens: values,
       depth: depth + 1,
@@ -98,25 +103,32 @@ const generateJSDoc = (original: TransformedToken, depth: number) => {
   const spaces = '  '.repeat(depth);
   const extraSpaces = spaces + ' ';
   const newJSDocLineStart = `\n${extraSpaces}* `;
-  const {value, comment, raw} = original;
+  const {value, comment, deprecated, deprecatedComment, raw} = original;
 
   const pxValue = `${value}`.includes('rem') ? parseFloat(value) * 16 : null;
   const valueText = value + (pxValue ? ` (${pxValue}px)` : '');
   const tokenValue =
     typeof raw === 'string'
-      ? 'token: ' + raw.replace(/^{(.+)}$/, (_: any, b: any) => b).replace('palette.', '')
+      ? 'token: ' +
+        raw.replace(/^{(.+)}$/, (_: any, b: any) => b).replace('palette.', '') +
+        newJSDocLineStart +
+        newJSDocLineStart
       : '';
 
-  const updatedComment = comment?.replace(/; /g, newJSDocLineStart);
+  const deprecatedText = deprecated ? `@deprecated ${deprecatedComment || ''}` : '';
+
+  const updatedComment = comment
+    ? comment.replace(/; /g, newJSDocLineStart) + newJSDocLineStart + newJSDocLineStart
+    : '';
+
   const text = comment
     ? newJSDocLineStart +
       valueText +
       newJSDocLineStart +
       newJSDocLineStart +
       tokenValue +
-      newJSDocLineStart +
-      newJSDocLineStart +
       updatedComment +
+      deprecatedText +
       `\n${extraSpaces}`
     : ` ${valueText} `;
 
