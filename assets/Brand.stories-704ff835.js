@@ -5,4 +5,3 @@ import{C as a}from"./Color-9f1456b2.js";import"./jsx-runtime-86dfebf6.js";import
     }
   }
 }`,...(e=(s=r.parameters)==null?void 0:s.docs)==null?void 0:e.source}}};const d=["Color"];export{r as Color,d as __namedExportsOrder,l as default};
-//# sourceMappingURL=Brand.stories-704ff835.js.map

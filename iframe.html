@@ -18,9 +18,11 @@
     window.LOGLEVEL = 'info';
     window.FRAMEWORK_OPTIONS = {};
     window.CHANNEL_OPTIONS = {};
-    window.FEATURES = {"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":true,"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false};
+    window.FEATURES = {"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":true,"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false,"disallowImplicitActionsInRenderV8":false};
     window.STORIES = [{"titlePrefix":"","directory":"./packages/canvas-tokens-docs","files":"**/*.stories.@(mdx|tsx)","importPathMatcher":"^\\.[\\\\/](?:packages\\/canvas-tokens-docs(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(mdx|tsx))$"},{"titlePrefix":"","directory":"./packages/canvas-tokens-docs/stories","files":"*.mdx","importPathMatcher":"^\\.[\\\\/](?:packages\\/canvas-tokens-docs\\/stories\\/(?!\\.)(?=.)[^/]*?\\.mdx)$"}];
     window.DOCS_OPTIONS = {"defaultName":"Docs","autodocs":"tag"};
+
+    
 
     // We do this so that "module && module.hot" etc. in Storybook source code
     // doesn't fail (it will simply be disabled)
@@ -364,7 +366,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <script type="module" crossorigin src="./assets/iframe-d447bb25.js"></script>
+  <script type="module" crossorigin src="./assets/iframe-b8a2687a.js"></script>
 </head>
 
 <body>

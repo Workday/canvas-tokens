@@ -5,4 +5,3 @@ import{D as a}from"./Color-ab4fe7f0.js";import"./jsx-runtime-86dfebf6.js";import
     }
   }
 }`,...(s=(o=e.parameters)==null?void 0:o.docs)==null?void 0:s.source}}};const l=["DeprecatedColors"];export{e as DeprecatedColors,l as __namedExportsOrder,i as default};
-//# sourceMappingURL=DeprecatedBase.stories-9ca8a9fa.js.map
