@@ -1,0 +1,73 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {TokenGrid} from '../components/TokenGrid';
+
+<Meta title="Maintaining/Style Dictionary/Filters" />
+
+<Unstyled>
+
+# Filters
+
+Filters (matchers) determine which tokens should be included or excluded during the transformation
+and formatting process. They return boolean values indicating whether a token matches specific
+criteria.
+
+## Overview
+
+Filters are used to:
+
+- Select tokens based on their path structure (level, category, type)
+- Filter tokens by their value characteristics (e.g., hex colors, math expressions)
+- Exclude specific token categories from certain outputs
+- Identify tokens that need special handling
+
+The `utils/filters/index.ts` file exports all filter functions that can be used in transformers and
+file configurations.
+
+## Existing Filters
+
+#### Path-Based Filters
+
+- **`isSysShadow`**: Matches tokens from `sys.depth` category (shadow tokens).
+
+- **`isBaseFontFamily`**: Matches tokens from `base.font-family` category.
+
+- **`isBaseFontWeight`**: Matches tokens from `base.font-weight` category with type `text`.
+
+- **`isBorder`**: Matches tokens from `sys` level with type `border`.
+
+- **`isLetterSpacing`**: Matches tokens from `base.letter-spacing` category.
+
+- **`isPxLineHeight`**: Matches tokens from `base.line-height` category with type `number`.
+
+- **`isBaseOpacity`**: Matches tokens from `base.opacity` category with values greater than 1
+  (percentage format).
+
+- **`isBreakpoints`**: Matches tokens from `sys.breakpoints` category.
+
+#### Value-Based Filters
+
+- **`isHexColor`**: Matches tokens with hex color values (format: `#RRGGBB` or `#RGB`).
+
+- **`isSysColor`**: Matches tokens with oklch color values (checks for `oklch({` in the value string
+  or array).
+
+- **`isMathExpression`**: Matches tokens with math expressions (containing `+`, `-`, `*`, or `/`
+  operators, excluding oklch values).
+
+- **`isDeprecated`**: Matches tokens marked as deprecated in their original definition.
+
+#### Type-Based Filters
+
+- **`isComposite`**: Matches tokens with composite types (typography or composition).
+
+- **`isNotComposite`**: Matches tokens that are not composite and not from the `depth` category.
+
+#### Token Filtering Functions
+
+- **`filterCodeTokens`**: Filters out tokens from excluded categories (`level`, `shadow`,
+  `typescale`). Used to generate code token files.
+
+- **`filterActionTokens`**: Filters out tokens from the `action` category. Used for brand and system
+  token generation.
+
+</Unstyled>

@@ -1,0 +1,52 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {TokenGrid} from '../components/TokenGrid';
+
+<Meta title="Maintaining/Style Dictionary/_Overview" />
+
+<Unstyled>
+
+# Canvas Tokens Style Dictionary Setup
+
+This document describes the workflow for Style Dictionary setup in the canvas-tokens package.
+
+The `build.ts` file serves as the main entry point for the Style Dictionary build process. It
+configures and orchestrates the entire token transformation pipeline.
+
+The build process uses a custom configuration helper (`setConfig`) that generates the Style
+Dictionary config object, minimizing duplication by centralizing settings across platforms and token
+levels. This helper also supports advanced customization, such as merging multiple formatters, and
+enables dynamic naming for formatters, transforms, or output file paths based on platform or level
+(e.g., using patterns like `{platform}/{level}` to organize outputs).
+
+- **Source files**: Token JSON files located in `tokens/**/*.json`.
+  [More](https://workday.github.io/canvas-tokens/?path=/docs/maintaining-token-json-structure--docs)
+- **Platforms**: Multiple output formats including `css`, `scss`, `less`, `es6`, and `common-js`
+- **Token levels**: Three levels of tokens - `base`, `brand`, and `sys` (system)
+- **Build paths**: Output directories for different platforms (e.g., `../canvas-tokens-web/` for
+  CSS/SCSS/LESS, `../canvas-tokens-web/dist/` for JavaScript)
+
+#### Registration Process
+
+The build file registers all custom components with Style Dictionary:
+
+1. **Formats**: Custom formatters that generate file content are registered via
+   `StyleDictionary.registerFormat()`
+2. **Filters**: Custom matchers that determine which tokens to include/exclude are registered via
+   `StyleDictionary.registerFilter()`
+3. **Transforms**: Custom transformers that modify token values or names are registered via
+   `StyleDictionary.registerTransform()`
+4. **Transform Groups**: Pre-defined groups of transforms (e.g., `web` transform group, used for css
+   transforms) are registered via `StyleDictionary.registerTransformGroup()`
+
+#### Configuration
+
+The configuration uses modifiers to create different file outputs for different token levels:
+
+- **Base tokens**: Generate simple variable files with code tokens only
+- **Brand/System tokens**: Generate composite files that merge regular tokens, composite tokens
+  (typography/composition), and shadow tokens
+
+The build process supports multiple file extensions per platform (e.g., `.sass` and `.scss` for SCSS
+platform) and can generate both JavaScript and TypeScript declaration files.
+
+</Unstyled>

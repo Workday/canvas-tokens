@@ -1,0 +1,145 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+<Meta title="Maintaining/Token JSON Structure" />
+
+<Unstyled>
+
+# Token JSON Structure Overview
+
+Canvas tokens are authored and maintained as JSON files in the `tokens/` directory. Each JSON file
+represents a collection of tokens for a specific level (`base`, `brand`, or `sys`). The structure
+closely follows [Style Dictionary's design token format](https://styledictionary.com/info/tokens/),
+with some Canvas-specific conventions.
+
+#### Example: Base Color Tokens (`tokens/base.json`)
+
+```json
+{
+  "base": {
+    "palette": {
+      "amber": {
+        "25": {
+          "type": "color",
+          "value": "oklch(0.9779 0.0214 95.33 / 1)"
+        },
+        "50": {
+          "type": "color",
+          "value": "oklch(0.969 0.0619 101.63 / 1)"
+        }
+      }
+    }
+  }
+}
+```
+
+**Key Fields:**
+
+- **`value`**: The token's primitive or referenced value (hex, rgba, a reference string, etc.).
+- **`type`**: The category/type (e.g., `color`, `dimension`, `shadow`).
+- **`description`** _(optional)_: Human-readable documentation for the token. Used to generate
+  JSDocs.
+
+**Key Fields in deprecated files:**
+
+- **`deprecated`**: Marks the token as deprecated in general token files.
+- **`deprecatedComment`**: An explanation for why the token was deprecated, especially helpful in
+  deprecated token files.
+- **`fallback`**: Specifies a fallback token/path to use instead of the deprecated token, often
+  included in deprecated token files.
+
+#### Token References
+
+Tokens can reference other tokens using the `{path.to.token}` syntax. For example:
+
+```json
+{
+  "brand": {
+    "primary": {
+      "base": {
+        "value": "{base.palette.blue.400}",
+        "type": "color",
+        "description": "Primary brand background"
+      }
+    }
+  }
+}
+```
+
+#### Composite Tokens
+
+Composite or object tokens (for typography or shadows) may use nested values:
+
+```json
+{
+  "typography": {
+    "body": {
+      "small": {
+        "value": {
+          "fontFamily": "{sys.fontFamily.default}",
+          "fontWeight": "{sys.fontWeight.regular}",
+          "fontSize": "{sys.fontSize.body.small}",
+          "lineHeight": "{sys.lineHeight.body.small}"
+        },
+        "type": "typography"
+      }
+    }
+  }
+}
+```
+
+#### Deprecated Tokens
+
+Deprecated tokens are retained in the token set to ensure backward compatibility and allow dependent
+applications or design systems a migration window. Deprecating a token signals to consumers that the
+token should no longer be used for new work, and that it may be removed in future major releases.
+
+**Purpose of Deprecated Tokens:**
+
+- **Achieve smooth transitions:** Deprecated tokens allow consuming codebases to continue
+  functioning while gradually migrating to new or replacement tokens.
+- **Communicate intent:** By marking tokens as deprecated, authors signal to users that a token’s
+  value or purpose is outdated, replaced, or no longer aligns with current design guidelines.
+- **Enable tooling:** The presence of `deprecated`, `deprecatedComment`, and `fallback` properties
+  permits build tools, linters, and documentation generators to warn users, automate migrations, or
+  replace deprecated usages with recommended alternatives.
+
+A deprecated token typically includes the following fields:
+
+- **`deprecated`**: Boolean indicating this token is deprecated.
+- **`deprecatedComment`**: An optional string explaining why it was deprecated and recommendations
+  for migration.
+- **`fallback`**: An optional field referencing the canonical token to use instead.
+
+_Example:_
+
+```json
+{
+  "color": {
+    "background": {
+      "brand": {
+        "value": "{base.palette.blue.400}",
+        "type": "color",
+        "deprecated": true,
+        "deprecatedComment": "Use `brand.primary.base` instead for updated color scaling.",
+        "fallback": "{brand.primary.base}"
+      }
+    }
+  }
+}
+```
+
+#### File Organization
+
+- **Base:** `tokens/base.json` — Foundation tokens (color, spacing, etc.).
+- **Brand:** `tokens/brand/` — Brand/tenant-level overrides and references.
+- **System:** `tokens/sys/` — System-level composite and component-aligned tokens (shadows,
+  typography, etc.).
+
+- **Deprecated Base:** `tokens/deprecated/base.json` — Deprecated Foundation tokens (color, spacing,
+  etc.).
+- **Deprecated Brand:** `tokens/deprecated/brand/*` — Deprecated Brand/tenant-level overrides and
+  references.
+- **Deprecated System:** `tokens/deprecated/sys/*` — Deprecated System-level composite and
+  component-aligned tokens (shadows, typography, etc.).
+
+</Unstyled>

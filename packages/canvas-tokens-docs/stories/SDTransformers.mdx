@@ -1,0 +1,397 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {TokenGrid} from '../components/TokenGrid';
+
+<Meta title="Maintaining/Style Dictionary/Transformers" />
+
+<Unstyled>
+
+# Transformers
+
+Transformers are functions that alter token values or names during the Style Dictionary
+transformation process. They process each token after parsing and before formatting, enabling
+consistent naming and value output across platforms. Transformers are applied to tokens and may
+adjust their values (e.g., converting hex to rgba), update names, or flatten complex objects such as
+box shadows or typography.
+
+The `utils/transformers/index.ts` file acts as the central point for all transformers, exporting a
+`transforms` object that maps transformer names to their configurations.
+
+Each transformer is registered with a unique name, the property it modifies (`value` or `name`), and
+the platforms where it is applied (`css`, `js`, etc.). Registered transformers run in a specified
+order and can be chained so one transform's result is used by the next.
+
+## Available Transformers
+
+### value/deprecated
+
+This transformer only applies to tokens with the `deprecated` property set to `true`. When such a
+token is found, the transformer replaces its value with that provided by the `fallback` field, if it
+exists. If no fallback exists, the original value is unchanged. This ensures deprecated tokens
+redirect to their replacements, helping maintainers guide consumers to updated tokens.
+
+This transformer belongs to the `web` transform group and primarily changes raw values for CSS
+outputs.
+
+**Example:**
+
+```js
+// input
+{
+  name: 'base.palette.cinnamon.100',
+  value: "#ffefee",
+  path: ['base','palette','cinnamon','100'],
+  original: {
+    value: "#ffefee",
+    type: "color",
+    deprecated: true,
+    fallback: "{base.palette.red.50}"
+  }
+}
+
+// output
+{
+  name: 'base.palette.cinnamon.100',
+  value: "{base.palette.red.50}",
+  path: ['base','palette','cinnamon','100'],
+  original: {
+    value: "#ffefee",
+    type: "color",
+    deprecated: true,
+    fallback: "{base.palette.red.50}"
+  }
+}
+```
+
+### value/hex-to-rgba
+
+The `value/hex-to-rgba` transformer converts token values in hexadecimal color notation (e.g.,
+`#FF00AA`) to the equivalent `rgba()` CSS string. This is useful for platforms that require explicit
+alpha in color output, even for opaque colors.
+
+Applied to tokens whose value matches a hex color pattern.
+
+Currently, this transformer is not used by any platform, as final tokens are generated in `oklch`
+format.
+
+**Example:**
+
+```js
+// input
+{
+  value: '#FF00AA';
+}
+
+// output
+{
+  value: 'rgba(255, 0, 170, 1)';
+}
+```
+
+### value/shadow/flat-sys
+
+The `value/shadow/flat-sys` transformer takes a structured shadow object (with properties like `x`,
+`y`, `blur`, `color`) and outputs a single-line CSS string using `rem` units. This allows shadow
+tokens to be used directly in CSS/JS platforms in standard CSS syntax.
+
+Applies only to `system.depth.*` tokens.
+
+This transformer is part of the `web` transform group and primarily changes raw values for CSS
+outputs.
+
+**Example:**
+
+```js
+// input
+{
+  value: { x: 0, y: 2, blur: 4, color: "rgba(0,0,0,0.1)" }
+}
+
+// output
+{
+  value: "0rem 0.125rem 0.25rem rgba(0,0,0,0.1)"
+}
+```
+
+### value/font-weight/numbers
+
+This transformer maps string font weight names (e.g. `'bold'`, `'regular'`, `'medium'`) to their
+numeric equivalents (`700` for `'bold'`, etc.), following the CSS font weight spec. This enables
+always using numeric font weights as needed for many outputs.
+
+Applies only to `base.font-weight.*` tokens.
+
+This transformer is part of the `web` transform group and primarily updates raw values for CSS
+outputs.
+
+**Example:**
+
+```js
+// input
+{
+  value: 'bold';
+}
+
+// output
+{
+  value: 700;
+}
+```
+
+### value/line-height/px2rem
+
+The `value/line-height/px2rem` transformer converts pixel-based line-height values (such as `24`)
+into their equivalent `rem` values by dividing by 16 (root font size) and appending `rem`. This
+makes line-heights scalable and suitable for modern CSS/JS outputs.
+
+Applied only to `base.line-height.*` tokens.
+
+This transformer is included in the `web` group and primarily adjusts raw values for CSS outputs.
+
+**Example:**
+
+```js
+// input
+{
+  value: 24;
+}
+
+// output
+{
+  value: '1.5rem';
+}
+```
+
+### value/flatten-oklch
+
+This transformer processes tokens in the oklch color space. It flattens tokens using oklch notation
+(e.g., `oklch(63.3% 0.21 230)`), replaces palette references with their actual values, and outputs
+CSS's `transparent` for cases like `{base.opacity.0}`. This ensures correct color referencing in all
+platforms.
+
+Applied only to tokens whose value includes `oklch`.
+
+This transformer is included in the `web` group and mainly updates raw values for CSS outputs.
+
+**Example:**
+
+```js
+// input
+{
+  value: 'oklch(oklch(63.3% 0.21 230 / 1), 0.25)';
+}
+
+// output
+{
+  value: 'oklch(from oklch(63.3% 0.21 230 / 1) / 0.25)';
+}
+
+// input
+{
+  value: 'oklch(oklch(63.3% 0.21 230 / 1), 0)';
+}
+
+// output
+{
+  value: 'transparent';
+}
+```
+
+### value/opacity
+
+The `value/opacity` transformer converts opacity values from a 0–100 integer scale (as used by
+Figma) to a 0–1 decimal (e.g., `50` → `0.5`). This ensures outputs are compatible with CSS and
+JavaScript conventions, which require values between 0 and 1.
+
+Applies only to `base.opacity.*` tokens not already in the 0–1 range.
+
+This transformer is part of the `web` group and primarily standardizes raw CSS values.
+
+**Example:**
+
+```js
+// input
+{
+  value: 50;
+}
+
+// output
+{
+  value: 0.5;
+}
+```
+
+### value/breakpoints/px
+
+This transformer is for tokens whose values define breakpoints, either numerically or as math
+expressions (e.g., `"600+16"`). It evaluates any expression and appends the `px` unit. This is
+needed because CSS does not support variables or `calc` in `@media-query`.
+
+Applies only to `base.breakpoints.*` tokens.
+
+This transformer is in the `web` group and mainly outputs raw CSS values.
+
+**Example:**
+
+```js
+// input
+{
+  value: '600+16';
+}
+// output
+{
+  value: '616px';
+}
+```
+
+### value/variables
+
+The `value/variables` transformer generates CSS variable names from token paths by converting them
+(such as `primary.background.default`) into valid CSS variable names (e.g.,
+`--cnvs-primary-background-default`), suitable for CSS custom properties.
+
+This transformer is currently not in use in the codebase.
+
+**Example:**
+
+```js
+// input
+{
+  path: ['primary', 'background', 'default'];
+}
+
+// output
+{
+  value: '--cnvs-primary-background-default';
+}
+```
+
+### value/wrapped-font-family
+
+This transformer formats font family lists for CSS, ensuring any font family name containing spaces
+is wrapped in quotes (e.g., `"Work Sans"` in `"Work Sans", Arial, sans-serif`). This guarantees the
+output is valid for CSS/JS font-family declarations.
+
+Applies only to `base.font-family.*` tokens.
+
+This transformer is part of the `web` group and standardizes raw values for CSS outputs.
+
+**Example:**
+
+```js
+// input
+{
+  value: 'Work Sans, Arial, sans-serif';
+}
+
+// output
+{
+  value: '"Work Sans", Arial, sans-serif';
+}
+```
+
+### value/letter-spacing/px2rem
+
+The `value/letter-spacing/px2rem` transformer converts letter-spacing from pixel units to `rem`. It
+parses pixel values (e.g., `"1.25px"`), divides by 16, and outputs as rem for scalable usage.
+
+Applies to `base.letter-spacing.*` tokens.
+
+This transformer is included in the `web` group and primarily outputs raw CSS values.
+
+**Example:**
+
+```js
+// input
+{
+  value: '1.25px';
+}
+
+// output
+{
+  value: '0.078125rem';
+}
+```
+
+### value/flatten-border
+
+This transformer flattens border object tokens (with `width`, `style`, and `color` properties) into
+a single-line CSS string (e.g., `"1px solid #000"`), making border tokens directly usable in
+CSS-in-JS or similar environments.
+
+Applies only to `sys.border.*` tokens.
+
+This transformer is part of the `web` group and changes raw CSS values.
+
+**Example:**
+
+```js
+// input
+{
+  value: { width: 1, style: "solid", color: "#000" }
+}
+
+// output
+{
+  value: "1px solid #000"
+}
+```
+
+### value/math
+
+The `value/math` transformer evaluates math expressions in token values. For base-level tokens, it
+computes the value directly (e.g., `"8*2"` → `"1rem"`). For system-level tokens, it wraps the
+expression in a CSS `calc()` for programmatic sizing and spacing.
+
+Applies only to tokens with math expressions in their value.
+
+This transformer is included in the `web` group and primarily updates raw values for CSS outputs.
+
+**Example:**
+
+```js
+// input (base level)
+{
+  value: '8*2';
+}
+// output (base level)
+{
+  value: '1rem';
+}
+
+// input (sys level)
+{
+  value: '8*4';
+  original: {
+    value: '{sys.space.x2}*{sys.space.x1}';
+  }
+}
+// output (sys level)
+{
+  value: 'calc(var(--cnv-sys-space-x2)*var(--cnv-sys-space-x1))';
+}
+```
+
+### name/camel
+
+The `name/camel` transformer converts token names from dot-path notation (e.g.,
+`primary.background.default`) into JavaScript/TypeScript-style camelCase (e.g.,
+`primaryBackgroundDefault`), as used for object keys in JS/TS files.
+
+Used only for JS/TS object output.
+
+**Example:**
+
+```js
+// input
+{
+  name: 'default',
+  path: ['primary', 'background', 'default'];
+}
+
+// output
+{
+  name: 'primaryBackgroundDefault';
+}
+```
+
+</Unstyled>
