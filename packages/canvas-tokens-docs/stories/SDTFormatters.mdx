@@ -305,8 +305,8 @@ references—improving documentation and type safety.
    *
    * token: base.opacity.400
    *
-   * Test JSDoc
-   * "disabled": "--cnvs-base-opacity-300",
+   * Disabled opacity
+   * "disabled": "--cnvs-base-opacity-disabled",
 };`;
 ```
 
@@ -395,13 +395,13 @@ blocks.
   ],
 }
 
-//output
+// output
 `.cnvs-sys-border-input-disabled {
   border: @cnvs-sys-line-disabled;
 }`
 ```
 
-#### `css/shadow` :: formatCSSShadow
+#### css/shadow :: formatCSSShadow
 
 Defines CSS custom properties for shadow or depth tokens, enabling consistent reuse and theming for
 elevation styles.
@@ -427,7 +427,7 @@ elevation styles.
 `--cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
 ```
 
-#### `scss/shadow` :: formatSassShadow
+#### scss/shadow :: formatSassShadow
 
 Outputs Sass variables for shadow tokens, making elevation designs accessible in SCSS.
 
@@ -450,7 +450,7 @@ Outputs Sass variables for shadow tokens, making elevation designs accessible in
 `$cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
 ```
 
-#### `less/shadow` :: formatLessShadow
+#### less/shadow :: formatLessShadow
 
 Generates Less variables for shadow tokens, supporting shadow and elevation styling across
 Less-based projects.

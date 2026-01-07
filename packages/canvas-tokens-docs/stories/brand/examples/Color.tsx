@@ -23,7 +23,16 @@ const palettes = Object.keys(brand).map(key => {
   const tokens = getRecursivelyPathNames(brand);
   const values = tokens
     .filter(path => path.startsWith(`brand.${key}`))
-    .map(path => buildColorSwatch(path, path));
+    .map(path =>
+      buildColorSwatch(
+        path,
+        `brand.${path
+          .replace('brand.', '')
+          .split('.')
+          .map((p, index) => (!index ? p : p.charAt(0).toUpperCase() + p.slice(1)))
+          .join('')}`
+      )
+    );
 
   return {
     name: key,
