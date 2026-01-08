@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.5
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix visual report to match new folder structure
+    ([#235](https://github.com/Workday/canvas-tokens/pull/235))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@Copilot](https://github.com/Copilot))
+
 ## 4.0.0-alpha.4
 
 ### Major Changes

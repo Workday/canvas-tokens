@@ -1,4 +1,6 @@
 {
+  "_comment": "File is auto-generated, do not edit it manually.",
+  "_description": "File contains deprecated tokens that are no longer supported and will be removed in the future.",
   "sys": {
     "breakpoints": {
       "s": {

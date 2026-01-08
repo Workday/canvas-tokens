@@ -1,11 +1,13 @@
 {
+  "_comment": "File is auto-generated, do not edit it manually.",
+  "_description": "File contains deprecated tokens that are no longer supported and will be removed in the future.",
   "base": {
     "unit": {
       "value": "0.25rem",
       "type": "dimension",
       "deprecated": true,
       "deprecatedComment": "Use {base.baseline} instead for consistent sizing calculations",
-      "comment": "The base unit used for the typographic grid system. "
+      "comment": "The base unit used for the typographic grid system."
     },
     "palette": {
       "cinnamon": {
