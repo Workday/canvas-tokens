@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.6
+
+### Major Changes
+
+- ### Infrastructure
+
+  - fix: Fix deprecation label in objects
+    ([#230](https://github.com/Workday/canvas-tokens/pull/230))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.0.0-alpha.5
 
 ### Major Changes
