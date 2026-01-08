@@ -17,6 +17,7 @@
     "lint": "eslint -c ./.eslintrc.js --ext=ts .",
     "precommit": "lint-staged",
     "prepare": "husky install",
+    "prestorybook": "yarn build:tokens",
     "storybook": "nx storybook @workday/canvas-tokens-docs",
     "build-storybook": "nx build-storybook @workday/canvas-tokens-docs",
     "serve-storybook": "npx http-server docs/storybook/@workday/canvas-tokens-docs",
