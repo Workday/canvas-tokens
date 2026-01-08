@@ -369,7 +369,7 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export declare const opacity: {\n  /**\n   * 0.4\n   * \n   * token: base.opacity.400\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n};\n';
+        'export declare const opacity: {\n  /**\n   * 0.4\n   * \n   * token: base.opacity.400\n   * \n   * Test JSDoc\n   * \n   * \n   */\n  "disabled": "--cnvs-base-opacity-300",\n};\n';
 
       expect(result).toBe(expected);
     });

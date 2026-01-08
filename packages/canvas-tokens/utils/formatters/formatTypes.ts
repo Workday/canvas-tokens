@@ -60,7 +60,7 @@ const recursivelyCreateFileStructure = ({
     const spaces = '  '.repeat(depth);
 
     if (typeof values === 'string') {
-      const token = allTokens.find(token => `--cnvs-${token.path.join('-')}` === values);
+      const token = allTokens?.find(token => `--cnvs-${token.path.join('-')}` === values);
       const jsDocText = generateJSDoc(token?.original || original, depth);
 
       const innerText = depth
