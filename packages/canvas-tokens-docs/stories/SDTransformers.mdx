@@ -224,7 +224,7 @@ This transformer is part of the `web` group and primarily standardizes raw CSS v
 
 This transformer is for tokens whose values define breakpoints, either numerically or as math
 expressions (e.g., `"600+16"`). It evaluates any expression and appends the `px` unit. This is
-needed because CSS does not support variables or `calc` in `@media-query`.
+needed because CSS does not support unitless values.
 
 Applies only to `base.breakpoints.*` tokens.
 
