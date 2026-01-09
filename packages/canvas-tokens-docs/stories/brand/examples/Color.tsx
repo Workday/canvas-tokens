@@ -9,6 +9,7 @@ const palettes = Object.keys(brand).map(key => {
   const values = Object.entries(tokens).map(([value, varName]) =>
     buildColorSwatch(varName, `brand.${key}.${value}`)
   );
+
   return {
     name: key,
     values,
