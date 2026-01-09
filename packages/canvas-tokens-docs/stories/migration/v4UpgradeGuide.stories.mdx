@@ -1,0 +1,544 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {DownloadLLMFile} from '../../components/DownloadLLMFile';
+import {NavCard} from '../../components/NavCard';
+import {StatusIndicator} from '../../components/StatusIndicator';
+
+<Meta title="Guides/Upgrade Guides/v4/Overview" />
+
+<Unstyled>
+
+# What's New in v4
+
+Canvas Tokens v4 introduces significant updates to align with **Workday X Sana integration**,
+providing enhanced scalability, better product support, and a more comprehensive token system. This
+release focuses on improving the color system with extended alpha scales, updating brand tokens to
+use numerical naming conventions, and introducing new surface, focus, accent, and semantic tokens.
+
+## Overview of Changes
+
+The v4 release includes:
+
+- **Extended alpha scales** across base color palettes (A25, A50, A100, A200)
+- **New magenta palette** added to the color system
+- **Brand token updates** with numerical naming (25, 50, 100, 200...900, 950, 975)
+- **Comprehensive surface token system** for better UI component support
+- **New semantic tokens** for size, space, shape, and breakpoints
+- **Deprecation of legacy tokens** with clear migration paths
+
+## Base Color Palette Updates
+
+### Alpha Scale Extensions
+
+Base color palettes have been updated by adding alpha scales: **A25, A50, A100, A200**. Extended
+alpha range (**A0-A975**) has been added to slate, neutral, and white palettes.
+
+### New Magenta Palette
+
+A new **magenta palette** has been added to the color system, providing additional color options for
+design consistency.
+
+## Brand Token Updates
+
+Brand tokens have been updated to use **numerical names** (25, 50, 100, 200...900, 950, 975) and
+alpha colors (A25, A50, A100, A200) for better scalability and improved support across different
+products.
+
+### Deprecated Brand Scale Names
+
+The old token naming convention using descriptive names (`darkest`, `darker`, `dark`, `base`,
+`light`, `lighter`, `lightest`) has been deprecated in favor of the numerical scale.
+
+### Brand Common Token Updates
+
+Brand common tokens have been updated with new naming:
+
+- `focus-outline` → `focus`
+- `error-inner` → `critical`
+- `alert-inner` → `caution-inner`
+- `alert-outer` → `caution-outer`
+
+Old common tokens have been deprecated.
+
+## System Token Updates
+
+### Surface Color Tokens
+
+A comprehensive new color token group `system.color.surface.*` has been added to replace the
+previous `color.bg.surface.*` tokens. This new system provides better semantic naming and clearer
+organization for surface colors used across UI components, including containers, modals, popovers,
+and interactive states.
+
+| Token                     | Value                | Use For                         |
+| ------------------------- | -------------------- | ------------------------------- |
+| color.surface.default     | {palette.neutral.0}  | Primary content surfaces        |
+| color.surface.alt.default | {palette.slate.A50}  | De-emphasized secondary content |
+| color.surface.alt.strong  | {palette.slate.A100} | Stronger de-emphasis            |
+| color.surface.navigation  | {palette.neutral.A0} | Global navigation (transparent) |
+| color.surface.popover     | {palette.neutral.0}  | Popover containers              |
+| color.surface.modal       | {palette.neutral.0}  | Modal containers                |
+| color.surface.raised      | {palette.slate.A25}  | Elevated surfaces               |
+| color.surface.loading     | {palette.slate.A200} | Skeleton/loading states         |
+| color.surface.transparent | {palette.neutral.A0} | Transparent surfaces            |
+| color.surface.inverse     | {palette.neutral.0}  | Inverse surfaces                |
+
+#### Semantic Surface Tokens
+
+Semantic surface tokens provide color-coded backgrounds for status indicators and feedback states,
+using alpha variants of the base palette colors for subtle yet clear visual communication.
+
+| Token                         | Value               |
+| ----------------------------- | ------------------- |
+| color.surface.info.default    | {palette.blue.A25}  |
+| color.surface.info.strong     | {palette.blue.A50}  |
+| color.surface.danger.default  | {palette.red.A25}   |
+| color.surface.danger.strong   | {palette.red.A50}   |
+| color.surface.warning.default | {palette.amber.A25} |
+| color.surface.warning.strong  | {palette.amber.A50} |
+| color.surface.success.default | {palette.green.A25} |
+| color.surface.success.strong  | {palette.green.A50} |
+
+#### Contrast Surface Tokens
+
+Contrast surface tokens provide high-contrast backgrounds for surfaces that need to stand out
+prominently, typically used for elevated or emphasized content areas.
+
+| Token                          | Value                  |
+| ------------------------------ | ---------------------- |
+| color.surface.contrast.default | {palette.neutral.A900} |
+| color.surface.contrast.strong  | {palette.neutral.A950} |
+
+#### AI Surface Tokens
+
+AI surface tokens provide specialized colors for AI-related UI components and interactions,
+supporting hover and pressed states for interactive AI elements.
+
+| Token                    | Value               |
+| ------------------------ | ------------------- |
+| color.surface.ai.default | {palette.blue.A100} |
+| color.surface.ai.hover   | {palette.blue.A200} |
+| color.surface.ai.pressed | {palette.blue.A200} |
+
+#### Interaction Overlay Tokens
+
+Interaction overlay tokens define visual feedback for hover and pressed states on interactive
+surfaces, with separate variants for default and inverse color schemes. The scrim token provides a
+backdrop overlay for modal and dialog interactions.
+
+| Token                                 | Value                  |
+| ------------------------------------- | ---------------------- |
+| color.surface.overlay.hover.default   | {palette.slate.A50}    |
+| color.surface.overlay.hover.inverse   | {palette.white.A200}   |
+| color.surface.overlay.pressed.default | {palette.slate.A100}   |
+| color.surface.overlay.pressed.inverse | {palette.white.A300}   |
+| color.surface.overlay.scrim           | {palette.neutral.A400} |
+
+### Brand Surface Tokens
+
+Brand surface tokens provide brand-colored backgrounds for status indicators, feedback messages, and
+selected states. These tokens use alpha variants of brand colors to create subtle yet recognizable
+brand-aligned surfaces with default and strong intensity options.
+
+| Token                                | Value                |
+| ------------------------------------ | -------------------- |
+| color.brand.surface.primary.default  | {brand.primary.A25}  |
+| color.brand.surface.primary.strong   | {brand.primary.A50}  |
+| color.brand.surface.critical.default | {brand.critical.A25} |
+| color.brand.surface.critical.strong  | {brand.critical.A50} |
+| color.brand.surface.caution.default  | {brand.caution.A25}  |
+| color.brand.surface.caution.strong   | {brand.caution.A50}  |
+| color.brand.surface.positive.default | {brand.positive.A25} |
+| color.brand.surface.positive.strong  | {brand.positive.A50} |
+| color.brand.surface.selected         | {brand.primary.A50}  |
+
+### Focus Tokens
+
+New focus tokens provide consistent focus indicators across the design system, supporting both
+standard and high-contrast scenarios.
+
+| Token                | Value                  |
+| -------------------- | ---------------------- |
+| color.focus.inverse  | {palette.neutral.0}    |
+| color.focus.contrast | {palette.neutral.A900} |
+
+### Brand Focus Tokens
+
+Brand focus tokens provide brand-aligned focus indicators for primary, critical, and caution states,
+with separate inner and outer variants for caution to support layered alert designs.
+
+| Token                           | Value                |
+| ------------------------------- | -------------------- |
+| color.brand.focus.primary       | {brand.primary.500}  |
+| color.brand.focus.critical      | {brand.critical.500} |
+| color.brand.focus.caution.outer | {brand.caution.500}  |
+| color.brand.focus.caution.inner | {brand.caution.400}  |
+
+### Accent Tokens
+
+New accent tokens provide semantic color values for UI elements that need to stand out or convey
+meaning, including status indicators, interactive overlays, and muted variants for subtle emphasis.
+
+| Token                        | Value                  |
+| ---------------------------- | ---------------------- |
+| color.accent.info            | {palette.blue.600}     |
+| color.accent.danger          | {palette.red.600}      |
+| color.accent.warning         | {palette.amber.400}    |
+| color.accent.success         | {palette.green.600}    |
+| color.accent.ai              | {palette.blue.950}     |
+| color.accent.contrast        | {palette.neutral.A900} |
+| color.accent.muted.default   | {palette.slate.600}    |
+| color.accent.muted.soft      | {palette.slate.400}    |
+| color.accent.overlay.hover   | {palette.neutral.A200} |
+| color.accent.overlay.pressed | {palette.neutral.A400} |
+
+### Brand Accent Tokens
+
+Brand accent tokens provide brand-aligned accent colors for primary actions, critical states,
+caution indicators, and positive feedback, ensuring consistent brand expression across interactive
+elements.
+
+| Token                       | Value                |
+| --------------------------- | -------------------- |
+| color.brand.accent.primary  | {brand.primary.600}  |
+| color.brand.accent.critical | {brand.critical.600} |
+| color.brand.accent.caution  | {brand.caution.400}  |
+| color.brand.accent.positive | {brand.positive.600} |
+| color.brand.accent.action   | {brand.primary.600}  |
+
+### Foreground Token Updates
+
+Foreground tokens have been updated to use alpha variants for better contrast control and
+consistency with the new alpha scale system. These updates provide more granular control over text
+hierarchy and readability.
+
+| Token                     | Value                  |
+| ------------------------- | ---------------------- |
+| color.fg.default          | {palette.neutral.A800} |
+| color.fg.strong           | {palette.neutral.A900} |
+| color.fg.stronger         | {palette.neutral.A950} |
+| color.fg.disabled         | {palette.slate.A400}   |
+| color.fg.muted.default    | {palette.slate.A600}   |
+| color.fg.muted.strong     | {palette.slate.A700}   |
+| color.fg.contrast.default | {palette.neutral.A900} |
+| color.fg.contrast.strong  | {palette.neutral.A950} |
+
+#### Semantic Foreground Colors
+
+Semantic foreground colors provide text colors for status messages, alerts, and feedback, with
+default and strong variants for different emphasis levels. These tokens ensure consistent color
+usage for informational, warning, error, and success states, plus specialized tokens for AI-related
+content and inverse text.
+
+| Token                    | Value               |
+| ------------------------ | ------------------- |
+| color.fg.info.default    | {palette.blue.600}  |
+| color.fg.info.strong     | {palette.blue.700}  |
+| color.fg.danger.default  | {palette.red.600}   |
+| color.fg.danger.strong   | {palette.red.700}   |
+| color.fg.warning.default | {palette.amber.600} |
+| color.fg.warning.strong  | {palette.amber.700} |
+| color.fg.success.default | {palette.green.600} |
+| color.fg.success.strong  | {palette.green.700} |
+| color.fg.ai              | {palette.blue.950}  |
+| color.fg.inverse         | {palette.neutral.0} |
+
+### Brand Foreground References
+
+Brand foreground tokens provide text colors that align with brand colors, offering default and
+strong variants for different emphasis levels. These tokens are used for brand-colored text, links,
+and selected states.
+
+| Token                           | Value                |
+| ------------------------------- | -------------------- |
+| color.brand.fg.primary.default  | {brand.primary.600}  |
+| color.brand.fg.primary.strong   | {brand.primary.700}  |
+| color.brand.fg.critical.default | {brand.critical.600} |
+| color.brand.fg.critical.strong  | {brand.critical.700} |
+| color.brand.fg.caution.default  | {brand.caution.600}  |
+| color.brand.fg.caution.strong   | {brand.caution.700}  |
+| color.brand.fg.positive.default | {brand.positive.600} |
+| color.brand.fg.positive.strong  | {brand.positive.700} |
+| color.brand.fg.selected         | {brand.primary.700}  |
+
+### Border Token Updates
+
+Border tokens have been updated to use alpha variants and provide more semantic options for
+different border use cases, including input fields, status indicators, and inverse color schemes.
+
+| Token                        | Value                  |
+| ---------------------------- | ---------------------- |
+| color.border.default         | {palette.slate.A200}   |
+| color.border.strong          | {palette.slate.A300}   |
+| color.border.input.default   | {palette.slate.A500}   |
+| color.border.input.hover     | {palette.slate.A700}   |
+| color.border.info            | {palette.blue.500}     |
+| color.border.danger          | {palette.red.500}      |
+| color.border.warning         | {palette.amber.400}    |
+| color.border.contrast        | {palette.neutral.A900} |
+| color.border.transparent     | {palette.neutral.A0}   |
+| color.border.inverse.default | {palette.white.A500}   |
+| color.border.inverse.strong  | {palette.white.A700}   |
+
+### Brand Border Tokens
+
+Brand border tokens provide brand-aligned border colors for primary, critical, and caution states,
+ensuring consistent brand expression in bordered components and status indicators.
+
+| Token                              | Value                |
+| ---------------------------------- | -------------------- |
+| color.brand.border.primary.default | {brand.primary.500}  |
+| color.brand.border.critical        | {brand.critical.500} |
+| color.brand.border.caution         | {brand.caution.400}  |
+
+### Shadow Tokens
+
+Shadow tokens define the color values used for drop shadows and elevation effects, using alpha
+variants of slate to create subtle depth and layering in the UI.
+
+| Token                | Value                |
+| -------------------- | -------------------- |
+| color.shadow.base    | {palette.slate.A200} |
+| color.shadow.ambient | {palette.slate.A100} |
+
+### Semantic Size Tokens
+
+New semantic size tokens provide meaningful size values mapped to specific use cases, replacing
+generic numeric values with descriptive names that clearly indicate their intended purpose. This
+improves code readability and ensures consistent sizing across components.
+
+| Token     | Value      | Description                               |
+| --------- | ---------- | ----------------------------------------- |
+| size.xxs  | {size.200} | Switch Track                              |
+| size.xs   | {size.250} | Count Badge                               |
+| size.sm   | {size.300} | X-Small Buttons, Pills, Checkboxes        |
+| size.md   | {size.400} | Small Buttons, Segmented Control, Tooltip |
+| size.lg   | {size.500} | Medium Buttons, Input Fields, Menu Items  |
+| size.xl   | {size.600} | Large Buttons, Tabs, Avatar               |
+| size.xxl  | {size.700} | Table Cell, Toast                         |
+| size.xxxl | {size.800} | Expandable Container                      |
+
+### Space Tokens
+
+Space tokens have been reorganized into semantic padding and gap tokens, replacing the previous
+generic `space.*` tokens. This provides clearer intent and better alignment with common CSS
+properties.
+
+### Padding Tokens
+
+| Token        | Value      | Description                        |
+| ------------ | ---------- | ---------------------------------- |
+| padding.none | {size.0}   | No space between content and edges |
+| padding.xxs  | {size.50}  | Compact padding                    |
+| padding.xs   | {size.100} | Horizontal padding on Input Fields |
+| padding.sm   | {size.150} | Rich Text Editor, X-Small Buttons  |
+| padding.md   | {size.200} | Small Button content               |
+| padding.lg   | {size.250} | Medium Buttons with Icons          |
+| padding.xl   | {size.300} | Card and Medium Button content     |
+| padding.xxl  | {size.400} | Modal and Large Button content     |
+
+### Gap Tokens
+
+Gap tokens define spacing between elements in flexbox and grid layouts, providing consistent spacing
+for component relationships and content organization.
+
+| Token    | Value      | Description                            |
+| -------- | ---------- | -------------------------------------- |
+| gap.none | {size.0}   | No space between elements              |
+| gap.xs   | {size.50}  | Icon to text, labels to inputs         |
+| gap.sm   | {size.100} | Pills, buttons, inline icon to text    |
+| gap.md   | {size.200} | Default inline spacing                 |
+| gap.lg   | {size.300} | Tighter spacing between cards          |
+| gap.xl   | {size.400} | Default card spacing, 12-column gutter |
+| gap.xxl  | {size.800} | Space between content sections         |
+
+## Shape Token Updates
+
+Shape tokens define border radius values for rounded corners across components. The token system has
+been updated with new larger values (xl, xxl, xxxl) to support modern design patterns requiring more
+pronounced rounding on larger containers and elevated surfaces.
+
+| Token      | Value            | Description                       |
+| ---------- | ---------------- | --------------------------------- |
+| shape.zero | {size.0}         | Full-width containers             |
+| shape.xs   | {size.50}        | Checkbox, Pill                    |
+| shape.sm   | {size.100}       | Inputs, Toasts, Tooltips          |
+| shape.md   | {size.200}       | Cards, Menus                      |
+| shape.lg   | {size.300}       | Dialogs, Modals, Bottom Sheets    |
+| shape.xl   | {size.400}       | Extra large rounding (NEW)        |
+| shape.xxl  | {size.500}       | Cards and elevated items (NEW)    |
+| shape.xxxl | {size.600}       | Modals and large containers (NEW) |
+| shape.full | {size.75} \* 100 | Buttons, Badge, Status Indicator  |
+
+### Breakpoint Updates
+
+Breakpoint tokens define responsive design breakpoints for different screen sizes. The system has
+been updated with clearer naming (replacing single-letter tokens) and a new `xl` breakpoint to
+support wide monitor displays, ensuring better responsive design coverage across all device types.
+
+| Token            | Value              | Description                  |
+| ---------------- | ------------------ | ---------------------------- |
+| breakpoints.zero | 0                  | Below small                  |
+| breakpoints.sm   | {base.unit} \* 80  | Mobile devices (320px)       |
+| breakpoints.md   | {base.unit} \* 192 | Laptops (768px)              |
+| breakpoints.lg   | {base.unit} \* 256 | Desktops (1024px)            |
+| breakpoints.xl   | {base.unit} \* 360 | Wide monitors (NEW - 1440px) |
+
+## Deprecated Tokens
+
+The following tokens have been deprecated in v4. Use the replacement tokens listed below.
+
+### Deprecated Brand Tokens
+
+| Deprecated Token           | Replacement                  |
+| -------------------------- | ---------------------------- |
+| brand.primary.base         | {brand.primary.600}          |
+| brand.primary.lightest     | {brand.primary.25}           |
+| brand.primary.lighter      | {brand.primary.50}           |
+| brand.primary.light        | {brand.primary.200}          |
+| brand.primary.dark         | {brand.primary.700}          |
+| brand.primary.darkest      | {brand.primary.800}          |
+| brand.primary.accent       | {sys.color.fg.inverse}       |
+| brand.error.base           | {brand.critical.600}         |
+| brand.error.lightest       | {brand.critical.25}          |
+| brand.error.lighter        | {brand.critical.50}          |
+| brand.error.light          | {brand.critical.200}         |
+| brand.error.dark           | {brand.critical.700}         |
+| brand.error.darkest        | {brand.critical.800}         |
+| brand.error.accent         | {sys.color.fg.inverse}       |
+| brand.alert.base           | {brand.caution.400}          |
+| brand.alert.lightest       | {brand.caution.25}           |
+| brand.alert.lighter        | {brand.caution.50}           |
+| brand.alert.light          | {brand.caution.200}          |
+| brand.alert.dark           | {brand.caution.500}          |
+| brand.alert.darkest        | {brand.caution.600}          |
+| brand.alert.accent         | {sys.color.fg.contrast}      |
+| brand.success.base         | {brand.positive.600}         |
+| brand.success.lightest     | {brand.positive.25}          |
+| brand.success.lighter      | {brand.positive.50}          |
+| brand.success.light        | {brand.positive.200}         |
+| brand.success.dark         | {brand.positive.700}         |
+| brand.success.darkest      | {brand.positive.800}         |
+| brand.success.accent       | {sys.color.fg.inverse}       |
+| brand.neutral.lightest     | {brand.neutral.25}           |
+| brand.neutral.lighter      | {brand.neutral.50}           |
+| brand.neutral.light        | {brand.neutral.200}          |
+| brand.neutral.base         | {brand.neutral.600}          |
+| brand.neutral.dark         | {brand.neutral.700}          |
+| brand.neutral.darkest      | {brand.neutral.800}          |
+| brand.neutral.accent       | {sys.color.fg.inverse}       |
+| brand.common.focus-outline | {brand.common.focus}         |
+| brand.common.error-inner   | {brand.common.critical}      |
+| brand.common.alert-inner   | {brand.common.caution-inner} |
+| brand.common.alert-outer   | {brand.common.caution-outer} |
+
+### Deprecated Space Tokens
+
+| Deprecated Token | Replacement                     |
+| ---------------- | ------------------------------- |
+| space.zero       | Use semantic padding/gap tokens |
+| space.half       | Use semantic padding/gap tokens |
+| space.x1         | Use semantic padding/gap tokens |
+| space.x2         | Use semantic padding/gap tokens |
+| space.x3         | Use semantic padding/gap tokens |
+| space.x4         | Use semantic padding/gap tokens |
+| space.x5         | Use semantic padding/gap tokens |
+| space.x6         | Use semantic padding/gap tokens |
+| space.x8         | Use semantic padding/gap tokens |
+| space.x10        | Use semantic padding/gap tokens |
+| space.x14        | Use semantic padding/gap tokens |
+| space.x16        | Use semantic padding/gap tokens |
+| space.x20        | Use semantic padding/gap tokens |
+
+### Deprecated Shape Tokens
+
+| Deprecated Token | Replacement |
+| ---------------- | ----------- |
+| shape.half       | shape.xs    |
+| shape.x1         | shape.sm    |
+| shape.x1-half    | -           |
+| shape.x2         | shape.md    |
+| shape.x4         | shape.lg    |
+| shape.x6         | shape.xl    |
+| shape.round      | shape.full  |
+
+### Deprecated Breakpoint Tokens
+
+| Deprecated Token | Replacement    |
+| ---------------- | -------------- |
+| breakpoints.s    | breakpoints.sm |
+| breakpoints.m    | breakpoints.md |
+| breakpoints.l    | breakpoints.lg |
+
+### Deprecated Color Tokens
+
+| Deprecated Token              | Replacement                                         |
+| ----------------------------- | --------------------------------------------------- |
+| color.bg.primary.\*           | sys.color.brand.surface.primary.\*                  |
+| color.bg.surface.\*           | sys.color.surface.\*                                |
+| color.bg.accent.\*            | sys.color.surface.accent.\*                         |
+| color.bg.transparent.\*       | sys.color.surface.transparent.\*                    |
+| color.bg.overlay.\*           | sys.color.surface.overlay.\*                        |
+| color.bg.translucent.\*       | sys.color.surface.transparent.\*                    |
+| color.bg.alt.\*               | sys.color.surface.alt.\*                            |
+| color.bg.muted.\*             | sys.color.surface.\*                                |
+| color.bg.contrast.\*          | sys.color.contrast.\*                               |
+| color.bg.positive.\*          | sys.color.success.\*                                |
+| color.bg.caution.\*           | sys.color.warning.\*                                |
+| color.bg.critical.\*          | sys.color.danger.\*                                 |
+| color.bg.ai.\*                | sys.color.ai.\*                                     |
+| color.bg.info.\*              | sys.color.info.\*                                   |
+| color.text.\*                 | sys.color.fg.\*                                     |
+| color.icon.\*                 | sys.color.fg.\*                                     |
+| color.fg.critical.\*          | sys.color.fg.danger.\*                              |
+| color.fg.muted.stronger       | sys.color.fg.muted.strong                           |
+| color.fg.muted.soft           | sys.color.fg.muted.default                          |
+| color.fg.primary.\*           | sys.color.brand.fg.\*                               |
+| color.fg.caution.\*           | sys.color.fg.warning.\*                             |
+| color.fg.info.softer          | sys.color.fg.info.default                           |
+| color.fg.info.soft            | sys.color.fg.info.default                           |
+| color.fg.info.stronger        | sys.color.fg.info.strong                            |
+| color.fg.positive.\*          | sys.color.fg.success.\*                             |
+| color.border.input.disabled   | sys.color.fg.disabled                               |
+| color.border.input.strong     | sys.color.border.input.hover                        |
+| color.border.input.inverse    | sys.color.fg.inverse                                |
+| color.border.contrast.default | sys.color.border.contrast                           |
+| color.border.contrast.strong  | sys.color.border.contrast                           |
+| color.border.critical.default | sys.color.border.danger                             |
+| color.border.caution.default  | sys.color.border.warning                            |
+| color.border.caution.strong   | sys.color.border.warning                            |
+| color.border.divider          | sys.color.border.default                            |
+| color.border.container        | sys.color.border.default or sys.color.border.strong |
+| color.border.ai               | sys.color.accent.ai                                 |
+| color.border.info.default     | sys.color.border.info                               |
+| color.static.\*               | base.palette.\*                                     |
+
+### Deprecated Shadow Color Tokens
+
+| Deprecated Token | Replacement              | Comment             |
+| ---------------- | ------------------------ | ------------------- |
+| shadow.1         | sys.color.shadow.base    | First shadow color  |
+| shadow.2         | sys.color.shadow.ambient | Second shadow color |
+| shadow.default   | sys.color.shadow.base    | Main shadow color   |
+
+> **Note:**  
+> `shadow.1`, `shadow.2`, and `shadow.default` are deprecated.  
+> Use `sys.color.shadow.base` and `sys.color.shadow.ambient` instead.
+
+---
+
+## Migration Recommendations
+
+1. **Update brand tokens**: Replace deprecated descriptive names (`base`, `lightest`, etc.) with
+   numerical scale tokens (25, 50, 100, etc.)
+2. **Migrate surface tokens**: Replace `color.bg.surface.*` tokens with `color.surface.*`
+   equivalents
+3. **Use semantic tokens**: Prefer semantic size, space, and shape tokens over deprecated generic
+   tokens
+4. **Update breakpoints**: Replace single-letter breakpoint tokens with full names (`sm`, `md`,
+   `lg`)
+5. **Review common tokens**: Update `focus-outline`, `error-inner`, `alert-inner`, and `alert-outer`
+   to their new names
+
+> **Important**: Deprecated tokens will be removed in a future major version. We recommend migrating
+> to the new token names as soon as possible.
+
+</Unstyled>
