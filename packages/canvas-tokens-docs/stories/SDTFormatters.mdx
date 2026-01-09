@@ -7,29 +7,49 @@ import {TokenGrid} from '../components/TokenGrid';
 
 # Formatters
 
+## Table of Contents
+
+- [Overview](#overview)
+  - [Format](#format)
+  - [Merge](#merge)
+- [Merge Formatters](#merge-formatters)
+  - [merge/objects](#mergeobjects)
+  - [merge/refs](#mergerefs)
+  - [merge/types](#mergetypes)
+- [Direct Transformation Formatters](#direct-transformation-formatters)
+  - [JavaScript/TypeScript Formatters](#javascripttypescript-formatters)
+  - [CSS/SCSS/LESS Formatters](#cssscssless-formatters)
+
+## Overview
+
 Formatters define how design tokens are transformed into distributable files for various platforms
 and development environments. They take the intermediate Style Dictionary dictionary object and
 produce the platform-specific string output for source files, such as CSS, SCSS, LESS, JavaScript,
 and TypeScript.
 
-**Formatters are essential for:**
+Formatters are essential for:
 
-- Translating token dictionaries into code files for their target environment (CSS, JS, etc.)
-- Structuring and organizing the generated output to match platform expectations and best practices
-- Ensuring correct syntax, export style, and type information for each file type
-- Supporting both fine-grained (per-token) and composite (object/grouped) outputs
+1. Translating token dictionaries into code files for their target environment (CSS, JS, etc.).
+2. Structuring and organizing the generated output to match platform expectations and best
+   practices.
+3. Ensuring correct syntax, export style, and type information for each file type.
+4. Supporting both fine-grained (per-token) and composite (object/grouped) outputs.
 
-There are two principal types of formatter functions:
+There are two principal types of formatter functions: `format` and `merge`.
 
-1. **`format`**: These directly convert token JSON data into the file content. Each `format`
-   function is responsible for creating one style of output for a group of tokens, such as
-   generating individual exports or nesting tokens as objects. Examples include transforming tokens
-   into JS Docs, token object structures, or inline CSS variable declarations.
-2. **`merge`**: These orchestrate how multiple formatters combine to produce a final, unified output
-   file. A `merge` formatter calls several formatters in sequence and joins their outputs, making it
-   possible to compose files that blend different token kinds (e.g., regular, composite, shadow)
-   while preserving the correct structure and syntax. Any time new file content is needed as part of
-   the build, a new formatter can be added to the merge chain.
+### Format
+
+Directly convert token JSON data into the file content. Each `format` function is responsible for
+creating one style of output for a group of tokens, such as generating individual exports or nesting
+tokens as objects. Examples include transforming tokens into JS Docs, token object structures, or
+inline CSS variable declarations.
+
+### Merge
+
+Orchestrate how multiple formatters combine to produce a final, unified output file. A `merge`
+formatter calls several formatters in sequence and joins their outputs, making it possible to
+compose files that blend different token kinds (e.g., regular, composite, shadow) while preserving
+the correct structure and syntax.
 
 The `utils/formatters/index.ts` module is the main export surface, mapping all available formatters
 by name for use in build scripts and integrations.
@@ -41,31 +61,42 @@ combines multiple categories of tokens—by invoking other formatters and mergin
 enable the build process to produce layered or composite files, tailored for different platforms,
 with minimal redundancy.
 
-#### merge/objects :: mergeObjects.ts:
+| Formatter       | Description                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------------------ |
+| `merge/objects` | Merges multiple token groups into JavaScript objects, mapping nested token structures into code. |
+| `merge/refs`    | Combines several types of formatter output (composite, default, shadow) into one file.           |
+| `merge/types`   | Converts default format output into a TypeScript declaration file.                               |
 
-- Merges multiple token groups into JavaScript objects, mapping nested token structures into code.
-- Handles creation of composite token objects by:
-  - Rewriting token values as CSS variable names
-  - Preserving the original values for type generation in TypeScript
-  - Applying the correct formatter (e.g., `es6/objects`, `common-js/objects`) to generate
-    appropriate file structure
+Below is a detailed description of each merge formatter.
 
-#### merge/types :: mergeTypes.ts:
+### merge/objects
 
-- Converts default format output into a TypeScript declaration file.
-- Accepts a base formatter and applies additional format transformations before assembling the type
-  declarations with correct structure and documentation.
+Located in `mergeObjects.ts`. Merges multiple token groups into JavaScript objects, mapping nested
+token structures into code. Handles creation of composite token objects by:
 
-#### merge/refs :: mergeStyleReferences.ts:
+- Rewriting token values as CSS variable names
+- Preserving the original values for type generation in TypeScript
+- Applying the correct formatter (e.g., `es6/objects`, `common-js/objects`) to generate appropriate
+  file structure
 
-- Combines several types of formatter output into one file:
-  - The composite token formatter (for typography/composition tokens)
-  - The default formatter (for standard tokens containing references)
-  - The shadow formatter (for depth or shadow tokens)
-- Merges all three to create a comprehensive file, typically used by CSS/SCSS/LESS platforms to
-  provide a complete set of variables and references in a single generated stylesheet.
+### merge/refs
 
-## Formatters (Direct Transformation)
+Located in `mergeStyleReferences.ts`. Combines several types of formatter output into one file:
+
+- The composite token formatter (for typography/composition tokens)
+- The default formatter (for standard tokens containing references)
+- The shadow formatter (for depth or shadow tokens)
+
+Merges all three to create a comprehensive file, typically used by CSS/SCSS/LESS platforms to
+provide a complete set of variables and references in a single generated stylesheet.
+
+### merge/types
+
+Located in `mergeTypes.ts`. Converts default format output into a TypeScript declaration file.
+Accepts a base formatter and applies additional format transformations before assembling the type
+declarations with correct structure and documentation.
+
+## Direct Transformation Formatters
 
 This section documents the core direct transformation formatters. Each formatter takes Style
 Dictionary token input and returns content in the form best suited for its target runtime, language,
@@ -73,142 +104,25 @@ or platform.
 
 ### JavaScript/TypeScript Formatters
 
-#### js/common-js :: formatToInlineCommonJSModule
+| Formatter                   | Description                                                                                 |
+| --------------------------- | ------------------------------------------------------------------------------------------- |
+| `common-js/objects`         | Creates a CommonJS module with nested token objects.                                        |
+| `common-js/packages-export` | Creates a CommonJS index barrel file re-exporting all token package modules.                |
+| `es6/objects`               | Produces an ES6 module with tokens grouped into nested JavaScript objects.                  |
+| `es6/packages-export`       | Generates an ES6 index barrel file exporting all token package modules.                     |
+| `js/common-js`              | Creates a CommonJS module where each token is exported as a separate constant.              |
+| `js/es6`                    | Generates an ES6 module where each token is exported as a constant.                         |
+| `ts/inline`                 | Outputs a TypeScript declaration file (.d.ts) with constant exports for each token.         |
+| `ts/jsdoc-object`           | Outputs a TypeScript declaration file with tokens as nested objects with JSDoc annotations. |
 
-Creates a CommonJS module where each token is exported as a separate constant, with the value being
-its CSS variable name. This format is used for generating distributable CommonJS files.
 
-```js
-// input
-{
-  "allTokens": [
-    {
-      "name": "cinnamon100",
-      "value": "#ffefee",
-      "path": ["base", "palette", "cinnamon", "100"],
-      "filePath": "",
-      "isSource": true,
-      "original": {"value": "#ffefee"}
-    },
-    {
-      "name": "cinnamon200",
-      "value": "#fcc9c5",
-      "path": ["base", "palette", "cinnamon", "200"],
-      "filePath": "",
-      "isSource": true,
-      "original": {"value": "#fcc9c5"}
-    }
-  ]
-}
+Below is a detailed description of each JavaScript/TypeScript formatter.
 
-// output as a string
-`"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+#### common-js/objects
 
-exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";
-exports.cinnamon200 = "--cnvs-base-palette-cinnamon-200";`
-```
-
-#### js/es6 :: formatToInlineES6Module
-
-Generates an ES6 module where each token is exported as a constant with its CSS variable identifier
-as the value. Ideal for consuming in ES module environments.
-
-```js
-// input
-{
-  "allTokens": [
-    {
-      "name": "cinnamon100",
-      "value": "#ffefee",
-      "path": ["base", "palette", "cinnamon", "100"],
-      "filePath": "",
-      "isSource": true,
-      "original": {"value": "#ffefee"}
-    },
-    {
-      "name": "cinnamon200",
-      "value": "#fcc9c5",
-      "path": ["base", "palette", "cinnamon", "200"],
-      "filePath": "",
-      "isSource": true,
-      "original": {"value": "#fcc9c5"}
-    }
-  ]
-}
-
-// output as a string
-`export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";
-export const cinnamon200 = "--cnvs-base-palette-cinnamon-200";`
-```
-
-#### ts/inline :: formatInlineTypes
-
-Outputs a TypeScript declaration file (.d.ts) with constant exports for each token. If a token is
-deprecated, an appropriate annotation is included. Mainly used for type-safe consumption in TS
-projects.
-
-```ts
-// input
-{
-  "allTokens": [
-    {
-      "name": "cinnamon100",
-      "value": "#ffefee",
-      "path": ["base", "palette", "cinnamon", "100"],
-      "filePath": "",
-      "isSource": true,
-      "original": {"value": "#ffefee"}
-    },
-    {
-      "name": "cinnamon200",
-      "value": "#fcc9c5",
-      "path": ["base", "palette", "cinnamon", "200"],
-      "filePath": "",
-      "isSource": true,
-      "original": {"value": "#fcc9c5"}
-    }
-  ]
-}
-
-// output as a string
-`export declare const cinnamon100: "--cnvs-base-palette-cinnamon-100";
-export declare const cinnamon200: "--cnvs-base-palette-cinnamon-200";`
-```
-
-#### es6/objects :: formatES6ToObjects
-
-Produces an ES6 module in which tokens are grouped into nested JavaScript objects, reflecting their
-token paths. It uses the `properties` field from the Style Dictionary output. This format is
-preferred for assembling "brand" and "system" objects and enables hierarchical access patterns.
-
-```js
-// input
-{
-  properties: {
-    opacity: {
-      disabled: '--cnvs-sys-opacity-disabled'
-    },
-    space: {
-      x1: '--cnvs-sys-space-x1'
-    }
-  }
-}
-
-// output
-`export const opacity = {
-  disabled: '--cnvs-sys-opacity-disabled',
-};
-
-export const space = {
-  x1: '--cnvs-sys-space-x1',
-};`;
-```
-
-#### common-js/objects :: formatCommonToObjects
-
-Creates a CommonJS module with nested token objects that mirror their path structures, based on the
-`properties` object. Used to generate "brand" and "system" objects for CommonJS consumers.
+Located in `formatCommonToObjects`. Creates a CommonJS module with nested token objects that mirror
+their path structures, based on the `properties` object. Used to generate "brand" and "system"
+objects for CommonJS consumers.
 
 ```js
 // input
@@ -236,27 +150,13 @@ exports.space = {
 };`;
 ```
 
-#### es6/packages-export :: formatES6Exports
+#### common-js/packages-export
 
-Generates an ES6 index barrel file, exporting all token package modules (such as base, brand, and
-system) for broader consumption.
-
-**Output Example:**
+Located in `formatCommonJSExports`. Creates a CommonJS index barrel file that re-exports all token
+package modules, for simplified imports and compatibility within CommonJS systems.
 
 ```js
-`export * from './base';
-export * from './brand';
-export * from './system';`;
-```
-
-#### common-js/packages-export :: formatCommonJSExports
-
-Creates a CommonJS index barrel file that re-exports all token package modules, for simplified
-imports and compatibility within CommonJS systems.
-
-**Output Example:**
-
-```js
+// output
 `'use strict';
 Object.defineProperty(exports, '__esModule', {value: true});
 
@@ -268,13 +168,158 @@ var system = require('./system');
 exports.system = system;`;
 ```
 
-#### ts/jsdoc-object :: formatJSToTypes
+#### es6/objects
 
-Outputs a TypeScript declaration file where tokens are declared as nested objects, with each token
-property annotated by JSDoc. These comments include value details, descriptions, and
-references—improving documentation and type safety.
+Located in `formatES6ToObjects`. Produces an ES6 module in which tokens are grouped into nested
+JavaScript objects, reflecting their token paths. It uses the `properties` field from the Style
+Dictionary output. This format is preferred for assembling "brand" and "system" objects and enables
+hierarchical access patterns.
 
-**Input Example:**
+```js
+// input
+{
+  properties: {
+    opacity: {
+      disabled: '--cnvs-sys-opacity-disabled'
+    },
+    space: {
+      x1: '--cnvs-sys-space-x1'
+    }
+  }
+}
+
+// output
+`export const opacity = {
+  disabled: '--cnvs-sys-opacity-disabled',
+};
+
+export const space = {
+  x1: '--cnvs-sys-space-x1',
+};`;
+```
+
+#### es6/packages-export
+
+Located in `formatES6Exports`. Generates an ES6 index barrel file, exporting all token package
+modules (such as base, brand, and system) for broader consumption.
+
+```js
+// output
+`export * from './base';
+export * from './brand';
+export * from './system';`;
+```
+
+#### js/common-js
+
+Located in `formatToInlineCommonJSModule`. Creates a CommonJS module where each token is exported as
+a separate constant, with the value being its CSS variable name. This format is used for generating
+distributable CommonJS files.
+
+```js
+// input
+{
+  "allTokens": [
+    {
+      "name": "cinnamon100",
+      "value": "#ffefee",
+      "path": ["base", "palette", "cinnamon", "100"],
+      "filePath": "",
+      "isSource": true,
+      "original": {"value": "#ffefee"}
+    },
+    {
+      "name": "cinnamon200",
+      "value": "#fcc9c5",
+      "path": ["base", "palette", "cinnamon", "200"],
+      "filePath": "",
+      "isSource": true,
+      "original": {"value": "#fcc9c5"}
+    }
+  ]
+}
+
+// output
+`"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+
+exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";
+exports.cinnamon200 = "--cnvs-base-palette-cinnamon-200";`
+```
+
+#### js/es6
+
+Located in `formatToInlineES6Module`. Generates an ES6 module where each token is exported as a
+constant with its CSS variable identifier as the value. Ideal for consuming in ES module
+environments.
+
+```js
+// input
+{
+  "allTokens": [
+    {
+      "name": "cinnamon100",
+      "value": "#ffefee",
+      "path": ["base", "palette", "cinnamon", "100"],
+      "filePath": "",
+      "isSource": true,
+      "original": {"value": "#ffefee"}
+    },
+    {
+      "name": "cinnamon200",
+      "value": "#fcc9c5",
+      "path": ["base", "palette", "cinnamon", "200"],
+      "filePath": "",
+      "isSource": true,
+      "original": {"value": "#fcc9c5"}
+    }
+  ]
+}
+
+// output
+`export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";
+export const cinnamon200 = "--cnvs-base-palette-cinnamon-200";`
+```
+
+#### ts/inline
+
+Located in `formatInlineTypes`. Outputs a TypeScript declaration file (.d.ts) with constant exports
+for each token. If a token is deprecated, an appropriate annotation is included. Mainly used for
+type-safe consumption in TS projects.
+
+```ts
+// input
+{
+  "allTokens": [
+    {
+      "name": "cinnamon100",
+      "value": "#ffefee",
+      "path": ["base", "palette", "cinnamon", "100"],
+      "filePath": "",
+      "isSource": true,
+      "original": {"value": "#ffefee"}
+    },
+    {
+      "name": "cinnamon200",
+      "value": "#fcc9c5",
+      "path": ["base", "palette", "cinnamon", "200"],
+      "filePath": "",
+      "isSource": true,
+      "original": {"value": "#fcc9c5"}
+    }
+  ]
+}
+
+// output
+`export declare const cinnamon100: "--cnvs-base-palette-cinnamon-100";
+export declare const cinnamon200: "--cnvs-base-palette-cinnamon-200";`
+```
+
+#### ts/jsdoc-object
+
+Located in `formatJSToTypes`. Outputs a TypeScript declaration file where tokens are declared as
+nested objects, with each token property annotated by JSDoc. These comments include value details,
+descriptions, and references—improving documentation and type safety.
 
 ```js
 // input
@@ -310,17 +355,26 @@ references—improving documentation and type safety.
 };`;
 ```
 
----
-
 ### CSS/SCSS/LESS Formatters
 
 These formatters generate stylesheet code for various preprocessors, enabling consumption of tokens
 in design systems and UI frameworks.
 
-#### css/composite :: formatCSSComposite
+| Formatter        | Description                                                     |
+| ---------------- | --------------------------------------------------------------- |
+| `css/composite`  | Outputs CSS classes for composite tokens using CSS variables.   |
+| `css/shadow`     | Defines CSS custom properties for shadow or depth tokens.       |
+| `less/composite` | Outputs Less classes for composite tokens using Less variables. |
+| `less/shadow`    | Generates Less variables for shadow tokens.                     |
+| `scss/composite` | Emits SCSS classes for composite tokens using Sass variables.   |
+| `scss/shadow`    | Outputs Sass variables for shadow tokens.                       |
 
-Outputs CSS classes for composite tokens, like typography or border sets, using CSS variables for
-their values.
+Below is a detailed description of each CSS/SCSS/LESS formatter.
+
+#### css/composite
+
+Located in `formatCSSComposite`. Outputs CSS classes for composite tokens, like typography or border
+sets, using CSS variables for their values.
 
 ```js
 // input
@@ -345,38 +399,35 @@ their values.
 }`
 ```
 
-#### scss/composite :: formatSassComposite
+#### css/shadow
 
-Emits SCSS classes for composite tokens, referencing the appropriate `$cnvs-*` Sass variables for
-their values.
+Located in `formatCSSShadow`. Defines CSS custom properties for shadow or depth tokens, enabling
+consistent reuse and theming for elevation styles.
 
 ```js
 // input
 {
   allTokens: [
     {
-      value: {border: '0.0625rem solid rgba(162,171,180,1)'},
-      type: 'composition',
+      value: '0 4px 16px rgba(0, 0, 0, 0.1)',
+      type: 'shadow',
       filePath: 'tokens/all.json',
       isSource: true,
-      original: {value: {border: '{sys.line.disabled}'}, type: 'composition'},
-      name: 'cnvs-sys-border-input-disabled',
+      name: 'cnvs-sys-depth-1',
       attributes: {},
-      path: ['sys', 'border', 'input', 'disabled'],
+      path: ['sys', 'depth', '1'],
     },
   ],
 }
 
 // output
-`.cnvs-sys-border-input-disabled {
-  border: $cnvs-sys-line-disabled;
-}`
+`--cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
 ```
 
-#### less/composite :: formatLessComposite
+#### less/composite
 
-Outputs Less classes for composite tokens, using `@cnvs-*` Less variables within the generated class
-blocks.
+Located in `formatLessComposite`. Outputs Less classes for composite tokens, using `@cnvs-*` Less
+variables within the generated class blocks.
 
 ```js
 // input
@@ -401,61 +452,13 @@ blocks.
 }`
 ```
 
-#### css/shadow :: formatCSSShadow
+#### less/shadow
 
-Defines CSS custom properties for shadow or depth tokens, enabling consistent reuse and theming for
-elevation styles.
-
-**Input Example:**
+Located in `formatLessShadow`. Generates Less variables for shadow tokens, supporting shadow and
+elevation styling across Less-based projects.
 
 ```js
-{
-  allTokens: [
-    {
-      value: '0 4px 16px rgba(0, 0, 0, 0.1)',
-      type: 'shadow',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      name: 'cnvs-sys-depth-1',
-      attributes: {},
-      path: ['sys', 'depth', '1'],
-    },
-  ],
-}
-
-// output
-`--cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
-```
-
-#### scss/shadow :: formatSassShadow
-
-Outputs Sass variables for shadow tokens, making elevation designs accessible in SCSS.
-
-```js
-{
-  allTokens: [
-    {
-      value: '0 4px 16px rgba(0, 0, 0, 0.1)',
-      type: 'shadow',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      name: 'cnvs-sys-depth-1',
-      attributes: {},
-      path: ['sys', 'depth', '1'],
-    },
-  ],
-}
-
-// output
-`$cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
-```
-
-#### less/shadow :: formatLessShadow
-
-Generates Less variables for shadow tokens, supporting shadow and elevation styling across
-Less-based projects.
-
-```js
+// input
 {
   allTokens: [
     {
@@ -472,6 +475,59 @@ Less-based projects.
 
 // output
 `@cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
+```
+
+#### scss/composite
+
+Located in `formatSassComposite`. Emits SCSS classes for composite tokens, referencing the
+appropriate `$cnvs-*` Sass variables for their values.
+
+```js
+// input
+{
+  allTokens: [
+    {
+      value: {border: '0.0625rem solid rgba(162,171,180,1)'},
+      type: 'composition',
+      filePath: 'tokens/all.json',
+      isSource: true,
+      original: {value: {border: '{sys.line.disabled}'}, type: 'composition'},
+      name: 'cnvs-sys-border-input-disabled',
+      attributes: {},
+      path: ['sys', 'border', 'input', 'disabled'],
+    },
+  ],
+}
+
+// output
+`.cnvs-sys-border-input-disabled {
+  border: $cnvs-sys-line-disabled;
+}`
+```
+
+#### scss/shadow
+
+Located in `formatSassShadow`. Outputs Sass variables for shadow tokens, making elevation designs
+accessible in SCSS.
+
+```js
+// input
+{
+  allTokens: [
+    {
+      value: '0 4px 16px rgba(0, 0, 0, 0.1)',
+      type: 'shadow',
+      filePath: 'tokens/all.json',
+      isSource: true,
+      name: 'cnvs-sys-depth-1',
+      attributes: {},
+      path: ['sys', 'depth', '1'],
+    },
+  ],
+}
+
+// output
+`$cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
 ```
 
 </Unstyled>

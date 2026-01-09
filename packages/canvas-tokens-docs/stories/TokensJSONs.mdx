@@ -4,7 +4,22 @@ import {Meta, Unstyled} from '@storybook/blocks';
 
 <Unstyled>
 
-# Token JSON Structure Overview
+# Token JSON Structure
+
+## Table of Contents
+
+- [Overview](#overview)
+  - [File Organization](#file-organization)
+- [Example Structure](#example-structure)
+  - [Key Fields](#key-fields)
+  - [Token References](#token-references)
+- [Composite Tokens](#composite-tokens)
+- [Deprecated Tokens](#deprecated-tokens)
+  - [Purpose](#purpose)
+  - [Key Fields](#key-fields-1)
+  - [Example Structure](#example-structure-1)
+
+## Overview
 
 Canvas tokens are authored and maintained as JSON files in the `tokens/` directory. Each JSON file
 represents a collection of tokens for a specific level (`base`, `brand`, or `sys`). The structure
@@ -17,9 +32,20 @@ with some Canvas-specific conventions.
 > [`canvas-tokens-studio`](https://github.com/Workday/canvas-tokens-studio) repository. All changes
 > to tokens must be done in `canvas-tokens-studio` repository.
 
-<br />
+### File Organization
 
-#### Example: Base Color Tokens (`tokens/base.json`)
+| Category          | Location                          | Description                                                                                 |
+| ----------------- | --------------------------------- | ------------------------------------------------------------------------------------------- |
+| Base              | `tokens/base.json`                | Foundation tokens (color, spacing, etc.).                                                   |
+| Brand             | `tokens/web/brand.json`           | Brand/tenant-level overrides and references.                                                |
+| Deprecated Base   | `tokens/web/deprecated/base.json` | Deprecated Foundation tokens (color, spacing, etc.).                                        |
+| Deprecated Brand  | `tokens/web/deprecated/brand/*`   | Deprecated brand/tenant-level overrides and references.                                     |
+| Deprecated System | `tokens/web/deprecated/sys/*`     | Deprecated system-level composite and component-aligned tokens (shadows, typography, etc.). |
+| System            | `tokens/web/sys.json`             | System-level composite and component-aligned tokens (shadows, typography, etc.).            |
+
+## Example Structure
+
+Below is an example of the structure for a base color token in `tokens/base.json`.
 
 ```json
 {
@@ -40,22 +66,17 @@ with some Canvas-specific conventions.
 }
 ```
 
-**Key Fields:**
+### Key Fields
 
-- **`value`**: The token's primitive or referenced value (hex, rgba, a reference string, etc.).
-- **`type`**: The category/type (e.g., `color`, `dimension`, `shadow`).
-- **`description`** _(optional)_: Human-readable documentation for the token. Used to generate
-  JSDocs.
+All tokens have a `value` and `type` field, and optionally have a `description` field.
 
-**Key Fields in deprecated files:**
+| Field         | Description                                                                       |
+| ------------- | --------------------------------------------------------------------------------- |
+| `value`       | The token's primitive or referenced value (hex, rgba, a reference string, etc.).  |
+| `type`        | The category/type (e.g., `color`, `dimension`, `shadow`).                         |
+| `description` | Human-readable documentation for the token. Used to generate JSDocs. _(optional)_ |
 
-- **`deprecated`**: Marks the token as deprecated in general token files.
-- **`deprecatedComment`**: An explanation for why the token was deprecated, especially helpful in
-  deprecated token files.
-- **`fallback`**: Specifies a fallback token/path to use instead of the deprecated token, often
-  included in deprecated token files.
-
-#### Token References
+### Token References
 
 Tokens can reference other tokens using the `{path.to.token}` syntax. For example:
 
@@ -73,9 +94,10 @@ Tokens can reference other tokens using the `{path.to.token}` syntax. For exampl
 }
 ```
 
-#### Composite Tokens
+## Composite Tokens
 
-Composite or object tokens (for typography or shadows) may use nested values:
+Composite or object tokens have nested values and are typically used for typography or shadows.
+Below is an example of a typography token:
 
 ```json
 {
@@ -95,30 +117,38 @@ Composite or object tokens (for typography or shadows) may use nested values:
 }
 ```
 
-#### Deprecated Tokens
+## Deprecated Tokens
 
 Deprecated tokens are retained in the token set to ensure backward compatibility and allow dependent
 applications or design systems a migration window. Deprecating a token signals to consumers that the
 token should no longer be used for new work, and that it may be removed in future major releases.
 
-**Purpose of Deprecated Tokens:**
+### Purpose
 
-- **Achieve smooth transitions:** Deprecated tokens allow consuming codebases to continue
-  functioning while gradually migrating to new or replacement tokens.
-- **Communicate intent:** By marking tokens as deprecated, authors signal to users that a token’s
-  value or purpose is outdated, replaced, or no longer aligns with current design guidelines.
-- **Enable tooling:** The presence of `deprecated`, `deprecatedComment`, and `fallback` properties
-  permits build tools, linters, and documentation generators to warn users, automate migrations, or
-  replace deprecated usages with recommended alternatives.
+Deprecated tokens serve three main purposes:
 
-A deprecated token typically includes the following fields:
+1. **Improve Change Management:** Deprecated tokens allow consuming codebases to continue
+   functioning while gradually migrating to new or replacement tokens.
+2. **Communicate Intent:** By marking tokens as deprecated, authors signal to users that a token’s
+   value or purpose is outdated, replaced, or no longer aligns with current design guidelines.
+3. **Enable Tooling:** The presence of `deprecated`, `deprecatedComment`, and `fallback` properties
+   permits build tools, linters, and documentation generators to warn users, automate migrations, or
+   replace deprecated usages with recommended alternatives.
 
-- **`deprecated`**: Boolean indicating this token is deprecated.
-- **`deprecatedComment`**: An optional string explaining why it was deprecated and recommendations
-  for migration.
-- **`fallback`**: An optional field referencing the canonical token to use instead.
+### Key Fields
 
-_Example:_
+Deprecated tokens have the `value`, `type`, and `description` fields listed above, and also include
+the following deprecated-specific fields:
+
+| Field               | Description                                                             |
+| ------------------- | ----------------------------------------------------------------------- |
+| `deprecated`        | Boolean indicating the token is deprecated.                             |
+| `deprecatedComment` | An explanation for why the token was deprecated.                        |
+| `fallback`          | Specifies a fallback token/path to use instead of the deprecated token. |
+
+### Example Structure
+
+Below is an example structure of a deprecated token:
 
 ```json
 {
@@ -127,6 +157,7 @@ _Example:_
       "brand": {
         "value": "{base.palette.blue.400}",
         "type": "color",
+        "description": "Brand background color",
         "deprecated": true,
         "deprecatedComment": "Use `brand.primary.base` instead for updated color scaling.",
         "fallback": "{brand.primary.base}"
@@ -135,18 +166,5 @@ _Example:_
   }
 }
 ```
-
-#### File Organization
-
-- **Base:** `tokens/base.json` — Foundation tokens (color, spacing, etc.).
-- **Brand:** `tokens/brand/` — Brand/tenant-level overrides and references.
-- **System:** `tokens/sys/` — System-level composite and component-aligned tokens (shadows,
-  typography, etc.).
-- **Deprecated Base:** `tokens/deprecated/base.json` — Deprecated Foundation tokens (color, spacing,
-  etc.).
-- **Deprecated Brand:** `tokens/deprecated/brand/*` — Deprecated Brand/tenant-level overrides and
-  references.
-- **Deprecated System:** `tokens/deprecated/sys/*` — Deprecated System-level composite and
-  component-aligned tokens (shadows, typography, etc.).
 
 </Unstyled>
