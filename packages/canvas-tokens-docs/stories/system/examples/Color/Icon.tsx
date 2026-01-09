@@ -8,37 +8,37 @@ import {
   sortSystemColorPalette,
 } from '../../../../components/ColorGrid';
 
-const iconPalette = buildPalette('system.color.icon', {
-  default: system.color.icon.default,
-  soft: system.color.icon.soft,
-  strong: system.color.icon.strong,
-  inverse: system.color.icon.inverse,
+const iconPalette = buildPalette('system.color.fg', {
+  default: system.color.fg.default,
+  'muted.default': system.color.fg.muted.default,
+  strong: system.color.fg.strong,
+  inverse: system.color.fg.inverse,
 }).sort(sortSystemColorPalette);
 
 export const IconColors = () => <ColorGrid name="Icon Default Colors" palette={iconPalette} />;
 
 const iconPrimaryPalette = buildPalette(
-  'system.color.icon.primary',
-  system.color.icon.primary
+  'system.color.brand.fg.primary',
+  system.color.brand.fg.primary
 ).sort(sortSystemColorPalette);
 
 export const IconPrimaryColors = () => (
   <ColorGrid name="Icon Primary Colors" palette={iconPrimaryPalette} />
 );
 
-const iconInfoPalette = buildPalette('system.color.icon.info', system.color.icon.info).sort(
+const iconInfoPalette = buildPalette('system.color.fg.info', system.color.fg.info).sort(
   sortSystemColorPalette
 );
 
 export const IconInfoColors = () => <ColorGrid name="Icon Info Colors" palette={iconInfoPalette} />;
 
 const iconStatusPalettes = buildPaletteGroup(
-  'system.color.icon',
+  'system.color.fg',
   {
-    positive: system.color.icon.positive,
-    caution: system.color.icon.caution,
-    critical: system.color.icon.critical,
-    disabled: system.color.icon.disabled,
+    success: system.color.fg.success,
+    warning: system.color.fg.warning,
+    danger: system.color.fg.danger,
+    disabled: system.color.fg.disabled,
   },
   sortSystemColorPalette
 );

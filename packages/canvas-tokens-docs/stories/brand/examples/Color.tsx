@@ -56,10 +56,67 @@ const objectPalettes = objectGroups.map(group => {
 
 const palettes = [...numericPalettes, ...objectPalettes];
 
+// Deprecated token groups (replaced by critical, caution, positive)
+const deprecatedGroups = ['error', 'alert', 'success'] as const;
+
+// Build deprecated group palettes (error, alert, success)
+const deprecatedGroupPalettes = deprecatedGroups.map(group => {
+  const tokens = brandTokens[group as keyof typeof brandTokens];
+  if (typeof tokens !== 'object' || tokens === null) {
+    return {name: group, values: []};
+  }
+
+  const values = Object.entries(tokens).map(([tokenName, varName]) =>
+    buildColorSwatch(varName as string, `brand.${group}.${tokenName}`)
+  );
+
+  return {name: group, values};
+});
+
+// Build deprecated tokens from primary/neutral (base, lightest, etc.)
+const deprecatedNamedTokenPalettes = (['primary', 'neutral'] as const).map(group => {
+  const tokens = brandTokens[group as keyof typeof brandTokens];
+  if (typeof tokens !== 'object' || tokens === null) {
+    return {name: `${group} (deprecated)`, values: []};
+  }
+
+  const values = Object.entries(tokens).map(([tokenName, varName]) =>
+    buildColorSwatch(varName as string, `brand.${group}.${tokenName}`)
+  );
+
+  return {name: `${group} (deprecated)`, values};
+});
+
+// Deprecated common tokens
+const deprecatedCommonPalette = {
+  name: 'common (deprecated)',
+  values: Object.entries(brandTokens.common)
+    .filter(([tokenName]) => deprecatedCommonTokens.includes(tokenName))
+    .map(([tokenName, varName]) =>
+      buildColorSwatch(varName as string, `brand.common.${tokenName}`)
+    ),
+};
+
+const deprecatedPalettes = [
+  ...deprecatedGroupPalettes,
+  ...deprecatedNamedTokenPalettes,
+  deprecatedCommonPalette,
+];
+
 export const ColorTokens = () => {
   return (
     <Stack>
       {palettes.map(palette => (
+        <ColorGrid key={palette.name} name={palette.name} palette={palette.values} />
+      ))}
+    </Stack>
+  );
+};
+
+export const DeprecatedColorTokens = () => {
+  return (
+    <Stack>
+      {deprecatedPalettes.map(palette => (
         <ColorGrid key={palette.name} name={palette.name} palette={palette.values} />
       ))}
     </Stack>
