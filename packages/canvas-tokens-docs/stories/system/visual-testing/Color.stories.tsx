@@ -1,7 +1,6 @@
 import {AccentColors, AccentMutedColors, AccentOverlayColors} from '../examples/Color/Accent';
 import {
   BackgroundColors,
-  BackgroundAlternateColors,
   BackgroundMutedColors,
   BackgroundContrastColors,
   BackgroundStatusColors,
@@ -56,10 +55,6 @@ export const Background = {
 
 export const BackgroundAI = {
   render: BackgroundAIColors,
-};
-
-export const BackgroundAlternate = {
-  render: BackgroundAlternateColors,
 };
 
 export const BackgroundMuted = {

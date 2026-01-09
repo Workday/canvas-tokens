@@ -33,14 +33,6 @@ export const BackgroundTransparentColors = () => (
   />
 );
 
-const alternatePalette = buildPalette('system.color.bg.alt', system.color.bg.alt).sort(
-  sortSystemColorPalette
-);
-
-export const BackgroundAlternateColors = () => (
-  <ColorGrid name="Background Alternate Colors" palette={alternatePalette} variableType="system" />
-);
-
 // Note: system.color.bg.muted doesn't exist, using surface.alt instead
 const mutedPalette = buildPalette('system.color.surface.alt', system.color.surface.alt).sort(
   sortSystemColorPalette
@@ -50,17 +42,19 @@ export const BackgroundMutedColors = () => (
   <ColorGrid name="Background Muted Colors" palette={mutedPalette} variableType="system" />
 );
 
-const contrastPalette = buildPalette('system.color.surface.contrast', system.color.surface.contrast).sort(
-  sortSystemColorPalette
-);
+const contrastPalette = buildPalette(
+  'system.color.surface.contrast',
+  system.color.surface.contrast
+).sort(sortSystemColorPalette);
 
 export const BackgroundContrastColors = () => (
   <ColorGrid name="Background Contrast Colors" palette={contrastPalette} variableType="system" />
 );
 
-const primaryPalette = buildPalette('system.color.brand.surface.primary', system.color.brand.surface.primary).sort(
-  sortSystemColorPalette
-);
+const primaryPalette = buildPalette(
+  'system.color.brand.surface.primary',
+  system.color.brand.surface.primary
+).sort(sortSystemColorPalette);
 
 export const BackgroundPrimaryColors = () => (
   <ColorGrid name="Background Primary Colors" palette={primaryPalette} variableType="system" />
