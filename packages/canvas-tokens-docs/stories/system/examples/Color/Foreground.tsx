@@ -23,9 +23,9 @@ export const ForegroundColors = () => (
 const statusPalettes = buildPaletteGroup(
   'system.color.fg',
   {
-    caution: system.color.fg.caution,
-    critical: system.color.fg.critical,
-    positive: system.color.fg.positive,
+    warning: system.color.fg.warning,
+    danger: system.color.fg.danger,
+    success: system.color.fg.success,
   },
   sortSystemColorPalette
 );
@@ -42,7 +42,7 @@ export const ForegroundMutedColors = () => (
   <ColorGrid name="Foreground Muted Colors" palette={mutedPalette} variableType="system" />
 );
 
-const primaryPalette = buildPalette('system.color.fg.primary', system.color.fg.primary).sort(
+const primaryPalette = buildPalette('system.color.brand.fg.primary', system.color.brand.fg.primary).sort(
   sortSystemColorPalette
 );
 
@@ -67,7 +67,7 @@ export const ForegroundContrastColors = () => (
 );
 
 const aiPalette = buildPalette('system.color.fg', {
-  ai: system.color.fg.default,
+  ai: system.color.fg.ai,
 }).sort(sortSystemColorPalette);
 
 export const ForegroundAIColors = () => (

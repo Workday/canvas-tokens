@@ -227,6 +227,21 @@
         "type": "borderRadius",
         "comment": "Primarily used for elevated and simple parent containers with greater amounts of content and UI. Dialogs, Modals, Bottom Sheets"
       },
+      "xl": {
+        "value": "{base.size.400}",
+        "type": "borderRadius",
+        "comment": "Extra large rounding for prominent containers"
+      },
+      "xxl": {
+        "value": "{base.size.500}",
+        "type": "borderRadius",
+        "comment": "Extra extra large rounding for cards and items"
+      },
+      "xxxl": {
+        "value": "{base.size.600}",
+        "type": "borderRadius",
+        "comment": "Maximum rounding for modals and large containers"
+      },
       "full": {
         "value": "{base.size.75} * 100",
         "type": "borderRadius",
@@ -647,738 +662,450 @@
       }
     },
     "color": {
-      "bg": {
+      "surface": {
         "default": {
           "value": "{base.palette.neutral.0}",
           "type": "color",
-          "comment": "Main background color"
+          "comment": "Default surface background"
         },
-        "transparent": {
-          "default": {
-            "value": "oklch({base.palette.neutral.1000} / {base.opacity.0})",
-            "type": "color",
-            "comment": "Transparent background"
-          },
-          "strong": {
-            "value": "oklch({base.palette.neutral.1000} / {base.opacity.100})",
-            "type": "color",
-            "comment": "Inverse Secondary Button Hover state"
-          },
-          "stronger": {
-            "value": "oklch({base.palette.neutral.1000} / {base.opacity.250})",
-            "type": "color",
-            "comment": "Inverse Secondary Button Active state"
-          }
-        },
-        "overlay": {
-          "value": "oklch({base.palette.neutral.1000} / {base.opacity.400})",
+        "navigation": {
+          "value": "{base.palette.neutral.A0}",
           "type": "color",
-          "comment": "Overlay background"
+          "comment": "Surface color for navigation elements, like the SidePanel or Top Nav Bar"
         },
-        "translucent": {
-          "value": "oklch({base.palette.neutral.1000} / {base.opacity.500})",
+        "popover": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color"
+        },
+        "modal": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color"
+        },
+        "raised": {
+          "value": "{base.palette.slate.A25}",
           "type": "color",
-          "comment": "Tooltip, Status Indicator"
+          "comment": "Surfaces that are raised above another surface, such as column headers in Tables"
         },
         "alt": {
-          "softer": {
-            "value": "{base.palette.slate.25}",
-            "type": "color",
-            "comment": "Disabled inputs"
-          },
-          "soft": {
-            "value": "{base.palette.slate.50}",
-            "type": "color",
-            "comment": "Alternative page background"
-          },
           "default": {
-            "value": "{base.palette.slate.100}",
+            "value": "{base.palette.slate.A50}",
             "type": "color",
-            "comment": "Surface hover, Secondary surfaces"
+            "comment": "Alternative surface color"
           },
           "strong": {
-            "value": "{base.palette.slate.200}",
+            "value": "{base.palette.slate.A100}",
             "type": "color",
-            "comment": "Active states"
-          },
-          "stronger": {
-            "value": "{base.palette.slate.300}",
-            "type": "color",
-            "comment": "Active state for segmented control, Pill"
+            "comment": "Strong alternative surface color"
           }
         },
-        "muted": {
-          "softer": {
-            "value": "{base.palette.slate.400}",
-            "type": "color"
-          },
-          "soft": {
-            "value": "{base.palette.slate.500}",
-            "type": "color"
-          },
+        "loading": {
+          "value": "{base.palette.slate.A200}",
+          "type": "color"
+        },
+        "info": {
           "default": {
-            "value": "{base.palette.slate.600}",
+            "value": "{base.palette.blue.A25}",
+            "type": "color",
+            "comment": "Surface color used on the backgrounds of informational highlights and sections"
+          },
+          "strong": {
+            "value": "{base.palette.blue.A50}",
+            "type": "color",
+            "comment": "Surface color used on the backgrounds of informational status indicators and badges"
+          }
+        },
+        "danger": {
+          "default": {
+            "value": "{base.palette.red.A25}",
             "type": "color"
           },
           "strong": {
-            "value": "{base.palette.slate.700}",
+            "value": "{base.palette.red.A50}",
             "type": "color"
           }
         },
-        "contrast": {
+        "warning": {
           "default": {
-            "value": "{base.palette.neutral.900}",
-            "type": "color",
-            "comment": "Contrast backgrounds, like Secondary Buttons"
+            "value": "{base.palette.amber.A25}",
+            "type": "color"
           },
           "strong": {
-            "value": "{base.palette.neutral.950}",
-            "type": "color",
-            "comment": "Contrast backgrounds, like Secondary Buttons"
+            "value": "{base.palette.amber.A50}",
+            "type": "color"
           }
         },
-        "primary": {
-          "softest": {
-            "value": "{base.palette.blue.25}",
-            "type": "color",
-            "comment": "Surface"
-          },
-          "softer": {
-            "value": "{base.palette.blue.50}",
-            "type": "color",
-            "comment": "Select"
-          },
-          "soft": {
-            "value": "{base.palette.blue.100}",
-            "type": "color",
-            "comment": "Primary disabled"
-          },
+        "success": {
           "default": {
-            "value": "{base.palette.blue.600}",
-            "type": "color",
-            "comment": "Primary brand color"
+            "value": "{base.palette.green.A25}",
+            "type": "color"
           },
           "strong": {
-            "value": "{base.palette.blue.700}",
-            "type": "color",
-            "comment": "Brand hover background"
-          },
-          "stronger": {
-            "value": "{base.palette.blue.800}",
-            "type": "color",
-            "comment": "Brand active background"
-          }
-        },
-        "positive": {
-          "softest": {
-            "value": "{base.palette.green.25}",
-            "type": "color",
-            "comment": "Lightest surface success background"
-          },
-          "softer": {
-            "value": "{base.palette.green.50}",
-            "type": "color",
-            "comment": "Surface success background"
-          },
-          "soft": {
-            "value": "{base.palette.green.100}",
-            "type": "color",
-            "comment": "Disabled success background"
-          },
-          "default": {
-            "value": "{base.palette.green.600}",
-            "type": "color",
-            "comment": "Disabled success background"
-          },
-          "strong": {
-            "value": "{base.palette.green.700}",
-            "type": "color",
-            "comment": "Hover success background"
-          },
-          "stronger": {
-            "value": "{base.palette.green.800}",
-            "type": "color",
-            "comment": "Active success background"
-          }
-        },
-        "caution": {
-          "softest": {
-            "value": "{base.palette.amber.25}",
-            "type": "color",
-            "comment": "Disabled warning background"
-          },
-          "softer": {
-            "value": "{base.palette.amber.50}",
-            "type": "color",
-            "comment": "Softer warning background"
-          },
-          "soft": {
-            "value": "{base.palette.amber.100}",
-            "type": "color",
-            "comment": "Softer warning background"
-          },
-          "default": {
-            "value": "{base.palette.amber.400}",
-            "type": "color",
-            "comment": "Default warning background"
-          },
-          "strong": {
-            "value": "{base.palette.amber.500}",
-            "type": "color",
-            "comment": "Strong warning background"
-          },
-          "stronger": {
-            "value": "{base.palette.amber.600}",
-            "type": "color",
-            "comment": "Stronger warning background"
-          }
-        },
-        "critical": {
-          "softest": {
-            "value": "{base.palette.red.25}",
-            "type": "color",
-            "comment": "Input error background"
-          },
-          "softer": {
-            "value": "{base.palette.red.50}",
-            "type": "color",
-            "comment": "Disabled error background"
-          },
-          "soft": {
-            "value": "{base.palette.red.100}",
-            "type": "color",
-            "comment": "Disabled error background"
-          },
-          "default": {
-            "value": "{base.palette.red.600}",
-            "type": "color",
-            "comment": "Default error background"
-          },
-          "strong": {
-            "value": "{base.palette.red.700}",
-            "type": "color",
-            "comment": "Strong error background"
-          },
-          "stronger": {
-            "value": "{base.palette.red.800}",
-            "type": "color",
-            "comment": "Stronger error background"
+            "value": "{base.palette.green.A50}",
+            "type": "color"
           }
         },
         "ai": {
           "default": {
-            "value": "{base.palette.blue.100}",
-            "type": "color",
-            "comment": "AI container"
+            "value": "{base.palette.blue.A100}",
+            "type": "color"
           },
-          "strong": {
-            "value": "{base.palette.blue.200}",
-            "type": "color",
-            "comment": "Hover on AI container"
+          "hover": {
+            "value": "{base.palette.blue.A200}",
+            "type": "color"
           },
-          "stronger": {
-            "value": "{base.palette.blue.400}",
-            "type": "color",
-            "comment": "Active state on AI containers"
-          },
-          "strongest": {
-            "value": "{base.palette.blue.950}",
-            "type": "color",
-            "comment": "AI surfaces"
+          "pressed": {
+            "value": "{base.palette.blue.A200}",
+            "type": "color"
           }
         },
-        "info": {
-          "softest": {
-            "value": "{base.palette.blue.25}",
-            "type": "color",
-            "comment": "Surface"
-          },
-          "softer": {
-            "value": "{base.palette.blue.50}",
-            "type": "color",
-            "comment": "Select"
-          },
-          "soft": {
-            "value": "{base.palette.blue.100}",
-            "type": "color",
-            "comment": "Disabled"
-          },
-          "default": {
-            "value": "{base.palette.blue.600}",
-            "type": "color",
-            "comment": "Primary brand color"
-          },
-          "strong": {
-            "value": "{base.palette.blue.700}",
-            "type": "color",
-            "comment": "Brand hover background"
-          },
-          "stronger": {
-            "value": "{base.palette.blue.800}",
-            "type": "color",
-            "comment": "Brand active background"
-          }
-        }
-      },
-      "text": {
-        "default": {
-          "value": "{base.palette.neutral.800}",
-          "type": "color",
-          "comment": "Body text"
-        },
-        "strong": {
-          "value": "{base.palette.neutral.900}",
-          "type": "color",
-          "comment": "Heading text"
-        },
-        "stronger": {
-          "value": "{base.palette.neutral.950}",
-          "type": "color",
-          "comment": "Display text"
-        },
-        "disabled": {
-          "value": "{base.palette.slate.400}",
-          "type": "color",
-          "comment": "Disabled text color"
-        },
-        "hint": {
-          "value": "{base.palette.slate.600}",
-          "type": "color",
-          "comment": "Hint text color"
+        "transparent": {
+          "value": "{base.palette.neutral.A0}",
+          "type": "color"
         },
         "inverse": {
           "value": "{base.palette.neutral.0}",
-          "type": "color",
-          "comment": "Inverse text color"
+          "type": "color"
         },
-        "critical": {
+        "contrast": {
           "default": {
-            "value": "{base.palette.red.600}",
-            "type": "color",
-            "comment": "Error text"
+            "value": "{base.palette.neutral.A900}",
+            "type": "color"
           },
           "strong": {
-            "value": "{base.palette.red.700}",
-            "type": "color",
-            "comment": "Error text"
-          },
-          "stronger": {
-            "value": "{base.palette.red.800}",
-            "type": "color",
-            "comment": "Error text"
-          },
-          "soft": {
-            "value": "{base.palette.red.400}",
-            "type": "color",
-            "comment": "Error text"
-          },
-          "softer": {
-            "value": "{base.palette.red.200}",
-            "type": "color",
-            "comment": "Error text"
+            "value": "{base.palette.neutral.A950}",
+            "type": "color"
           }
         },
-        "primary": {
-          "default": {
-            "value": "{base.palette.blue.600}",
-            "type": "color",
-            "comment": "Branded text"
+        "overlay": {
+          "hover": {
+            "default": {
+              "value": "{base.palette.slate.A50}",
+              "type": "color"
+            },
+            "inverse": {
+              "value": "{base.palette.white.A200}",
+              "type": "color"
+            }
           },
-          "strong": {
-            "value": "{base.palette.blue.700}",
-            "type": "color",
-            "comment": "Branded hover text"
+          "pressed": {
+            "default": {
+              "value": "{base.palette.slate.A100}",
+              "type": "color"
+            },
+            "inverse": {
+              "value": "{base.palette.white.A300}",
+              "type": "color"
+            }
           },
-          "stronger": {
-            "value": "{base.palette.blue.800}",
-            "type": "color",
-            "comment": "Active links"
-          },
-          "soft": {
-            "value": "{base.palette.blue.400}",
-            "type": "color",
-            "comment": "Active links"
-          },
-          "softer": {
-            "value": "{base.palette.blue.200}",
-            "type": "color",
-            "comment": "Active links"
+          "scrim": {
+            "value": "{base.palette.neutral.A400}",
+            "type": "color"
           }
-        },
-        "caution": {
-          "default": {
-            "value": "{base.palette.amber.900}",
-            "type": "color",
-            "comment": "Warning text"
-          },
-          "strong": {
-            "value": "{base.palette.amber.950}",
-            "type": "color",
-            "comment": "Strong warning text"
-          },
-          "soft": {
-            "value": "{base.palette.amber.400}",
-            "type": "color",
-            "comment": "Disabled warning text"
-          },
-          "stronger": {
-            "value": "{base.palette.amber.975}",
-            "type": "color",
-            "comment": "Stronger warning text"
-          },
-          "softer": {
-            "value": "{base.palette.amber.200}",
-            "type": "color",
-            "comment": "Softer warning text"
-          }
-        },
+        }
+      },
+      "accent": {
         "ai": {
           "value": "{base.palette.blue.950}",
           "type": "color"
         },
-        "positive": {
-          "default": {
-            "value": "{base.palette.green.600}",
-            "type": "color",
-            "comment": "Branded text"
-          },
-          "strong": {
-            "value": "{base.palette.green.700}",
-            "type": "color",
-            "comment": "Branded hover text"
-          },
-          "stronger": {
-            "value": "{base.palette.green.800}",
-            "type": "color",
-            "comment": "Active links"
-          },
-          "soft": {
-            "value": "{base.palette.green.400}",
-            "type": "color",
-            "comment": "Active links"
-          },
-          "softer": {
-            "value": "{base.palette.green.200}",
-            "type": "color",
-            "comment": "Active links"
-          }
-        },
         "info": {
-          "default": {
-            "value": "{base.palette.blue.600}",
-            "type": "color",
-            "comment": "Branded text"
-          },
-          "strong": {
-            "value": "{base.palette.blue.700}",
-            "type": "color",
-            "comment": "Branded hover text"
-          },
-          "stronger": {
-            "value": "{base.palette.blue.800}",
-            "type": "color",
-            "comment": "Active links"
-          },
-          "soft": {
-            "value": "{base.palette.blue.400}",
-            "type": "color",
-            "comment": "Active links"
-          },
-          "softer": {
-            "value": "{base.palette.blue.200}",
-            "type": "color",
-            "comment": "Active links"
-          }
-        }
-      },
-      "icon": {
-        "default": {
-          "value": "{base.palette.neutral.800}",
-          "type": "color",
-          "comment": "Default icon color"
+          "value": "{base.palette.blue.600}",
+          "type": "color"
         },
-        "soft": {
-          "value": "{base.palette.slate.600}",
-          "type": "color",
-          "comment": "Disabled icon color"
+        "danger": {
+          "value": "{base.palette.red.600}",
+          "type": "color"
         },
-        "strong": {
-          "value": "{base.palette.neutral.900}",
-          "type": "color",
-          "comment": "Hover icon color"
+        "warning": {
+          "value": "{base.palette.amber.400}",
+          "type": "color"
         },
-        "inverse": {
-          "value": "{base.palette.neutral.0}",
-          "type": "color",
-          "comment": "Inverse icon color"
+        "success": {
+          "value": "{base.palette.green.600}",
+          "type": "color"
         },
-        "primary": {
-          "default": {
-            "value": "{base.palette.blue.600}",
-            "type": "color",
-            "comment": "Brand icon color"
-          },
-          "strong": {
-            "value": "{base.palette.blue.700}",
-            "type": "color",
-            "comment": "Stronger brand icon color"
-          },
-          "stronger": {
-            "value": "{base.palette.blue.800}",
-            "type": "color",
-            "comment": "Stronger brand icon color"
-          },
-          "soft": {
-            "value": "{base.palette.blue.400}",
-            "type": "color",
-            "comment": "Stronger brand icon color"
-          },
-          "softer": {
-            "value": "{base.palette.blue.200}",
-            "type": "color",
-            "comment": "Stronger brand icon color"
-          }
-        },
-        "positive": {
-          "default": {
-            "value": "{base.palette.green.600}",
-            "type": "color",
-            "comment": "Success icon color"
-          },
-          "strong": {
-            "value": "{base.palette.green.700}",
-            "type": "color",
-            "comment": "Success icon color"
-          },
-          "stronger": {
-            "value": "{base.palette.green.800}",
-            "type": "color",
-            "comment": "Success icon color"
-          },
-          "soft": {
-            "value": "{base.palette.green.400}",
-            "type": "color",
-            "comment": "Success icon color"
-          },
-          "softer": {
-            "value": "{base.palette.green.200}",
-            "type": "color",
-            "comment": "Success icon color"
-          }
-        },
-        "critical": {
-          "default": {
-            "value": "{base.palette.red.600}",
-            "type": "color",
-            "comment": "Error icon color"
-          },
-          "strong": {
-            "value": "{base.palette.red.700}",
-            "type": "color",
-            "comment": "Error icon color"
-          },
-          "stronger": {
-            "value": "{base.palette.red.800}",
-            "type": "color",
-            "comment": "Error icon color"
-          },
-          "soft": {
-            "value": "{base.palette.red.400}",
-            "type": "color",
-            "comment": "Error icon color"
-          },
-          "softer": {
-            "value": "{base.palette.red.200}",
-            "type": "color",
-            "comment": "Error icon color"
-          }
-        },
-        "caution": {
-          "default": {
-            "value": "{base.palette.amber.900}",
-            "type": "color",
-            "comment": "Caution icon color"
-          },
-          "strong": {
-            "value": "{base.palette.amber.950}",
-            "type": "color",
-            "comment": "Strong caution icon color"
-          },
-          "stronger": {
-            "value": "{base.palette.amber.975}",
-            "type": "color",
-            "comment": "Strong caution icon color"
-          },
-          "soft": {
-            "value": "{base.palette.amber.700}",
-            "type": "color",
-            "comment": "Soft caution icon color"
-          },
-          "softer": {
-            "value": "{base.palette.amber.500}",
-            "type": "color",
-            "comment": "Softer caution icon color"
-          }
-        },
-        "disabled": {
-          "value": "{base.palette.slate.400}",
-          "type": "color",
-          "comment": "Disabled icon color"
-        },
-        "info": {
-          "default": {
-            "value": "{base.palette.blue.600}",
-            "type": "color",
-            "comment": "Brand icon color"
-          },
-          "strong": {
-            "value": "{base.palette.blue.700}",
-            "type": "color",
-            "comment": "Stronger brand icon color"
-          },
-          "stronger": {
-            "value": "{base.palette.blue.800}",
-            "type": "color",
-            "comment": "Stronger brand icon color"
-          }
-        }
-      },
-      "fg": {
-        "default": {
-          "value": "{base.palette.neutral.800}",
-          "type": "color",
-          "comment": "Body"
-        },
-        "strong": {
-          "value": "{base.palette.neutral.900}",
-          "type": "color",
-          "comment": "Headings"
-        },
-        "stronger": {
-          "value": "{base.palette.neutral.950}",
-          "type": "color",
-          "comment": "Heading on hover"
-        },
-        "disabled": {
-          "value": "{base.palette.slate.400}",
-          "type": "color",
-          "comment": "Disabled"
-        },
-        "inverse": {
-          "value": "{base.palette.neutral.0}",
-          "type": "color",
-          "comment": "Inverse"
-        },
-        "critical": {
-          "default": {
-            "value": "{base.palette.red.600}",
-            "type": "color",
-            "comment": "Error"
-          },
-          "strong": {
-            "value": "{base.palette.red.700}",
-            "type": "color",
-            "comment": "Error"
-          },
-          "stronger": {
-            "value": "{base.palette.red.800}",
-            "type": "color",
-            "comment": "Error"
-          },
-          "soft": {
-            "value": "{base.palette.red.400}",
-            "type": "color",
-            "comment": "Error"
-          },
-          "softer": {
-            "value": "{base.palette.red.200}",
-            "type": "color",
-            "comment": "Error"
-          }
+        "contrast": {
+          "value": "{base.palette.neutral.A900}",
+          "type": "color"
         },
         "muted": {
           "default": {
             "value": "{base.palette.slate.600}",
-            "type": "color",
-            "comment": "Hint text"
-          },
-          "strong": {
-            "value": "{base.palette.slate.700}",
-            "type": "color"
-          },
-          "stronger": {
-            "value": "{base.palette.slate.800}",
             "type": "color"
           },
           "soft": {
             "value": "{base.palette.slate.400}",
-            "type": "color",
-            "comment": "Tab item foreground"
+            "type": "color"
           }
         },
-        "primary": {
+        "overlay": {
+          "hover": {
+            "value": "{base.palette.neutral.A200}",
+            "type": "color"
+          },
+          "pressed": {
+            "value": "{base.palette.neutral.A400}",
+            "type": "color"
+          }
+        }
+      },
+      "brand": {
+        "focus": {
+          "primary": {
+            "value": "{brand.primary.500}",
+            "type": "color"
+          },
+          "critical": {
+            "value": "{brand.critical.500}",
+            "type": "color"
+          },
+          "caution": {
+            "outer": {
+              "value": "{brand.caution.500}",
+              "type": "color"
+            },
+            "inner": {
+              "value": "{brand.caution.400}",
+              "type": "color"
+            }
+          }
+        },
+        "surface": {
+          "primary": {
+            "default": {
+              "value": "{brand.primary.A25}",
+              "type": "color"
+            },
+            "strong": {
+              "value": "{brand.primary.A50}",
+              "type": "color"
+            }
+          },
+          "critical": {
+            "default": {
+              "value": "{brand.critical.A25}",
+              "type": "color"
+            },
+            "strong": {
+              "value": "{brand.critical.A50}",
+              "type": "color"
+            }
+          },
+          "caution": {
+            "default": {
+              "value": "{brand.caution.A25}",
+              "type": "color"
+            },
+            "strong": {
+              "value": "{brand.caution.A50}",
+              "type": "color"
+            }
+          },
+          "positive": {
+            "default": {
+              "value": "{brand.positive.A25}",
+              "type": "color"
+            },
+            "strong": {
+              "value": "{brand.positive.A50}",
+              "type": "color"
+            }
+          },
+          "selected": {
+            "value": "{brand.primary.A50}",
+            "type": "color"
+          }
+        },
+        "accent": {
+          "primary": {
+            "value": "{brand.primary.600}",
+            "type": "color"
+          },
+          "critical": {
+            "value": "{brand.critical.600}",
+            "type": "color"
+          },
+          "caution": {
+            "value": "{brand.caution.400}",
+            "type": "color"
+          },
+          "positive": {
+            "value": "{brand.positive.600}",
+            "type": "color"
+          },
+          "action": {
+            "value": "{brand.primary.600}",
+            "type": "color"
+          }
+        },
+        "fg": {
+          "primary": {
+            "default": {
+              "value": "{brand.primary.600}",
+              "type": "color",
+              "comment": "Text and icons that use the primary brand color. Use this on the primary background"
+            },
+            "strong": {
+              "value": "{brand.primary.700}",
+              "type": "color",
+              "comment": "Text and icons that use the primary brand color. Use this on the primary strong background"
+            }
+          },
+          "critical": {
+            "default": {
+              "value": "{brand.critical.600}",
+              "type": "color",
+              "comment": "Used on text or icons that indicate critical messaging, like an error."
+            },
+            "strong": {
+              "value": "{brand.critical.700}",
+              "type": "color",
+              "comment": "Stronger color used on text or icons that indicate critical messaging, like an error."
+            }
+          },
+          "caution": {
+            "default": {
+              "value": "{brand.caution.600}",
+              "type": "color"
+            },
+            "strong": {
+              "value": "{brand.caution.700}",
+              "type": "color"
+            }
+          },
+          "positive": {
+            "default": {
+              "value": "{brand.positive.600}",
+              "type": "color"
+            },
+            "strong": {
+              "value": "{brand.positive.700}",
+              "type": "color"
+            }
+          },
+          "selected": {
+            "value": "{brand.primary.700}",
+            "type": "color"
+          }
+        },
+        "border": {
+          "primary": {
+            "default": {
+              "value": "{brand.primary.500}",
+              "type": "color",
+              "comment": "Brand, Focus"
+            }
+          },
+          "critical": {
+            "value": "{brand.critical.500}",
+            "type": "color"
+          },
+          "caution": {
+            "value": "{brand.caution.400}",
+            "type": "color"
+          }
+        }
+      },
+      "focus": {
+        "inverse": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color"
+        },
+        "contrast": {
+          "value": "{base.palette.neutral.A900}",
+          "type": "color"
+        }
+      },
+      "bg": {
+        "default": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "comment": "Default page background"
+        },
+        "alt": {
+          "value": "{base.palette.slate.50}",
+          "type": "color",
+          "comment": "The alternative page background"
+        }
+      },
+      "fg": {
+        "default": {
+          "value": "{base.palette.neutral.A800}",
+          "type": "color",
+          "comment": "Default color used on text and icons"
+        },
+        "strong": {
+          "value": "{base.palette.neutral.A900}",
+          "type": "color",
+          "comment": "Used on headings and strong text and icons"
+        },
+        "stronger": {
+          "value": "{base.palette.neutral.A950}",
+          "type": "color",
+          "comment": "Used on titles and stronger text and headings"
+        },
+        "disabled": {
+          "value": "{base.palette.slate.A400}",
+          "type": "color",
+          "comment": "Indicates disabled text or icons"
+        },
+        "muted": {
+          "default": {
+            "value": "{base.palette.slate.A600}",
+            "type": "color",
+            "comment": "Used for hint and placeholder text"
+          },
+          "strong": {
+            "value": "{base.palette.slate.A700}",
+            "type": "color",
+            "comment": "Stronger color used for hint or placeholder text"
+          }
+        },
+        "inverse": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "comment": "Used for text and icons on dark backgrounds"
+        },
+        "info": {
           "default": {
             "value": "{base.palette.blue.600}",
-            "type": "color",
-            "comment": "Links, Accent"
+            "type": "color"
           },
           "strong": {
             "value": "{base.palette.blue.700}",
+            "type": "color"
+          }
+        },
+        "danger": {
+          "default": {
+            "value": "{base.palette.red.600}",
             "type": "color",
-            "comment": "Links on hover"
+            "comment": "Used on text or icons that indicate critical messaging, like an error."
           },
-          "soft": {
-            "value": "{base.palette.blue.400}",
+          "strong": {
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "comment": "Stronger color used on text or icons that indicate critical messaging, like an error."
+          }
+        },
+        "warning": {
+          "default": {
+            "value": "{base.palette.amber.600}",
             "type": "color"
           },
-          "softer": {
-            "value": "{base.palette.blue.200}",
-            "type": "color",
-            "comment": "Link Inverse, Disabled"
-          },
-          "stronger": {
-            "value": "{base.palette.blue.800}",
-            "type": "color",
-            "comment": "Links on hover"
-          }
-        },
-        "caution": {
-          "default": {
-            "value": "{base.palette.amber.900}",
-            "type": "color",
-            "comment": "Warning"
-          },
           "strong": {
-            "value": "{base.palette.amber.950}",
-            "type": "color",
-            "comment": "Warning on hover"
-          },
-          "soft": {
             "value": "{base.palette.amber.700}",
-            "type": "color",
-            "comment": "Warning"
-          },
-          "stronger": {
-            "value": "{base.palette.amber.975}",
-            "type": "color",
-            "comment": "Warning on hover"
-          },
-          "softer": {
-            "value": "{base.palette.amber.500}",
-            "type": "color",
-            "comment": "Warning"
+            "type": "color"
           }
         },
-        "contrast": {
+        "success": {
           "default": {
-            "value": "{base.palette.neutral.900}",
-            "type": "color",
-            "comment": "Contrast"
+            "value": "{base.palette.green.600}",
+            "type": "color"
           },
           "strong": {
-            "value": "{base.palette.neutral.950}",
-            "type": "color",
-            "comment": "Strong contrast"
+            "value": "{base.palette.green.700}",
+            "type": "color"
           }
         },
         "ai": {
@@ -1386,366 +1113,77 @@
           "type": "color",
           "comment": "AI icons and text"
         },
-        "info": {
-          "softer": {
-            "value": "{base.palette.blue.200}",
-            "type": "color",
-            "comment": "Link Inverse, Disabled"
-          },
-          "soft": {
-            "value": "{base.palette.blue.400}",
+        "contrast": {
+          "default": {
+            "value": "{base.palette.neutral.A900}",
             "type": "color"
           },
-          "default": {
-            "value": "{base.palette.blue.600}",
-            "type": "color",
-            "comment": "Links, Accent"
-          },
           "strong": {
-            "value": "{base.palette.blue.700}",
-            "type": "color",
-            "comment": "Links on hover"
-          },
-          "stronger": {
-            "value": "{base.palette.blue.800}",
-            "type": "color",
-            "comment": "Links on hover"
-          }
-        },
-        "positive": {
-          "default": {
-            "value": "{base.palette.green.600}",
-            "type": "color",
-            "comment": "Error"
-          },
-          "softer": {
-            "value": "{base.palette.green.200}",
-            "type": "color",
-            "comment": "Error"
-          },
-          "soft": {
-            "value": "{base.palette.green.400}",
-            "type": "color",
-            "comment": "Error"
-          },
-          "strong": {
-            "value": "{base.palette.green.700}",
-            "type": "color",
-            "comment": "Error"
-          },
-          "stronger": {
-            "value": "{base.palette.green.800}",
-            "type": "color",
-            "comment": "Error"
+            "value": "{base.palette.neutral.A950}",
+            "type": "color"
           }
         }
       },
       "border": {
+        "default": {
+          "value": "{base.palette.slate.A200}",
+          "type": "color"
+        },
+        "strong": {
+          "value": "{base.palette.slate.A300}",
+          "type": "color"
+        },
         "input": {
-          "disabled": {
-            "value": "{base.palette.slate.400}",
-            "type": "color",
-            "comment": "Disabled inputs"
-          },
           "default": {
-            "value": "{base.palette.slate.500}",
+            "value": "{base.palette.slate.A500}",
             "type": "color",
             "comment": "Inputs"
           },
-          "strong": {
-            "value": "{base.palette.slate.700}",
+          "hover": {
+            "value": "{base.palette.slate.A700}",
             "type": "color",
             "comment": "Input hover"
+          }
+        },
+        "info": {
+          "value": "{base.palette.blue.500}",
+          "type": "color"
+        },
+        "danger": {
+          "value": "{base.palette.red.500}",
+          "type": "color"
+        },
+        "warning": {
+          "value": "{base.palette.amber.400}",
+          "type": "color"
+        },
+        "inverse": {
+          "default": {
+            "value": "{base.palette.white.A500}",
+            "type": "color"
           },
-          "inverse": {
-            "value": "{base.palette.neutral.0}",
-            "type": "color",
-            "comment": "Borders on checkboxes and radios"
+          "strong": {
+            "value": "{base.palette.white.A700}",
+            "type": "color"
           }
         },
         "contrast": {
-          "default": {
-            "value": "{base.palette.neutral.900}",
-            "type": "color",
-            "comment": "Secondary Button"
-          },
-          "strong": {
-            "value": "{base.palette.neutral.950}",
-            "type": "color",
-            "comment": "Secondary Button Hover"
-          }
-        },
-        "primary": {
-          "default": {
-            "value": "{base.palette.blue.500}",
-            "type": "color",
-            "comment": "Brand, Focus"
-          }
-        },
-        "critical": {
-          "default": {
-            "value": "{base.palette.red.500}",
-            "type": "color",
-            "comment": "Error"
-          }
-        },
-        "caution": {
-          "default": {
-            "value": "{base.palette.amber.400}",
-            "type": "color",
-            "comment": "Warning inner"
-          },
-          "strong": {
-            "value": "{base.palette.amber.500}",
-            "type": "color",
-            "comment": "Warning outer (box shadow)"
-          }
+          "value": "{base.palette.neutral.A900}",
+          "type": "color"
         },
         "transparent": {
-          "value": "oklch({base.palette.neutral.0} / {base.opacity.0})",
-          "type": "color",
-          "comment": "Transparent"
-        },
-        "inverse": {
-          "value": "{base.palette.neutral.0}",
-          "type": "color",
-          "comment": "Borders on accent colors"
-        },
-        "divider": {
-          "value": "{base.palette.slate.200}",
-          "type": "color",
-          "comment": "Dividers"
-        },
-        "container": {
-          "value": "{base.palette.slate.300}",
-          "type": "color",
-          "comment": "Cards, Toasts, Surfaces"
-        },
-        "ai": {
-          "value": "{base.palette.blue.950}",
-          "type": "color",
-          "comment": "Active state on AI borders"
-        },
-        "info": {
-          "default": {
-            "value": "{base.palette.blue.500}",
-            "type": "color",
-            "comment": "Brand, Focus"
-          }
+          "value": "{base.palette.neutral.A0}",
+          "type": "color"
         }
       },
       "shadow": {
-        "1": {
-          "value": "oklch({base.palette.slate.900} / {base.opacity.200})",
-          "type": "color",
-          "comment": "First shadow color"
+        "base": {
+          "value": "{base.palette.slate.A200}",
+          "type": "color"
         },
-        "2": {
-          "value": "oklch({base.palette.slate.900} / {base.opacity.100})",
-          "type": "color",
-          "comment": "Second shadow color"
-        },
-        "default": {
-          "value": "{base.palette.slate.900}",
-          "type": "color",
-          "comment": "Main shadow color"
-        }
-      },
-      "static": {
-        "blue": {
-          "default": {
-            "value": "{base.palette.blue.600}",
-            "type": "color",
-            "comment": "Blue"
-          },
-          "softest": {
-            "value": "{base.palette.blue.25}",
-            "type": "color",
-            "comment": "Light blue"
-          },
-          "strong": {
-            "value": "{base.palette.blue.700}",
-            "type": "color",
-            "comment": "Stronger blue"
-          },
-          "stronger": {
-            "value": "{base.palette.blue.800}",
-            "type": "color",
-            "comment": "Stronger blue"
-          },
-          "softer": {
-            "value": "{base.palette.blue.50}",
-            "type": "color",
-            "comment": "Light blue"
-          },
-          "soft": {
-            "value": "{base.palette.blue.100}",
-            "type": "color",
-            "comment": "Light blue"
-          },
-          "strongest": {
-            "value": "{base.palette.blue.950}",
-            "type": "color",
-            "comment": "Stronger blue"
-          }
-        },
-        "green": {
-          "default": {
-            "value": "{base.palette.green.600}",
-            "type": "color",
-            "comment": "Default green"
-          },
-          "soft": {
-            "value": "{base.palette.green.100}",
-            "type": "color",
-            "comment": "Light green"
-          },
-          "strong": {
-            "value": "{base.palette.green.700}",
-            "type": "color",
-            "comment": "Stronger green"
-          },
-          "softer": {
-            "value": "{base.palette.green.50}",
-            "type": "color",
-            "comment": "Light green"
-          },
-          "stronger": {
-            "value": "{base.palette.green.800}",
-            "type": "color",
-            "comment": "Stronger green"
-          },
-          "softest": {
-            "value": "{base.palette.green.25}",
-            "type": "color",
-            "comment": "Light green"
-          },
-          "strongest": {
-            "value": "{base.palette.green.950}",
-            "type": "color",
-            "comment": "Stronger green"
-          }
-        },
-        "red": {
-          "default": {
-            "value": "{base.palette.red.600}",
-            "type": "color",
-            "comment": "Red"
-          },
-          "soft": {
-            "value": "{base.palette.red.100}",
-            "type": "color",
-            "comment": "Light red"
-          },
-          "strong": {
-            "value": "{base.palette.red.700}",
-            "type": "color",
-            "comment": "Strong red"
-          },
-          "stronger": {
-            "value": "{base.palette.red.800}",
-            "type": "color",
-            "comment": "Strong red"
-          },
-          "softest": {
-            "value": "{base.palette.red.25}",
-            "type": "color",
-            "comment": "Light red"
-          },
-          "strongest": {
-            "value": "{base.palette.red.950}",
-            "type": "color",
-            "comment": "Strong red"
-          },
-          "softer": {
-            "value": "{base.palette.red.50}",
-            "type": "color",
-            "comment": "Light red"
-          }
-        },
-        "white": {
-          "value": "{base.palette.neutral.0}",
-          "type": "color",
-          "comment": "Just white"
-        },
-        "black": {
-          "value": "{base.palette.neutral.1000}",
-          "type": "color",
-          "comment": "Just black"
-        },
-        "gray": {
-          "default": {
-            "value": "{base.palette.slate.600}",
-            "type": "color",
-            "comment": "Gray"
-          },
-          "soft": {
-            "value": "{base.palette.slate.200}",
-            "type": "color",
-            "comment": "Light gray"
-          },
-          "strong": {
-            "value": "{base.palette.slate.700}",
-            "type": "color",
-            "comment": "Stronger gray"
-          },
-          "stronger": {
-            "value": "{base.palette.slate.800}",
-            "type": "color",
-            "comment": "Strongerer gray"
-          },
-          "strongest": {
-            "value": "{base.palette.slate.950}",
-            "type": "color",
-            "comment": "Strongerer gray"
-          },
-          "softest": {
-            "value": "{base.palette.slate.50}",
-            "type": "color",
-            "comment": "Light gray"
-          },
-          "softer": {
-            "value": "{base.palette.slate.100}",
-            "type": "color",
-            "comment": "Light gray"
-          }
-        },
-        "amber": {
-          "default": {
-            "value": "{base.palette.amber.400}",
-            "type": "color",
-            "comment": "amber"
-          },
-          "softest": {
-            "value": "{base.palette.amber.25}",
-            "type": "color",
-            "comment": "Soft amber"
-          },
-          "strong": {
-            "value": "{base.palette.amber.500}",
-            "type": "color",
-            "comment": "Stronger amber"
-          },
-          "stronger": {
-            "value": "{base.palette.amber.600}",
-            "type": "color",
-            "comment": "Stronger amber"
-          },
-          "softer": {
-            "value": "{base.palette.amber.50}",
-            "type": "color",
-            "comment": "Soft amber"
-          },
-          "strongest": {
-            "value": "{base.palette.amber.950}",
-            "type": "color",
-            "comment": "Stronger amber"
-          },
-          "soft": {
-            "value": "{base.palette.amber.100}",
-            "type": "color",
-            "comment": "Soft amber"
-          }
+        "ambient": {
+          "value": "{base.palette.slate.A100}",
+          "type": "color"
         }
       }
     }

@@ -177,7 +177,6 @@ function getHeadings(type: VariableType) {
 const deprecatedTokens = ['sys-color-static-orange', 'sys-color-static-gold'];
 
 const handleDeprecatedTokenClass = (token: string) => {
-  console.log('token', token);
   return deprecatedTokens.some(deprecatedToken => token.includes(deprecatedToken));
 };
 
