@@ -20,12 +20,6 @@
         "type": "dimension",
         "deprecated": true,
         "comment": "Large screens, such as desktops."
-      },
-      "xl": {
-        "value": "{base.unit} * 360",
-        "type": "dimension",
-        "deprecated": true,
-        "comment": "Used for extra large screens, such as wide monitors and TVs."
       }
     },
     "shape": {
@@ -438,6 +432,1366 @@
       }
     },
     "color": {
+      "bg": {
+        "primary": {
+          "softest": {
+            "value": "{brand.primary.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.brand.surface.primary.default instead",
+            "comment": "Surface"
+          },
+          "softer": {
+            "value": "{brand.primary.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.brand.surface.primary.strong instead",
+            "comment": "Select"
+          },
+          "soft": {
+            "value": "{brand.primary.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.brand.surface.primary tokens instead",
+            "comment": "Primary disabled"
+          },
+          "default": {
+            "value": "{brand.primary.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.brand.accent.primary instead",
+            "comment": "Primary brand color"
+          },
+          "strong": {
+            "value": "{brand.primary.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.brand.accent.primary instead",
+            "comment": "Brand hover background"
+          },
+          "stronger": {
+            "value": "{brand.primary.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.brand.accent.primary instead",
+            "comment": "Brand active background"
+          }
+        },
+        "surface": {
+          "default": {
+            "value": "{base.palette.neutral.0}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.default instead",
+            "comment": "Default surface background"
+          },
+          "alt": {
+            "default": {
+              "value": "{base.palette.slate.A50}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.alt.default instead"
+            },
+            "strong": {
+              "value": "{base.palette.slate.A100}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.alt.strong instead"
+            }
+          },
+          "navigation": {
+            "value": "{base.palette.neutral.A0}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.navigation instead",
+            "comment": "Surface color for navigation elements, like the SidePanel or Top Nav Bar"
+          },
+          "popover": {
+            "value": "{base.palette.neutral.0}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.popover instead"
+          },
+          "raised": {
+            "value": "{base.palette.slate.A25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.raised instead"
+          },
+          "critical": {
+            "default": {
+              "value": "{base.palette.red.A25}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.danger.default instead"
+            },
+            "strong": {
+              "value": "{base.palette.red.A50}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.danger.strong instead"
+            }
+          },
+          "caution": {
+            "default": {
+              "value": "{base.palette.amber.A25}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.warning.default instead"
+            },
+            "strong": {
+              "value": "{base.palette.amber.A50}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.warning.strong instead"
+            }
+          },
+          "info": {
+            "default": {
+              "value": "{base.palette.blue.A25}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.info.default instead"
+            },
+            "strong": {
+              "value": "{base.palette.blue.A50}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.info.strong instead"
+            }
+          },
+          "positive": {
+            "default": {
+              "value": "{base.palette.green.A25}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.success.default instead"
+            },
+            "strong": {
+              "value": "{base.palette.green.A50}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.success.strong instead"
+            }
+          },
+          "transparent": {
+            "value": "{base.palette.white.A0}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.transparent instead"
+          },
+          "overlay": {
+            "hover": {
+              "default": {
+                "value": "{base.palette.slate.A100}",
+                "type": "color",
+                "deprecated": true,
+                "deprecatedComment": "Use sys.color.surface.overlay.hover.default instead"
+              },
+              "inverse": {
+                "value": "{base.palette.white.A300}",
+                "type": "color",
+                "deprecated": true,
+                "deprecatedComment": "Use sys.color.surface.overlay.hover.inverse instead"
+              }
+            },
+            "pressed": {
+              "default": {
+                "value": "{base.palette.slate.A200}",
+                "type": "color",
+                "deprecated": true,
+                "deprecatedComment": "Use sys.color.surface.overlay.pressed.default instead"
+              },
+              "inverse": {
+                "value": "{base.palette.white.A500}",
+                "type": "color",
+                "deprecated": true,
+                "deprecatedComment": "Use sys.color.surface.overlay.pressed.inverse instead"
+              }
+            },
+            "scrim": {
+              "value": "{base.palette.neutral.A400}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.overlay.scrim instead"
+            }
+          },
+          "inverse": {
+            "value": "{base.palette.neutral.0}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.inverse instead"
+          },
+          "contrast": {
+            "default": {
+              "value": "{base.palette.neutral.A900}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.contrast.default instead"
+            },
+            "strong": {
+              "value": "{base.palette.neutral.A950}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.contrast.strong instead"
+            }
+          },
+          "ai": {
+            "default": {
+              "value": "{base.palette.blue.A100}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.ai.default instead"
+            },
+            "hover": {
+              "value": "{base.palette.blue.A200}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.ai.hover instead"
+            },
+            "pressed": {
+              "value": "{base.palette.blue.A200}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.surface.ai.pressed instead"
+            }
+          },
+          "loading": {
+            "value": "{base.palette.slate.A200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.loading instead"
+          },
+          "modal": {
+            "value": "{base.palette.neutral.0}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.modal instead"
+          }
+        },
+        "accent": {
+          "critical": {
+            "value": "{base.palette.red.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.danger instead"
+          },
+          "caution": {
+            "value": "{base.palette.amber.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.warning instead"
+          },
+          "info": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.info instead"
+          },
+          "positive": {
+            "value": "{base.palette.green.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.success instead"
+          },
+          "ai": {
+            "value": "{base.palette.blue.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.ai instead"
+          },
+          "contrast": {
+            "value": "{base.palette.neutral.A900}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.contrast instead"
+          },
+          "overlay": {
+            "hover": {
+              "value": "{base.palette.neutral.A200}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.accent.overlay.hover instead"
+            },
+            "pressed": {
+              "value": "{base.palette.neutral.A400}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.accent.overlay.pressed instead"
+            }
+          },
+          "muted": {
+            "default": {
+              "value": "{base.palette.slate.600}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.accent.muted.default instead"
+            },
+            "soft": {
+              "value": "{base.palette.slate.400}",
+              "type": "color",
+              "deprecated": true,
+              "deprecatedComment": "Use sys.color.accent.muted.soft instead"
+            }
+          }
+        },
+        "transparent": {
+          "default": {
+            "value": "oklch({base.palette.neutral.1000} / {base.opacity.0})",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.transparent instead",
+            "comment": "Transparent background"
+          },
+          "strong": {
+            "value": "oklch({base.palette.neutral.1000} / {base.opacity.100})",
+            "type": "color",
+            "comment": "Inverse Secondary Button Hover state",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.overlay tokens instead"
+          },
+          "stronger": {
+            "value": "oklch({base.palette.neutral.1000} / {base.opacity.250})",
+            "type": "color",
+            "comment": "Inverse Secondary Button Active state",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.overlay tokens instead"
+          }
+        },
+        "overlay": {
+          "value": "oklch({base.palette.neutral.1000} / {base.opacity.400})",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.surface.overlay.scrim instead",
+          "comment": "Overlay background"
+        },
+        "translucent": {
+          "value": "oklch({base.palette.neutral.1000} / {base.opacity.500})",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.surface.contrast tokens instead",
+          "comment": "Tooltip, Status Indicator"
+        },
+        "alt": {
+          "softer": {
+            "value": "{base.palette.slate.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.alt tokens instead",
+            "comment": "Disabled inputs"
+          },
+          "soft": {
+            "value": "{base.palette.slate.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.bg.alt instead",
+            "comment": "Alternative page background"
+          },
+          "default": {
+            "value": "{base.palette.slate.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.alt tokens instead",
+            "comment": "Surface hover, Secondary surfaces"
+          },
+          "strong": {
+            "value": "{base.palette.slate.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.alt tokens instead",
+            "comment": "Active states"
+          },
+          "stronger": {
+            "value": "{base.palette.slate.300}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.alt tokens instead",
+            "comment": "Active state for segmented control, Pill"
+          }
+        },
+        "muted": {
+          "softer": {
+            "value": "{base.palette.slate.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.muted tokens instead"
+          },
+          "soft": {
+            "value": "{base.palette.slate.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.muted tokens instead"
+          },
+          "default": {
+            "value": "{base.palette.slate.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.muted.default instead"
+          },
+          "strong": {
+            "value": "{base.palette.slate.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.muted tokens instead"
+          }
+        },
+        "contrast": {
+          "default": {
+            "value": "{base.palette.neutral.900}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.contrast.default instead",
+            "comment": "Contrast backgrounds, like Secondary Buttons"
+          },
+          "strong": {
+            "value": "{base.palette.neutral.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.contrast.strong instead",
+            "comment": "Contrast backgrounds, like Secondary Buttons"
+          }
+        },
+        "positive": {
+          "softest": {
+            "value": "{base.palette.green.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.success tokens instead",
+            "comment": "Lightest surface success background"
+          },
+          "softer": {
+            "value": "{base.palette.green.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.success tokens instead",
+            "comment": "Surface success background"
+          },
+          "soft": {
+            "value": "{base.palette.green.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.success tokens instead",
+            "comment": "Disabled success background"
+          },
+          "default": {
+            "value": "{base.palette.green.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.success instead",
+            "comment": "Disabled success background"
+          },
+          "strong": {
+            "value": "{base.palette.green.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.success instead",
+            "comment": "Hover success background"
+          },
+          "stronger": {
+            "value": "{base.palette.green.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.success instead",
+            "comment": "Active success background"
+          }
+        },
+        "caution": {
+          "softest": {
+            "value": "{base.palette.amber.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.warning tokens instead",
+            "comment": "Disabled warning background"
+          },
+          "softer": {
+            "value": "{base.palette.amber.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.warning tokens instead",
+            "comment": "Softer warning background"
+          },
+          "soft": {
+            "value": "{base.palette.amber.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.warning tokens instead",
+            "comment": "Softer warning background"
+          },
+          "default": {
+            "value": "{base.palette.amber.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.warning instead",
+            "comment": "Default warning background"
+          },
+          "strong": {
+            "value": "{base.palette.amber.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.warning instead",
+            "comment": "Strong warning background"
+          },
+          "stronger": {
+            "value": "{base.palette.amber.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.warning instead",
+            "comment": "Stronger warning background"
+          }
+        },
+        "critical": {
+          "softest": {
+            "value": "{base.palette.red.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.danger tokens instead",
+            "comment": "Input error background"
+          },
+          "softer": {
+            "value": "{base.palette.red.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.danger tokens instead",
+            "comment": "Disabled error background"
+          },
+          "soft": {
+            "value": "{base.palette.red.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.danger tokens instead",
+            "comment": "Disabled error background"
+          },
+          "default": {
+            "value": "{base.palette.red.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.danger instead",
+            "comment": "Default error background"
+          },
+          "strong": {
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.danger instead",
+            "comment": "Strong error background"
+          },
+          "stronger": {
+            "value": "{base.palette.red.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.danger instead",
+            "comment": "Stronger error background"
+          }
+        },
+        "ai": {
+          "default": {
+            "value": "{base.palette.blue.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.ai.default instead",
+            "comment": "AI container"
+          },
+          "strong": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.ai.hover instead",
+            "comment": "Hover on AI container"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.ai.pressed instead",
+            "comment": "Active state on AI containers"
+          },
+          "strongest": {
+            "value": "{base.palette.blue.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.ai instead",
+            "comment": "AI surfaces"
+          }
+        },
+        "info": {
+          "softest": {
+            "value": "{base.palette.blue.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.info.default instead",
+            "comment": "Surface"
+          },
+          "softer": {
+            "value": "{base.palette.blue.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.info.strong instead",
+            "comment": "Select"
+          },
+          "soft": {
+            "value": "{base.palette.blue.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.surface.info tokens instead",
+            "comment": "Disabled"
+          },
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.info instead",
+            "comment": "Info color"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.info instead",
+            "comment": "Brand hover background"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.accent.info instead",
+            "comment": "Brand active background"
+          }
+        }
+      },
+      "text": {
+        "default": {
+          "value": "{base.palette.neutral.800}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.default instead",
+          "comment": "Body text"
+        },
+        "strong": {
+          "value": "{base.palette.neutral.900}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.strong instead",
+          "comment": "Heading text"
+        },
+        "stronger": {
+          "value": "{base.palette.neutral.950}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.stronger instead",
+          "comment": "Display text"
+        },
+        "disabled": {
+          "value": "{base.palette.slate.400}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.disabled instead",
+          "comment": "Disabled text color"
+        },
+        "hint": {
+          "value": "{base.palette.slate.600}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.muted instead",
+          "comment": "Hint text color"
+        },
+        "inverse": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.inverse instead",
+          "comment": "Inverse text color"
+        },
+        "critical": {
+          "default": {
+            "value": "{base.palette.red.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger instead",
+            "comment": "Error text"
+          },
+          "strong": {
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger-strong instead",
+            "comment": "Error text"
+          },
+          "stronger": {
+            "value": "{base.palette.red.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger-strong instead",
+            "comment": "Error text"
+          },
+          "soft": {
+            "value": "{base.palette.red.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger instead",
+            "comment": "Error text"
+          },
+          "softer": {
+            "value": "{base.palette.red.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger instead",
+            "comment": "Error text"
+          }
+        },
+        "primary": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Branded text"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong instead",
+            "comment": "Branded hover text"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong instead",
+            "comment": "Active links"
+          },
+          "soft": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Active links"
+          },
+          "softer": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Active links"
+          }
+        },
+        "caution": {
+          "default": {
+            "value": "{base.palette.amber.900}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning instead",
+            "comment": "Warning text"
+          },
+          "strong": {
+            "value": "{base.palette.amber.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning-strong instead",
+            "comment": "Strong warning text"
+          },
+          "soft": {
+            "value": "{base.palette.amber.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning instead",
+            "comment": "Disabled warning text"
+          },
+          "stronger": {
+            "value": "{base.palette.amber.975}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning-strong instead",
+            "comment": "Stronger warning text"
+          },
+          "softer": {
+            "value": "{base.palette.amber.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning instead",
+            "comment": "Softer warning text"
+          }
+        },
+        "ai": {
+          "value": "{base.palette.blue.950}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.ai instead"
+        },
+        "positive": {
+          "default": {
+            "value": "{base.palette.green.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success instead",
+            "comment": "Branded text"
+          },
+          "strong": {
+            "value": "{base.palette.green.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success-strong instead",
+            "comment": "Branded hover text"
+          },
+          "stronger": {
+            "value": "{base.palette.green.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success-strong instead",
+            "comment": "Active links"
+          },
+          "soft": {
+            "value": "{base.palette.green.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success instead",
+            "comment": "Active links"
+          },
+          "softer": {
+            "value": "{base.palette.green.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success instead",
+            "comment": "Active links"
+          }
+        },
+        "info": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Branded text"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong instead",
+            "comment": "Branded hover text"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong instead",
+            "comment": "Active links"
+          },
+          "soft": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Active links"
+          },
+          "softer": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Active links"
+          }
+        }
+      },
+      "icon": {
+        "default": {
+          "value": "{base.palette.neutral.800}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.default instead",
+          "comment": "Default icon color"
+        },
+        "soft": {
+          "value": "{base.palette.slate.600}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.muted instead",
+          "comment": "Disabled icon color"
+        },
+        "strong": {
+          "value": "{base.palette.neutral.900}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.strong instead",
+          "comment": "Hover icon color"
+        },
+        "inverse": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.inverse instead",
+          "comment": "Inverse icon color"
+        },
+        "primary": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Brand icon color"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong instead",
+            "comment": "Stronger brand icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong instead",
+            "comment": "Stronger brand icon color"
+          },
+          "soft": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Stronger brand icon color"
+          },
+          "softer": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Stronger brand icon color"
+          }
+        },
+        "positive": {
+          "default": {
+            "value": "{base.palette.green.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success instead",
+            "comment": "Success icon color"
+          },
+          "strong": {
+            "value": "{base.palette.green.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success-strong instead",
+            "comment": "Success icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.green.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success-strong instead",
+            "comment": "Success icon color"
+          },
+          "soft": {
+            "value": "{base.palette.green.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success instead",
+            "comment": "Success icon color"
+          },
+          "softer": {
+            "value": "{base.palette.green.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success instead",
+            "comment": "Success icon color"
+          }
+        },
+        "critical": {
+          "default": {
+            "value": "{base.palette.red.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger instead",
+            "comment": "Error icon color"
+          },
+          "strong": {
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger-strong instead",
+            "comment": "Error icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.red.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger-strong instead",
+            "comment": "Error icon color"
+          },
+          "soft": {
+            "value": "{base.palette.red.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger instead",
+            "comment": "Error icon color"
+          },
+          "softer": {
+            "value": "{base.palette.red.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger instead",
+            "comment": "Error icon color"
+          }
+        },
+        "caution": {
+          "default": {
+            "value": "{base.palette.amber.900}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning instead",
+            "comment": "Caution icon color"
+          },
+          "strong": {
+            "value": "{base.palette.amber.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning-strong instead",
+            "comment": "Strong caution icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.amber.975}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning-strong instead",
+            "comment": "Strong caution icon color"
+          },
+          "soft": {
+            "value": "{base.palette.amber.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning instead",
+            "comment": "Soft caution icon color"
+          },
+          "softer": {
+            "value": "{base.palette.amber.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning instead",
+            "comment": "Softer caution icon color"
+          }
+        },
+        "disabled": {
+          "value": "{base.palette.slate.400}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.fg.disabled instead",
+          "comment": "Disabled icon color"
+        },
+        "info": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Brand icon color"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong instead",
+            "comment": "Stronger brand icon color"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong instead",
+            "comment": "Stronger brand icon color"
+          }
+        }
+      },
+      "fg": {
+        "critical": {
+          "default": {
+            "value": "{base.palette.red.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger instead",
+            "comment": "Error"
+          },
+          "strong": {
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger-strong instead",
+            "comment": "Error"
+          },
+          "stronger": {
+            "value": "{base.palette.red.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger-strong instead",
+            "comment": "Error"
+          },
+          "soft": {
+            "value": "{base.palette.red.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger instead",
+            "comment": "Error"
+          },
+          "softer": {
+            "value": "{base.palette.red.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.danger instead",
+            "comment": "Error"
+          }
+        },
+        "muted": {
+          "stronger": {
+            "value": "{base.palette.slate.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.muted-strong instead"
+          },
+          "soft": {
+            "value": "{base.palette.slate.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.muted instead",
+            "comment": "Tab item foreground"
+          }
+        },
+        "primary": {
+          "soft": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info or sys.color.brand.fg.primary instead"
+          },
+          "softer": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info or sys.color.brand.fg.primary instead",
+            "comment": "Link Inverse, Disabled"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong or sys.color.brand.fg.primary.strong instead",
+            "comment": "Links on hover"
+          }
+        },
+        "caution": {
+          "default": {
+            "value": "{base.palette.amber.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning instead",
+            "comment": "Warning"
+          },
+          "strong": {
+            "value": "{base.palette.amber.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning-strong instead",
+            "comment": "Warning on hover"
+          },
+          "soft": {
+            "value": "{base.palette.amber.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning instead",
+            "comment": "Warning"
+          },
+          "stronger": {
+            "value": "{base.palette.amber.975}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning-strong instead",
+            "comment": "Warning on hover"
+          },
+          "softer": {
+            "value": "{base.palette.amber.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.warning instead",
+            "comment": "Warning"
+          }
+        },
+        "info": {
+          "softer": {
+            "value": "{base.palette.blue.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead",
+            "comment": "Link Inverse, Disabled"
+          },
+          "soft": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info instead"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.info-strong instead",
+            "comment": "Links on hover"
+          }
+        },
+        "positive": {
+          "default": {
+            "value": "{base.palette.green.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success instead",
+            "comment": "Error"
+          },
+          "softer": {
+            "value": "{base.palette.green.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success instead",
+            "comment": "Error"
+          },
+          "soft": {
+            "value": "{base.palette.green.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success instead",
+            "comment": "Error"
+          },
+          "strong": {
+            "value": "{base.palette.green.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success-strong instead",
+            "comment": "Error"
+          },
+          "stronger": {
+            "value": "{base.palette.green.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.success-strong instead",
+            "comment": "Error"
+          }
+        }
+      },
+      "border": {
+        "input": {
+          "disabled": {
+            "value": "{base.palette.slate.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.disabled instead",
+            "comment": "Disabled inputs"
+          },
+          "strong": {
+            "value": "{base.palette.slate.A700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.border.input.hover instead",
+            "comment": "Input hover"
+          },
+          "inverse": {
+            "value": "{base.palette.neutral.0}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.fg.inverse instead",
+            "comment": "Borders on checkboxes and radios"
+          }
+        },
+        "contrast": {
+          "default": {
+            "value": "{base.palette.neutral.A900}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.border.contrast instead",
+            "comment": "Secondary Button"
+          },
+          "strong": {
+            "value": "{base.palette.neutral.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.border.contrast instead",
+            "comment": "Secondary Button Hover"
+          }
+        },
+        "critical": {
+          "default": {
+            "value": "{base.palette.red.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.border.danger instead",
+            "comment": "Error"
+          }
+        },
+        "caution": {
+          "default": {
+            "value": "{base.palette.amber.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.border.warning instead",
+            "comment": "Warning inner"
+          },
+          "strong": {
+            "value": "{base.palette.amber.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.border.warning instead",
+            "comment": "Warning outer (box shadow)"
+          }
+        },
+        "divider": {
+          "value": "{base.palette.slate.200}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.border.default instead",
+          "comment": "Dividers"
+        },
+        "container": {
+          "value": "{base.palette.slate.300}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.border.default or sys.color.border.strong instead",
+          "comment": "Cards, Toasts, Surfaces"
+        },
+        "ai": {
+          "value": "{base.palette.blue.950}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.accent.ai instead",
+          "comment": "Active state on AI borders"
+        },
+        "info": {
+          "default": {
+            "value": "{base.palette.blue.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.border.info instead",
+            "comment": "Brand, Focus"
+          }
+        }
+      },
+      "shadow": {
+        "1": {
+          "value": "oklch({base.palette.slate.900} / {base.opacity.200})",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.shadow.base instead",
+          "comment": "First shadow color"
+        },
+        "2": {
+          "value": "oklch({base.palette.slate.900} / {base.opacity.100})",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.shadow.ambient instead",
+          "comment": "Second shadow color"
+        },
+        "default": {
+          "value": "{base.palette.slate.900}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use sys.color.shadow.base instead",
+          "comment": "Main shadow color"
+        }
+      },
       "static": {
         "gold": {
           "stronger": {
@@ -465,6 +1819,275 @@
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "replace static.orange.strong with {sys.color.static.amber.strong}. Prefer to replace with `sys.color.bg.caution.strong` if used as a background color."
+          }
+        },
+        "blue": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.blue tokens directly instead",
+            "comment": "Blue"
+          },
+          "softest": {
+            "value": "{base.palette.blue.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.blue tokens directly instead",
+            "comment": "Light blue"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.blue tokens directly instead",
+            "comment": "Stronger blue"
+          },
+          "stronger": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.blue tokens directly instead",
+            "comment": "Stronger blue"
+          },
+          "softer": {
+            "value": "{base.palette.blue.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.blue tokens directly instead",
+            "comment": "Light blue"
+          },
+          "soft": {
+            "value": "{base.palette.blue.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.blue tokens directly instead",
+            "comment": "Light blue"
+          },
+          "strongest": {
+            "value": "{base.palette.blue.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.blue tokens directly instead",
+            "comment": "Stronger blue"
+          }
+        },
+        "green": {
+          "default": {
+            "value": "{base.palette.green.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.green tokens directly instead",
+            "comment": "Default green"
+          },
+          "soft": {
+            "value": "{base.palette.green.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.green tokens directly instead",
+            "comment": "Light green"
+          },
+          "strong": {
+            "value": "{base.palette.green.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.green tokens directly instead",
+            "comment": "Stronger green"
+          },
+          "softer": {
+            "value": "{base.palette.green.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.green tokens directly instead",
+            "comment": "Light green"
+          },
+          "stronger": {
+            "value": "{base.palette.green.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.green tokens directly instead",
+            "comment": "Stronger green"
+          },
+          "softest": {
+            "value": "{base.palette.green.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.green tokens directly instead",
+            "comment": "Light green"
+          },
+          "strongest": {
+            "value": "{base.palette.green.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.green tokens directly instead",
+            "comment": "Stronger green"
+          }
+        },
+        "red": {
+          "default": {
+            "value": "{base.palette.red.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.red tokens directly instead",
+            "comment": "Red"
+          },
+          "soft": {
+            "value": "{base.palette.red.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.red tokens directly instead",
+            "comment": "Light red"
+          },
+          "strong": {
+            "value": "{base.palette.red.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.red tokens directly instead",
+            "comment": "Strong red"
+          },
+          "stronger": {
+            "value": "{base.palette.red.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.red tokens directly instead",
+            "comment": "Strong red"
+          },
+          "softest": {
+            "value": "{base.palette.red.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.red tokens directly instead",
+            "comment": "Light red"
+          },
+          "strongest": {
+            "value": "{base.palette.red.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.red tokens directly instead",
+            "comment": "Strong red"
+          },
+          "softer": {
+            "value": "{base.palette.red.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.red tokens directly instead",
+            "comment": "Light red"
+          }
+        },
+        "white": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use palette.neutral.0 directly instead",
+          "comment": "Just white"
+        },
+        "black": {
+          "value": "{base.palette.neutral.1000}",
+          "type": "color",
+          "deprecated": true,
+          "deprecatedComment": "Use palette.neutral.1000 directly instead",
+          "comment": "Just black"
+        },
+        "gray": {
+          "default": {
+            "value": "{base.palette.slate.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.slate tokens directly instead",
+            "comment": "Gray"
+          },
+          "soft": {
+            "value": "{base.palette.slate.200}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.slate tokens directly instead",
+            "comment": "Light gray"
+          },
+          "strong": {
+            "value": "{base.palette.slate.700}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.slate tokens directly instead",
+            "comment": "Stronger gray"
+          },
+          "stronger": {
+            "value": "{base.palette.slate.800}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.slate tokens directly instead",
+            "comment": "Stronger gray"
+          },
+          "strongest": {
+            "value": "{base.palette.slate.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.slate tokens directly instead",
+            "comment": "Stronger gray"
+          },
+          "softest": {
+            "value": "{base.palette.slate.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.slate tokens directly instead",
+            "comment": "Light gray"
+          },
+          "softer": {
+            "value": "{base.palette.slate.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.slate tokens directly instead",
+            "comment": "Light gray"
+          }
+        },
+        "amber": {
+          "default": {
+            "value": "{base.palette.amber.400}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.amber tokens directly instead",
+            "comment": "amber"
+          },
+          "softest": {
+            "value": "{base.palette.amber.25}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.amber tokens directly instead",
+            "comment": "Soft amber"
+          },
+          "strong": {
+            "value": "{base.palette.amber.500}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.amber tokens directly instead",
+            "comment": "Stronger amber"
+          },
+          "stronger": {
+            "value": "{base.palette.amber.600}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.amber tokens directly instead",
+            "comment": "Stronger amber"
+          },
+          "softer": {
+            "value": "{base.palette.amber.50}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.amber tokens directly instead",
+            "comment": "Soft amber"
+          },
+          "strongest": {
+            "value": "{base.palette.amber.950}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.amber tokens directly instead",
+            "comment": "Stronger amber"
+          },
+          "soft": {
+            "value": "{base.palette.amber.100}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use palette.amber tokens directly instead",
+            "comment": "Soft amber"
           }
         }
       }

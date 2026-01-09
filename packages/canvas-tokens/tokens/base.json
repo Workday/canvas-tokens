@@ -94,6 +94,22 @@
         "975": {
           "type": "color",
           "value": "oklch(0.2165 0.0674 40.35 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.7982 0.159 92.57 / 0.1)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.8864 0.1845 100.28 / 0.22)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.8988 0.185 97.8 / 0.35)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.886 0.1822 96.83 / 0.64)"
         }
       },
       "azure": {
@@ -148,6 +164,22 @@
         "975": {
           "type": "color",
           "value": "oklch(0.2138 0.0455 235.23 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.7487 0.1547 233.36 / 0.06)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.7394 0.1572 235.46 / 0.14)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.7186 0.1639 239.76 / 0.2)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.7117 0.1663 241.15 / 0.42)"
         }
       },
       "blue": {
@@ -202,6 +234,22 @@
         "975": {
           "type": "color",
           "value": "oklch(0.209 0.07 255.61 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.6499 0.1912 253.52 / 0.08)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.6152 0.2108 256.1 / 0.11)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.6225 0.2064 255.9 / 0.17)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.6048 0.2166 257.21 / 0.31)"
         }
       },
       "coral": {
@@ -256,6 +304,22 @@
         "975": {
           "type": "color",
           "value": "oklch(0.2114 0.07 29.72 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.6708 0.221 37.37 / 0.04)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.6598 0.229 34.15 / 0.08)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.6545 0.2337 33.76 / 0.15)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.6552 0.2332 34.09 / 0.36)"
         }
       },
       "green": {
@@ -310,6 +374,22 @@
         "975": {
           "type": "color",
           "value": "oklch(0.2118 0.0653 145.69 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.8695 0.2801 143.52 / 0.08)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.8685 0.2814 143.77 / 0.15)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.8316 0.2716 143.71 / 0.29)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.796 0.2508 144.9 / 0.6)"
         }
       },
       "indigo": {
@@ -364,6 +444,92 @@
         "975": {
           "type": "color",
           "value": "oklch(0.1951 0.0693 277.85 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.4762 0.2966 267.42 / 0.05)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.4661 0.3036 264.5 / 0.08)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.4693 0.3013 265.31 / 0.13)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.4666 0.3032 264.75 / 0.24)"
+        }
+      },
+      "magenta": {
+        "25": {
+          "type": "color",
+          "value": "oklch(0.9782 0.0191 325.55 / 1)"
+        },
+        "50": {
+          "type": "color",
+          "value": "oklch(0.9637 0.0322 325.69 / 1)"
+        },
+        "100": {
+          "type": "color",
+          "value": "oklch(0.9253 0.0627 329.34 / 1)"
+        },
+        "200": {
+          "type": "color",
+          "value": "oklch(0.887 0.1029 327.44 / 1)"
+        },
+        "300": {
+          "type": "color",
+          "value": "oklch(0.807 0.166 333.78 / 1)"
+        },
+        "400": {
+          "type": "color",
+          "value": "oklch(0.737 0.198 341.58 / 1)"
+        },
+        "500": {
+          "type": "color",
+          "value": "oklch(0.6557 0.2007 346.62 / 1)"
+        },
+        "600": {
+          "type": "color",
+          "value": "oklch(0.534 0.183 344.19 / 1)"
+        },
+        "700": {
+          "type": "color",
+          "value": "oklch(0.4641 0.1602 344.45 / 1)"
+        },
+        "800": {
+          "type": "color",
+          "value": "oklch(0.4011 0.1269 344.4 / 1)"
+        },
+        "900": {
+          "type": "color",
+          "value": "oklch(0.297 0.095 343.19 / 1)"
+        },
+        "950": {
+          "type": "color",
+          "value": "oklch(0.2332 0.0908 343.78 / 1)"
+        },
+        "975": {
+          "type": "color",
+          "value": "oklch(0.2016 0.0706 345.97 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.7091 0.3124 328.27 / 0.05)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.7044 0.3188 328.33 / 0.08)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.6892 0.3052 333.97 / 0.16)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.6972 0.3174 330.1 / 0.24)"
         }
       },
       "neutral": {
@@ -426,6 +592,62 @@
         "1000": {
           "type": "color",
           "value": "oklch(0 0 0 / 1)"
+        },
+        "A0": {
+          "type": "color",
+          "value": "oklch(0 0 0 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.1149 0 0 / 0.02)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.1149 0 0 / 0.04)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.1822 0 0 / 0.08)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.0847 0 0 / 0.17)"
+        },
+        "A300": {
+          "type": "color",
+          "value": "oklch(0.1149 0 0 / 0.26)"
+        },
+        "A400": {
+          "type": "color",
+          "value": "oklch(0.0847 0 0 / 0.36)"
+        },
+        "A500": {
+          "type": "color",
+          "value": "oklch(0.1149 0 0 / 0.48)"
+        },
+        "A600": {
+          "type": "color",
+          "value": "oklch(0 0 0 / 0.6)"
+        },
+        "A700": {
+          "type": "color",
+          "value": "oklch(0.0672 0 0 / 0.67)"
+        },
+        "A800": {
+          "type": "color",
+          "value": "oklch(0 0 0 / 0.77)"
+        },
+        "A900": {
+          "type": "color",
+          "value": "oklch(0.0969 0 0 / 0.84)"
+        },
+        "A950": {
+          "type": "color",
+          "value": "oklch(0.0672 0 0 / 0.89)"
+        },
+        "A975": {
+          "type": "color",
+          "value": "oklch(0 0 0 / 0.95)"
         }
       },
       "orange": {
@@ -480,60 +702,22 @@
         "975": {
           "type": "color",
           "value": "oklch(0.2121 0.0706 37.19 / 1)"
-        }
-      },
-      "magenta": {
-        "25": {
-          "type": "color",
-          "value": "oklch(0.9782 0.0191 325.55 / 1)"
         },
-        "50": {
+        "A25": {
           "type": "color",
-          "value": "oklch(0.9637 0.0322 325.69 / 1)"
+          "value": "oklch(0.7136 0.1784 53.73 / 0.1)"
         },
-        "100": {
+        "A50": {
           "type": "color",
-          "value": "oklch(0.9253 0.0627 329.34 / 1)"
+          "value": "oklch(0.7555 0.1769 59.35 / 0.17)"
         },
-        "200": {
+        "A100": {
           "type": "color",
-          "value": "oklch(0.887 0.1029 327.44 / 1)"
+          "value": "oklch(0.7365 0.1837 54.12 / 0.25)"
         },
-        "300": {
+        "A200": {
           "type": "color",
-          "value": "oklch(0.807 0.166 333.78 / 1)"
-        },
-        "400": {
-          "type": "color",
-          "value": "oklch(0.737 0.198 341.58 / 1)"
-        },
-        "500": {
-          "type": "color",
-          "value": "oklch(0.6557 0.2007 346.62 / 1)"
-        },
-        "600": {
-          "type": "color",
-          "value": "oklch(0.534 0.183 344.19 / 1)"
-        },
-        "700": {
-          "type": "color",
-          "value": "oklch(0.4641 0.1602 344.45 / 1)"
-        },
-        "800": {
-          "type": "color",
-          "value": "oklch(0.4011 0.1269 344.4 / 1)"
-        },
-        "900": {
-          "type": "color",
-          "value": "oklch(0.297 0.095 343.19 / 1)"
-        },
-        "950": {
-          "type": "color",
-          "value": "oklch(0.2332 0.0908 343.78 / 1)"
-        },
-        "975": {
-          "type": "color",
-          "value": "oklch(0.2016 0.0706 345.97 / 1)"
+          "value": "oklch(0.7304 0.1863 52.52 / 0.46)"
         }
       },
       "purple": {
@@ -588,6 +772,22 @@
         "975": {
           "type": "color",
           "value": "oklch(0.194 0.062 312.79 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.5632 0.2948 302.45 / 0.04)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.5645 0.2935 302.36 / 0.09)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.5867 0.2975 307.8 / 0.17)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.6051 0.3009 311.78 / 0.25)"
         }
       },
       "red": {
@@ -642,6 +842,22 @@
         "975": {
           "type": "color",
           "value": "oklch(0.1988 0.0718 20.63 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.6289 0.2567 29.11 / 0.04)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.6434 0.2428 30.17 / 0.1)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.6382 0.248 30.42 / 0.16)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.6375 0.2487 30.71 / 0.35)"
         }
       },
       "slate": {
@@ -696,6 +912,58 @@
         "975": {
           "type": "color",
           "value": "oklch(0.18 0.008 248.33 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.4688 0.0781 250.43 / 0.03)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.3343 0.0951 253.3 / 0.05)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.3337 0.0688 250.79 / 0.09)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.3057 0.079 256.22 / 0.13)"
+        },
+        "A300": {
+          "type": "color",
+          "value": "oklch(0.2442 0.0693 257.66 / 0.21)"
+        },
+        "A400": {
+          "type": "color",
+          "value": "oklch(0.2333 0.0665 257.09 / 0.35)"
+        },
+        "A500": {
+          "type": "color",
+          "value": "oklch(0.2187 0.0685 255.77 / 0.51)"
+        },
+        "A600": {
+          "type": "color",
+          "value": "oklch(0.1793 0.0503 254.55 / 0.64)"
+        },
+        "A700": {
+          "type": "color",
+          "value": "oklch(0.1595 0.0431 250.87 / 0.7)"
+        },
+        "A800": {
+          "type": "color",
+          "value": "oklch(0.157 0.0349 253.16 / 0.79)"
+        },
+        "A900": {
+          "type": "color",
+          "value": "oklch(0.1351 0.0244 244.09 / 0.87)"
+        },
+        "A950": {
+          "type": "color",
+          "value": "oklch(0.1312 0.0198 248.87 / 0.9)"
+        },
+        "A975": {
+          "type": "color",
+          "value": "oklch(0.1168 0.014 231.47 / 0.95)"
         }
       },
       "teal": {
@@ -750,6 +1018,80 @@
         "975": {
           "type": "color",
           "value": "oklch(0.2037 0.0354 211.24 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(0.8804 0.1478 200.72 / 0.09)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(0.8427 0.1433 206.66 / 0.19)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(0.7626 0.1316 209.35 / 0.22)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(0.7101 0.1219 207.98 / 0.37)"
+        }
+      },
+      "white": {
+        "A0": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 1)"
+        },
+        "A25": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.02)"
+        },
+        "A50": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.03)"
+        },
+        "A100": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.08)"
+        },
+        "A200": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.16)"
+        },
+        "A300": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.26)"
+        },
+        "A400": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.36)"
+        },
+        "A500": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.47)"
+        },
+        "A600": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.6)"
+        },
+        "A700": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.67)"
+        },
+        "A800": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.77)"
+        },
+        "A900": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.83)"
+        },
+        "A950": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.89)"
+        },
+        "A975": {
+          "type": "color",
+          "value": "oklch(1 0 0 / 0.95)"
         }
       }
     },
