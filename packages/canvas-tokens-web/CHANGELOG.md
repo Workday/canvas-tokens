@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.7
+
+### Major Changes
+
+- ### Components
+
+  - feat: Add alpha colors to base palette and new brand, surface, focus and shape tokens
+    ([#237](https://github.com/Workday/canvas-tokens/pull/237))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
 ## 4.0.0-alpha.6
 
 ### Major Changes
