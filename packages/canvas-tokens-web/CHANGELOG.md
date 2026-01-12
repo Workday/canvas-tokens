@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.8
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update sys tokens to match the object structure
+    ([#238](https://github.com/Workday/canvas-tokens/pull/238))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
 ## 4.0.0-alpha.7
 
 ### Major Changes
