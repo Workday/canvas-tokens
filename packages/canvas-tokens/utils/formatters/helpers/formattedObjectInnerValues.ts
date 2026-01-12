@@ -39,6 +39,7 @@ export const formattedObjectInnerValues: CompositeHelper = ({
       output: acc,
       path: passedPath,
       changeValueFn,
+      format,
     });
 
     return acc;
@@ -50,6 +51,7 @@ type RecursionHelperArgs = {
   output: Record<string, any>;
   path: string[];
   changeValueFn: ChangeValueFunction;
+  format: 'sys' | 'brand';
 };
 
 /**
@@ -61,13 +63,14 @@ type RecursionHelperArgs = {
  * `valueFn` function that changing token value.
  */
 
-const setProperty = ({src, output, path, changeValueFn}: RecursionHelperArgs): void => {
+const setProperty = ({src, output, path, changeValueFn, format}: RecursionHelperArgs): void => {
   const [head, ...rest] = path;
 
   // If next segment starts with a digit or is an alpha token (A25, a50, etc.), combine it with current key
   // e.g., ['primary', '600'] becomes key 'primary600' instead of nested primary.600
   // e.g., ['primary', 'A25'] becomes key 'primaryA25' instead of nested primary.A25
-  if (rest.length === 1 && /^(\d|[Aa]\d)/.test(rest[0])) {
+  // Combine for brand and base tokens, but not for system tokens
+  if (format !== 'sys' && rest.length === 1 && /^(\d|[Aa]\d)/.test(rest[0])) {
     const combinedKey = camelCase(head) + rest[0];
     const token = src[head].value ? src[head] : src[head][rest[0]];
     output[combinedKey] = changeValueFn(token);
@@ -94,6 +97,7 @@ const setProperty = ({src, output, path, changeValueFn}: RecursionHelperArgs): v
     output: output[key],
     path: rest,
     changeValueFn,
+    format,
   });
 };
 
