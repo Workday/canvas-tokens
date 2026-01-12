@@ -86,7 +86,7 @@ export function ShapeTokens() {
                 borderRadius: `var(${token.cssVar})`,
                 height: 80,
                 width: 80,
-                border: `solid 0.0625rem var(${system.color.border.contrast})`,
+                border: `solid 0.0625rem var(${system.color.border.contrast.default})`,
               }}
             />
           </TokenGrid.RowItem>

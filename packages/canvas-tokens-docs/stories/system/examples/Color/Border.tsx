@@ -17,7 +17,7 @@ const borderPalette = buildPalette('system.color.border', {
   warning: system.color.border.warning,
   'inverse.default': system.color.border.inverse.default,
   'inverse.strong': system.color.border.inverse.strong,
-  contrast: system.color.border.contrast,
+  contrast: system.color.border.contrast.default,
   transparent: system.color.border.transparent,
 }).sort(sortSystemColorPalette);
 
@@ -26,7 +26,7 @@ export const BorderColors = () => (
 );
 
 const contrastPalette = buildPalette('system.color.border.contrast', {
-  contrast: system.color.border.contrast,
+  contrast: system.color.border.contrast.default,
 }).sort(sortSystemColorPalette);
 
 export const BorderContrastColors = () => (
