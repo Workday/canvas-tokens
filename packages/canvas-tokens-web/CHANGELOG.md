@@ -1,5 +1,18 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.9
+
+### Major Changes
+
+- ### Components
+
+  - fix: Replace delete with unlink ([@mannycarrera4](https://github.com/mannycarrera4))
+
+  ### Infrastructure
+
+  - chore: Add script to verify tokens ([#240](https://github.com/Workday/canvas-tokens/pull/240))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.0.0-alpha.8
 
 ### Major Changes
