@@ -18,7 +18,7 @@ if (removed.length > 0) {
       `
     )
 
-    fs.deleteFileSync(path.join(_dir, 'existing-tokens.json'));
+    fs.unlinkSync(path.join(_dir, 'existing-tokens.json'));
   }
 };
 
