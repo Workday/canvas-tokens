@@ -11,8 +11,8 @@ import {
 const borderPalette = buildPalette('system.color.border', {
   default: system.color.border.default,
   strong: system.color.border.strong,
-  'primary.default': system.color.brand.border.primary.default,
-  info: system.color.border.info,
+  'primary.default': system.color.brand.border.primary,
+  info: system.color.border.info.default,
   danger: system.color.border.danger,
   warning: system.color.border.warning,
   'inverse.default': system.color.border.inverse.default,
@@ -44,7 +44,7 @@ export const BorderInputColors = () => (
 const statusPalettes = buildPaletteGroup(
   'system.color.brand.border',
   {
-    'primary.default': system.color.brand.border.primary.default,
+    'primary.default': system.color.brand.border.primary,
     critical: system.color.brand.border.critical,
     caution: system.color.brand.border.caution,
   },

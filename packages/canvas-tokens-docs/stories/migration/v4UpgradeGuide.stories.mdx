@@ -81,7 +81,7 @@ and interactive states.
 | color.surface.raised      | `{base.slateA25}` | `--cnvs-sys-color-surface-raised`               | Elevated surfaces               |
 | color.surface.loading     | `{base.slateA200}` | `--cnvs-sys-color-surface-loading`              | Skeleton/loading states         |
 | color.surface.transparent | `{base.neutralA0}` | `--cnvs-sys-color-surface-transparent`          | Transparent surfaces            |
-| color.surface.inverse     | `{base.neutral0} ` | `--cnvs-sys-color-surface-inverse`              | Inverse surfaces                |
+| color.surface.inverse     | `{base.neutral0}` | `--cnvs-sys-color-surface-inverse`              | Inverse surfaces                |
 
 
 #### Semantic Surface Tokens
@@ -355,16 +355,16 @@ improves code readability and ensures consistent sizing across components.
 
 
 
-| Token     | JS Value      | CSS Variable                | Description                               |
-| --------- | ---------- | --------------------------- | ----------------------------------------- |
-| size.xxs  | `{size.200}` | `--cnvs-sys-size-xxs`       | Switch Track                              |
-| size.xs   | `{size.250}` | `--cnvs-sys-size-xs`        | Count Badge                               |
-| size.sm   | `{size.300}` | `--cnvs-sys-size-sm`        | X-Small Buttons, Pills, Checkboxes        |
-| size.md   | `{size.400}` | `--cnvs-sys-size-md`        | Small Buttons, Segmented Control, Tooltip |
-| size.lg   | `{size.500}` | `--cnvs-sys-size-lg`        | Medium Buttons, Input Fields, Menu Items  |
-| size.xl   | `{size.600}` | `--cnvs-sys-size-xl`        | Large Buttons, Tabs, Avatar               |
-| size.xxl  | `{size.700}` | `--cnvs-sys-size-xxl`       | Table Cell, Toast                         |
-| size.xxxl | `{size.800}` | `--cnvs-sys-size-xxxl`      | Expandable Container                      |
+| Token     | JS Value        | CSS Variable                | Description                               |
+| --------- | ------------ | --------------------------- | ----------------------------------------- |
+| size.xxxs | `{base.size200}` | `--cnvs-sys-size-xxxs`    | Switch Track                              |
+| size.xxs  | `{base.size250}` | `--cnvs-sys-size-xxs`     | Switch Track                              |
+| size.xs   | `{base.size300}` | `--cnvs-sys-size-xs`      | Count Badge                               |
+| size.sm   | `{base.size400}` | `--cnvs-sys-size-sm`      | X-Small Buttons, Pills, Checkboxes        |
+| size.md   | `{base.size500}` | `--cnvs-sys-size-md`      | Small Buttons, Segmented Control, Tooltip |
+| size.lg   | `{base.size600}` | `--cnvs-sys-size-lg`      | Medium Buttons, Input Fields, Menu Items  |
+| size.xl   | `{base.size700}` | `--cnvs-sys-size-xl`      | Large Buttons, Tabs, Avatar               |
+| size.xxl  | `{base.size800}` | `--cnvs-sys-size-xxl`     | Table Cell, Toast                         |
 
 
 ### Space Tokens
@@ -377,16 +377,16 @@ properties.
 
 
 
-| Token        | JS Value      | CSS Variable                | Description                        |
-| ------------ | ---------- | --------------------------- | ---------------------------------- |
-| padding.none | `{size.0}`   | `--cnvs-sys-padding-none`   | No space between content and edges |
-| padding.xxs  | `{size.50}`  | `--cnvs-sys-padding-xxs`    | Compact padding                    |
-| padding.xs   | `{size.100}` | `--cnvs-sys-padding-xs`      | Horizontal padding on Input Fields |
-| padding.sm   | `{size.150}` | `--cnvs-sys-padding-sm`      | Rich Text Editor, X-Small Buttons  |
-| padding.md   | `{size.200}` | `--cnvs-sys-padding-md`      | Small Button content               |
-| padding.lg   | `{size.250}` | `--cnvs-sys-padding-lg`      | Medium Buttons with Icons          |
-| padding.xl   | `{size.300}` | `--cnvs-sys-padding-xl`      | Card and Medium Button content     |
-| padding.xxl  | `{size.400}` | `--cnvs-sys-padding-xxl`     | Modal and Large Button content     |
+| Token        | JS Value        | CSS Variable                | Description                        |
+| ------------ | ------------ | --------------------------- | ---------------------------------- |
+| padding.none | `{base.size0}` | `--cnvs-sys-padding-none` | No space between content and edges |
+| padding.xxs  | `{base.size50}` | `--cnvs-sys-padding-xxs`  | Compact padding                    |
+| padding.xs   | `{base.size100}` | `--cnvs-sys-padding-xs`  | Horizontal padding on Input Fields |
+| padding.sm   | `{base.size150}` | `--cnvs-sys-padding-sm`  | Rich Text Editor, X-Small Buttons  |
+| padding.md   | `{base.size200}` | `--cnvs-sys-padding-md`  | Small Button content               |
+| padding.lg   | `{base.size250}` | `--cnvs-sys-padding-lg`  | Medium Buttons with Icons          |
+| padding.xl   | `{base.size300}` | `--cnvs-sys-padding-xl`  | Card and Medium Button content     |
+| padding.xxl  | `{base.size400}` | `--cnvs-sys-padding-xxl` | Modal and Large Button content     |
 
 
 ### Gap Tokens
@@ -396,15 +396,15 @@ for component relationships and content organization.
 
 
 
-| Token    | JS Value      | CSS Variable                | Description                            |
-| -------- | ---------- | --------------------------- | -------------------------------------- |
-| gap.none | `{size.0}`   | `--cnvs-sys-gap-none`        | No space between elements              |
-| gap.xs   | `{size.50}`  | `--cnvs-sys-gap-xs`          | Icon to text, labels to inputs         |
-| gap.sm   | `{size.100}` | `--cnvs-sys-gap-sm`          | Pills, buttons, inline icon to text    |
-| gap.md   | `{size.200}` | `--cnvs-sys-gap-md`          | Default inline spacing                 |
-| gap.lg   | `{size.300}` | `--cnvs-sys-gap-lg`          | Tighter spacing between cards          |
-| gap.xl   | `{size.400}` | `--cnvs-sys-gap-xl`          | Default card spacing, 12-column gutter |
-| gap.xxl  | `{size.800}` | `--cnvs-sys-gap-xxl`         | Space between content sections         |
+| Token    | JS Value        | CSS Variable                | Description                            |
+| -------- | ------------ | --------------------------- | -------------------------------------- |
+| gap.none | `{base.size0}` | `--cnvs-sys-gap-none`     | No space between elements              |
+| gap.xs   | `{base.size50}` | `--cnvs-sys-gap-xs`       | Icon to text, labels to inputs         |
+| gap.sm   | `{base.size100}` | `--cnvs-sys-gap-sm`     | Pills, buttons, inline icon to text    |
+| gap.md   | `{base.size200}` | `--cnvs-sys-gap-md`     | Default inline spacing                 |
+| gap.lg   | `{base.size300}` | `--cnvs-sys-gap-lg`     | Tighter spacing between cards          |
+| gap.xl   | `{base.size400}` | `--cnvs-sys-gap-xl`     | Default card spacing, 12-column gutter |
+| gap.xxl  | `{base.size800}` | `--cnvs-sys-gap-xxl`    | Space between content sections         |
 
 
 ## Shape Token Updates
@@ -417,15 +417,14 @@ pronounced rounding on larger containers and elevated surfaces.
 
 | Token      | JS Value            | CSS Variable                | Description                       |
 | ---------- | ---------------- | --------------------------- | --------------------------------- |
-| shape.zero | `{size.0}`         | `--cnvs-sys-shape-zero`      | Full-width containers             |
-| shape.xs   | `{size.50}`        | `--cnvs-sys-shape-xs`        | Checkbox, Pill                    |
-| shape.sm   | `{size.100}`       | `--cnvs-sys-shape-sm`        | Inputs, Toasts, Tooltips          |
-| shape.md   | `{size.200}`       | `--cnvs-sys-shape-md`        | Cards, Menus                      |
-| shape.lg   | `{size.300}`       | `--cnvs-sys-shape-lg`        | Dialogs, Modals, Bottom Sheets    |
-| shape.xl   | `{size.400}`       | `--cnvs-sys-shape-xl`        | Extra large rounding (NEW)        |
-| shape.xxl  | `{size.500}`       | `--cnvs-sys-shape-xxl`       | Cards and elevated items (NEW)    |
-| shape.xxxl | `{size.600}`       | `--cnvs-sys-shape-xxxl`      | Modals and large containers (NEW) |
-| shape.full | `{size.75}` \* 100 | `--cnvs-sys-shape-full`      | Buttons, Badge, Status Indicator  |
+| shape.none | `{base.size0}`   | `--cnvs-sys-shape-none`     | Full-width containers             |
+| shape.sm   | `{base.size50}`  | `--cnvs-sys-shape-sm`       | Inputs, Toasts, Tooltips          |
+| shape.md   | `{base.size100}` | `--cnvs-sys-shape-md`       | Cards, Menus                      |
+| shape.lg   | `{base.size150}` | `--cnvs-sys-shape-lg`       | Dialogs, Modals, Bottom Sheets    |
+| shape.xl   | `{base.size200}` | `--cnvs-sys-shape-xl`       | Extra large rounding (NEW)        |
+| shape.xxl  | `{base.size300}` | `--cnvs-sys-shape-xxl`      | Cards and elevated items (NEW)    |
+| shape.xxxl | `{base.size400}` | `--cnvs-sys-shape-xxxl`     | Modals and large containers (NEW) |
+| shape.full | `{base.size75}` \* 100 | `--cnvs-sys-shape-full` | Buttons, Badge, Status Indicator  |
 
 
 ### Breakpoint Updates
@@ -447,7 +446,22 @@ support wide monitor displays, ensuring better responsive design coverage across
 
 ## Deprecated Tokens
 
-The following tokens have been deprecated in v4. Use the replacement tokens listed below.
+The following tokens have been deprecated in v4. Each deprecated token now **points to a new token value** - the deprecated tokens will continue to work but resolve to their replacement values. We strongly recommend updating your code to use the new token names directly.
+
+### Key Migration Example
+
+One of the most common deprecated tokens is `sys.color.bg.primary.default`, which now points to `sys.color.brand.accent.primary`:
+
+```javascript
+// ❌ Deprecated (still works, but points to new value)
+tokens.sys.color.bg.primary.default
+// → resolves to: sys.color.brand.accent.primary
+
+// ✅ Recommended (use directly)
+tokens.sys.color.brand.accent.primary
+```
+
+This pattern applies to many deprecated tokens - they act as aliases that point to their replacement values. While deprecated tokens will continue to function, using the new token names directly ensures better code clarity and future compatibility.
 
 ### Deprecated Brand Tokens
 
@@ -545,48 +559,340 @@ The following tokens have been deprecated in v4. Use the replacement tokens list
 
 ### Deprecated Color Tokens
 
+The following color tokens have been deprecated in v4. Each deprecated token now points to a new token value. The deprecated tokens will continue to work but will resolve to their replacement values. We recommend updating your code to use the new token names directly.
 
+#### Background Color Tokens
 
-| Deprecated Token              | Replacement                                         |
-| ----------------------------- | --------------------------------------------------- |
-| color.bg.primary.\*           | sys.color.brand.surface.primary.\*                  |
-| color.bg.surface.\*           | sys.color.surface.\*                                |
-| color.bg.accent.\*            | sys.color.surface.accent.\*                         |
-| color.bg.transparent.\*       | sys.color.surface.transparent.\*                    |
-| color.bg.overlay.\*           | sys.color.surface.overlay.\*                        |
-| color.bg.translucent.\*       | sys.color.surface.transparent.\*                    |
-| color.bg.alt.\*               | sys.color.surface.alt.\*                            |
-| color.bg.muted.\*             | sys.color.surface.\*                                |
-| color.bg.contrast.\*          | sys.color.contrast.\*                               |
-| color.bg.positive.\*          | sys.color.success.\*                                |
-| color.bg.caution.\*           | sys.color.warning.\*                                |
-| color.bg.critical.\*          | sys.color.danger.\*                                 |
-| color.bg.ai.\*                | sys.color.ai.\*                                     |
-| color.bg.info.\*              | sys.color.info.\*                                   |
-| color.text.\*                 | sys.color.fg.\*                                     |
-| color.icon.\*                 | sys.color.fg.\*                                     |
-| color.fg.critical.\*          | sys.color.fg.danger.\*                              |
-| color.fg.muted.stronger       | sys.color.fg.muted.strong                           |
-| color.fg.muted.soft           | sys.color.fg.muted.default                          |
-| color.fg.primary.\*           | sys.color.brand.fg.\*                               |
-| color.fg.caution.\*           | sys.color.fg.warning.\*                             |
-| color.fg.info.softer          | sys.color.fg.info.default                           |
-| color.fg.info.soft            | sys.color.fg.info.default                           |
-| color.fg.info.stronger        | sys.color.fg.info.strong                            |
-| color.fg.positive.\*          | sys.color.fg.success.\*                             |
-| color.border.input.disabled   | sys.color.fg.disabled                               |
-| color.border.input.strong     | sys.color.border.input.hover                        |
-| color.border.input.inverse    | sys.color.fg.inverse                                |
-| color.border.contrast.default | sys.color.border.contrast                           |
-| color.border.contrast.strong  | sys.color.border.contrast                           |
-| color.border.critical.default | sys.color.border.danger                             |
-| color.border.caution.default  | sys.color.border.warning                            |
-| color.border.caution.strong   | sys.color.border.warning                            |
-| color.border.divider          | sys.color.border.default                            |
-| color.border.container        | sys.color.border.default or sys.color.border.strong |
-| color.border.ai               | sys.color.accent.ai                                 |
-| color.border.info.default     | sys.color.border.info                               |
-| color.static.\*               | base.base.\*                                     |
+**Primary Background Tokens**
+
+The primary background tokens have been reorganized to better align with brand and surface semantics. All deprecated tokens point directly to their replacement values:
+
+| Deprecated Token                    | Points To (New Token Value)                        | Notes                                                      |
+| ----------------------------------- | -------------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.bg.primary.default`     | `sys.color.brand.accent.primary`                   | Primary brand color for backgrounds                        |
+| `sys.color.bg.primary.strong`       | `sys.color.brand.accent.primary`                   | Use with `sys.color.accent.overlay.hover` for hover states |
+| `sys.color.bg.primary.stronger`    | `sys.color.brand.accent.primary`                   | Use with `sys.color.accent.overlay.pressed` for active     |
+| `sys.color.bg.primary.soft`        | `sys.color.brand.surface.primary.default`         | Surface background with primary brand color                 |
+| `sys.color.bg.primary.softer`      | `sys.color.brand.surface.primary.strong`          | Stronger surface background with primary brand color       |
+| `sys.color.bg.primary.softest`     | `sys.color.brand.surface.primary.default`         | Surface background with primary brand color                 |
+
+**Example Migration:**
+
+```javascript
+// Before (deprecated)
+backgroundColor: tokens.sys.color.bg.primary.default
+
+// After (recommended)
+backgroundColor: tokens.sys.color.brand.accent.primary
+```
+
+**Surface Background Tokens**
+
+**Alt Background Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.bg.alt.soft`               | `sys.color.surface.alt.default`                |
+| `sys.color.bg.alt.softer`            | `sys.color.surface.raised`                    |
+| `sys.color.bg.alt.strong`             | `sys.color.surface.alt.default` (+ overlay)   |
+| `sys.color.bg.alt.stronger`          | `sys.color.surface.alt.default` (+ overlay)   |
+
+**Transparent/Overlay Background Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.bg.transparent.default`   | `sys.color.surface.transparent`                |
+| `sys.color.bg.transparent.strong`    | `sys.color.surface.overlay.hover.default`      |
+| `sys.color.bg.transparent.stronger`  | `sys.color.surface.overlay.pressed.default`    |
+| `sys.color.bg.overlay`                | `sys.color.surface.overlay.scrim`              |
+| `sys.color.bg.translucent`           | `sys.color.surface.contrast.default`          |
+
+**Muted Background Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.bg.muted.default`         | `sys.color.accent.muted.default`               |
+| `sys.color.bg.muted.soft`             | `sys.color.accent.muted.soft`                  |
+| `sys.color.bg.muted.softer`           | `sys.color.accent.muted.soft`                  |
+| `sys.color.bg.muted.strong`          | `sys.color.accent.muted.default` (+ overlay)  |
+
+**Contrast Background Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.bg.contrast.default`     | `sys.color.surface.contrast.default`          |
+| `sys.color.bg.contrast.strong`       | `sys.color.surface.contrast.strong` (+ overlay)|
+
+**Semantic Background Tokens**
+
+**Critical/Error Background Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.bg.critical.default`       | `sys.color.brand.accent.critical`              |
+| `sys.color.bg.critical.strong`       | `sys.color.brand.accent.critical` (+ overlay)  |
+| `sys.color.bg.critical.stronger`     | `sys.color.brand.accent.critical` (+ overlay)  |
+| `sys.color.bg.critical.soft`         | `base.palette.red.100` (use `sys.color.surface.danger.default`) |
+| `sys.color.bg.critical.softer`       | `sys.color.brand.surface.critical.strong`       |
+| `sys.color.bg.critical.softest`      | `sys.color.brand.surface.critical.default`     |
+
+**Caution/Warning Background Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.bg.caution.default`       | `sys.color.brand.accent.caution`                |
+| `sys.color.bg.caution.strong`        | `sys.color.brand.accent.caution` (+ overlay)   |
+| `sys.color.bg.caution.stronger`      | `sys.color.brand.accent.caution` (+ overlay)   |
+| `sys.color.bg.caution.soft`          | `base.palette.amber.100` (use `sys.color.surface.warning.default`) |
+| `sys.color.bg.caution.softer`        | `sys.color.brand.surface.caution.strong`        |
+| `sys.color.bg.caution.softest`       | `sys.color.brand.surface.caution.default`      |
+
+**Positive/Success Background Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.bg.positive.default`      | `sys.color.brand.accent.positive`               |
+| `sys.color.bg.positive.strong`       | `sys.color.brand.accent.positive` (+ overlay)  |
+| `sys.color.bg.positive.stronger`     | `sys.color.brand.accent.positive` (+ overlay) |
+| `sys.color.bg.positive.soft`        | `sys.color.brand.surface.positive.default`    |
+| `sys.color.bg.positive.softer`      | `sys.color.brand.surface.positive.strong`      |
+| `sys.color.bg.positive.softest`     | `base.palette.green.25` (use `sys.color.surface.success.default`) |
+
+**Info Background Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.bg.info.default`          | `sys.color.accent.info`                         |
+| `sys.color.bg.info.strong`           | `sys.color.accent.info` (+ overlay)             |
+| `sys.color.bg.info.stronger`        | `sys.color.accent.info` (+ overlay)             |
+| `sys.color.bg.info.soft`             | `sys.color.surface.info.default`                |
+| `sys.color.bg.info.softer`          | `sys.color.surface.info.strong`                |
+| `sys.color.bg.info.softest`         | `sys.color.surface.info.default`                |
+
+**AI Background Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.bg.ai.default`            | `sys.color.surface.ai.default`                  |
+| `sys.color.bg.ai.strong`             | `sys.color.surface.ai.hover`                   |
+| `sys.color.bg.ai.stronger`           | `sys.color.surface.ai.pressed`                 |
+| `sys.color.bg.ai.strongest`         | `sys.color.accent.ai`                           |
+
+#### Foreground Color Tokens
+
+**Text Tokens (deprecated - use `sys.color.fg.*` instead):**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.text.default`              | `sys.color.fg.default`                          |
+| `sys.color.text.strong`                | `sys.color.fg.strong`                            |
+| `sys.color.text.stronger`              | `sys.color.fg.strong`                           |
+| `sys.color.text.disabled`              | `base.palette.slate.400` (use `sys.color.fg.disabled`) |
+| `sys.color.text.hint`                 | `sys.color.fg.muted.default`                     |
+| `sys.color.text.inverse`              | `sys.color.fg.inverse`                          |
+| `sys.color.text.critical.default`    | `sys.color.brand.fg.critical.default`            |
+| `sys.color.text.critical.strong`     | `sys.color.brand.fg.critical.strong`             |
+| `sys.color.text.critical.stronger`   | `sys.color.brand.fg.critical.strong`            |
+| `sys.color.text.critical.soft`       | `base.palette.red.400` (use `sys.color.fg.danger`) |
+| `sys.color.text.critical.softer`     | `base.palette.red.200` (use `sys.color.fg.danger`) |
+| `sys.color.text.primary.default`     | `sys.color.brand.fg.primary.default`            |
+| `sys.color.text.primary.strong`      | `sys.color.brand.fg.primary.strong`             |
+| `sys.color.text.primary.stronger`     | `sys.color.brand.fg.primary.strong`             |
+| `sys.color.text.primary.soft`        | `base.palette.blue.400` (use `sys.color.fg.info`) |
+| `sys.color.text.primary.softer`      | `base.palette.blue.200` (use `sys.color.fg.info`) |
+| `sys.color.text.caution.default`      | `sys.color.fg.contrast.default` (use `sys.color.fg.warning`) |
+| `sys.color.text.caution.strong`       | `sys.color.fg.contrast.strong`                  |
+| `sys.color.text.caution.soft`        | `base.palette.amber.400` (use `sys.color.fg.warning`) |
+| `sys.color.text.caution.stronger`     | `sys.color.fg.contrast.strong`                   |
+| `sys.color.text.caution.softer`      | `base.palette.amber.200` (use `sys.color.fg.warning`) |
+| `sys.color.text.positive.default`    | `sys.color.brand.fg.positive.default`            |
+| `sys.color.text.positive.strong`     | `sys.color.brand.fg.positive.strong`             |
+| `sys.color.text.positive.stronger`   | `sys.color.brand.fg.positive.strong`             |
+| `sys.color.text.positive.soft`       | `base.palette.green.400` (use `sys.color.fg.success`) |
+| `sys.color.text.positive.softer`     | `base.palette.green.200` (use `sys.color.fg.success`) |
+| `sys.color.text.info.default`        | `sys.color.fg.info.default`                      |
+| `sys.color.text.info.strong`         | `sys.color.fg.info.strong`                       |
+| `sys.color.text.info.stronger`       | `sys.color.fg.info.strong`                       |
+| `sys.color.text.info.soft`           | `base.palette.blue.400` (use `sys.color.fg.info.default`) |
+| `sys.color.text.info.softer`          | `base.palette.blue.200` (use `sys.color.fg.info`) |
+| `sys.color.text.ai`                  | `base.palette.blue.950` (use `sys.color.fg.ai`)   |
+
+**Icon Tokens (deprecated - use `sys.color.fg.*` instead):**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.icon.default`              | `sys.color.fg.default`                          |
+| `sys.color.icon.soft`                 | `sys.color.fg.muted.default`                    |
+| `sys.color.icon.strong`                | `sys.color.fg.muted.strong`                     |
+| `sys.color.icon.inverse`              | `base.palette.neutral.0` (use `sys.color.fg.inverse`) |
+| `sys.color.icon.disabled`             | `base.palette.slate.400` (use `sys.color.fg.disabled`) |
+| `sys.color.icon.primary.default`      | `sys.color.brand.fg.primary.default`            |
+| `sys.color.icon.primary.strong`       | `sys.color.brand.fg.primary.strong`             |
+| `sys.color.icon.primary.stronger`     | `sys.color.brand.fg.primary.strong`             |
+| `sys.color.icon.primary.soft`         | `base.palette.blue.400` (use `sys.color.fg.info`) |
+| `sys.color.icon.primary.softer`      | `base.palette.blue.200` (use `sys.color.fg.info`) |
+| `sys.color.icon.critical.default`     | `sys.color.brand.fg.critical.default`            |
+| `sys.color.icon.critical.strong`      | `sys.color.brand.fg.critical.strong`            |
+| `sys.color.icon.critical.stronger`    | `base.palette.red.800` (use `sys.color.fg.danger.strong`) |
+| `sys.color.icon.critical.soft`       | `base.palette.red.400` (use `sys.color.fg.danger`) |
+| `sys.color.icon.critical.softer`     | `base.palette.red.200` (use `sys.color.fg.danger`) |
+| `sys.color.icon.caution.default`      | `sys.color.fg.contrast.default`                 |
+| `sys.color.icon.caution.strong`       | `sys.color.brand.fg.caution.default`            |
+| `sys.color.icon.caution.stronger`     | `sys.color.brand.fg.caution.strong`              |
+| `sys.color.icon.caution.soft`         | `sys.color.brand.fg.caution.default` (use `sys.color.fg.warning`) |
+| `sys.color.icon.caution.softer`       | `base.palette.amber.500` (use `sys.color.fg.warning`) |
+| `sys.color.icon.positive.default`     | `sys.color.brand.fg.positive.default`            |
+| `sys.color.icon.positive.strong`     | `sys.color.brand.fg.positive.strong`             |
+| `sys.color.icon.positive.stronger`    | `sys.color.brand.fg.positive.strong`             |
+| `sys.color.icon.positive.soft`       | `base.palette.green.400` (use `sys.color.fg.success`) |
+| `sys.color.icon.positive.softer`     | `base.palette.green.200` (use `sys.color.fg.success`) |
+| `sys.color.icon.info.default`         | `sys.color.fg.info.default`                      |
+| `sys.color.icon.info.strong`          | `sys.color.fg.info.strong`                       |
+| `sys.color.icon.info.stronger`       | `base.palette.blue.800` (use `sys.color.fg.info.strong`) |
+
+**Foreground Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    |
+| ------------------------------------- | ----------------------------------------------- |
+| `sys.color.fg.critical.default`       | `sys.color.brand.fg.critical.default`           |
+| `sys.color.fg.critical.strong`        | `sys.color.brand.fg.critical.strong`            |
+| `sys.color.fg.critical.stronger`      | `base.palette.red.800` (use `sys.color.fg.danger` tokens) |
+| `sys.color.fg.critical.soft`          | `base.palette.red.400` (use `sys.color.fg.danger`) |
+| `sys.color.fg.critical.softer`        | `base.palette.red.200` (use `sys.color.fg.danger`) |
+| `sys.color.fg.muted.stronger`         | `sys.color.fg.muted.strong`                     |
+| `sys.color.fg.muted.soft`             | `base.palette.slate.400` (use `sys.color.fg.muted`) |
+| `sys.color.fg.primary.soft`           | `base.palette.blue.400` (use `sys.color.fg.info` or `sys.color.brand.fg.primary`) |
+| `sys.color.fg.primary.softer`         | `base.palette.blue.200` (use `sys.color.fg.info` or `sys.color.brand.fg.primary`) |
+| `sys.color.fg.primary.stronger`       | `sys.color.brand.fg.primary.strong`             |
+| `sys.color.fg.caution.default`        | `sys.color.brand.fg.caution.default`            |
+| `sys.color.fg.caution.strong`         | `sys.color.brand.fg.caution.strong`              |
+| `sys.color.fg.caution.soft`           | `base.palette.amber.700` (use `sys.color.fg.warning`) |
+| `sys.color.fg.caution.stronger`       | `base.palette.amber.975` (use `sys.color.fg.warning.strong`) |
+| `sys.color.fg.caution.softer`        | `base.palette.amber.500` (use `sys.color.fg.warning`) |
+| `sys.color.fg.info.softer`            | `sys.color.fg.ai`                               |
+| `sys.color.fg.info.soft`              | `base.palette.blue.400` (use `sys.color.fg.info`) |
+| `sys.color.fg.info.stronger`         | `sys.color.fg.info.strong`                       |
+| `sys.color.fg.positive.default`       | `sys.color.fg.success.default` (use `sys.color.brand.fg.positive.default`) |
+| `sys.color.fg.positive.softer`        | `base.palette.green.200` (use `sys.color.fg.success`) |
+| `sys.color.fg.positive.soft`          | `base.palette.green.400` (use `sys.color.fg.success`) |
+| `sys.color.fg.positive.strong`        | `sys.color.brand.fg.positive.strong`             |
+| `sys.color.fg.positive.stronger`      | `sys.color.brand.fg.positive.strong`             |
+
+#### Border Color Tokens
+
+**Input Border Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.border.input.disabled`     | `sys.opacity.disabled`                          | Use `sys.color.fg.disabled` instead                       |
+| `sys.color.border.input.strong`      | `sys.color.border.input.hover`                   | Use `sys.color.border.input.hover` instead                |
+| `sys.color.border.input.inverse`     | `sys.color.border.inverse.default`              | Use `sys.color.border.inverse.default` instead            |
+
+**Inverse Border Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.border.inverse.default`   | `base.palette.neutral.0`                        | Use `sys.color.border.inverse.default` instead            |
+
+**Contrast Border Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.border.contrast.default`  | `sys.color.border.contrast.default`              | Use `sys.color.border.contrast.default` instead           |
+| `sys.color.border.contrast.strong`   | `sys.color.border.contrast.default`              | Use `sys.color.border.contrast.default` instead            |
+
+**Semantic Border Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.border.primary.default`   | `sys.color.brand.border.primary`                 | Use `sys.color.brand.border.primary` instead               |
+| `sys.color.border.critical.default`  | `sys.color.brand.border.critical`                | Use `sys.color.brand.border.critical` instead              |
+| `sys.color.border.caution.default`   | `sys.color.brand.focus.caution.inner`            | Use `sys.color.brand.focus.caution.inner` instead           |
+| `sys.color.border.caution.strong`    | `sys.color.brand.focus.caution.outer`            | Use `sys.color.brand.focus.caution.outer` instead          |
+| `sys.color.border.info.default`      | `sys.color.border.info.default`                  | Use `sys.color.border.info.default` instead                |
+| `sys.color.border.ai`                | `sys.color.accent.ai`                            | Use `sys.color.accent.ai` instead                          |
+
+**Utility Border Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.border.divider`            | `sys.color.border.default`                      | Use `sys.color.border.default` instead                     |
+| `sys.color.border.container`         | `sys.color.border.strong`                        | Use `sys.color.border.default` or `sys.color.border.strong` |
+
+#### Static Color Tokens
+
+Static color tokens have been deprecated in favor of using base palette tokens directly. All static tokens point to their corresponding `base.palette.*` values.
+
+**Static Amber/Orange/Gold Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.static.amber.default`      | `sys.color.accent.warning`                      | Use `sys.color.accent.warning` instead                    |
+| `sys.color.static.amber.softest`      | `sys.color.surface.warning.default`             | Use `sys.color.accent.warning` instead                    |
+| `sys.color.static.amber.soft`        | `sys.color.surface.warning.strong`              | Use `sys.color.surface.warning.strong` instead             |
+| `sys.color.static.amber.softer`      | `base.palette.amber.50`                         | Use `base.palette.amber.*` tokens directly                |
+| `sys.color.static.amber.strong`       | `sys.color.accent.warning`                      | Use `sys.color.accent.warning` instead                     |
+| `sys.color.static.amber.stronger`     | `sys.color.accent.warning`                      | Use `sys.color.accent.warning` instead                     |
+| `sys.color.static.amber.strongest`    | `sys.color.fg.warning.strong`                   | Use `sys.color.fg.warning.strong` instead                  |
+| `sys.color.static.orange.default`     | `base.palette.amber.400`                        | Prefer `sys.color.bg.caution.default` if used as background |
+| `sys.color.static.orange.soft`        | `base.palette.amber.100`                        | Prefer `sys.color.bg.caution.soft` if used as background   |
+| `sys.color.static.orange.strong`      | `base.palette.amber.500`                        | Prefer `sys.color.bg.caution.strong` if used as background |
+| `sys.color.static.gold.stronger`      | `base.palette.amber.600`                        | Prefer `sys.color.bg.caution.stronger` if used as background |
+
+**Static Blue Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.static.blue.default`      | `sys.color.accent.info`                         | Use `sys.color.accent.info` instead                       |
+| `sys.color.static.blue.softest`       | `base.palette.blue.25`                          | Use `base.palette.blue.*` tokens directly                  |
+| `sys.color.static.blue.softer`        | `base.palette.blue.50`                          | Use `base.palette.blue.*` tokens directly                  |
+| `sys.color.static.blue.soft`          | `base.palette.blue.100`                         | Use `base.palette.blue.*` tokens directly                  |
+| `sys.color.static.blue.strong`        | `base.palette.blue.700`                         | Use `base.palette.blue.*` tokens directly                  |
+| `sys.color.static.blue.stronger`      | `base.palette.blue.800`                         | Use `base.palette.blue.*` tokens directly                  |
+| `sys.color.static.blue.strongest`     | `base.palette.blue.950`                         | Use `base.palette.blue.*` tokens directly                  |
+
+**Static Green Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.static.green.default`      | `base.palette.green.600`                        | Use `base.palette.green.*` tokens directly                |
+| `sys.color.static.green.softest`     | `base.palette.green.25`                         | Use `base.palette.green.*` tokens directly                |
+| `sys.color.static.green.softer`       | `base.palette.green.50`                         | Use `base.palette.green.*` tokens directly                 |
+| `sys.color.static.green.soft`         | `base.palette.green.100`                        | Use `base.palette.green.*` tokens directly                 |
+| `sys.color.static.green.strong`       | `base.palette.green.700`                        | Use `base.palette.green.*` tokens directly                 |
+| `sys.color.static.green.stronger`     | `base.palette.green.800`                        | Use `base.palette.green.*` tokens directly                 |
+| `sys.color.static.green.strongest`    | `base.palette.green.950`                        | Use `base.palette.green.*` tokens directly                 |
+
+**Static Red Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.static.red.default`        | `base.palette.red.600`                          | Use `base.palette.red.*` tokens directly                   |
+| `sys.color.static.red.softest`        | `base.palette.red.25`                           | Use `base.palette.red.*` tokens directly                   |
+| `sys.color.static.red.softer`         | `base.palette.red.50`                           | Use `base.palette.red.*` tokens directly                   |
+| `sys.color.static.red.soft`           | `base.palette.red.100`                          | Use `base.palette.red.*` tokens directly                   |
+| `sys.color.static.red.strong`         | `base.palette.red.700`                          | Use `base.palette.red.*` tokens directly                   |
+| `sys.color.static.red.stronger`       | `base.palette.red.800`                          | Use `base.palette.red.*` tokens directly                   |
+| `sys.color.static.red.strongest`      | `base.palette.red.950`                          | Use `base.palette.red.*` tokens directly                   |
+
+**Static Gray/Slate Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.static.gray.default`       | `base.palette.slate.600`                        | Use `base.palette.slate.*` tokens directly                  |
+| `sys.color.static.gray.softest`       | `base.palette.slate.50`                         | Use `base.palette.slate.*` tokens directly                 |
+| `sys.color.static.gray.softer`        | `base.palette.slate.100`                        | Use `base.palette.slate.*` tokens directly                 |
+| `sys.color.static.gray.soft`         | `base.palette.slate.200`                        | Use `base.palette.slate.*` tokens directly                 |
+| `sys.color.static.gray.strong`        | `base.palette.slate.700`                        | Use `base.palette.slate.*` tokens directly                 |
+| `sys.color.static.gray.stronger`      | `base.palette.slate.800`                        | Use `base.palette.slate.*` tokens directly                 |
+| `sys.color.static.gray.strongest`    | `base.palette.slate.950`                        | Use `base.palette.slate.*` tokens directly                 |
+
+**Static Neutral Tokens:**
+
+| Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.static.white`              | `base.palette.neutral.0`                        | Use `base.palette.neutral.0` directly                      |
+| `sys.color.static.black`              | `base.palette.neutral.1000`                     | Use `base.palette.neutral.1000` directly                    |
 
 
 ### Deprecated Shadow Color Tokens
