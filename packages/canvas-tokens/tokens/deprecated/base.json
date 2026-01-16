@@ -363,7 +363,7 @@
           "value": "#5fe380",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace green-apple300 with {base.palette.green.200}. Prefer to replace `sys.color.fg.positive.soft` if used as a foreground (text/icon) color.",
+          "deprecatedComment": "replace green-apple300 with {base.palette.green.200}. Prefer to replace with `sys.color.fg.positive.soft` if used as a foreground (text/icon) color.",
           "fallback": "{base.palette.green.200}"
         },
         "400": {

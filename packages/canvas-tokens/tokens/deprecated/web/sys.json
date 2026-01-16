@@ -677,7 +677,7 @@
             "value": "{sys.color.brand.accent.caution}",
             "type": "color",
             "deprecated": true,
-            "deprecatedComment": "Use sys.color.brand.accent.caution instead with sys.color.accent.overlay.presse",
+            "deprecatedComment": "Use sys.color.brand.accent.caution instead with sys.color.accent.overlay.pressed",
             "comment": "Stronger warning background"
           }
         },
@@ -1297,6 +1297,13 @@
           }
         },
         "primary": {
+          "default": {
+            "value": "{sys.color.brand.fg.primary.default}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.brand.fg.primary.default instead",
+            "comment": "Branded text"
+          },
           "soft": {
             "value": "{base.palette.blue.400}",
             "type": "color",
@@ -1315,6 +1322,13 @@
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.brand.fg.primary.strong  instead",
+            "comment": "Links on hover"
+          },
+          "strong": {
+            "value": "{sys.color.brand.fg.primary.strong}",
+            "type": "color",
+            "deprecated": true,
+            "deprecatedComment": "Use sys.color.brand.fg.primary.strong instead",
             "comment": "Links on hover"
           }
         },
@@ -1433,15 +1447,6 @@
           },
           "inverse": {
             "value": "{sys.color.border.inverse.default}",
-            "type": "color",
-            "deprecated": true,
-            "deprecatedComment": "Use sys.color.border.inverse.default instead",
-            "comment": "Borders on checkboxes and radios"
-          }
-        },
-        "inverse": {
-          "default": {
-            "value": "{base.palette.neutral.0}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.border.inverse.default instead",

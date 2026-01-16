@@ -686,7 +686,7 @@
           "comment": "Default surface background"
         },
         "navigation": {
-          "value": "{base.palette.neutral.A0}",
+          "value": "{base.palette.slate.50}",
           "type": "color",
           "comment": "Surface color for navigation elements, like the SidePanel or Top Nav Bar"
         },
