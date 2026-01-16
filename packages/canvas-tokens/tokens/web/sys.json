@@ -1089,7 +1089,7 @@
             "type": "color"
           },
           "strong": {
-            "value": "{sys.color.fg.ai}",
+            "value": "{base.palette.blue.700}",
             "type": "color"
           }
         },
