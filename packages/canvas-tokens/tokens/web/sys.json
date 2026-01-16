@@ -686,7 +686,7 @@
           "comment": "Default surface background"
         },
         "navigation": {
-          "value": "{base.palette.neutral.A0}",
+          "value": "{base.palette.slate.50}",
           "type": "color",
           "comment": "Surface color for navigation elements, like the SidePanel or Top Nav Bar"
         },
@@ -795,24 +795,12 @@
         },
         "overlay": {
           "hover": {
-            "default": {
-              "value": "{base.palette.slate.A50}",
-              "type": "color"
-            },
-            "inverse": {
-              "value": "{base.palette.white.A200}",
-              "type": "color"
-            }
+            "value": "{base.palette.slate.A50}",
+            "type": "color"
           },
           "pressed": {
-            "default": {
-              "value": "{base.palette.slate.A100}",
-              "type": "color"
-            },
-            "inverse": {
-              "value": "{base.palette.white.A300}",
-              "type": "color"
-            }
+            "value": "{base.palette.slate.A100}",
+            "type": "color"
           },
           "scrim": {
             "value": "{base.palette.neutral.A400}",

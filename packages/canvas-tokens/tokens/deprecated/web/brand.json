@@ -144,8 +144,8 @@
         "value": "{sys.color.fg.contrast.default}",
         "type": "color",
         "deprecated": true,
-        "deprecatedComment": "replace alert.darkest with {sys.color.fg.contrast}",
-        "fallback": "{sys.color.fg.contrast}"
+        "deprecatedComment": "replace alert.darkest with {sys.color.fg.contrast.default}",
+        "fallback": "{sys.color.fg.contrast.default}"
       },
       "light": {
         "value": "{brand.caution.200}",
