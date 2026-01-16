@@ -493,14 +493,14 @@
             "comment": "Transparent background"
           },
           "strong": {
-            "value": "{sys.color.surface.overlay.hover}",
+            "value": "{sys.color.surface.overlay.hover.default}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.surface.overlay.hover tokens instead",
             "comment": "Inverse Secondary Button Hover state"
           },
           "stronger": {
-            "value": "{sys.color.surface.overlay.pressed}",
+            "value": "{sys.color.surface.overlay.pressed.default}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.surface.overlay.pressed tokens instead",

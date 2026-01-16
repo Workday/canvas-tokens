@@ -795,12 +795,24 @@
         },
         "overlay": {
           "hover": {
-            "value": "{base.palette.slate.A50}",
-            "type": "color"
+            "default": {
+              "value": "{base.palette.slate.A50}",
+              "type": "color"
+            },
+            "inverse": {
+              "value": "{base.palette.white.A200}",
+              "type": "color"
+            }
           },
           "pressed": {
-            "value": "{base.palette.slate.A100}",
-            "type": "color"
+            "default": {
+              "value": "{base.palette.slate.A100}",
+              "type": "color"
+            },
+            "inverse": {
+              "value": "{base.palette.white.A300}",
+              "type": "color"
+            }
           },
           "scrim": {
             "value": "{base.palette.neutral.A400}",
