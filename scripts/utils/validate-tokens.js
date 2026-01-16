@@ -4,7 +4,8 @@ import fs from 'fs';
 import tokens from '../../packages/canvas-tokens-web/existing-tokens.json' with { type: 'json' };
 import {generateExistingTokens} from './get-tokens-array.js';
 
-const _dir = path.join(process.cwd(), 'packages/canvas-tokens-web');
+const _root = '../../'
+const _dir = path.join(_root, 'packages/canvas-tokens-web');
 
 const validateTokens = () => {
   const newTokens = generateExistingTokens();
