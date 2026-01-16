@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.10
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix discrepancies ([#241](https://github.com/Workday/canvas-tokens/pull/241))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera,
+    [@mannycarrera4](https://github.com/mannycarrera4), [@Copilot](https://github.com/Copilot))
+
 ## 4.0.0-alpha.9
 
 ### Major Changes
