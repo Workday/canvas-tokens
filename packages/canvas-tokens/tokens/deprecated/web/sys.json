@@ -1509,7 +1509,7 @@
           "value": "{sys.color.border.strong}",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "Use sys.color.border.strong or sys.color.border.strong instead",
+          "deprecatedComment": "Use sys.color.border.default or sys.color.border.strong instead",
           "comment": "Cards, Toasts, Surfaces"
         },
         "info": {
