@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.11
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update fg info color ([#242](https://github.com/Workday/canvas-tokens/pull/242))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.0-alpha.10
 
 ### Major Changes
