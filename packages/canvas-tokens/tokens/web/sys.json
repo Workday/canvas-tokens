@@ -164,22 +164,22 @@
     },
     "opacity": {
       "zero": {
-        "value": "0",
+        "value": "{base.opacity.0}",
         "type": "number",
         "comment": "Dev only"
       },
       "disabled": {
-        "value": "{base.opacity.300}",
+        "value": "{base.opacity.400}",
         "type": "number",
         "comment": "Disabled states"
       },
       "overlay": {
-        "value": "{base.opacity.400}",
+        "value": "{base.opacity.640}",
         "type": "number",
         "comment": "Overlay"
       },
       "contrast": {
-        "value": "{base.opacity.500}",
+        "value": "{base.opacity.840}",
         "type": "number",
         "comment": "Tooltips, Status Indicator"
       },
@@ -190,55 +190,50 @@
       },
       "shadow": {
         "first": {
-          "value": "{base.opacity.200}",
+          "value": "{base.opacity.120}",
           "type": "number",
           "comment": "Alpha on first shadow"
         },
         "second": {
-          "value": "{base.opacity.100}",
+          "value": "{base.opacity.80}",
           "type": "number",
           "comment": "Alpha on second shadow"
         }
       }
     },
     "shape": {
-      "zero": {
+      "none": {
         "value": "{base.size.0}",
         "type": "borderRadius",
         "comment": "Full-width and background containers. Fixed navigation containers such as headers, and side-panels."
       },
-      "xs": {
-        "value": "{base.size.50}",
-        "type": "borderRadius",
-        "comment": "Use this for subtle and smaller elements that don't contain complex information. Often high-density components. Checkbox, Pill"
-      },
       "sm": {
-        "value": "{base.size.100}",
+        "value": "{base.size.50}",
         "type": "borderRadius",
         "comment": "Components presenting info text, user input, user feedback. Inputs, Toasts, Snack bars, Tooltips, Error Alert Banner"
       },
       "md": {
-        "value": "{base.size.200}",
+        "value": "{base.size.100}",
         "type": "borderRadius",
         "comment": "Core large containers, card containers and popups that house moderate amounts of content and/or data: Card, Menus"
       },
       "lg": {
-        "value": "{base.size.300}",
+        "value": "{base.size.150}",
         "type": "borderRadius",
         "comment": "Primarily used for elevated and simple parent containers with greater amounts of content and UI. Dialogs, Modals, Bottom Sheets"
       },
       "xl": {
-        "value": "{base.size.400}",
+        "value": "{base.size.200}",
         "type": "borderRadius",
         "comment": "Extra large rounding for prominent containers"
       },
       "xxl": {
-        "value": "{base.size.500}",
+        "value": "{base.size.300}",
         "type": "borderRadius",
         "comment": "Extra extra large rounding for cards and items"
       },
       "xxxl": {
-        "value": "{base.size.600}",
+        "value": "{base.size.400}",
         "type": "borderRadius",
         "comment": "Maximum rounding for modals and large containers"
       },
@@ -249,45 +244,67 @@
       }
     },
     "size": {
-      "xxs": {
+      "icon": {
+        "xs": {
+          "value": "{base.size.175}",
+          "type": "icon size"
+        },
+        "sm": {
+          "value": "{base.size.200}",
+          "type": "icon size"
+        },
+        "md": {
+          "value": "{base.size.225}",
+          "type": "icon size"
+        },
+        "lg": {
+          "value": "{base.size.250}",
+          "type": "icon size"
+        },
+        "xl": {
+          "value": "{base.size.300}",
+          "type": "icon size"
+        }
+      },
+      "xxxs": {
         "value": "{base.size.200}",
         "type": "size",
         "comment": "Switch Track"
       },
-      "xs": {
+      "xxs": {
         "value": "{base.size.250}",
+        "type": "size",
+        "comment": "Switch Track"
+      },
+      "xs": {
+        "value": "{base.size.300}",
         "type": "size",
         "comment": "Count Badge"
       },
       "sm": {
-        "value": "{base.size.300}",
+        "value": "{base.size.400}",
         "type": "size",
         "comment": "X-Small Buttons, Pills, Checkboxes, Radio Buttons"
       },
       "md": {
-        "value": "{base.size.400}",
+        "value": "{base.size.500}",
         "type": "size",
         "comment": "Small Buttons, Segmented Control, Tooltip, Avatar"
       },
       "lg": {
-        "value": "{base.size.500}",
+        "value": "{base.size.600}",
         "type": "size",
         "comment": "Default height for most components, like Medium Buttons, Segmented Control, Banner, Input Fields, and Menu List Items"
       },
       "xl": {
-        "value": "{base.size.600}",
+        "value": "{base.size.700}",
         "type": "size",
         "comment": "Large size used in Large Buttons, Segmented Controls, Expandable Container Trigger, Tabs, and Avatar"
       },
       "xxl": {
-        "value": "{base.size.700}",
-        "type": "size",
-        "comment": "Table Cell, Toast"
-      },
-      "xxxl": {
         "value": "{base.size.800}",
         "type": "size",
-        "comment": "Expandable Container"
+        "comment": "Table Cell, Toast"
       }
     },
     "padding": {
@@ -669,7 +686,7 @@
           "comment": "Default surface background"
         },
         "navigation": {
-          "value": "{base.palette.neutral.A0}",
+          "value": "{base.palette.slate.50}",
           "type": "color",
           "comment": "Surface color for navigation elements, like the SidePanel or Top Nav Bar"
         },
@@ -990,11 +1007,9 @@
         },
         "border": {
           "primary": {
-            "default": {
-              "value": "{brand.primary.500}",
-              "type": "color",
-              "comment": "Brand, Focus"
-            }
+            "value": "{brand.primary.500}",
+            "type": "color",
+            "comment": "Brand, Focus"
           },
           "critical": {
             "value": "{brand.critical.500}",
@@ -1148,8 +1163,10 @@
           }
         },
         "info": {
-          "value": "{base.palette.blue.500}",
-          "type": "color"
+          "default": {
+            "value": "{base.palette.blue.500}",
+            "type": "color"
+          }
         },
         "danger": {
           "value": "{base.palette.red.500}",

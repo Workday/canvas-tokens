@@ -1,5 +1,50 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.12
+
+### Major Changes
+
+- ### Components
+
+  - fix: Setup CI check to track removals
+    ([#243](https://github.com/Workday/canvas-tokens/pull/243))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.0-alpha.11
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update fg info color ([#242](https://github.com/Workday/canvas-tokens/pull/242))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.0-alpha.10
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix discrepancies ([#241](https://github.com/Workday/canvas-tokens/pull/241))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera,
+    [@mannycarrera4](https://github.com/mannycarrera4), [@Copilot](https://github.com/Copilot))
+
+## 4.0.0-alpha.9
+
+### Major Changes
+
+- ### Components
+
+  - fix: Replace delete with unlink ([@mannycarrera4](https://github.com/mannycarrera4))
+
+  ### Infrastructure
+
+  - chore: Add script to verify tokens ([#240](https://github.com/Workday/canvas-tokens/pull/240))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.0.0-alpha.8
 
 ### Major Changes

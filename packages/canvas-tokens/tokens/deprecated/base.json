@@ -9,6 +9,32 @@
       "deprecatedComment": "Use {base.baseline} instead for consistent sizing calculations",
       "comment": "The base unit used for the typographic grid system.; "
     },
+    "opacity": {
+      "100": {
+        "value": "{base.opacity.80}",
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use {base.opacity.80} instead"
+      },
+      "250": {
+        "value": "{base.opacity.200}",
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use {base.opacity.200} instead"
+      },
+      "300": {
+        "value": "{base.opacity.400}",
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use {base.opacity.400} instead"
+      },
+      "500": {
+        "value": "{base.opacity.840}",
+        "type": "number",
+        "deprecated": true,
+        "deprecatedComment": "Use {base.opacity.840} instead"
+      }
+    },
     "palette": {
       "cinnamon": {
         "100": {
@@ -337,7 +363,7 @@
           "value": "#5fe380",
           "type": "color",
           "deprecated": true,
-          "deprecatedComment": "replace green-apple300 with {base.palette.green.200}. Prefer to replace `sys.color.fg.positive.soft` if used as a foreground (text/icon) color.",
+          "deprecatedComment": "replace green-apple300 with {base.palette.green.200}. Prefer to replace with `sys.color.fg.positive.soft` if used as a foreground (text/icon) color.",
           "fallback": "{base.palette.green.200}"
         },
         "400": {

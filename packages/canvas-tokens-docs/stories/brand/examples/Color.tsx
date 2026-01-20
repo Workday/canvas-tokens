@@ -44,9 +44,16 @@ const objectPalettes = objectGroups.map(group => {
       }
       return true;
     })
-    .map(([tokenName, varName]) =>
-      buildColorSwatch(varName as string, `brand.${group}.${tokenName}`)
-    );
+    .flatMap(([tokenName, tokenValue]) => {
+      // Handle nested objects (e.g., caution.inner, caution.outer)
+      if (typeof tokenValue === 'object' && tokenValue !== null && !Array.isArray(tokenValue)) {
+        return Object.entries(tokenValue).map(([nestedName, varName]) =>
+          buildColorSwatch(varName as string, `brand.${group}.${tokenName}.${nestedName}`)
+        );
+      }
+      // Handle flat tokens (e.g., focus, critical)
+      return [buildColorSwatch(tokenValue as string, `brand.${group}.${tokenName}`)];
+    });
 
   return {
     name: group,

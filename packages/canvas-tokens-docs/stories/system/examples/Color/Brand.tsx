@@ -83,7 +83,7 @@ export const BrandFgColors = () => (
 
 // Brand Border Colors
 const brandBorderPalette = buildPalette('system.color.brand.border', {
-  'primary.default': system.color.brand.border.primary.default,
+  'primary.default': system.color.brand.border.primary,
   critical: system.color.brand.border.critical,
   caution: system.color.brand.border.caution,
 }).sort(sortSystemColorPalette);

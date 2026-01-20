@@ -461,13 +461,15 @@
         "value": "{brand.critical.500}",
         "type": "color"
       },
-      "caution-inner": {
-        "value": "{brand.caution.400}",
-        "type": "color"
-      },
-      "caution-outer": {
-        "value": "{brand.caution.500}",
-        "type": "color"
+      "caution": {
+        "inner": {
+          "value": "{brand.caution.400}",
+          "type": "color"
+        },
+        "outer": {
+          "value": "{brand.caution.500}",
+          "type": "color"
+        }
       }
     },
     "action": {

@@ -16,27 +16,27 @@
         "value": "0",
         "type": "number"
       },
-      "100": {
+      "80": {
         "value": "0.08",
         "type": "number"
       },
-      "200": {
+      "120": {
         "value": "0.12",
         "type": "number"
       },
-      "250": {
+      "200": {
         "value": "0.2",
         "type": "number"
       },
-      "300": {
+      "400": {
         "value": "0.4",
         "type": "number"
       },
-      "400": {
+      "640": {
         "value": "0.64",
         "type": "number"
       },
-      "500": {
+      "840": {
         "value": "0.84",
         "type": "number"
       }
@@ -595,7 +595,7 @@
         },
         "A0": {
           "type": "color",
-          "value": "oklch(0 0 0 / 1)"
+          "value": "oklch(0 0 0 / 0)"
         },
         "A25": {
           "type": "color",
@@ -1039,7 +1039,7 @@
       "white": {
         "A0": {
           "type": "color",
-          "value": "oklch(1 0 0 / 1)"
+          "value": "oklch(1 0 0 / 0)"
         },
         "A25": {
           "type": "color",
