@@ -113,6 +113,7 @@ StyleDictionary.registerTransformGroup({
   transforms: [
     'name/cti/kebab',
     'value/deprecated',
+    'value/duration/ms',
     'value/flatten-border',
     'value/flatten-oklch',
     'value/shadow/flat-sys',

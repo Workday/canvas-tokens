@@ -7,6 +7,7 @@ import {mapFontWeight} from './mapFontWeight';
 import {transformMath} from './transformMath';
 import {transformNameToCamelCase} from './transformNameToCamelCase';
 import {transformHexToRgb} from './transformHexToRgb';
+import {durationMs} from './duration-ms';
 
 export const transforms: Record<string, Transform> = {
   'value/deprecated': {
@@ -108,6 +109,13 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isBorder,
     transformer: ({value: {color, width, style}}) => `${width} ${style} ${color}`,
+  },
+  // transform function that adds ms suffix to duration values
+  'value/duration/ms': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isBaseDuration,
+    transformer: durationMs,
   },
   // transform function that resolves math values:
   // calculates base tokens and adds `calc` to sys tokens

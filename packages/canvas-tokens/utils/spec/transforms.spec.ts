@@ -295,4 +295,14 @@ describe('transforms', () => {
 
     expect(result).toBe(expected);
   });
+
+  it('should add ms suffix to duration values', () => {
+    const result = transforms['value/duration/ms'].transformer(
+      {...defaultToken, value: '1000'},
+      defaultOptions
+    );
+    const expected = '1000ms';
+
+    expect(result).toBe(expected);
+  });
 });
