@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.12
+
+### Major Changes
+
+- ### Components
+
+  - fix: Setup CI check to track removals
+    ([#243](https://github.com/Workday/canvas-tokens/pull/243))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.0-alpha.11
 
 ### Major Changes
