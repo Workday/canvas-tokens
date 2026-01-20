@@ -595,7 +595,7 @@
         },
         "A0": {
           "type": "color",
-          "value": "oklch(0 0 0 / 1)"
+          "value": "oklch(0 0 0 / 0)"
         },
         "A25": {
           "type": "color",
@@ -1039,7 +1039,7 @@
       "white": {
         "A0": {
           "type": "color",
-          "value": "oklch(1 0 0 / 1)"
+          "value": "oklch(1 0 0 / 0)"
         },
         "A25": {
           "type": "color",
