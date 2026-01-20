@@ -11,6 +11,114 @@
       "type": "sizing",
       "comment": "Baseline unit used for the 8pt sizing grid"
     },
+    "duration": {
+      "50": {
+        "value": "50",
+        "type": "number"
+      },
+      "100": {
+        "value": "100",
+        "type": "number"
+      },
+      "150": {
+        "value": "150",
+        "type": "number"
+      },
+      "200": {
+        "value": "200",
+        "type": "number"
+      },
+      "250": {
+        "value": "250",
+        "type": "number"
+      },
+      "300": {
+        "value": "300",
+        "type": "number"
+      },
+      "350": {
+        "value": "350",
+        "type": "number"
+      },
+      "400": {
+        "value": "400",
+        "type": "number"
+      },
+      "450": {
+        "value": "450",
+        "type": "number"
+      },
+      "500": {
+        "value": "500",
+        "type": "number"
+      },
+      "550": {
+        "value": "550",
+        "type": "number"
+      },
+      "600": {
+        "value": "600",
+        "type": "number"
+      },
+      "650": {
+        "value": "650",
+        "type": "number"
+      },
+      "700": {
+        "value": "700",
+        "type": "number"
+      },
+      "750": {
+        "value": "750",
+        "type": "number"
+      },
+      "800": {
+        "value": "800",
+        "type": "number"
+      },
+      "850": {
+        "value": "850",
+        "type": "number"
+      },
+      "900": {
+        "value": "900",
+        "type": "number"
+      },
+      "950": {
+        "value": "950",
+        "type": "number"
+      },
+      "1000": {
+        "value": "1000",
+        "type": "number"
+      }
+    },
+    "easing": {
+      "a-100": {
+        "value": "cubic-bezier(0.2, 0, 0.2, 1)",
+        "type": "cubic-bezier"
+      },
+      "a-200": {
+        "value": "cubic-bezier(0.4, 0, 0.95, 0.8)",
+        "type": "cubic-bezier"
+      },
+      "a-300": {
+        "value": "cubic-bezier(0.05, 0.4, 0.3, 1)",
+        "type": "cubic-bezier"
+      },
+      "b-100": {
+        "value": "cubic-bezier(0.35, 0, 0.05, 1)",
+        "type": "cubic-bezier"
+      },
+      "b-200": {
+        "value": "cubic-bezier(0.4, 0, 0.8, 0.3)",
+        "type": "cubic-bezier"
+      },
+      "b-300": {
+        "value": "cubic-bezier(0, 0.4, 0.2, 1)",
+        "type": "cubic-bezier"
+      }
+    },
     "opacity": {
       "0": {
         "value": "0",

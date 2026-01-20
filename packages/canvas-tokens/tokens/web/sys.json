@@ -162,6 +162,36 @@
         "comment": "Modal Dialogs, Side Panels (when opacity overlay behaviour; is applied)"
       }
     },
+    "easing": {
+      "quick": {
+        "standard": {
+          "value": "{base.easing.a-100}",
+          "type": "cubic-bezier"
+        },
+        "acceleration": {
+          "value": "{base.easing.a-200}",
+          "type": "cubic-bezier"
+        },
+        "deceleration": {
+          "value": "{base.easing.a-300}",
+          "type": "cubic-bezier"
+        }
+      },
+      "purposeful": {
+        "standard": {
+          "value": "{base.easing.b-100}",
+          "type": "cubic-bezier"
+        },
+        "acceleration": {
+          "value": "{base.easing.b-200}",
+          "type": "cubic-bezier"
+        },
+        "deceleration": {
+          "value": "{base.easing.b-300}",
+          "type": "cubic-bezier"
+        }
+      }
+    },
     "opacity": {
       "zero": {
         "value": "{base.opacity.0}",
