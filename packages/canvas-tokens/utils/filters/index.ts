@@ -12,6 +12,10 @@ export const isBaseFontWeight: Matcher = ({type, path: [level, category]}) => {
   return level === 'base' && category === 'font-weight' && type === 'text';
 };
 
+export const isBaseDuration: Matcher = ({type, path: [level, category]}) => {
+  return level === 'base' && category === 'duration' && type === 'number';
+};
+
 export const isBorder: Matcher = ({type, path: [level]}) => {
   return level === 'sys' && type === 'border';
 };

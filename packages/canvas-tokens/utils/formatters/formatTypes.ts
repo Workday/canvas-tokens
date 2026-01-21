@@ -105,8 +105,10 @@ const generateJSDoc = (original: TransformedToken, depth: number) => {
   const newJSDocLineStart = `\n${extraSpaces}* `;
   const {value, comment, deprecated, deprecatedComment, raw} = original;
 
-  const pxValue = `${value}`.includes('rem') ? parseFloat(value) * 16 : null;
-  const valueText = value + (pxValue ? ` (${pxValue}px)` : '');
+  const pxValue =
+    typeof value === 'string' && `${value}`.includes('rem') ? parseFloat(value) * 16 : null;
+  const valueText =
+    typeof value === 'object' ? JSON.stringify(value) : value + (pxValue ? ` (${pxValue}px)` : '');
   const tokenValue =
     typeof raw === 'string'
       ? 'token: ' +
