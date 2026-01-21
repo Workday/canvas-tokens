@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.14
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update breakpoints tokens and remove icon tokens
+    ([#248](https://github.com/Workday/canvas-tokens/pull/248))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.0-alpha.13
 
 ### Major Changes
