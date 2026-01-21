@@ -1461,13 +1461,6 @@
           }
         },
         "contrast": {
-          "default": {
-            "value": "{sys.color.border.contrast.default}",
-            "type": "color",
-            "deprecated": true,
-            "deprecatedComment": "Use sys.color.border.contrast.default instead",
-            "comment": "Secondary Button"
-          },
           "strong": {
             "value": "{sys.color.border.contrast.default}",
             "type": "color",
@@ -1523,15 +1516,6 @@
           "deprecated": true,
           "deprecatedComment": "Use sys.color.border.strong or sys.color.border.strong instead",
           "comment": "Cards, Toasts, Surfaces"
-        },
-        "info": {
-          "default": {
-            "value": "{sys.color.border.info.default}",
-            "type": "color",
-            "deprecated": true,
-            "deprecatedComment": "Use sys.color.border.info.default instead",
-            "comment": "Brand, Focus"
-          }
         }
       },
       "shadow": {
