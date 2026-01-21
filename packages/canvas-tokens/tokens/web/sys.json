@@ -8,22 +8,22 @@
         "comment": "Use to set a media query `min-width` below small."
       },
       "sm": {
-        "value": "{base.unit} * 80",
+        "value": "{base.baseline} * 40",
         "type": "dimension",
         "comment": "The `min-width` for mobile devices, such as phones and tablets."
       },
       "md": {
-        "value": "{base.unit} * 192",
+        "value": "{base.baseline} * 96",
         "type": "dimension",
         "comment": "Medium screens, such as laptops."
       },
       "lg": {
-        "value": "{base.unit} * 256",
+        "value": "{base.baseline} * 128",
         "type": "dimension",
         "comment": "Large screens, such as desktops."
       },
       "xl": {
-        "value": "{base.unit} * 360",
+        "value": "{base.baseline} * 180",
         "type": "dimension",
         "comment": "Used for extra large screens, such as wide monitors and TVs."
       }
@@ -276,28 +276,6 @@
       }
     },
     "size": {
-      "icon": {
-        "xs": {
-          "value": "{base.size.175}",
-          "type": "icon size"
-        },
-        "sm": {
-          "value": "{base.size.200}",
-          "type": "icon size"
-        },
-        "md": {
-          "value": "{base.size.225}",
-          "type": "icon size"
-        },
-        "lg": {
-          "value": "{base.size.250}",
-          "type": "icon size"
-        },
-        "xl": {
-          "value": "{base.size.300}",
-          "type": "icon size"
-        }
-      },
       "xxxs": {
         "value": "{base.size.200}",
         "type": "size",
