@@ -7,34 +7,48 @@ interface DurationToken {
   cssVar: string;
   /** The formatted name of the JS variable */
   jsVar: React.ReactNode;
-  /** The actual string value of the token */
-  value: string;
 }
 
 const durationTokens: DurationToken[] = [
-  {cssVar: base.duration50, jsVar: formatJSVar('base.duration50'), value: '50ms'},
-  {cssVar: base.duration100, jsVar: formatJSVar('base.duration100'), value: '100ms'},
-  {cssVar: base.duration150, jsVar: formatJSVar('base.duration150'), value: '150ms'},
-  {cssVar: base.duration200, jsVar: formatJSVar('base.duration200'), value: '200ms'},
-  {cssVar: base.duration250, jsVar: formatJSVar('base.duration250'), value: '250ms'},
-  {cssVar: base.duration300, jsVar: formatJSVar('base.duration300'), value: '300ms'},
-  {cssVar: base.duration350, jsVar: formatJSVar('base.duration350'), value: '350ms'},
-  {cssVar: base.duration400, jsVar: formatJSVar('base.duration400'), value: '400ms'},
-  {cssVar: base.duration450, jsVar: formatJSVar('base.duration450'), value: '450ms'},
-  {cssVar: base.duration500, jsVar: formatJSVar('base.duration500'), value: '500ms'},
-  {cssVar: base.duration550, jsVar: formatJSVar('base.duration550'), value: '550ms'},
-  {cssVar: base.duration600, jsVar: formatJSVar('base.duration600'), value: '600ms'},
-  {cssVar: base.duration650, jsVar: formatJSVar('base.duration650'), value: '650ms'},
-  {cssVar: base.duration700, jsVar: formatJSVar('base.duration700'), value: '700ms'},
-  {cssVar: base.duration750, jsVar: formatJSVar('base.duration750'), value: '750ms'},
-  {cssVar: base.duration800, jsVar: formatJSVar('base.duration800'), value: '800ms'},
-  {cssVar: base.duration850, jsVar: formatJSVar('base.duration850'), value: '850ms'},
-  {cssVar: base.duration900, jsVar: formatJSVar('base.duration900'), value: '900ms'},
-  {cssVar: base.duration950, jsVar: formatJSVar('base.duration950'), value: '950ms'},
-  {cssVar: base.duration1000, jsVar: formatJSVar('base.duration1000'), value: '1000ms'},
+  {cssVar: base.duration50, jsVar: formatJSVar('base.duration50')},
+  {cssVar: base.duration100, jsVar: formatJSVar('base.duration100')},
+  {cssVar: base.duration150, jsVar: formatJSVar('base.duration150')},
+  {cssVar: base.duration200, jsVar: formatJSVar('base.duration200')},
+  {cssVar: base.duration250, jsVar: formatJSVar('base.duration250')},
+  {cssVar: base.duration300, jsVar: formatJSVar('base.duration300')},
+  {cssVar: base.duration350, jsVar: formatJSVar('base.duration350')},
+  {cssVar: base.duration400, jsVar: formatJSVar('base.duration400')},
+  {cssVar: base.duration450, jsVar: formatJSVar('base.duration450')},
+  {cssVar: base.duration500, jsVar: formatJSVar('base.duration500')},
+  {cssVar: base.duration550, jsVar: formatJSVar('base.duration550')},
+  {cssVar: base.duration600, jsVar: formatJSVar('base.duration600')},
+  {cssVar: base.duration650, jsVar: formatJSVar('base.duration650')},
+  {cssVar: base.duration700, jsVar: formatJSVar('base.duration700')},
+  {cssVar: base.duration750, jsVar: formatJSVar('base.duration750')},
+  {cssVar: base.duration800, jsVar: formatJSVar('base.duration800')},
+  {cssVar: base.duration850, jsVar: formatJSVar('base.duration850')},
+  {cssVar: base.duration900, jsVar: formatJSVar('base.duration900')},
+  {cssVar: base.duration950, jsVar: formatJSVar('base.duration950')},
+  {cssVar: base.duration1000, jsVar: formatJSVar('base.duration1000')},
 ];
 
 export function DurationTokens() {
+  const [computedValues, setComputedValues] = React.useState<Record<string, string>>({});
+
+  React.useEffect(() => {
+    const values: Record<string, string> = {};
+    const element = document.createElement('div');
+    document.body.appendChild(element);
+
+    durationTokens.forEach(token => {
+      const value = getComputedStyle(element).getPropertyValue(token.cssVar);
+      values[token.cssVar] = value.trim();
+    });
+
+    document.body.removeChild(element);
+    setComputedValues(values);
+  }, []);
+
   return (
     <TokenGrid
       caption="duration tokens"
@@ -51,7 +65,7 @@ export function DurationTokens() {
             <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
 
-          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{computedValues[token.cssVar] || '...'}</TokenGrid.RowItem>
         </>
       )}
     </TokenGrid>

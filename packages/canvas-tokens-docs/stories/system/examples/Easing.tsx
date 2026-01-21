@@ -7,8 +7,6 @@ interface EasingToken {
   cssVar: string;
   /** The formatted name of the JS variable */
   jsVar: React.ReactNode;
-  /** The actual string value of the token */
-  value: string;
   /** The category of the easing */
   category: string;
   /** The type of easing */
@@ -19,48 +17,58 @@ const easingTokens: EasingToken[] = [
   {
     cssVar: system.motion.easing.quick.standard,
     jsVar: formatJSVar('system.motion.easing.quick.standard'),
-    value: 'cubic-bezier(0.2, 0, 0.2, 1)',
     category: 'Quick',
     type: 'Standard',
   },
   {
     cssVar: system.motion.easing.quick.acceleration,
     jsVar: formatJSVar('system.motion.easing.quick.acceleration'),
-    value: 'cubic-bezier(0.4, 0, 0.95, 0.8)',
     category: 'Quick',
     type: 'Acceleration',
   },
   {
     cssVar: system.motion.easing.quick.deceleration,
     jsVar: formatJSVar('system.motion.easing.quick.deceleration'),
-    value: 'cubic-bezier(0.05, 0.4, 0.3, 1)',
     category: 'Quick',
     type: 'Deceleration',
   },
   {
     cssVar: system.motion.easing.purposeful.standard,
     jsVar: formatJSVar('system.motion.easing.purposeful.standard'),
-    value: 'cubic-bezier(0.35, 0, 0.05, 1)',
     category: 'Purposeful',
     type: 'Standard',
   },
   {
     cssVar: system.motion.easing.purposeful.acceleration,
     jsVar: formatJSVar('system.motion.easing.purposeful.acceleration'),
-    value: 'cubic-bezier(0.4, 0, 0.8, 0.3)',
     category: 'Purposeful',
     type: 'Acceleration',
   },
   {
     cssVar: system.motion.easing.purposeful.deceleration,
     jsVar: formatJSVar('system.motion.easing.purposeful.deceleration'),
-    value: 'cubic-bezier(0, 0.4, 0.2, 1)',
     category: 'Purposeful',
     type: 'Deceleration',
   },
 ];
 
 export function EasingTokens() {
+  const [computedValues, setComputedValues] = React.useState<Record<string, string>>({});
+
+  React.useEffect(() => {
+    const values: Record<string, string> = {};
+    const element = document.createElement('div');
+    document.body.appendChild(element);
+
+    easingTokens.forEach(token => {
+      const value = getComputedStyle(element).getPropertyValue(token.cssVar);
+      values[token.cssVar] = value.trim();
+    });
+
+    document.body.removeChild(element);
+    setComputedValues(values);
+  }, []);
+
   return (
     <TokenGrid
       caption="easing tokens"
@@ -98,7 +106,7 @@ export function EasingTokens() {
           </TokenGrid.RowItem>
 
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.value}</TokenGrid.MonospaceLabel>
+            <TokenGrid.MonospaceLabel>{computedValues[token.cssVar] || '...'}</TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
 
           <TokenGrid.RowItem>{token.category}</TokenGrid.RowItem>
