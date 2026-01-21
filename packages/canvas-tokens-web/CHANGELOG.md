@@ -1,5 +1,20 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.13
+
+### Major Changes
+
+- ### Components
+
+  - feat: Add motion tokens ([#245](https://github.com/Workday/canvas-tokens/pull/245))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@sheelah](https://github.com/sheelah), Sheelah
+    Brennan)
+
+  ### Infrastructure
+
+  - chore: Remove unused code ([#244](https://github.com/Workday/canvas-tokens/pull/244))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.0.0-alpha.12
 
 ### Major Changes
