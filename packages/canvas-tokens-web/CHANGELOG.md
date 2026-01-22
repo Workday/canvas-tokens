@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.16
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update to use whole number values
+    ([#250](https://github.com/Workday/canvas-tokens/pull/250))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.0-alpha.15
 
 ### Major Changes
