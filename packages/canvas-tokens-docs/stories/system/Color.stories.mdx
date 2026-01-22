@@ -1,0 +1,177 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {
+  SurfaceColors,
+  SurfaceAltColors,
+  SurfaceContrastColors,
+  SurfaceOverlayColors,
+  SurfaceStatusColors,
+  SurfaceAIColors,
+} from './examples/Color/Surface';
+import {
+  AccentColors,
+  AccentMutedColors,
+  AccentOverlayColors,
+} from './examples/Color/Accent';
+import {
+  ForegroundColors,
+  ForegroundStatusColors,
+  ForegroundMutedColors,
+  ForegroundPrimaryColors,
+  ForegroundContrastColors,
+  ForegroundAIColors,
+} from './examples/Color/Foreground';
+import {
+  BrandFocusColors,
+  BrandSurfaceColors,
+  BrandAccentColors,
+  BrandFgColors,
+  BrandBorderColors,
+} from './examples/Color/Brand';
+import {
+  BorderColors,
+  BorderContrastColors,
+  BorderInputColors,
+  BorderStatusColors,
+} from './examples/Color/Border';
+import {FocusColors} from './examples/Color/Focus';
+import {DeprecatedColorTokens} from './examples/Color/Deprecated';
+
+<Meta title="Docs/System Tokens/Color" />
+
+<Unstyled>
+
+# System Color Tokens
+
+System color tokens provide a comprehensive color system for UI components. In v4, the color system has been reorganized with clearer semantic naming and better organization.
+
+## Usage
+
+Color tokens can be consumed as a JavaScript / TypeScript object. Each token value references the CSS variable from a base token, so you'll need to have those CSS variables imported in your application as well.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  backgroundColor: `var(${system.color.surface.default})`,
+  color: `var(${system.color.fg.default})`,
+  borderColor: `var(${system.color.border.default})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the same styles using CSS variables directly.
+
+```css
+// styles.css
+.card {
+  background-color: var(--cnvs-sys-color-surface-default);
+  color: var(--cnvs-sys-color-fg-default);
+  border-color: var(--cnvs-sys-color-border-default);
+}
+```
+
+---
+
+## Surface Colors
+
+Surface color tokens provide background colors for containers, modals, popovers, and interactive states.
+
+<SurfaceColors />
+
+<SurfaceAltColors />
+
+<SurfaceContrastColors />
+
+<SurfaceOverlayColors />
+
+<SurfaceStatusColors />
+
+<SurfaceAIColors />
+
+---
+
+## Accent Colors
+
+Accent color tokens provide semantic color values for UI elements that need to stand out or convey meaning.
+
+<AccentColors />
+
+<AccentMutedColors />
+
+<AccentOverlayColors />
+
+---
+
+## Foreground Colors
+
+Foreground color tokens provide text and icon colors with proper contrast and semantic meaning.
+
+<ForegroundColors />
+
+<ForegroundMutedColors />
+
+<ForegroundContrastColors />
+
+<ForegroundStatusColors />
+
+<ForegroundPrimaryColors />
+
+<ForegroundAIColors />
+
+---
+
+## Brand Colors
+
+Brand color tokens provide brand-aligned colors for surfaces, accents, foreground, borders, and focus states.
+
+### Brand Surface Colors
+
+<BrandSurfaceColors />
+
+### Brand Accent Colors
+
+<BrandAccentColors />
+
+### Brand Foreground Colors
+
+<BrandFgColors />
+
+### Brand Border Colors
+
+<BrandBorderColors />
+
+### Brand Focus Colors
+
+<BrandFocusColors />
+
+---
+
+## Border Colors
+
+Border color tokens provide border colors for inputs, status indicators, and inverse color schemes.
+
+<BorderColors />
+
+<BorderInputColors />
+
+<BorderContrastColors />
+
+<BorderStatusColors />
+
+---
+
+## Focus Colors
+
+Focus color tokens provide consistent focus indicators across the design system.
+
+<FocusColors />
+
+---
+
+## Deprecated Color Tokens
+
+The following color tokens have been deprecated in v4. Each deprecated token now points to a new token value. The deprecated tokens will continue to work but will resolve to their replacement values. We recommend updating your code to use the new token names directly.
+
+<DeprecatedColorTokens />
+
+</Unstyled>
