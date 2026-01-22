@@ -1,0 +1,55 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {EasingTokens} from './examples/Easing';
+
+<Meta title="Docs/System Tokens/Motion" />
+
+<Unstyled>
+
+# System Motion Tokens
+
+Currently, only easing tokens are available at the system token level. For motion usage guidelines, including information on how to choose an appropriate easing value, see the [Canvas Motion Documentation](https://canvas.workday.com/styles/tokens/motion).
+
+## Easing Tokens
+
+System easing tokens provide standardized cubic-bezier curves for animations and transitions across our UI.
+
+### Usage
+
+Easing tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
+CSS variable from a base token, so you'll need to have those CSS variables imported in your
+application as well.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  transition: `transform 300ms var(${system.motion.easing.quick.standard})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the
+same styles using CSS variables directly.
+
+```css
+// styles.css
+.button {
+  transition: transform 300ms var(--cnvs-sys-easing-quick-standard);
+}
+```
+
+### Categories
+
+System easing tokens are organized into two categories:
+
+- **Quick** - For shorter, faster interactions (hover states, button presses, etc.)
+- **Purposeful** - For longer, more meaningful transitions (modals, panels, page transitions)
+
+Each category includes three timing function variants:
+- **Standard** - Balanced easing for general use
+- **Acceleration** - Emphasizes the beginning of the animation
+- **Deceleration** - Emphasizes the end of the animation
+
+<EasingTokens />
+
+</Unstyled>
