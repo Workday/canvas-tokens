@@ -27,17 +27,20 @@ function formatTypeLevelValues(values: object) {
   return formattedValues;
 }
 
+// Deprecated size names that should be filtered out (use t-shirt sizes sm, md, lg instead)
+const deprecatedSizeNames = ['small', 'medium', 'large'];
+
 const typeLevelTokens = Object.keys(system.type).reduce((acc, level) => {
-  const levelTokens = Object.entries(system.type[level as keyof typeof system.type]).map(
-    ([size, values]) => {
+  const levelTokens = Object.entries(system.type[level as keyof typeof system.type])
+    .filter(([size]) => !deprecatedSizeNames.includes(size)) // Filter out deprecated size names
+    .map(([size, values]) => {
       return {
         cssClass: `.cnvs-sys-type-${level}-${size}`,
         jsVar: formatJSVar(`system.type.${level}.${size}`),
         values: values,
         formattedValues: formatTypeLevelValues(values),
       };
-    }
-  );
+    });
   return acc.concat(levelTokens);
 }, [] as TypeLevelToken[]);
 
