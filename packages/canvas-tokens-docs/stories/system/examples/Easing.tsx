@@ -81,10 +81,10 @@ export function EasingTokens() {
             <TokenGrid.Sample>
               <div
                 style={{
-                  width: '24px',
-                  height: '24px',
-                  borderRadius: '50%',
-                  backgroundColor: '#0875e1',
+                  width: `var(${system.size.xs})`,
+                  height: `var(${system.size.xs})`,
+                  borderRadius: `var(${system.shape.round})`,
+                  backgroundColor: `var(${system.color.bg.primary.default})`,
                   animation: `ease-slide 2300ms var(${token.cssVar}) infinite`,
                 }}
               />
