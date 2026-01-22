@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {base} from '@workday/canvas-tokens-web';
+import {base, system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
 interface EasingToken {
