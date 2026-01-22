@@ -1,5 +1,5 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-import {ShapeTokens} from './examples/Shape';
+import {ShapeTokens, DeprecatedShapeTokens} from './examples/Shape';
 
 <Meta title="Docs/System Tokens/Shape" />
 
@@ -43,5 +43,11 @@ These tokens use a multiplier scale and reference our `baseUnit` token, which is
 So the `system.shape.x2` token has a value of `0.5rem` or `8px`.
 
 <ShapeTokens />
+
+## Deprecated Tokens
+
+The following shape tokens have been deprecated in v4. Each deprecated token now points to a new token value. The deprecated tokens will continue to work but will resolve to their replacement values. We recommend updating your code to use the new token names directly.
+
+<DeprecatedShapeTokens />
 
 </Unstyled>

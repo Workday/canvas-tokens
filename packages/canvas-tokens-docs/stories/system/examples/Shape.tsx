@@ -51,56 +51,110 @@ function multiplyCalcValues(value: string) {
   return numberMatch ? parseFloat(numberMatch[1]) : 0;
 }
 
-const shapeTokens: ShapeToken[] = Object.entries(system.shape).map(([key, varName]) => {
+const deprecatedShapeTokens = ['zero', 'half', 'x1', 'x1Half', 'x2', 'x4', 'x6', 'full'];
+const deprecatedShapeTokensData: ShapeToken[] = Object.entries(system.shape).filter(([key]) => deprecatedShapeTokens.includes(key)).map(([key, varName]) => {
+  const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+  const calculatedValue = multiplyCalcValues(value);
+  return {
+    cssVar: varName,
+    jsVar: formatJSVar(`system.shape.${key as keyof typeof system.shape}`),
+    value,
+    calculatedValue: `${calculatedValue}rem`,
+    pxValue: `${calculatedValue * 16}px`
+  };
+});
+
+const shapeTokens: ShapeToken[] = Object.entries(system.shape).filter(([key]) => !deprecatedShapeTokens.includes(key)).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
 
   return {
     cssVar: varName,
-    jsVar: formatJSVar(`system.shape.${key}`),
+    jsVar: formatJSVar(`system.shape.${key as keyof typeof system.shape}`),
     value,
     calculatedValue: `${calculatedValue}rem`,
     pxValue: `${calculatedValue * 16}px`,
   };
 });
 
-export function ShapeTokens() {
-  return (
-    <TokenGrid
-      caption="shape tokens"
-      headings={[
-        'Sample',
-        'CSS Variable',
-        'JS Variable',
-        'Value',
-        'Calculated Value',
-        'Pixel Value',
-      ]}
-      rows={shapeTokens}
-    >
-      {token => (
-        <>
-          <TokenGrid.RowItem>
-            <TokenGrid.Sample
-              style={{
-                borderRadius: `var(${token.cssVar})`,
-                height: 80,
-                width: 80,
-                border: `solid 0.0625rem var(${system.color.border.contrast.default})`,
-              }}
-            />
-          </TokenGrid.RowItem>
-          <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
-          </TokenGrid.RowItem>
-          <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
-          </TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
-        </>
-      )}
-    </TokenGrid>
-  );
-}
+export const DeprecatedShapeTokens = () => {
+    return (
+      <TokenGrid
+        caption="deprecated shape tokens"
+        headings={[
+          'Sample',
+          'CSS Variable',
+          'JS Variable',
+          'Value',
+          'Calculated Value',
+          'Pixel Value',
+        ]}
+        rows={deprecatedShapeTokensData}
+      >
+        {token => (
+          <>
+            <TokenGrid.RowItem>
+              <TokenGrid.Sample
+                style={{
+                  borderRadius: `var(${token.cssVar})`,
+                  height: 80,
+                  width: 80,
+                  border: `solid 0.0625rem var(${system.color.border.contrast.default})`,
+                }}
+              />
+            </TokenGrid.RowItem>
+            <TokenGrid.RowItem>
+              <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+            </TokenGrid.RowItem>
+            <TokenGrid.RowItem>
+              <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            </TokenGrid.RowItem>
+            <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
+            <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
+            <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+          </>
+        )}
+      </TokenGrid>
+    );
+  }
+  
+  export const ShapeTokens = () => {
+    return (
+      <TokenGrid
+        caption="shape tokens"
+        headings={[
+          'Sample',
+          'CSS Variable',
+          'JS Variable',
+          'Value',
+          'Calculated Value',
+          'Pixel Value',
+        ]}
+        rows={shapeTokens}
+      >
+        {token => (
+          <>
+            <TokenGrid.RowItem>
+              <TokenGrid.Sample
+                style={{
+                  borderRadius: `var(${token.cssVar})`,
+                  height: 80,
+                  width: 80,
+                  border: `solid 0.0625rem var(${system.color.border.contrast.default})`,
+                }}
+              />
+            </TokenGrid.RowItem>
+            <TokenGrid.RowItem>
+              <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+            </TokenGrid.RowItem>
+            <TokenGrid.RowItem>
+              <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            </TokenGrid.RowItem>
+            <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
+            <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
+            <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+          </>
+        )}
+      </TokenGrid>
+    );
+  }
