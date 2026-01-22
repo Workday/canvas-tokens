@@ -7,11 +7,11 @@ import {DurationTokens} from './examples/Duration';
 import {EasingTokens} from './examples/Easing';
 import {NavCard} from '../../components/NavCard';
 
-<Meta title="Docs/Base Tokens" />
+<Meta title="Docs/Base Tokens/Color" />
 
 <Unstyled>
 
-# Base Tokens
+# Base Color Tokens
 
 Base tokens are the foundation of our token system. They provide the core values for our brand and
 system tokens. Base tokens are **not themed variables**, so you should generally opt to use system
@@ -56,17 +56,6 @@ same styles using CSS variables directly.
 
 ---
 
-## Base Unit
-
-The base unit token provides a base value to derive our system space and shape tokens. You could use
-this value to build other scales, but unless you're very familiar with our token system, we
-recommend you treat this as an internal variable, as changing it could have a drastic effect on your
-UI.
-
-<BaseUnit />
-
----
-
 ## Color
 
 Base colors provide the core palettes that make up our UI. There are thirteen palettes in total and
@@ -74,52 +63,5 @@ they don't have any inherent contextual meaning on when and where they should be
 
 <br />
 <ColorTokens />
-
----
-
-## Motion
-
-Base motion tokens provide the foundational timing and easing values for animations and transitions. These tokens are used to build our system easing tokens, which provide semantic naming and usage guidance.
-
-> **Note:** For motion usage guidelines, including information on how to choose appropriate duration and easing values, see the [Canvas Motion Documentation](https://canvas.workday.com/styles/tokens/motion).
-
----
-
-### Duration
-
-Duration tokens define timing values for animations and transitions, ranging from 50ms to 1000ms in 50ms increments.
-
-<DurationTokens />
-
----
-
-### Easing
-
-Easing tokens define timing functions (cubic-bezier curves) for animations and transitions. There are two categories:
-
-- **Quick (A)** - For shorter, faster interactions
-- **Purposeful (B)** - For longer, more meaningful transitions
-
-Each category includes three variants: Standard, Acceleration, and Deceleration.
-
-**Note:** We recommend using system easing tokens for all animations and transitions, rather than using base easing tokens directly.
-
-<EasingTokens />
-
----
-
-### Deprecated
-
-The fruit based palettes are deprecated and will be removed in a future release. Please use the new
-color palette. While the base tokens are deprecated, we advise to use system tokens instead for
-better future proofing.
-
-<NavCard
-  title="Deprecated Base Tokens"
-  link="https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-visual-changes-base-deprecated-palette--docs"
-/>
-
-For more information on how to migrate, please view our
-[Token Migration guide](https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-overview--docs).
 
 </Unstyled>

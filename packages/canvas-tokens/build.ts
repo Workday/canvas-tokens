@@ -108,6 +108,15 @@ Object.entries(transforms).forEach(([key, value]) => {
   });
 });
 
+// Override the built-in time/seconds transform to prevent it from converting our duration tokens
+// This ensures duration tokens stay in milliseconds as intended
+StyleDictionary.registerTransform({
+  name: 'time/seconds',
+  type: 'value',
+  matcher: () => false, // Never match, effectively disabling the built-in transform
+  transformer: () => '',
+});
+
 StyleDictionary.registerTransformGroup({
   name: 'web',
   transforms: [
