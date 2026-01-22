@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.15
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add initial motion tokens docs ([#247](https://github.com/Workday/canvas-tokens/pull/247))
+    ([@sheelah](https://github.com/sheelah), Copilot, Alan B Smith, Alan B Smith, Alan B Smith,
+    Sheelah Brennan, Copilot, Alan B Smith)
+
 ## 4.0.0-alpha.14
 
 ### Major Changes
