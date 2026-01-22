@@ -120,6 +120,7 @@ StyleDictionary.registerTransformGroup({
     'value/breakpoints/px',
     'value/wrapped-font-family',
     'value/math',
+    'value/opacity',
     'value/letter-spacing/px2rem',
     'value/font-weight/numbers',
     'value/line-height/px2rem',
