@@ -1,4 +1,4 @@
-import {ColorTokens, DeprecatedColorTokens} from '../examples/Color';
+import {ColorTokens, DeprecatedBrandTokens} from '../examples/Color';
 
 export default {
   component: ColorTokens,
@@ -12,7 +12,7 @@ export const Color = {
 };
 
 export const DeprecatedColor = {
-  render: DeprecatedColorTokens,
+  render: DeprecatedBrandTokens,
   parameters: {
     chromatic: {disableSnapshot: false},
   },
