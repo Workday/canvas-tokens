@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.0.1
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Update doc for v4 upgrade ([#251](https://github.com/Workday/canvas-tokens/pull/251))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
 ## 4.0.0
 
 ### Major Changes
