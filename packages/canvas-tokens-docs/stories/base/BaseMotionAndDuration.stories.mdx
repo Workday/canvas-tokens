@@ -1,0 +1,39 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import {DurationTokens} from './examples/Duration';
+import {EasingTokens} from './examples/Easing';
+
+<Meta title="Docs/Base Tokens/Motion" />
+
+<Unstyled>
+
+## Motion
+
+Base motion tokens provide the foundational timing and easing values for animations and transitions. These tokens are used to build our system easing tokens, which provide semantic naming and usage guidance.
+
+> **Note:** For motion usage guidelines, including information on how to choose appropriate duration and easing values, see the [Canvas Motion Documentation](https://canvas.workday.com/styles/tokens/motion).
+
+---
+
+### Duration
+
+Duration tokens define timing values for animations and transitions, ranging from 50ms to 1000ms in 50ms increments.
+
+<DurationTokens />
+
+---
+
+### Easing
+
+Easing tokens define timing functions (cubic-bezier curves) for animations and transitions. There are two categories:
+
+- **Quick (A)** - For shorter, faster interactions
+- **Purposeful (B)** - For longer, more meaningful transitions
+
+Each category includes three variants: Standard, Acceleration, and Deceleration.
+
+**Note:** We recommend using system easing tokens for all animations and transitions, rather than using base easing tokens directly.
+
+<EasingTokens />
+
+</Unstyled>

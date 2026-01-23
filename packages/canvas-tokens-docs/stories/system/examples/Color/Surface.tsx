@@ -25,7 +25,7 @@ export const SurfaceColors = () => (
 
 const surfaceAltPalette = buildPalette(
   'system.color.surface.alt',
-  system.color.surface.alt
+  {default: system.color.surface.alt.default, strong: system.color.surface.alt.strong},
 ).sort(sortSystemColorPalette);
 
 export const SurfaceAltColors = () => (

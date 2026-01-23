@@ -54,8 +54,8 @@ Brand common tokens have been updated with new naming:
 
 - `focus-outline` → `focus`
 - `error-inner` → `critical`
-- `alert-inner` → `caution-inner`
-- `alert-outer` → `caution-outer`
+- `alert-inner` → `caution.inner`
+- `alert-outer` → `caution.outer`
 
 Old common tokens have been deprecated.
 
@@ -438,10 +438,10 @@ support wide monitor displays, ensuring better responsive design coverage across
 | Token            | JS Value              | CSS Variable                | Description                  |
 | ---------------- | ------------------ | --------------------------- | ---------------------------- |
 | breakpoints.zero | 0                  | `--cnvs-sys-breakpoints-zero` | Below small                  |
-| breakpoints.sm   | `{base.unit}` \* 80  | `--cnvs-sys-breakpoints-sm` | Mobile devices (320px)       |
-| breakpoints.md   | `{base.unit}` \* 192 | `--cnvs-sys-breakpoints-md` | Laptops (768px)              |
-| breakpoints.lg   | `{base.unit}` \* 256 | `--cnvs-sys-breakpoints-lg` | Desktops (1024px)            |
-| breakpoints.xl   | `{base.unit}` \* 360 | `--cnvs-sys-breakpoints-xl` | Wide monitors (NEW - 1440px) |
+| breakpoints.sm   | `{base.baseline}` \* 40  | `--cnvs-sys-breakpoints-sm` | Mobile devices (320px)       |
+| breakpoints.md   | `{base.baseline}` \* 96 | `--cnvs-sys-breakpoints-md` | Laptops (768px)              |
+| breakpoints.lg   | `{base.baseline}` \* 128 | `--cnvs-sys-breakpoints-lg` | Desktops (1024px)            |
+| breakpoints.xl   | `{base.baseline}` \* 180 | `--cnvs-sys-breakpoints-xl` | Wide monitors (NEW - 1440px) |
 
 
 ## Deprecated Tokens
@@ -454,11 +454,11 @@ One of the most common deprecated tokens is `sys.color.bg.primary.default`, whic
 
 ```javascript
 // ❌ Deprecated (still works, but points to new value)
-tokens.sys.color.bg.primary.default
+sys.color.bg.primary.default
 // → resolves to: sys.color.brand.accent.primary
 
 // ✅ Recommended (use directly)
-tokens.sys.color.brand.accent.primary
+sys.color.brand.accent.primary
 ```
 
 This pattern applies to many deprecated tokens - they act as aliases that point to their replacement values. While deprecated tokens will continue to function, using the new token names directly ensures better code clarity and future compatibility.
@@ -506,44 +506,45 @@ This pattern applies to many deprecated tokens - they act as aliases that point 
 | brand.neutral.accent       | `{sys.color.fg.inverse}`       | `--cnvs-sys-color-fg-inverse`          |
 | brand.common.focus-outline | `{brand.common.focus}`         | `--cnvs-brand-common-focus`            |
 | brand.common.error-inner   | `{brand.common.critical}`      | `--cnvs-brand-common-critical`         |
-| brand.common.alert-inner   | `{brand.common.caution-inner}` | `--cnvs-brand-common-caution-inner`    |
-| brand.common.alert-outer   | `{brand.common.caution-outer}` | `--cnvs-brand-common-caution-outer`    |
+| brand.common.alert-inner   | `{brand.common.caution.inner}` | `--cnvs-brand-common-caution-inner`    |
+| brand.common.alert-outer   | `{brand.common.caution.outer}` | `--cnvs-brand-common-caution-outer`    |
 
 
 ### Deprecated Space Tokens
 
+Space tokens depend on their context. `padding` tokens should be used for padding style property, `gap` should be used for gap or space between elements, and the `size` token should be used for height or width of an element.
 
-
-| Deprecated Token | Replacement                     |
-| ---------------- | ------------------------------- |
-| space.zero       | Use semantic padding/gap tokens |
-| space.half       | Use semantic padding/gap tokens |
-| space.x1         | Use semantic padding/gap tokens |
-| space.x2         | Use semantic padding/gap tokens |
-| space.x3         | Use semantic padding/gap tokens |
-| space.x4         | Use semantic padding/gap tokens |
-| space.x5         | Use semantic padding/gap tokens |
-| space.x6         | Use semantic padding/gap tokens |
-| space.x8         | Use semantic padding/gap tokens |
-| space.x10        | Use semantic padding/gap tokens |
-| space.x14        | Use semantic padding/gap tokens |
-| space.x16        | Use semantic padding/gap tokens |
-| space.x20        | Use semantic padding/gap tokens |
+| Deprecated Token | Pixel Value | Closest Replacement Token(s)                                    |
+| ---------------- | ----------- | --------------------------------------------------------------- |
+| space.zero       | 0px         | `padding.none` / `gap.none`                                     |
+| space.half       | 2px         | `padding.xxs` / `gap.xs` (4px)                                 |
+| space.x1         | 4px         | `padding.xxs` / `gap.xs` (4px)                                 |
+| space.x2         | 8px         | `padding.xs` / `gap.sm` (8px)                                  |
+| space.x3         | 12px        | `padding.sm` (12px)                                             |
+| space.x4         | 16px        | `padding.md` / `gap.md` (16px) or `sys.size.xxxs` (16px)      |
+| space.x5         | 20px        | `padding.lg` (20px) or `sys.size.xxs` (20px)                   |
+| space.x6         | 24px        | `padding.xl` / `gap.lg` (24px) or `sys.size.xs` (24px)         |
+| space.x8         | 32px        | `padding.xxl` / `gap.xl` (32px) or `sys.size.sm` (32px)        |
+| space.x10        | 40px        | `sys.size.md` (40px)                                            |
+| space.x14        | 56px        | `sys.size.xl` (56px)                                            |
+| space.x16        | 64px        | `gap.xxl` (64px) or `sys.size.xxl` (64px)                      |
+| space.x20        | 80px        | No direct `sys.size` token (use `{base.size1000}` or semantic tokens) |
 
 
 ### Deprecated Shape Tokens
+Shape tokens don't have a 1:1 replacement. Use the notes below to determine the replacement token for your use case.
 
 
-
-| Deprecated Token | Replacement | CSS Variable                        |
-| ---------------- | ----------- | ------------------------------------ |
-| shape.half       | shape.xs    | `--cnvs-sys-shape-xs`                |
-| shape.x1         | shape.sm    | `--cnvs-sys-shape-sm`                |
-| shape.x1-half    | -           | -                                    |
-| shape.x2         | shape.md    | `--cnvs-sys-shape-md`                |
-| shape.x4         | shape.lg    | `--cnvs-sys-shape-lg`                |
-| shape.x6         | shape.xl    | `--cnvs-sys-shape-xl`                |
-| shape.round      | shape.full  | `--cnvs-sys-shape-full`              |
+| Deprecated Token | Replacement | CSS Variable                        | Notes                                                      |
+| ---------------- | ----------- | ------------------------------------ | ---------------------------------------------------------- |
+| shape.half       | —           | —                                    | Use `shape.sm` for status indicators, pills                |
+| shape.x1         | —           | —                                    | Use `shape.sm` for status indicators, pills                |
+| shape.x1-half    | —           | —                                    | Use `shape.md` for input components                        |
+| shape.x2         | —           | —                                    | Use `shape.lg` for toasts, tooltips, and smaller surfaces. Use `shape.xxl` for cards. Use `shape.xxxl` for modal containers |
+| shape.x4         | —           | —                                    | Use `shape.xxxl` for modal containers                       |
+| shape.x6         | —           | —                                    | Use `shape.xxxl` for dialog sheets                          |
+| shape.zero        | shape.none   | `--cnvs-sys-shape-none`              | Renamed                                                     |
+| shape.round       | shape.full   | `--cnvs-sys-shape-full`              | Renamed                                                     |
 
 
 ### Deprecated Breakpoint Tokens
@@ -580,10 +581,10 @@ The primary background tokens have been reorganized to better align with brand a
 
 ```javascript
 // Before (deprecated)
-backgroundColor: tokens.sys.color.bg.primary.default
+backgroundColor: system.color.bg.primary.default
 
 // After (recommended)
-backgroundColor: tokens.sys.color.brand.accent.primary
+backgroundColor: system.color.brand.accent.primary
 ```
 
 **Surface Background Tokens**
@@ -910,6 +911,63 @@ Static color tokens have been deprecated in favor of using base palette tokens d
 > `shadow.1`, `shadow.2`, and `shadow.default` are deprecated.  
 > Use `sys.color.shadow.base` and `sys.color.shadow.ambient` instead.
 
+#### Typography Tokens
+
+Typography tokens have been updated to use semantic size names (`sm`, `md`, `lg`) instead of descriptive names (`small`, `medium`, `large`).
+
+**Deprecated Font-Size Tokens:**
+
+| Deprecated Token                      | Replacement Token                    | Notes                                                      |
+| ------------------------------------- | ------------------------------------ | ---------------------------------------------------------- |
+| `sys.font-size.subtext.small`         | `sys.font-size.subtext.sm`           | Use semantic size name `sm` instead of `small`             |
+| `sys.font-size.subtext.medium`        | `sys.font-size.subtext.md`           | Use semantic size name `md` instead of `medium`            |
+| `sys.font-size.subtext.large`         | `sys.font-size.subtext.lg`           | Use semantic size name `lg` instead of `large`            |
+| `sys.font-size.body.small`           | `sys.font-size.body.sm`              | Use semantic size name `sm` instead of `small`             |
+| `sys.font-size.body.medium`          | `sys.font-size.body.md`              | Use semantic size name `md` instead of `medium`           |
+| `sys.font-size.body.large`           | `sys.font-size.body.lg`              | Use semantic size name `lg` instead of `large`            |
+| `sys.font-size.heading.small`        | `sys.font-size.heading.sm`           | Use semantic size name `sm` instead of `small`             |
+| `sys.font-size.heading.medium`       | `sys.font-size.heading.md`           | Use semantic size name `md` instead of `medium`           |
+| `sys.font-size.heading.large`        | `sys.font-size.heading.lg`           | Use semantic size name `lg` instead of `large`             |
+| `sys.font-size.title.small`          | `sys.font-size.title.sm`             | Use semantic size name `sm` instead of `small`             |
+| `sys.font-size.title.medium`         | `sys.font-size.title.md`             | Use semantic size name `md` instead of `medium`            |
+| `sys.font-size.title.large`          | `sys.font-size.title.lg`             | Use semantic size name `lg` instead of `large`             |
+
+**Deprecated Line-Height Tokens:**
+
+| Deprecated Token                      | Replacement Token                    | Notes                                                      |
+| ------------------------------------- | ------------------------------------ | ---------------------------------------------------------- |
+| `sys.line-height.subtext.small`        | `sys.line-height.subtext.sm`         | Use semantic size name `sm` instead of `small`             |
+| `sys.line-height.subtext.medium`      | `sys.line-height.subtext.md`         | Use semantic size name `md` instead of `medium`            |
+| `sys.line-height.subtext.large`       | `sys.line-height.subtext.lg`         | Use semantic size name `lg` instead of `large`            |
+| `sys.line-height.body.small`          | `sys.line-height.body.sm`            | Use semantic size name `sm` instead of `small`             |
+| `sys.line-height.body.medium`         | `sys.line-height.body.md`            | Use semantic size name `md` instead of `medium`            |
+| `sys.line-height.body.large`          | `sys.line-height.body.lg`            | Use semantic size name `lg` instead of `large`            |
+| `sys.line-height.heading.small`       | `sys.line-height.heading.sm`         | Use semantic size name `sm` instead of `small`             |
+| `sys.line-height.heading.medium`      | `sys.line-height.heading.md`         | Use semantic size name `md` instead of `medium`            |
+| `sys.line-height.heading.large`       | `sys.line-height.heading.lg`         | Use semantic size name `lg` instead of `large`            |
+| `sys.line-height.title.small`         | `sys.line-height.title.sm`           | Use semantic size name `sm` instead of `small`             |
+| `sys.line-height.title.medium`       | `sys.line-height.title.md`            | Use semantic size name `md` instead of `medium`             |
+| `sys.line-height.title.large`         | `sys.line-height.title.lg`            | Use semantic size name `lg` instead of `large`             |
+
+**Deprecated Type (Typography) Tokens:**
+
+The `sys.type.*` tokens (which combine font-family, font-weight, line-height, font-size, and letter-spacing) have been deprecated. Instead, use the individual token properties directly:
+
+| Deprecated Token                      | Replacement                                                      | Notes                                                      |
+| ------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------- |
+| `sys.type.subtext.small`              | Use `sys.font-size.subtext.sm`, `sys.line-height.subtext.sm`, etc. | Use individual typography tokens instead of composite token |
+| `sys.type.subtext.medium`             | Use `sys.font-size.subtext.md`, `sys.line-height.subtext.md`, etc. | Use individual typography tokens instead of composite token |
+| `sys.type.subtext.large`              | Use `sys.font-size.subtext.lg`, `sys.line-height.subtext.lg`, etc. | Use individual typography tokens instead of composite token |
+| `sys.type.body.small`                 | Use `sys.font-size.body.sm`, `sys.line-height.body.sm`, etc.     | Use individual typography tokens instead of composite token |
+| `sys.type.body.medium`                | Use `sys.font-size.body.md`, `sys.line-height.body.md`, etc.     | Use individual typography tokens instead of composite token |
+| `sys.type.body.large`                 | Use `sys.font-size.body.lg`, `sys.line-height.body.lg`, etc.     | Use individual typography tokens instead of composite token |
+| `sys.type.heading.small`              | Use `sys.font-size.heading.sm`, `sys.line-height.heading.sm`, etc. | Use individual typography tokens instead of composite token |
+| `sys.type.heading.medium`             | Use `sys.font-size.heading.md`, `sys.line-height.heading.md`, etc. | Use individual typography tokens instead of composite token |
+| `sys.type.heading.large`              | Use `sys.font-size.heading.lg`, `sys.line-height.heading.lg`, etc. | Use individual typography tokens instead of composite token |
+| `sys.type.title.small`                | Use `sys.font-size.title.sm`, `sys.line-height.title.sm`, etc.   | Use individual typography tokens instead of composite token |
+| `sys.type.title.medium`               | Use `sys.font-size.title.md`, `sys.line-height.title.md`, etc.   | Use individual typography tokens instead of composite token |
+| `sys.type.title.large`                | Use `sys.font-size.title.lg`, `sys.line-height.title.lg`, etc.   | Use individual typography tokens instead of composite token |
+
 ---
 
 ## Migration Recommendations
@@ -924,6 +982,9 @@ Static color tokens have been deprecated in favor of using base palette tokens d
    `lg`)
 5. **Review common tokens**: Update `focus-outline`, `error-inner`, `alert-inner`, and `alert-outer`
    to their new names
+6. **Update typography tokens**: Replace `small`/`medium`/`large` size names with `sm`/`md`/`lg` for
+   font-size and line-height tokens. Replace composite `sys.type.*` tokens with individual
+   typography property tokens
 
 > **Important**: Deprecated tokens will be removed in a future major version. We recommend migrating
 > to the new token names as soon as possible.

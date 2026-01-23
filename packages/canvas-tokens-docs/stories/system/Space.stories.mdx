@@ -1,19 +1,17 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-import {SpaceTokens} from './examples/Space';
+import {SizeTokens, PaddingTokens, GapTokens} from './examples/Space';
 
-<Meta title="Docs/System Tokens/Space" />
+<Meta title="Docs/System Tokens/Space/Space" />
 
 <Unstyled>
 
 # System Space Tokens
 
-System space tokens create consistent layout spacing across our UI.
+System space tokens create consistent layout spacing across our UI. In v4, space tokens have been reorganized into semantic `padding`, `gap`, and `size` tokens to provide clearer intent and better alignment with common CSS properties.
 
 ## Usage
 
-Space tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
-CSS variable from a base token, so you'll need to have those CSS variables imported in your
-application as well.
+Space tokens can be consumed as a JavaScript / TypeScript object. Each token value references the CSS variable from a base token, so you'll need to have those CSS variables imported in your application as well.
 
 ```ts
 // styles.ts
@@ -21,30 +19,47 @@ import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
   display: 'grid',
-  gap: `var(${system.space.x1})`,
-  padding: `var(${system.space.x2})`,
+  gap: `var(${system.gap.md})`,
+  padding: `var(${system.padding.md})`,
+  height: `var(${system.size.lg})`,
 };
 ```
 
-They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the
-same styles using CSS variables directly.
+They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the same styles using CSS variables directly.
 
 ```css
 // styles.css
 .card {
   display: grid;
-  gap: var(--cnvs-sys-space-x1);
-  padding: var(--cnvs-sys-space-x2);
+  gap: var(--cnvs-sys-gap-md);
+  padding: var(--cnvs-sys-padding-md);
+  height: var(--cnvs-sys-size-lg);
 }
 ```
 
 ---
 
-## Tokens
+## Size Tokens
 
-These tokens use a multiplier scale and reference our `baseUnit` token, which is `0.25rem` / `4px`.
-So the `system.space.x2` token has a value of `0.5rem` or `8px`.
+Size tokens provide semantic size values for height and width of elements. These tokens are used for component dimensions, not spacing.
 
-<SpaceTokens />
+<SizeTokens />
+
+---
+
+## Padding Tokens
+
+Padding tokens define spacing between content and element edges. Use these tokens for the CSS `padding` property.
+
+<PaddingTokens />
+
+---
+
+## Gap Tokens
+
+Gap tokens define spacing between elements in flexbox and grid layouts. Use these tokens for the CSS `gap` property.
+
+<GapTokens />
+
 
 </Unstyled>

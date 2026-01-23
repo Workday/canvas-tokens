@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {base, system} from '@workday/canvas-tokens-web';
+import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
 
 interface SpaceToken {
@@ -51,22 +51,66 @@ function multiplyCalcValues(value: string) {
   return numberMatch ? parseFloat(numberMatch[1]) : 0;
 }
 
-const spaceTokens: SpaceToken[] = Object.entries(system.space).map(([key, varName]) => {
+const deprecatedSpaceTokens = ['zero', 'half', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x8', 'x10', 'x14', 'x16', 'x20'];
+
+// Deprecated space tokens
+const deprecatedSpaceTokensData: SpaceToken[] = Object.entries(system.space || {})
+  .filter(([key]) => deprecatedSpaceTokens.includes(key))
+  .map(([key, varName]) => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+    const calculatedValue = multiplyCalcValues(value);
+    return {
+      cssVar: varName,
+      jsVar: formatJSVar(`system.space.${key}`),
+      value,
+      calculatedValue: `${calculatedValue}rem`,
+      pxValue: `${calculatedValue * 16}px`,
+    };
+  });
+
+// Size tokens
+const sizeTokens: SpaceToken[] = Object.entries(system.size || {}).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
   return {
     cssVar: varName,
-    jsVar: formatJSVar(`system.space.${key}`),
+    jsVar: formatJSVar(`system.size.${key}`),
     value,
     calculatedValue: `${calculatedValue}rem`,
     pxValue: `${calculatedValue * 16}px`,
   };
 });
 
-export function SpaceTokens() {
+// Padding tokens
+const paddingTokens: SpaceToken[] = Object.entries(system.padding || {}).map(([key, varName]) => {
+  const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+  const calculatedValue = multiplyCalcValues(value);
+  return {
+    cssVar: varName,
+    jsVar: formatJSVar(`system.padding.${key}`),
+    value,
+    calculatedValue: `${calculatedValue}rem`,
+    pxValue: `${calculatedValue * 16}px`,
+  };
+});
+
+// Gap tokens
+const gapTokens: SpaceToken[] = Object.entries(system.gap || {}).map(([key, varName]) => {
+  const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+  const calculatedValue = multiplyCalcValues(value);
+  return {
+    cssVar: varName,
+    jsVar: formatJSVar(`system.gap.${key}`),
+    value,
+    calculatedValue: `${calculatedValue}rem`,
+    pxValue: `${calculatedValue * 16}px`,
+  };
+});
+
+export const DeprecatedSpaceTokens = () => {
   return (
     <TokenGrid
-      caption="space tokens"
+      caption="deprecated space tokens"
       headings={[
         'Sample',
         'CSS Variable',
@@ -75,7 +119,7 @@ export function SpaceTokens() {
         'Calculated Value',
         'Pixel Value',
       ]}
-      rows={spaceTokens}
+      rows={deprecatedSpaceTokensData}
     >
       {token => (
         <>
@@ -83,7 +127,7 @@ export function SpaceTokens() {
             <TokenGrid.Sample
               style={{
                 width: `var(${token.cssVar})`,
-                backgroundColor: `var(${system.color.bg.primary.default})`,
+                backgroundColor: `var(${system.color.border.contrast.default})`,
               }}
             />
           </TokenGrid.RowItem>
@@ -100,4 +144,142 @@ export function SpaceTokens() {
       )}
     </TokenGrid>
   );
-}
+};
+
+export const SizeTokens = () => {
+  return (
+    <TokenGrid
+      caption="size tokens"
+      headings={[
+        'Sample',
+        'CSS Variable',
+        'JS Variable',
+        'Value',
+        'Calculated Value',
+        'Pixel Value',
+      ]}
+      rows={sizeTokens}
+    >
+      {token => (
+        <>
+          <TokenGrid.RowItem>
+            <TokenGrid.Sample
+              style={{
+                width: `var(${token.cssVar})`,
+                height: `var(${token.cssVar})`,
+                backgroundColor: `var(${system.color.border.contrast.default})`,
+              }}
+            />
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+        </>
+      )}
+    </TokenGrid>
+  );
+};
+
+export const PaddingTokens = () => {
+  return (
+    <TokenGrid
+      caption="padding tokens"
+      headings={[
+        'Sample',
+        'CSS Variable',
+        'JS Variable',
+        'Value',
+        'Calculated Value',
+        'Pixel Value',
+      ]}
+      rows={paddingTokens}
+    >
+      {token => (
+        <>
+          <TokenGrid.RowItem>
+            <div
+              style={{
+                padding: `var(${token.cssVar})`,
+                border: `solid 0.125rem red`,
+                backgroundColor: `var(${system.color.surface.alt.default})`,
+                display: 'inline-block',
+              }}
+            >
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: `var(${system.color.border.contrast.default})`,
+                }}
+              />
+            </div>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+        </>
+      )}
+    </TokenGrid>
+  );
+};
+
+export const GapTokens = () => {
+  return (
+    <TokenGrid
+      caption="gap tokens"
+      headings={[
+        'Sample',
+        'CSS Variable',
+        'JS Variable',
+        'Value',
+        'Calculated Value',
+        'Pixel Value',
+      ]}
+      rows={gapTokens}
+    >
+      {token => (
+        <>
+          <TokenGrid.RowItem>
+            <div style={{display: 'flex', gap: `var(${token.cssVar})`}}>
+              <TokenGrid.Sample
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: `var(${system.color.border.contrast.default})`,
+                }}
+              />
+              <TokenGrid.Sample
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: `var(${system.color.border.contrast.default})`,
+                }}
+              />
+            </div>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+        </>
+      )}
+    </TokenGrid>
+  );
+};
