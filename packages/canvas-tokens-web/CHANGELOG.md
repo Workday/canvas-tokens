@@ -1,5 +1,33 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update release.yml to include permissions
+    ([#228](https://github.com/Workday/canvas-tokens/pull/228))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - chore: Update main release workflow to be OIDC compliant
+    ([#234](https://github.com/Workday/canvas-tokens/pull/234))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+  ### Dependencies
+
+  - chore: Bump Storybook version for security
+    ([#233](https://github.com/Workday/canvas-tokens/pull/233))
+    ([@alanbsmith](https://github.com/alanbsmith), Alan Smith)
+
+  ### Documentation
+
+  - fix: Remove deprecated values from base tokens
+    ([#221](https://github.com/Workday/canvas-tokens/pull/221))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+  - docs: Add documentation for custom Style Dictionary setup
+    ([#236](https://github.com/Workday/canvas-tokens/pull/236))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 3.1.6
 
 ### Patch Changes
