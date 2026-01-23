@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as baseTokens from '@workday/canvas-tokens-web/dist/es6/base';
-import {base, system} from '@workday/canvas-tokens-web';
+import { system} from '@workday/canvas-tokens-web';
 import deprecatedBaseTokens from '../../../../canvas-tokens/tokens/deprecated/base.json';
 
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';

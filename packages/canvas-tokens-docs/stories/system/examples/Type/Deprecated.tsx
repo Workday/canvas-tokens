@@ -22,6 +22,23 @@ function getCSSVarValue(varName: string) {
   return getComputedStyle(document.documentElement).getPropertyValue(varName).replace(/"/g, '');
 }
 
+/**
+ * Converts a token reference (e.g., "{sys.font-size.subtext.small}") to a CSS variable name
+ * (e.g., "--cnvs-sys-font-size-subtext-small"). If the value is already a CSS variable name,
+ * it returns it as-is.
+ */
+function normalizeToCSSVarName(value: string): string {
+  // Check if this is a token reference like "{sys.font-size.subtext.small}"
+  if (value && value.startsWith('{') && value.endsWith('}')) {
+    const tokenPath = value.slice(1, -1);
+    // Convert token path to CSS variable name
+    // "sys.font-size.subtext.small" -> "--cnvs-sys-font-size-subtext-small"
+    return `--cnvs-${tokenPath.replace(/\./g, '-')}`;
+  }
+  // If it's already a CSS variable name or other value, return as-is
+  return value;
+}
+
 function formatTypeValues(values: object) {
   let formattedValues = {};
   for (const key in values) {
@@ -211,11 +228,14 @@ export const DeprecatedTypeTokens = () => {
               <TokenGrid.MonospaceLabel isDeprecated>{token.jsVar}</TokenGrid.MonospaceLabel>
             </TokenGrid.RowItem>
             <TokenGrid.RowItem>
-              {Object.entries(token.value).map(([key, value], index) => (
-                <div key={index}>
-                  {key}: {value} ({getCSSVarValue(value as string)})
-                </div>
-              ))}
+              {Object.entries(token.value).map(([key, value], index) => {
+                const cssVarName = normalizeToCSSVarName(value as string);
+                return (
+                  <div key={index}>
+                    {key}: {value} ({getCSSVarValue(cssVarName)})
+                  </div>
+                );
+              })}
             </TokenGrid.RowItem>
             <TokenGrid.RowItem>
               {token.replacement ? (

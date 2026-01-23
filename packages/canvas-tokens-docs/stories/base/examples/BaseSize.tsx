@@ -98,7 +98,6 @@ export const BaseSizeTokens = () => {
         'CSS Variable',
         'JS Variable',
         'Value',
-        'Calculated Value',
         'Pixel Value',
       ]}
       rows={sizeTokens}
@@ -121,7 +120,6 @@ export const BaseSizeTokens = () => {
             <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
         </>
       )}
