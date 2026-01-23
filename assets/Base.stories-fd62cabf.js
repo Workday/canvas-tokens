@@ -1,0 +1,3 @@
+import{C as t}from"./Color-e70b93d0.js";import"./jsx-runtime-86dfebf6.js";import"./index-1b03fe98.js";import"./index-f496e44c.js";import"./index-f65af720.js";import"./ColorGrid-23c2c243.js";import"./index-586dd939.js";const d={title:"Visual Tests/Base Tokens",parameters:{chromatic:{disableSnapshot:!1}}},r={render:t};var o,e,s;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  render: ColorTokens
+}`,...(s=(e=r.parameters)==null?void 0:e.docs)==null?void 0:s.source}}};const u=["Colors"];export{r as Colors,u as __namedExportsOrder,d as default};

@@ -1,0 +1,1 @@
+import{j as s}from"./jsx-runtime-86dfebf6.js";import{b as t,s as r,C as e}from"./ColorGrid-23c2c243.js";import{c as o}from"./index-4ff1bdec.js";const a=t("system.color.focus",{inverse:o.focus.inverse,contrast:o.focus.contrast}).sort(r),i=()=>s(e,{name:"Focus Colors",palette:a,variableType:"system"});export{i as F};
