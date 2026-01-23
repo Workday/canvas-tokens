@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.0.0-alpha.17
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update upgrade guide and storybook examples
+    ([#249](https://github.com/Workday/canvas-tokens/pull/249))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
 ## 4.0.0-alpha.16
 
 ### Major Changes
