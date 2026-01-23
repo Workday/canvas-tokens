@@ -1188,7 +1188,7 @@
         },
         "inverse": {
           "default": {
-            "value": "{base.palette.white.A500}",
+            "value": "{base.palette.neutral.0}",
             "type": "color"
           },
           "strong": {
