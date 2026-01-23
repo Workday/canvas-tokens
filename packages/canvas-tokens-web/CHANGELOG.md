@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.0.2
+
+### Patch Changes
+
+- ### Components
+
+  - fix:Trigger Sync ([#252](https://github.com/Workday/canvas-tokens/pull/252))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.1
 
 ### Patch Changes
