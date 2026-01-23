@@ -793,7 +793,10 @@ backgroundColor: system.color.brand.accent.primary
 
 | Deprecated Token                      | Points To (New Token Value)                    | Notes                                                      |
 | ------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
+| `sys.color.border.inverse`            | `sys.color.border.inverse.default`              | Use `sys.color.border.inverse.default` instead            |
 | `sys.color.border.inverse.default`   | `base.palette.neutral.0`                        | Use `sys.color.border.inverse.default` instead            |
+
+**Important:** This is a breaking change. Teams will have to update their code to use `system.color.border.inverse.default`. 
 
 **Contrast Border Tokens:**
 
@@ -985,8 +988,5 @@ The `sys.type.*` tokens (which combine font-family, font-weight, line-height, fo
 6. **Update typography tokens**: Replace `small`/`medium`/`large` size names with `sm`/`md`/`lg` for
    font-size and line-height tokens. Replace composite `sys.type.*` tokens with individual
    typography property tokens
-
-> **Important**: Deprecated tokens will be removed in a future major version. We recommend migrating
-> to the new token names as soon as possible.
 
 
