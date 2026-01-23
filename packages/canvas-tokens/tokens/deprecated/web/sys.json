@@ -530,14 +530,14 @@
             "comment": "Disabled inputs"
           },
           "soft": {
-            "value": "{sys.color.surface.alt.default}",
+            "value": "{base.palette.slate.50}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.surface.alt.default instead",
             "comment": "Alternative page background"
           },
           "strong": {
-            "value": "{sys.color.surface.alt.default}",
+            "value": "{base.palette.slate.200}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.surface.default tokens instead with sys.color.surface.overlay.hover",
@@ -1400,7 +1400,7 @@
             "comment": "Error"
           },
           "softer": {
-            "value": "{base.palette.green.200}",
+            "value": "{base.palette.green.50}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.fg.success instead",
@@ -1439,7 +1439,7 @@
         },
         "input": {
           "disabled": {
-            "value": "{sys.opacity.disabled}",
+            "value": "{base.palette.slate.400}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.fg.disabled instead",
