@@ -1,6 +1,26 @@
 # @workday/canvas-tokens-web
 
-## 4.0.0-alpha.17
+## 3.1.6
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Update release.yml to include permissions
+    ([#228](https://github.com/Workday/canvas-tokens/pull/228))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.1.5
+
+### Patch Changes
+
+- ### Documentation
+
+  - fix: Remove deprecated values from base tokens
+    ([#221](https://github.com/Workday/canvas-tokens/pull/221))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+## 3.1.4
 
 ### Major Changes
 
