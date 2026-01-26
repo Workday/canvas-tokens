@@ -89,13 +89,32 @@ jobs:
       
       - uses: Workday/canvas-kit-actions/do-release@v1
         if: ${{ steps.set_version.outputs.version }}
-        id: release
+        id: release_web
         with:
           ghToken: ${{ secrets.GH_RW_TOKEN }}
           package: "@workday/canvas-tokens-web"
           version: ${{ steps.set_version.outputs.version }}
           buildScript: echo "Building..."
           packagePath: packages/canvas-tokens-web
+          prerelease: ${{ contains(github.ref_name, 'prerelease/') }}
+          preid: ${{ steps.get_preid.outputs.preid }}
+          skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
+          releaseScript: yarn release
+          skipTagsPush: false
+      
+      - name: Build docs
+        if: ${{ steps.set_version.outputs.version }}
+        run: cd packages/canvas-tokens-docs && yarn build
+      
+      - uses: Workday/canvas-kit-actions/do-release@v1
+        if: ${{ steps.set_version.outputs.version && steps.release_web.outcome == 'success' }}
+        id: release_docs
+        with:
+          ghToken: ${{ secrets.GH_RW_TOKEN }}
+          package: "@workday/canvas-tokens-docs"
+          version: ${{ steps.set_version.outputs.version }}
+          buildScript: echo "Already built"
+          packagePath: packages/canvas-tokens-docs
           prerelease: ${{ contains(github.ref_name, 'prerelease/') }}
           preid: ${{ steps.get_preid.outputs.preid }}
           skipGithubRelease: ${{ contains(github.ref_name, 'prerelease/') }}
