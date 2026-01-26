@@ -27,7 +27,9 @@ const config: StorybookConfig = {
   viteFinal: async config =>
     mergeConfig(config, {
       plugins: [nxViteTsPaths()],
-      cssMinify: false,
+      build: {
+        cssMinify: false,
+      },
     }),
 };
 
