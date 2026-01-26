@@ -21,10 +21,10 @@ application as well.
 
 ```ts
 // styles.ts
-import {system} from '@workday/canvas-tokens-web';
+import {system, base} from '@workday/canvas-tokens-web';
 
 const styles = {
-  transition: `transform 300ms var(${system.motion.easing.quick.standard})`,
+  transition: `transform var(${base.duration300}) var(${system.motion.easing.quick.standard})`,
 };
 ```
 
@@ -34,7 +34,7 @@ same styles using CSS variables directly.
 ```css
 // styles.css
 .button {
-  transition: transform 300ms var(--cnvs-sys-easing-quick-standard);
+  transition: transform var(--cnvs-base-duration-300) var(--cnvs-sys-motion-easing-quick-standard);
 }
 ```
 
