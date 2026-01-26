@@ -19,7 +19,6 @@ use numerical naming conventions, and introducing new surface, focus, accent, an
 The v4 release includes:
 
 - **Extended alpha scales** across base color palettes (A25, A50, A100, A200)
-- **New magenta palette** added to the color system
 - **Brand token updates** with numerical naming (25, 50, 100, 200...900, 950, 975)
 - **Comprehensive surface token system** for better UI component support
 - **New semantic tokens** for size, space, shape, and breakpoints
@@ -31,11 +30,6 @@ The v4 release includes:
 
 Base color palettes have been updated by adding alpha scales: **A25, A50, A100, A200**. Extended
 alpha range (**A0-A975**) has been added to slate, neutral, and white palettes.
-
-### New Magenta Palette
-
-A new **magenta palette** has been added to the color system, providing additional color options for
-design consistency.
 
 ## Brand Token Updates
 
@@ -796,7 +790,7 @@ backgroundColor: system.color.brand.accent.primary
 | `sys.color.border.inverse`            | `sys.color.border.inverse.default`              | Use `sys.color.border.inverse.default` instead            |
 | `sys.color.border.inverse.default`   | `base.palette.neutral.0`                        | Use `sys.color.border.inverse.default` instead            |
 
-**Important:** This is a breaking change. Teams will have to update their code to use `system.color.border.inverse.default`. 
+**Important:** This is a breaking change. Teams will have to update their code to use `system.color.border.inverse.default`.
 
 **Contrast Border Tokens:**
 
@@ -910,8 +904,8 @@ Static color tokens have been deprecated in favor of using base palette tokens d
 | shadow.default   | sys.color.shadow.base    | `--cnvs-sys-color-shadow-base`       | Main shadow color   |
 
 
-> **Note:**  
-> `shadow.1`, `shadow.2`, and `shadow.default` are deprecated.  
+> **Note:**
+> `shadow.1`, `shadow.2`, and `shadow.default` are deprecated.
 > Use `sys.color.shadow.base` and `sys.color.shadow.ambient` instead.
 
 #### Typography Tokens
