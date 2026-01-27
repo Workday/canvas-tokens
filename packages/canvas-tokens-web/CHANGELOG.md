@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.0.4
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Update caution color for brand border and fg
+    ([#258](https://github.com/Workday/canvas-tokens/pull/258))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.3
 
 ### Patch Changes
