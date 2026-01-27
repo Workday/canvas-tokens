@@ -1,5 +1,19 @@
 # @workday/canvas-tokens-web
 
+## 4.0.3
+
+### Patch Changes
+
+- ### Components
+
+  - chore: Disable CSS minification ([#253](https://github.com/Workday/canvas-tokens/pull/253))
+    ([@sheelah](https://github.com/sheelah), Sheelah Brennan)
+  - Docs: Update motion code example ([#256](https://github.com/Workday/canvas-tokens/pull/256))
+    ([@sheelah](https://github.com/sheelah), Sheelah Brennan)
+  - fix: Trigger Sync ([#257](https://github.com/Workday/canvas-tokens/pull/257))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.2
 
 ### Patch Changes
