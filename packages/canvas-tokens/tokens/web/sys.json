@@ -1026,7 +1026,7 @@
             "type": "color"
           },
           "caution": {
-            "value": "{brand.caution.400}",
+            "value": "{brand.caution.500}",
             "type": "color"
           }
         }

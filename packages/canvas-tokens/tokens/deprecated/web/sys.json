@@ -1341,7 +1341,7 @@
             "comment": "Warning"
           },
           "strong": {
-            "value": "{sys.color.brand.fg.caution.strong}",
+            "value": "{sys.color.fg.contrast.default}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.brand.fg.caution.strong instead with sys.color.accent.overlay.hover",
