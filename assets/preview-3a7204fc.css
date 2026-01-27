@@ -1,0 +1,1402 @@
+/**
+ * Do not edit directly
+ * Generated on Tue, 27 Jan 2026 21:53:39 GMT
+ */
+
+:root {
+  --cnvs-base-font-size: 1rem; /* Default fontSize for the browser, may be overriden by user preferences */
+  --cnvs-base-baseline: 0.5rem; /* Baseline unit used for the 8pt sizing grid */
+  --cnvs-base-duration-50: 50ms;
+  --cnvs-base-duration-100: 100ms;
+  --cnvs-base-duration-150: 150ms;
+  --cnvs-base-duration-200: 200ms;
+  --cnvs-base-duration-250: 250ms;
+  --cnvs-base-duration-300: 300ms;
+  --cnvs-base-duration-350: 350ms;
+  --cnvs-base-duration-400: 400ms;
+  --cnvs-base-duration-450: 450ms;
+  --cnvs-base-duration-500: 500ms;
+  --cnvs-base-duration-550: 550ms;
+  --cnvs-base-duration-600: 600ms;
+  --cnvs-base-duration-650: 650ms;
+  --cnvs-base-duration-700: 700ms;
+  --cnvs-base-duration-750: 750ms;
+  --cnvs-base-duration-800: 800ms;
+  --cnvs-base-duration-850: 850ms;
+  --cnvs-base-duration-900: 900ms;
+  --cnvs-base-duration-950: 950ms;
+  --cnvs-base-duration-1000: 1000ms;
+  --cnvs-base-easing-a-100: cubic-bezier(0.2, 0, 0.2, 1);
+  --cnvs-base-easing-a-200: cubic-bezier(0.4, 0, 0.95, 0.8);
+  --cnvs-base-easing-a-300: cubic-bezier(0.05, 0.4, 0.3, 1);
+  --cnvs-base-easing-b-100: cubic-bezier(0.35, 0, 0.05, 1);
+  --cnvs-base-easing-b-200: cubic-bezier(0.4, 0, 0.8, 0.3);
+  --cnvs-base-easing-b-300: cubic-bezier(0, 0.4, 0.2, 1);
+  --cnvs-base-opacity-0: 0;
+  --cnvs-base-opacity-80: 0.08;
+  --cnvs-base-opacity-100: 0.08;
+  --cnvs-base-opacity-120: 0.12;
+  --cnvs-base-opacity-200: 0.2;
+  --cnvs-base-opacity-250: 0.2;
+  --cnvs-base-opacity-300: 0.4;
+  --cnvs-base-opacity-400: 0.4;
+  --cnvs-base-opacity-500: 0.84;
+  --cnvs-base-opacity-640: 0.64;
+  --cnvs-base-opacity-840: 0.84;
+  --cnvs-base-palette-amber-25: oklch(0.9779 0.0214 95.33 / 1);
+  --cnvs-base-palette-amber-50: oklch(0.969 0.0619 101.63 / 1);
+  --cnvs-base-palette-amber-100: oklch(0.9567 0.0948 100.22 / 1);
+  --cnvs-base-palette-amber-200: oklch(0.9191 0.1547 99.7 / 1);
+  --cnvs-base-palette-amber-300: oklch(0.8432 0.1713 85.24 / 1);
+  --cnvs-base-palette-amber-400: oklch(0.7909 0.1711 70.15 / 1);
+  --cnvs-base-palette-amber-500: oklch(0.6601 0.1537 60.7 / 1);
+  --cnvs-base-palette-amber-600: oklch(0.5505 0.1439 50.78 / 1);
+  --cnvs-base-palette-amber-700: oklch(0.4824 0.1353 46.11 / 1);
+  --cnvs-base-palette-amber-800: oklch(0.4143 0.1245 42.21 / 1);
+  --cnvs-base-palette-amber-900: oklch(0.32 0.098 41.19 / 1);
+  --cnvs-base-palette-amber-950: oklch(0.2489 0.0771 40.64 / 1);
+  --cnvs-base-palette-amber-975: oklch(0.2165 0.0674 40.35 / 1);
+  --cnvs-base-palette-amber-a25: oklch(0.7982 0.159 92.57 / 0.1);
+  --cnvs-base-palette-amber-a50: oklch(0.8864 0.1845 100.28 / 0.22);
+  --cnvs-base-palette-amber-a100: oklch(0.8988 0.185 97.8 / 0.35);
+  --cnvs-base-palette-amber-a200: oklch(0.886 0.1822 96.83 / 0.64);
+  --cnvs-base-palette-azure-25: oklch(0.981 0.0131 220.96 / 1);
+  --cnvs-base-palette-azure-50: oklch(0.9549 0.0295 223.86 / 1);
+  --cnvs-base-palette-azure-100: oklch(0.9321 0.0425 227.25 / 1);
+  --cnvs-base-palette-azure-200: oklch(0.8594 0.0867 230.07 / 1);
+  --cnvs-base-palette-azure-300: oklch(0.7991 0.107 239.24 / 1);
+  --cnvs-base-palette-azure-400: oklch(0.7283 0.1377 242.63 / 1);
+  --cnvs-base-palette-azure-500: oklch(0.6555 0.1553 244.48 / 1);
+  --cnvs-base-palette-azure-600: oklch(0.5174 0.1257 243.24 / 1);
+  --cnvs-base-palette-azure-700: oklch(0.4618 0.1098 242.11 / 1);
+  --cnvs-base-palette-azure-800: oklch(0.3912 0.0855 237.05 / 1);
+  --cnvs-base-palette-azure-900: oklch(0.326 0.07 235.91 / 1);
+  --cnvs-base-palette-azure-950: oklch(0.249 0.053 235.41 / 1);
+  --cnvs-base-palette-azure-975: oklch(0.2138 0.0455 235.23 / 1);
+  --cnvs-base-palette-azure-a25: oklch(0.7487 0.1547 233.36 / 0.06);
+  --cnvs-base-palette-azure-a50: oklch(0.7394 0.1572 235.46 / 0.14);
+  --cnvs-base-palette-azure-a100: oklch(0.7186 0.1639 239.76 / 0.2);
+  --cnvs-base-palette-azure-a200: oklch(0.7117 0.1663 241.15 / 0.42);
+  --cnvs-base-palette-blue-25: oklch(0.969 0.0155 248.07 / 1);
+  --cnvs-base-palette-blue-50: oklch(0.9523 0.0239 248.12 / 1);
+  --cnvs-base-palette-blue-100: oklch(0.928 0.0359 250.6 / 1);
+  --cnvs-base-palette-blue-200: oklch(0.8627 0.0701 250.6 / 1);
+  --cnvs-base-palette-blue-300: oklch(0.7933 0.1076 252.08 / 1);
+  --cnvs-base-palette-blue-400: oklch(0.708 0.1549 255.41 / 1);
+  --cnvs-base-palette-blue-500: oklch(0.6023 0.2032 255.68 / 1);
+  --cnvs-base-palette-blue-600: oklch(0.5198 0.1782 256.11 / 1);
+  --cnvs-base-palette-blue-700: oklch(0.4658 0.1562 255.5 / 1);
+  --cnvs-base-palette-blue-800: oklch(0.3908 0.128 256 / 1);
+  --cnvs-base-palette-blue-900: oklch(0.3152 0.1054 261.09 / 1);
+  --cnvs-base-palette-blue-950: oklch(0.2452 0.0752 254.55 / 1);
+  --cnvs-base-palette-blue-975: oklch(0.209 0.07 255.61 / 1);
+  --cnvs-base-palette-blue-a25: oklch(0.6499 0.1912 253.52 / 0.08);
+  --cnvs-base-palette-blue-a50: oklch(0.6152 0.2108 256.1 / 0.11);
+  --cnvs-base-palette-blue-a100: oklch(0.6225 0.2064 255.9 / 0.17);
+  --cnvs-base-palette-blue-a200: oklch(0.6048 0.2166 257.21 / 0.31);
+  --cnvs-base-palette-coral-25: oklch(0.9837 0.0085 44.54 / 1);
+  --cnvs-base-palette-coral-50: oklch(0.9659 0.0171 35.14 / 1);
+  --cnvs-base-palette-coral-100: oklch(0.9344 0.0339 35.8 / 1);
+  --cnvs-base-palette-coral-200: oklch(0.8476 0.0856 37.59 / 1);
+  --cnvs-base-palette-coral-300: oklch(0.7671 0.1418 38.37 / 1);
+  --cnvs-base-palette-coral-400: oklch(0.7279 0.1703 38.58 / 1);
+  --cnvs-base-palette-coral-500: oklch(0.6779 0.2096 40.36 / 1);
+  --cnvs-base-palette-coral-600: oklch(0.5394 0.1828 36.43 / 1);
+  --cnvs-base-palette-coral-700: oklch(0.4616 0.1629 34.74 / 1);
+  --cnvs-base-palette-coral-800: oklch(0.393 0.143 33.49 / 1);
+  --cnvs-base-palette-coral-900: oklch(0.3043 0.1137 32.49 / 1);
+  --cnvs-base-palette-coral-950: oklch(0.236 0.0899 31.8 / 1);
+  --cnvs-base-palette-coral-975: oklch(0.2114 0.07 29.72 / 1);
+  --cnvs-base-palette-coral-a25: oklch(0.6708 0.221 37.37 / 0.04);
+  --cnvs-base-palette-coral-a50: oklch(0.6598 0.229 34.15 / 0.08);
+  --cnvs-base-palette-coral-a100: oklch(0.6545 0.2337 33.76 / 0.15);
+  --cnvs-base-palette-coral-a200: oklch(0.6552 0.2332 34.09 / 0.36);
+  --cnvs-base-palette-green-25: oklch(0.9824 0.0282 148.77 / 1);
+  --cnvs-base-palette-green-50: oklch(0.9655 0.0561 149.93 / 1);
+  --cnvs-base-palette-green-100: oklch(0.9278 0.1024 149.88 / 1);
+  --cnvs-base-palette-green-200: oklch(0.8506 0.1804 149.93 / 1);
+  --cnvs-base-palette-green-300: oklch(0.7817 0.1928 150.67 / 1);
+  --cnvs-base-palette-green-400: oklch(0.702 0.1952 148.39 / 1);
+  --cnvs-base-palette-green-500: oklch(0.6362 0.1974 145.47 / 1);
+  --cnvs-base-palette-green-600: oklch(0.5069 0.1569 145.56 / 1);
+  --cnvs-base-palette-green-700: oklch(0.4463 0.1422 144.58 / 1);
+  --cnvs-base-palette-green-800: oklch(0.3955 0.1156 147.66 / 1);
+  --cnvs-base-palette-green-900: oklch(0.3197 0.0997 145.3 / 1);
+  --cnvs-base-palette-green-950: oklch(0.2548 0.0796 145.23 / 1);
+  --cnvs-base-palette-green-975: oklch(0.2118 0.0653 145.69 / 1);
+  --cnvs-base-palette-green-a25: oklch(0.8695 0.2801 143.52 / 0.08);
+  --cnvs-base-palette-green-a50: oklch(0.8685 0.2814 143.77 / 0.15);
+  --cnvs-base-palette-green-a100: oklch(0.8316 0.2716 143.71 / 0.29);
+  --cnvs-base-palette-green-a200: oklch(0.796 0.2508 144.9 / 0.6);
+  --cnvs-base-palette-indigo-25: oklch(0.9703 0.0147 286 / 1);
+  --cnvs-base-palette-indigo-50: oklch(0.9499 0.0243 280.81 / 1);
+  --cnvs-base-palette-indigo-100: oklch(0.9201 0.0395 282.43 / 1);
+  --cnvs-base-palette-indigo-200: oklch(0.8503 0.0754 280.52 / 1);
+  --cnvs-base-palette-indigo-300: oklch(0.7625 0.1242 281 / 1);
+  --cnvs-base-palette-indigo-400: oklch(0.712 0.1531 280.1 / 1);
+  --cnvs-base-palette-indigo-500: oklch(0.615 0.2131 280.7 / 1);
+  --cnvs-base-palette-indigo-600: oklch(0.5289 0.2241 281.65 / 1);
+  --cnvs-base-palette-indigo-700: oklch(0.466 0.1961 280.9 / 1);
+  --cnvs-base-palette-indigo-800: oklch(0.379 0.1771 278.1 / 1);
+  --cnvs-base-palette-indigo-900: oklch(0.317 0.142 278.2 / 1);
+  --cnvs-base-palette-indigo-950: oklch(0.2448 0.1108 277.85 / 1);
+  --cnvs-base-palette-indigo-975: oklch(0.1951 0.0693 277.85 / 1);
+  --cnvs-base-palette-indigo-a25: oklch(0.4762 0.2966 267.42 / 0.05);
+  --cnvs-base-palette-indigo-a50: oklch(0.4661 0.3036 264.5 / 0.08);
+  --cnvs-base-palette-indigo-a100: oklch(0.4693 0.3013 265.31 / 0.13);
+  --cnvs-base-palette-indigo-a200: oklch(0.4666 0.3032 264.75 / 0.24);
+  --cnvs-base-palette-magenta-25: oklch(0.9782 0.0191 325.55 / 1);
+  --cnvs-base-palette-magenta-50: oklch(0.9637 0.0322 325.69 / 1);
+  --cnvs-base-palette-magenta-100: oklch(0.9253 0.0627 329.34 / 1);
+  --cnvs-base-palette-magenta-200: oklch(0.887 0.1029 327.44 / 1);
+  --cnvs-base-palette-magenta-300: oklch(0.807 0.166 333.78 / 1);
+  --cnvs-base-palette-magenta-400: oklch(0.737 0.198 341.58 / 1);
+  --cnvs-base-palette-magenta-500: oklch(0.6557 0.2007 346.62 / 1);
+  --cnvs-base-palette-magenta-600: oklch(0.534 0.183 344.19 / 1);
+  --cnvs-base-palette-magenta-700: oklch(0.4641 0.1602 344.45 / 1);
+  --cnvs-base-palette-magenta-800: oklch(0.4011 0.1269 344.4 / 1);
+  --cnvs-base-palette-magenta-900: oklch(0.297 0.095 343.19 / 1);
+  --cnvs-base-palette-magenta-950: oklch(0.2332 0.0908 343.78 / 1);
+  --cnvs-base-palette-magenta-975: oklch(0.2016 0.0706 345.97 / 1);
+  --cnvs-base-palette-magenta-a25: oklch(0.7091 0.3124 328.27 / 0.05);
+  --cnvs-base-palette-magenta-a50: oklch(0.7044 0.3188 328.33 / 0.08);
+  --cnvs-base-palette-magenta-a100: oklch(0.6892 0.3052 333.97 / 0.16);
+  --cnvs-base-palette-magenta-a200: oklch(0.6972 0.3174 330.1 / 0.24);
+  --cnvs-base-palette-neutral-0: oklch(1 0 0 / 1);
+  --cnvs-base-palette-neutral-25: oklch(0.9851 0 0 / 1);
+  --cnvs-base-palette-neutral-50: oklch(0.9702 0 0 / 1);
+  --cnvs-base-palette-neutral-100: oklch(0.9431 0 0 / 1);
+  --cnvs-base-palette-neutral-200: oklch(0.8699 0 0 / 1);
+  --cnvs-base-palette-neutral-300: oklch(0.8015 0 0 / 1);
+  --cnvs-base-palette-neutral-400: oklch(0.72 0 0 / 1);
+  --cnvs-base-palette-neutral-500: oklch(0.6234 0 0 / 1);
+  --cnvs-base-palette-neutral-600: oklch(0.5103 0 0 / 1);
+  --cnvs-base-palette-neutral-700: oklch(0.4494 0 0 / 1);
+  --cnvs-base-palette-neutral-800: oklch(0.3523 0 0 / 1);
+  --cnvs-base-palette-neutral-900: oklch(0.2891 0 0 / 1);
+  --cnvs-base-palette-neutral-950: oklch(0.2308 0 0 / 1);
+  --cnvs-base-palette-neutral-975: oklch(0.1591 0 0 / 1);
+  --cnvs-base-palette-neutral-1000: oklch(0 0 0 / 1);
+  --cnvs-base-palette-neutral-a0: oklch(0 0 0 / 0);
+  --cnvs-base-palette-neutral-a25: oklch(0.1149 0 0 / 0.02);
+  --cnvs-base-palette-neutral-a50: oklch(0.1149 0 0 / 0.04);
+  --cnvs-base-palette-neutral-a100: oklch(0.1822 0 0 / 0.08);
+  --cnvs-base-palette-neutral-a200: oklch(0.0847 0 0 / 0.17);
+  --cnvs-base-palette-neutral-a300: oklch(0.1149 0 0 / 0.26);
+  --cnvs-base-palette-neutral-a400: oklch(0.0847 0 0 / 0.36);
+  --cnvs-base-palette-neutral-a500: oklch(0.1149 0 0 / 0.48);
+  --cnvs-base-palette-neutral-a600: oklch(0 0 0 / 0.6);
+  --cnvs-base-palette-neutral-a700: oklch(0.0672 0 0 / 0.67);
+  --cnvs-base-palette-neutral-a800: oklch(0 0 0 / 0.77);
+  --cnvs-base-palette-neutral-a900: oklch(0.0969 0 0 / 0.84);
+  --cnvs-base-palette-neutral-a950: oklch(0.0672 0 0 / 0.89);
+  --cnvs-base-palette-neutral-a975: oklch(0 0 0 / 0.95);
+  --cnvs-base-palette-orange-25: oklch(0.9673 0.0205 67.52 / 1);
+  --cnvs-base-palette-orange-50: oklch(0.9523 0.0366 72.6 / 1);
+  --cnvs-base-palette-orange-100: oklch(0.9243 0.0542 67.95 / 1);
+  --cnvs-base-palette-orange-200: oklch(0.8606 0.1002 65.34 / 1);
+  --cnvs-base-palette-orange-300: oklch(0.7839 0.1608 63.57 / 1);
+  --cnvs-base-palette-orange-400: oklch(0.7261 0.1852 52.58 / 1);
+  --cnvs-base-palette-orange-500: oklch(0.6617 0.1893 44.93 / 1);
+  --cnvs-base-palette-orange-600: oklch(0.53 0.165 40.39 / 1);
+  --cnvs-base-palette-orange-700: oklch(0.4689 0.1456 40.5 / 1);
+  --cnvs-base-palette-orange-800: oklch(0.4077 0.1336 37.92 / 1);
+  --cnvs-base-palette-orange-900: oklch(0.3243 0.1084 37.05 / 1);
+  --cnvs-base-palette-orange-950: oklch(0.2421 0.082 36.47 / 1);
+  --cnvs-base-palette-orange-975: oklch(0.2121 0.0706 37.19 / 1);
+  --cnvs-base-palette-orange-a25: oklch(0.7136 0.1784 53.73 / 0.1);
+  --cnvs-base-palette-orange-a50: oklch(0.7555 0.1769 59.35 / 0.17);
+  --cnvs-base-palette-orange-a100: oklch(0.7365 0.1837 54.12 / 0.25);
+  --cnvs-base-palette-orange-a200: oklch(0.7304 0.1863 52.52 / 0.46);
+  --cnvs-base-palette-purple-25: oklch(0.9776 0.0147 312 / 1);
+  --cnvs-base-palette-purple-50: oklch(0.951 0.0321 311.49 / 1);
+  --cnvs-base-palette-purple-100: oklch(0.909 0.0637 314.43 / 1);
+  --cnvs-base-palette-purple-200: oklch(0.8701 0.0965 316.6 / 1);
+  --cnvs-base-palette-purple-300: oklch(0.8108 0.1412 315.48 / 1);
+  --cnvs-base-palette-purple-400: oklch(0.734 0.1621 315.88 / 1);
+  --cnvs-base-palette-purple-500: oklch(0.628 0.1681 312.69 / 1);
+  --cnvs-base-palette-purple-600: oklch(0.5177 0.162 313.92 / 1);
+  --cnvs-base-palette-purple-700: oklch(0.476 0.156 313.2 / 1);
+  --cnvs-base-palette-purple-800: oklch(0.422 0.136 315.49 / 1);
+  --cnvs-base-palette-purple-900: oklch(0.3143 0.0996 313.76 / 1);
+  --cnvs-base-palette-purple-950: oklch(0.2351 0.0734 313.34 / 1);
+  --cnvs-base-palette-purple-975: oklch(0.194 0.062 312.79 / 1);
+  --cnvs-base-palette-purple-a25: oklch(0.5632 0.2948 302.45 / 0.04);
+  --cnvs-base-palette-purple-a50: oklch(0.5645 0.2935 302.36 / 0.09);
+  --cnvs-base-palette-purple-a100: oklch(0.5867 0.2975 307.8 / 0.17);
+  --cnvs-base-palette-purple-a200: oklch(0.6051 0.3009 311.78 / 0.25);
+  --cnvs-base-palette-red-25: oklch(0.9667 0.0163 21.82 / 1);
+  --cnvs-base-palette-red-50: oklch(0.9533 0.0231 23.95 / 1);
+  --cnvs-base-palette-red-100: oklch(0.9225 0.0394 25.51 / 1);
+  --cnvs-base-palette-red-200: oklch(0.8339 0.092 28.19 / 1);
+  --cnvs-base-palette-red-300: oklch(0.7533 0.1484 28.45 / 1);
+  --cnvs-base-palette-red-400: oklch(0.6857 0.2037 29.76 / 1);
+  --cnvs-base-palette-red-500: oklch(0.6495 0.2369 30.04 / 1);
+  --cnvs-base-palette-red-600: oklch(0.5342 0.2172 29.53 / 1);
+  --cnvs-base-palette-red-700: oklch(0.4517 0.1847 28.2 / 1);
+  --cnvs-base-palette-red-800: oklch(0.3712 0.1509 26.08 / 1);
+  --cnvs-base-palette-red-900: oklch(0.291 0.118 25.59 / 1);
+  --cnvs-base-palette-red-950: oklch(0.2318 0.0937 24.02 / 1);
+  --cnvs-base-palette-red-975: oklch(0.1988 0.0718 20.63 / 1);
+  --cnvs-base-palette-red-a25: oklch(0.6289 0.2567 29.11 / 0.04);
+  --cnvs-base-palette-red-a50: oklch(0.6434 0.2428 30.17 / 0.1);
+  --cnvs-base-palette-red-a100: oklch(0.6382 0.248 30.42 / 0.16);
+  --cnvs-base-palette-red-a200: oklch(0.6375 0.2487 30.71 / 0.35);
+  --cnvs-base-palette-slate-25: oklch(0.9846 0.0018 248.57 / 1);
+  --cnvs-base-palette-slate-50: oklch(0.9692 0.0035 248.23 / 1);
+  --cnvs-base-palette-slate-100: oklch(0.9447 0.0053 248.12 / 1);
+  --cnvs-base-palette-slate-200: oklch(0.917 0.0081 254 / 1);
+  --cnvs-base-palette-slate-300: oklch(0.856 0.0111 256.85 / 1);
+  --cnvs-base-palette-slate-400: oklch(0.754 0.0181 256.33 / 1);
+  --cnvs-base-palette-slate-500: oklch(0.629 0.0281 255.62 / 1);
+  --cnvs-base-palette-slate-600: oklch(0.5103 0.0255 256.8 / 1);
+  --cnvs-base-palette-slate-700: oklch(0.45 0.022 255.52 / 1);
+  --cnvs-base-palette-slate-800: oklch(0.3685 0.0218 256.4 / 1);
+  --cnvs-base-palette-slate-900: oklch(0.278 0.0156 252.4 / 1);
+  --cnvs-base-palette-slate-950: oklch(0.2453 0.0136 253.1 / 1);
+  --cnvs-base-palette-slate-975: oklch(0.18 0.008 248.33 / 1);
+  --cnvs-base-palette-slate-a25: oklch(0.4688 0.0781 250.43 / 0.03);
+  --cnvs-base-palette-slate-a50: oklch(0.3343 0.0951 253.3 / 0.05);
+  --cnvs-base-palette-slate-a100: oklch(0.3337 0.0688 250.79 / 0.09);
+  --cnvs-base-palette-slate-a200: oklch(0.3057 0.079 256.22 / 0.13);
+  --cnvs-base-palette-slate-a300: oklch(0.2442 0.0693 257.66 / 0.21);
+  --cnvs-base-palette-slate-a400: oklch(0.2333 0.0665 257.09 / 0.35);
+  --cnvs-base-palette-slate-a500: oklch(0.2187 0.0685 255.77 / 0.51);
+  --cnvs-base-palette-slate-a600: oklch(0.1793 0.0503 254.55 / 0.64);
+  --cnvs-base-palette-slate-a700: oklch(0.1595 0.0431 250.87 / 0.7);
+  --cnvs-base-palette-slate-a800: oklch(0.157 0.0349 253.16 / 0.79);
+  --cnvs-base-palette-slate-a900: oklch(0.1351 0.0244 244.09 / 0.87);
+  --cnvs-base-palette-slate-a950: oklch(0.1312 0.0198 248.87 / 0.9);
+  --cnvs-base-palette-slate-a975: oklch(0.1168 0.014 231.47 / 0.95);
+  --cnvs-base-palette-teal-25: oklch(0.9827 0.021 200.66 / 1);
+  --cnvs-base-palette-teal-50: oklch(0.9575 0.0424 203.83 / 1);
+  --cnvs-base-palette-teal-100: oklch(0.935 0.046 205.09 / 1);
+  --cnvs-base-palette-teal-200: oklch(0.8766 0.0677 204.24 / 1);
+  --cnvs-base-palette-teal-300: oklch(0.7836 0.0874 204.93 / 1);
+  --cnvs-base-palette-teal-400: oklch(0.7154 0.1006 206.05 / 1);
+  --cnvs-base-palette-teal-500: oklch(0.6385 0.1093 205.92 / 1);
+  --cnvs-base-palette-teal-600: oklch(0.5141 0.0882 207.28 / 1);
+  --cnvs-base-palette-teal-700: oklch(0.4634 0.0796 207.82 / 1);
+  --cnvs-base-palette-teal-800: oklch(0.3982 0.0687 209.08 / 1);
+  --cnvs-base-palette-teal-900: oklch(0.3052 0.0529 210.69 / 1);
+  --cnvs-base-palette-teal-950: oklch(0.2425 0.042 210.69 / 1);
+  --cnvs-base-palette-teal-975: oklch(0.2037 0.0354 211.24 / 1);
+  --cnvs-base-palette-teal-a25: oklch(0.8804 0.1478 200.72 / 0.09);
+  --cnvs-base-palette-teal-a50: oklch(0.8427 0.1433 206.66 / 0.19);
+  --cnvs-base-palette-teal-a100: oklch(0.7626 0.1316 209.35 / 0.22);
+  --cnvs-base-palette-teal-a200: oklch(0.7101 0.1219 207.98 / 0.37);
+  --cnvs-base-palette-white-a0: oklch(1 0 0 / 0);
+  --cnvs-base-palette-white-a25: oklch(1 0 0 / 0.02);
+  --cnvs-base-palette-white-a50: oklch(1 0 0 / 0.03);
+  --cnvs-base-palette-white-a100: oklch(1 0 0 / 0.08);
+  --cnvs-base-palette-white-a200: oklch(1 0 0 / 0.16);
+  --cnvs-base-palette-white-a300: oklch(1 0 0 / 0.26);
+  --cnvs-base-palette-white-a400: oklch(1 0 0 / 0.36);
+  --cnvs-base-palette-white-a500: oklch(1 0 0 / 0.47);
+  --cnvs-base-palette-white-a600: oklch(1 0 0 / 0.6);
+  --cnvs-base-palette-white-a700: oklch(1 0 0 / 0.67);
+  --cnvs-base-palette-white-a800: oklch(1 0 0 / 0.77);
+  --cnvs-base-palette-white-a900: oklch(1 0 0 / 0.83);
+  --cnvs-base-palette-white-a950: oklch(1 0 0 / 0.89);
+  --cnvs-base-palette-white-a975: oklch(1 0 0 / 0.95);
+  --cnvs-base-palette-cinnamon-100: oklch(0.9533 0.0231 23.95 / 1);
+  --cnvs-base-palette-cinnamon-200: oklch(0.9225 0.0394 25.51 / 1);
+  --cnvs-base-palette-cinnamon-300: oklch(0.7533 0.1484 28.45 / 1);
+  --cnvs-base-palette-cinnamon-400: oklch(0.6857 0.2037 29.76 / 1);
+  --cnvs-base-palette-cinnamon-500: oklch(0.5342 0.2172 29.53 / 1);
+  --cnvs-base-palette-cinnamon-600: oklch(0.4517 0.1847 28.2 / 1);
+  --cnvs-base-palette-peach-100: oklch(0.9659 0.0171 35.14 / 1);
+  --cnvs-base-palette-peach-200: oklch(0.8476 0.0856 37.59 / 1);
+  --cnvs-base-palette-peach-300: oklch(0.7671 0.1418 38.37 / 1);
+  --cnvs-base-palette-peach-400: oklch(0.6857 0.2037 29.76 / 1);
+  --cnvs-base-palette-peach-500: oklch(0.5394 0.1828 36.43 / 1);
+  --cnvs-base-palette-peach-600: oklch(0.4616 0.1629 34.74 / 1);
+  --cnvs-base-palette-chili-mango-100: oklch(0.9344 0.0339 35.8 / 1);
+  --cnvs-base-palette-chili-mango-200: oklch(0.8476 0.0856 37.59 / 1);
+  --cnvs-base-palette-chili-mango-300: oklch(0.7671 0.1418 38.37 / 1);
+  --cnvs-base-palette-chili-mango-400: oklch(0.6617 0.1893 44.93 / 1);
+  --cnvs-base-palette-chili-mango-500: oklch(0.6617 0.1893 44.93 / 1);
+  --cnvs-base-palette-chili-mango-600: oklch(0.4689 0.1456 40.5 / 1);
+  --cnvs-base-palette-cantaloupe-100: oklch(0.969 0.0619 101.63 / 1);
+  --cnvs-base-palette-cantaloupe-200: oklch(0.9191 0.1547 99.7 / 1);
+  --cnvs-base-palette-cantaloupe-300: oklch(0.8432 0.1713 85.24 / 1);
+  --cnvs-base-palette-cantaloupe-400: oklch(0.7909 0.1711 70.15 / 1);
+  --cnvs-base-palette-cantaloupe-500: oklch(0.6601 0.1537 60.7 / 1);
+  --cnvs-base-palette-cantaloupe-600: oklch(0.5505 0.1439 50.78 / 1);
+  --cnvs-base-palette-sour-lemon-100: oklch(0.9779 0.0214 95.33 / 1);
+  --cnvs-base-palette-sour-lemon-200: oklch(0.9567 0.0948 100.22 / 1);
+  --cnvs-base-palette-sour-lemon-300: oklch(0.9191 0.1547 99.7 / 1);
+  --cnvs-base-palette-sour-lemon-400: oklch(0.8432 0.1713 85.24 / 1);
+  --cnvs-base-palette-sour-lemon-500: oklch(0.8432 0.1713 85.24 / 1);
+  --cnvs-base-palette-sour-lemon-600: oklch(0.6601 0.1537 60.7 / 1);
+  --cnvs-base-palette-juicy-pear-100: oklch(0.9779 0.0214 95.33 / 1);
+  --cnvs-base-palette-juicy-pear-200: oklch(0.9567 0.0948 100.22 / 1);
+  --cnvs-base-palette-juicy-pear-300: oklch(0.9191 0.1547 99.7 / 1);
+  --cnvs-base-palette-juicy-pear-400: oklch(0.9191 0.1547 99.7 / 1);
+  --cnvs-base-palette-juicy-pear-500: oklch(0.6362 0.1974 145.47 / 1);
+  --cnvs-base-palette-juicy-pear-600: oklch(0.4463 0.1422 144.58 / 1);
+  --cnvs-base-palette-kiwi-100: oklch(0.9655 0.0561 149.93 / 1);
+  --cnvs-base-palette-kiwi-200: oklch(0.9278 0.1024 149.88 / 1);
+  --cnvs-base-palette-kiwi-300: oklch(0.8506 0.1804 149.93 / 1);
+  --cnvs-base-palette-kiwi-400: oklch(0.6362 0.1974 145.47 / 1);
+  --cnvs-base-palette-kiwi-500: oklch(0.6362 0.1974 145.47 / 1);
+  --cnvs-base-palette-kiwi-600: oklch(0.4463 0.1422 144.58 / 1);
+  --cnvs-base-palette-green-apple-100: oklch(0.9655 0.0561 149.93 / 1);
+  --cnvs-base-palette-green-apple-200: oklch(0.9278 0.1024 149.88 / 1);
+  --cnvs-base-palette-green-apple-300: oklch(0.8506 0.1804 149.93 / 1);
+  --cnvs-base-palette-green-apple-400: oklch(0.5069 0.1569 145.56 / 1);
+  --cnvs-base-palette-green-apple-500: oklch(0.4463 0.1422 144.58 / 1);
+  --cnvs-base-palette-green-apple-600: oklch(0.3955 0.1156 147.66 / 1);
+  --cnvs-base-palette-watermelon-100: oklch(0.9827 0.021 200.66 / 1);
+  --cnvs-base-palette-watermelon-200: oklch(0.935 0.046 205.09 / 1);
+  --cnvs-base-palette-watermelon-300: oklch(0.9278 0.1024 149.88 / 1);
+  --cnvs-base-palette-watermelon-400: oklch(0.5069 0.1569 145.56 / 1);
+  --cnvs-base-palette-watermelon-500: oklch(0.3955 0.1156 147.66 / 1);
+  --cnvs-base-palette-watermelon-600: oklch(0.3955 0.1156 147.66 / 1);
+  --cnvs-base-palette-jewel-100: oklch(0.9827 0.021 200.66 / 1);
+  --cnvs-base-palette-jewel-200: oklch(0.8766 0.0677 204.24 / 1);
+  --cnvs-base-palette-jewel-300: oklch(0.7154 0.1006 206.05 / 1);
+  --cnvs-base-palette-jewel-400: oklch(0.6385 0.1093 205.92 / 1);
+  --cnvs-base-palette-jewel-500: oklch(0.5141 0.0882 207.28 / 1);
+  --cnvs-base-palette-jewel-600: oklch(0.4634 0.0796 207.82 / 1);
+  --cnvs-base-palette-toothpaste-100: oklch(0.9549 0.0295 223.86 / 1);
+  --cnvs-base-palette-toothpaste-200: oklch(0.8594 0.0867 230.07 / 1);
+  --cnvs-base-palette-toothpaste-300: oklch(0.7991 0.107 239.24 / 1);
+  --cnvs-base-palette-toothpaste-400: oklch(0.6555 0.1553 244.48 / 1);
+  --cnvs-base-palette-toothpaste-500: oklch(0.4618 0.1098 242.11 / 1);
+  --cnvs-base-palette-toothpaste-600: oklch(0.3912 0.0855 237.05 / 1);
+  --cnvs-base-palette-blueberry-100: oklch(0.928 0.0359 250.6 / 1);
+  --cnvs-base-palette-blueberry-200: oklch(0.928 0.0359 250.6 / 1);
+  --cnvs-base-palette-blueberry-300: oklch(0.708 0.1549 255.41 / 1);
+  --cnvs-base-palette-blueberry-400: oklch(0.5198 0.1782 256.11 / 1);
+  --cnvs-base-palette-blueberry-500: oklch(0.4658 0.1562 255.5 / 1);
+  --cnvs-base-palette-blueberry-600: oklch(0.3908 0.128 256 / 1);
+  --cnvs-base-palette-plum-100: oklch(0.928 0.0359 250.6 / 1);
+  --cnvs-base-palette-plum-200: oklch(0.8627 0.0701 250.6 / 1);
+  --cnvs-base-palette-plum-300: oklch(0.708 0.1549 255.41 / 1);
+  --cnvs-base-palette-plum-400: oklch(0.5198 0.1782 256.11 / 1);
+  --cnvs-base-palette-plum-500: oklch(0.4658 0.1562 255.5 / 1);
+  --cnvs-base-palette-plum-600: oklch(0.3908 0.128 256 / 1);
+  --cnvs-base-palette-berry-smoothie-100: oklch(0.9499 0.0243 280.81 / 1);
+  --cnvs-base-palette-berry-smoothie-200: oklch(0.8503 0.0754 280.52 / 1);
+  --cnvs-base-palette-berry-smoothie-300: oklch(0.712 0.1531 280.1 / 1);
+  --cnvs-base-palette-berry-smoothie-400: oklch(0.6023 0.2032 255.68 / 1);
+  --cnvs-base-palette-berry-smoothie-500: oklch(0.4658 0.1562 255.5 / 1);
+  --cnvs-base-palette-berry-smoothie-600: oklch(0.3908 0.128 256 / 1);
+  --cnvs-base-palette-blackberry-100: oklch(0.9703 0.0147 286 / 1);
+  --cnvs-base-palette-blackberry-200: oklch(0.8503 0.0754 280.52 / 1);
+  --cnvs-base-palette-blackberry-300: oklch(0.712 0.1531 280.1 / 1);
+  --cnvs-base-palette-blackberry-400: oklch(0.615 0.2131 280.7 / 1);
+  --cnvs-base-palette-blackberry-500: oklch(0.466 0.1961 280.9 / 1);
+  --cnvs-base-palette-blackberry-600: oklch(0.317 0.142 278.2 / 1);
+  --cnvs-base-palette-island-punch-100: oklch(0.9776 0.0147 312 / 1);
+  --cnvs-base-palette-island-punch-200: oklch(0.8701 0.0965 316.6 / 1);
+  --cnvs-base-palette-island-punch-300: oklch(0.628 0.1681 312.69 / 1);
+  --cnvs-base-palette-island-punch-400: oklch(0.628 0.1681 312.69 / 1);
+  --cnvs-base-palette-island-punch-500: oklch(0.476 0.156 313.2 / 1);
+  --cnvs-base-palette-island-punch-600: oklch(0.422 0.136 315.49 / 1);
+  --cnvs-base-palette-grape-soda-100: oklch(0.9637 0.0322 325.69 / 1);
+  --cnvs-base-palette-grape-soda-200: oklch(0.887 0.1029 327.44 / 1);
+  --cnvs-base-palette-grape-soda-300: oklch(0.734 0.1621 315.88 / 1);
+  --cnvs-base-palette-grape-soda-400: oklch(0.628 0.1681 312.69 / 1);
+  --cnvs-base-palette-grape-soda-500: oklch(0.5177 0.162 313.92 / 1);
+  --cnvs-base-palette-grape-soda-600: oklch(0.422 0.136 315.49 / 1);
+  --cnvs-base-palette-pomegranate-100: oklch(0.9637 0.0322 325.69 / 1);
+  --cnvs-base-palette-pomegranate-200: oklch(0.9253 0.0627 329.34 / 1);
+  --cnvs-base-palette-pomegranate-300: oklch(0.6557 0.2007 346.62 / 1);
+  --cnvs-base-palette-pomegranate-400: oklch(0.6557 0.2007 346.62 / 1);
+  --cnvs-base-palette-pomegranate-500: oklch(0.4517 0.1847 28.2 / 1);
+  --cnvs-base-palette-pomegranate-600: oklch(0.3712 0.1509 26.08 / 1);
+  --cnvs-base-palette-fruit-punch-100: oklch(0.9667 0.0163 21.82 / 1);
+  --cnvs-base-palette-fruit-punch-200: oklch(0.8339 0.092 28.19 / 1);
+  --cnvs-base-palette-fruit-punch-300: oklch(0.7533 0.1484 28.45 / 1);
+  --cnvs-base-palette-fruit-punch-400: oklch(0.6857 0.2037 29.76 / 1);
+  --cnvs-base-palette-fruit-punch-500: oklch(0.6857 0.2037 29.76 / 1);
+  --cnvs-base-palette-fruit-punch-600: oklch(0.4517 0.1847 28.2 / 1);
+  --cnvs-base-palette-root-beer-100: oklch(0.9837 0.0085 44.54 / 1);
+  --cnvs-base-palette-root-beer-200: oklch(0.9344 0.0339 35.8 / 1);
+  --cnvs-base-palette-root-beer-300: oklch(0.8476 0.0856 37.59 / 1);
+  --cnvs-base-palette-root-beer-400: oklch(0.8476 0.0856 37.59 / 1);
+  --cnvs-base-palette-root-beer-500: oklch(0.32 0.098 41.19 / 1);
+  --cnvs-base-palette-root-beer-600: oklch(0.2489 0.0771 40.64 / 1);
+  --cnvs-base-palette-toasted-marshmallow-100: oklch(0.9779 0.0214 95.33 / 1);
+  --cnvs-base-palette-toasted-marshmallow-200: oklch(0.9243 0.0542 67.95 / 1);
+  --cnvs-base-palette-toasted-marshmallow-300: oklch(0.8606 0.1002 65.34 / 1);
+  --cnvs-base-palette-toasted-marshmallow-400: oklch(0.7839 0.1608 63.57 / 1);
+  --cnvs-base-palette-toasted-marshmallow-500: oklch(0.6601 0.1537 60.7 / 1);
+  --cnvs-base-palette-toasted-marshmallow-600: oklch(0.5505 0.1439 50.78 / 1);
+  --cnvs-base-palette-licorice-100: oklch(0.754 0.0181 256.33 / 1);
+  --cnvs-base-palette-licorice-200: oklch(0.629 0.0281 255.62 / 1);
+  --cnvs-base-palette-licorice-300: oklch(0.5103 0.0255 256.8 / 1);
+  --cnvs-base-palette-licorice-400: oklch(0.45 0.022 255.52 / 1);
+  --cnvs-base-palette-licorice-500: oklch(0.3685 0.0218 256.4 / 1);
+  --cnvs-base-palette-licorice-600: oklch(0.278 0.0156 252.4 / 1);
+  --cnvs-base-palette-soap-100: oklch(0.9846 0.0018 248.57 / 1);
+  --cnvs-base-palette-soap-200: oklch(0.9692 0.0035 248.23 / 1);
+  --cnvs-base-palette-soap-300: oklch(0.9447 0.0053 248.12 / 1);
+  --cnvs-base-palette-soap-400: oklch(0.917 0.0081 254 / 1);
+  --cnvs-base-palette-soap-500: oklch(0.856 0.0111 256.85 / 1);
+  --cnvs-base-palette-soap-600: oklch(0.856 0.0111 256.85 / 1);
+  --cnvs-base-palette-french-vanilla-100: oklch(1 0 0 / 1);
+  --cnvs-base-palette-french-vanilla-200: oklch(0.9431 0 0 / 1);
+  --cnvs-base-palette-french-vanilla-300: oklch(0.8699 0 0 / 1);
+  --cnvs-base-palette-french-vanilla-400: oklch(0.8015 0 0 / 1);
+  --cnvs-base-palette-french-vanilla-500: oklch(0.72 0 0 / 1);
+  --cnvs-base-palette-french-vanilla-600: oklch(0.6234 0 0 / 1);
+  --cnvs-base-palette-black-pepper-100: oklch(0.6234 0 0 / 1);
+  --cnvs-base-palette-black-pepper-200: oklch(0.4494 0 0 / 1);
+  --cnvs-base-palette-black-pepper-300: oklch(0.3523 0 0 / 1);
+  --cnvs-base-palette-black-pepper-400: oklch(0.2891 0 0 / 1);
+  --cnvs-base-palette-black-pepper-500: oklch(0.2308 0 0 / 1);
+  --cnvs-base-palette-black-pepper-600: oklch(0 0 0 / 1);
+  --cnvs-base-palette-coconut-100: #F0EEEE;
+  --cnvs-base-palette-coconut-200: #e3dfdf;
+  --cnvs-base-palette-coconut-300: #d1cbcc;
+  --cnvs-base-palette-coconut-400: #b3acac;
+  --cnvs-base-palette-coconut-500: #9e9595;
+  --cnvs-base-palette-coconut-600: #8F8687;
+  --cnvs-base-palette-cappuccino-100: #7A7374;
+  --cnvs-base-palette-cappuccino-200: #706869;
+  --cnvs-base-palette-cappuccino-300: #5E5757;
+  --cnvs-base-palette-cappuccino-400: #4A4242;
+  --cnvs-base-palette-cappuccino-500: #352f2f;
+  --cnvs-base-palette-cappuccino-600: #231f20;
+  --cnvs-base-size-0: 0; /* 0px / 0rem */
+  --cnvs-base-size-25: 0.125rem; /* 2px / 0.125rem */
+  --cnvs-base-size-50: 0.25rem; /* 4px / 0.25rem */
+  --cnvs-base-size-75: 0.375rem; /* 6px / 0.375rem */
+  --cnvs-base-size-100: 0.5rem; /* 8px / 0.5rem */
+  --cnvs-base-size-125: 0.625rem; /* 10px / 0.625rem */
+  --cnvs-base-size-150: 0.75rem; /* 12px / 0.75rem */
+  --cnvs-base-size-175: 0.875rem; /* 14px / 0.875rem */
+  --cnvs-base-size-200: 1rem; /* 16px / 1rem */
+  --cnvs-base-size-225: 1.125rem; /* 18px / 1.125rem */
+  --cnvs-base-size-250: 1.25rem; /* 20px / 1.25rem */
+  --cnvs-base-size-300: 1.5rem; /* 24px / 1.5rem */
+  --cnvs-base-size-350: 1.75rem; /* 28px / 1.75rem */
+  --cnvs-base-size-400: 2rem; /* 32px / 2rem */
+  --cnvs-base-size-450: 2.25rem; /* 36px / 2.25rem */
+  --cnvs-base-size-500: 2.5rem; /* 40px / 2.5rem */
+  --cnvs-base-size-600: 3rem; /* 48px / 3rem */
+  --cnvs-base-size-700: 3.5rem; /* 56px / 3.5rem */
+  --cnvs-base-size-800: 4rem; /* 64px / 4rem */
+  --cnvs-base-size-900: 4.5rem; /* 72px / 4.5rem */
+  --cnvs-base-size-1000: 5rem; /* 80px / 5rem */
+  --cnvs-base-size-1100: 5.5rem; /* 88px / 5.5rem */
+  --cnvs-base-size-1200: 6rem; /* 96px / 6rem */
+  --cnvs-base-size-1300: 6.5rem; /* 104px / 6.5rem */
+  --cnvs-base-size-1400: 7rem; /* 112px / 7rem */
+  --cnvs-base-font-family-50: "Roboto"; /* Default font-family */
+  --cnvs-base-font-family-100: "Roboto Mono";
+  --cnvs-base-font-family-200: "Noto Sans";
+  --cnvs-base-font-weight-300: 300;
+  --cnvs-base-font-weight-400: 400;
+  --cnvs-base-font-weight-500: 500;
+  --cnvs-base-font-weight-700: 700;
+  --cnvs-base-letter-spacing-50: 0.025rem;
+  --cnvs-base-letter-spacing-100: 0.02rem;
+  --cnvs-base-letter-spacing-150: 0.015rem;
+  --cnvs-base-letter-spacing-200: 0.01rem;
+  --cnvs-base-unit: 0.25rem; /* The base unit used for the typographic grid system.;  */
+  --cnvs-base-extended-palette-dragon-fruit-100: oklch(0.9776 0.0147 312 / 1);
+  --cnvs-base-extended-palette-dragon-fruit-200: oklch(0.909 0.0637 314.43 / 1);
+  --cnvs-base-extended-palette-dragon-fruit-300: oklch(0.615 0.2131 280.7 / 1);
+  --cnvs-base-extended-palette-dragon-fruit-400: oklch(0.5289 0.2241 281.65 / 1);
+  --cnvs-base-extended-palette-dragon-fruit-500: oklch(0.466 0.1961 280.9 / 1);
+  --cnvs-base-extended-palette-dragon-fruit-600: oklch(0.317 0.142 278.2 / 1);
+  --cnvs-base-font-size-25: 0.625rem;
+  --cnvs-base-font-size-50: 0.75rem;
+  --cnvs-base-font-size-75: 0.875rem;
+  --cnvs-base-font-size-100: 1rem;
+  --cnvs-base-font-size-125: 1.125rem;
+  --cnvs-base-font-size-150: 1.25rem;
+  --cnvs-base-font-size-200: 1.5rem;
+  --cnvs-base-font-size-250: 1.75rem;
+  --cnvs-base-font-size-300: 2rem;
+  --cnvs-base-font-size-400: 2.5rem;
+  --cnvs-base-font-size-500: 3rem;
+  --cnvs-base-font-size-600: 3.5rem;
+  --cnvs-base-font-size-750: 4.5rem;
+  --cnvs-base-font-size-900: 5.5rem;
+  --cnvs-base-font-size-1050: 6.5rem;
+  --cnvs-base-line-height-50: 1rem;
+  --cnvs-base-line-height-100: 1.25rem;
+  --cnvs-base-line-height-150: 1.5rem;
+  --cnvs-base-line-height-200: 1.75rem;
+  --cnvs-base-line-height-250: 2rem;
+  --cnvs-base-line-height-300: 2.25rem;
+  --cnvs-base-line-height-350: 2.5rem;
+  --cnvs-base-line-height-400: 3rem;
+  --cnvs-base-line-height-500: 3.5rem;
+  --cnvs-base-line-height-600: 4rem;
+  --cnvs-base-line-height-750: 4.5rem;
+  --cnvs-base-line-height-900: 5.5rem;
+  --cnvs-base-line-height-1050: 6.5rem;
+}
+/**
+ * Do not edit directly
+ * Generated on Tue, 27 Jan 2026 21:53:39 GMT
+ */
+
+:root {
+  --cnvs-brand-positive-a200: var(--cnvs-base-palette-green-a200);
+  --cnvs-brand-positive-a100: var(--cnvs-base-palette-green-a100);
+  --cnvs-brand-positive-a50: var(--cnvs-base-palette-green-a50);
+  --cnvs-brand-positive-a25: var(--cnvs-base-palette-green-a25);
+  --cnvs-brand-positive-975: var(--cnvs-base-palette-green-975);
+  --cnvs-brand-positive-950: var(--cnvs-base-palette-green-950);
+  --cnvs-brand-positive-900: var(--cnvs-base-palette-green-900);
+  --cnvs-brand-positive-800: var(--cnvs-base-palette-green-800);
+  --cnvs-brand-positive-700: var(--cnvs-base-palette-green-700);
+  --cnvs-brand-positive-600: var(--cnvs-base-palette-green-600); /* Base success color. Use fg.inverse on this. */
+  --cnvs-brand-positive-500: var(--cnvs-base-palette-green-500);
+  --cnvs-brand-positive-400: var(--cnvs-base-palette-green-400);
+  --cnvs-brand-positive-300: var(--cnvs-base-palette-green-300);
+  --cnvs-brand-positive-200: var(--cnvs-base-palette-green-200);
+  --cnvs-brand-positive-100: var(--cnvs-base-palette-green-100);
+  --cnvs-brand-positive-50: var(--cnvs-base-palette-green-50);
+  --cnvs-brand-positive-25: var(--cnvs-base-palette-green-25);
+  --cnvs-brand-caution-a200: var(--cnvs-base-palette-amber-a200);
+  --cnvs-brand-caution-a100: var(--cnvs-base-palette-amber-a100);
+  --cnvs-brand-caution-a50: var(--cnvs-base-palette-amber-a50);
+  --cnvs-brand-caution-a25: var(--cnvs-base-palette-amber-a25);
+  --cnvs-brand-caution-975: var(--cnvs-base-palette-amber-975);
+  --cnvs-brand-caution-950: var(--cnvs-base-palette-amber-950);
+  --cnvs-brand-caution-900: var(--cnvs-base-palette-amber-900);
+  --cnvs-brand-caution-800: var(--cnvs-base-palette-amber-800);
+  --cnvs-brand-caution-700: var(--cnvs-base-palette-amber-700);
+  --cnvs-brand-caution-600: var(--cnvs-base-palette-amber-600);
+  --cnvs-brand-caution-500: var(--cnvs-base-palette-amber-500);
+  --cnvs-brand-caution-400: var(--cnvs-base-palette-amber-400); /* Base caution color (amber.400). Use fg.contrast on this. */
+  --cnvs-brand-caution-300: var(--cnvs-base-palette-amber-300);
+  --cnvs-brand-caution-200: var(--cnvs-base-palette-amber-200);
+  --cnvs-brand-caution-100: var(--cnvs-base-palette-amber-100);
+  --cnvs-brand-caution-50: var(--cnvs-base-palette-amber-50);
+  --cnvs-brand-caution-25: var(--cnvs-base-palette-amber-25);
+  --cnvs-brand-critical-a200: var(--cnvs-base-palette-red-a200);
+  --cnvs-brand-critical-a100: var(--cnvs-base-palette-red-a100);
+  --cnvs-brand-critical-a50: var(--cnvs-base-palette-red-a50);
+  --cnvs-brand-critical-a25: var(--cnvs-base-palette-red-a25);
+  --cnvs-brand-critical-975: var(--cnvs-base-palette-red-975);
+  --cnvs-brand-critical-950: var(--cnvs-base-palette-red-950);
+  --cnvs-brand-critical-900: var(--cnvs-base-palette-red-900);
+  --cnvs-brand-critical-800: var(--cnvs-base-palette-red-800);
+  --cnvs-brand-critical-700: var(--cnvs-base-palette-red-700);
+  --cnvs-brand-critical-600: var(--cnvs-base-palette-red-600); /* Base critical color. Use fg.inverse on this. */
+  --cnvs-brand-critical-500: var(--cnvs-base-palette-red-500);
+  --cnvs-brand-critical-400: var(--cnvs-base-palette-red-400);
+  --cnvs-brand-critical-300: var(--cnvs-base-palette-red-300);
+  --cnvs-brand-critical-200: var(--cnvs-base-palette-red-200);
+  --cnvs-brand-critical-100: var(--cnvs-base-palette-red-100);
+  --cnvs-brand-critical-50: var(--cnvs-base-palette-red-50);
+  --cnvs-brand-critical-25: var(--cnvs-base-palette-red-25);
+  --cnvs-brand-neutral-a975: var(--cnvs-base-palette-slate-a975);
+  --cnvs-brand-neutral-a950: var(--cnvs-base-palette-slate-a950);
+  --cnvs-brand-neutral-a900: var(--cnvs-base-palette-slate-a900);
+  --cnvs-brand-neutral-a800: var(--cnvs-base-palette-slate-a800);
+  --cnvs-brand-neutral-a700: var(--cnvs-base-palette-slate-a700);
+  --cnvs-brand-neutral-a600: var(--cnvs-base-palette-slate-a600);
+  --cnvs-brand-neutral-a500: var(--cnvs-base-palette-slate-a500);
+  --cnvs-brand-neutral-a400: var(--cnvs-base-palette-slate-a400);
+  --cnvs-brand-neutral-a300: var(--cnvs-base-palette-slate-a300);
+  --cnvs-brand-neutral-a200: var(--cnvs-base-palette-slate-a200);
+  --cnvs-brand-neutral-a100: var(--cnvs-base-palette-slate-a100);
+  --cnvs-brand-neutral-a50: var(--cnvs-base-palette-slate-a50);
+  --cnvs-brand-neutral-a25: var(--cnvs-base-palette-slate-a25);
+  --cnvs-brand-neutral-light: var(--cnvs-base-palette-slate-200);
+  --cnvs-brand-neutral-lighter: var(--cnvs-base-palette-slate-50);
+  --cnvs-brand-neutral-975: var(--cnvs-base-palette-slate-975);
+  --cnvs-brand-neutral-950: var(--cnvs-base-palette-slate-950);
+  --cnvs-brand-neutral-900: var(--cnvs-base-palette-slate-900);
+  --cnvs-brand-neutral-800: var(--cnvs-base-palette-slate-800);
+  --cnvs-brand-neutral-700: var(--cnvs-base-palette-slate-700);
+  --cnvs-brand-neutral-600: var(--cnvs-base-palette-slate-600);
+  --cnvs-brand-neutral-500: var(--cnvs-base-palette-slate-500);
+  --cnvs-brand-neutral-400: var(--cnvs-base-palette-slate-400);
+  --cnvs-brand-neutral-300: var(--cnvs-base-palette-slate-300);
+  --cnvs-brand-neutral-200: var(--cnvs-base-palette-slate-200);
+  --cnvs-brand-neutral-100: var(--cnvs-base-palette-slate-100);
+  --cnvs-brand-neutral-50: var(--cnvs-base-palette-slate-50);
+  --cnvs-brand-neutral-25: var(--cnvs-base-palette-slate-25);
+  --cnvs-brand-primary-a200: var(--cnvs-base-palette-blue-a200);
+  --cnvs-brand-primary-a100: var(--cnvs-base-palette-blue-a100);
+  --cnvs-brand-primary-a50: var(--cnvs-base-palette-blue-a50);
+  --cnvs-brand-primary-a25: var(--cnvs-base-palette-blue-a25);
+  --cnvs-brand-primary-975: var(--cnvs-base-palette-blue-975);
+  --cnvs-brand-primary-950: var(--cnvs-base-palette-blue-950);
+  --cnvs-brand-primary-900: var(--cnvs-base-palette-blue-900);
+  --cnvs-brand-primary-800: var(--cnvs-base-palette-blue-800);
+  --cnvs-brand-primary-700: var(--cnvs-base-palette-blue-700);
+  --cnvs-brand-primary-600: var(--cnvs-base-palette-blue-600); /* Base primary color. Use fg.inverse on this. */
+  --cnvs-brand-primary-500: var(--cnvs-base-palette-blue-500);
+  --cnvs-brand-primary-400: var(--cnvs-base-palette-blue-400);
+  --cnvs-brand-primary-300: var(--cnvs-base-palette-blue-300);
+  --cnvs-brand-primary-200: var(--cnvs-base-palette-blue-200);
+  --cnvs-brand-primary-100: var(--cnvs-base-palette-blue-100);
+  --cnvs-brand-primary-50: var(--cnvs-base-palette-blue-50);
+  --cnvs-brand-primary-25: var(--cnvs-base-palette-blue-25);
+  --cnvs-brand-common-caution-outer: var(--cnvs-brand-caution-500);
+  --cnvs-brand-common-caution-inner: var(--cnvs-brand-caution-400);
+  --cnvs-brand-common-critical: var(--cnvs-brand-critical-500);
+  --cnvs-brand-common-focus: var(--cnvs-brand-primary-500);
+  --cnvs-brand-neutral-accent: var(--cnvs-sys-color-fg-inverse);
+  --cnvs-brand-neutral-darkest: var(--cnvs-brand-neutral-800);
+  --cnvs-brand-neutral-dark: var(--cnvs-brand-neutral-700);
+  --cnvs-brand-neutral-base: var(--cnvs-brand-neutral-600);
+  --cnvs-brand-neutral-lightest: var(--cnvs-brand-neutral-25);
+  --cnvs-brand-success-light: var(--cnvs-brand-positive-200);
+  --cnvs-brand-success-accent: var(--cnvs-sys-color-fg-inverse);
+  --cnvs-brand-success-darkest: var(--cnvs-brand-positive-800);
+  --cnvs-brand-success-dark: var(--cnvs-brand-positive-700);
+  --cnvs-brand-success-lighter: var(--cnvs-brand-positive-50);
+  --cnvs-brand-success-lightest: var(--cnvs-brand-positive-25);
+  --cnvs-brand-success-base: var(--cnvs-brand-positive-600);
+  --cnvs-brand-alert-light: var(--cnvs-brand-caution-200);
+  --cnvs-brand-alert-accent: var(--cnvs-sys-color-fg-contrast-default);
+  --cnvs-brand-alert-darkest: var(--cnvs-brand-caution-600);
+  --cnvs-brand-alert-dark: var(--cnvs-brand-caution-500);
+  --cnvs-brand-alert-lightest: var(--cnvs-brand-caution-25);
+  --cnvs-brand-alert-lighter: var(--cnvs-brand-caution-50);
+  --cnvs-brand-alert-base: var(--cnvs-brand-caution-400);
+  --cnvs-brand-error-light: var(--cnvs-brand-critical-200);
+  --cnvs-brand-error-lighter: var(--cnvs-brand-critical-50);
+  --cnvs-brand-error-accent: var(--cnvs-sys-color-fg-inverse);
+  --cnvs-brand-error-darkest: var(--cnvs-brand-critical-800);
+  --cnvs-brand-error-dark: var(--cnvs-brand-critical-700);
+  --cnvs-brand-error-lightest: var(--cnvs-brand-critical-25);
+  --cnvs-brand-error-base: var(--cnvs-brand-critical-600);
+  --cnvs-brand-primary-light: var(--cnvs-brand-primary-200);
+  --cnvs-brand-primary-lighter: var(--cnvs-brand-primary-50);
+  --cnvs-brand-primary-accent: var(--cnvs-sys-color-fg-inverse);
+  --cnvs-brand-primary-dark: var(--cnvs-brand-primary-700);
+  --cnvs-brand-primary-darkest: var(--cnvs-brand-primary-800);
+  --cnvs-brand-primary-lightest: var(--cnvs-brand-primary-25);
+  --cnvs-brand-primary-base: var(--cnvs-brand-primary-600);
+  --cnvs-brand-gradient-primary: linear-gradient(90deg, var(--cnvs-brand-primary-base) 0%, var(--cnvs-brand-primary-dark) 100%);
+  --cnvs-brand-common-alert-outer: var(--cnvs-brand-common-caution-outer);
+  --cnvs-brand-common-alert-inner: var(--cnvs-brand-common-caution-inner);
+  --cnvs-brand-common-error-inner: var(--cnvs-brand-common-critical);
+  --cnvs-brand-common-focus-outline: var(--cnvs-brand-common-focus);
+}
+
+
+/**
+ * Do not edit directly
+ * Generated on Tue, 27 Jan 2026 21:53:39 GMT
+ */
+
+:root {
+  --cnvs-sys-depth-1: 0 0.0625rem 0.25rem 0 oklch(0.3057 0.079 256.22 / 0.13), 0 0.125rem 0.5rem 0 oklch(0.3337 0.0688 250.79 / 0.09); /* Standard card depth */
+  --cnvs-sys-depth-2: 0 0.125rem 0.5rem 0 oklch(0.3057 0.079 256.22 / 0.13), 0 0.25rem 1rem 0 oklch(0.3337 0.0688 250.79 / 0.09); /* Top navigation, Bottom Navigation */
+  --cnvs-sys-depth-3: 0 0.1875rem 0.75rem 0 oklch(0.3057 0.079 256.22 / 0.13), 0 0.375rem 1.5rem 0 oklch(0.3337 0.0688 250.79 / 0.09); /* Floating Action Buttons (FAB), Menus */
+  --cnvs-sys-depth-4: 0 0.25rem 1rem 0 oklch(0.3057 0.079 256.22 / 0.13), 0 0.5rem 2rem 0 oklch(0.3337 0.0688 250.79 / 0.09); /* Bottom Sheets */
+  --cnvs-sys-depth-5: 0 0.3125rem 1.25rem 0 oklch(0.3057 0.079 256.22 / 0.13), 0 0.625rem 2.5rem 0 oklch(0.3337 0.0688 250.79 / 0.09); /* Banners, Snackbars, Toast Messages, Non modal Dialogs, ; Side Panels (when opacity overlay behaviour is not applied) */
+  --cnvs-sys-depth-6: 0 0.375rem 1.5rem 0 oklch(0.3057 0.079 256.22 / 0.13), 0 0.75rem 3rem 0 oklch(0.3337 0.0688 250.79 / 0.09); /* Modal Dialogs, Side Panels (when opacity overlay behaviour; is applied) */
+  --cnvs-sys-opacity-full: 1; /* Dev only */
+  --cnvs-sys-space-zero: 0; /* Stacks, rows in tables */
+  --cnvs-sys-breakpoints-zero: 0; /* Use to set a media query `min-width` below small. */
+  --cnvs-sys-font-weight-bold: var(--cnvs-base-font-weight-700);
+  --cnvs-sys-font-weight-medium: var(--cnvs-base-font-weight-500);
+  --cnvs-sys-font-weight-normal: var(--cnvs-base-font-weight-400);
+  --cnvs-sys-font-weight-light: var(--cnvs-base-font-weight-300);
+  --cnvs-sys-letter-spacing-body-sm: var(--cnvs-base-letter-spacing-200);
+  --cnvs-sys-letter-spacing-subtext-lg: var(--cnvs-base-letter-spacing-150);
+  --cnvs-sys-letter-spacing-subtext-md: var(--cnvs-base-letter-spacing-100);
+  --cnvs-sys-letter-spacing-subtext-sm: var(--cnvs-base-letter-spacing-50);
+  --cnvs-sys-font-family-global: var(--cnvs-base-font-family-200);
+  --cnvs-sys-font-family-mono: var(--cnvs-base-font-family-100);
+  --cnvs-sys-font-family-default: var(--cnvs-base-font-family-50);
+  --cnvs-sys-gap-none: var(--cnvs-base-size-0); /* Use when there is no space between elements */
+  --cnvs-sys-padding-none: var(--cnvs-base-size-0); /* Use when there should be no space between content and element's edges. */
+  --cnvs-sys-opacity-shadow-second: var(--cnvs-base-opacity-80); /* Alpha on second shadow */
+  --cnvs-sys-opacity-shadow-first: var(--cnvs-base-opacity-120); /* Alpha on first shadow */
+  --cnvs-sys-opacity-contrast: var(--cnvs-base-opacity-840); /* Tooltips, Status Indicator */
+  --cnvs-sys-opacity-overlay: var(--cnvs-base-opacity-640); /* Overlay */
+  --cnvs-sys-opacity-disabled: var(--cnvs-base-opacity-400); /* Disabled states */
+  --cnvs-sys-opacity-zero: var(--cnvs-base-opacity-0); /* Dev only */
+  --cnvs-sys-motion-easing-purposeful-deceleration: var(--cnvs-base-easing-b-300);
+  --cnvs-sys-motion-easing-purposeful-acceleration: var(--cnvs-base-easing-b-200);
+  --cnvs-sys-motion-easing-purposeful-standard: var(--cnvs-base-easing-b-100);
+  --cnvs-sys-motion-easing-quick-deceleration: var(--cnvs-base-easing-a-300);
+  --cnvs-sys-motion-easing-quick-acceleration: var(--cnvs-base-easing-a-200);
+  --cnvs-sys-motion-easing-quick-standard: var(--cnvs-base-easing-a-100);
+  --cnvs-sys-color-focus-contrast: var(--cnvs-base-palette-neutral-a900);
+  --cnvs-sys-color-focus-inverse: var(--cnvs-base-palette-neutral-0);
+  --cnvs-sys-color-accent-overlay-pressed: var(--cnvs-base-palette-neutral-a400);
+  --cnvs-sys-color-accent-overlay-hover: var(--cnvs-base-palette-neutral-a200);
+  --cnvs-sys-color-accent-muted-soft: var(--cnvs-base-palette-slate-400);
+  --cnvs-sys-color-accent-muted-default: var(--cnvs-base-palette-slate-600);
+  --cnvs-sys-color-accent-contrast: var(--cnvs-base-palette-neutral-a900);
+  --cnvs-sys-color-accent-success: var(--cnvs-base-palette-green-600);
+  --cnvs-sys-color-accent-warning: var(--cnvs-base-palette-amber-400);
+  --cnvs-sys-color-accent-danger: var(--cnvs-base-palette-red-600);
+  --cnvs-sys-color-accent-info: var(--cnvs-base-palette-blue-600);
+  --cnvs-sys-color-accent-ai: var(--cnvs-base-palette-blue-950);
+  --cnvs-sys-color-surface-overlay-scrim: var(--cnvs-base-palette-neutral-a400);
+  --cnvs-sys-color-surface-overlay-pressed-inverse: var(--cnvs-base-palette-white-a300);
+  --cnvs-sys-color-surface-overlay-pressed-default: var(--cnvs-base-palette-slate-a100);
+  --cnvs-sys-color-surface-overlay-hover-inverse: var(--cnvs-base-palette-white-a200);
+  --cnvs-sys-color-surface-overlay-hover-default: var(--cnvs-base-palette-slate-a50);
+  --cnvs-sys-color-surface-contrast-strong: var(--cnvs-base-palette-neutral-a950);
+  --cnvs-sys-color-surface-contrast-default: var(--cnvs-base-palette-neutral-a900);
+  --cnvs-sys-color-surface-inverse: var(--cnvs-base-palette-neutral-0);
+  --cnvs-sys-color-surface-transparent: var(--cnvs-base-palette-neutral-a0);
+  --cnvs-sys-color-surface-ai-pressed: var(--cnvs-base-palette-blue-400);
+  --cnvs-sys-color-surface-ai-hover: var(--cnvs-base-palette-blue-a200);
+  --cnvs-sys-color-surface-ai-default: var(--cnvs-base-palette-blue-a100);
+  --cnvs-sys-color-surface-success-strong: var(--cnvs-base-palette-green-a50);
+  --cnvs-sys-color-surface-success-default: var(--cnvs-base-palette-green-a25);
+  --cnvs-sys-color-surface-warning-strong: var(--cnvs-base-palette-amber-a50);
+  --cnvs-sys-color-surface-warning-default: var(--cnvs-base-palette-amber-a25);
+  --cnvs-sys-color-surface-danger-strong: var(--cnvs-base-palette-red-a50);
+  --cnvs-sys-color-surface-danger-default: var(--cnvs-base-palette-red-a25);
+  --cnvs-sys-color-surface-info-strong: var(--cnvs-base-palette-blue-a50); /* Surface color used on the backgrounds of informational status indicators and badges */
+  --cnvs-sys-color-surface-info-default: var(--cnvs-base-palette-blue-a25); /* Surface color used on the backgrounds of informational highlights and sections */
+  --cnvs-sys-color-surface-loading: var(--cnvs-base-palette-slate-a200);
+  --cnvs-sys-color-surface-alt-strong: var(--cnvs-base-palette-slate-a100); /* Strong alternative surface color */
+  --cnvs-sys-color-surface-alt-default: var(--cnvs-base-palette-slate-a50); /* Alternative surface color */
+  --cnvs-sys-color-surface-raised: var(--cnvs-base-palette-slate-a25); /* Surfaces that are raised above another surface, such as column headers in Tables */
+  --cnvs-sys-color-surface-modal: var(--cnvs-base-palette-neutral-0);
+  --cnvs-sys-color-surface-popover: var(--cnvs-base-palette-neutral-0);
+  --cnvs-sys-color-surface-navigation: var(--cnvs-base-palette-slate-50); /* Surface color for navigation elements, like the SidePanel or Top Nav Bar */
+  --cnvs-sys-color-surface-default: var(--cnvs-base-palette-neutral-0); /* Default surface background */
+  --cnvs-sys-color-static-amber-softer: var(--cnvs-base-palette-amber-50); /* Soft amber */
+  --cnvs-sys-color-static-gray-softer: var(--cnvs-base-palette-slate-100); /* Light gray */
+  --cnvs-sys-color-static-gray-softest: var(--cnvs-base-palette-slate-50); /* Light gray */
+  --cnvs-sys-color-static-gray-strongest: var(--cnvs-base-palette-slate-950); /* Stronger gray */
+  --cnvs-sys-color-static-gray-stronger: var(--cnvs-base-palette-slate-800); /* Stronger gray */
+  --cnvs-sys-color-static-gray-strong: var(--cnvs-base-palette-slate-700); /* Stronger gray */
+  --cnvs-sys-color-static-gray-soft: var(--cnvs-base-palette-slate-200); /* Light gray */
+  --cnvs-sys-color-static-gray-default: var(--cnvs-base-palette-slate-600); /* Gray */
+  --cnvs-sys-color-static-black: var(--cnvs-base-palette-neutral-1000); /* Just black */
+  --cnvs-sys-color-static-white: var(--cnvs-base-palette-neutral-0); /* Just white */
+  --cnvs-sys-color-static-red-softer: var(--cnvs-base-palette-red-50); /* Light red */
+  --cnvs-sys-color-static-red-strongest: var(--cnvs-base-palette-red-950); /* Strong red */
+  --cnvs-sys-color-static-red-softest: var(--cnvs-base-palette-red-25); /* Light red */
+  --cnvs-sys-color-static-red-stronger: var(--cnvs-base-palette-red-800); /* Strong red */
+  --cnvs-sys-color-static-red-strong: var(--cnvs-base-palette-red-700); /* Strong red */
+  --cnvs-sys-color-static-red-soft: var(--cnvs-base-palette-red-100); /* Light red */
+  --cnvs-sys-color-static-red-default: var(--cnvs-base-palette-red-600); /* Red */
+  --cnvs-sys-color-static-green-strongest: var(--cnvs-base-palette-green-950); /* Stronger green */
+  --cnvs-sys-color-static-green-softest: var(--cnvs-base-palette-green-25); /* Light green */
+  --cnvs-sys-color-static-green-stronger: var(--cnvs-base-palette-green-800); /* Stronger green */
+  --cnvs-sys-color-static-green-softer: var(--cnvs-base-palette-green-50); /* Light green */
+  --cnvs-sys-color-static-green-strong: var(--cnvs-base-palette-green-700); /* Stronger green */
+  --cnvs-sys-color-static-green-soft: var(--cnvs-base-palette-green-100); /* Light green */
+  --cnvs-sys-color-static-green-default: var(--cnvs-base-palette-green-600); /* Default green */
+  --cnvs-sys-color-static-blue-strongest: var(--cnvs-base-palette-blue-950); /* Stronger blue */
+  --cnvs-sys-color-static-blue-soft: var(--cnvs-base-palette-blue-100); /* Light blue */
+  --cnvs-sys-color-static-blue-softer: var(--cnvs-base-palette-blue-50); /* Light blue */
+  --cnvs-sys-color-static-blue-stronger: var(--cnvs-base-palette-blue-800); /* Stronger blue */
+  --cnvs-sys-color-static-blue-strong: var(--cnvs-base-palette-blue-700); /* Stronger blue */
+  --cnvs-sys-color-static-blue-softest: var(--cnvs-base-palette-blue-25); /* Light blue */
+  --cnvs-sys-color-static-orange-strong: var(--cnvs-base-palette-amber-500);
+  --cnvs-sys-color-static-orange-soft: var(--cnvs-base-palette-amber-100);
+  --cnvs-sys-color-static-orange-default: var(--cnvs-base-palette-amber-400);
+  --cnvs-sys-color-static-gold-stronger: var(--cnvs-base-palette-amber-600);
+  --cnvs-sys-color-shadow-ambient: var(--cnvs-base-palette-slate-a100);
+  --cnvs-sys-color-shadow-base: var(--cnvs-base-palette-slate-a200);
+  --cnvs-sys-color-border-transparent: var(--cnvs-base-palette-neutral-a0);
+  --cnvs-sys-color-border-inverse-strong: var(--cnvs-base-palette-white-a700);
+  --cnvs-sys-color-border-inverse-default: var(--cnvs-base-palette-neutral-0);
+  --cnvs-sys-color-border-warning: var(--cnvs-base-palette-amber-400);
+  --cnvs-sys-color-border-danger: var(--cnvs-base-palette-red-500);
+  --cnvs-sys-color-border-info-default: var(--cnvs-base-palette-blue-500);
+  --cnvs-sys-color-border-strong: var(--cnvs-base-palette-slate-a300);
+  --cnvs-sys-color-border-default: var(--cnvs-base-palette-slate-a200);
+  --cnvs-sys-color-border-contrast-default: var(--cnvs-base-palette-neutral-a900);
+  --cnvs-sys-color-border-input-hover: var(--cnvs-base-palette-slate-a700); /* Input hover */
+  --cnvs-sys-color-border-input-default: var(--cnvs-base-palette-slate-a500); /* Inputs */
+  --cnvs-sys-color-border-input-disabled: var(--cnvs-base-palette-slate-400); /* Disabled inputs */
+  --cnvs-sys-color-border-ai: var(--cnvs-base-palette-blue-950); /* Active state on AI borders */
+  --cnvs-sys-color-fg-contrast-strong: var(--cnvs-base-palette-neutral-a950);
+  --cnvs-sys-color-fg-contrast-default: var(--cnvs-base-palette-neutral-a900);
+  --cnvs-sys-color-fg-ai: var(--cnvs-base-palette-blue-950); /* AI icons and text */
+  --cnvs-sys-color-fg-success-strong: var(--cnvs-base-palette-green-700);
+  --cnvs-sys-color-fg-success-default: var(--cnvs-base-palette-green-600);
+  --cnvs-sys-color-fg-warning-strong: var(--cnvs-base-palette-amber-700);
+  --cnvs-sys-color-fg-warning-default: var(--cnvs-base-palette-amber-600);
+  --cnvs-sys-color-fg-danger-strong: var(--cnvs-base-palette-red-700); /* Stronger color used on text or icons that indicate critical messaging, like an error. */
+  --cnvs-sys-color-fg-danger-default: var(--cnvs-base-palette-red-600); /* Used on text or icons that indicate critical messaging, like an error. */
+  --cnvs-sys-color-fg-inverse: var(--cnvs-base-palette-neutral-0); /* Used for text and icons on dark backgrounds */
+  --cnvs-sys-color-fg-disabled: var(--cnvs-base-palette-slate-a400); /* Indicates disabled text or icons */
+  --cnvs-sys-color-fg-stronger: var(--cnvs-base-palette-neutral-a950); /* Used on titles and stronger text and headings */
+  --cnvs-sys-color-fg-strong: var(--cnvs-base-palette-neutral-a900); /* Used on headings and strong text and icons */
+  --cnvs-sys-color-fg-default: var(--cnvs-base-palette-neutral-a800); /* Default color used on text and icons */
+  --cnvs-sys-color-fg-positive-soft: var(--cnvs-base-palette-green-400); /* Error */
+  --cnvs-sys-color-fg-positive-softer: var(--cnvs-base-palette-green-50); /* Error */
+  --cnvs-sys-color-fg-info-strong: var(--cnvs-base-palette-blue-700);
+  --cnvs-sys-color-fg-info-default: var(--cnvs-base-palette-blue-600);
+  --cnvs-sys-color-fg-info-soft: var(--cnvs-base-palette-blue-400);
+  --cnvs-sys-color-fg-caution-softer: var(--cnvs-base-palette-amber-500); /* Warning */
+  --cnvs-sys-color-fg-caution-stronger: var(--cnvs-base-palette-amber-975); /* Warning on hover */
+  --cnvs-sys-color-fg-caution-soft: var(--cnvs-base-palette-amber-700); /* Warning */
+  --cnvs-sys-color-fg-primary-softer: var(--cnvs-base-palette-blue-200); /* Link Inverse, Disabled */
+  --cnvs-sys-color-fg-primary-soft: var(--cnvs-base-palette-blue-400);
+  --cnvs-sys-color-fg-muted-strong: var(--cnvs-base-palette-slate-a700); /* Stronger color used for hint or placeholder text */
+  --cnvs-sys-color-fg-muted-default: var(--cnvs-base-palette-slate-a600); /* Used for hint and placeholder text */
+  --cnvs-sys-color-fg-muted-soft: var(--cnvs-base-palette-slate-400); /* Tab item foreground */
+  --cnvs-sys-color-fg-critical-softer: var(--cnvs-base-palette-red-200); /* Error */
+  --cnvs-sys-color-fg-critical-soft: var(--cnvs-base-palette-red-400); /* Error */
+  --cnvs-sys-color-fg-critical-stronger: var(--cnvs-base-palette-red-800); /* Error */
+  --cnvs-sys-color-icon-info-stronger: var(--cnvs-base-palette-blue-800); /* Stronger brand icon color */
+  --cnvs-sys-color-icon-disabled: var(--cnvs-base-palette-slate-400); /* Disabled icon color */
+  --cnvs-sys-color-icon-caution-softer: var(--cnvs-base-palette-amber-500); /* Softer caution icon color */
+  --cnvs-sys-color-icon-critical-softer: var(--cnvs-base-palette-red-200); /* Error icon color */
+  --cnvs-sys-color-icon-critical-soft: var(--cnvs-base-palette-red-400); /* Error icon color */
+  --cnvs-sys-color-icon-critical-stronger: var(--cnvs-base-palette-red-800); /* Error icon color */
+  --cnvs-sys-color-icon-positive-softer: var(--cnvs-base-palette-green-200); /* Success icon color */
+  --cnvs-sys-color-icon-positive-soft: var(--cnvs-base-palette-green-400); /* Success icon color */
+  --cnvs-sys-color-icon-primary-softer: var(--cnvs-base-palette-blue-200); /* Stronger brand icon color */
+  --cnvs-sys-color-icon-primary-soft: var(--cnvs-base-palette-blue-400); /* Stronger brand icon color */
+  --cnvs-sys-color-icon-inverse: var(--cnvs-base-palette-neutral-0); /* Inverse icon color */
+  --cnvs-sys-color-text-info-softer: var(--cnvs-base-palette-blue-200); /* Active links */
+  --cnvs-sys-color-text-info-soft: var(--cnvs-base-palette-blue-400); /* Active links */
+  --cnvs-sys-color-text-positive-softer: var(--cnvs-base-palette-green-200); /* Active links */
+  --cnvs-sys-color-text-positive-soft: var(--cnvs-base-palette-green-400); /* Active links */
+  --cnvs-sys-color-text-ai: var(--cnvs-base-palette-blue-950);
+  --cnvs-sys-color-text-caution-softer: var(--cnvs-base-palette-amber-200); /* Softer warning text */
+  --cnvs-sys-color-text-caution-soft: var(--cnvs-base-palette-amber-400); /* Disabled warning text */
+  --cnvs-sys-color-text-primary-softer: var(--cnvs-base-palette-blue-200); /* Active links */
+  --cnvs-sys-color-text-primary-soft: var(--cnvs-base-palette-blue-400); /* Active links */
+  --cnvs-sys-color-text-critical-softer: var(--cnvs-base-palette-red-200); /* Error text */
+  --cnvs-sys-color-text-critical-soft: var(--cnvs-base-palette-red-400); /* Error text */
+  --cnvs-sys-color-text-disabled: var(--cnvs-base-palette-slate-400); /* Disabled text color */
+  --cnvs-sys-color-bg-default: var(--cnvs-base-palette-neutral-0); /* Default page background */
+  --cnvs-sys-color-bg-critical-soft: var(--cnvs-base-palette-red-100); /* Disabled error background */
+  --cnvs-sys-color-bg-caution-soft: var(--cnvs-base-palette-amber-100); /* Softer warning background */
+  --cnvs-sys-color-bg-positive-softest: var(--cnvs-base-palette-green-25); /* Lightest surface success background */
+  --cnvs-sys-color-bg-alt-default: var(--cnvs-base-palette-slate-50); /* The alternative page background */
+  --cnvs-sys-color-bg-alt-strong: var(--cnvs-base-palette-slate-200); /* Active states */
+  --cnvs-sys-color-bg-alt-soft: var(--cnvs-base-palette-slate-50); /* Alternative page background */
+  --cnvs-sys-line-height-title-large: var(--cnvs-base-line-height-600);
+  --cnvs-sys-line-height-title-medium: var(--cnvs-base-line-height-500);
+  --cnvs-sys-line-height-title-small: var(--cnvs-base-line-height-400);
+  --cnvs-sys-line-height-heading-large: var(--cnvs-base-line-height-350);
+  --cnvs-sys-line-height-heading-medium: var(--cnvs-base-line-height-300);
+  --cnvs-sys-line-height-heading-small: var(--cnvs-base-line-height-250);
+  --cnvs-sys-line-height-body-large: var(--cnvs-base-line-height-200);
+  --cnvs-sys-line-height-body-medium: var(--cnvs-base-line-height-200);
+  --cnvs-sys-line-height-body-small: var(--cnvs-base-line-height-150);
+  --cnvs-sys-line-height-subtext-large: var(--cnvs-base-line-height-100);
+  --cnvs-sys-line-height-subtext-medium: var(--cnvs-base-line-height-50);
+  --cnvs-sys-line-height-subtext-small: var(--cnvs-base-line-height-50);
+  --cnvs-sys-font-size-subtext-small: var(--cnvs-base-font-size-25);
+  --cnvs-sys-space-x20: calc(var(--cnvs-base-unit) * 20); /* - Use sparingly; - Helps to put focus on the primary element within your page; - Use to de-clutter your UI when a lot of space is available */
+  --cnvs-sys-space-x16: calc(var(--cnvs-base-unit) * 16); /* - Use to de-clutter your UI when a lot of space is available; - Separate banner sections from page content; - Use to differentiate page content like page sections */
+  --cnvs-sys-space-x14: calc(var(--cnvs-base-unit) * 14); /* Mobile only */
+  --cnvs-sys-space-x10: calc(var(--cnvs-base-unit) * 10); /* • Used for outer margins on the overall page content ; • Used for inner margins on large items such as page sections */
+  --cnvs-sys-space-x8: calc(var(--cnvs-base-unit) * 8); /* • Standard spacing between cards; • Used to separate groups of content ; • Separate section headings or titles from body text or inputs */
+  --cnvs-sys-space-x6: calc(var(--cnvs-base-unit) * 6); /* • Padding around card content; • Related elements where more space between them can be afforded; • Separate section headings or titles from body text or inputs */
+  --cnvs-sys-space-x5: calc(var(--cnvs-base-unit) * 5); /* Mobile only */
+  --cnvs-sys-space-x4: calc(var(--cnvs-base-unit) * 4); /* Default space token. Used to group Inputs with related data */
+  --cnvs-sys-space-x3: calc(var(--cnvs-base-unit) * 3); /* Use when compact padding is required */
+  --cnvs-sys-space-x2: calc(var(--cnvs-base-unit) * 2); /* Commonly used to group compact elements like icon buttons */
+  --cnvs-sys-space-x1: var(--cnvs-base-unit); /* Compact spacing between text or icons */
+  --cnvs-sys-space-half: calc(var(--cnvs-base-unit) * 0.5); /* Mobile only */
+  --cnvs-sys-shape-none: var(--cnvs-base-size-0); /* Full-width and background containers. Fixed navigation containers such as headers, and side-panels. */
+  --cnvs-sys-shape-round: calc(var(--cnvs-base-unit) * 250); /* Commonly used for our standard buttons and profile avatars: All Primary, Secondary Buttons, Radio Buttons and Notification Badges. */
+  --cnvs-sys-shape-x6: calc(var(--cnvs-base-unit) * 6); /* (Mobile) Full width sheets that are temporary and modal views */
+  --cnvs-sys-shape-x4: calc(var(--cnvs-base-unit) * 4); /* (Mobile) Primary containers that house a large amount of other elements and complex information */
+  --cnvs-sys-shape-x2: calc(var(--cnvs-base-unit) * 2); /* Use this for all the containers and popups: All Cards, Modals, Tooltips and Toasts. */
+  --cnvs-sys-shape-x1-half: calc(var(--cnvs-base-unit) * 1.5);
+  --cnvs-sys-shape-x1: var(--cnvs-base-unit);
+  --cnvs-sys-shape-half: calc(var(--cnvs-base-unit) * 0.5); /* Use this for subtle and small components that don't require to group complex information like Status Indicators, Checkboxes and Color Swatches. */
+  --cnvs-sys-breakpoints-l: 1024px; /* Large screens, such as desktops. */
+  --cnvs-sys-breakpoints-m: 768px; /* Medium screens, such as laptops. */
+  --cnvs-sys-breakpoints-s: 320px; /* The `min-width` for mobile devices, such as phones and tablets. */
+  --cnvs-sys-color-brand-border-caution: var(--cnvs-brand-caution-500);
+  --cnvs-sys-color-brand-border-critical: var(--cnvs-brand-critical-500);
+  --cnvs-sys-color-brand-border-primary: var(--cnvs-brand-primary-500); /* Brand, Focus */
+  --cnvs-sys-color-brand-fg-selected: var(--cnvs-brand-primary-700);
+  --cnvs-sys-color-brand-fg-positive-strong: var(--cnvs-brand-positive-700);
+  --cnvs-sys-color-brand-fg-positive-default: var(--cnvs-brand-positive-600);
+  --cnvs-sys-color-brand-fg-caution-strong: var(--cnvs-brand-caution-700);
+  --cnvs-sys-color-brand-fg-caution-default: var(--cnvs-brand-caution-600);
+  --cnvs-sys-color-brand-fg-critical-strong: var(--cnvs-brand-critical-700); /* Stronger color used on text or icons that indicate critical messaging, like an error. */
+  --cnvs-sys-color-brand-fg-critical-default: var(--cnvs-brand-critical-600); /* Used on text or icons that indicate critical messaging, like an error. */
+  --cnvs-sys-color-brand-fg-primary-strong: var(--cnvs-brand-primary-700); /* Text and icons that use the primary brand color. Use this on the primary strong background */
+  --cnvs-sys-color-brand-fg-primary-default: var(--cnvs-brand-primary-600); /* Text and icons that use the primary brand color. Use this on the primary background */
+  --cnvs-sys-color-brand-accent-action: var(--cnvs-brand-primary-600);
+  --cnvs-sys-color-brand-accent-positive: var(--cnvs-brand-positive-600);
+  --cnvs-sys-color-brand-accent-caution: var(--cnvs-brand-caution-400);
+  --cnvs-sys-color-brand-accent-critical: var(--cnvs-brand-critical-600);
+  --cnvs-sys-color-brand-accent-primary: var(--cnvs-brand-primary-600);
+  --cnvs-sys-color-brand-surface-selected: var(--cnvs-brand-primary-a50);
+  --cnvs-sys-color-brand-surface-positive-strong: var(--cnvs-brand-positive-a50);
+  --cnvs-sys-color-brand-surface-positive-default: var(--cnvs-brand-positive-a25);
+  --cnvs-sys-color-brand-surface-caution-strong: var(--cnvs-brand-caution-a50);
+  --cnvs-sys-color-brand-surface-caution-default: var(--cnvs-brand-caution-a25);
+  --cnvs-sys-color-brand-surface-critical-strong: var(--cnvs-brand-critical-a50);
+  --cnvs-sys-color-brand-surface-critical-default: var(--cnvs-brand-critical-a25);
+  --cnvs-sys-color-brand-surface-primary-strong: var(--cnvs-brand-primary-a50);
+  --cnvs-sys-color-brand-surface-primary-default: var(--cnvs-brand-primary-a25);
+  --cnvs-sys-color-brand-focus-caution-inner: var(--cnvs-brand-caution-400);
+  --cnvs-sys-color-brand-focus-caution-outer: var(--cnvs-brand-caution-500);
+  --cnvs-sys-color-brand-focus-critical: var(--cnvs-brand-critical-500);
+  --cnvs-sys-color-brand-focus-primary: var(--cnvs-brand-primary-500);
+  --cnvs-sys-color-static-amber-soft: var(--cnvs-sys-color-surface-warning-strong); /* Soft amber */
+  --cnvs-sys-color-static-amber-strongest: var(--cnvs-sys-color-fg-warning-strong); /* Stronger amber */
+  --cnvs-sys-color-static-amber-stronger: var(--cnvs-sys-color-accent-warning); /* Stronger amber */
+  --cnvs-sys-color-static-amber-strong: var(--cnvs-sys-color-accent-warning); /* Stronger amber */
+  --cnvs-sys-color-static-amber-softest: var(--cnvs-sys-color-surface-warning-default); /* Soft amber */
+  --cnvs-sys-color-static-amber-default: var(--cnvs-sys-color-accent-warning); /* amber */
+  --cnvs-sys-color-static-blue-default: var(--cnvs-sys-color-accent-info); /* Blue */
+  --cnvs-sys-color-shadow-default: var(--cnvs-sys-color-shadow-base); /* Main shadow color */
+  --cnvs-sys-color-shadow-2: var(--cnvs-sys-color-shadow-ambient); /* Second shadow color */
+  --cnvs-sys-color-shadow-1: var(--cnvs-sys-color-shadow-base); /* First shadow color */
+  --cnvs-sys-color-border-container: var(--cnvs-sys-color-border-strong); /* Cards, Toasts, Surfaces */
+  --cnvs-sys-color-border-divider: var(--cnvs-sys-color-border-default); /* Dividers */
+  --cnvs-sys-color-border-contrast-strong: var(--cnvs-sys-color-border-contrast-default); /* Secondary Button Hover */
+  --cnvs-sys-color-border-input-inverse: var(--cnvs-sys-color-border-inverse-default); /* Borders on checkboxes and radios */
+  --cnvs-sys-color-border-input-strong: var(--cnvs-sys-color-border-input-hover); /* Input hover */
+  --cnvs-sys-color-fg-positive-default: var(--cnvs-sys-color-fg-success-default); /* Error */
+  --cnvs-sys-color-fg-info-stronger: var(--cnvs-sys-color-fg-info-strong); /* Links on hover */
+  --cnvs-sys-color-fg-info-softer: var(--cnvs-sys-color-fg-ai); /* Link Inverse, Disabled */
+  --cnvs-sys-color-fg-caution-strong: var(--cnvs-sys-color-fg-contrast-default); /* Warning on hover */
+  --cnvs-sys-color-fg-muted-stronger: var(--cnvs-sys-color-fg-muted-strong);
+  --cnvs-sys-color-icon-info-strong: var(--cnvs-sys-color-fg-info-strong); /* Stronger brand icon color */
+  --cnvs-sys-color-icon-info-default: var(--cnvs-sys-color-fg-info-default); /* Brand icon color */
+  --cnvs-sys-color-icon-caution-default: var(--cnvs-sys-color-fg-contrast-default); /* Caution icon color */
+  --cnvs-sys-color-icon-strong: var(--cnvs-sys-color-fg-muted-strong); /* Hover icon color */
+  --cnvs-sys-color-icon-soft: var(--cnvs-sys-color-fg-muted-default); /* Disabled icon color */
+  --cnvs-sys-color-icon-default: var(--cnvs-sys-color-fg-default); /* Default icon color */
+  --cnvs-sys-color-text-info-stronger: var(--cnvs-sys-color-fg-info-strong); /* Active links */
+  --cnvs-sys-color-text-info-strong: var(--cnvs-sys-color-fg-info-strong); /* Branded hover text */
+  --cnvs-sys-color-text-info-default: var(--cnvs-sys-color-fg-info-default); /* Branded text */
+  --cnvs-sys-color-text-caution-stronger: var(--cnvs-sys-color-fg-contrast-strong); /* Stronger warning text */
+  --cnvs-sys-color-text-caution-strong: var(--cnvs-sys-color-fg-contrast-strong); /* Strong warning text */
+  --cnvs-sys-color-text-caution-default: var(--cnvs-sys-color-fg-contrast-default); /* Warning text */
+  --cnvs-sys-color-text-inverse: var(--cnvs-sys-color-fg-inverse); /* Inverse text color */
+  --cnvs-sys-color-text-hint: var(--cnvs-sys-color-fg-muted-default); /* Hint text color */
+  --cnvs-sys-color-text-stronger: var(--cnvs-sys-color-fg-strong); /* Display text */
+  --cnvs-sys-color-text-strong: var(--cnvs-sys-color-fg-strong); /* Heading text */
+  --cnvs-sys-color-text-default: var(--cnvs-sys-color-fg-default); /* Body text */
+  --cnvs-sys-color-bg-info-stronger: var(--cnvs-sys-color-accent-info); /* Brand active background */
+  --cnvs-sys-color-bg-info-strong: var(--cnvs-sys-color-accent-info); /* Brand hover background */
+  --cnvs-sys-color-bg-info-default: var(--cnvs-sys-color-accent-info); /* Info color */
+  --cnvs-sys-color-bg-info-soft: var(--cnvs-sys-color-surface-info-default); /* Disabled */
+  --cnvs-sys-color-bg-info-softer: var(--cnvs-sys-color-surface-info-strong); /* Select */
+  --cnvs-sys-color-bg-info-softest: var(--cnvs-sys-color-surface-info-default); /* Surface */
+  --cnvs-sys-color-bg-ai-strongest: var(--cnvs-sys-color-accent-ai); /* AI surfaces */
+  --cnvs-sys-color-bg-ai-stronger: var(--cnvs-sys-color-surface-ai-pressed); /* Active state on AI containers */
+  --cnvs-sys-color-bg-ai-strong: var(--cnvs-sys-color-surface-ai-hover); /* Hover on AI container */
+  --cnvs-sys-color-bg-ai-default: var(--cnvs-sys-color-surface-ai-default); /* AI container */
+  --cnvs-sys-color-bg-contrast-strong: var(--cnvs-sys-color-surface-contrast-strong); /* Contrast backgrounds, like Secondary Buttons */
+  --cnvs-sys-color-bg-contrast-default: var(--cnvs-sys-color-surface-contrast-default); /* Contrast backgrounds, like Secondary Buttons */
+  --cnvs-sys-color-bg-muted-strong: var(--cnvs-sys-color-accent-muted-default);
+  --cnvs-sys-color-bg-muted-default: var(--cnvs-sys-color-accent-muted-default);
+  --cnvs-sys-color-bg-muted-soft: var(--cnvs-sys-color-accent-muted-soft);
+  --cnvs-sys-color-bg-muted-softer: var(--cnvs-sys-color-accent-muted-soft);
+  --cnvs-sys-color-bg-alt-stronger: var(--cnvs-sys-color-surface-alt-default); /* Active state for segmented control, Pill */
+  --cnvs-sys-color-bg-alt-softer: var(--cnvs-sys-color-surface-raised); /* Disabled inputs */
+  --cnvs-sys-color-bg-translucent: var(--cnvs-sys-color-surface-contrast-default); /* Tooltip, Status Indicator */
+  --cnvs-sys-color-bg-overlay: var(--cnvs-sys-color-surface-overlay-scrim); /* Overlay background */
+  --cnvs-sys-color-bg-transparent-stronger: var(--cnvs-sys-color-surface-overlay-pressed-default); /* Inverse Secondary Button Active state */
+  --cnvs-sys-color-bg-transparent-strong: var(--cnvs-sys-color-surface-overlay-hover-default); /* Inverse Secondary Button Hover state */
+  --cnvs-sys-color-bg-transparent-default: var(--cnvs-sys-color-surface-transparent); /* Transparent background */
+  --cnvs-sys-font-size-subtext-medium: var(--cnvs-base-font-size-50);
+  --cnvs-sys-shape-zero: var(--cnvs-sys-shape-none); /* Full-width and background containers. Fixed navigation containers such as headers, and side-panels. */
+  --cnvs-sys-breakpoints-xl: 1440px; /* Used for extra large screens, such as wide monitors and TVs. */
+  --cnvs-sys-breakpoints-lg: 1024px; /* Large screens, such as desktops. */
+  --cnvs-sys-breakpoints-md: 768px; /* Medium screens, such as laptops. */
+  --cnvs-sys-breakpoints-sm: 320px; /* The `min-width` for mobile devices, such as phones and tablets. */
+  --cnvs-sys-gap-xxl: var(--cnvs-base-size-800); /* Use this for the space between content sections */
+  --cnvs-sys-gap-xl: var(--cnvs-base-size-400); /* Use this for the default spacing between cards, as well as the gutter width used in the large 12-column grid. */
+  --cnvs-sys-gap-lg: var(--cnvs-base-size-300); /* Use this for tighter spacing between cards. Cards are self contained blocks of content. */
+  --cnvs-sys-gap-md: var(--cnvs-base-size-200); /* Use the default inline spacing when other gap tokens may not fit. */
+  --cnvs-sys-gap-sm: var(--cnvs-base-size-100); /* Horizontal space between pills, tighter space between buttons, inline icon to text, segmented controls. */
+  --cnvs-sys-gap-xs: var(--cnvs-base-size-50); /* Compact spacing from icon to text, labels to inputs, between tab items. */
+  --cnvs-sys-padding-xxl: var(--cnvs-base-size-400); /* Padding used around Modal and Large Button content */
+  --cnvs-sys-padding-xl: var(--cnvs-base-size-300); /* Padding used around Card and Medium Button content */
+  --cnvs-sys-padding-lg: var(--cnvs-base-size-250); /* Large padding, used in Medium Buttons with Icons */
+  --cnvs-sys-padding-md: var(--cnvs-base-size-200); /* Default padding used for components used around Small Button content. */
+  --cnvs-sys-padding-sm: var(--cnvs-base-size-150); /* Compact padding, used in Rich Text Editor, or X-Small Buttons */
+  --cnvs-sys-padding-xs: var(--cnvs-base-size-100); /* Horizontal padding on Input Fields */
+  --cnvs-sys-padding-xxs: var(--cnvs-base-size-50);
+  --cnvs-sys-size-xxl: var(--cnvs-base-size-800); /* Table Cell, Toast */
+  --cnvs-sys-size-xl: var(--cnvs-base-size-700); /* Large size used in Large Buttons, Segmented Controls, Expandable Container Trigger, Tabs, and Avatar */
+  --cnvs-sys-size-lg: var(--cnvs-base-size-600); /* Default height for most components, like Medium Buttons, Segmented Control, Banner, Input Fields, and Menu List Items */
+  --cnvs-sys-size-md: var(--cnvs-base-size-500); /* Small Buttons, Segmented Control, Tooltip, Avatar */
+  --cnvs-sys-size-sm: var(--cnvs-base-size-400); /* X-Small Buttons, Pills, Checkboxes, Radio Buttons */
+  --cnvs-sys-size-xs: var(--cnvs-base-size-300); /* Count Badge */
+  --cnvs-sys-size-xxs: var(--cnvs-base-size-250); /* Switch Track */
+  --cnvs-sys-size-xxxs: var(--cnvs-base-size-200); /* Switch Track */
+  --cnvs-sys-color-border-primary-default: var(--cnvs-sys-color-brand-border-primary); /* Brand, Focus */
+  --cnvs-sys-color-border-caution-strong: var(--cnvs-sys-color-brand-focus-caution-outer); /* Warning outer (box shadow) */
+  --cnvs-sys-color-border-caution-default: var(--cnvs-sys-color-brand-focus-caution-inner); /* Warning inner */
+  --cnvs-sys-color-border-critical-default: var(--cnvs-sys-color-brand-border-critical); /* Error */
+  --cnvs-sys-color-fg-positive-stronger: var(--cnvs-sys-color-brand-fg-positive-strong); /* Error */
+  --cnvs-sys-color-fg-positive-strong: var(--cnvs-sys-color-brand-fg-positive-strong); /* Error */
+  --cnvs-sys-color-fg-caution-default: var(--cnvs-sys-color-brand-fg-caution-default); /* Warning */
+  --cnvs-sys-color-fg-primary-strong: var(--cnvs-sys-color-brand-fg-primary-strong); /* Links on hover */
+  --cnvs-sys-color-fg-primary-stronger: var(--cnvs-sys-color-brand-fg-primary-strong); /* Links on hover */
+  --cnvs-sys-color-fg-primary-default: var(--cnvs-sys-color-brand-fg-primary-default); /* Branded text */
+  --cnvs-sys-color-fg-critical-strong: var(--cnvs-sys-color-brand-fg-critical-strong); /* Error */
+  --cnvs-sys-color-fg-critical-default: var(--cnvs-sys-color-brand-fg-critical-default); /* Error */
+  --cnvs-sys-color-icon-caution-soft: var(--cnvs-sys-color-brand-fg-caution-default); /* Soft caution icon color */
+  --cnvs-sys-color-icon-caution-stronger: var(--cnvs-sys-color-brand-fg-caution-strong); /* Strong caution icon color */
+  --cnvs-sys-color-icon-caution-strong: var(--cnvs-sys-color-brand-fg-caution-default); /* Strong caution icon color */
+  --cnvs-sys-color-icon-critical-strong: var(--cnvs-sys-color-brand-fg-critical-strong); /* Error icon color */
+  --cnvs-sys-color-icon-critical-default: var(--cnvs-sys-color-brand-fg-critical-default); /* Error icon color */
+  --cnvs-sys-color-icon-positive-stronger: var(--cnvs-sys-color-brand-fg-positive-strong); /* Success icon color */
+  --cnvs-sys-color-icon-positive-strong: var(--cnvs-sys-color-brand-fg-positive-strong); /* Success icon color */
+  --cnvs-sys-color-icon-positive-default: var(--cnvs-sys-color-brand-fg-positive-default); /* Success icon color */
+  --cnvs-sys-color-icon-primary-stronger: var(--cnvs-sys-color-brand-fg-primary-strong); /* Stronger brand icon color */
+  --cnvs-sys-color-icon-primary-strong: var(--cnvs-sys-color-brand-fg-primary-strong); /* Stronger brand icon color */
+  --cnvs-sys-color-icon-primary-default: var(--cnvs-sys-color-brand-fg-primary-default); /* Brand icon color */
+  --cnvs-sys-color-text-positive-stronger: var(--cnvs-sys-color-brand-fg-positive-strong); /* Active links */
+  --cnvs-sys-color-text-positive-strong: var(--cnvs-sys-color-brand-fg-positive-strong); /* Branded hover text */
+  --cnvs-sys-color-text-positive-default: var(--cnvs-sys-color-brand-fg-positive-default); /* Branded text */
+  --cnvs-sys-color-text-primary-stronger: var(--cnvs-sys-color-brand-fg-primary-strong); /* Active links */
+  --cnvs-sys-color-text-primary-strong: var(--cnvs-sys-color-brand-fg-primary-strong); /* Branded hover text */
+  --cnvs-sys-color-text-primary-default: var(--cnvs-sys-color-brand-fg-primary-default); /* Branded text */
+  --cnvs-sys-color-text-critical-stronger: var(--cnvs-sys-color-brand-fg-critical-strong); /* Error text */
+  --cnvs-sys-color-text-critical-strong: var(--cnvs-sys-color-brand-fg-critical-strong); /* Error text */
+  --cnvs-sys-color-text-critical-default: var(--cnvs-sys-color-brand-fg-critical-default); /* Error text */
+  --cnvs-sys-color-bg-critical-stronger: var(--cnvs-sys-color-brand-accent-critical); /* Stronger error background */
+  --cnvs-sys-color-bg-critical-strong: var(--cnvs-sys-color-brand-accent-critical); /* Strong error background */
+  --cnvs-sys-color-bg-critical-default: var(--cnvs-sys-color-brand-accent-critical); /* Default error background */
+  --cnvs-sys-color-bg-critical-softer: var(--cnvs-sys-color-brand-surface-critical-strong); /* Disabled error background */
+  --cnvs-sys-color-bg-critical-softest: var(--cnvs-sys-color-brand-surface-critical-default); /* Input error background */
+  --cnvs-sys-color-bg-caution-stronger: var(--cnvs-sys-color-brand-accent-caution); /* Stronger warning background */
+  --cnvs-sys-color-bg-caution-strong: var(--cnvs-sys-color-brand-accent-caution); /* Strong warning background */
+  --cnvs-sys-color-bg-caution-default: var(--cnvs-sys-color-brand-accent-caution); /* Default warning background */
+  --cnvs-sys-color-bg-caution-softer: var(--cnvs-sys-color-brand-surface-caution-strong); /* Softer warning background */
+  --cnvs-sys-color-bg-caution-softest: var(--cnvs-sys-color-brand-surface-caution-default); /* Disabled warning background */
+  --cnvs-sys-color-bg-positive-stronger: var(--cnvs-sys-color-brand-accent-positive); /* Active success background */
+  --cnvs-sys-color-bg-positive-strong: var(--cnvs-sys-color-brand-accent-positive); /* Hover success background */
+  --cnvs-sys-color-bg-positive-default: var(--cnvs-sys-color-brand-accent-positive); /* Disabled success background */
+  --cnvs-sys-color-bg-positive-soft: var(--cnvs-sys-color-brand-surface-positive-default); /* Disabled success background */
+  --cnvs-sys-color-bg-positive-softer: var(--cnvs-sys-color-brand-surface-positive-strong); /* Surface success background */
+  --cnvs-sys-color-bg-primary-stronger: var(--cnvs-sys-color-brand-accent-primary); /* Brand active background */
+  --cnvs-sys-color-bg-primary-strong: var(--cnvs-sys-color-brand-accent-primary); /* Brand hover background */
+  --cnvs-sys-color-bg-primary-default: var(--cnvs-sys-color-brand-accent-primary); /* Primary brand color */
+  --cnvs-sys-color-bg-primary-soft: var(--cnvs-sys-color-brand-surface-primary-default); /* Primary disabled */
+  --cnvs-sys-color-bg-primary-softer: var(--cnvs-sys-color-brand-surface-primary-strong); /* Select */
+  --cnvs-sys-color-bg-primary-softest: var(--cnvs-sys-color-brand-surface-primary-default); /* Surface */
+  --cnvs-sys-line-height-title-lg: var(--cnvs-base-size-800);
+  --cnvs-sys-line-height-title-md: var(--cnvs-base-size-700);
+  --cnvs-sys-line-height-title-sm: var(--cnvs-base-size-600);
+  --cnvs-sys-line-height-heading-lg: var(--cnvs-base-size-500);
+  --cnvs-sys-line-height-heading-md: var(--cnvs-base-size-450);
+  --cnvs-sys-line-height-heading-sm: var(--cnvs-base-size-400);
+  --cnvs-sys-line-height-body-lg: var(--cnvs-base-size-350);
+  --cnvs-sys-line-height-body-md: var(--cnvs-base-size-350);
+  --cnvs-sys-line-height-body-sm: var(--cnvs-base-size-300);
+  --cnvs-sys-line-height-subtext-lg: var(--cnvs-base-size-250);
+  --cnvs-sys-line-height-subtext-md: var(--cnvs-base-size-200);
+  --cnvs-sys-line-height-subtext-sm: var(--cnvs-base-size-200);
+  --cnvs-sys-font-size-title-lg: var(--cnvs-base-size-700);
+  --cnvs-sys-font-size-title-md: var(--cnvs-base-size-600);
+  --cnvs-sys-font-size-title-sm: var(--cnvs-base-size-500);
+  --cnvs-sys-font-size-heading-lg: var(--cnvs-base-size-400);
+  --cnvs-sys-font-size-heading-md: var(--cnvs-base-size-350);
+  --cnvs-sys-font-size-heading-sm: var(--cnvs-base-size-300);
+  --cnvs-sys-font-size-body-lg: var(--cnvs-base-size-250);
+  --cnvs-sys-font-size-body-md: var(--cnvs-base-size-225);
+  --cnvs-sys-font-size-body-sm: var(--cnvs-base-size-200);
+  --cnvs-sys-font-size-subtext-lg: var(--cnvs-base-size-175);
+  --cnvs-sys-font-size-subtext-md: var(--cnvs-base-size-150);
+  --cnvs-sys-font-size-subtext-sm: var(--cnvs-base-size-125);
+  --cnvs-sys-font-size-subtext-large: var(--cnvs-base-font-size-75);
+  --cnvs-sys-shape-full: calc(var(--cnvs-base-size-75) * 100); /* Full rounding is reserved high-visibility components. This shape is intended to draw attention. Buttons, Badge, Status Indicator, Essential Inputs, Border Containers (Not Cards) */
+  --cnvs-sys-shape-xxxl: var(--cnvs-base-size-400); /* Maximum rounding for modals and large containers */
+  --cnvs-sys-shape-xxl: var(--cnvs-base-size-300); /* Extra extra large rounding for cards and items */
+  --cnvs-sys-shape-xl: var(--cnvs-base-size-200); /* Extra large rounding for prominent containers */
+  --cnvs-sys-shape-lg: var(--cnvs-base-size-150); /* Primarily used for elevated and simple parent containers with greater amounts of content and UI. Dialogs, Modals, Bottom Sheets */
+  --cnvs-sys-shape-md: var(--cnvs-base-size-100); /* Core large containers, card containers and popups that house moderate amounts of content and/or data: Card, Menus */
+  --cnvs-sys-shape-sm: var(--cnvs-base-size-50); /* Components presenting info text, user input, user feedback. Inputs, Toasts, Snack bars, Tooltips, Error Alert Banner */
+  --cnvs-sys-font-size-body-small: var(--cnvs-base-font-size-100);
+  --cnvs-sys-font-size-body-medium: var(--cnvs-base-font-size-125);
+  --cnvs-sys-font-size-body-large: var(--cnvs-base-font-size-150);
+  --cnvs-sys-font-size-heading-small: var(--cnvs-base-font-size-200);
+  --cnvs-sys-font-size-heading-medium: var(--cnvs-base-font-size-250);
+  --cnvs-sys-font-size-heading-large: var(--cnvs-base-font-size-300);
+  --cnvs-sys-font-size-title-small: var(--cnvs-base-font-size-400);
+  --cnvs-sys-font-size-title-medium: var(--cnvs-base-font-size-500);
+  --cnvs-sys-font-size-title-large: var(--cnvs-base-font-size-600);
+}
+
+.cnvs-sys-type-subtext-small {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-subtext-small);
+  font-size: var(--cnvs-sys-font-size-subtext-small);
+  letter-spacing: var(--cnvs-base-letter-spacing-50);
+}
+
+.cnvs-sys-type-subtext-medium {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-subtext-medium);
+  font-size: var(--cnvs-sys-font-size-subtext-medium);
+  letter-spacing: var(--cnvs-base-letter-spacing-100);
+}
+
+.cnvs-sys-type-subtext-large {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-subtext-large);
+  font-size: var(--cnvs-sys-font-size-subtext-large);
+  letter-spacing: var(--cnvs-base-letter-spacing-150);
+}
+
+.cnvs-sys-type-subtext-sm {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-subtext-sm);
+  font-size: var(--cnvs-sys-font-size-subtext-sm);
+  letter-spacing: var(--cnvs-sys-letter-spacing-subtext-sm);
+}
+
+.cnvs-sys-type-subtext-md {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-subtext-md);
+  font-size: var(--cnvs-sys-font-size-subtext-md);
+  letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+}
+
+.cnvs-sys-type-subtext-lg {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-subtext-lg);
+  font-size: var(--cnvs-sys-font-size-subtext-lg);
+  letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+}
+
+.cnvs-sys-type-body-small {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-body-small);
+  font-size: var(--cnvs-sys-font-size-body-small);
+  letter-spacing: var(--cnvs-base-letter-spacing-200);
+}
+
+.cnvs-sys-type-body-medium {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-body-medium);
+  font-size: var(--cnvs-sys-font-size-body-medium);
+}
+
+.cnvs-sys-type-body-large {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-body-large);
+  font-size: var(--cnvs-sys-font-size-body-large);
+}
+
+.cnvs-sys-type-body-sm {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-body-sm);
+  font-size: var(--cnvs-sys-font-size-body-sm);
+  letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
+}
+
+.cnvs-sys-type-body-md {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-body-md);
+  font-size: var(--cnvs-sys-font-size-body-md);
+}
+
+.cnvs-sys-type-body-lg {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-normal);
+  line-height: var(--cnvs-sys-line-height-body-lg);
+  font-size: var(--cnvs-sys-font-size-body-lg);
+}
+
+.cnvs-sys-type-heading-small {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-heading-small);
+  font-size: var(--cnvs-sys-font-size-heading-small);
+}
+
+.cnvs-sys-type-heading-medium {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-heading-medium);
+  font-size: var(--cnvs-sys-font-size-heading-medium);
+}
+
+.cnvs-sys-type-heading-large {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-heading-large);
+  font-size: var(--cnvs-sys-font-size-heading-large);
+}
+
+.cnvs-sys-type-heading-sm {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-heading-sm);
+  font-size: var(--cnvs-sys-font-size-heading-sm);
+}
+
+.cnvs-sys-type-heading-md {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-heading-md);
+  font-size: var(--cnvs-sys-font-size-heading-md);
+}
+
+.cnvs-sys-type-heading-lg {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-heading-lg);
+  font-size: var(--cnvs-sys-font-size-heading-lg);
+}
+
+.cnvs-sys-type-title-small {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-title-small);
+  font-size: var(--cnvs-sys-font-size-title-small);
+}
+
+.cnvs-sys-type-title-medium {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-title-medium);
+  font-size: var(--cnvs-sys-font-size-title-medium);
+}
+
+.cnvs-sys-type-title-large {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-title-large);
+  font-size: var(--cnvs-sys-font-size-title-large);
+}
+
+.cnvs-sys-type-title-sm {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-title-sm);
+  font-size: var(--cnvs-sys-font-size-title-sm);
+}
+
+.cnvs-sys-type-title-md {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-title-md);
+  font-size: var(--cnvs-sys-font-size-title-md);
+}
+
+.cnvs-sys-type-title-lg {
+  font-family: var(--cnvs-sys-font-family-default);
+  font-weight: var(--cnvs-sys-font-weight-bold);
+  line-height: var(--cnvs-sys-line-height-title-lg);
+  font-size: var(--cnvs-sys-font-size-title-lg);
+}* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--cnvs-base-palette-black-pepper-400);
+  margin: 0;
+}
+
+ol,
+ul {
+  color: var(--cnvs-base-palette-black-pepper-300);
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-400);
+  line-height: var(--cnvs-base-line-height-150);
+  font-size: var(--cnvs-base-font-size-100);
+  letter-spacing: var(--cnvs-base-letter-spacing-200);
+  margin: 0;
+  padding: 0;
+  list-style: inside;
+  margin: 1rem 0;
+}
+
+/* for nested list styles */
+ul ul {
+  margin: 0;
+  padding-inline-start: 1rem;
+}
+
+h1 {
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-700);
+  line-height: var(--cnvs-base-line-height-500);
+  font-size: var(--cnvs-base-font-size-500);
+}
+
+h2 {
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-700);
+  line-height: var(--cnvs-base-line-height-350);
+  font-size: var(--cnvs-base-font-size-300);
+}
+
+h3 {
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-700);
+  line-height: var(--cnvs-base-line-height-300);
+  font-size: var(--cnvs-base-font-size-250);
+}
+
+h4 {
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-700);
+  line-height: var(--cnvs-base-line-height-250);
+  font-size: var(--cnvs-base-font-size-200);
+}
+
+p {
+  color: var(--cnvs-base-palette-black-pepper-300);
+  font-family: var(--cnvs-base-font-family-50);
+  font-weight: var(--cnvs-base-font-weight-400);
+  line-height: var(--cnvs-base-line-height-150);
+  font-size: var(--cnvs-base-font-size-100);
+  letter-spacing: var(--cnvs-base-letter-spacing-200);
+  margin: 1rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: flex;
+  align-items: center;
+}
+
+pre {
+  margin: 0;
+}
+
+pre > * {
+  font-family: var(--cnvs-base-font-family-100);
+  font-size: var(--cnvs-base-font-size-75);
+}
+
+blockquote {
+  margin: 0;
+  padding: var(--cnvs-sys-space-x2) var(--cnvs-sys-space-x6);
+  border-left: 0.25rem solid var(--cnvs-base-palette-soap-400);
+  color: var(--cnvs-base-palette-licorice-300);
+}
+
+blockquote > p {
+  margin: 0;
+}
+
+hr {
+  background-color: var(--cnvs-base-palette-soap-500);
+  border: none;
+  height: 0.0625rem;
+  margin: 2rem 0;
+}
