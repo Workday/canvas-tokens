@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.0.5
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Update dep values to map to their old value to avoid visual breaking changes
+    ([#259](https://github.com/Workday/canvas-tokens/pull/259))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.4
 
 ### Patch Changes
