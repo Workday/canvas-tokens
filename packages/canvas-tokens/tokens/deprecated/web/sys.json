@@ -456,7 +456,7 @@
             "comment": "Select"
           },
           "soft": {
-            "value": "{sys.color.brand.surface.primary.default}",
+            "value": "{base.palette.blue.A100}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.brand.surface.primary.default tokens instead",
@@ -530,7 +530,7 @@
             "comment": "Disabled inputs"
           },
           "soft": {
-            "value": "{base.palette.slate.50}",
+            "value": "{base.palette.slate.A50}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.surface.alt.default instead",
@@ -544,7 +544,7 @@
             "comment": "Active states"
           },
           "stronger": {
-            "value": "{sys.color.surface.alt.default}",
+            "value": "{base.palette.slate.A300}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.surface.alt.default with sys.color.surface.overlay.pressed",
@@ -559,7 +559,7 @@
             "deprecatedComment": "Use sys.color.accent.muted.soft token instead"
           },
           "soft": {
-            "value": "{sys.color.accent.muted.soft}",
+            "value": "{base.palette.slate.A500}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.accent.muted.soft token instead"
@@ -609,7 +609,7 @@
             "comment": "Surface success background"
           },
           "soft": {
-            "value": "{sys.color.brand.surface.positive.default}",
+            "value": "{base.palette.green.A100}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.brand.surface.positive.default tokens instead",
@@ -653,7 +653,7 @@
             "comment": "Softer warning background"
           },
           "soft": {
-            "value": "{base.palette.amber.100}",
+            "value": "{base.palette.amber.A100}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.surface.warning tokens instead",
@@ -697,7 +697,7 @@
             "comment": "Disabled error background"
           },
           "soft": {
-            "value": "{base.palette.red.100}",
+            "value": "{base.palette.red.A100}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.surface.danger tokens instead",
@@ -771,7 +771,7 @@
             "comment": "Select"
           },
           "soft": {
-            "value": "{sys.color.surface.info.default}",
+            "value": "{base.palette.blue.A100}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.surface.info.default tokens instead",
@@ -785,7 +785,7 @@
             "comment": "Info color"
           },
           "strong": {
-            "value": "{sys.color.accent.info}",
+            "value": "{base.palette.blue.700}",
             "type": "color",
             "deprecated": true,
             "deprecatedComment": "Use sys.color.accent.info instead with sys.color.accent.overlay.hover",
