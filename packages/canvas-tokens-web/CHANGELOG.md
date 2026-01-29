@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.0.6
+
+### Patch Changes
+
+- ### Tokens
+
+  - fix: Update jsdoc build ([#260](https://github.com/Workday/canvas-tokens/pull/260))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.0.5
 
 ### Patch Changes
