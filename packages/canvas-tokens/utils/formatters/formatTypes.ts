@@ -120,7 +120,7 @@ const generateJSDoc = (
         [' * ', ' / ', ' + ', ' - '].some(sign => actualValue.includes(sign)) &&
         !actualValue.includes('oklch')
         ? math.evaluate(actualValue.replace(/rem/g, ''))
-        : actualValue.replace(/rem/g, '')
+        : parseFloat(actualValue)
       : null;
 
   const pxValue = computedValue ? computedValue * 16 + 'px' : '';
