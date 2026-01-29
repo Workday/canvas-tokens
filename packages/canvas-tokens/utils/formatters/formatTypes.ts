@@ -1,3 +1,4 @@
+import * as math from 'mathjs';
 import {Formatter, TransformedToken, formatHelpers} from 'style-dictionary';
 
 /**
@@ -60,8 +61,11 @@ const recursivelyCreateFileStructure = ({
     const spaces = '  '.repeat(depth);
 
     if (typeof values === 'string') {
-      const token = allTokens?.find(token => `--cnvs-${token.path.join('-')}` === values);
-      const jsDocText = generateJSDoc(token?.original || original, depth);
+      const token = allTokens?.find(
+        token => `--cnvs-${token.path.join('-').toLowerCase()}` === values
+      );
+
+      const jsDocText = generateJSDoc(token?.original || original, token?.value, values, depth);
 
       const innerText = depth
         ? `${spaces}"${key}": "${values}",`
@@ -99,40 +103,52 @@ const recursivelyCreateFileStructure = ({
  * @param {number} depth - Value of iteration to generate side spaces.
  * @returns JS Doc content as a string
  */
-const generateJSDoc = (original: TransformedToken, depth: number) => {
+const generateJSDoc = (
+  original: TransformedToken,
+  actualValue: string,
+  tokenName: string,
+  depth: number
+) => {
   const spaces = '  '.repeat(depth);
   const extraSpaces = spaces + ' ';
   const newJSDocLineStart = `\n${extraSpaces}* `;
-  const {value, comment, deprecated, deprecatedComment, raw} = original;
+  const {value, comment, deprecated, deprecatedComment} = original;
 
-  const pxValue =
-    typeof value === 'string' && `${value}`.includes('rem') ? parseFloat(value) * 16 : null;
+  const computedValue =
+    typeof actualValue === 'string'
+      ? actualValue.includes('rem') &&
+        [' * ', ' / ', ' + ', ' - '].some(sign => actualValue.includes(sign)) &&
+        !actualValue.includes('oklch')
+        ? math.evaluate(actualValue.replace(/rem/g, ''))
+        : parseFloat(actualValue)
+      : null;
+
+  const pxValue = computedValue ? computedValue * 16 + 'px' : '';
+  const computedValueText =
+    computedValue && computedValue !== value ? ` (${computedValue}rem | ${pxValue})` : '';
+
   const valueText =
-    typeof value === 'object' ? JSON.stringify(value) : value + (pxValue ? ` (${pxValue}px)` : '');
-  const tokenValue =
-    typeof raw === 'string'
-      ? 'token: ' +
-        raw.replace(/^{(.+)}$/, (_: any, b: any) => b).replace('palette.', '') +
-        newJSDocLineStart +
-        newJSDocLineStart
+    typeof value === 'object'
+      ? typeof actualValue === 'string'
+        ? actualValue
+        : JSON.stringify(value)
+      : value
+      ? newJSDocLineStart + `**value**: \`${value}\`` + computedValueText
       : '';
 
-  const deprecatedText = deprecated ? `@deprecated ${deprecatedComment || ''}` : '';
-
-  const updatedComment = comment
-    ? comment.replace(/; /g, newJSDocLineStart) + newJSDocLineStart + newJSDocLineStart
+  const deprecatedText = deprecated
+    ? newJSDocLineStart + newJSDocLineStart + `@deprecated ${deprecatedComment || ''}`
     : '';
 
-  const text = comment
-    ? newJSDocLineStart +
-      valueText +
-      newJSDocLineStart +
-      newJSDocLineStart +
-      tokenValue +
-      updatedComment +
-      deprecatedText +
-      `\n${extraSpaces}`
-    : ` ${valueText} `;
+  const updatedComment = comment
+    ? newJSDocLineStart + newJSDocLineStart + comment.replace(/; /g, newJSDocLineStart)
+    : '';
+
+  const tokenText = tokenName
+    ? newJSDocLineStart + newJSDocLineStart + `**CSS Var**: \`${tokenName}\``
+    : '';
+
+  const text = valueText + tokenText + updatedComment + deprecatedText + `\n${extraSpaces}`;
 
   return `${spaces}/**${text}*/\n`;
 };
