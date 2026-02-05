@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.1.0-beta.0
+
+### Minor Changes
+
+- ### Components
+
+  - feat: Update order to match token ([#263](https://github.com/Workday/canvas-tokens/pull/263))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.0.6
 
 ### Patch Changes
