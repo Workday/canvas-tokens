@@ -231,6 +231,30 @@
           "type": "number",
           "comment": "Alpha on second shadow"
         }
+      },
+      "surface": {
+        "hover": {
+          "value": "{base.opacity.100}",
+          "type": "number",
+          "comment": "Surface hover opacity"
+        },
+        "pressed": {
+          "value": "{base.opacity.180}",
+          "type": "number",
+          "comment": "Surface pressed opacity"
+        }
+      },
+      "accent": {
+        "hover": {
+          "value": "{base.opacity.180}",
+          "type": "number",
+          "comment": "Accent hover opacity"
+        },
+        "pressed": {
+          "value": "{base.opacity.360}",
+          "type": "number",
+          "comment": "Accent pressed opacity"
+        }
       }
     },
     "shape": {
@@ -812,6 +836,10 @@
             "inverse": {
               "value": "{base.palette.white.A200}",
               "type": "color"
+            },
+            "mixin": {
+              "value": "{base.palette.slate.500}",
+              "type": "color"
             }
           },
           "pressed": {
@@ -873,6 +901,9 @@
           "pressed": {
             "value": "{base.palette.neutral.A400}",
             "type": "color"
+          },
+          "mixin": {
+            "value": "{base.palette.neutral.1000}"
           }
         }
       },
