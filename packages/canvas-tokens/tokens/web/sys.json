@@ -241,19 +241,19 @@
         "pressed": {
           "value": "{base.opacity.180}",
           "type": "number",
-          "comment": "Surface pressed opacity"
+          "comment": "Surface pressed opacity use with surface colors"
         }
       },
       "accent": {
         "hover": {
           "value": "{base.opacity.180}",
           "type": "number",
-          "comment": "Accent hover opacity"
+          "comment": "Accent hover opacity use with accent colors"
         },
         "pressed": {
           "value": "{base.opacity.360}",
           "type": "number",
-          "comment": "Accent pressed opacity"
+          "comment": "Accent pressed opacity use with accent colors"
         }
       }
     },
@@ -836,11 +836,11 @@
             "inverse": {
               "value": "{base.palette.white.A200}",
               "type": "color"
-            },
-            "mixin": {
-              "value": "{base.palette.slate.500}",
-              "type": "color"
             }
+          },
+          "mixin": {
+            "value": "{base.palette.slate.500}",
+            "type": "color"
           },
           "pressed": {
             "default": {
