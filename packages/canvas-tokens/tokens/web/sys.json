@@ -231,6 +231,30 @@
           "type": "number",
           "comment": "Alpha on second shadow"
         }
+      },
+      "surface": {
+        "hover": {
+          "value": "{base.opacity.100}",
+          "type": "number",
+          "comment": "Surface hover opacity"
+        },
+        "pressed": {
+          "value": "{base.opacity.180}",
+          "type": "number",
+          "comment": "Surface pressed opacity use with surface colors"
+        }
+      },
+      "accent": {
+        "hover": {
+          "value": "{base.opacity.180}",
+          "type": "number",
+          "comment": "Accent hover opacity use with accent colors"
+        },
+        "pressed": {
+          "value": "{base.opacity.360}",
+          "type": "number",
+          "comment": "Accent pressed opacity use with accent colors"
+        }
       }
     },
     "shape": {
@@ -814,6 +838,10 @@
               "type": "color"
             }
           },
+          "mixin": {
+            "value": "{base.palette.slate.500}",
+            "type": "color"
+          },
           "pressed": {
             "default": {
               "value": "{base.palette.slate.A100}",
@@ -872,6 +900,10 @@
           },
           "pressed": {
             "value": "{base.palette.neutral.A400}",
+            "type": "color"
+          },
+          "mixin": {
+            "value": "{base.palette.neutral.1000}",
             "type": "color"
           }
         }

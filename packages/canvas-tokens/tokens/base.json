@@ -128,12 +128,24 @@
         "value": "8",
         "type": "number"
       },
+      "100": {
+        "value": "10",
+        "type": "number"
+      },
       "120": {
         "value": "12",
         "type": "number"
       },
+      "180": {
+        "value": "18",
+        "type": "number"
+      },
       "200": {
         "value": "20",
+        "type": "number"
+      },
+      "360": {
+        "value": "36",
         "type": "number"
       },
       "400": {
