@@ -903,7 +903,8 @@
             "type": "color"
           },
           "mixin": {
-            "value": "{base.palette.neutral.1000}"
+            "value": "{base.palette.neutral.1000}",
+            "type": "color"
           }
         }
       },
