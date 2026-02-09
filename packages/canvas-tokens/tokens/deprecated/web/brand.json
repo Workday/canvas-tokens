@@ -144,7 +144,7 @@
         "value": "{base.palette.neutral.950}",
         "type": "color",
         "deprecated": true,
-        "deprecatedComment": "replace alert.darkest with {sys.color.fg.contrast.default}",
+        "deprecatedComment": "replace alert.accent with {sys.color.fg.contrast.default}",
         "fallback": "{sys.color.fg.contrast.default}"
       },
       "light": {

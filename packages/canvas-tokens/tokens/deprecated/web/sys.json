@@ -1321,7 +1321,7 @@
             "value": "{base.palette.blue.800}",
             "type": "color",
             "deprecated": true,
-            "deprecatedComment": "Use sys.color.brand.fg.primary.strong  instead",
+            "deprecatedComment": "Use sys.color.brand.fg.primary.strong instead",
             "comment": "Links on hover"
           },
           "strong": {
