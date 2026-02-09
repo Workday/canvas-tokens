@@ -112,7 +112,6 @@ StyleDictionary.registerTransformGroup({
   name: 'web',
   transforms: [
     'name/cti/kebab',
-    'value/deprecated',
     'value/duration/ms',
     'value/flatten-border',
     'value/flatten-oklch',
