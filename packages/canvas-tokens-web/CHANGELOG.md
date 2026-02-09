@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.1.2
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Map dep values to their original value
+    ([#265](https://github.com/Workday/canvas-tokens/pull/265))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.1.1
 
 ### Patch Changes
