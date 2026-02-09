@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.1.1
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Remove deprecated value transform from web group
+    ([#264](https://github.com/Workday/canvas-tokens/pull/264))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.1.0
 
 ### Minor Changes
