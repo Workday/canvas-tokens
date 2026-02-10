@@ -19,6 +19,7 @@ import {TokenGrid} from '../components/TokenGrid';
 - [Direct Transformation Formatters](#direct-transformation-formatters)
   - [JavaScript/TypeScript Formatters](#javascripttypescript-formatters)
   - [CSS/SCSS/LESS Formatters](#cssscssless-formatters)
+  - [Tokens Info Formatters](#tokens-info-formatters)
 
 ## Overview
 
@@ -114,7 +115,6 @@ or platform.
 | `js/es6`                    | Generates an ES6 module where each token is exported as a constant.                         |
 | `ts/inline`                 | Outputs a TypeScript declaration file (.d.ts) with constant exports for each token.         |
 | `ts/jsdoc-object`           | Outputs a TypeScript declaration file with tokens as nested objects with JSDoc annotations. |
-
 
 Below is a detailed description of each JavaScript/TypeScript formatter.
 
@@ -528,6 +528,69 @@ accessible in SCSS.
 
 // output
 `$cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
+```
+
+## Tokens Info Formatters
+
+#### json/tokens-info-export
+
+Located in `formatTokensInfoExport`. Outputs an array of objects with detailed information about
+each token as prettified JSON.
+
+```js
+// input
+{
+  allTokens: [
+    {
+      value: "#ffefee",
+      filePath: "tokens/all.json",
+      isSource: true,
+      original: { value: "#ffefee" },
+      name: "cinnamon100",
+      attributes: {},
+      path: ["base", "palette", "cinnamon", "100"],
+    },
+  ],
+}
+
+// output
+`[
+  {
+    "name": "base.palette.cinnamon.100",
+    "level": "base",
+    "value": "#ffefee",
+    "computedValue": "#ffefee",
+    "fallback": "#ffefee",
+    "fallbackValue": undefined,
+    "deprecatedComment": undefined
+  }
+]`
+```
+
+#### csv/tokens-info-export
+
+Located in `formatTokensInfoExportCSV`. Outputs a CSV file with one row per token and columns for
+key metadata.
+
+```js
+// input
+{
+  allTokens: [
+    {
+      value: "#ffefee",
+      filePath: "tokens/all.json",
+      isSource: true,
+      original: { value: "#ffefee" },
+      name: "cinnamon100",
+      attributes: {},
+      path: ["base", "palette", "cinnamon", "100"],
+    },
+  ],
+}
+
+// output
+`name,level,value,computedValue,fallback,fallbackValue,deprecatedComment
+base.palette.cinnamon.100,base,#ffefee,#ffefee,#ffefee,,`
 ```
 
 </Unstyled>
