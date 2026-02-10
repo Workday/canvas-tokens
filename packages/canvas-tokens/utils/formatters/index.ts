@@ -8,6 +8,7 @@ import {
   formatES6Exports,
   formatCommonJSExports,
 } from './formatJS';
+import {formatTokensInfoExport, formatTokensInfoExportCSV} from './formatTokensInfoExport';
 import {formatCSSComposite, formatLessComposite, formatSassComposite} from './formatStyles';
 import {formatJSToTypes} from './formatTypes';
 import {mergeObjects} from './mergeObjects';
@@ -64,4 +65,10 @@ export const formats: Record<string, Formatter> = {
   // formatter merging default format for regular tokens
   // with format for composite tokens
   'merge/refs': mergeStyleReferences,
+  // formatter creating the json file structure
+  // with tokens info
+  'json/tokens-info-export': formatTokensInfoExport,
+  // formatter creating the csv file structure
+  // with tokens info
+  'csv/tokens-info-export': formatTokensInfoExportCSV,
 };
