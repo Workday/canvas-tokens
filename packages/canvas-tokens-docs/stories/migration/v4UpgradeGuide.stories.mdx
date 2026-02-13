@@ -299,8 +299,8 @@ improves code readability and ensures consistent sizing across components.
 
 | Token     | JS Value       | CSS Variable           | Description                               |
 | --------- | -------------- | ---------------------- | ----------------------------------------- |
-| size.xxxs | `base.size200` | `--cnvs-sys-size-xxxs` | Switch Track                              |
-| size.xxs  | `base.size250` | `--cnvs-sys-size-xxs`  | Switch Track                              |
+| size.xxxs | `base.size200` | `--cnvs-sys-size-xxxs` |                               |
+| size.xxs  | `base.size250` | `--cnvs-sys-size-xxs`  |                               |
 | size.xs   | `base.size300` | `--cnvs-sys-size-xs`   | Count Badge                               |
 | size.sm   | `base.size400` | `--cnvs-sys-size-sm`   | X-Small Buttons, Pills, Checkboxes        |
 | size.md   | `base.size500` | `--cnvs-sys-size-md`   | Small Buttons, Segmented Control, Tooltip |
@@ -312,7 +312,12 @@ improves code readability and ensures consistent sizing across components.
 
 Space tokens have been reorganized into semantic padding and gap tokens, replacing the previous
 generic `space.*` tokens. This provides clearer intent and better alignment with common CSS
-properties.
+properties. Which token you choose depends
+on the context of how it's used. In general you should:
+
+- use `padding` tokens for interior space (`padding` and `inset`)
+- use `gap` tokens for exterior space around and between elements (`gap` and `margin`)
+- use `size` tokens for an element's container space (`height` and `width`)
 
 ### Padding Tokens
 
@@ -329,7 +334,7 @@ properties.
 
 ### Gap Tokens
 
-Gap tokens define spacing between elements in flexbox and grid layouts, providing consistent spacing
+Gap tokens define spacing between elements (`gap` and `margin`), providing consistent spacing
 for component relationships and content organization.
 
 | Token    | JS Value       | CSS Variable          | Description                            |
