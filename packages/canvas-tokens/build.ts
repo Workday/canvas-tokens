@@ -85,6 +85,18 @@ const config = setConfig({
   },
 });
 
+config.platforms['es6']?.files?.push({
+  destination: '../../canvas-tokens-docs/tokens/deprecated/index.json',
+  format: 'json/tokens-info-export',
+  filter: filters.isDeprecated,
+});
+
+config.platforms['es6']?.files?.push({
+  destination: '../../canvas-tokens-docs/tokens/deprecated/index.csv',
+  format: 'csv/tokens-info-export',
+  filter: filters.isDeprecated,
+});
+
 // Setup format to create ts file with type declarations
 
 Object.entries(formats).forEach(([key, value]) => {
