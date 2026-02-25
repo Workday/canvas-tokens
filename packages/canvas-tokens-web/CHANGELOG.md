@@ -1,5 +1,28 @@
 # @workday/canvas-tokens-web
 
+## 4.1.3
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Add missing descriptions to tokens
+    ([#274](https://github.com/Workday/canvas-tokens/pull/274))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+  ### Documentation
+
+  - docs: Update v4 Upgrade Guide ([#268](https://github.com/Workday/canvas-tokens/pull/268))
+    ([@alanbsmith](https://github.com/alanbsmith), Alan Smith,
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+  ### Infrastructure
+
+  - chore: Add functionality to generate info files for docs
+    ([#266](https://github.com/Workday/canvas-tokens/pull/266))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.1.2
 
 ### Patch Changes
