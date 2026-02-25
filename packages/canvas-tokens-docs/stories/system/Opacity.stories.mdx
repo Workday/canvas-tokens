@@ -1,0 +1,29 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {OpacityTokens} from './examples/Opacity';
+
+<Meta title="Docs/System Tokens/Opacity" />
+
+<Unstyled>
+
+# System Opacity Tokens
+
+System opacity tokens provide semantic opacity values for disabled states, overlays, contrast, shadows, and interactive state layers (surface and accent hover/pressed).
+
+## Usage
+
+```ts
+import {system} from '@workday/canvas-tokens-web';
+
+// Disabled state
+opacity: `var(${system.opacity.disabled})`;
+
+// Overlay (e.g. modal scrim)
+opacity: `var(${system.opacity.overlay})`;
+
+// Shadow alpha
+opacity: `var(${system.opacity.shadow.first})`;
+```
+
+<OpacityTokens />
+
+</Unstyled>

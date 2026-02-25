@@ -23,10 +23,10 @@ export const SurfaceColors = () => (
   <ColorGrid name="Surface Colors" palette={surfaceBasePalette} variableType="system" />
 );
 
-const surfaceAltPalette = buildPalette(
-  'system.color.surface.alt',
-  {default: system.color.surface.alt.default, strong: system.color.surface.alt.strong},
-).sort(sortSystemColorPalette);
+const surfaceAltPalette = buildPalette('system.color.surface.alt', {
+  default: system.color.surface.alt.default,
+  strong: system.color.surface.alt.strong,
+}).sort(sortSystemColorPalette);
 
 export const SurfaceAltColors = () => (
   <ColorGrid name="Surface Alt Colors" palette={surfaceAltPalette} variableType="system" />
@@ -38,7 +38,11 @@ const surfaceContrastPalette = buildPalette(
 ).sort(sortSystemColorPalette);
 
 export const SurfaceContrastColors = () => (
-  <ColorGrid name="Surface Contrast Colors" palette={surfaceContrastPalette} variableType="system" />
+  <ColorGrid
+    name="Surface Contrast Colors"
+    palette={surfaceContrastPalette}
+    variableType="system"
+  />
 );
 
 const surfaceOverlayPalette = buildPalette('system.color.surface.overlay', {
@@ -46,6 +50,7 @@ const surfaceOverlayPalette = buildPalette('system.color.surface.overlay', {
   'hover.inverse': system.color.surface.overlay.hover.inverse,
   'pressed.default': system.color.surface.overlay.pressed.default,
   'pressed.inverse': system.color.surface.overlay.pressed.inverse,
+  mixin: system.color.surface.overlay.mixin,
   scrim: system.color.surface.overlay.scrim,
 }).sort(sortSystemColorPalette);
 
@@ -68,10 +73,9 @@ export const SurfaceStatusColors = () => (
   <ColorGrid name="Surface Status Colors" palette={surfaceStatusPalettes} variableType="system" />
 );
 
-const surfaceAIPalette = buildPalette(
-  'system.color.surface.ai',
-  system.color.surface.ai
-).sort(sortSystemColorPalette);
+const surfaceAIPalette = buildPalette('system.color.surface.ai', system.color.surface.ai).sort(
+  sortSystemColorPalette
+);
 
 export const SurfaceAIColors = () => (
   <ColorGrid name="Surface AI Colors" palette={surfaceAIPalette} variableType="system" />
