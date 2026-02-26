@@ -7,8 +7,15 @@ import {ShapeTokens, DeprecatedShapeTokens} from './examples/Shape';
 
 # System Shape Tokens
 
-System shape tokens provide consistent shapes across our UI. They're used in our buttons, labels,
-cards, and more.
+Shape tokens are aliased to base size tokens to define border radius. Each token corresponds to a specific use case and component type.
+
+**Do**
+- ✅ Apply the same border radius value to all corners of an element. This ensures the shape doesn’t get distorted.
+- ✅ Choose shape tokens based on component type and use case. Follow the recommended usage for each token size.
+
+**Don’t**
+- ❌ Don’t combine different border radius values on the same element.
+- ❌ Don’t use different values for different corners unless specifically required.
 
 ## Usage
 
@@ -31,16 +38,11 @@ same styles using CSS variables directly.
 ```css
 // styles.css
 .card {
-  border-radius: var(--cnvs-sys-shape-x2);
+  border-radius: var(--cnvs-sys-shape-xxl);
 }
 ```
 
 ---
-
-## Tokens
-
-These tokens use a multiplier scale and reference our `baseUnit` token, which is `0.25rem` / `4px`.
-So the `system.shape.x2` token has a value of `0.5rem` or `8px`.
 
 <ShapeTokens />
 

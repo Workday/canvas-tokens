@@ -22,8 +22,28 @@ function extractComments(obj: unknown, prefix = ''): Record<string, string> {
   return result;
 }
 
-const colorComments = extractComments((sysJson as {sys: {color: unknown}}).sys.color);
+const sys = (sysJson as {sys: Record<string, unknown>}).sys;
+
+const colorComments = extractComments(sys.color);
 export const systemColorCommentMap: Record<string, string> = {};
 for (const [path, comment] of Object.entries(colorComments)) {
   systemColorCommentMap[`system.color.${path}`] = comment;
+}
+
+const shapeComments = extractComments(sys.shape);
+export const systemShapeCommentMap: Record<string, string> = {};
+for (const [path, comment] of Object.entries(shapeComments)) {
+  systemShapeCommentMap[`system.shape.${path}`] = comment;
+}
+
+/** Comment map for system.size, system.padding, system.gap (used by Space docs) */
+export const systemSpaceCommentMap: Record<string, string> = {};
+for (const [path, comment] of Object.entries(extractComments(sys.size))) {
+  systemSpaceCommentMap[`system.size.${path}`] = comment;
+}
+for (const [path, comment] of Object.entries(extractComments(sys.padding))) {
+  systemSpaceCommentMap[`system.padding.${path}`] = comment;
+}
+for (const [path, comment] of Object.entries(extractComments(sys.gap))) {
+  systemSpaceCommentMap[`system.gap.${path}`] = comment;
 }
