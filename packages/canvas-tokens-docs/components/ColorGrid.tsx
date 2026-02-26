@@ -95,16 +95,16 @@ function getSwatchStyles(token: ColorSwatch) {
 }
 
 function getHeadings(type: VariableType) {
-  const defaultHeadings = ['Swatch', 'Value'];
+  const defaultHeadings = ['Swatch', 'Usage', 'Value'];
   if (type === 'css') {
-    defaultHeadings.splice(1, 0, 'CSS Variable');
+    defaultHeadings[1] = 'CSS Variable';
   } else if (type === 'javascript') {
-    defaultHeadings.splice(1, 0, 'JS Variable');
+    defaultHeadings[1] = 'JS Variable';
   } else if (type === 'system') {
-    defaultHeadings.splice(1, 0, 'CSS Variable', 'JS Variable');
-    defaultHeadings.push('Use Case');
+    defaultHeadings[1] = 'Usage';
+    defaultHeadings.push('Description');
   } else {
-    defaultHeadings.splice(1, 0, 'CSS Variable', 'JS Variable');
+    defaultHeadings[1] = 'Usage';
   }
   return defaultHeadings;
 }
@@ -124,16 +124,22 @@ export function ColorGrid({name, variableType = 'all', palette}: ColorGridProps)
           <TokenGrid.RowItem>
             <TokenGrid.Swatch style={getSwatchStyles(token)} />
           </TokenGrid.RowItem>
-          {variableType !== 'javascript' && (
+          {(variableType !== 'javascript' || variableType !== 'css') && (
             <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel isDeprecated={handleDeprecatedTokenClass(token.cssVar)}>
-                {token.cssVar}
-              </TokenGrid.MonospaceLabel>
-            </TokenGrid.RowItem>
-          )}
-          {variableType !== 'css' && (
-            <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+              {variableType !== 'javascript' && (
+                <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
+                  <span>CSS</span>
+                  <TokenGrid.MonospaceLabel isDeprecated={handleDeprecatedTokenClass(token.cssVar)}>
+                    {token.cssVar}
+                  </TokenGrid.MonospaceLabel>
+                </div>
+              )}
+              {variableType !== 'css' && (
+                <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+                  <span>JS</span>
+                  <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+                </div>
+              )}
             </TokenGrid.RowItem>
           )}
           <TokenGrid.RowItem>

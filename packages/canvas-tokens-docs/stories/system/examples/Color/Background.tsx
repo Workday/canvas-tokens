@@ -9,7 +9,7 @@ import {
 
 const backgroundPalette = buildPalette('system.color.bg', {
   default: system.color.bg.default,
-  alt: system.color.bg.alt.default,
+  'alt.default': system.color.bg.alt.default,
 }).sort(sortSystemColorPalette);
 
 export const BackgroundColors = () => (

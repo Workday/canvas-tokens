@@ -54,9 +54,10 @@
 .token-grid__swatch {
   display: grid;
   grid-template-columns: minmax(2rem, 8rem);
-  height: 2rem;
+  height: var(--cnvs-sys-size-xl);
   padding: 0.5rem;
   border: 0.0625rem solid var(--cnvs-sys-color-border-divider);
+  border-radius: var(--cnvs-sys-shape-sm);
 }
 
 .token-grid__sample {
@@ -68,10 +69,10 @@
 }
 
 .token-grid__monospace-label {
-  background-color: var(--cnvs-sys-color-bg-primary-softest);
-  color: var(--cnvs-sys-color-fg-primary-default);
+  background-color: var(--cnvs-sys-color-surface-alt-strong);
+  color: var(--cnvs-sys-color-fg-default);
   font-family: var(--cnvs-base-font-family-100);
-  padding: 0.25rem;
+  padding: var(--cnvs-sys-padding-xxs) var(--cnvs-sys-padding-md);
   border-radius: 0.25rem;
   min-height: 1rem;
 }
