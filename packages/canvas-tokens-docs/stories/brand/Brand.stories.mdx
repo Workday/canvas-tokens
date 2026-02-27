@@ -28,11 +28,11 @@ might take a bit for that to feel intuitive.
 // styles.ts
 import '@workday/canvas-tokens-web/css/base/_variables.css';
 import '@workday/canvas-tokens-web/css/brand/_variables.css';
-import {brand} from '@workday/canvas-tokens-web';
+import {brand, system} from '@workday/canvas-tokens-web';
 
 const styles = {
-  backgroundColor: `var(${brand.primary.base})`,
-  color: `var(${brand.primary.accent})`,
+  backgroundColor: `var(${brand.primary600})`,
+  color: `var(${system.color.fg.inverse})`,
 };
 ```
 
@@ -45,8 +45,8 @@ same styles using CSS variables directly.
 @import '@workday/canvas-tokens-web/css/brand/_variables.css';
 
 .button {
-  background-color: var(--cnvs-brand-primary-base);
-  color: var(--cnvs-brand-primary-accent);
+  background-color: var(--cnvs-brand-primary-600);
+  color: var(--cnvs-sys-color-fg-inverse);
 }
 ```
 

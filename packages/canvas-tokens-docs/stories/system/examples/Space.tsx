@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
+import {systemSpaceCommentMap} from '../../../components/systemTokenComments';
 
 interface SpaceToken {
   /** The name of the CSS variable */
@@ -13,6 +14,8 @@ interface SpaceToken {
   calculatedValue: string;
   /** The value of the CSS token after converting rem to pixels */
   pxValue: string;
+  /** Use case / description from sys.json */
+  description?: string;
 }
 
 function multiplyCalcValues(value: string) {
@@ -59,12 +62,14 @@ const deprecatedSpaceTokensData: SpaceToken[] = Object.entries(system.space || {
   .map(([key, varName]) => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
     const calculatedValue = multiplyCalcValues(value);
+    const jsPath = `system.space.${key}`;
     return {
       cssVar: varName,
-      jsVar: formatJSVar(`system.space.${key}`),
+      jsVar: formatJSVar(jsPath),
       value,
       calculatedValue: `${calculatedValue}rem`,
       pxValue: `${calculatedValue * 16}px`,
+      description: systemSpaceCommentMap[jsPath],
     };
   });
 
@@ -72,12 +77,14 @@ const deprecatedSpaceTokensData: SpaceToken[] = Object.entries(system.space || {
 const sizeTokens: SpaceToken[] = Object.entries(system.size || {}).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
+  const jsPath = `system.size.${key}`;
   return {
     cssVar: varName,
-    jsVar: formatJSVar(`system.size.${key}`),
+    jsVar: formatJSVar(jsPath),
     value,
     calculatedValue: `${calculatedValue}rem`,
     pxValue: `${calculatedValue * 16}px`,
+    description: systemSpaceCommentMap[jsPath],
   };
 });
 
@@ -85,12 +92,14 @@ const sizeTokens: SpaceToken[] = Object.entries(system.size || {}).map(([key, va
 const paddingTokens: SpaceToken[] = Object.entries(system.padding || {}).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
+  const jsPath = `system.padding.${key}`;
   return {
     cssVar: varName,
-    jsVar: formatJSVar(`system.padding.${key}`),
+    jsVar: formatJSVar(jsPath),
     value,
     calculatedValue: `${calculatedValue}rem`,
     pxValue: `${calculatedValue * 16}px`,
+    description: systemSpaceCommentMap[jsPath],
   };
 });
 
@@ -98,12 +107,14 @@ const paddingTokens: SpaceToken[] = Object.entries(system.padding || {}).map(([k
 const gapTokens: SpaceToken[] = Object.entries(system.gap || {}).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
+  const jsPath = `system.gap.${key}`;
   return {
     cssVar: varName,
-    jsVar: formatJSVar(`system.gap.${key}`),
+    jsVar: formatJSVar(jsPath),
     value,
     calculatedValue: `${calculatedValue}rem`,
     pxValue: `${calculatedValue * 16}px`,
+    description: systemSpaceCommentMap[jsPath],
   };
 });
 
@@ -111,14 +122,7 @@ export const DeprecatedSpaceTokens = () => {
   return (
     <TokenGrid
       caption="deprecated space tokens"
-      headings={[
-        'Sample',
-        'CSS Variable',
-        'JS Variable',
-        'Value',
-        'Calculated Value',
-        'Pixel Value',
-      ]}
+      headings={['Sample', 'Usage', 'Value', 'Description']}
       rows={deprecatedSpaceTokensData}
     >
       {token => (
@@ -132,14 +136,18 @@ export const DeprecatedSpaceTokens = () => {
             />
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <TokenGrid.MonospaceLabel>var({token.cssVar})</TokenGrid.MonospaceLabel>
+              <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            </div>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <span>{token.calculatedValue}</span>
+              <span>{token.pxValue}</span>
+            </div>
           </TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.description ?? '—'}</TokenGrid.RowItem>
         </>
       )}
     </TokenGrid>
@@ -150,14 +158,7 @@ export const SizeTokens = () => {
   return (
     <TokenGrid
       caption="size tokens"
-      headings={[
-        'Sample',
-        'CSS Variable',
-        'JS Variable',
-        'Value',
-        'Calculated Value',
-        'Pixel Value',
-      ]}
+      headings={['Sample', 'Usage', 'Value', 'Description']}
       rows={sizeTokens}
     >
       {token => (
@@ -172,14 +173,18 @@ export const SizeTokens = () => {
             />
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <TokenGrid.MonospaceLabel>var({token.cssVar})</TokenGrid.MonospaceLabel>
+              <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            </div>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <span>{token.calculatedValue}</span>
+              <span>{token.pxValue}</span>
+            </div>
           </TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.description ?? '—'}</TokenGrid.RowItem>
         </>
       )}
     </TokenGrid>
@@ -190,14 +195,7 @@ export const PaddingTokens = () => {
   return (
     <TokenGrid
       caption="padding tokens"
-      headings={[
-        'Sample',
-        'CSS Variable',
-        'JS Variable',
-        'Value',
-        'Calculated Value',
-        'Pixel Value',
-      ]}
+      headings={['Sample', 'Usage', 'Value', 'Description']}
       rows={paddingTokens}
     >
       {token => (
@@ -221,14 +219,18 @@ export const PaddingTokens = () => {
             </div>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <TokenGrid.MonospaceLabel>var({token.cssVar})</TokenGrid.MonospaceLabel>
+              <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            </div>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <span>{token.calculatedValue}</span>
+              <span>{token.pxValue}</span>
+            </div>
           </TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.description ?? '—'}</TokenGrid.RowItem>
         </>
       )}
     </TokenGrid>
@@ -239,14 +241,7 @@ export const GapTokens = () => {
   return (
     <TokenGrid
       caption="gap tokens"
-      headings={[
-        'Sample',
-        'CSS Variable',
-        'JS Variable',
-        'Value',
-        'Calculated Value',
-        'Pixel Value',
-      ]}
+      headings={['Sample', 'Usage', 'Value', 'Description']}
       rows={gapTokens}
     >
       {token => (
@@ -270,14 +265,18 @@ export const GapTokens = () => {
             </div>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <TokenGrid.MonospaceLabel>var({token.cssVar})</TokenGrid.MonospaceLabel>
+              <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            </div>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <span>{token.calculatedValue}</span>
+              <span>{token.pxValue}</span>
+            </div>
           </TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.description ?? '—'}</TokenGrid.RowItem>
         </>
       )}
     </TokenGrid>
