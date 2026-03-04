@@ -1,5 +1,666 @@
 # @workday/canvas-tokens-web
 
+## 4.1.3
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Add missing descriptions to tokens
+    ([#274](https://github.com/Workday/canvas-tokens/pull/274))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+  ### Documentation
+
+  - docs: Update v4 Upgrade Guide ([#268](https://github.com/Workday/canvas-tokens/pull/268))
+    ([@alanbsmith](https://github.com/alanbsmith), Alan Smith,
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+  ### Infrastructure
+
+  - chore: Add functionality to generate info files for docs
+    ([#266](https://github.com/Workday/canvas-tokens/pull/266))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 4.1.2
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Map dep values to their original value
+    ([#265](https://github.com/Workday/canvas-tokens/pull/265))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 4.1.1
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Remove deprecated value transform from web group
+    ([#264](https://github.com/Workday/canvas-tokens/pull/264))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.1.0
+
+### Minor Changes
+
+-
+
+## 4.1.0-beta.0
+
+### Minor Changes
+
+- ### Components
+
+  - feat: Update order to match token ([#263](https://github.com/Workday/canvas-tokens/pull/263))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.6
+
+### Patch Changes
+
+- ### Tokens
+
+  - fix: Update jsdoc build ([#260](https://github.com/Workday/canvas-tokens/pull/260))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 4.0.5
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Update dep values to map to their old value to avoid visual breaking changes
+    ([#259](https://github.com/Workday/canvas-tokens/pull/259))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.4
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Update caution color for brand border and fg
+    ([#258](https://github.com/Workday/canvas-tokens/pull/258))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.3
+
+### Patch Changes
+
+- ### Components
+
+  - chore: Disable CSS minification ([#253](https://github.com/Workday/canvas-tokens/pull/253))
+    ([@sheelah](https://github.com/sheelah), Sheelah Brennan)
+  - Docs: Update motion code example ([#256](https://github.com/Workday/canvas-tokens/pull/256))
+    ([@sheelah](https://github.com/sheelah), Sheelah Brennan)
+  - fix: Trigger Sync ([#257](https://github.com/Workday/canvas-tokens/pull/257))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.2
+
+### Patch Changes
+
+- ### Components
+
+  - fix:Trigger Sync ([#252](https://github.com/Workday/canvas-tokens/pull/252))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.1
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Update doc for v4 upgrade ([#251](https://github.com/Workday/canvas-tokens/pull/251))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+## 4.0.0
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update release.yml to include permissions
+    ([#228](https://github.com/Workday/canvas-tokens/pull/228))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - chore: Update main release workflow to be OIDC compliant
+    ([#234](https://github.com/Workday/canvas-tokens/pull/234))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+  ### Dependencies
+
+  - chore: Bump Storybook version for security
+    ([#233](https://github.com/Workday/canvas-tokens/pull/233))
+    ([@alanbsmith](https://github.com/alanbsmith), Alan Smith)
+
+  ### Documentation
+
+  - fix: Remove deprecated values from base tokens
+    ([#221](https://github.com/Workday/canvas-tokens/pull/221))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+  - docs: Add documentation for custom Style Dictionary setup
+    ([#236](https://github.com/Workday/canvas-tokens/pull/236))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.1.6
+
+### Patch Changes
+
+- ### Components
+
+  - fix: Update release.yml to include permissions
+    ([#228](https://github.com/Workday/canvas-tokens/pull/228))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.1.5
+
+### Patch Changes
+
+- ### Documentation
+
+  - fix: Remove deprecated values from base tokens
+    ([#221](https://github.com/Workday/canvas-tokens/pull/221))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+## 3.1.4
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update upgrade guide and storybook examples
+    ([#249](https://github.com/Workday/canvas-tokens/pull/249))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+## 4.0.0-alpha.16
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update to use whole number values
+    ([#250](https://github.com/Workday/canvas-tokens/pull/250))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.0-alpha.15
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add initial motion tokens docs ([#247](https://github.com/Workday/canvas-tokens/pull/247))
+    ([@sheelah](https://github.com/sheelah), Copilot, Alan B Smith, Alan B Smith, Alan B Smith,
+    Sheelah Brennan, Copilot, Alan B Smith)
+
+## 4.0.0-alpha.14
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update breakpoints tokens and remove icon tokens
+    ([#248](https://github.com/Workday/canvas-tokens/pull/248))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.0-alpha.13
+
+### Major Changes
+
+- ### Components
+
+  - feat: Add motion tokens ([#245](https://github.com/Workday/canvas-tokens/pull/245))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@sheelah](https://github.com/sheelah), Sheelah
+    Brennan)
+
+  ### Infrastructure
+
+  - chore: Remove unused code ([#244](https://github.com/Workday/canvas-tokens/pull/244))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 4.0.0-alpha.12
+
+### Major Changes
+
+- ### Components
+
+  - fix: Setup CI check to track removals
+    ([#243](https://github.com/Workday/canvas-tokens/pull/243))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.0-alpha.11
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update fg info color ([#242](https://github.com/Workday/canvas-tokens/pull/242))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.0-alpha.10
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix discrepancies ([#241](https://github.com/Workday/canvas-tokens/pull/241))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera,
+    [@mannycarrera4](https://github.com/mannycarrera4), [@Copilot](https://github.com/Copilot))
+
+## 4.0.0-alpha.9
+
+### Major Changes
+
+- ### Components
+
+  - fix: Replace delete with unlink ([@mannycarrera4](https://github.com/mannycarrera4))
+
+  ### Infrastructure
+
+  - chore: Add script to verify tokens ([#240](https://github.com/Workday/canvas-tokens/pull/240))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 4.0.0-alpha.8
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update sys tokens to match the object structure
+    ([#238](https://github.com/Workday/canvas-tokens/pull/238))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+## 4.0.0-alpha.7
+
+### Major Changes
+
+- ### Components
+
+  - feat: Add alpha colors to base palette and new brand, surface, focus and shape tokens
+    ([#237](https://github.com/Workday/canvas-tokens/pull/237))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+## 4.0.0-alpha.6
+
+### Major Changes
+
+- ### Infrastructure
+
+  - fix: Fix deprecation label in objects
+    ([#230](https://github.com/Workday/canvas-tokens/pull/230))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 4.0.0-alpha.5
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix visual report to match new folder structure
+    ([#235](https://github.com/Workday/canvas-tokens/pull/235))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@Copilot](https://github.com/Copilot))
+
+## 4.0.0-alpha.4
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update GettingStarted.mdx ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update GettingStarted.mdx ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.0-alpha.3
+
+### Major Changes
+
+- ### Components
+
+  - fix: Remove repository url ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Remove provenance flag ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update package.json for prevenance ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.0-alpha.2
+
+### Major Changes
+
+- ### Components
+
+  - fix: Changes sizes to be xxl or xxs instead of number
+    ([#225](https://github.com/Workday/canvas-tokens/pull/225))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Change contents permission from read to write
+    ([#226](https://github.com/Workday/canvas-tokens/pull/226))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Remove npm registry and scope from release.yml
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Test updated release ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update release.yml and revert to original state
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Update package.json ([@mannycarrera4](https://github.com/mannycarrera4))
+
+  ### Infrastructure
+
+  - chore: Update release action to use OpenID Connect
+    ([#223](https://github.com/Workday/canvas-tokens/pull/223))
+    ([@alanbsmith](https://github.com/alanbsmith), Alan Smith)
+
+  ### Try to add url registry and scope
+
+  - fix: Add registry URL ([#227](https://github.com/Workday/canvas-tokens/pull/227))
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 4.0.0-alpha.1
+
+### Major Changes
+
+- ### Components
+
+  - fix: Add deprecated static tokens back in
+    ([#202](https://github.com/Workday/canvas-tokens/pull/202))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera,
+    [@mannycarrera4](https://github.com/mannycarrera4))
+  - fix: Add value to deprecated dragon fruit to build correctly
+    ([#216](https://github.com/Workday/canvas-tokens/pull/216))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Update comment ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Documentation
+
+  - docs: Token v3 announcement ([#194](https://github.com/Workday/canvas-tokens/pull/194))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Fix docs links ([#195](https://github.com/Workday/canvas-tokens/pull/195))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - docs: Fix inverse token ([#198](https://github.com/Workday/canvas-tokens/pull/198))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - fix: Fix value transforms ([#215](https://github.com/Workday/canvas-tokens/pull/215))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Tokens
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#197](https://github.com/Workday/canvas-tokens/pull/197))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) The following tokens have been fixed to match a
+    figma value:
+    - : color alpha has been changed from to .
+    - / / : base color has been changed from to .
+    - / / / : base color has been changed from to .
+    - / / : base color has been changed from to .
+    - / / : base color has been changed from to
+    - / : base color has been changed from to
+  - fix: Update caution color mapping ([#200](https://github.com/Workday/canvas-tokens/pull/200))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+    - / : base color has been reverted from to
+    - / : base color has been reverted from to
+
+## 4.0.0-alpha.0
+
+### Major Changes
+
+- ### Components
+
+  - feat: Add new base size and shape tokens
+    ([#214](https://github.com/Workday/canvas-tokens/pull/214))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0
+
+### Major Changes
+
+- ### Components
+
+  - chore: Remove options ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Set node var ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Update release action ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.21
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix wording ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - fix: Remove sync script ([#156](https://github.com/Workday/canvas-tokens/pull/156))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.20
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add js var names ([#191](https://github.com/Workday/canvas-tokens/pull/191))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.19
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#190](https://github.com/Workday/canvas-tokens/pull/190))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.18
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Update base token section with deprecated
+    ([#189](https://github.com/Workday/canvas-tokens/pull/189))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.17
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add llm txt file to overview page
+    ([#187](https://github.com/Workday/canvas-tokens/pull/187))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.16
+
+### Major Changes
+
+- ### Documentation
+
+  - docs: Add v3 Upgrade guide ([#184](https://github.com/Workday/canvas-tokens/pull/184))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.15
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#183](https://github.com/Workday/canvas-tokens/pull/183))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.13
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#181](https://github.com/Workday/canvas-tokens/pull/181))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.12
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix transparent transform ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.11
+
+### Major Changes
+
+- ### Components
+
+  - chore: Sync tokens from canvas-tokens-studio
+    ([#178](https://github.com/Workday/canvas-tokens/pull/178))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Update transparent descriptions ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.10
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#176](https://github.com/Workday/canvas-tokens/pull/176))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.9
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#174](https://github.com/Workday/canvas-tokens/pull/174))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.8
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#173](https://github.com/Workday/canvas-tokens/pull/173))
+    ([@RayRedGoose](https://github.com/RayRedGoose), manuel.carrera,
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.7
+
+### Major Changes
+
+- ### Web Tokens
+
+  - fix: Filter action tokens from css files
+    ([#171](https://github.com/Workday/canvas-tokens/pull/171))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera)
+
+## 3.0.0-alpha.6
+
+### Major Changes
+
+- ### Components
+
+  - feat: Deprecate old fruit based tokens and map them to new color palette value
+    ([#159](https://github.com/Workday/canvas-tokens/pull/159))
+    ([@mannycarrera4](https://github.com/mannycarrera4), manuel.carrera,
+    [@alanbsmith](https://github.com/alanbsmith), [@RayRedGoose](https://github.com/RayRedGoose))
+    We've deprecated the fruit based color tokens and provided a mapping to new base tokens for the
+    new color palette. In the docs, we provide a mapping of the new CSS token and JS token.
+
+## 3.0.0-alpha.5
+
+### Major Changes
+
+- ### Components
+
+  - chore: Sync tokens from canvas-tokens-studio
+    ([@mannycarrera4](https://github.com/mannycarrera4))
+  - feat: Sync tokens from canvas-tokens-studio ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.4
+
+### Major Changes
+
+- ### Components
+
+  - fix: Update red base color to be 600 ([@mannycarrera4](https://github.com/mannycarrera4))
+
+## 3.0.0-alpha.3
+
+### Major Changes
+
+- ### Components
+
+  - feat: Sync tokens from canvas-tokens-studio
+    ([#163](https://github.com/Workday/canvas-tokens/pull/163))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.2
+
+### Major Changes
+
+- ### Tokens
+
+  - fix: Fix transparent values ([#162](https://github.com/Workday/canvas-tokens/pull/162))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) values with opacity 0 have been changed to
+    'transparent' value in css.
+
+## 3.0.0-alpha.1
+
+### Major Changes
+
+- ### Components
+
+  - chore: Skip release on chore commits ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Return default token for fg critical ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Fix release script ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 3.0.0-alpha.0
+
+### Major Changes
+
+- ### Components
+
+  - chore: Fix release ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Use npm tokens ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - chore: Add updated release action ([#145](https://github.com/Workday/canvas-tokens/pull/145))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
+  ### Tokens
+
+  - chore: Sync tokens from canvas-tokens-studio
+    ([#151](https://github.com/Workday/canvas-tokens/pull/151))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Alpha version of new color tokens.
+
 ## 2.1.1
 
 ### Patch Changes

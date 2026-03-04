@@ -8,23 +8,25 @@ import {
   sortSystemColorPalette,
 } from '../../../../components/ColorGrid';
 
-const textPalette = buildPalette('system.color.text', {
-  default: system.color.text.default,
-  strong: system.color.text.strong,
-  stronger: system.color.text.stronger,
-  hint: system.color.text.hint,
-  disabled: system.color.text.disabled,
-  inverse: system.color.text.inverse,
+const textPalette = buildPalette('system.color.fg', {
+  default: system.color.fg.default,
+  strong: system.color.fg.strong,
+  stronger: system.color.fg.stronger,
+  disabled: system.color.fg.disabled,
+  'muted.default': system.color.fg.muted.default,
+  'muted.strong': system.color.fg.muted.strong,
+  inverse: system.color.fg.inverse,
+  ai: system.color.fg.ai,
 }).sort(sortSystemColorPalette);
 
 export const TextColors = () => <ColorGrid name="Text Default Colors" palette={textPalette} />;
 
 const statusPalettes = buildPaletteGroup(
-  'system.color.text',
+  'system.color.fg',
   {
-    primary: system.color.text.primary,
-    caution: system.color.text.caution,
-    critical: system.color.text.critical,
+    success: system.color.fg.success,
+    warning: system.color.fg.warning,
+    danger: system.color.fg.danger,
   },
   sortSystemColorPalette
 );
@@ -32,3 +34,17 @@ const statusPalettes = buildPaletteGroup(
 export const TextStatusColors = () => (
   <ColorGrid name="Text Status Colors" palette={statusPalettes} />
 );
+
+const primaryPalette = buildPalette('system.color.brand.fg.primary', system.color.brand.fg.primary).sort(
+  sortSystemColorPalette
+);
+
+export const TextPrimaryColors = () => (
+  <ColorGrid name="Text Primary Colors" palette={primaryPalette} />
+);
+
+const infoPalette = buildPalette('system.color.fg.info', system.color.fg.info).sort(
+  sortSystemColorPalette
+);
+
+export const TextInfoColors = () => <ColorGrid name="Text Info Colors" palette={infoPalette} />;

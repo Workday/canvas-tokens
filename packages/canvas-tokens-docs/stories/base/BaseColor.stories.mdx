@@ -1,0 +1,62 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import {BaseColorTokens} from './examples/Color';
+
+<Meta title="Docs/Base Tokens/Color" />
+
+<Unstyled>
+
+# Base Color Tokens
+
+Base tokens are the foundation of our token system. They provide the core values for our brand and
+system tokens. Base tokens are **not themed variables**, so you should generally opt to use system
+and brand tokens first. However, if you're not concerned with theming a particular property, using a
+base token directly is an acceptable option.
+
+## Usage
+
+Base tokens can be consumed as a JavaScript / TypeScript object. Each token value references a CSS
+variable, so you'll need to have the CSS variables imported in your application as well. This is
+discussed further in the [Getting Started guide](/docs/docs-getting-started--docs). Unlike
+JavaScript variables, CSS custom properties (variables) need to be wrapped in `var()` to be valid.
+If you're new to CSS variables, it might take a bit for that to feel intuitive.
+
+> In the example below, we're importing CSS variables in the file directly for clarity. But you'll
+> likely want to do this at the top-level of your application to avoid redundancy and
+> unintentionally overwriting values.
+
+```ts
+// styles.ts
+import '@workday/canvas-tokens-web/css/base/_variables.css';
+import {base} from '@workday/canvas-tokens-web';
+
+const styles = {
+  backgroundColor: `var(${base.blue400})`,
+  color: `var(${base.neutral0})`,
+};
+```
+
+They can also be consumed as CSS, Sass, or Less variables. In the example below, we're applying the
+same styles using CSS variables directly.
+
+```css
+// styles.css
+@import '@workday/canvas-tokens-web/css/base/_variables.css';
+
+.button {
+  background-color: var(--cnvs-base-palette-blue-400);
+  color: var(--cnvs-base-palette-neutral-0);
+}
+```
+
+---
+
+## Color
+
+Base colors provide the core palettes that make up our UI. There are thirteen palettes in total and
+they don't have any inherent contextual meaning on when and where they should be used.
+
+<br />
+<BaseColorTokens />
+
+</Unstyled>

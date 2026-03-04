@@ -2,19 +2,14 @@ import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 
 import {
-  buildPaletteGroup,
+  buildPalette,
   ColorGrid,
   sortSystemColorPalette,
 } from '../../../../components/ColorGrid';
 
-const statusPalettes = buildPaletteGroup(
-  'system.color.shadow',
-  {
-    default: system.color.shadow.default,
-    '1': system.color.shadow['1'],
-    '2': system.color.shadow['2'],
-  },
-  sortSystemColorPalette
-);
+const shadowPalette = buildPalette('system.color.shadow', {
+  base: system.color.shadow.base,
+  ambient: system.color.shadow.ambient,
+}).sort(sortSystemColorPalette);
 
-export const ShadowColors = () => <ColorGrid name="Text Status Colors" palette={statusPalettes} />;
+export const ShadowColors = () => <ColorGrid name="Shadow Colors" palette={shadowPalette} variableType="system" />;

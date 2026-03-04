@@ -1,0 +1,130 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {DownloadLLMFile} from '../../components/DownloadLLMFile';
+import {NavCard} from '../../components/NavCard';
+import {StatusIndicator} from '../../components/StatusIndicator';
+
+<Meta title="Guides/Upgrade Guides/v3/Overview" />
+
+<Unstyled>
+
+# What's New in v3
+
+We've overhauled our color system to align with Workday's new brand identity, while also making
+improvements to our underlying colors to be more functional, accessible, and extensible. These
+updates remap our existing brand and system tokens to our new color palettes. We also introduce new
+token variants that provide better cover for the use cases of Workday's diverse products.
+
+#### v2 → v3
+
+If you're migrating from v2.0 to v3.0, the biggest changes will be:
+
+- **Colors now use `oklch` instead of `RGBA`**, which will result in colors being perceived
+  differently.
+- **New base palette colors**: `blue`, `green`, `red`, `amber`, `purple`, `orange`, `neutral`,
+  `azure`, `magenta`, `teal`, `indigo`, `coral` and `slate`.
+- **Depecation of old "fruit" based colors**: Colors named after Jellybean flavors (i.e.
+  `ToastedMarshmallow`) were marked as deprecated and map to the new palette colors.
+
+> **Important**: The new color palette is always a **breaking change**. To reduce the impact, we
+> strongly suggest using `system` or `brand` tokens instead of `base` tokens.
+
+<br />
+
+#### Canvas Kit React tokens → v3
+
+If you're migrating from old tokens from `@workday/canvas-kit-react/tokens` follow our v14 Migration
+guide that provides step-by-step migration process instructions.
+
+<NavCard
+  title="React Tokens Migration Guide"
+  link="https://workday.github.io/canvas-kit/?path=/docs/guides-tokens-migration-overview--docs"
+/>
+
+#### LLM Assisted Migration <StatusIndicator type="ai" content="AI Content" />
+
+We've provided an **LLM migration mapping file** (`llm-canvas-kit-upgrade-guide-v14.txt`)
+specifically designed for use with LLM-based code assistants such as
+[Cursor](https://www.cursor.so/). It contains a compiled LLM consumption version of this v14 Upgrade
+Guide. It is not intended for direct human reference or team documentation, but rather as structured
+input for LLMs to automate and assist with your migration process.
+
+> **Important**: LLMs can make mistakes. Please review changes to be sure they are correct using our
+> docs and upgrade guides
+
+This file contains a comprehensive mapping of deprected base palette token usages to their new
+equivalents in v3, along with migration tips and examples and formatted for optimal LLM consumption.
+
+**How to use:**
+
+- **View raw file**: Open the file in a new tab to see the complete migration mapping
+- **Download as txt**: Save the file locally to upload or paste into your LLM/code assistant
+- **Use with LLM**: Provide the raw content to your LLM/code assistant as context for automated
+  migration
+
+<DownloadLLMFile
+  rawFileLink="https://raw.githubusercontent.com/Workday/canvas-tokens/master/packages/canvas-tokens-docs/llm-txt/llm-token-migration-3.0.0.txt"
+  filename="llm-token-migration-3.0.0.txt"
+/>
+
+### RGBA to OKLCH
+
+Colors are designed using `oklch`, a perceptually uniform color space. `oklch` ensures that two
+colors with the same lightness will appear equal in brightness – a longstanding issue of traditional
+color spaces like RGB and HSL.
+
+- More predictable contrast ratios
+- Scales well with theming, modes
+- Device and gamut independent
+
+<NavCard
+  title="Learn more about OKLCH"
+  link="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch"
+/>
+
+### New Base Palette
+
+To reduce ambiguity over color values, Base colors have been renamed to use common terms (like
+`red.600`) that are easier to understand for everyone. The color scale has been increased from 5 to
+13 steps. Steps in the new scale go from 0 (white) to 1000 (black), each step being designed for at
+least one use case. Colors are designed to feel perceptually balanced - meaning colors with the same
+step number (ex. `red.200` and `blue.200`) will feel similar in brightness and saturation.
+
+> **Important:** The previous palette "fruity" colors are deprecated and mapped to use new palette
+> colors. Be aware that the color scale in v3 uses `oklch` which is different to `rgb` and the new
+> color of deprecated token can be not 1:1 replacement of the old color.
+
+<br />
+
+<NavCard
+  title="Base Tokens"
+  description="Check newest palette"
+  link="https://workday.github.io/canvas-tokens/?path=/docs/docs-base-tokens--docs#color"
+/>
+
+#### Brand and System Tokens
+
+Brand and system tokens have been revised to offer improved flexibility and clarity. As part of this
+update, many legacy color values have been replaced with new palette colors, expanding the palette
+to promote consistency and accessibility throughout the system. The main changes are:
+
+- The brand token set has been extended to provide more flexibility and coverage for common use
+  cases.
+- New system color groups have been added: `ai`, `info` and `transparent`, other groups have been
+  extended by new tokens.
+- The fully transparent color changed from `sys.color.bg.transparent` to
+  `sys.color.bg.transparen.default`.
+- New system shape token has been added, `system.shape.x1Half`, to support 6px value as border
+  radius.
+
+<NavCard
+  title="New palette colors"
+  link="https://workday.github.io/canvas-tokens/?path=/docs/docs-base-tokens--docs"
+/>
+
+#### Canvas Kit React compatability
+
+For optimal brand alignment, we recommend using v3 tokens with Canvas Kit React v14. While it is
+possible to use v3 tokens with earlier versions, this may result in visual inconsistencies due to
+changes in the values of deprecated tokens.
+
+</Unstyled>

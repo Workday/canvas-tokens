@@ -76,14 +76,17 @@ const TokenGridSwatch: React.FC<React.HTMLProps<HTMLSpanElement>> = ({className,
   <span className={classNames('token-grid__swatch', className)} {...props} />
 );
 
-const TokenGridMonospaceLabel: React.FC<React.HTMLProps<HTMLSpanElement>> = ({
-  className,
-  children,
-  ...props
-}) => {
+const TokenGridMonospaceLabel: React.FC<
+  React.HTMLProps<HTMLSpanElement> & {isDeprecated?: boolean}
+> = ({className, children, isDeprecated, ...props}) => {
   return (
     <span
-      className={classNames('token-grid__monospace-label cnvs-sys-type-subtext-medium', className)}
+      className={classNames(
+        'token-grid__monospace-label',
+        `cnvs-sys-type-subtext-medium ${
+          isDeprecated ? 'token-grid__deprecate-monospace-label' : className
+        }`
+      )}
       {...props}
     >
       {children}

@@ -1,0 +1,63 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import {
+  SurfaceColors,
+  SurfaceAltColors,
+  SurfaceContrastColors,
+  SurfaceOverlayColors,
+  SurfaceStatusColors,
+  SurfaceAIColors,
+} from './examples/Color/Surface';
+
+<Meta title="Docs/System Tokens/Color/Surface (New)" />
+
+<Unstyled>
+
+# Surface Colors
+
+System surface color tokens provide values for surfaces.
+
+## Usage
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  backgroundColor: `var(${system.color.surface.default})`,
+};
+```
+
+```css
+// styles.css
+.card {
+  background-color: var(--cnvs-sys-color-surface-default);
+}
+```
+
+## Tokens
+
+<SurfaceColors />
+
+
+---
+
+<SurfaceOverlayColors />
+
+---
+
+<SurfaceStatusColors />
+
+---
+
+<SurfaceContrastColors />
+
+---
+
+<SurfaceAIColors />
+
+---
+
+<SurfaceAltColors/>
+
+</Unstyled>

@@ -1,0 +1,69 @@
+.download-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: var(--cnvs-sys-color-bg-default);
+  border: 1px dashed var(--cnvs-sys-color-border-divider);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--cnvs-sys-font-family-default);
+  padding: 32px;
+  margin-bottom: 24px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.download-card-filename {
+  background-color: var(--cnvs-sys-color-bg-alt-softer);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.download-card-link {
+  color: var(--cnvs-sys-color-fg-primary-default);
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.download-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.download-card-link svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--cnvs-sys-color-fg-primary-default);
+}
+
+.download-card-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background-color: var(--cnvs-sys-color-bg-default);
+  border: 1px solid var(--cnvs-sys-color-border-contrast-default);
+  border-radius: var(--cnvs-sys-shape-round);
+  padding: 8px 16px 8px 12px;
+  cursor: pointer;
+  font-family: var(--cnvs-sys-font-family-default);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cnvs-sys-color-fg-default);
+}
+
+.download-card-button svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--cnvs-sys-color-fg-default);
+}
+
+.download-card-button:hover {
+  background-color: var(--cnvs-sys-color-bg-contrast-default);
+  color: var(--cnvs-sys-color-fg-inverse);
+}
+
+.download-card-button:hover svg {
+  fill: var(--cnvs-sys-color-fg-inverse);
+}

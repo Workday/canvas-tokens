@@ -11,13 +11,22 @@ interface DepthToken {
   value: string;
 }
 
-const depthTokens: DepthToken[] = Object.entries(system.depth).map(([level, varName]) => {
-  const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
+// Depth levels 1-6 as per the token structure
+const depthLevels = ['1', '2', '3', '4', '5', '6'] as const;
+
+const depthTokens: DepthToken[] = depthLevels.map(level => {
+  // CSS variable format: --cnvs-sys-depth-{level}
+  const cssVarName = `--cnvs-sys-depth-${level}`;
+  const value =
+    typeof window !== 'undefined'
+      ? getComputedStyle(document.documentElement).getPropertyValue(cssVarName) || ''
+      : '';
+  const formattedValue = value ? value.split('),').join('),\n') : '';
 
   return {
-    cssVar: varName,
+    cssVar: cssVarName,
     jsVar: formatJSVar(`system.depth.${level}`),
-    value: value.split('),').join('),\n'),
+    value: formattedValue,
   };
 });
 
@@ -40,9 +49,11 @@ export function DepthTokens() {
             <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            {token.value.split('),').map((item, i) => (
-              <span key={i}>{i === 0 ? `${item})` : item}</span>
-            ))}
+            {token.value
+              ? token.value
+                  .split('),')
+                  .map((item, i) => <span key={i}>{i === 0 ? `${item})` : item}</span>)
+              : '—'}
           </TokenGrid.RowItem>
         </>
       )}
