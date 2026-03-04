@@ -1,5 +1,10 @@
 import {Formatter, formatHelpers} from 'style-dictionary';
 import {jsFileHeader} from './helpers/jsFileHeader';
+import {kebabCase} from 'case-anything';
+
+const getCSSVarName = (path: string[]) => {
+  return path.map(i => (!i.match(/^A\d+$/) ? kebabCase(i) : i.toLowerCase())).join('-');
+};
 
 /**
  * Style Dictionary format function that creates common-js file structure.
@@ -13,7 +18,7 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
     ? jsFileHeader({file})
     : formatHelpers.fileHeader({file});
   return dictionary.allTokens.reduce((acc: string, {name, path}) => {
-    const cssVarName = path.join('-');
+    const cssVarName = getCSSVarName(path);
     acc += `exports.${name} = "--cnvs-${cssVarName}";\n`;
     return acc;
   }, headerContent);
@@ -28,7 +33,7 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
 export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   return dictionary.allTokens.reduce((acc: string, {name, path}) => {
-    const cssVarName = path.join('-');
+    const cssVarName = getCSSVarName(path);
     acc += `export const ${name} = "--cnvs-${cssVarName}";\n`;
     return acc;
   }, headerContent);
@@ -44,7 +49,7 @@ export const formatInlineTypes: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   return dictionary.allTokens.reduce((acc: string, token) => {
     const {name, path, deprecated, deprecatedComment} = token;
-    const cssVarName = path.join('-');
+    const cssVarName = getCSSVarName(path);
     const deprecatedText = deprecated ? `/** @deprecated ${deprecatedComment} */\n` : '';
     acc += `${deprecatedText}export declare const ${name}: "--cnvs-${cssVarName}";\n`;
     return acc;

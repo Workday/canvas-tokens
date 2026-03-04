@@ -24,6 +24,7 @@ const preview: Preview = {
           'Guides',
           ['Upgrade Guides', 'Migrations'],
           'Visual Tests',
+          ['Deprecated']
         ],
       },
     },

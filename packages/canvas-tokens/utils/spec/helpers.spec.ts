@@ -135,7 +135,7 @@ describe('utils to change value', () => {
 
     const expected = {
       comment: 'Use for spaces between elements',
-      value: '1rem',
+      value: '0.25rem * 4',
       raw: '{base.unit} * 4',
     };
 

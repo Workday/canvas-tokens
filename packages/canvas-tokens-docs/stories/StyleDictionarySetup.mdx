@@ -1,0 +1,82 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {TokenGrid} from '../components/TokenGrid';
+
+<Meta title="Maintaining/Style Dictionary/_Overview" />
+
+<Unstyled>
+
+# Style Dictionary Setup
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Build Configuration](#build-configuration)
+- [Registration Process](#registration-process)
+- [Token Level Configuration](#token-level-configuration)
+
+## Overview
+
+This document describes the workflow for [Style Dictionary](https://styledictionary.com/) setup in
+the canvas-tokens package.
+
+The `build.ts` file serves as the main entry point for the Style Dictionary build process. It
+configures and orchestrates the entire token transformation pipeline.
+
+The build process uses a custom configuration helper (`setConfig`) that generates the Style
+Dictionary config object, minimizing duplication by centralizing settings across platforms and token
+levels. This helper also supports advanced customization, such as merging multiple formatters, and
+enables dynamic naming for formatters, transforms, or output file paths based on platform or level
+(e.g., using patterns like `{platform}/{level}` to organize outputs).
+
+## Build Configuration
+
+The build configuration provides the the following options.
+
+| Option           | Description                                                                                                                                        |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source Files     | Token JSON files located in `tokens/**/*.json`. [More](https://workday.github.io/canvas-tokens/?path=/docs/maintaining-token-json-structure--docs) |
+| Platforms        | Multiple output formats including `css`, `scss`, `less`, `es6`, and `common-js`.                                                                   |
+| Token Levels     | Three levels of tokens: `base`, `brand`, and `sys` (system).                                                                                       |
+| Platform Options | Options for each platform. [More](https://styledictionary.com/docs/configuration#platform-options)                                                 |
+
+### Example
+
+```ts
+const config = setConfig({
+  source: ['tokens/**/*.json'],
+  platforms: ['css', 'scss', 'less', 'es6', 'common-js'],
+  levels: ['base', 'brand', 'sys'],
+    platformOptions: {
+    'css, scss, less': {
+      buildPath: '../canvas-tokens-web/',
+      ...other options
+    },
+    ...other platform options
+  },
+});
+```
+
+## Registration Process
+
+The build file registers all custom components with Style Dictionary:
+
+| Component        | Description                                                                                                                                            |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Formats          | Custom formatters that generate file content are registered via `StyleDictionary.registerFormat()`.                                                    |
+| Filters          | Custom matchers that determine which tokens to include/exclude are registered via `StyleDictionary.registerFilter()`.                                  |
+| Transforms       | Custom transformers that modify token values or names are registered via `StyleDictionary.registerTransform()`.                                        |
+| Transform Groups | Pre-defined groups of transforms (e.g., `web` transform group, used for CSS transforms) are registered via `StyleDictionary.registerTransformGroup()`. |
+
+## Token Level Configuration
+
+The configuration uses modifiers to create different file outputs for different token levels:
+
+| Token Level         | Description                                                                                                       |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Base Tokens         | Generate simple variable files with code tokens only.                                                             |
+| Brand/System Tokens | Generate composite files that merge regular tokens, composite tokens (typography/composition), and shadow tokens. |
+
+The build process supports multiple file extensions per platform (e.g., `.sass` and `.scss` for SCSS
+platform) and can generate both JavaScript and TypeScript declaration files.
+
+</Unstyled>

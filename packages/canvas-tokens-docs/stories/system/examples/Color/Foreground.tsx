@@ -20,12 +20,23 @@ export const ForegroundColors = () => (
   <ColorGrid name="Foreground Default Colors" palette={foregroundPalette} variableType="system" />
 );
 
+// Helper to filter tokens to only include default and strong variants
+function filterStatusTokens(tokens: Record<string, string>) {
+  const filtered: Record<string, string> = {};
+  if (tokens.default) filtered.default = tokens.default;
+  if (tokens.strong) filtered.strong = tokens.strong;
+  return filtered;
+}
+
 const statusPalettes = buildPaletteGroup(
   'system.color.fg',
   {
-    caution: system.color.fg.caution,
-    critical: system.color.fg.critical,
-    positive: system.color.fg.positive,
+    warning: filterStatusTokens(system.color.fg.warning),
+    danger: filterStatusTokens(system.color.fg.danger),
+    success: filterStatusTokens(system.color.fg.success),
+    critical: filterStatusTokens(system.color.fg.critical),
+    positive: filterStatusTokens(system.color.fg.positive),
+    caution: filterStatusTokens(system.color.fg.caution)
   },
   sortSystemColorPalette
 );
@@ -34,7 +45,7 @@ export const ForegroundStatusColors = () => (
   <ColorGrid name="Foreground Status Colors" palette={statusPalettes} variableType="system" />
 );
 
-const mutedPalette = buildPalette('system.color.fg.muted', system.color.fg.muted).sort(
+const mutedPalette = buildPalette('system.color.fg.muted', filterStatusTokens(system.color.fg.muted)).sort(
   sortSystemColorPalette
 );
 
@@ -42,7 +53,7 @@ export const ForegroundMutedColors = () => (
   <ColorGrid name="Foreground Muted Colors" palette={mutedPalette} variableType="system" />
 );
 
-const primaryPalette = buildPalette('system.color.fg.primary', system.color.fg.primary).sort(
+const primaryPalette = buildPalette('system.color.brand.fg.primary', system.color.brand.fg.primary).sort(
   sortSystemColorPalette
 );
 
@@ -50,7 +61,7 @@ export const ForegroundPrimaryColors = () => (
   <ColorGrid name="Foreground Primary Colors" palette={primaryPalette} variableType="system" />
 );
 
-const infoPalette = buildPalette('system.color.fg.info', system.color.fg.info).sort(
+const infoPalette = buildPalette('system.color.fg.info', filterStatusTokens(system.color.fg.info)).sort(
   sortSystemColorPalette
 );
 
@@ -67,7 +78,7 @@ export const ForegroundContrastColors = () => (
 );
 
 const aiPalette = buildPalette('system.color.fg', {
-  ai: system.color.fg.default,
+  ai: system.color.fg.ai,
 }).sort(sortSystemColorPalette);
 
 export const ForegroundAIColors = () => (

@@ -1,6 +1,6 @@
 import {Meta, Unstyled} from '@storybook/blocks';
 import {AnnouncementBanner} from '../components/AnnouncementBanner';
-import banner from '../images/v3-banner.png';
+import banner from '../images/v4-banner.png';
 
 <Meta title="Docs/Getting Started" />
 <Unstyled>
@@ -9,8 +9,8 @@ import banner from '../images/v3-banner.png';
 
 <AnnouncementBanner
   img={banner}
-  link="https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-overview--docs"
-  linkText="View Upgrade Guide v3"
+  link="https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v4-overview--docs"
+  linkText="View Upgrade Guide v4"
 />
 
 ## Getting Started
@@ -56,6 +56,8 @@ in a JavaScript / TypeScript file as shown in the examples below.
 @import '@workday/canvas-tokens-web/css/system/_variables.css';
 @import '@workday/canvas-tokens-web/css/brand/_variables.css';
 ```
+
+**Note:** These should only be imported once at the root level of an application to ensure global theming.
 
 ```ts
 // index.ts

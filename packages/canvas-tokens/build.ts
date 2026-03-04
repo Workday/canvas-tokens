@@ -85,6 +85,18 @@ const config = setConfig({
   },
 });
 
+config.platforms['es6']?.files?.push({
+  destination: '../../canvas-tokens-docs/tokens/deprecated/index.json',
+  format: 'json/tokens-info-export',
+  filter: filters.isDeprecated,
+});
+
+config.platforms['es6']?.files?.push({
+  destination: '../../canvas-tokens-docs/tokens/deprecated/index.csv',
+  format: 'csv/tokens-info-export',
+  filter: filters.isDeprecated,
+});
+
 // Setup format to create ts file with type declarations
 
 Object.entries(formats).forEach(([key, value]) => {
@@ -112,13 +124,14 @@ StyleDictionary.registerTransformGroup({
   name: 'web',
   transforms: [
     'name/cti/kebab',
+    'value/duration/ms',
     'value/flatten-border',
     'value/flatten-oklch',
-    'value/hex-to-var',
     'value/shadow/flat-sys',
     'value/breakpoints/px',
     'value/wrapped-font-family',
     'value/math',
+    'value/opacity',
     'value/letter-spacing/px2rem',
     'value/font-weight/numbers',
     'value/line-height/px2rem',

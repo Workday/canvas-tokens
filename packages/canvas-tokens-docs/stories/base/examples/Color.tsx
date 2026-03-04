@@ -62,9 +62,14 @@ function buildPalettes(tokens: object) {
   const palettes: Record<string, ColorSwatch[]> = {};
 
   for (const key in tokens) {
-    // If it's a color token
-
-    if (colorRegExp.test(key)) {
+    // Exclude deprecated color palette names (whole word match)
+    if (
+      colorRegExp.test(key) &&
+      !deprecatedColorPaletteNames.some(deprecatedName => {
+        const wholeWordRegex = new RegExp(`^${deprecatedName}(?=\\d|$)`);
+        return wholeWordRegex.test(key);
+      })
+    ) {
       const name = key.replace(/\d+/, '');
 
       const swatch = buildColorSwatch(tokens[key as keyof typeof tokens], `base.${key}`);
@@ -93,8 +98,6 @@ function buildDeprecatedPalettes(tokens: object) {
 
     if (deprecatedColorRegExp.test(key)) {
       const name = key.replace(/\d+/, '');
-
-      console.log(key);
 
       const swatch = buildDeprecatedColorSwatch(tokens[key as keyof typeof tokens], `base.${key}`);
 

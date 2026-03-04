@@ -12,6 +12,10 @@ export const isBaseFontWeight: Matcher = ({type, path: [level, category]}) => {
   return level === 'base' && category === 'font-weight' && type === 'text';
 };
 
+export const isBaseDuration: Matcher = ({type, path: [level, category]}) => {
+  return level === 'base' && category === 'duration' && type === 'number';
+};
+
 export const isBorder: Matcher = ({type, path: [level]}) => {
   return level === 'sys' && type === 'border';
 };
@@ -35,13 +39,19 @@ export const isSysColor: Matcher = ({original}) => {
         original.value.some((v: Record<string, string>) => v.color.includes('oklch({'));
 };
 
-export const isMathExpression: Matcher = ({value}) => {
+export const isMathExpression: Matcher = ({path, value}) => {
+  if (!path) return false;
+
   const mathChars = [' + ', ' - ', ' * ', ' / '];
   return (
     typeof value === 'string' &&
     !value.includes('oklch') &&
     mathChars.some(char => value.includes(char))
   );
+};
+
+export const isDeprecated: Matcher = ({original}) => {
+  return original.deprecated;
 };
 
 export const isComposite: Matcher = ({type}) => {

@@ -7,8 +7,17 @@ import {mapFontWeight} from './mapFontWeight';
 import {transformMath} from './transformMath';
 import {transformNameToCamelCase} from './transformNameToCamelCase';
 import {transformHexToRgb} from './transformHexToRgb';
+import {durationMs} from './duration-ms';
 
 export const transforms: Record<string, Transform> = {
+  'value/deprecated': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isDeprecated,
+    transformer: ({value, fallback}) => {
+      return fallback || value;
+    },
+  },
   // transform function that changes any hex color value to rgba
   // not used now in web
   'value/hex-to-rgba': {
@@ -16,15 +25,6 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isHexColor,
     transformer: transformHexToRgb,
-  },
-  'value/hex-to-var': {
-    type: 'value',
-    transitive: true,
-    matcher: filter.isHexColor,
-    transformer: ({value, fallback}) => {
-      const fbValue = fallback?.match(/{(?<token>.+)}/)?.groups?.token;
-      return fbValue ? `var(--cnvs-${fbValue.split('.').join('-')})` : value;
-    },
   },
   'value/shadow/flat-sys': {
     type: 'value',
@@ -60,11 +60,9 @@ export const transforms: Record<string, Transform> = {
     matcher: filter.isSysColor,
     transformer: ({original: {value}}) => {
       // eslint-disable-next-line no-useless-escape
-      const updatedValue = value.replace(/{[\w\.]*}/g, (a: string) => {
-        const cssVar = `var(--cnvs-${a.replace(/{|}/g, '').replace(/\./g, '-')})`;
-        return cssVar.includes('palette') ? `from ${cssVar} l c h ` : ' ' + cssVar;
-      });
-
+      const updatedValue = value.replace(/{[\w\.]*}/g, (a: string) =>
+        a.includes('palette') ? `from ${a} l c h ` : ' ' + a
+      );
       return value.includes('{base.opacity.0}') ? 'transparent' : updatedValue;
     },
   },
@@ -79,8 +77,10 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isBreakpoints,
     transformer: ({value}) => {
-      const expr = `${value}`.replace('0.25rem', '4');
-      return `${math.evaluate(expr)}px`;
+      const isRem = value.includes('rem');
+      const expression = isRem ? value.replace('rem', '') : value;
+      const mathValue = math.evaluate(expression);
+      return isRem ? `${mathValue * 16}px` : mathValue;
     },
   },
   // transform function that changes a value to its CSS var name
@@ -109,6 +109,13 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isBorder,
     transformer: ({value: {color, width, style}}) => `${width} ${style} ${color}`,
+  },
+  // transform function that adds ms suffix to duration values
+  'value/duration/ms': {
+    type: 'value',
+    transitive: true,
+    matcher: filter.isBaseDuration,
+    transformer: durationMs,
   },
   // transform function that resolves math values:
   // calculates base tokens and adds `calc` to sys tokens
