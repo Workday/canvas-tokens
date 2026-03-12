@@ -510,12 +510,12 @@ semantics. All deprecated tokens point directly to their original values:
 
 **Alt Background Tokens**
 
-| Deprecated Token               | Replacement Token                                                                              |
-| ------------------------------ | ---------------------------------------------------------------------------------------------- |
-| `system.color.bg.alt.soft`     | `system.color.surface.alt.default`                                                             |
-| `system.color.bg.alt.softer`   | `system.color.surface.raised`                                                                  |
-| `system.color.bg.alt.strong`   | `system.color.surface.alt.default` with overlay (`system.color.surface.overlay.hover.default`) |
-| `system.color.bg.alt.stronger` | `system.color.surface.alt.default` with overlay (`system.color..default`)                      |
+| Deprecated Token               | Replacement Token                                                                                |
+| ------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `system.color.bg.alt.soft`     | `system.color.surface.alt.default`                                                               |
+| `system.color.bg.alt.softer`   | `system.color.surface.raised`                                                                    |
+| `system.color.bg.alt.strong`   | `system.color.surface.alt.default` with overlay (`system.color.surface.overlay.hover.default`)   |
+| `system.color.bg.alt.stronger` | `system.color.surface.alt.default` with overlay (`system.color.surface.overlay.pressed.default`) |
 
 **Transparent/Overlay Background Tokens**
 
@@ -659,7 +659,7 @@ mappings.
 | `system.color.icon.positive.default`  | `system.color.brand.fg.positive.default`                                           |
 | `system.color.icon.positive.strong`   | `system.color.brand.fg.positive.strong` with `system.color.accent.overlay.hover`   |
 | `system.color.icon.positive.stronger` | `system.color.brand.fg.positive.strong` with `system.color.accent.overlay.pressed` |
-| `system.color.icon.positive.soft`     | `system.color..default`                                                            |
+| `system.color.icon.positive.soft`     | `system.color.fg.success.default`                                                  |
 | `system.color.icon.positive.softer`   | `system.color.fg.success.default`                                                  |
 | `system.color.icon.critical.default`  | `system.color.brand.fg.critical.default`                                           |
 | `system.color.icon.critical.strong`   | `system.color.fg.danger.strong`                                                    |
@@ -689,7 +689,7 @@ consolidate them.
 | `system.color.fg.critical.soft`     | `system.color.fg.danger.default`                                                       |
 | `system.color.fg.critical.softer`   | `system.color.fg.danger.default`                                                       |
 | `system.color.fg.muted.stronger`    | `system.color.fg.muted.strong`                                                         |
-| `system.color.fg.muted.soft`        | `system.color.fg.muted`                                                                |
+| `system.color.fg.muted.soft`        | `system.color.fg.muted.default`                                                        |
 | `system.color.fg.primary.default`   | `system.color.brand.fg.primary.default`                                                |
 | `system.color.fg.primary.soft`      | `system.color.fg.info.default` or use `system.color.brand.fg.primary` for brand colors |
 | `system.color.fg.primary.softer`    | `system.color.fg.info.default` or use `system.color.brand.fg.primary` for brand colors |
@@ -701,7 +701,7 @@ consolidate them.
 | `system.color.fg.caution.stronger`  | `system.color.fg.warning.strong`                                                       |
 | `system.color.fg.caution.softer`    | `system.color.fg.warning.default`                                                      |
 | `system.color.fg.info.softer`       | `system.color.fg.ai`                                                                   |
-| `system.color.fg.info.soft`         | `system.color.fg.info`                                                                 |
+| `system.color.fg.info.soft`         | `system.color.fg.info.default`                                                         |
 | `system.color.fg.info.stronger`     | `system.color.fg.info.strong`                                                          |
 | `system.color.fg.positive.default`  | `system.color.brand.fg.positive.default`                                               |
 | `system.color.fg.positive.softer`   | `system.color.fg.success.default`                                                      |
@@ -711,7 +711,7 @@ consolidate them.
 
 #### System Border Color Tokens
 
-> Important: The `system.color.border.inverse` token is a breaking change. **Important** This is a >
+> Important: The `system.color.border.inverse` token is a breaking change. **Important** This is a
 > breaking change. Teams will have to update their code to use
 > `system.color.border.inverse.default`.
 
