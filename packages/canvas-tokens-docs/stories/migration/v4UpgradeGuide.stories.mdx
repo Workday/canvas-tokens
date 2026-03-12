@@ -7,10 +7,10 @@ import {StatusIndicator} from '../../components/StatusIndicator';
 
 ## What's New in v4
 
-Canvas Tokens v4 introduces significant updates to align with our Design Refresh,
-providing enhanced scalability, better product support, and a more comprehensive token system. This
-release focuses on improving the color system with extended alpha scales, updating brand tokens to
-use numerical naming conventions, and introducing new surface, focus, accent, and semantic tokens.
+Canvas Tokens v4 introduces significant updates to align with our Design Refresh, providing enhanced
+scalability, better product support, and a more comprehensive token system. This release focuses on
+improving the color system with extended alpha scales, updating brand tokens to use numerical naming
+conventions, and introducing new surface, focus, accent, and semantic tokens.
 
 ## Overview of Changes
 
@@ -299,8 +299,8 @@ improves code readability and ensures consistent sizing across components.
 
 | Token     | JS Value       | CSS Variable           | Description                               |
 | --------- | -------------- | ---------------------- | ----------------------------------------- |
-| size.xxxs | `base.size200` | `--cnvs-sys-size-xxxs` |                               |
-| size.xxs  | `base.size250` | `--cnvs-sys-size-xxs`  |                               |
+| size.xxxs | `base.size200` | `--cnvs-sys-size-xxxs` |                                           |
+| size.xxs  | `base.size250` | `--cnvs-sys-size-xxs`  |                                           |
 | size.xs   | `base.size300` | `--cnvs-sys-size-xs`   | Count Badge                               |
 | size.sm   | `base.size400` | `--cnvs-sys-size-sm`   | X-Small Buttons, Pills, Checkboxes        |
 | size.md   | `base.size500` | `--cnvs-sys-size-md`   | Small Buttons, Segmented Control, Tooltip |
@@ -312,8 +312,7 @@ improves code readability and ensures consistent sizing across components.
 
 Space tokens have been reorganized into semantic padding and gap tokens, replacing the previous
 generic `space.*` tokens. This provides clearer intent and better alignment with common CSS
-properties. Which token you choose depends
-on the context of how it's used. In general you should:
+properties. Which token you choose depends on the context of how it's used. In general you should:
 
 - use `padding` tokens for interior space (`padding` and `inset`)
 - use `gap` tokens for exterior space around and between elements (`gap` and `margin`)
@@ -334,8 +333,8 @@ on the context of how it's used. In general you should:
 
 ### Gap Tokens
 
-Gap tokens define spacing between elements (`gap` and `margin`), providing consistent spacing
-for component relationships and content organization.
+Gap tokens define spacing between elements (`gap` and `margin`), providing consistent spacing for
+component relationships and content organization.
 
 | Token    | JS Value       | CSS Variable          | Description                            |
 | -------- | -------------- | --------------------- | -------------------------------------- |
@@ -392,46 +391,46 @@ Most of our brand tokens are being replaced by brand tokens with numerical scale
 them more versatile to create accessible color palettes. However, some deprecated brand tokens map
 to system colors instead. Refer to the table below for the specific token mappings.
 
-| Deprecated Token             | Replacement Token            |
-| ---------------------------- | ---------------------------- |
-| `brand.primary.lightest`     | `brand.primary25`            |
-| `brand.primary.lighter`      | `brand.primary50`            |
-| `brand.primary.light`        | `brand.primary200`           |
-| `brand.primary.dark`         | `brand.primary700`           |
-| `brand.primary.darkest`      | `brand.primary800`           |
-| `brand.primary.accent`       | `system.color.fg.inverse`    |
-| `brand.error.base`           | `brand.critical600`          |
-| `brand.error.lightest`       | `brand.critical25`           |
-| `brand.error.lighter`        | `brand.critical50`           |
-| `brand.error.light`          | `brand.critical200`          |
-| `brand.error.dark`           | `brand.critical700`          |
-| `brand.error.darkest`        | `brand.critical800`          |
-| `brand.error.accent`         | `system.color.fg.inverse`    |
-| `brand.alert.base`           | `brand.caution400`           |
-| `brand.alert.lightest`       | `brand.caution25`            |
-| `brand.alert.lighter`        | `brand.caution50`            |
-| `brand.alert.light`          | `brand.caution200`           |
-| `brand.alert.dark`           | `brand.caution500`           |
-| `brand.alert.darkest`        | `brand.caution600`           |
-| `brand.alert.accent`         | `system.color.fg.contrast`   |
-| `brand.success.base`         | `brand.positive600`          |
-| `brand.success.lightest`     | `brand.positive25`           |
-| `brand.success.lighter`      | `brand.positive50`           |
-| `brand.success.light`        | `brand.positive200`          |
-| `brand.success.dark`         | `brand.positive700`          |
-| `brand.success.darkest`      | `brand.positive800`          |
-| `brand.success.accent`       | `system.color.fg.inverse`    |
-| `brand.neutral.lightest`     | `brand.neutral25`            |
-| `brand.neutral.lighter`      | `brand.neutral50`            |
-| `brand.neutral.light`        | `brand.neutral200`           |
-| `brand.neutral.base`         | `brand.neutral600`           |
-| `brand.neutral.dark`         | `brand.neutral700`           |
-| `brand.neutral.darkest`      | `brand.neutral800`           |
-| `brand.neutral.accent`       | `system.color.fg.inverse`    |
-| `brand.common.focus-outline` | `brand.common.focus`         |
-| `brand.common.errorInner`    | `brand.common.critical`      |
-| `brand.common.alertInner`    | `brand.common.caution.inner` |
-| `brand.common.alertOuter`    | `brand.common.caution.outer` |
+| Deprecated Token             | Replacement Token                  |
+| ---------------------------- | ---------------------------------- |
+| `brand.primary.lightest`     | `brand.primary25`                  |
+| `brand.primary.lighter`      | `brand.primary50`                  |
+| `brand.primary.light`        | `brand.primary200`                 |
+| `brand.primary.dark`         | `brand.primary700`                 |
+| `brand.primary.darkest`      | `brand.primary800`                 |
+| `brand.primary.accent`       | `system.color.fg.inverse`          |
+| `brand.error.base`           | `brand.critical600`                |
+| `brand.error.lightest`       | `brand.critical25`                 |
+| `brand.error.lighter`        | `brand.critical50`                 |
+| `brand.error.light`          | `brand.critical200`                |
+| `brand.error.dark`           | `brand.critical700`                |
+| `brand.error.darkest`        | `brand.critical800`                |
+| `brand.error.accent`         | `system.color.fg.inverse`          |
+| `brand.alert.base`           | `brand.caution400`                 |
+| `brand.alert.lightest`       | `brand.caution25`                  |
+| `brand.alert.lighter`        | `brand.caution50`                  |
+| `brand.alert.light`          | `brand.caution200`                 |
+| `brand.alert.dark`           | `brand.caution500`                 |
+| `brand.alert.darkest`        | `brand.caution600`                 |
+| `brand.alert.accent`         | `system.color.fg.contrast.default` |
+| `brand.success.base`         | `brand.positive600`                |
+| `brand.success.lightest`     | `brand.positive25`                 |
+| `brand.success.lighter`      | `brand.positive50`                 |
+| `brand.success.light`        | `brand.positive200`                |
+| `brand.success.dark`         | `brand.positive700`                |
+| `brand.success.darkest`      | `brand.positive800`                |
+| `brand.success.accent`       | `system.color.fg.inverse`          |
+| `brand.neutral.lightest`     | `brand.neutral25`                  |
+| `brand.neutral.lighter`      | `brand.neutral50`                  |
+| `brand.neutral.light`        | `brand.neutral200`                 |
+| `brand.neutral.base`         | `brand.neutral600`                 |
+| `brand.neutral.dark`         | `brand.neutral700`                 |
+| `brand.neutral.darkest`      | `brand.neutral800`                 |
+| `brand.neutral.accent`       | `system.color.fg.inverse`          |
+| `brand.common.focus-outline` | `brand.common.focus`               |
+| `brand.common.errorInner`    | `brand.common.critical`            |
+| `brand.common.alertInner`    | `brand.common.caution.inner`       |
+| `brand.common.alertOuter`    | `brand.common.caution.outer`       |
 
 ### Deprecated Space Tokens
 
@@ -511,12 +510,12 @@ semantics. All deprecated tokens point directly to their original values:
 
 **Alt Background Tokens**
 
-| Deprecated Token               | Replacement Token                                                                        |
-| ------------------------------ | ---------------------------------------------------------------------------------------- |
-| `system.color.bg.alt.soft`     | `system.color.surface.alt.default`                                                       |
-| `system.color.bg.alt.softer`   | `system.color.surface.raised`                                                            |
-| `system.color.bg.alt.strong`   | `system.color.surface.alt.default` with overlay (`system.color.surface.overlay.hover`)   |
-| `system.color.bg.alt.stronger` | `system.color.surface.alt.default` with overlay (`system.color.surface.overlay.pressed`) |
+| Deprecated Token               | Replacement Token                                                                              |
+| ------------------------------ | ---------------------------------------------------------------------------------------------- |
+| `system.color.bg.alt.soft`     | `system.color.surface.alt.default`                                                             |
+| `system.color.bg.alt.softer`   | `system.color.surface.raised`                                                                  |
+| `system.color.bg.alt.strong`   | `system.color.surface.alt.default` with overlay (`system.color.surface.overlay.hover.default`) |
+| `system.color.bg.alt.stronger` | `system.color.surface.alt.default` with overlay (`system.color..default`)                      |
 
 **Transparent/Overlay Background Tokens**
 
@@ -617,29 +616,29 @@ mappings.
 | `system.color.text.critical.default`  | `system.color.brand.fg.critical.default` |
 | `system.color.text.critical.strong`   | `system.color.brand.fg.critical.strong`  |
 | `system.color.text.critical.stronger` | `system.color.brand.fg.critical.strong`  |
-| `system.color.text.critical.soft`     | `system.color.fg.danger`                 |
-| `system.color.text.critical.softer`   | `system.color.fg.danger`                 |
+| `system.color.text.critical.soft`     | `system.color.fg.danger.default`         |
+| `system.color.text.critical.softer`   | `system.color.fg.danger.default`         |
 | `system.color.text.primary.default`   | `system.color.brand.fg.primary.default`  |
 | `system.color.text.primary.strong`    | `system.color.brand.fg.primary.strong`   |
 | `system.color.text.primary.stronger`  | `system.color.brand.fg.primary.strong`   |
-| `system.color.text.primary.soft`      | `system.color.fg.info`                   |
-| `system.color.text.primary.softer`    | `system.color.fg.info`                   |
-| `system.color.text.caution.default`   | `system.color.fg.warning`                |
+| `system.color.text.primary.soft`      | `system.color.fg.info.default`           |
+| `system.color.text.primary.softer`    | `system.color.fg.info.default`           |
+| `system.color.text.caution.default`   | `system.color.fg.warning.default`        |
 | `system.color.text.caution.strong`    | `system.color.fg.contrast.strong`        |
-| `system.color.text.caution.soft`      | `system.color.fg.warning`                |
+| `system.color.text.caution.soft`      | `system.color.fg.warning.default`        |
 | `system.color.text.caution.stronger`  | `system.color.fg.contrast.strong`        |
-| `system.color.text.caution.softer`    | `system.color.fg.warning`                |
+| `system.color.text.caution.softer`    | `system.color.fg.warning.default`        |
 | `system.color.text.ai`                | `system.color.fg.ai`                     |
 | `system.color.text.positive.default`  | `system.color.brand.fg.positive.default` |
 | `system.color.text.positive.strong`   | `system.color.brand.fg.positive.strong`  |
 | `system.color.text.positive.stronger` | `system.color.brand.fg.positive.strong`  |
-| `system.color.text.positive.soft`     | `system.color.fg.success`                |
-| `system.color.text.positive.softer`   | `system.color.fg.success`                |
+| `system.color.text.positive.soft`     | `system.color.fg.success.default`        |
+| `system.color.text.positive.softer`   | `system.color.fg.success.default`        |
 | `system.color.text.info.default`      | `system.color.fg.info.default`           |
 | `system.color.text.info.strong`       | `system.color.fg.info.strong`            |
 | `system.color.text.info.stronger`     | `system.color.fg.info.strong`            |
 | `system.color.text.info.soft`         | `system.color.fg.info.default`           |
-| `system.color.text.info.softer`       | `system.color.fg.info`                   |
+| `system.color.text.info.softer`       | `system.color.fg.info.default`           |
 
 Similarly, system icon tokens (`system.color.icon.*`) are deprecated and are mostly being replaced
 with foreground tokens (`system.color.fg.*`) to consolidate duplicated tokens. However, a few are
@@ -655,23 +654,23 @@ mappings.
 | `system.color.icon.primary.default`   | `system.color.brand.fg.primary.default`                                            |
 | `system.color.icon.primary.strong`    | `system.color.brand.fg.primary.strong`                                             |
 | `system.color.icon.primary.stronger`  | `system.color.brand.fg.primary.strong`                                             |
-| `system.color.icon.primary.soft`      | `system.color.fg.info`                                                             |
-| `system.color.icon.primary.softer`    | `system.color.fg.info`                                                             |
+| `system.color.icon.primary.soft`      | `system.color.fg.info.default`                                                     |
+| `system.color.icon.primary.softer`    | `system.color.fg.info.default`                                                     |
 | `system.color.icon.positive.default`  | `system.color.brand.fg.positive.default`                                           |
 | `system.color.icon.positive.strong`   | `system.color.brand.fg.positive.strong` with `system.color.accent.overlay.hover`   |
 | `system.color.icon.positive.stronger` | `system.color.brand.fg.positive.strong` with `system.color.accent.overlay.pressed` |
-| `system.color.icon.positive.soft`     | `system.color.fg.success`                                                          |
-| `system.color.icon.positive.softer`   | `system.color.fg.success`                                                          |
+| `system.color.icon.positive.soft`     | `system.color..default`                                                            |
+| `system.color.icon.positive.softer`   | `system.color.fg.success.default`                                                  |
 | `system.color.icon.critical.default`  | `system.color.brand.fg.critical.default`                                           |
-| `system.color.icon.critical.strong`   | `system.color.fg.danger-strong`                                                    |
+| `system.color.icon.critical.strong`   | `system.color.fg.danger.strong`                                                    |
 | `system.color.icon.critical.stronger` | `system.color.fg.danger.strong`                                                    |
-| `system.color.icon.critical.soft`     | `system.color.fg.danger`                                                           |
-| `system.color.icon.critical.softer`   | `system.color.fg.danger`                                                           |
+| `system.color.icon.critical.soft`     | `system.color.fg.danger.default`                                                   |
+| `system.color.icon.critical.softer`   | `system.color.fg.danger.default`                                                   |
 | `system.color.icon.caution.default`   | `system.color.fg.contrast.default`                                                 |
 | `system.color.icon.caution.strong`    | `system.color.brand.fg.caution.default`                                            |
 | `system.color.icon.caution.stronger`  | `system.color.brand.fg.caution.strong`                                             |
-| `system.color.icon.caution.soft`      | `system.color.fg.warning`                                                          |
-| `system.color.icon.caution.softer`    | `system.color.fg.warning`                                                          |
+| `system.color.icon.caution.soft`      | `system.color.fg.warning.default`                                                  |
+| `system.color.icon.caution.softer`    | `system.color.fg.warning.default`                                                  |
 | `system.color.icon.disabled`          | `system.color.fg.disabled`                                                         |
 | `system.color.icon.info.default`      | `system.color.fg.info.default`                                                     |
 | `system.color.icon.info.strong`       | `system.color.fg.info.strong`                                                      |
@@ -682,37 +681,38 @@ mappings.
 Some foreground (`system.color.fg.*`) tokens are being remapped to other system colors to
 consolidate them.
 
-| Deprecated Token                    | Replacement Token                                                                  |
-| ----------------------------------- | ---------------------------------------------------------------------------------- |
-| `system.color.fg.critical.default`  | `system.color.brand.fg.critical.default`                                           |
-| `system.color.fg.critical.strong`   | `system.color.brand.fg.critical.strong` with `system.color.accent.overlay.hover`   |
-| `system.color.fg.critical.stronger` | `system.color.fg.danger tokens`                                                    |
-| `system.color.fg.critical.soft`     | `system.color.fg.danger`                                                           |
-| `system.color.fg.critical.softer`   | `system.color.fg.danger`                                                           |
-| `system.color.fg.muted.stronger`    | `system.color.fg.muted.strong`                                                     |
-| `system.color.fg.muted.soft`        | `system.color.fg.muted`                                                            |
-| `system.color.fg.primary.default`   | `system.color.brand.fg.primary.default`                                            |
-| `system.color.fg.primary.soft`      | `system.color.fg.info` or use `system.color.brand.fg.primary` for brand colors     |
-| `system.color.fg.primary.softer`    | `system.color.fg.info` or use `system.color.brand.fg.primary` for brand colors     |
-| `system.color.fg.primary.stronger`  | `system.color.brand.fg.primary.strong`                                             |
-| `system.color.fg.primary.strong`    | `system.color.brand.fg.primary.strong`                                             |
-| `system.color.fg.caution.default`   | `system.color.brand.fg.caution.default`                                            |
-| `system.color.fg.caution.strong`    | `system.color.brand.fg.caution.strong` with `system.color.accent.overlay.hover`    |
-| `system.color.fg.caution.soft`      | `system.color.fg.warning`                                                          |
-| `system.color.fg.caution.stronger`  | `system.color.fg.warning-strong`                                                   |
-| `system.color.fg.caution.softer`    | `system.color.fg.warning`                                                          |
-| `system.color.fg.info.softer`       | `system.color.fg.ai`                                                               |
-| `system.color.fg.info.soft`         | `system.color.fg.info`                                                             |
-| `system.color.fg.info.stronger`     | `system.color.fg.info.strong`                                                      |
-| `system.color.fg.positive.default`  | `system.color.brand.fg.positive.default`                                           |
-| `system.color.fg.positive.softer`   | `system.color.fg.success`                                                          |
-| `system.color.fg.positive.soft`     | `system.color.fg.success`                                                          |
-| `system.color.fg.positive.strong`   | `system.color.brand.fg.positive.strong` with `system.color.accent.overlay.hover`   |
-| `system.color.fg.positive.stronger` | `system.color.brand.fg.positive.strong` with `system.color.accent.overlay.pressed` |
+| Deprecated Token                    | Replacement Token                                                                      |
+| ----------------------------------- | -------------------------------------------------------------------------------------- |
+| `system.color.fg.critical.default`  | `system.color.brand.fg.critical.default`                                               |
+| `system.color.fg.critical.strong`   | `system.color.brand.fg.critical.strong` with `system.color.accent.overlay.hover`       |
+| `system.color.fg.critical.stronger` | `system.color.fg.danger.default`                                                       |
+| `system.color.fg.critical.soft`     | `system.color.fg.danger.default`                                                       |
+| `system.color.fg.critical.softer`   | `system.color.fg.danger.default`                                                       |
+| `system.color.fg.muted.stronger`    | `system.color.fg.muted.strong`                                                         |
+| `system.color.fg.muted.soft`        | `system.color.fg.muted`                                                                |
+| `system.color.fg.primary.default`   | `system.color.brand.fg.primary.default`                                                |
+| `system.color.fg.primary.soft`      | `system.color.fg.info.default` or use `system.color.brand.fg.primary` for brand colors |
+| `system.color.fg.primary.softer`    | `system.color.fg.info.default` or use `system.color.brand.fg.primary` for brand colors |
+| `system.color.fg.primary.stronger`  | `system.color.brand.fg.primary.strong`                                                 |
+| `system.color.fg.primary.strong`    | `system.color.brand.fg.primary.strong`                                                 |
+| `system.color.fg.caution.default`   | `system.color.brand.fg.caution.default`                                                |
+| `system.color.fg.caution.strong`    | `system.color.brand.fg.caution.strong` with `system.color.accent.overlay.hover`        |
+| `system.color.fg.caution.soft`      | `system.color.fg.warning.default`                                                      |
+| `system.color.fg.caution.stronger`  | `system.color.fg.warning.strong`                                                       |
+| `system.color.fg.caution.softer`    | `system.color.fg.warning.default`                                                      |
+| `system.color.fg.info.softer`       | `system.color.fg.ai`                                                                   |
+| `system.color.fg.info.soft`         | `system.color.fg.info`                                                                 |
+| `system.color.fg.info.stronger`     | `system.color.fg.info.strong`                                                          |
+| `system.color.fg.positive.default`  | `system.color.brand.fg.positive.default`                                               |
+| `system.color.fg.positive.softer`   | `system.color.fg.success.default`                                                      |
+| `system.color.fg.positive.soft`     | `system.color.fg.success.default`                                                      |
+| `system.color.fg.positive.strong`   | `system.color.brand.fg.positive.strong` with `system.color.accent.overlay.hover`       |
+| `system.color.fg.positive.stronger` | `system.color.brand.fg.positive.strong` with `system.color.accent.overlay.pressed`     |
 
 #### System Border Color Tokens
 
-> Important: The `system.color.border.inverse` token is a breaking change. **Important** This is a > breaking change. Teams will have to update their code to use
+> Important: The `system.color.border.inverse` token is a breaking change. **Important** This is a >
+> breaking change. Teams will have to update their code to use
 > `system.color.border.inverse.default`.
 
 | Deprecated Token                       | Replacement Token                        | Notes                                                            |
