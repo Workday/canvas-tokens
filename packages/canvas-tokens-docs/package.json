@@ -1,8 +1,39 @@
 {
   "name": "@workday/canvas-tokens-docs",
   "version": "0.0.2",
-  "description": "documentation for Canvas Tokens",
+  "description": "Documentation for Canvas Tokens",
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",
-  "private": true
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Workday/canvas-tokens",
+    "directory": "packages/canvas-tokens-docs"
+  },
+  "files": [
+    "dist/",
+    "components/",
+    "images/",
+    "llm-txt/"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:tokens": "cd ../.. && yarn build:tokens",
+    "build:mdx": "node ./utils/build-mdx.js stories/",
+    "build": "yarn build:tokens && yarn clean && yarn build:mdx"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "canvas",
+    "canvas-tokens",
+    "design-tokens",
+    "workday",
+    "documentation"
+  ],
+  "devDependencies": {
+    "fs-extra": "^10.0.0",
+    "glob": "^7.1.6",
+    "rimraf": "^5.0.5"
+  }
 }
