@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {system} from '@workday/canvas-tokens-web';
 import {TokenGrid, formatJSVar} from '../../../components/TokenGrid';
+import {systemShapeCommentMap} from '../../../components/systemTokenComments';
 
 interface ShapeToken {
   /** The name of the CSS variable */
@@ -13,6 +14,8 @@ interface ShapeToken {
   calculatedValue: string;
   /** The value of the CSS token after converting rem to pixels */
   pxValue: string;
+  /** Use case / description from sys.json */
+  description?: string;
 }
 
 function multiplyCalcValues(value: string) {
@@ -55,25 +58,28 @@ const deprecatedShapeTokens = ['zero', 'half', 'x1', 'x1Half', 'x2', 'x4', 'x6',
 const deprecatedShapeTokensData: ShapeToken[] = Object.entries(system.shape).filter(([key]) => deprecatedShapeTokens.includes(key)).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
+  const jsPath = `system.shape.${key}`;
   return {
     cssVar: varName,
-    jsVar: formatJSVar(`system.shape.${key as keyof typeof system.shape}`),
+    jsVar: formatJSVar(jsPath),
     value,
     calculatedValue: `${calculatedValue}rem`,
-    pxValue: `${calculatedValue * 16}px`
+    pxValue: `${calculatedValue * 16}px`,
+    description: systemShapeCommentMap[jsPath],
   };
 });
 
 const shapeTokens: ShapeToken[] = Object.entries(system.shape).filter(([key]) => !deprecatedShapeTokens.includes(key)).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
-
+  const jsPath = `system.shape.${key as keyof typeof system.shape}`;
   return {
     cssVar: varName,
-    jsVar: formatJSVar(`system.shape.${key as keyof typeof system.shape}`),
+    jsVar: formatJSVar(jsPath),
     value,
     calculatedValue: `${calculatedValue}rem`,
     pxValue: `${calculatedValue * 16}px`,
+    description: systemShapeCommentMap[jsPath],
   };
 });
 
@@ -81,14 +87,7 @@ export const DeprecatedShapeTokens = () => {
     return (
       <TokenGrid
         caption="deprecated shape tokens"
-        headings={[
-          'Sample',
-          'CSS Variable',
-          'JS Variable',
-          'Value',
-          'Calculated Value',
-          'Pixel Value',
-        ]}
+        headings={['Sample', 'Usage', 'Value', 'Description']}
         rows={deprecatedShapeTokensData}
       >
         {token => (
@@ -104,57 +103,58 @@ export const DeprecatedShapeTokens = () => {
               />
             </TokenGrid.RowItem>
             <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+                <TokenGrid.MonospaceLabel>var({token.cssVar})</TokenGrid.MonospaceLabel>
+                <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+              </div>
             </TokenGrid.RowItem>
             <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+                <span>{token.calculatedValue}</span>
+                <span>{token.pxValue}</span>
+              </div>
             </TokenGrid.RowItem>
-            <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-            <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
-            <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
+            <TokenGrid.RowItem>{token.description ?? '—'}</TokenGrid.RowItem>
           </>
         )}
       </TokenGrid>
     );
   }
   
-  export const ShapeTokens = () => {
-    return (
-      <TokenGrid
-        caption="shape tokens"
-        headings={[
-          'Sample',
-          'CSS Variable',
-          'JS Variable',
-          'Value',
-          'Calculated Value',
-          'Pixel Value',
-        ]}
-        rows={shapeTokens}
-      >
-        {token => (
-          <>
-            <TokenGrid.RowItem>
-              <TokenGrid.Sample
-                style={{
-                  borderRadius: `var(${token.cssVar})`,
-                  height: 80,
-                  width: 80,
-                  border: `solid 0.0625rem var(${system.color.border.contrast.default})`,
-                }}
-              />
-            </TokenGrid.RowItem>
-            <TokenGrid.RowItem>
-              <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
-            </TokenGrid.RowItem>
-            <TokenGrid.RowItem>
+export const ShapeTokens = () => {
+  return (
+    <TokenGrid
+      caption="shape tokens"
+      headings={['Sample', 'Usage', 'Value', 'Description']}
+      rows={shapeTokens}
+    >
+      {token => (
+        <>
+          <TokenGrid.RowItem>
+            <TokenGrid.Sample
+              style={{
+                borderRadius: `var(${token.cssVar})`,
+                height: 80,
+                width: 80,
+                border: `solid 0.0625rem var(${system.color.border.contrast.default})`,
+              }}
+            />
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <TokenGrid.MonospaceLabel>var({token.cssVar})</TokenGrid.MonospaceLabel>
               <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
-            </TokenGrid.RowItem>
-            <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-            <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
-            <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
-          </>
-        )}
-      </TokenGrid>
-    );
-  }
+            </div>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <span>{token.calculatedValue}</span>
+              <span>{token.pxValue}</span>
+            </div>
+          </TokenGrid.RowItem>
+          <TokenGrid.RowItem>{token.description ?? '—'}</TokenGrid.RowItem>
+        </>
+      )}
+    </TokenGrid>
+  );
+};

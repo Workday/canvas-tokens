@@ -17,7 +17,7 @@ interface SizeToken {
 
 function multiplyCalcValues(value: string) {
   if (!value) return 0;
-  
+
   // If it's a calc() expression, evaluate it
   if (value.includes('calc(')) {
     // Extract the expression inside calc()
@@ -39,13 +39,13 @@ function multiplyCalcValues(value: string) {
       }
     }
   }
-  
+
   // If it's already a rem value like "2.5rem", extract the number
   const remMatch = value.match(/^([\d.]+)\s*rem$/);
   if (remMatch) {
     return parseFloat(remMatch[1]) || 0;
   }
-  
+
   // Fallback: try to extract any number from the string
   const numberMatch = value.match(/([\d.]+)/);
   return numberMatch ? parseFloat(numberMatch[1]) : 0;
@@ -93,13 +93,7 @@ export const BaseSizeTokens = () => {
   return (
     <TokenGrid
       caption="base size tokens"
-      headings={[
-        'Sample',
-        'CSS Variable',
-        'JS Variable',
-        'Value',
-        'Pixel Value',
-      ]}
+      headings={['Sample', 'Usage', 'Value', 'Pixel Value']}
       rows={sizeTokens}
     >
       {token => (
@@ -114,10 +108,12 @@ export const BaseSizeTokens = () => {
             />
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
-          </TokenGrid.RowItem>
-          <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
+              <span>CSS</span>
+              <TokenGrid.MonospaceLabel>var({token.cssVar})</TokenGrid.MonospaceLabel>
+              <span>JS</span>
+              <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+            </div>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
           <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
