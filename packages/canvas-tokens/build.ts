@@ -6,8 +6,8 @@ import {setConfig} from './utils/setConfig';
 
 const config = setConfig({
   source: ['tokens/**/*.json'],
-  platforms: ['css', 'scss', 'less', 'es6', 'common-js'],
-  levels: ['base', 'brand', 'sys', 'component'],
+  platforms: ['css', 'scss', 'less', 'es6', 'common-js', 'docs'],
+  levels: ['base', 'brand', 'sys', 'component', 'main', 'deprecated'],
   platformOptions: {
     'css, scss, less': {
       buildPath: '../canvas-tokens-web/',
@@ -82,19 +82,50 @@ const config = setConfig({
         },
       ],
     },
+    docs: {
+      buildPath: '../canvas-tokens-docs/lib/tokens/',
+      extensions: ['json', 'csv'],
+      fileName: '{level}/index',
+      modifiers: [
+        {
+          level: ['deprecated'],
+          extensions: ['json'],
+          format: 'json/tokens-info-export',
+          filter: filters.isDeprecated,
+          options: {
+            deprecated: true,
+          },
+        },
+        {
+          level: ['deprecated'],
+          extensions: ['csv'],
+          format: 'csv/tokens-info-export',
+          filter: filters.isDeprecated,
+          options: {
+            deprecated: true,
+          },
+        },
+        {
+          level: ['main'],
+          extensions: ['json'],
+          format: 'json/tokens-info-export',
+          filter: (props: any) => !filters.isDeprecated(props),
+          options: {
+            deprecated: false,
+          },
+        },
+        {
+          level: ['main'],
+          extensions: ['csv'],
+          format: 'csv/tokens-info-export',
+          filter: (props: any) => !filters.isDeprecated(props),
+          options: {
+            deprecated: false,
+          },
+        },
+      ],
+    },
   },
-});
-
-config.platforms['es6']?.files?.push({
-  destination: '../../canvas-tokens-docs/lib/tokens/deprecated/index.json',
-  format: 'json/tokens-info-export',
-  filter: filters.isDeprecated,
-});
-
-config.platforms['es6']?.files?.push({
-  destination: '../../canvas-tokens-docs/lib/tokens/deprecated/index.csv',
-  format: 'csv/tokens-info-export',
-  filter: filters.isDeprecated,
 });
 
 // Setup format to create ts file with type declarations
@@ -136,6 +167,11 @@ StyleDictionary.registerTransformGroup({
     'value/font-weight/numbers',
     'value/line-height/px2rem',
   ],
+});
+
+StyleDictionary.registerTransformGroup({
+  name: 'docs',
+  transforms: [],
 });
 
 StyleDictionary.extend(config).buildAllPlatforms();
