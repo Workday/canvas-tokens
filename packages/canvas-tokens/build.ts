@@ -7,7 +7,7 @@ import {setConfig} from './utils/setConfig';
 const config = setConfig({
   source: ['tokens/**/*.json'],
   platforms: ['css', 'scss', 'less', 'es6', 'common-js'],
-  levels: ['base', 'brand', 'sys'],
+  levels: ['base', 'brand', 'sys', 'component'],
   platformOptions: {
     'css, scss, less': {
       buildPath: '../canvas-tokens-web/',
@@ -22,7 +22,7 @@ const config = setConfig({
           filter: filters.filterCodeTokens,
         },
         {
-          level: ['brand', 'sys'],
+          level: ['brand', 'sys', 'component'],
           format: 'merge/refs',
           combineWith: ['{platform}/composite', '{platform}/variables', '{platform}/shadow'],
           options: {
@@ -57,13 +57,13 @@ const config = setConfig({
           filter: filters.filterCodeTokens,
         },
         {
-          level: ['brand', 'sys'],
+          level: ['brand', 'sys', 'component'],
           extensions: ['js'],
           format: 'merge/objects',
           combineWith: ['{platform}/objects'],
         },
         {
-          level: ['brand', 'sys'],
+          level: ['brand', 'sys', 'component'],
           extensions: ['d.ts'],
           format: 'merge/types',
           combineWith: ['merge/objects', 'ts/jsdoc-object'],
@@ -86,13 +86,13 @@ const config = setConfig({
 });
 
 config.platforms['es6']?.files?.push({
-  destination: '../../canvas-tokens-docs/tokens/deprecated/index.json',
+  destination: '../../canvas-tokens-docs/lib/tokens/deprecated/index.json',
   format: 'json/tokens-info-export',
   filter: filters.isDeprecated,
 });
 
 config.platforms['es6']?.files?.push({
-  destination: '../../canvas-tokens-docs/tokens/deprecated/index.csv',
+  destination: '../../canvas-tokens-docs/lib/tokens/deprecated/index.csv',
   format: 'csv/tokens-info-export',
   filter: filters.isDeprecated,
 });
