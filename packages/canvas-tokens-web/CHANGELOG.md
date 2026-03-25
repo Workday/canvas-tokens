@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.1.4
+
+### Patch Changes
+
+- ### Documentation
+
+  - fix: Fix tokens in v4 guide ([#283](https://github.com/Workday/canvas-tokens/pull/283))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
 ## 4.1.3
 
 ### Patch Changes
