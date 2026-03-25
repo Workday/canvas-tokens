@@ -6,8 +6,8 @@ import {setConfig} from './utils/setConfig';
 
 const config = setConfig({
   source: ['tokens/**/*.json'],
-  platforms: ['css', 'scss', 'less', 'es6', 'common-js'],
-  levels: ['base', 'brand', 'sys'],
+  platforms: ['css', 'scss', 'less', 'es6', 'common-js', 'docs'],
+  levels: ['base', 'brand', 'sys', 'component', 'main', 'deprecated'],
   platformOptions: {
     'css, scss, less': {
       buildPath: '../canvas-tokens-web/',
@@ -22,7 +22,7 @@ const config = setConfig({
           filter: filters.filterCodeTokens,
         },
         {
-          level: ['brand', 'sys'],
+          level: ['brand', 'sys', 'component'],
           format: 'merge/refs',
           combineWith: ['{platform}/composite', '{platform}/variables', '{platform}/shadow'],
           options: {
@@ -57,13 +57,13 @@ const config = setConfig({
           filter: filters.filterCodeTokens,
         },
         {
-          level: ['brand', 'sys'],
+          level: ['brand', 'sys', 'component'],
           extensions: ['js'],
           format: 'merge/objects',
           combineWith: ['{platform}/objects'],
         },
         {
-          level: ['brand', 'sys'],
+          level: ['brand', 'sys', 'component'],
           extensions: ['d.ts'],
           format: 'merge/types',
           combineWith: ['merge/objects', 'ts/jsdoc-object'],
@@ -82,19 +82,38 @@ const config = setConfig({
         },
       ],
     },
+    docs: {
+      buildPath: '../canvas-tokens-docs/lib/tokens/',
+      extensions: ['json', 'csv'],
+      fileName: '{level}/index',
+      modifiers: [
+        {
+          level: ['deprecated'],
+          extensions: ['json'],
+          format: 'json/tokens-info-export',
+          filter: filters.isDeprecated,
+        },
+        {
+          level: ['deprecated'],
+          extensions: ['csv'],
+          format: 'csv/tokens-info-export',
+          filter: filters.isDeprecated,
+        },
+        {
+          level: ['main'],
+          extensions: ['json'],
+          format: 'json/tokens-info-export',
+          filter: filters.isNotDeprecated,
+        },
+        {
+          level: ['main'],
+          extensions: ['csv'],
+          format: 'csv/tokens-info-export',
+          filter: filters.isNotDeprecated,
+        },
+      ],
+    },
   },
-});
-
-config.platforms['es6']?.files?.push({
-  destination: '../../canvas-tokens-docs/tokens/deprecated/index.json',
-  format: 'json/tokens-info-export',
-  filter: filters.isDeprecated,
-});
-
-config.platforms['es6']?.files?.push({
-  destination: '../../canvas-tokens-docs/tokens/deprecated/index.csv',
-  format: 'csv/tokens-info-export',
-  filter: filters.isDeprecated,
 });
 
 // Setup format to create ts file with type declarations
@@ -136,6 +155,11 @@ StyleDictionary.registerTransformGroup({
     'value/font-weight/numbers',
     'value/line-height/px2rem',
   ],
+});
+
+StyleDictionary.registerTransformGroup({
+  name: 'docs',
+  transforms: [],
 });
 
 StyleDictionary.extend(config).buildAllPlatforms();

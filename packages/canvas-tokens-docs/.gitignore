@@ -1,1 +1,2 @@
-tokens/
+lib/tokens/deprecated/*
+lib/tokens/main/*
