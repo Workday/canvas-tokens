@@ -1,23 +1,23 @@
 import {Matcher} from 'style-dictionary';
 
-export const isSysShadow: Matcher = ({path: [level, type]}) => {
-  return level === 'sys' && type === 'depth';
+export const isSysShadow: Matcher = ({path: [level, category]}) => {
+  return level === 'sys' && category === 'depth';
 };
 
 export const isBaseFontFamily: Matcher = ({path: [level, category]}) => {
   return level === 'base' && category === 'font-family';
 };
 
-export const isBaseFontWeight: Matcher = ({type, path: [level, category]}) => {
-  return level === 'base' && category === 'font-weight' && type === 'text';
+export const isBaseFontWeight: Matcher = ({path: [level, category]}) => {
+  return level === 'base' && category === 'font-weight';
 };
 
-export const isBaseDuration: Matcher = ({type, path: [level, category]}) => {
-  return level === 'base' && category === 'duration' && type === 'number';
+export const isBaseDuration: Matcher = ({path: [level, category]}) => {
+  return level === 'base' && category === 'duration';
 };
 
-export const isBorder: Matcher = ({type, path: [level]}) => {
-  return level === 'sys' && type === 'border';
+export const isBorder: Matcher = ({path: [level, category]}) => {
+  return level === 'sys' && category === 'border';
 };
 
 export const isHexColor: Matcher = ({value}) => {
@@ -28,8 +28,8 @@ export const isLetterSpacing: Matcher = ({path: [level, category]}) => {
   return level === 'base' && category === 'letter-spacing';
 };
 
-export const isPxLineHeight: Matcher = ({type, path: [level, category]}) => {
-  return level === 'base' && category === 'line-height' && type === 'number';
+export const isPxLineHeight: Matcher = ({path: [level, category]}) => {
+  return level === 'base' && category === 'line-height';
 };
 
 export const isSysColor: Matcher = ({original}) => {
