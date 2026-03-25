@@ -92,36 +92,24 @@ const config = setConfig({
           extensions: ['json'],
           format: 'json/tokens-info-export',
           filter: filters.isDeprecated,
-          options: {
-            deprecated: true,
-          },
         },
         {
           level: ['deprecated'],
           extensions: ['csv'],
           format: 'csv/tokens-info-export',
           filter: filters.isDeprecated,
-          options: {
-            deprecated: true,
-          },
         },
         {
           level: ['main'],
           extensions: ['json'],
           format: 'json/tokens-info-export',
-          filter: (props: any) => !filters.isDeprecated(props),
-          options: {
-            deprecated: false,
-          },
+          filter: filters.isNotDeprecated,
         },
         {
           level: ['main'],
           extensions: ['csv'],
           format: 'csv/tokens-info-export',
-          filter: (props: any) => !filters.isDeprecated(props),
-          options: {
-            deprecated: false,
-          },
+          filter: filters.isNotDeprecated,
         },
       ],
     },
