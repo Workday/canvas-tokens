@@ -196,7 +196,7 @@
       "400": {
         "value": "{base.palette.amber.400}",
         "type": "color",
-        "comment": "Base caution color (amber.400). Use fg.contrast on this."
+        "comment": "Base caution color (amber.400). Use fg.contrast.default on this."
       },
       "500": {
         "value": "{base.palette.amber.500}",
