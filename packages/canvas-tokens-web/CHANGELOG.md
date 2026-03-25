@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.0
+
+### Major Changes
+
+- ### Components
+
+  - feat: Add system + expressive icon component level tokens
+    ([#287](https://github.com/Workday/canvas-tokens/pull/287))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
 ## 4.1.5
 
 ### Patch Changes
