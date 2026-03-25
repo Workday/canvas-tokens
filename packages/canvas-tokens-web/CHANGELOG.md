@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.1.5
+
+### Patch Changes
+
+- ### Infrastructure
+
+  - fix: Token file build enhancement ([#286](https://github.com/Workday/canvas-tokens/pull/286))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
 ## 4.1.4
 
 ### Patch Changes
