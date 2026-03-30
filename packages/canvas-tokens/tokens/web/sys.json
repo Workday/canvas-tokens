@@ -480,15 +480,15 @@
       "title": {
         "sm": {
           "value": "{base.size.500}",
-          "type": "sizing"
+          "type": "fontSize"
         },
         "md": {
           "value": "{base.size.600}",
-          "type": "sizing"
+          "type": "fontSize"
         },
         "lg": {
           "value": "{base.size.700}",
-          "type": "sizing"
+          "type": "fontSize"
         }
       }
     },
@@ -553,22 +553,58 @@
     "letter-spacing": {
       "subtext": {
         "sm": {
-          "value": "{base.letter-spacing.50}",
-          "type": "number"
+          "value": "0.025em",
+          "type": "letterSpacing"
         },
         "md": {
-          "value": "{base.letter-spacing.100}",
-          "type": "number"
+          "value": "0.01em",
+          "type": "letterSpacing"
         },
         "lg": {
-          "value": "{base.letter-spacing.150}",
-          "type": "number"
+          "value": "0em",
+          "type": "letterSpacing"
         }
       },
       "body": {
         "sm": {
-          "value": "{base.letter-spacing.200}",
-          "type": "number"
+          "value": "-0.01em",
+          "type": "letterSpacing"
+        },
+        "md": {
+          "value": "-0.01em",
+          "type": "letterSpacing"
+        },
+        "lg": {
+          "value": "-0.01em",
+          "type": "letterSpacing"
+        }
+      },
+      "heading": {
+        "sm": {
+          "value": "-0.02em",
+          "type": "letterSpacing"
+        },
+        "md": {
+          "value": "-0.02em",
+          "type": "letterSpacing"
+        },
+        "lg": {
+          "value": "-0.02em",
+          "type": "letterSpacing"
+        }
+      },
+      "title": {
+        "sm": {
+          "value": "-0.03em",
+          "type": "letterSpacing"
+        },
+        "md": {
+          "value": "-0.03em",
+          "type": "letterSpacing"
+        },
+        "lg": {
+          "value": "-0.04em",
+          "type": "letterSpacing"
         }
       }
     },
