@@ -4,4 +4,46 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- preload fonts for Chromatic -->
+<link ref="preload" href="Inter.ttf" as="font" type="font/ttf" crossorigin />
+<link ref="preload" href="Inter-Italic.ttf" as="font" type="font/ttf" crossorigin />
+<link rel="preload" href="Roboto-Mono.ttf" as="font" type="font/ttf" crossorigin />
+<link rel="preload" href="Noto-Sans-CJK-SC.otf" as="font" type="font/otf" crossorigin />
+
+<style type="text/css">
+  html, body {
+    font-family: Inter, sans-serif;
+  }
+</style>
+
+<!-- Font faces -->
+<style>
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 100 900;
+    src: local("Inter Variable"), url("Inter.ttf") format("truetype-variations");
+  }
+
+  @font-face {
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 100 900;
+    src: local("Inter Italic Variable"), url("Inter-Italic.ttf") format("truetype-variations");
+  }
+
+  @font-face {
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 100 700;
+    src: local("Roboto Mono"), url("Roboto-Mono.ttf") format("truetype-variations");
+  }
+
+  @font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 100 900;
+    src: local("Noto Sans CJK"), url("Noto-Sans-CJK-SC.otf") format("opentype-variations");
+  }
+</style>

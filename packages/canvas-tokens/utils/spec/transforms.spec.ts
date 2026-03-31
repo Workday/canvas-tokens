@@ -101,10 +101,10 @@ describe('transforms', () => {
 
   it('should wrap font family token with quotes', () => {
     const result = transforms['value/wrapped-font-family'].transformer(
-      {...defaultToken, value: 'Roboto'},
+      {...defaultToken, value: 'Inter'},
       defaultOptions
     );
-    const expected = '"Roboto"';
+    const expected = '"Inter"';
 
     expect(result).toBe(expected);
   });

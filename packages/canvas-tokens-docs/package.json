@@ -4,5 +4,9 @@
   "description": "documentation for Canvas Tokens",
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",
-  "private": true
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "download-fonts": "node utils/download-fonts"
+  }
 }

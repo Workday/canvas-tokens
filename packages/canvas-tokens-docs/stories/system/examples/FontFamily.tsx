@@ -9,6 +9,8 @@ interface FontFamilyToken {
   jsVar: React.ReactNode;
   /** The actual string value of the token */
   value: string;
+  /** The label used in the table */
+  label: string;
 }
 
 const fontFamilyTokens: FontFamilyToken[] = Object.entries(system.fontFamily).map(
@@ -19,6 +21,7 @@ const fontFamilyTokens: FontFamilyToken[] = Object.entries(system.fontFamily).ma
       cssVar: varName,
       jsVar: formatJSVar(`system.fontFamily.${familyName}`),
       value: value.replace(/"/g, ''),
+      label: familyName === 'global' ? '工作日' : 'Workday',
     };
   }
 );
@@ -33,7 +36,9 @@ export function FontFamilyTokens() {
       {token => (
         <>
           <TokenGrid.RowItem>
-            <span style={{fontFamily: token.value}}>Canvas</span>
+            <span style={{fontFamily: token.value}} title="workday">
+              {token.label}
+            </span>
           </TokenGrid.RowItem>
           <TokenGrid.RowItem>
             <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
