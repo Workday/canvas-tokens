@@ -260,84 +260,84 @@
     "shape": {
       "none": {
         "value": "{base.size.0}",
-        "type": "dimension",
+        "type": "borderRadius",
         "comment": "Full-width and background containers. Fixed navigation containers such as headers, and side-panels."
       },
       "sm": {
         "value": "{base.size.50}",
-        "type": "dimension",
+        "type": "borderRadius",
         "comment": "Pill, Status Indicator, Checkbox"
       },
       "md": {
         "value": "{base.size.100}",
-        "type": "dimension",
+        "type": "borderRadius",
         "comment": "Inputs, Toast, Tooltip, Snackbar"
       },
       "lg": {
         "value": "{base.size.150}",
-        "type": "dimension",
+        "type": "borderRadius",
         "comment": "Rich text editor"
       },
       "xl": {
         "value": "{base.size.200}",
-        "type": "dimension",
+        "type": "borderRadius",
         "comment": "Extra large rounding for prominent containers"
       },
       "xxl": {
         "value": "{base.size.300}",
-        "type": "dimension",
+        "type": "borderRadius",
         "comment": "Extra extra large rounding for cards and items"
       },
       "xxxl": {
         "value": "{base.size.400}",
-        "type": "dimension",
+        "type": "borderRadius",
         "comment": "Maximum rounding for modals and large containers"
       },
       "full": {
         "value": "{base.size.75} * 100",
-        "type": "dimension",
+        "type": "borderRadius",
         "comment": "Full rounding is reserved high-visibility components. This shape is intended to draw attention. Buttons, Badge, Status Indicator, Essential Inputs, Border Containers (Not Cards)"
       }
     },
     "size": {
       "xxxs": {
         "value": "{base.size.200}",
-        "type": "dimension",
+        "type": "size",
         "comment": "Used for switch toggle."
       },
       "xxs": {
         "value": "{base.size.250}",
-        "type": "dimension",
+        "type": "size",
         "comment": "Compact indicators. Used for status indicators and count badges."
       },
       "xs": {
         "value": "{base.size.300}",
-        "type": "dimension",
+        "type": "size",
         "comment": "Compact interactive elements. Used for small buttons, pills, checkboxes, and radio buttons."
       },
       "sm": {
         "value": "{base.size.400}",
-        "type": "dimension",
+        "type": "size",
         "comment": "Standard interactive components. Used for buttons, segmented controls, tooltips, and avatars."
       },
       "md": {
         "value": "{base.size.500}",
-        "type": "dimension",
+        "type": "size",
         "comment": "Default size for most components. Used for buttons, segmented controls, banners, input fields, and menu items."
       },
       "lg": {
         "value": "{base.size.600}",
-        "type": "dimension",
+        "type": "size",
         "comment": "Prominent components. Used for large buttons, segmented controls, expandable triggers, tabs, and avatars."
       },
       "xl": {
         "value": "{base.size.700}",
-        "type": "dimension",
+        "type": "size",
         "comment": "Content containers. Used for table cells and toasts."
       },
       "xxl": {
         "value": "{base.size.800}",
-        "type": "dimension",
+        "type": "size",
         "comment": "Expandable containers. Used for expandable containers in their collapsed state."
       }
     },
@@ -423,79 +423,79 @@
     "font-family": {
       "default": {
         "value": "{base.font-family.50}",
-        "type": "fontFamily"
+        "type": "text"
       },
       "mono": {
         "value": "{base.font-family.100}",
-        "type": "fontFamily"
+        "type": "text"
       },
       "global": {
         "value": "{base.font-family.200}",
-        "type": "fontFamily"
+        "type": "text"
       }
     },
     "font-size": {
       "subtext": {
         "sm": {
           "value": "{base.size.125}",
-          "type": "fontSize"
+          "type": "sizing"
         },
         "md": {
           "value": "{base.size.150}",
-          "type": "fontSize"
+          "type": "sizing"
         },
         "lg": {
           "value": "{base.size.175}",
-          "type": "fontSize"
+          "type": "sizing"
         }
       },
       "body": {
         "sm": {
           "value": "{base.size.200}",
-          "type": "fontSize"
+          "type": "sizing"
         },
         "md": {
           "value": "{base.size.225}",
-          "type": "fontSize"
+          "type": "sizing"
         },
         "lg": {
           "value": "{base.size.250}",
-          "type": "fontSize"
+          "type": "sizing"
         }
       },
       "heading": {
         "sm": {
           "value": "{base.size.300}",
-          "type": "fontSize"
+          "type": "sizing"
         },
         "md": {
           "value": "{base.size.350}",
-          "type": "fontSize"
+          "type": "sizing"
         },
         "lg": {
           "value": "{base.size.400}",
-          "type": "fontSize"
+          "type": "sizing"
         }
       },
       "title": {
         "sm": {
           "value": "{base.size.500}",
-          "type": "fontSize"
+          "type": "sizing"
         },
         "md": {
           "value": "{base.size.600}",
-          "type": "fontSize"
+          "type": "sizing"
         },
         "lg": {
           "value": "{base.size.700}",
-          "type": "fontSize"
+          "type": "sizing"
         }
       }
     },
     "line-height": {
       "subtext": {
         "sm": {
-          "value": "{base.size.175}",
+          "value": "{base.size.200}",
           "type": "number"
         },
         "md": {
@@ -513,7 +513,7 @@
           "type": "number"
         },
         "md": {
-          "value": "{base.size.325}",
+          "value": "{base.size.350}",
           "type": "number"
         },
         "lg": {
@@ -553,77 +553,41 @@
     "letter-spacing": {
       "subtext": {
         "sm": {
-          "value": "0.025em",
-          "type": "letterSpacing"
+          "value": "{base.letter-spacing.50}",
+          "type": "number"
         },
         "md": {
-          "value": "0.01em",
-          "type": "letterSpacing"
+          "value": "{base.letter-spacing.100}",
+          "type": "number"
         },
         "lg": {
-          "value": "0em",
-          "type": "letterSpacing"
+          "value": "{base.letter-spacing.150}",
+          "type": "number"
         }
       },
       "body": {
         "sm": {
-          "value": "-0.01em",
-          "type": "letterSpacing"
-        },
-        "md": {
-          "value": "-0.01em",
-          "type": "letterSpacing"
-        },
-        "lg": {
-          "value": "-0.01em",
-          "type": "letterSpacing"
-        }
-      },
-      "heading": {
-        "sm": {
-          "value": "-0.02em",
-          "type": "letterSpacing"
-        },
-        "md": {
-          "value": "-0.02em",
-          "type": "letterSpacing"
-        },
-        "lg": {
-          "value": "-0.02em",
-          "type": "letterSpacing"
-        }
-      },
-      "title": {
-        "sm": {
-          "value": "-0.03em",
-          "type": "letterSpacing"
-        },
-        "md": {
-          "value": "-0.03em",
-          "type": "letterSpacing"
-        },
-        "lg": {
-          "value": "-0.04em",
-          "type": "letterSpacing"
+          "value": "{base.letter-spacing.200}",
+          "type": "number"
         }
       }
     },
     "font-weight": {
       "light": {
         "value": "{base.font-weight.300}",
-        "type": "fontWeight"
+        "type": "text"
       },
       "normal": {
         "value": "{base.font-weight.400}",
-        "type": "fontWeight"
+        "type": "text"
       },
       "medium": {
         "value": "{base.font-weight.500}",
-        "type": "fontWeight"
+        "type": "text"
       },
       "bold": {
         "value": "{base.font-weight.700}",
-        "type": "fontWeight"
+        "type": "text"
       }
     },
     "type": {

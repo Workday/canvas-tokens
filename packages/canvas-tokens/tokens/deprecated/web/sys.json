@@ -540,14 +540,14 @@
             "value": "{base.palette.slate.200}",
             "type": "color",
             "deprecated": true,
-            "deprecatedComment": "Use sys.color.surface.default tokens instead with sys.color.surface.overlay.hover.default tokens instead",
+            "deprecatedComment": "Use sys.color.surface.default tokens instead with sys.color.surface.overlay.hover",
             "comment": "Active states"
           },
           "stronger": {
             "value": "{base.palette.slate.300}",
             "type": "color",
             "deprecated": true,
-            "deprecatedComment": "Use sys.color.surface.alt.default with sys.color.surface.overlay.pressed.default tokens instead",
+            "deprecatedComment": "Use sys.color.surface.alt.default with sys.color.surface.overlay.pressed",
             "comment": "Active state for segmented control, Pill"
           }
         },
@@ -598,7 +598,7 @@
             "value": "{base.palette.green.25}",
             "type": "color",
             "deprecated": true,
-            "deprecatedComment": "Use sys.color.surface.success.default tokens instead",
+            "deprecatedComment": "Use sys.color.surface.success tokens instead",
             "comment": "Lightest surface success background"
           },
           "softer": {

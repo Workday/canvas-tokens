@@ -3,12 +3,12 @@
   "base": {
     "fontSize": {
       "value": "1rem",
-      "type": "dimension",
-      "comment": "Default fontSize for the browser, may be overridden by user preferences"
+      "type": "sizing",
+      "comment": "Default fontSize for the browser, may be overriden by user preferences"
     },
     "baseline": {
       "value": "{base.fontSize} / 2",
-      "type": "dimension",
+      "type": "sizing",
       "comment": "Baseline unit used for the 8pt sizing grid"
     },
     "duration": {
@@ -1352,165 +1352,179 @@
     "size": {
       "0": {
         "value": "0",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "0px / 0rem"
       },
       "25": {
         "value": "{base.baseline} * 0.25",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "2px / 0.125rem"
       },
       "50": {
         "value": "{base.baseline} * 0.50",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "4px / 0.25rem"
       },
       "75": {
         "value": "{base.baseline} * 0.75",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "6px / 0.375rem"
       },
       "100": {
         "value": "{base.baseline} * 1.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "8px / 0.5rem"
       },
       "125": {
         "value": "{base.baseline} * 1.25",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "10px / 0.625rem"
       },
       "150": {
         "value": "{base.baseline} * 1.50",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "12px / 0.75rem"
       },
       "175": {
         "value": "{base.baseline} * 1.75",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "14px / 0.875rem"
       },
       "200": {
         "value": "{base.baseline} * 2.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "16px / 1rem"
       },
       "225": {
         "value": "{base.baseline} * 2.25",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "18px / 1.125rem"
       },
       "250": {
         "value": "{base.baseline} * 2.50",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "20px / 1.25rem"
       },
       "300": {
         "value": "{base.baseline} * 3.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "24px / 1.5rem"
-      },
-      "325": {
-        "value": "{base.baseline} * 3.25",
-        "type": "dimension",
-        "comment": "26px / 1.625rem"
       },
       "350": {
         "value": "{base.baseline} * 3.50",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "28px / 1.75rem"
       },
       "400": {
         "value": "{base.baseline} * 4.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "32px / 2rem"
       },
       "450": {
         "value": "{base.baseline} * 4.50",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "36px / 2.25rem"
       },
       "500": {
         "value": "{base.baseline} * 5.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "40px / 2.5rem"
       },
       "600": {
         "value": "{base.baseline} * 6.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "48px / 3rem"
       },
       "700": {
         "value": "{base.baseline} * 7.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "56px / 3.5rem"
       },
       "800": {
         "value": "{base.baseline} * 8.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "64px / 4rem"
       },
       "900": {
         "value": "{base.baseline} * 9.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "72px / 4.5rem"
       },
       "1000": {
         "value": "{base.baseline} * 10.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "80px / 5rem"
       },
       "1100": {
         "value": "{base.baseline} * 11.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "88px / 5.5rem"
       },
       "1200": {
         "value": "{base.baseline} * 12.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "96px / 6rem"
       },
       "1300": {
         "value": "{base.baseline} * 13.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "104px / 6.5rem"
       },
       "1400": {
         "value": "{base.baseline} * 14.00",
-        "type": "dimension",
+        "type": "sizing",
         "comment": "112px / 7rem"
       }
     },
     "font-family": {
       "50": {
-        "value": "Inter",
-        "type": "fontFamily"
+        "value": "Roboto",
+        "type": "text",
+        "comment": "Default font-family"
       },
       "100": {
         "value": "Roboto Mono",
-        "type": "fontFamily"
+        "type": "text"
       },
       "200": {
         "value": "Noto Sans",
-        "type": "fontFamily"
+        "type": "text"
       }
     },
     "font-weight": {
       "300": {
-        "value": 300,
-        "type": "fontWeight"
+        "value": "Light",
+        "type": "text"
       },
       "400": {
-        "value": 410,
-        "type": "fontWeight"
+        "value": "Regular",
+        "type": "text"
       },
       "500": {
-        "value": 580,
-        "type": "fontWeight"
+        "value": "Medium",
+        "type": "text"
       },
       "700": {
-        "value": 710,
-        "type": "fontWeight"
+        "value": "Bold",
+        "type": "text"
+      }
+    },
+    "letter-spacing": {
+      "50": {
+        "value": 0.4,
+        "type": "number"
+      },
+      "100": {
+        "value": 0.32,
+        "type": "number"
+      },
+      "150": {
+        "value": 0.24,
+        "type": "number"
+      },
+      "200": {
+        "value": 0.16,
+        "type": "number"
       }
     }
   }
