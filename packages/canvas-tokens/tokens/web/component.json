@@ -1,0 +1,86 @@
+{
+  "_comment": "File is auto-generated, do not edit it manually.",
+  "component": {
+    "expressive-icon": {
+      "color": {
+        "accent": {
+          "value": "{base.palette.neutral.A200}",
+          "type": "color",
+          "comment": "Component level color used on the soft filled areas of expressive icons"
+        },
+        "fill": {
+          "value": "{base.palette.neutral.800}",
+          "type": "color",
+          "comment": "Component level color used on the visible outlines of expressive icons"
+        }
+      },
+      "size": {
+        "xs": {
+          "value": "{base.size.500}",
+          "type": "size"
+        },
+        "sm": {
+          "value": "{base.size.600}",
+          "type": "size"
+        },
+        "md": {
+          "value": "{base.size.700}",
+          "type": "size"
+        },
+        "lg": {
+          "value": "{base.size.800}",
+          "type": "size"
+        },
+        "xl": {
+          "value": "{base.size.1200}",
+          "type": "size"
+        }
+      }
+    },
+    "system-icon": {
+      "color": {
+        "accent": {
+          "value": "{base.palette.neutral.800}",
+          "type": "color",
+          "comment": "Component level color used on the accent areas of system icons"
+        },
+        "fill": {
+          "value": "{palette.neutral.800",
+          "type": "color",
+          "comment": "Component level color used on the fill areas of system icons"
+        },
+        "background": {
+          "value": "{base.palette.neutral.A0}",
+          "type": "color",
+          "comment": "Component level color used on the background of system icons"
+        }
+      },
+      "size": {
+        "xxs": {
+          "value": "{base.size.175}",
+          "type": "size"
+        },
+        "xs": {
+          "value": "{base.size.200}",
+          "type": "size"
+        },
+        "sm": {
+          "value": "{base.size.225}",
+          "type": "size"
+        },
+        "md": {
+          "value": "{base.size.250}",
+          "type": "size"
+        },
+        "lg": {
+          "value": "{base.size.300}",
+          "type": "size"
+        },
+        "xl": {
+          "value": "{base.size.400}",
+          "type": "size"
+        }
+      }
+    }
+  }
+}
