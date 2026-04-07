@@ -1,1 +1,0 @@
-import{j as t}from"./jsx-runtime-BIhOmZ6Z.js";function r({children:a}){return t("div",{className:"stack",children:a})}try{r.displayName="Stack",r.__docgenInfo={description:"",displayName:"Stack",props:{}}}catch{}export{r as S};
