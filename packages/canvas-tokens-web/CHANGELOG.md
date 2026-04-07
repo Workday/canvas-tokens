@@ -1,5 +1,17 @@
 # @workday/canvas-tokens-web
 
+## 4.2.0-beta.0
+
+### Minor Changes
+
+- ### Components
+
+  - chore: Pin npm version to 11.10.1 ([#296](https://github.com/Workday/canvas-tokens/pull/296))
+    ([@alanbsmith](https://github.com/alanbsmith))
+  - feat: Add system + expressive icon component level tokens
+    ([#294](https://github.com/Workday/canvas-tokens/pull/294))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@alanbsmith](https://github.com/alanbsmith))
+
 ## 4.1.5
 
 ### Patch Changes
