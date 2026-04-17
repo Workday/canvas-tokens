@@ -40,7 +40,7 @@
       "600": {
         "value": "{base.palette.blue.600}",
         "type": "color",
-        "comment": "Base primary color. Use fg.inverse on this."
+        "comment": "Base primary color. Use fg.inverse instead"
       },
       "700": {
         "value": "{base.palette.blue.700}",
@@ -123,7 +123,7 @@
       "600": {
         "value": "{base.palette.red.600}",
         "type": "color",
-        "comment": "Base critical color. Use fg.inverse on this."
+        "comment": "Base critical color. Use fg.inverse instead"
       },
       "700": {
         "value": "{base.palette.red.700}",
@@ -196,7 +196,7 @@
       "400": {
         "value": "{base.palette.amber.400}",
         "type": "color",
-        "comment": "Base caution color (amber.400). Use fg.contrast on this."
+        "comment": "Base caution color (amber.400). Use fg.contrast.default instead"
       },
       "500": {
         "value": "{base.palette.amber.500}",
@@ -289,7 +289,7 @@
       "600": {
         "value": "{base.palette.green.600}",
         "type": "color",
-        "comment": "Base success color. Use fg.inverse on this."
+        "comment": "Base success color. Use fg.inverse instead"
       },
       "700": {
         "value": "{base.palette.green.700}",

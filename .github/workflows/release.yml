@@ -42,7 +42,7 @@ jobs:
       
       # Upgrade npm to 11.5.1+ for OIDC support (Node.js 22.x comes with npm 10.x)
       - name: Upgrade npm for OIDC support
-        run: npm install -g npm@latest
+        run: npm install -g npm@11.10.1
       
       - name: Config git user
         shell: bash
