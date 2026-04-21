@@ -1,22 +1,24 @@
-import {Transform} from 'style-dictionary';
 import * as math from 'mathjs';
+import {Transform} from 'style-dictionary';
+
 import * as filter from '../filters';
-import {flatShadow} from './flatShadow';
+
+import {durationMs} from './duration-ms';
+import {generateNewTokenFallback} from './generateNewTokenFallback';
 import {flatRGBAColor} from './flatRGBAColor';
+import {flatShadow} from './flatShadow';
 import {mapFontWeight} from './mapFontWeight';
+import {transformHexToRgb} from './transformHexToRgb';
 import {transformMath} from './transformMath';
 import {transformNameToCamelCase} from './transformNameToCamelCase';
-import {transformHexToRgb} from './transformHexToRgb';
-import {durationMs} from './duration-ms';
 
 export const transforms: Record<string, Transform> = {
-  'value/deprecated': {
+  // transform function that generates fallback for old values for a new token
+  'value/old-values': {
     type: 'value',
     transitive: true,
-    matcher: filter.isDeprecated,
-    transformer: ({value, fallback}) => {
-      return fallback || value;
-    },
+    matcher: filter.isOldValues,
+    transformer: generateNewTokenFallback,
   },
   // transform function that changes any hex color value to rgba
   // not used now in web
