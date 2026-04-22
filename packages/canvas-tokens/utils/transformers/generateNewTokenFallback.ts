@@ -2,8 +2,8 @@ import {Transform} from 'style-dictionary';
 
 export const generateFallbacks = (array: string[], rawValue: string): string => {
   // this function should take an array of strings and return a string of inner content for a var function
-  // ['{sys.size.x4}', '{sys.space.x4}'] & ['1rem', '1rem'] -> 'var({sys.size.x4}, var({sys.space.x4}, 1rem))'
-  // ['{sys.size.x4}', '{sys.space.x4}', '24px'] & ['1rem', '1rem', '24px'] -> 'var({sys.size.x4}, var({sys.space.x4}, 24px))'
+  // ['{sys.size.x4}', '{sys.space.x4}'] & 1rem -> 'var({sys.size.x4}, var({sys.space.x4}, 1rem))'
+  // ['{sys.size.x4}', '{sys.space.x4}', '24px'] & 1rem -> 'var({sys.size.x4}, var({sys.space.x4}, 24px))'
   const [current, ...rest] = array;
 
   const currentValue =

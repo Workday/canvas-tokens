@@ -136,7 +136,9 @@ export const changeValuesToCSSVars = (
   }
 
   const cssVarName = `--cnvs-${token.path.join('-').toLowerCase()}`;
-  const rawValue = !originalValue.startsWith('{') ? originalValue : token.value;
+  const rawValue = !(typeof originalValue === 'string' && originalValue.startsWith('{'))
+    ? originalValue
+    : token.value;
   const newValue = isFallback
     ? `var(${cssVarName}, ${generateFallbacks(oldValues, rawValue)})`
     : cssVarName;
