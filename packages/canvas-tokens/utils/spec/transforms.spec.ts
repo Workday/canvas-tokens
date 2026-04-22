@@ -54,6 +54,22 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
+  it('should handle fallback value', () => {
+    const result = transforms['value/old-values'].transformer(
+      {
+        ...defaultToken,
+        value: '{base.palette.blueberry.400}',
+        original: {value: 'blue', oldValues: ['{base.palette.blueberry.400}']},
+        path: ['base', 'palette', 'blue', '600'],
+        oldValues: ['{base.palette.blueberry.400}'],
+      },
+      defaultOptions
+    );
+    const expected = 'var(--cnvs-base-palette-blueberry-400, blue)';
+
+    expect(result).toBe(expected);
+  });
+
   it('should handle space before opacity', () => {
     const result = transforms['value/flatten-rgba'].transformer(
       {...defaultToken, value: 'rgba(rgba(0,0,0,1),50)'},

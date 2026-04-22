@@ -1,6 +1,7 @@
 import {Formatter, formatHelpers} from 'style-dictionary';
 import {jsFileHeader} from './helpers/jsFileHeader';
 import {kebabCase} from 'case-anything';
+import {generateFallbacks} from '../transformers/generateNewTokenFallback';
 
 const getCSSVarName = (path: string[]) => {
   return path.map(i => (!i.match(/^A\d+$/) ? kebabCase(i) : i.toLowerCase())).join('-');
@@ -17,9 +18,19 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
   const headerContent = !options.withoutModule
     ? jsFileHeader({file})
     : formatHelpers.fileHeader({file});
-  return dictionary.allTokens.reduce((acc: string, {name, path}) => {
-    const cssVarName = getCSSVarName(path);
-    acc += `exports.${name} = "--cnvs-${cssVarName}";\n`;
+  return dictionary.allTokens.reduce((acc: string, {name, path, original}) => {
+    const cssVarName = `--cnvs-${getCSSVarName(path)}`;
+
+    if (Array.isArray(original.oldValues)) {
+      acc += `exports.${name} = "var(${cssVarName}, ${generateFallbacks(
+        original.oldValues,
+        original.value
+      )})";\n`;
+
+      return acc;
+    }
+
+    acc += `exports.${name} = "${cssVarName}";\n`;
     return acc;
   }, headerContent);
 };
@@ -32,9 +43,19 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
  */
 export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
-  return dictionary.allTokens.reduce((acc: string, {name, path}) => {
-    const cssVarName = getCSSVarName(path);
-    acc += `export const ${name} = "--cnvs-${cssVarName}";\n`;
+  return dictionary.allTokens.reduce((acc: string, {name, path, original}) => {
+    const cssVarName = `--cnvs-${getCSSVarName(path)}`;
+
+    if (Array.isArray(original.oldValues)) {
+      acc += `export const ${name} = "var(${cssVarName}, ${generateFallbacks(
+        original.oldValues,
+        original.value
+      )})";\n`;
+
+      return acc;
+    }
+
+    acc += `export const ${name} = "${cssVarName}";\n`;
     return acc;
   }, headerContent);
 };
@@ -48,10 +69,20 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
 export const formatInlineTypes: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   return dictionary.allTokens.reduce((acc: string, token) => {
-    const {name, path, deprecated, deprecatedComment} = token;
-    const cssVarName = getCSSVarName(path);
+    const {name, path, deprecated, deprecatedComment, original} = token;
+    const cssVarName = `--cnvs-${getCSSVarName(path)}`;
     const deprecatedText = deprecated ? `/** @deprecated ${deprecatedComment} */\n` : '';
-    acc += `${deprecatedText}export declare const ${name}: "--cnvs-${cssVarName}";\n`;
+
+    if (Array.isArray(original.oldValues)) {
+      acc += `${deprecatedText}export declare const ${name}: "var(${cssVarName}, ${generateFallbacks(
+        original.oldValues,
+        original.value
+      )})";\n`;
+
+      return acc;
+    }
+
+    acc += `${deprecatedText}export declare const ${name}: "${cssVarName}";\n`;
     return acc;
   }, headerContent);
 };

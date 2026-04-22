@@ -6,13 +6,13 @@ import {
 } from '../formatters/helpers/formattedObjectInnerValues';
 
 const mockCompositeToken = {
-  value: {color: '{base.pallete.blueberry.400}'},
+  value: {color: '{base.palette.blueberry.400}'},
   comment: 'Use for primary background',
   type: 'composition',
   filePath: 'tokens/all.json',
   isSource: true,
   original: {
-    value: {color: '{base.pallete.blueberry.400}'},
+    value: {color: '{base.palette.blueberry.400}'},
     type: 'color',
   },
   name: 'cnvs-sys-color-primary',
@@ -41,12 +41,28 @@ const mockBrandToken = {
   filePath: 'tokens/all.json',
   isSource: true,
   original: {
-    value: '{base.pallete.blueberry.400}',
+    value: '{base.palette.blueberry.400}',
     type: 'color',
   },
   name: 'brandPrimaryBase',
   attributes: {},
   path: ['brand', 'primary', 'base'],
+};
+
+const mockFallbackBrandToken = {
+  value: 'blue',
+  type: 'color',
+  filePath: 'tokens/all.json',
+  isSource: true,
+  original: {
+    value: '{base.palette.blue.600}',
+    type: 'color',
+    oldValues: ['{base.palette.blueberry.400}'],
+  },
+  name: 'brandPrimaryA600',
+  attributes: {},
+  path: ['brand', 'primary', 'A600'],
+  oldValues: ['{base.palette.blueberry.400}'],
 };
 
 const mockBaseToken = {
@@ -61,6 +77,22 @@ const mockBaseToken = {
   name: 'basePaletteBlueberry400',
   attributes: {},
   path: ['base', 'palette', 'blueberry', '400'],
+};
+
+const mockFallbackBaseToken = {
+  value: '--cnvs-base-palette-blue-600',
+  type: 'color',
+  filePath: 'tokens/all.json',
+  isSource: true,
+  original: {
+    value: 'blue',
+    type: 'color',
+    oldValues: ['{base.palette.blueberry.400}'],
+  },
+  name: 'basePaletteBlue600',
+  attributes: {},
+  path: ['base', 'palette', 'blue', '600'],
+  oldValues: ['{base.palette.blueberry.400}'],
 };
 
 const mockDicttionary = {
@@ -79,7 +111,7 @@ describe('format helpers', () => {
       format: str => `@${str}`,
     });
 
-    const expected = `.cnvs-sys-color-primary {\n  color: @base-pallete-blueberry-400;\n}`;
+    const expected = `.cnvs-sys-color-primary {\n  color: @base-palette-blueberry-400;\n}`;
 
     expect(result).toStrictEqual(expected);
   });
@@ -106,6 +138,23 @@ describe('utils to change value', () => {
     expect(result).toStrictEqual(expected);
   });
 
+  it('should transform fallback brand token to css variable', () => {
+    const result = changeValuesToCSSVars(mockFallbackBrandToken, () => [mockBaseToken]);
+
+    const expected = 'var(--cnvs-brand-primary-a600, var(--cnvs-base-palette-blueberry-400, blue))';
+
+    expect(result).toStrictEqual(expected);
+  });
+
+  it('should transform fallback base token to css variable', () => {
+    const result = changeValuesToCSSVars(mockFallbackBaseToken, () => [mockBaseToken]);
+
+    const expected =
+      'var(--cnvs-base-palette-blue-600, var(--cnvs-base-palette-blueberry-400, blue))';
+
+    expect(result).toStrictEqual(expected);
+  });
+
   it('should transform composite tokens into css rule sets', () => {
     const result = changeValuesToCSSVars(mockCompositeToken, () => [mockBaseToken]);
 
@@ -120,9 +169,9 @@ describe('utils to change value', () => {
     const expected = {
       color: {
         comment: 'Use for primary background',
-        value: '{base.pallete.blueberry.400}',
+        value: '{base.palette.blueberry.400}',
         raw: {
-          color: '{base.pallete.blueberry.400}',
+          color: '{base.palette.blueberry.400}',
         },
       },
     };

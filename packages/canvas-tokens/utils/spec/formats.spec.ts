@@ -44,12 +44,15 @@ describe('formats', () => {
           original: {value: '#ffefee'},
         },
         {
-          name: 'cinnamon200',
-          value: '#fcc9c5',
-          path: ['base', 'palette', 'cinnamon', '200'],
+          name: 'amber100',
+          value: 'oklch(0.9567 0.0948 100.22 / 1)',
+          path: ['base', 'palette', 'amber', '100'],
           filePath: '',
           isSource: true,
-          original: {value: '#fcc9c5'},
+          original: {
+            value: 'oklch(0.9567 0.0948 100.22 / 1)',
+            oldValues: ['{base.palette.cinnamon.100}'],
+          },
         },
       ],
       getReferences: () => [
@@ -86,7 +89,7 @@ describe('formats', () => {
       const expected =
         headerContent +
         moduleContent +
-        `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexports.cinnamon200 = "--cnvs-base-palette-cinnamon-200";\n`;
+        `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexports.amber100 = "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))";\n`;
 
       expect(result).toBe(expected);
     });
@@ -97,7 +100,7 @@ describe('formats', () => {
       const result = formats['js/es6'](defaultArgs);
       const expected =
         headerContent +
-        `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const cinnamon200 = "--cnvs-base-palette-cinnamon-200";\n`;
+        `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const amber100 = "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))";\n`;
 
       expect(result).toBe(expected);
     });
@@ -108,7 +111,7 @@ describe('formats', () => {
       const result = formats['ts/inline'](defaultArgs);
       const expected =
         headerContent +
-        `export declare const cinnamon100: "--cnvs-base-palette-cinnamon-100";\nexport declare const cinnamon200: "--cnvs-base-palette-cinnamon-200";\n`;
+        `export declare const cinnamon100: "--cnvs-base-palette-cinnamon-100";\nexport declare const amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))";\n`;
 
       expect(result).toBe(expected);
     });
