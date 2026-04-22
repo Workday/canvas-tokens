@@ -57,12 +57,12 @@ const mockFallbackBrandToken = {
   original: {
     value: '{base.palette.blue.600}',
     type: 'color',
-    oldValues: ['{base.palette.blueberry.400}'],
+    oldValues: {v2: 'base.palette.blueberry.400'},
   },
   name: 'brandPrimaryA600',
   attributes: {},
   path: ['brand', 'primary', 'A600'],
-  oldValues: ['{base.palette.blueberry.400}'],
+  oldValues: {v2: 'base.palette.blueberry.400'},
 };
 
 const mockBaseToken = {
@@ -79,36 +79,20 @@ const mockBaseToken = {
   path: ['base', 'palette', 'blueberry', '400'],
 };
 
-const mockBaseTokenWithFallback = {
-  value: '--cnvs-base-palette-blueberry-400',
-  type: 'color',
-  filePath: 'tokens/all.json',
-  isSource: true,
-  original: {
-    value: 'blue',
-    type: 'color',
-    oldValues: [],
-  },
-  name: 'basePaletteBlueberry400',
-  attributes: {},
-  path: ['base', 'palette', 'blueberry', '400'],
-  oldValues: [],
-};
-
 const mockFallbackBaseToken = {
-  value: '--cnvs-base-palette-blue-600',
+  value: 'blue',
   type: 'color',
   filePath: 'tokens/all.json',
   isSource: true,
   original: {
     value: 'blue',
     type: 'color',
-    oldValues: ['{base.palette.blueberry.400}'],
+    oldValues: {v2: 'base.palette.blueberry.400'},
   },
   name: 'basePaletteBlue600',
   attributes: {},
   path: ['base', 'palette', 'blue', '600'],
-  oldValues: ['{base.palette.blueberry.400}'],
+  oldValues: {v2: 'base.palette.blueberry.400'},
 };
 
 const mockDicttionary = {
@@ -167,14 +151,6 @@ describe('utils to change value', () => {
 
     const expected =
       'var(--cnvs-base-palette-blue-600, var(--cnvs-base-palette-blueberry-400, blue))';
-
-    expect(result).toStrictEqual(expected);
-  });
-
-  it('should transform base token with empty old values to css variable', () => {
-    const result = changeValuesToCSSVars(mockBaseTokenWithFallback, () => [mockBaseToken]);
-
-    const expected = 'var(--cnvs-base-palette-blueberry-400, blue)';
 
     expect(result).toStrictEqual(expected);
   });

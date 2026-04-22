@@ -59,10 +59,10 @@ describe('transforms', () => {
     const result = transforms['value/old-values'].transformer(
       {
         ...defaultToken,
-        value: '{base.palette.blue.400}',
-        original: {value: 'blue', oldValues: ['{base.palette.blueberry.400}']},
+        value: 'blue',
+        original: {value: 'blue', oldValues: {v2: 'base.palette.blueberry.400'}},
         path: ['base', 'palette', 'blue', '600'],
-        oldValues: ['{base.palette.blueberry.400}'],
+        oldValues: {v2: 'base.palette.blueberry.400'},
       },
       defaultOptions
     );
@@ -76,9 +76,9 @@ describe('transforms', () => {
       {
         ...defaultToken,
         value: 'blue',
-        original: {value: '{base.palette.blue.700}', oldValues: []},
+        original: {value: '{base.palette.blue.700}', oldValues: {}},
         path: ['brand', 'primary', '700'],
-        oldValues: [],
+        oldValues: {},
       },
       defaultOptions
     );
@@ -93,14 +93,14 @@ describe('transforms', () => {
         value: 'oklch(0.4658 0.1562 255.5 / 1)',
         type: 'color',
         description: '',
-        oldValues: [],
+        oldValues: {},
         filePath: 'tokens/web/brand.json',
         isSource: true,
         original: {
           value: '{base.palette.blue.700}',
           type: 'color',
           description: '',
-          oldValues: [],
+          oldValues: {},
         },
         name: 'cnvs-brand-primary-700',
         attributes: {},
@@ -118,9 +118,9 @@ describe('transforms', () => {
       {
         ...defaultToken,
         value: 'blue',
-        original: {value: 'blue', oldValues: []},
+        original: {value: 'blue', oldValues: {}},
         path: ['base', 'palette', 'blue', '600'],
-        oldValues: [],
+        oldValues: {},
       },
       defaultOptions
     );
@@ -134,9 +134,12 @@ describe('transforms', () => {
       {
         ...defaultToken,
         value: 'blue',
-        original: {value: 'blue', oldValues: ['{base.palette.blueberry.400}', 'light-blue']},
+        original: {
+          value: 'blue',
+          oldValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
+        },
         path: ['base', 'palette', 'blue', '600'],
-        oldValues: ['{base.palette.blueberry.400}', 'light-blue'],
+        oldValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
       },
       defaultOptions
     );
@@ -147,7 +150,7 @@ describe('transforms', () => {
 
   it('should chain all oldValues when rawValue is a literal (not a token reference)', () => {
     const result = generateFallbacks(
-      ['{base.palette.cinnamon.100}', '{base.palette.old-red.100}'],
+      ['base.palette.cinnamon.100', 'base.palette.old-red.100'],
       'red'
     );
     const expected =
@@ -158,7 +161,7 @@ describe('transforms', () => {
 
   it('should chain only oldValues when rawValue is a token reference', () => {
     const result = generateFallbacks(
-      ['{base.palette.cinnamon.100}', '{base.palette.old-red.100}'],
+      ['base.palette.cinnamon.100', 'base.palette.old-red.100'],
       '{base.palette.old-red.100}'
     );
     const expected = 'var(--cnvs-base-palette-cinnamon-100, var(--cnvs-base-palette-old-red-100))';
@@ -167,7 +170,7 @@ describe('transforms', () => {
   });
 
   it('should return use last as a raw value if provided', () => {
-    const result = generateFallbacks(['{base.palette.cinnamon.100}', 'light-red'], 'red');
+    const result = generateFallbacks(['base.palette.cinnamon.100', 'light-red'], 'red');
     const expected = 'var(--cnvs-base-palette-cinnamon-100, light-red)';
 
     expect(result).toBe(expected);
