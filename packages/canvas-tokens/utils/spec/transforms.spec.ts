@@ -1,4 +1,5 @@
 import {transforms} from '../transformers';
+import {generateFallbacks} from '../transformers/generateNewTokenFallback';
 
 const defaultToken = {
   name: '',
@@ -54,11 +55,11 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should handle fallback value', () => {
+  it('should handle fallback value when old values are provided', () => {
     const result = transforms['value/old-values'].transformer(
       {
         ...defaultToken,
-        value: '{base.palette.blueberry.400}',
+        value: '{base.palette.blue.400}',
         original: {value: 'blue', oldValues: ['{base.palette.blueberry.400}']},
         path: ['base', 'palette', 'blue', '600'],
         oldValues: ['{base.palette.blueberry.400}'],
@@ -66,6 +67,73 @@ describe('transforms', () => {
       defaultOptions
     );
     const expected = 'var(--cnvs-base-palette-blueberry-400, blue)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should handle fallback value when old values are not provided', () => {
+    const result = transforms['value/old-values'].transformer(
+      {
+        ...defaultToken,
+        value: 'blue',
+        original: {value: 'blue', oldValues: []},
+        path: ['base', 'palette', 'blue', '600'],
+        oldValues: [],
+      },
+      defaultOptions
+    );
+    const expected = 'blue';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should handle fallback value', () => {
+    const result = transforms['value/old-values'].transformer(
+      {
+        ...defaultToken,
+        value: 'blue',
+        original: {value: 'blue', oldValues: ['{base.palette.blueberry.400}', 'light-blue']},
+        path: ['base', 'palette', 'blue', '600'],
+        oldValues: ['{base.palette.blueberry.400}', 'light-blue'],
+      },
+      defaultOptions
+    );
+    const expected = 'var(--cnvs-base-palette-blueberry-400, light-blue)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should chain all oldValues when rawValue is a literal (not a token reference)', () => {
+    const result = generateFallbacks(
+      ['{base.palette.cinnamon.100}', '{base.palette.old-red.100}'],
+      'red'
+    );
+    const expected =
+      'var(--cnvs-base-palette-cinnamon-100, var(--cnvs-base-palette-old-red-100, red))';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should chain only oldValues when rawValue is a token reference', () => {
+    const result = generateFallbacks(
+      ['{base.palette.cinnamon.100}', '{base.palette.old-red.100}'],
+      '{base.palette.old-red.100}'
+    );
+    const expected = 'var(--cnvs-base-palette-cinnamon-100, var(--cnvs-base-palette-old-red-100))';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should return use last as a raw value if provideded', () => {
+    const result = generateFallbacks(['{base.palette.cinnamon.100}', 'light-red'], 'red');
+    const expected = 'var(--cnvs-base-palette-cinnamon-100, light-red)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should return raw value if empty array is provided', () => {
+    const result = generateFallbacks([], 'red');
+    const expected = 'red';
 
     expect(result).toBe(expected);
   });

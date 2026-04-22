@@ -1,9 +1,10 @@
 import {Transform} from 'style-dictionary';
 
 export const generateFallbacks = (array: string[], rawValue: string): string => {
-  // this function should take an array of strings and return a string of inner content for a var function
-  // ['{sys.size.x4}', '{sys.space.x4}'] & 1rem -> 'var({sys.size.x4}, var({sys.space.x4}, 1rem))'
-  // ['{sys.size.x4}', '{sys.space.x4}', '24px'] & 1rem -> 'var({sys.size.x4}, var({sys.space.x4}, 24px))'
+  if (Array.isArray(array) && !array.length) {
+    return rawValue;
+  }
+
   const [current, ...rest] = array;
 
   const currentValue =
@@ -12,12 +13,19 @@ export const generateFallbacks = (array: string[], rawValue: string): string => 
       : current;
 
   if (!rest.length) {
-    return !currentValue.startsWith('--cnvs') ? currentValue : `var(${currentValue}, ${rawValue})`;
+    const endingValue =
+      typeof rawValue === 'string' && !rawValue.startsWith('{') && !rawValue.startsWith('--cnvs')
+        ? rawValue
+        : '';
+
+    return !currentValue.startsWith('--cnvs')
+      ? currentValue
+      : endingValue
+      ? `var(${currentValue}, ${endingValue})`
+      : `var(${currentValue})`;
   }
-  // Recursively build up the nested var fallback
-  return rawValue.startsWith('{') || rawValue.startsWith('--cnvs')
-    ? `var(${currentValue}, ${generateFallbacks(rest, rawValue)})`
-    : `var(${currentValue})`;
+
+  return `var(${currentValue}, ${generateFallbacks(rest, rawValue)})`;
 };
 
 export const generateNewTokenFallback: Transform['transformer'] = token => {
