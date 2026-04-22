@@ -94,9 +94,6 @@ const config = setConfig({
           level: ['base', 'brand', 'sys', 'component'],
           filter: filters.isOldValues,
           filterByLevel: true,
-          options: {
-            outputReferences: true,
-          },
         },
       ],
     },

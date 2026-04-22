@@ -79,6 +79,22 @@ const mockBaseToken = {
   path: ['base', 'palette', 'blueberry', '400'],
 };
 
+const mockBaseTokenWithFallback = {
+  value: '--cnvs-base-palette-blueberry-400',
+  type: 'color',
+  filePath: 'tokens/all.json',
+  isSource: true,
+  original: {
+    value: 'blue',
+    type: 'color',
+    oldValues: [],
+  },
+  name: 'basePaletteBlueberry400',
+  attributes: {},
+  path: ['base', 'palette', 'blueberry', '400'],
+  oldValues: [],
+};
+
 const mockFallbackBaseToken = {
   value: '--cnvs-base-palette-blue-600',
   type: 'color',
@@ -151,6 +167,14 @@ describe('utils to change value', () => {
 
     const expected =
       'var(--cnvs-base-palette-blue-600, var(--cnvs-base-palette-blueberry-400, blue))';
+
+    expect(result).toStrictEqual(expected);
+  });
+
+  it('should transform base token with empty old values to css variable', () => {
+    const result = changeValuesToCSSVars(mockBaseTokenWithFallback, () => [mockBaseToken]);
+
+    const expected = 'var(--cnvs-base-palette-blueberry-400, blue)';
 
     expect(result).toStrictEqual(expected);
   });

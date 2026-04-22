@@ -71,6 +71,48 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
+  it('should handle fallback value when old values are provided', () => {
+    const result = transforms['value/old-values'].transformer(
+      {
+        ...defaultToken,
+        value: 'blue',
+        original: {value: '{base.palette.blue.700}', oldValues: []},
+        path: ['brand', 'primary', '700'],
+        oldValues: [],
+      },
+      defaultOptions
+    );
+    const expected = 'blue';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should handle fallback value when old values are provided', () => {
+    const result = transforms['value/old-values'].transformer(
+      {
+        value: 'oklch(0.4658 0.1562 255.5 / 1)',
+        type: 'color',
+        description: '',
+        oldValues: [],
+        filePath: 'tokens/web/brand.json',
+        isSource: true,
+        original: {
+          value: '{base.palette.blue.700}',
+          type: 'color',
+          description: '',
+          oldValues: [],
+        },
+        name: 'cnvs-brand-primary-700',
+        attributes: {},
+        path: ['brand', 'primary', '700'],
+      },
+      defaultOptions
+    );
+    const expected = 'oklch(0.4658 0.1562 255.5 / 1)';
+
+    expect(result).toBe(expected);
+  });
+
   it('should handle fallback value when old values are not provided', () => {
     const result = transforms['value/old-values'].transformer(
       {
@@ -124,7 +166,7 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should return use last as a raw value if provideded', () => {
+  it('should return use last as a raw value if provided', () => {
     const result = generateFallbacks(['{base.palette.cinnamon.100}', 'light-red'], 'red');
     const expected = 'var(--cnvs-base-palette-cinnamon-100, light-red)';
 
