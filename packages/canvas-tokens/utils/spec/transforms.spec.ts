@@ -71,23 +71,7 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should handle fallback value when old values are provided', () => {
-    const result = transforms['value/old-values'].transformer(
-      {
-        ...defaultToken,
-        value: 'blue',
-        original: {value: '{base.palette.blue.700}', oldValues: {}},
-        path: ['brand', 'primary', '700'],
-        oldValues: {},
-      },
-      defaultOptions
-    );
-    const expected = 'blue';
-
-    expect(result).toBe(expected);
-  });
-
-  it('should handle fallback value when old values are provided', () => {
+  it('should handle fallback value when old values are empty', () => {
     const result = transforms['value/old-values'].transformer(
       {
         value: 'oklch(0.4658 0.1562 255.5 / 1)',
@@ -113,23 +97,7 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should handle fallback value when old values are not provided', () => {
-    const result = transforms['value/old-values'].transformer(
-      {
-        ...defaultToken,
-        value: 'blue',
-        original: {value: 'blue', oldValues: {}},
-        path: ['base', 'palette', 'blue', '600'],
-        oldValues: {},
-      },
-      defaultOptions
-    );
-    const expected = 'blue';
-
-    expect(result).toBe(expected);
-  });
-
-  it('should handle fallback value', () => {
+  it('should handle fallback value with raw value', () => {
     const result = transforms['value/old-values'].transformer(
       {
         ...defaultToken,
