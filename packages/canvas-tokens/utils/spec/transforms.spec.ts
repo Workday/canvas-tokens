@@ -60,9 +60,9 @@ describe('transforms', () => {
       {
         ...defaultToken,
         value: 'blue',
-        original: {value: 'blue', oldValues: {v2: 'base.palette.blueberry.400'}},
+        original: {value: 'blue', deprecatedValues: {v2: 'base.palette.blueberry.400'}},
         path: ['base', 'palette', 'blue', '600'],
-        oldValues: {v2: 'base.palette.blueberry.400'},
+        deprecatedValues: {v2: 'base.palette.blueberry.400'},
       },
       defaultOptions
     );
@@ -77,14 +77,14 @@ describe('transforms', () => {
         value: 'oklch(0.4658 0.1562 255.5 / 1)',
         type: 'color',
         description: '',
-        oldValues: {},
+        deprecatedValues: {},
         filePath: 'tokens/web/brand.json',
         isSource: true,
         original: {
           value: '{base.palette.blue.700}',
           type: 'color',
           description: '',
-          oldValues: {},
+          deprecatedValues: {},
         },
         name: 'cnvs-brand-primary-700',
         attributes: {},
@@ -104,10 +104,10 @@ describe('transforms', () => {
         value: 'blue',
         original: {
           value: 'blue',
-          oldValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
+          deprecatedValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
         },
         path: ['base', 'palette', 'blue', '600'],
-        oldValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
+        deprecatedValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
       },
       defaultOptions
     );
@@ -116,7 +116,7 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should chain all oldValues when rawValue is a literal (not a token reference)', () => {
+  it('should chain all deprecatedValues when rawValue is a literal (not a token reference)', () => {
     const result = generateFallbacks(
       ['base.palette.cinnamon.100', 'base.palette.old-red.100'],
       'red'
@@ -127,7 +127,7 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should chain only oldValues when rawValue is a token reference', () => {
+  it('should chain only deprecatedValues when rawValue is a token reference', () => {
     const result = generateFallbacks(
       ['base.palette.cinnamon.100', 'base.palette.old-red.100'],
       '{base.palette.old-red.100}'

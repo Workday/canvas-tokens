@@ -41,9 +41,9 @@ export const generateFallbacks = (array: string[], rawValue: string): string => 
 };
 
 export const generateNewTokenFallback: Transform['transformer'] = token => {
-  const oldValues = token.original.oldValues;
-  if (typeof oldValues === 'object' && oldValues !== null) {
-    const {raw, ...refs} = oldValues as Record<string, unknown>;
+  const deprecatedValues = token.original.deprecatedValues;
+  if (typeof deprecatedValues === 'object' && deprecatedValues !== null) {
+    const {raw, ...refs} = deprecatedValues as Record<string, unknown>;
     const fallbackValues = Object.values(refs).filter(v => typeof v === 'string') as string[];
 
     return generateFallbacks(fallbackValues, raw || token.value);

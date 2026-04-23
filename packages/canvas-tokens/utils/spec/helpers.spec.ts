@@ -57,12 +57,12 @@ const mockFallbackBrandToken = {
   original: {
     value: '{base.palette.blue.600}',
     type: 'color',
-    oldValues: {v2: 'base.palette.blueberry.400'},
+    deprecatedValues: {v2: 'base.palette.blueberry.400'},
   },
   name: 'brandPrimaryA600',
   attributes: {},
   path: ['brand', 'primary', 'A600'],
-  oldValues: {v2: 'base.palette.blueberry.400'},
+  deprecatedValues: {v2: 'base.palette.blueberry.400'},
 };
 
 const mockBaseToken = {
@@ -87,12 +87,12 @@ const mockFallbackBaseToken = {
   original: {
     value: 'blue',
     type: 'color',
-    oldValues: {v2: 'base.palette.blueberry.400'},
+    deprecatedValues: {v2: 'base.palette.blueberry.400'},
   },
   name: 'basePaletteBlue600',
   attributes: {},
   path: ['base', 'palette', 'blue', '600'],
-  oldValues: {v2: 'base.palette.blueberry.400'},
+  deprecatedValues: {v2: 'base.palette.blueberry.400'},
 };
 
 const mockDicttionary = {
