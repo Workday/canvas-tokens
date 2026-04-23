@@ -55,7 +55,7 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should handle fallback value when old values are provided', () => {
+  it('should handle fallback value when deprecated values are provided', () => {
     const result = transforms['value/old-values'].transformer(
       {
         ...defaultToken,
