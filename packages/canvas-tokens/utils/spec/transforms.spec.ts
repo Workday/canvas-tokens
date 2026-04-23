@@ -72,7 +72,7 @@ describe('transforms', () => {
   });
 
   it('should handle fallback value when old values are empty', () => {
-    const result = transforms['value/old-values'].transformer(
+    const result = transforms['value/deprecated-values'].transformer(
       {
         value: 'oklch(0.4658 0.1562 255.5 / 1)',
         type: 'color',
