@@ -87,5 +87,5 @@ export const filterActionTokens: Matcher = token => {
 };
 
 export const isOldValues: Matcher = token => {
-  return token.original.deprecatedValues;
+  return Boolean(token.original.deprecatedValues);
 };
