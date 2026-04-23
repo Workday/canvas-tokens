@@ -116,7 +116,7 @@ export const changeValuesToCSSVars = (
 ): Record<string, string> | string => {
   const originalValue = token.original.value;
   const deprecatedValues = token.original.deprecatedValues;
-  const isFallback = typeof token.original.deprecatedValues === 'object';
+  const isFallback = deprecatedValues != null && typeof deprecatedValues === 'object';
   const fallbackValues = isFallback
     ? (Object.values(deprecatedValues).filter(item => typeof item === 'string') as string[])
     : [];
