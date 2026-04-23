@@ -85,3 +85,7 @@ export const filterActionTokens: Matcher = token => {
   const excludedTokens = ['action'];
   return !excludedTokens.includes(token.path[1]);
 };
+
+export const isOldValues: Matcher = token => {
+  return token.original.oldValues;
+};

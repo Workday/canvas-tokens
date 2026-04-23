@@ -1,4 +1,5 @@
 import {transforms} from '../transformers';
+import {generateFallbacks} from '../transformers/generateNewTokenFallback';
 
 const defaultToken = {
   name: '',
@@ -50,6 +51,102 @@ describe('transforms', () => {
       defaultOptions
     );
     const expected = 'rgba(0,0,0,0.5)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should handle fallback value when old values are provided', () => {
+    const result = transforms['value/old-values'].transformer(
+      {
+        ...defaultToken,
+        value: 'blue',
+        original: {value: 'blue', oldValues: {v2: 'base.palette.blueberry.400'}},
+        path: ['base', 'palette', 'blue', '600'],
+        oldValues: {v2: 'base.palette.blueberry.400'},
+      },
+      defaultOptions
+    );
+    const expected = 'var(--cnvs-base-palette-blueberry-400, blue)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should handle fallback value when old values are empty', () => {
+    const result = transforms['value/old-values'].transformer(
+      {
+        value: 'oklch(0.4658 0.1562 255.5 / 1)',
+        type: 'color',
+        description: '',
+        oldValues: {},
+        filePath: 'tokens/web/brand.json',
+        isSource: true,
+        original: {
+          value: '{base.palette.blue.700}',
+          type: 'color',
+          description: '',
+          oldValues: {},
+        },
+        name: 'cnvs-brand-primary-700',
+        attributes: {},
+        path: ['brand', 'primary', '700'],
+      },
+      defaultOptions
+    );
+    const expected = 'oklch(0.4658 0.1562 255.5 / 1)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should handle fallback value with raw value', () => {
+    const result = transforms['value/old-values'].transformer(
+      {
+        ...defaultToken,
+        value: 'blue',
+        original: {
+          value: 'blue',
+          oldValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
+        },
+        path: ['base', 'palette', 'blue', '600'],
+        oldValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
+      },
+      defaultOptions
+    );
+    const expected = 'var(--cnvs-base-palette-blueberry-400, light-blue)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should chain all oldValues when rawValue is a literal (not a token reference)', () => {
+    const result = generateFallbacks(
+      ['base.palette.cinnamon.100', 'base.palette.old-red.100'],
+      'red'
+    );
+    const expected =
+      'var(--cnvs-base-palette-cinnamon-100, var(--cnvs-base-palette-old-red-100, red))';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should chain only oldValues when rawValue is a token reference', () => {
+    const result = generateFallbacks(
+      ['base.palette.cinnamon.100', 'base.palette.old-red.100'],
+      '{base.palette.old-red.100}'
+    );
+    const expected = 'var(--cnvs-base-palette-cinnamon-100, var(--cnvs-base-palette-old-red-100))';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should return use last as a raw value if provided', () => {
+    const result = generateFallbacks(['base.palette.cinnamon.100', 'light-red'], 'red');
+    const expected = 'var(--cnvs-base-palette-cinnamon-100, light-red)';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should return raw value if empty array is provided', () => {
+    const result = generateFallbacks([], 'red');
+    const expected = 'red';
 
     expect(result).toBe(expected);
   });
