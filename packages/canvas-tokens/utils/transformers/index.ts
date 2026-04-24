@@ -13,8 +13,8 @@ import {transformMath} from './transformMath';
 import {transformNameToCamelCase} from './transformNameToCamelCase';
 
 export const transforms: Record<string, Transform> = {
-  // transform function that generates fallback for old values for a new token
-  'value/old-values': {
+  // transform function that generates fallback as deprecated values for a new token
+  'value/deprecated-values': {
     type: 'value',
     transitive: true,
     matcher: filter.isOldValues,

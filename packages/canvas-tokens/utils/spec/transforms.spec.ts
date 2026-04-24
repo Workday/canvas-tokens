@@ -56,7 +56,7 @@ describe('transforms', () => {
   });
 
   it('should handle fallback value when deprecated values are provided', () => {
-    const result = transforms['value/old-values'].transformer(
+    const result = transforms['value/deprecated-values'].transformer(
       {
         ...defaultToken,
         value: 'blue',
@@ -98,7 +98,7 @@ describe('transforms', () => {
   });
 
   it('should handle fallback value with raw value', () => {
-    const result = transforms['value/old-values'].transformer(
+    const result = transforms['value/deprecated-values'].transformer(
       {
         ...defaultToken,
         value: 'blue',

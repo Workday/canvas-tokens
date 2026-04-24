@@ -175,7 +175,7 @@ StyleDictionary.registerTransformGroup({
 
 StyleDictionary.registerTransformGroup({
   name: 'legacy-web',
-  transforms: [...webTransforms, 'value/old-values'],
+  transforms: [...webTransforms, 'value/deprecated-values'],
 });
 
 StyleDictionary.registerTransformGroup({
