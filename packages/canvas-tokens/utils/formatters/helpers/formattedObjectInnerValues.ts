@@ -183,7 +183,9 @@ export const getOriginalValues = (
 const resolveMathExpressions = (value: string): string => {
   if (isMathExpression({value} as TransformedToken)) {
     const cleanExpression = value.replace(/rem/g, '');
-    return `${math.evaluate(cleanExpression)}rem`;
+    return cleanExpression.includes('var')
+      ? cleanExpression
+      : `${math.evaluate(cleanExpression)}rem`;
   }
 
   return value;

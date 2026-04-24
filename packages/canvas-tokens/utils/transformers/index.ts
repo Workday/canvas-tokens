@@ -79,6 +79,8 @@ export const transforms: Record<string, Transform> = {
     transitive: true,
     matcher: filter.isBreakpoints,
     transformer: ({value}) => {
+      if (value.includes('var')) return value;
+
       const isRem = value.includes('rem');
       const expression = isRem ? value.replace('rem', '') : value;
       const mathValue = math.evaluate(expression);

@@ -46,7 +46,19 @@ export const generateNewTokenFallback: Transform['transformer'] = token => {
     const {raw, ...refs} = deprecatedValues as Record<string, unknown>;
     const fallbackValues = Object.values(refs).filter(v => typeof v === 'string') as string[];
 
-    return generateFallbacks(fallbackValues, raw || token.value);
+    const originalRef = token.original.value.replace(
+      /{[\w.]*}/g,
+      (a: string) => `var(${refToCSSVar(a)})`
+    );
+
+    const rawValue =
+      /\s(\*|\/|\+|-)\s/g.test(originalRef) && !token.value.startsWith('oklch')
+        ? originalRef.startsWith('calc')
+          ? originalRef
+          : `calc(${originalRef})`
+        : token.value;
+
+    return generateFallbacks(fallbackValues, raw || rawValue);
   }
 
   const newValue =

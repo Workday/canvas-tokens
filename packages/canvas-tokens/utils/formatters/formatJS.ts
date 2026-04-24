@@ -18,13 +18,15 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
   const headerContent = !options.withoutModule
     ? jsFileHeader({file})
     : formatHelpers.fileHeader({file});
+
   return dictionary.allTokens.reduce((acc: string, {name, path, original}) => {
     const cssVarName = `--cnvs-${getCSSVarName(path)}`;
 
-    if (Array.isArray(original.deprecatedValues)) {
+    if (typeof original.deprecatedValues === 'object' && original.deprecatedValues !== null) {
+      const {raw, ...refs} = original.deprecatedValues as Record<string, unknown>;
       acc += `exports.${name} = "var(${cssVarName}, ${generateFallbacks(
-        original.deprecatedValues,
-        original.value
+        Object.values(refs).filter(v => typeof v === 'string') as string[],
+        raw || original.value
       )})";\n`;
 
       return acc;
@@ -46,10 +48,12 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
   return dictionary.allTokens.reduce((acc: string, {name, path, original}) => {
     const cssVarName = `--cnvs-${getCSSVarName(path)}`;
 
-    if (Array.isArray(original.deprecatedValues)) {
+    if (typeof original.deprecatedValues === 'object' && original.deprecatedValues !== null) {
+      const {raw, ...refs} = original.deprecatedValues as Record<string, unknown>;
+
       acc += `export const ${name} = "var(${cssVarName}, ${generateFallbacks(
-        original.deprecatedValues,
-        original.value
+        Object.values(refs).filter(v => typeof v === 'string') as string[],
+        raw || original.value
       )})";\n`;
 
       return acc;
@@ -73,10 +77,12 @@ export const formatInlineTypes: Formatter = ({dictionary, file}) => {
     const cssVarName = `--cnvs-${getCSSVarName(path)}`;
     const deprecatedText = deprecated ? `/** @deprecated ${deprecatedComment} */\n` : '';
 
-    if (Array.isArray(original.deprecatedValues)) {
+    if (typeof original.deprecatedValues === 'object' && original.deprecatedValues !== null) {
+      const {raw, ...refs} = original.deprecatedValues as Record<string, unknown>;
+
       acc += `${deprecatedText}export declare const ${name}: "var(${cssVarName}, ${generateFallbacks(
-        original.deprecatedValues,
-        original.value
+        Object.values(refs).filter(v => typeof v === 'string') as string[],
+        raw || original.value
       )})";\n`;
 
       return acc;
