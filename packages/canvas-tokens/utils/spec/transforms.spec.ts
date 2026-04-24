@@ -402,4 +402,41 @@ describe('transforms', () => {
 
     expect(result).toBe(expected);
   });
+
+  it('should wrap combined token references from original.value in calc() for deprecated fallbacks', () => {
+    const result = transforms['value/deprecated-values'].transformer(
+      {
+        ...defaultToken,
+        value: '3rem',
+        original: {
+          value: '{base.space.x1} + {base.space.x2}',
+          deprecatedValues: {v2: 'base.space.legacy'},
+        },
+        path: ['sys', 'space', 'stack'],
+      },
+      defaultOptions
+    );
+    const expected =
+      'var(--cnvs-base-space-legacy, calc(var(--cnvs-base-space-x1) + var(--cnvs-base-space-x2)))';
+
+    expect(result).toBe(expected);
+  });
+
+  it('should preserve a leading calc() from original.value when building deprecated fallbacks', () => {
+    const result = transforms['value/deprecated-values'].transformer(
+      {
+        ...defaultToken,
+        value: '3rem',
+        original: {
+          value: 'calc({base.space.x1} + 2rem)',
+          deprecatedValues: {v2: 'base.space.legacy'},
+        },
+        path: ['sys', 'space', 'stack'],
+      },
+      defaultOptions
+    );
+    const expected = 'var(--cnvs-base-space-legacy, calc(var(--cnvs-base-space-x1) + 2rem))';
+
+    expect(result).toBe(expected);
+  });
 });

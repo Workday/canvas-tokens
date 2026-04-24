@@ -118,7 +118,8 @@ const generateJSDoc = (
     typeof actualValue === 'string'
       ? actualValue.includes('rem') &&
         [' * ', ' / ', ' + ', ' - '].some(sign => actualValue.includes(sign)) &&
-        !actualValue.includes('oklch')
+        !actualValue.includes('oklch') &&
+        !actualValue.includes('var')
         ? math.evaluate(actualValue.replace(/rem/g, ''))
         : parseFloat(actualValue)
       : null;

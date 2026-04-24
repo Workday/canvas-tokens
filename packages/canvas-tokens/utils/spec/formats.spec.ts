@@ -51,7 +51,7 @@ describe('formats', () => {
           isSource: true,
           original: {
             value: 'oklch(0.9567 0.0948 100.22 / 1)',
-            deprecatedValues: ['base.palette.cinnamon.100'],
+            deprecatedValues: {v2: 'base.palette.cinnamon.100'},
           },
         },
       ],
@@ -103,6 +103,35 @@ describe('formats', () => {
         `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const amber100 = "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))";\n`;
 
       expect(result).toBe(expected);
+    });
+
+    it('should use deprecatedValues.raw as the inner fallback when present', () => {
+      const result = formats['js/es6']({
+        ...defaultArgs,
+        dictionary: {
+          allTokens: [
+            {
+              name: 'amber100',
+              value: 'oklch(0.9567 0.0948 100.22 / 1)',
+              path: ['base', 'palette', 'amber', '100'],
+              filePath: '',
+              isSource: true,
+              original: {
+                value: 'oklch(0.9567 0.0948 100.22 / 1)',
+                deprecatedValues: {
+                  v2: 'base.palette.cinnamon.100',
+                  raw: 'oklch(0.9 0.05 100 / 1)',
+                },
+              },
+            },
+          ],
+          getReferences: () => [],
+        },
+      });
+
+      expect(result).toContain(
+        'var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9 0.05 100 / 1)))'
+      );
     });
   });
 
