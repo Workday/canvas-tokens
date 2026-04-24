@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.3.0-beta.1
+
+### Minor Changes
+
+- ### Infrastructure
+
+  - fix: Use deprecatedValues prop name ([#304](https://github.com/Workday/canvas-tokens/pull/304))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@Copilot](https://github.com/Copilot),
+    [@alanbsmith](https://github.com/alanbsmith))
+
 ## 4.3.0-beta.0
 
 ### Minor Changes
