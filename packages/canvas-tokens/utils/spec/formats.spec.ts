@@ -51,7 +51,7 @@ describe('formats', () => {
           isSource: true,
           original: {
             value: 'oklch(0.9567 0.0948 100.22 / 1)',
-            oldValues: ['base.palette.cinnamon.100'],
+            deprecatedValues: ['base.palette.cinnamon.100'],
           },
         },
       ],
