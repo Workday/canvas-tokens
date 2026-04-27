@@ -6,6 +6,13 @@ export interface TokenGridProps<T> {
   rows: T[];
   children: (row: T) => React.ReactNode;
   caption?: React.ReactNode;
+  /**
+   * CSS grid-template-columns value for each row.
+   * Defaults to the 4-column system layout: "4.5rem 1fr 1.6fr 1fr"
+   * Pass a custom value when the table has a different number of columns.
+   * e.g. columns="4.5rem 1.2fr 1.2fr 0.8fr 1fr" for a 5-column deprecated table.
+   */
+  columns?: string;
 }
 
 function classNames(baseClassName: string, classNames = '') {
@@ -16,7 +23,6 @@ function classNames(baseClassName: string, classNames = '') {
  * This function formats the JS var name so it will break on the dot notation */
 export function formatJSVar(varName: string) {
   return varName.split('.').map((identifier, index) => {
-    // Don't add a word-break before the first identifier
     if (!index) {
       return identifier;
     }
@@ -29,14 +35,18 @@ export function formatJSVar(varName: string) {
   });
 }
 
-export function TokenGrid<T>({caption, children, headings, rows}: TokenGridProps<T>) {
+export function TokenGrid<T>({caption, children, columns, headings, rows}: TokenGridProps<T>) {
+  const style = columns
+    ? ({'--token-grid-columns': columns} as React.CSSProperties)
+    : undefined;
+
   return (
-    <table className="token-grid">
+    <table className="token-grid" style={style}>
       {caption && (
         <caption className="token-grid__caption cnvs-sys-type-subtext-large">{caption}</caption>
       )}
       <thead className="token-grid__head">
-        <tr className="token-grid__row">
+        <tr className="token-grid__row token-grid__row--head">
           {headings.map((heading, index) => (
             <th key={index} className="token-grid__head-item cnvs-sys-type-subtext-large">
               {heading}
@@ -76,21 +86,79 @@ const TokenGridSwatch: React.FC<React.HTMLProps<HTMLSpanElement>> = ({className,
   <span className={classNames('token-grid__swatch', className)} {...props} />
 );
 
+const CopyIcon = () => (
+  <svg
+    className="token-grid__copy-icon"
+    width="12"
+    height="12"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
+    <path
+      d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+  </svg>
+);
+
+const CheckIcon = () => (
+  <svg
+    className="token-grid__copy-icon token-grid__copy-icon--success"
+    width="12"
+    height="12"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M3 8l3.5 3.5L13 4"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 const TokenGridMonospaceLabel: React.FC<
-  React.HTMLProps<HTMLSpanElement> & {isDeprecated?: boolean}
-> = ({className, children, isDeprecated, ...props}) => {
+  React.HTMLProps<HTMLButtonElement> & {isDeprecated?: boolean; copyText?: string}
+> = ({className, children, isDeprecated, copyText, ...props}) => {
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopy = React.useCallback(() => {
+    if (!copyText) return;
+    navigator.clipboard.writeText(copyText).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    });
+  }, [copyText]);
+
   return (
-    <span
+    <button
+      type="button"
       className={classNames(
         'token-grid__monospace-label',
         `cnvs-sys-type-subtext-medium ${
-          isDeprecated ? 'token-grid__deprecate-monospace-label' : className
-        }`
+          isDeprecated
+            ? 'token-grid__deprecate-monospace-label'
+            : copyText
+            ? 'token-grid__monospace-label--copyable'
+            : ''
+        } ${className || ''}`
       )}
-      {...props}
+      onClick={copyText ? handleCopy : undefined}
+      aria-label={copyText ? `Copy ${copyText}` : undefined}
+      title={copyText ? `Click to copy` : undefined}
+      {...(props as any)}
     >
-      {children}
-    </span>
+      <span className="token-grid__monospace-label-text">{children}</span>
+      {copyText && (copied ? <CheckIcon /> : <CopyIcon />)}
+    </button>
   );
 };
 

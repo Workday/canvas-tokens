@@ -1,8 +1,8 @@
 .token-grid {
-  border: solid 1px var(--cnvs-sys-color-border-divider);
+  border: solid 0.0625rem var(--cnvs-sys-color-border-divider);
   border-radius: 0.5rem;
   display: grid;
-  min-width: 62.5rem;
+  min-width: 50rem;
   max-width: 80rem;
   overflow-x: auto;
 }
@@ -10,8 +10,9 @@
 .token-grid__caption {
   border-bottom: solid 0.0625rem var(--cnvs-sys-color-border-divider);
   display: flex;
-  padding: 0.5rem 1rem;
-  text-transform: capitalize;
+  padding: 0.625rem 1rem;
+  font-weight: var(--cnvs-base-font-weight-700);
+  color: var(--cnvs-sys-color-text-default);
 }
 
 .token-grid__head {
@@ -21,22 +22,36 @@
 
 .token-grid__head-item {
   display: grid;
-  color: var(--cnvs-sys-color-text-default);
+  color: var(--cnvs-sys-color-text-subdued);
   align-items: center;
   justify-content: start;
   font-weight: var(--cnvs-base-font-weight-700);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .token-grid__row {
-  align-items: center;
+  /* Start-align so all cells top-align when row height varies */
+  align-items: start;
   border-bottom: solid 0.0625rem var(--cnvs-sys-color-border-divider);
   display: grid;
-  gap: 1rem;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-  min-height: 4rem;
-  padding: 1rem;
-  justify-content: start;
+  gap: 0 1.25rem;
+  grid-template-columns: 4.5rem 1fr 1.6fr 1fr;
+  min-height: 4.5rem;
+  padding: 0.875rem 1rem;
+  transition: background-color 0.1s ease;
+}
+
+.token-grid__row--head {
+  min-height: unset;
+  padding: 0.5rem 1rem;
+  /* Re-center header labels */
+  align-items: center;
+}
+
+.token-grid__row:not(.token-grid__row--head):hover {
+  background-color: var(--cnvs-sys-color-bg-alt-softer);
 }
 
 .token-grid__body .token-grid__row:last-of-type {
@@ -45,19 +60,23 @@
 
 .token-grid__row-item {
   align-items: start;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   font-family: var(--cnvs-base-font-family-100);
-  gap: 0.25rem;
+  gap: 0.375rem;
   justify-self: start;
+  width: 100%;
+  /* Prevent any cell from blowing past its column boundary */
+  min-width: 0;
 }
 
 .token-grid__swatch {
-  display: grid;
-  grid-template-columns: minmax(2rem, 8rem);
-  height: var(--cnvs-sys-size-xl);
-  padding: 0.5rem;
+  display: block;
+  width: 3.5rem;
+  height: 3rem;
   border: 0.0625rem solid var(--cnvs-sys-color-border-divider);
   border-radius: var(--cnvs-sys-shape-sm);
+  flex-shrink: 0;
 }
 
 .token-grid__sample {
@@ -68,16 +87,111 @@
   width: 2rem;
 }
 
+/* Monospace label — base */
 .token-grid__monospace-label {
   background-color: var(--cnvs-sys-color-surface-alt-strong);
   color: var(--cnvs-sys-color-fg-default);
   font-family: var(--cnvs-base-font-family-100);
+  font-size: 0.75rem;
   padding: var(--cnvs-sys-padding-xxs) var(--cnvs-sys-padding-md);
-  border-radius: 0.25rem;
-  min-height: 1rem;
+  border-radius: 0.375rem;
+  border: 0.0625rem solid var(--cnvs-sys-color-border-divider);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: default;
+  width: 100%;
+  /* Prevent chip from expanding beyond its column */
+  min-width: 0;
+  text-align: left;
+  transition: background-color 0.1s ease, border-color 0.1s ease;
 }
 
+/* Copyable variant */
+.token-grid__monospace-label--copyable {
+  cursor: pointer;
+}
+
+.token-grid__monospace-label--copyable:hover {
+  background-color: var(--cnvs-sys-color-bg-alt-soft);
+  border-color: var(--cnvs-sys-color-border-default);
+}
+
+.token-grid__monospace-label--copyable:active {
+  background-color: var(--cnvs-sys-color-bg-alt-softer);
+}
+
+.token-grid__monospace-label-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* Prevent text node from pushing the chip wider than its container */
+  min-width: 0;
+}
+
+/* Copy icon — hidden at rest, revealed at full opacity on hover/focus.
+   Opacity-0 rather than display:none keeps the icon in layout so chip width stays stable. */
+.token-grid__copy-icon {
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  color: var(--cnvs-sys-color-fg-default);
+}
+
+.token-grid__monospace-label--copyable:hover .token-grid__copy-icon,
+.token-grid__monospace-label--copyable:focus-visible .token-grid__copy-icon {
+  opacity: 1;
+}
+
+/* Checkmark stays visible after copy regardless of hover state */
+.token-grid__copy-icon--success {
+  opacity: 1 !important;
+  color: var(--cnvs-sys-color-fg-positive-default);
+}
+
+/* Deprecated label */
 .token-grid__deprecate-monospace-label {
   background-color: var(--cnvs-sys-color-bg-critical-softest);
   color: var(--cnvs-sys-color-fg-critical-default);
+  border-color: var(--cnvs-sys-color-border-critical-default);
+}
+
+/* Variable label row (CSS / JS badges) */
+.token-grid__var-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  /* Prevent badge + chip row from overflowing the column */
+  min-width: 0;
+}
+
+.token-grid__var-badge {
+  font-size: 0.625rem;
+  font-weight: var(--cnvs-base-font-weight-700);
+  color: var(--cnvs-sys-color-text-subdued);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Token name — breaks at hyphens first (natural for CSS var names),
+   only falls back to mid-character breaking if a single segment is too long */
+.token-grid__token-name {
+  font-family: var(--cnvs-base-font-family-100);
+  font-size: 0.75rem;
+  color: var(--cnvs-sys-color-text-default);
+  font-weight: var(--cnvs-base-font-weight-700);
+  margin: 0 0 0.125rem;
+  overflow-wrap: break-word;
+}
+
+.token-grid__token-desc {
+  font-size: 0.75rem;
+  color: var(--cnvs-sys-color-text-subdued);
+  line-height: 1.5;
+  margin: 0;
+  font-family: var(--cnvs-base-font-family-200, sans-serif);
 }

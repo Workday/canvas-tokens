@@ -1,4 +1,6 @@
 import {Meta, Unstyled} from '@storybook/blocks';
+
+import {PageHeader} from '../../components/PageHeader';
 import {
   BrandFocusColors,
   BrandSurfaceColors,
@@ -11,9 +13,10 @@ import {
 
 <Unstyled>
 
-## System Brand Colors
-
-Brand color tokens provide brand-aligned colors for surfaces, accents, foreground, borders, and focus states.
+<PageHeader
+  title="System Brand Colors"
+  description="Brand color tokens provide brand-aligned colors for surfaces, accents, foreground, borders, and focus states."
+/>
 
 ### Brand Surface Colors
 
@@ -42,7 +45,5 @@ Brand color tokens provide brand-aligned colors for surfaces, accents, foregroun
 ### Brand Focus Colors
 
 <BrandFocusColors />
-
----
 
 </Unstyled>

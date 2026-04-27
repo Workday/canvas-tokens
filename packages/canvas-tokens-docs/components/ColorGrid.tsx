@@ -49,24 +49,34 @@ export function buildPaletteGroup(
 export interface ColorSwatch {
   /** The name of the CSS variable */
   cssVar: string;
-  /** The formatted name of the JS variable */
+  /** The formatted name of the JS variable (React node with word-break hints) */
   jsVar: React.ReactNode;
+  /** The raw JS variable name string (used for copy-to-clipboard and lookups) */
+  jsVarRaw: string;
   /** The actual string value of the token */
   value: string;
   /** The purpose of the token */
   purpose?: string;
 }
 
-/** builds color swatch objects for ColorGrid */
+/** Builds color swatch objects for ColorGrid */
 export function buildColorSwatch(varName: string, jsVarName: string): ColorSwatch {
-  // Get the CSS var's value from the :root element
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   return {
     value,
     cssVar: varName,
     jsVar: formatJSVar(jsVarName),
+    jsVarRaw: jsVarName,
     purpose: systemColorCommentMap[jsVarName],
   };
+}
+
+/** Returns the correct style property for a color swatch, handling linear-gradient tokens */
+export function getSwatchStyles(token: Pick<ColorSwatch, 'cssVar' | 'value'>) {
+  const property = token.value.trim().startsWith('linear-gradient(')
+    ? 'backgroundImage'
+    : 'backgroundColor';
+  return {[property]: `var(${token.cssVar})`};
 }
 
 type VariableType = 'css' | 'javascript' | 'all' | 'system';
@@ -77,7 +87,7 @@ export interface ColorGridProps {
   variableType?: VariableType;
 }
 
-/** transform 'camelCase' names into 'spaced case' */
+/** Transform 'camelCase' names into 'spaced case' */
 export function formatName(name: string) {
   return name
     .split(/(?=[A-Z])/)
@@ -85,28 +95,21 @@ export function formatName(name: string) {
     .toLowerCase();
 }
 
-function getSwatchStyles(token: ColorSwatch) {
-  // update the property to support linear gradients
-  // which need to be a background image instead of background color
-  const property = token.value.startsWith('linear-gradient(')
-    ? 'backgroundImage'
-    : 'backgroundColor';
-  return {[property]: `var(${token.cssVar})`};
+function getShortName(cssVar: string) {
+  return cssVar.replace(/^--cnvs-sys-/, '').replace(/^--cnvs-base-/, '');
 }
 
 function getHeadings(type: VariableType) {
-  const defaultHeadings = ['Swatch', 'Usage', 'Value'];
-  if (type === 'css') {
-    defaultHeadings[1] = 'CSS Variable';
-  } else if (type === 'javascript') {
-    defaultHeadings[1] = 'JS Variable';
-  } else if (type === 'system') {
-    defaultHeadings[1] = 'Usage';
-    defaultHeadings.push('Description');
-  } else {
-    defaultHeadings[1] = 'Usage';
+  if (type === 'system') {
+    return ['Swatch', 'Token', 'Variables', 'Value'];
   }
-  return defaultHeadings;
+  if (type === 'css') {
+    return ['Swatch', 'CSS Variable', 'Value'];
+  }
+  if (type === 'javascript') {
+    return ['Swatch', 'JS Variable', 'Value'];
+  }
+  return ['Swatch', 'Usage', 'Value'];
 }
 
 const deprecatedTokens = ['sys-color-static-orange', 'sys-color-static-gold'];
@@ -119,39 +122,81 @@ const handleDeprecatedTokenClass = (token: string) => {
 export function ColorGrid({name, variableType = 'all', palette}: ColorGridProps) {
   return (
     <TokenGrid caption={formatName(name)} headings={getHeadings(variableType)} rows={palette}>
-      {token => (
-        <>
-          <TokenGrid.RowItem>
-            <TokenGrid.Swatch style={getSwatchStyles(token)} />
-          </TokenGrid.RowItem>
-          {(variableType !== 'javascript' || variableType !== 'css') && (
+      {token => {
+        const isDeprecated = handleDeprecatedTokenClass(token.cssVar);
+
+        if (variableType === 'system') {
+          return (
+            <>
+              {/* Swatch */}
+              <TokenGrid.RowItem>
+                <TokenGrid.Swatch style={getSwatchStyles(token)} />
+              </TokenGrid.RowItem>
+
+              {/* Token name + description */}
+              <TokenGrid.RowItem>
+                <p className="token-grid__token-name">{getShortName(token.cssVar)}</p>
+                {token.purpose && (
+                  <p className="token-grid__token-desc">{token.purpose}</p>
+                )}
+              </TokenGrid.RowItem>
+
+              {/* CSS + JS variables, stacked with copy buttons */}
+              <TokenGrid.RowItem>
+                <div className="token-grid__var-row">
+                  <span className="token-grid__var-badge">CSS</span>
+                  <TokenGrid.MonospaceLabel isDeprecated={isDeprecated} copyText={token.cssVar}>
+                    {token.cssVar}
+                  </TokenGrid.MonospaceLabel>
+                </div>
+                <div className="token-grid__var-row">
+                  <span className="token-grid__var-badge">JS</span>
+                  <TokenGrid.MonospaceLabel copyText={token.jsVarRaw}>
+                    {token.jsVar}
+                  </TokenGrid.MonospaceLabel>
+                </div>
+              </TokenGrid.RowItem>
+
+              {/* Computed value — display only, no copy affordance */}
+              <TokenGrid.RowItem>
+                <TokenGrid.MonospaceLabel>
+                  {token.value || 'none'}
+                </TokenGrid.MonospaceLabel>
+              </TokenGrid.RowItem>
+            </>
+          );
+        }
+
+        // Default / css / javascript layouts (non-system) — preserve existing behaviour
+        return (
+          <>
+            <TokenGrid.RowItem>
+              <TokenGrid.Swatch style={getSwatchStyles(token)} />
+            </TokenGrid.RowItem>
             <TokenGrid.RowItem>
               {variableType !== 'javascript' && (
-                <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
-                  <span>CSS</span>
-                  <TokenGrid.MonospaceLabel isDeprecated={handleDeprecatedTokenClass(token.cssVar)}>
+                <div className="token-grid__var-row">
+                  {variableType === 'all' && <span className="token-grid__var-badge">CSS</span>}
+                  <TokenGrid.MonospaceLabel isDeprecated={isDeprecated} copyText={token.cssVar}>
                     {token.cssVar}
                   </TokenGrid.MonospaceLabel>
                 </div>
               )}
               {variableType !== 'css' && (
-                <div style={{display: 'flex', flexDirection: 'column', gap: '0.25rem'}}>
-                  <span>JS</span>
-                  <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
+                <div className="token-grid__var-row">
+                  {variableType === 'all' && <span className="token-grid__var-badge">JS</span>}
+                  <TokenGrid.MonospaceLabel copyText={token.jsVarRaw}>
+                    {token.jsVar}
+                  </TokenGrid.MonospaceLabel>
                 </div>
               )}
             </TokenGrid.RowItem>
-          )}
-          <TokenGrid.RowItem>
-            <span>{token.value || 'none'}</span>
-          </TokenGrid.RowItem>
-          {variableType === 'system' && (
             <TokenGrid.RowItem>
-              <span>{token.purpose}</span>
+              <span>{token.value || 'none'}</span>
             </TokenGrid.RowItem>
-          )}
-        </>
-      )}
+          </>
+        );
+      }}
     </TokenGrid>
   );
 }

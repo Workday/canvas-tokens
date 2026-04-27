@@ -1,0 +1,3946 @@
+[
+  {
+    "name": "base.opacity.100",
+    "level": "base",
+    "value": "{base.opacity.80}",
+    "computedValue": "8",
+    "deprecatedComment": "Use {base.opacity.80} instead"
+  },
+  {
+    "name": "base.opacity.250",
+    "level": "base",
+    "value": "{base.opacity.200}",
+    "computedValue": "20",
+    "deprecatedComment": "Use {base.opacity.200} instead"
+  },
+  {
+    "name": "base.opacity.300",
+    "level": "base",
+    "value": "{base.opacity.400}",
+    "computedValue": "40",
+    "deprecatedComment": "Use {base.opacity.400} instead"
+  },
+  {
+    "name": "base.opacity.500",
+    "level": "base",
+    "value": "{base.opacity.840}",
+    "computedValue": "84",
+    "deprecatedComment": "Use {base.opacity.840} instead"
+  },
+  {
+    "name": "base.palette.cinnamon.100",
+    "level": "base",
+    "value": "#ffefee",
+    "computedValue": "#ffefee",
+    "fallback": "{base.palette.red.50}",
+    "feedbackValue": "oklch(0.9533 0.0231 23.95 / 1)",
+    "deprecatedComment": "replace cinnamon100 with {base.palette.red.50}. Prefer to replace with `sys.color.bg.critical.softer` if used as a background color."
+  },
+  {
+    "name": "base.palette.cinnamon.200",
+    "level": "base",
+    "value": "#FCC9C5",
+    "computedValue": "#FCC9C5",
+    "fallback": "{base.palette.red.100}",
+    "feedbackValue": "oklch(0.9225 0.0394 25.51 / 1)",
+    "deprecatedComment": "replace cinnamon200 with {base.palette.red.100}. Prefer to replace with `sys.color.bg.critical.soft` if used as a background color."
+  },
+  {
+    "name": "base.palette.cinnamon.300",
+    "level": "base",
+    "value": "#ff867d",
+    "computedValue": "#ff867d",
+    "fallback": "{base.palette.red.300}",
+    "feedbackValue": "oklch(0.7533 0.1484 28.45 / 1)",
+    "deprecatedComment": "replace cinnamon300 with {base.palette.red.300}"
+  },
+  {
+    "name": "base.palette.cinnamon.400",
+    "level": "base",
+    "value": "#ff5347",
+    "computedValue": "#ff5347",
+    "fallback": "{base.palette.red.400}",
+    "feedbackValue": "oklch(0.6857 0.2037 29.76 / 1)",
+    "deprecatedComment": "replace cinnamon400 with {base.palette.red.400}. Prefer to replace with `sys.color.fg.critical.soft` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.cinnamon.500",
+    "level": "base",
+    "value": "#de2e21",
+    "computedValue": "#de2e21",
+    "fallback": "{base.palette.red.600}",
+    "feedbackValue": "oklch(0.5342 0.2172 29.53 / 1)",
+    "deprecatedComment": "replace cinnamon500 with {base.palette.red.600}. Prefer to replace with `sys.color.bg.critical.default` if used as a background color, or `sys.color.fg.critical.default` if used as a foreground (text/icon) color, or `sys.color.border.critical.default` if used as a border color."
+  },
+  {
+    "name": "base.palette.cinnamon.600",
+    "level": "base",
+    "value": "#a31b12",
+    "computedValue": "#a31b12",
+    "fallback": "{base.palette.red.700}",
+    "feedbackValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "deprecatedComment": "replace cinnamon600 with {base.palette.red.700}. Prefer to replace with `sys.color.bg.critical.strong` if used as a background color, or `sys.color.fg.critical.strong` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.peach.100",
+    "level": "base",
+    "value": "#fff3f0",
+    "computedValue": "#fff3f0",
+    "fallback": "{base.palette.coral.50}",
+    "feedbackValue": "oklch(0.9659 0.0171 35.14 / 1)",
+    "deprecatedComment": "replace peach100 with {base.palette.coral.50}"
+  },
+  {
+    "name": "base.palette.peach.200",
+    "level": "base",
+    "value": "#ffc2b3",
+    "computedValue": "#ffc2b3",
+    "fallback": "{base.palette.coral.200}",
+    "feedbackValue": "oklch(0.8476 0.0856 37.59 / 1)",
+    "deprecatedComment": "replace peach200 with {base.palette.coral.200}"
+  },
+  {
+    "name": "base.palette.peach.300",
+    "level": "base",
+    "value": "#ff957a",
+    "computedValue": "#ff957a",
+    "fallback": "{base.palette.coral.300}",
+    "feedbackValue": "oklch(0.7671 0.1418 38.37 / 1)",
+    "deprecatedComment": "replace peach300 with {base.palette.coral.300}"
+  },
+  {
+    "name": "base.palette.peach.400",
+    "level": "base",
+    "value": "#ff643d",
+    "computedValue": "#ff643d",
+    "fallback": "{base.palette.red.400}",
+    "feedbackValue": "oklch(0.6857 0.2037 29.76 / 1)",
+    "deprecatedComment": "replace peach400 with {base.palette.red.400}"
+  },
+  {
+    "name": "base.palette.peach.500",
+    "level": "base",
+    "value": "#de4721",
+    "computedValue": "#de4721",
+    "fallback": "{base.palette.coral.600}",
+    "feedbackValue": "oklch(0.5394 0.1828 36.43 / 1)",
+    "deprecatedComment": "replace peach500 with {base.palette.coral.600}"
+  },
+  {
+    "name": "base.palette.peach.600",
+    "level": "base",
+    "value": "#b53413",
+    "computedValue": "#b53413",
+    "fallback": "{base.palette.coral.700}",
+    "feedbackValue": "oklch(0.4616 0.1629 34.74 / 1)",
+    "deprecatedComment": "replace peach600 with {base.palette.coral.700}"
+  },
+  {
+    "name": "base.palette.chili-mango.100",
+    "level": "base",
+    "value": "#ffe6d9",
+    "computedValue": "#ffe6d9",
+    "fallback": "{base.palette.coral.100}",
+    "feedbackValue": "oklch(0.9344 0.0339 35.8 / 1)",
+    "deprecatedComment": "replace chili-mango100 with {base.palette.coral.100}"
+  },
+  {
+    "name": "base.palette.chili-mango.200",
+    "level": "base",
+    "value": "#ffc7ab",
+    "computedValue": "#ffc7ab",
+    "fallback": "{base.palette.coral.200}",
+    "feedbackValue": "oklch(0.8476 0.0856 37.59 / 1)",
+    "deprecatedComment": "replace chili-mango200 with {base.palette.coral.200}"
+  },
+  {
+    "name": "base.palette.chili-mango.300",
+    "level": "base",
+    "value": "#ff9b69",
+    "computedValue": "#ff9b69",
+    "fallback": "{base.palette.coral.300}",
+    "feedbackValue": "oklch(0.7671 0.1418 38.37 / 1)",
+    "deprecatedComment": "replace chili-mango300 with {base.palette.coral.300}"
+  },
+  {
+    "name": "base.palette.chili-mango.400",
+    "level": "base",
+    "value": "#ff671b",
+    "computedValue": "#ff671b",
+    "fallback": "{base.palette.orange.500}",
+    "feedbackValue": "oklch(0.6617 0.1893 44.93 / 1)",
+    "deprecatedComment": "replace chili-mango400 with {base.palette.orange.500}"
+  },
+  {
+    "name": "base.palette.chili-mango.500",
+    "level": "base",
+    "value": "#e04b00",
+    "computedValue": "#e04b00",
+    "fallback": "{base.palette.orange.500}",
+    "feedbackValue": "oklch(0.6617 0.1893 44.93 / 1)",
+    "deprecatedComment": "replace chili-mango500 with {base.palette.orange.500}"
+  },
+  {
+    "name": "base.palette.chili-mango.600",
+    "level": "base",
+    "value": "#a33600",
+    "computedValue": "#a33600",
+    "fallback": "{base.palette.orange.700}",
+    "feedbackValue": "oklch(0.4689 0.1456 40.5 / 1)",
+    "deprecatedComment": "replace chili-mango600 with {base.palette.orange.700}"
+  },
+  {
+    "name": "base.palette.cantaloupe.100",
+    "level": "base",
+    "value": "#ffeed9",
+    "computedValue": "#ffeed9",
+    "fallback": "{base.palette.amber.50}",
+    "feedbackValue": "oklch(0.969 0.0619 101.63 / 1)",
+    "deprecatedComment": "replace cantaloupe100 with {base.palette.amber.50}. Prefer to replace with `sys.color.bg.caution.softer` if used as a background color."
+  },
+  {
+    "name": "base.palette.cantaloupe.200",
+    "level": "base",
+    "value": "#fcd49f",
+    "computedValue": "#fcd49f",
+    "fallback": "{base.palette.amber.200}",
+    "feedbackValue": "oklch(0.9191 0.1547 99.7 / 1)",
+    "deprecatedComment": "replace cantaloupe200 with {base.palette.amber.200}. Prefer to replace with `sys.color.fg.caution.softer` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.cantaloupe.300",
+    "level": "base",
+    "value": "#ffbc63",
+    "computedValue": "#ffbc63",
+    "fallback": "{base.palette.amber.300}",
+    "feedbackValue": "oklch(0.8432 0.1713 85.24 / 1)",
+    "deprecatedComment": "replace cantaloupe300 with {base.palette.amber.300}. Prefer to replace with `sys.color.bg.caution.soft` if used as a background color."
+  },
+  {
+    "name": "base.palette.cantaloupe.400",
+    "level": "base",
+    "value": "#ffa126",
+    "computedValue": "#ffa126",
+    "fallback": "{base.palette.amber.400}",
+    "feedbackValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "deprecatedComment": "replace cantaloupe400 with {base.palette.amber.400}. Prefer to replace with `sys.color.bg.caution.default` if used as a background color, or `sys.color.border.caution.default` if used as a border color."
+  },
+  {
+    "name": "base.palette.cantaloupe.500",
+    "level": "base",
+    "value": "#f38b00",
+    "computedValue": "#f38b00",
+    "fallback": "{base.palette.amber.500}",
+    "feedbackValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "replace cantaloupe500 with {base.palette.amber.500}. Prefer to replace with `sys.color.bg.caution.strong` if used as a background color."
+  },
+  {
+    "name": "base.palette.cantaloupe.600",
+    "level": "base",
+    "value": "#c06c00",
+    "computedValue": "#c06c00",
+    "fallback": "{base.palette.amber.600}",
+    "feedbackValue": "oklch(0.5505 0.1439 50.78 / 1)",
+    "deprecatedComment": "replace cantaloupe600 with {base.palette.amber.600}. Prefer to replace with `sys.color.bg.caution.stronger` if used as a background color, or with `sys.color.border.caution.strong` if used as a border color."
+  },
+  {
+    "name": "base.palette.sour-lemon.100",
+    "level": "base",
+    "value": "#fff9e6",
+    "computedValue": "#fff9e6",
+    "fallback": "{base.palette.amber.25}",
+    "feedbackValue": "oklch(0.9779 0.0214 95.33 / 1)",
+    "deprecatedComment": "replace sour-lemon100 with {base.palette.amber.25}"
+  },
+  {
+    "name": "base.palette.sour-lemon.200",
+    "level": "base",
+    "value": "#ffecab",
+    "computedValue": "#ffecab",
+    "fallback": "{base.palette.amber.100}",
+    "feedbackValue": "oklch(0.9567 0.0948 100.22 / 1)",
+    "deprecatedComment": "replace sour-lemon200 with {base.palette.amber.100}"
+  },
+  {
+    "name": "base.palette.sour-lemon.300",
+    "level": "base",
+    "value": "#ffda61",
+    "computedValue": "#ffda61",
+    "fallback": "{base.palette.amber.200}",
+    "feedbackValue": "oklch(0.9191 0.1547 99.7 / 1)",
+    "deprecatedComment": "replace sour-lemon300 with {base.palette.amber.200}"
+  },
+  {
+    "name": "base.palette.sour-lemon.400",
+    "level": "base",
+    "value": "#ffc629",
+    "computedValue": "#ffc629",
+    "fallback": "{base.palette.amber.300}",
+    "feedbackValue": "oklch(0.8432 0.1713 85.24 / 1)",
+    "deprecatedComment": "replace sour-lemon400 with {base.palette.amber.300}"
+  },
+  {
+    "name": "base.palette.sour-lemon.500",
+    "level": "base",
+    "value": "#ebb400",
+    "computedValue": "#ebb400",
+    "fallback": "{base.palette.amber.300}",
+    "feedbackValue": "oklch(0.8432 0.1713 85.24 / 1)",
+    "deprecatedComment": "replace sour-lemon500 with {base.palette.amber.300}"
+  },
+  {
+    "name": "base.palette.sour-lemon.600",
+    "level": "base",
+    "value": "#bd9100",
+    "computedValue": "#bd9100",
+    "fallback": "{base.palette.amber.500}",
+    "feedbackValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "replace sour-lemon600 with {base.palette.amber.500}"
+  },
+  {
+    "name": "base.palette.juicy-pear.100",
+    "level": "base",
+    "value": "#f7fae6",
+    "computedValue": "#f7fae6",
+    "fallback": "{base.palette.amber.25}",
+    "feedbackValue": "oklch(0.9779 0.0214 95.33 / 1)",
+    "deprecatedComment": "replace juicy-pear100 with {base.palette.amber.25}"
+  },
+  {
+    "name": "base.palette.juicy-pear.200",
+    "level": "base",
+    "value": "#e2f391",
+    "computedValue": "#e2f391",
+    "fallback": "{base.palette.amber.100}",
+    "feedbackValue": "oklch(0.9567 0.0948 100.22 / 1)",
+    "deprecatedComment": "replace juicy-pear200 with {base.palette.amber.100}"
+  },
+  {
+    "name": "base.palette.juicy-pear.300",
+    "level": "base",
+    "value": "#c4de40",
+    "computedValue": "#c4de40",
+    "fallback": "{base.palette.amber.200}",
+    "feedbackValue": "oklch(0.9191 0.1547 99.7 / 1)",
+    "deprecatedComment": "replace juicy-pear300 with {base.palette.amber.200}"
+  },
+  {
+    "name": "base.palette.juicy-pear.400",
+    "level": "base",
+    "value": "#a8c224",
+    "computedValue": "#a8c224",
+    "fallback": "{base.palette.amber.200}",
+    "feedbackValue": "oklch(0.9191 0.1547 99.7 / 1)",
+    "deprecatedComment": "replace juicy-pear400 with {base.palette.amber.200}"
+  },
+  {
+    "name": "base.palette.juicy-pear.500",
+    "level": "base",
+    "value": "#8ea618",
+    "computedValue": "#8ea618",
+    "fallback": "{base.palette.green.500}",
+    "feedbackValue": "oklch(0.6362 0.1974 145.47 / 1)",
+    "deprecatedComment": "replace juicy-pear500 with {base.palette.green.500}"
+  },
+  {
+    "name": "base.palette.juicy-pear.600",
+    "level": "base",
+    "value": "#687818",
+    "computedValue": "#687818",
+    "fallback": "{base.palette.green.700}",
+    "feedbackValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "deprecatedComment": "replace juicy-pear600 with {base.palette.green.700}"
+  },
+  {
+    "name": "base.palette.kiwi.100",
+    "level": "base",
+    "value": "#ecfcd7",
+    "computedValue": "#ecfcd7",
+    "fallback": "{base.palette.green.50}",
+    "feedbackValue": "oklch(0.9655 0.0561 149.93 / 1)",
+    "deprecatedComment": "replace kiwi100 with {base.palette.green.50}"
+  },
+  {
+    "name": "base.palette.kiwi.200",
+    "level": "base",
+    "value": "#caf593",
+    "computedValue": "#caf593",
+    "fallback": "{base.palette.green.100}",
+    "feedbackValue": "oklch(0.9278 0.1024 149.88 / 1)",
+    "deprecatedComment": "replace kiwi200 with {base.palette.green.100}"
+  },
+  {
+    "name": "base.palette.kiwi.300",
+    "level": "base",
+    "value": "#a7e05c",
+    "computedValue": "#a7e05c",
+    "fallback": "{base.palette.green.200}",
+    "feedbackValue": "oklch(0.8506 0.1804 149.93 / 1)",
+    "deprecatedComment": "replace kiwi300 with {base.palette.green.200}"
+  },
+  {
+    "name": "base.palette.kiwi.400",
+    "level": "base",
+    "value": "#77bc1f",
+    "computedValue": "#77bc1f",
+    "fallback": "{base.palette.green.500}",
+    "feedbackValue": "oklch(0.6362 0.1974 145.47 / 1)",
+    "deprecatedComment": "replace kiwi400 with {base.palette.green.500}"
+  },
+  {
+    "name": "base.palette.kiwi.500",
+    "level": "base",
+    "value": "#609915",
+    "computedValue": "#609915",
+    "fallback": "{base.palette.green.500}",
+    "feedbackValue": "oklch(0.6362 0.1974 145.47 / 1)",
+    "deprecatedComment": "replace kiwi500 with {base.palette.green.500}"
+  },
+  {
+    "name": "base.palette.kiwi.600",
+    "level": "base",
+    "value": "#537824",
+    "computedValue": "#537824",
+    "fallback": "{base.palette.green.700}",
+    "feedbackValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "deprecatedComment": "replace kiwi600 with {base.palette.green.700}"
+  },
+  {
+    "name": "base.palette.green-apple.100",
+    "level": "base",
+    "value": "#ebfff0",
+    "computedValue": "#ebfff0",
+    "fallback": "{base.palette.green.50}",
+    "feedbackValue": "oklch(0.9655 0.0561 149.93 / 1)",
+    "deprecatedComment": "replace green-apple100 with {base.palette.green.50}. Prefer to replace with `sys.color.bg.positive.softer` if used as a background color."
+  },
+  {
+    "name": "base.palette.green-apple.200",
+    "level": "base",
+    "value": "#acf5be",
+    "computedValue": "#acf5be",
+    "fallback": "{base.palette.green.100}",
+    "feedbackValue": "oklch(0.9278 0.1024 149.88 / 1)",
+    "deprecatedComment": "replace green-apple200 with {base.palette.green.100}. Prefer to replace with `sys.color.bg.positive.soft` if used as a background color."
+  },
+  {
+    "name": "base.palette.green-apple.300",
+    "level": "base",
+    "value": "#5fe380",
+    "computedValue": "#5fe380",
+    "fallback": "{base.palette.green.200}",
+    "feedbackValue": "oklch(0.8506 0.1804 149.93 / 1)",
+    "deprecatedComment": "replace green-apple300 with {base.palette.green.200}. Prefer to replace with `sys.color.fg.positive.soft` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.green-apple.400",
+    "level": "base",
+    "value": "#43c463",
+    "computedValue": "#43c463",
+    "fallback": "{base.palette.green.600}",
+    "feedbackValue": "oklch(0.5069 0.1569 145.56 / 1)",
+    "deprecatedComment": "replace green-apple400 with {base.palette.green.600}. Prefer to replace with `sys.color.bg.positive.default` if used as a background color, or `sys.color.fg.positive.default` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.green-apple.500",
+    "level": "base",
+    "value": "#319c4c",
+    "computedValue": "#319c4c",
+    "fallback": "{base.palette.green.700}",
+    "feedbackValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "deprecatedComment": "replace green-apple500 with {base.palette.green.700}. Prefer to replace with `sys.color.bg.positive.strong` if used as a background color, or `sys.color.fg.positive.strong` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.green-apple.600",
+    "level": "base",
+    "value": "#217a37",
+    "computedValue": "#217a37",
+    "fallback": "{base.palette.green.800}",
+    "feedbackValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "deprecatedComment": "replace green-apple600 with {base.palette.green.800}. Prefer to replace with `sys.color.bg.positive.stronger` if used as a background color, or `sys.color.text.positive.stronger` if used as a text color."
+  },
+  {
+    "name": "base.palette.watermelon.100",
+    "level": "base",
+    "value": "#ebfdf8",
+    "computedValue": "#ebfdf8",
+    "fallback": "{base.palette.teal.25}",
+    "feedbackValue": "oklch(0.9827 0.021 200.66 / 1)",
+    "deprecatedComment": "replace watermelon100 with {base.palette.teal.25}"
+  },
+  {
+    "name": "base.palette.watermelon.200",
+    "level": "base",
+    "value": "#b7edde",
+    "computedValue": "#b7edde",
+    "fallback": "{base.palette.teal.100}",
+    "feedbackValue": "oklch(0.935 0.046 205.09 / 1)",
+    "deprecatedComment": "replace watermelon200 with {base.palette.teal.100}"
+  },
+  {
+    "name": "base.palette.watermelon.300",
+    "level": "base",
+    "value": "#65ccaf",
+    "computedValue": "#65ccaf",
+    "fallback": "{base.palette.green.100}",
+    "feedbackValue": "oklch(0.9278 0.1024 149.88 / 1)",
+    "deprecatedComment": "replace watermelon300 with {base.palette.green.100}"
+  },
+  {
+    "name": "base.palette.watermelon.400",
+    "level": "base",
+    "value": "#12a67c",
+    "computedValue": "#12a67c",
+    "fallback": "{base.palette.green.600}",
+    "feedbackValue": "oklch(0.5069 0.1569 145.56 / 1)",
+    "deprecatedComment": "replace watermelon400 with {base.palette.green.600}"
+  },
+  {
+    "name": "base.palette.watermelon.500",
+    "level": "base",
+    "value": "#0c7a5b",
+    "computedValue": "#0c7a5b",
+    "fallback": "{base.palette.green.800}",
+    "feedbackValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "deprecatedComment": "replace watermelon500 with {base.palette.green.800}"
+  },
+  {
+    "name": "base.palette.watermelon.600",
+    "level": "base",
+    "value": "#00573e",
+    "computedValue": "#00573e",
+    "fallback": "{base.palette.green.800}",
+    "feedbackValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "deprecatedComment": "replace watermelon600 with {base.palette.green.800}"
+  },
+  {
+    "name": "base.palette.jewel.100",
+    "level": "base",
+    "value": "#ebfdff",
+    "computedValue": "#ebfdff",
+    "fallback": "{base.palette.teal.25}",
+    "feedbackValue": "oklch(0.9827 0.021 200.66 / 1)",
+    "deprecatedComment": "replace jewel100 with {base.palette.teal.25}"
+  },
+  {
+    "name": "base.palette.jewel.200",
+    "level": "base",
+    "value": "#acecf3",
+    "computedValue": "#acecf3",
+    "fallback": "{base.palette.teal.200}",
+    "feedbackValue": "oklch(0.8766 0.0677 204.24 / 1)",
+    "deprecatedComment": "replace jewel200 with {base.palette.teal.200}"
+  },
+  {
+    "name": "base.palette.jewel.300",
+    "level": "base",
+    "value": "#44c8d7",
+    "computedValue": "#44c8d7",
+    "fallback": "{base.palette.teal.400}",
+    "feedbackValue": "oklch(0.7154 0.1006 206.05 / 1)",
+    "deprecatedComment": "replace jewel300 with {base.palette.teal.400}"
+  },
+  {
+    "name": "base.palette.jewel.400",
+    "level": "base",
+    "value": "#1ea4b3",
+    "computedValue": "#1ea4b3",
+    "fallback": "{base.palette.teal.500}",
+    "feedbackValue": "oklch(0.6385 0.1093 205.92 / 1)",
+    "deprecatedComment": "replace jewel400 with {base.palette.teal.500}"
+  },
+  {
+    "name": "base.palette.jewel.500",
+    "level": "base",
+    "value": "#1a818c",
+    "computedValue": "#1a818c",
+    "fallback": "{base.palette.teal.600}",
+    "feedbackValue": "oklch(0.5141 0.0882 207.28 / 1)",
+    "deprecatedComment": "replace jewel500 with {base.palette.teal.600}"
+  },
+  {
+    "name": "base.palette.jewel.600",
+    "level": "base",
+    "value": "#156973",
+    "computedValue": "#156973",
+    "fallback": "{base.palette.teal.700}",
+    "feedbackValue": "oklch(0.4634 0.0796 207.82 / 1)",
+    "deprecatedComment": "replace jewel600 with {base.palette.teal.700}"
+  },
+  {
+    "name": "base.palette.toothpaste.100",
+    "level": "base",
+    "value": "#d7f1fc",
+    "computedValue": "#d7f1fc",
+    "fallback": "{base.palette.azure.50}",
+    "feedbackValue": "oklch(0.9549 0.0295 223.86 / 1)",
+    "deprecatedComment": "replace toothpaste100 with {base.palette.azure.50}"
+  },
+  {
+    "name": "base.palette.toothpaste.200",
+    "level": "base",
+    "value": "#99e0ff",
+    "computedValue": "#99e0ff",
+    "fallback": "{base.palette.azure.200}",
+    "feedbackValue": "oklch(0.8594 0.0867 230.07 / 1)",
+    "deprecatedComment": "replace toothpaste200 with {base.palette.azure.200}"
+  },
+  {
+    "name": "base.palette.toothpaste.300",
+    "level": "base",
+    "value": "#40b4e5",
+    "computedValue": "#40b4e5",
+    "fallback": "{base.palette.azure.300}",
+    "feedbackValue": "oklch(0.7991 0.107 239.24 / 1)",
+    "deprecatedComment": "replace toothpaste300 with {base.palette.azure.300}"
+  },
+  {
+    "name": "base.palette.toothpaste.400",
+    "level": "base",
+    "value": "#1894c9",
+    "computedValue": "#1894c9",
+    "fallback": "{base.palette.azure.500}",
+    "feedbackValue": "oklch(0.6555 0.1553 244.48 / 1)",
+    "deprecatedComment": "replace toothpaste400 with {base.palette.azure.500}"
+  },
+  {
+    "name": "base.palette.toothpaste.500",
+    "level": "base",
+    "value": "#0271a1",
+    "computedValue": "#0271a1",
+    "fallback": "{base.palette.azure.700}",
+    "feedbackValue": "oklch(0.4618 0.1098 242.11 / 1)",
+    "deprecatedComment": "replace toothpaste500 with {base.palette.azure.700}"
+  },
+  {
+    "name": "base.palette.toothpaste.600",
+    "level": "base",
+    "value": "#005B82",
+    "computedValue": "#005B82",
+    "fallback": "{base.palette.azure.800}",
+    "feedbackValue": "oklch(0.3912 0.0855 237.05 / 1)",
+    "deprecatedComment": "replace toothpaste600 with {base.palette.azure.800}"
+  },
+  {
+    "name": "base.palette.blueberry.100",
+    "level": "base",
+    "value": "#D7EAFC",
+    "computedValue": "#D7EAFC",
+    "fallback": "{base.palette.blue.100}",
+    "feedbackValue": "oklch(0.928 0.0359 250.6 / 1)",
+    "deprecatedComment": "replace blueberry100 with {base.palette.blue.100}"
+  },
+  {
+    "name": "base.palette.blueberry.200",
+    "level": "base",
+    "value": "#A6D2FF",
+    "computedValue": "#A6D2FF",
+    "fallback": "{base.palette.blue.100}",
+    "feedbackValue": "oklch(0.928 0.0359 250.6 / 1)",
+    "deprecatedComment": "replace blueberry200 with {base.palette.blue.100}. Prefer to replace with `sys.color.bg.primary.soft` if used as a background color."
+  },
+  {
+    "name": "base.palette.blueberry.300",
+    "level": "base",
+    "value": "#40A0FF",
+    "computedValue": "#40A0FF",
+    "fallback": "{base.palette.blue.400}",
+    "feedbackValue": "oklch(0.708 0.1549 255.41 / 1)",
+    "deprecatedComment": "replace blueberry300 with {base.palette.blue.400}. Prefer to replace with `sys.color.bg.primary.default` if used as a background color, or `sys.color.fg.primary.soft` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.blueberry.400",
+    "level": "base",
+    "value": "#0875E1",
+    "computedValue": "#0875E1",
+    "fallback": "{base.palette.blue.600}",
+    "feedbackValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "replace blueberry400 with {base.palette.blue.600}. Prefer to replace with `sys.color.bg.primary.default` if used as a background color, or `sys.color.fg.primary.default` if used as a foreground (text/icon) color, or `sys.color.border.primary.default` if used as a border color."
+  },
+  {
+    "name": "base.palette.blueberry.500",
+    "level": "base",
+    "value": "#005cb9",
+    "computedValue": "#005cb9",
+    "fallback": "{base.palette.blue.700}",
+    "feedbackValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "replace blueberry500 with {base.palette.blue.700}. Prefer to replace with `sys.color.bg.primary.strong` if used as a background color, or `sys.color.fg.primary.strong` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.blueberry.600",
+    "level": "base",
+    "value": "#004387",
+    "computedValue": "#004387",
+    "fallback": "{base.palette.blue.800}",
+    "feedbackValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "replace blueberry600 with {base.palette.blue.800}. Prefer to replace with `sys.color.bg.primary.stronger` if used as a background color, or `sys.color.text.primary.stronger` if used as a text color."
+  },
+  {
+    "name": "base.palette.plum.100",
+    "level": "base",
+    "value": "#e6f1ff",
+    "computedValue": "#e6f1ff",
+    "fallback": "{base.palette.blue.100}",
+    "feedbackValue": "oklch(0.928 0.0359 250.6 / 1)",
+    "deprecatedComment": "replace plum100 with {base.palette.blue.100}"
+  },
+  {
+    "name": "base.palette.plum.200",
+    "level": "base",
+    "value": "#A6CDFF",
+    "computedValue": "#A6CDFF",
+    "fallback": "{base.palette.blue.200}",
+    "feedbackValue": "oklch(0.8627 0.0701 250.6 / 1)",
+    "deprecatedComment": "replace plum200 with {base.palette.blue.200}"
+  },
+  {
+    "name": "base.palette.plum.300",
+    "level": "base",
+    "value": "#529bfa",
+    "computedValue": "#529bfa",
+    "fallback": "{base.palette.blue.400}",
+    "feedbackValue": "oklch(0.708 0.1549 255.41 / 1)",
+    "deprecatedComment": "replace plum300 with {base.palette.blue.400}"
+  },
+  {
+    "name": "base.palette.plum.400",
+    "level": "base",
+    "value": "#3881E1",
+    "computedValue": "#3881E1",
+    "fallback": "{base.palette.blue.600}",
+    "feedbackValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "replace plum400 with {base.palette.blue.600}"
+  },
+  {
+    "name": "base.palette.plum.500",
+    "level": "base",
+    "value": "#3166ab",
+    "computedValue": "#3166ab",
+    "fallback": "{base.palette.blue.700}",
+    "feedbackValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "replace plum500 with {base.palette.blue.700}"
+  },
+  {
+    "name": "base.palette.plum.600",
+    "level": "base",
+    "value": "#264a7a",
+    "computedValue": "#264a7a",
+    "fallback": "{base.palette.blue.800}",
+    "feedbackValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "replace plum600 with {base.palette.blue.800}"
+  },
+  {
+    "name": "base.palette.berry-smoothie.100",
+    "level": "base",
+    "value": "#e8edff",
+    "computedValue": "#e8edff",
+    "fallback": "{base.palette.indigo.50}",
+    "feedbackValue": "oklch(0.9499 0.0243 280.81 / 1)",
+    "deprecatedComment": "replace berry-smoothie100 with {base.palette.indigo.50}"
+  },
+  {
+    "name": "base.palette.berry-smoothie.200",
+    "level": "base",
+    "value": "#c2cfff",
+    "computedValue": "#c2cfff",
+    "fallback": "{base.palette.indigo.200}",
+    "feedbackValue": "oklch(0.8503 0.0754 280.52 / 1)",
+    "deprecatedComment": "replace berry-smoothie200 with {base.palette.indigo.200}"
+  },
+  {
+    "name": "base.palette.berry-smoothie.300",
+    "level": "base",
+    "value": "#7891FF",
+    "computedValue": "#7891FF",
+    "fallback": "{base.palette.indigo.400}",
+    "feedbackValue": "oklch(0.712 0.1531 280.1 / 1)",
+    "deprecatedComment": "replace berry-smoothie300 with {base.palette.indigo.400}"
+  },
+  {
+    "name": "base.palette.berry-smoothie.400",
+    "level": "base",
+    "value": "#5E77E6",
+    "computedValue": "#5E77E6",
+    "fallback": "{base.palette.blue.500}",
+    "feedbackValue": "oklch(0.6023 0.2032 255.68 / 1)",
+    "deprecatedComment": "replace berry-smoothie400 with {base.palette.blue.500}"
+  },
+  {
+    "name": "base.palette.berry-smoothie.500",
+    "level": "base",
+    "value": "#4b5eb3",
+    "computedValue": "#4b5eb3",
+    "fallback": "{base.palette.blue.700}",
+    "feedbackValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "replace berry-smoothie500 with {base.palette.blue.700}"
+  },
+  {
+    "name": "base.palette.berry-smoothie.600",
+    "level": "base",
+    "value": "#3b4987",
+    "computedValue": "#3b4987",
+    "fallback": "{base.palette.blue.800}",
+    "feedbackValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "replace berry-smoothie600 with {base.palette.blue.800}"
+  },
+  {
+    "name": "base.palette.blackberry.100",
+    "level": "base",
+    "value": "#f0f0ff",
+    "computedValue": "#f0f0ff",
+    "fallback": "{base.palette.indigo.25}",
+    "feedbackValue": "oklch(0.9703 0.0147 286 / 1)",
+    "deprecatedComment": "replace blackberry100 with {base.palette.indigo.25}"
+  },
+  {
+    "name": "base.palette.blackberry.200",
+    "level": "base",
+    "value": "#c3c2ff",
+    "computedValue": "#c3c2ff",
+    "fallback": "{base.palette.indigo.200}",
+    "feedbackValue": "oklch(0.8503 0.0754 280.52 / 1)",
+    "deprecatedComment": "replace blackberry200 with {base.palette.indigo.200}"
+  },
+  {
+    "name": "base.palette.blackberry.300",
+    "level": "base",
+    "value": "#8483e6",
+    "computedValue": "#8483e6",
+    "fallback": "{base.palette.indigo.400}",
+    "feedbackValue": "oklch(0.712 0.1531 280.1 / 1)",
+    "deprecatedComment": "replace blackberry300 with {base.palette.indigo.400}"
+  },
+  {
+    "name": "base.palette.blackberry.400",
+    "level": "base",
+    "value": "#5c59e6",
+    "computedValue": "#5c59e6",
+    "fallback": "{base.palette.indigo.500}",
+    "feedbackValue": "oklch(0.615 0.2131 280.7 / 1)",
+    "deprecatedComment": "replace blackberry400 with {base.palette.indigo.500}"
+  },
+  {
+    "name": "base.palette.blackberry.500",
+    "level": "base",
+    "value": "#413fcc",
+    "computedValue": "#413fcc",
+    "fallback": "{base.palette.indigo.700}",
+    "feedbackValue": "oklch(0.466 0.1961 280.9 / 1)",
+    "deprecatedComment": "replace blackberry500 with {base.palette.indigo.700}"
+  },
+  {
+    "name": "base.palette.blackberry.600",
+    "level": "base",
+    "value": "#2e2d91",
+    "computedValue": "#2e2d91",
+    "fallback": "{base.palette.indigo.900}",
+    "feedbackValue": "oklch(0.317 0.142 278.2 / 1)",
+    "deprecatedComment": "replace blackberry600 with {base.palette.indigo.900}"
+  },
+  {
+    "name": "base.palette.island-punch.100",
+    "level": "base",
+    "value": "#f5f0ff",
+    "computedValue": "#f5f0ff",
+    "fallback": "{base.palette.purple.25}",
+    "feedbackValue": "oklch(0.9776 0.0147 312 / 1)",
+    "deprecatedComment": "replace island-punch100 with {base.palette.purple.25}"
+  },
+  {
+    "name": "base.palette.island-punch.200",
+    "level": "base",
+    "value": "#d2befa",
+    "computedValue": "#d2befa",
+    "fallback": "{base.palette.purple.200}",
+    "feedbackValue": "oklch(0.8701 0.0965 316.6 / 1)",
+    "deprecatedComment": "replace island-punch200 with {base.palette.purple.200}"
+  },
+  {
+    "name": "base.palette.island-punch.300",
+    "level": "base",
+    "value": "#a88ae6",
+    "computedValue": "#a88ae6",
+    "fallback": "{base.palette.purple.500}",
+    "feedbackValue": "oklch(0.628 0.1681 312.69 / 1)",
+    "deprecatedComment": "replace island-punch300 with {base.palette.purple.500}"
+  },
+  {
+    "name": "base.palette.island-punch.400",
+    "level": "base",
+    "value": "#8660d1",
+    "computedValue": "#8660d1",
+    "fallback": "{base.palette.purple.500}",
+    "feedbackValue": "oklch(0.628 0.1681 312.69 / 1)",
+    "deprecatedComment": "replace island-punch400 with {base.palette.purple.500}"
+  },
+  {
+    "name": "base.palette.island-punch.500",
+    "level": "base",
+    "value": "#6345a1",
+    "computedValue": "#6345a1",
+    "fallback": "{base.palette.purple.700}",
+    "feedbackValue": "oklch(0.476 0.156 313.2 / 1)",
+    "deprecatedComment": "replace island-punch500 with {base.palette.purple.700}"
+  },
+  {
+    "name": "base.palette.island-punch.600",
+    "level": "base",
+    "value": "#503882",
+    "computedValue": "#503882",
+    "fallback": "{base.palette.purple.800}",
+    "feedbackValue": "oklch(0.422 0.136 315.49 / 1)",
+    "deprecatedComment": "replace island-punch600 with {base.palette.purple.800}"
+  },
+  {
+    "name": "base.palette.grape-soda.100",
+    "level": "base",
+    "value": "#feebff",
+    "computedValue": "#feebff",
+    "fallback": "{base.palette.magenta.50}",
+    "feedbackValue": "oklch(0.9637 0.0322 325.69 / 1)",
+    "deprecatedComment": "replace grape-soda100 with {base.palette.magenta.50}"
+  },
+  {
+    "name": "base.palette.grape-soda.200",
+    "level": "base",
+    "value": "#fac0ff",
+    "computedValue": "#fac0ff",
+    "fallback": "{base.palette.magenta.200}",
+    "feedbackValue": "oklch(0.887 0.1029 327.44 / 1)",
+    "deprecatedComment": "replace grape-soda200 with {base.palette.magenta.200}"
+  },
+  {
+    "name": "base.palette.grape-soda.300",
+    "level": "base",
+    "value": "#de8ae6",
+    "computedValue": "#de8ae6",
+    "fallback": "{base.palette.purple.400}",
+    "feedbackValue": "oklch(0.734 0.1621 315.88 / 1)",
+    "deprecatedComment": "replace grape-soda300 with {base.palette.purple.400}"
+  },
+  {
+    "name": "base.palette.grape-soda.400",
+    "level": "base",
+    "value": "#c860d1",
+    "computedValue": "#c860d1",
+    "fallback": "{base.palette.purple.500}",
+    "feedbackValue": "oklch(0.628 0.1681 312.69 / 1)",
+    "deprecatedComment": "replace grape-soda400 with {base.palette.purple.500}"
+  },
+  {
+    "name": "base.palette.grape-soda.500",
+    "level": "base",
+    "value": "#97499e",
+    "computedValue": "#97499e",
+    "fallback": "{base.palette.purple.600}",
+    "feedbackValue": "oklch(0.5177 0.162 313.92 / 1)",
+    "deprecatedComment": "replace grape-soda500 with {base.palette.purple.600}"
+  },
+  {
+    "name": "base.palette.grape-soda.600",
+    "level": "base",
+    "value": "#7C3882",
+    "computedValue": "#7C3882",
+    "fallback": "{base.palette.purple.800}",
+    "feedbackValue": "oklch(0.422 0.136 315.49 / 1)",
+    "deprecatedComment": "replace grape-soda600 with {base.palette.purple.800}"
+  },
+  {
+    "name": "base.palette.pomegranate.100",
+    "level": "base",
+    "value": "#ffebf3",
+    "computedValue": "#ffebf3",
+    "fallback": "{base.palette.magenta.50}",
+    "feedbackValue": "oklch(0.9637 0.0322 325.69 / 1)",
+    "deprecatedComment": "replace pomegranate100 with {base.palette.magenta.50}"
+  },
+  {
+    "name": "base.palette.pomegranate.200",
+    "level": "base",
+    "value": "#ffbdd6",
+    "computedValue": "#ffbdd6",
+    "fallback": "{base.palette.magenta.100}",
+    "feedbackValue": "oklch(0.9253 0.0627 329.34 / 1)",
+    "deprecatedComment": "replace pomegranate200 with {base.palette.magenta.100}"
+  },
+  {
+    "name": "base.palette.pomegranate.300",
+    "level": "base",
+    "value": "#ff5c9a",
+    "computedValue": "#ff5c9a",
+    "fallback": "{base.palette.magenta.500}",
+    "feedbackValue": "oklch(0.6557 0.2007 346.62 / 1)",
+    "deprecatedComment": "replace pomegranate300 with {base.palette.magenta.500}"
+  },
+  {
+    "name": "base.palette.pomegranate.400",
+    "level": "base",
+    "value": "#f31167",
+    "computedValue": "#f31167",
+    "fallback": "{base.palette.magenta.500}",
+    "feedbackValue": "oklch(0.6557 0.2007 346.62 / 1)",
+    "deprecatedComment": "replace pomegranate400 with {base.palette.magenta.500}"
+  },
+  {
+    "name": "base.palette.pomegranate.500",
+    "level": "base",
+    "value": "#c70550",
+    "computedValue": "#c70550",
+    "fallback": "{base.palette.red.700}",
+    "feedbackValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "deprecatedComment": "replace pomegranate500 with {base.palette.red.700}"
+  },
+  {
+    "name": "base.palette.pomegranate.600",
+    "level": "base",
+    "value": "#99003a",
+    "computedValue": "#99003a",
+    "fallback": "{base.palette.red.800}",
+    "feedbackValue": "oklch(0.3712 0.1509 26.08 / 1)",
+    "deprecatedComment": "replace pomegranate600 with {base.palette.red.800}"
+  },
+  {
+    "name": "base.palette.fruit-punch.100",
+    "level": "base",
+    "value": "#FFEEEE",
+    "computedValue": "#FFEEEE",
+    "fallback": "{base.palette.red.25}",
+    "feedbackValue": "oklch(0.9667 0.0163 21.82 / 1)",
+    "deprecatedComment": "replace fruit-punch100 with {base.palette.red.25}"
+  },
+  {
+    "name": "base.palette.fruit-punch.200",
+    "level": "base",
+    "value": "#ffbdbd",
+    "computedValue": "#ffbdbd",
+    "fallback": "{base.palette.red.200}",
+    "feedbackValue": "oklch(0.8339 0.092 28.19 / 1)",
+    "deprecatedComment": "replace fruit-punch200 with {base.palette.red.200}"
+  },
+  {
+    "name": "base.palette.fruit-punch.300",
+    "level": "base",
+    "value": "#FF7E7E",
+    "computedValue": "#FF7E7E",
+    "fallback": "{base.palette.red.300}",
+    "feedbackValue": "oklch(0.7533 0.1484 28.45 / 1)",
+    "deprecatedComment": "replace fruit-punch300 with {base.palette.red.300}"
+  },
+  {
+    "name": "base.palette.fruit-punch.400",
+    "level": "base",
+    "value": "#ff4c4c",
+    "computedValue": "#ff4c4c",
+    "fallback": "{base.palette.red.400}",
+    "feedbackValue": "oklch(0.6857 0.2037 29.76 / 1)",
+    "deprecatedComment": "replace fruit-punch400 with {base.palette.red.400}"
+  },
+  {
+    "name": "base.palette.fruit-punch.500",
+    "level": "base",
+    "value": "#e12f2f",
+    "computedValue": "#e12f2f",
+    "fallback": "{base.palette.red.400}",
+    "feedbackValue": "oklch(0.6857 0.2037 29.76 / 1)",
+    "deprecatedComment": "replace fruit-punch500 with {base.palette.red.400}"
+  },
+  {
+    "name": "base.palette.fruit-punch.600",
+    "level": "base",
+    "value": "#b82828",
+    "computedValue": "#b82828",
+    "fallback": "{base.palette.red.700}",
+    "feedbackValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "deprecatedComment": "replace fruit-punch600 with {base.palette.red.700}"
+  },
+  {
+    "name": "base.palette.root-beer.100",
+    "level": "base",
+    "value": "#faf3f0",
+    "computedValue": "#faf3f0",
+    "fallback": "{base.palette.coral.25}",
+    "feedbackValue": "oklch(0.9837 0.0085 44.54 / 1)",
+    "deprecatedComment": "replace root-beer100 with {base.palette.coral.25}"
+  },
+  {
+    "name": "base.palette.root-beer.200",
+    "level": "base",
+    "value": "#EBD7CF",
+    "computedValue": "#EBD7CF",
+    "fallback": "{base.palette.coral.100}",
+    "feedbackValue": "oklch(0.9344 0.0339 35.8 / 1)",
+    "deprecatedComment": "replace root-beer200 with {base.palette.coral.100}"
+  },
+  {
+    "name": "base.palette.root-beer.300",
+    "level": "base",
+    "value": "#dcbbad",
+    "computedValue": "#dcbbad",
+    "fallback": "{base.palette.coral.200}",
+    "feedbackValue": "oklch(0.8476 0.0856 37.59 / 1)",
+    "deprecatedComment": "replace root-beer300 with {base.palette.coral.200}"
+  },
+  {
+    "name": "base.palette.root-beer.400",
+    "level": "base",
+    "value": "#ba9a8c",
+    "computedValue": "#ba9a8c",
+    "fallback": "{base.palette.coral.200}",
+    "feedbackValue": "oklch(0.8476 0.0856 37.59 / 1)",
+    "deprecatedComment": "replace root-beer400 with {base.palette.coral.200}"
+  },
+  {
+    "name": "base.palette.root-beer.500",
+    "level": "base",
+    "value": "#8C7266",
+    "computedValue": "#8C7266",
+    "fallback": "{base.palette.amber.900}",
+    "feedbackValue": "oklch(0.32 0.098 41.19 / 1)",
+    "deprecatedComment": "replace root-beer500 with {base.palette.amber.900}"
+  },
+  {
+    "name": "base.palette.root-beer.600",
+    "level": "base",
+    "value": "#664d42",
+    "computedValue": "#664d42",
+    "fallback": "{base.palette.amber.950}",
+    "feedbackValue": "oklch(0.2489 0.0771 40.64 / 1)",
+    "deprecatedComment": "replace root-beer600 with {base.palette.amber.950}"
+  },
+  {
+    "name": "base.palette.toasted-marshmallow.100",
+    "level": "base",
+    "value": "#fdf6e6",
+    "computedValue": "#fdf6e6",
+    "fallback": "{base.palette.amber.25}",
+    "feedbackValue": "oklch(0.9779 0.0214 95.33 / 1)",
+    "deprecatedComment": "replace toasted-marshmallow100 with {base.palette.amber.25}"
+  },
+  {
+    "name": "base.palette.toasted-marshmallow.200",
+    "level": "base",
+    "value": "#ebd6a9",
+    "computedValue": "#ebd6a9",
+    "fallback": "{base.palette.orange.100}",
+    "feedbackValue": "oklch(0.9243 0.0542 67.95 / 1)",
+    "deprecatedComment": "replace toasted-marshmallow200 with {base.palette.orange.100}"
+  },
+  {
+    "name": "base.palette.toasted-marshmallow.300",
+    "level": "base",
+    "value": "#e6bf6c",
+    "computedValue": "#e6bf6c",
+    "fallback": "{base.palette.orange.200}",
+    "feedbackValue": "oklch(0.8606 0.1002 65.34 / 1)",
+    "deprecatedComment": "replace toasted-marshmallow300 with {base.palette.orange.200}"
+  },
+  {
+    "name": "base.palette.toasted-marshmallow.400",
+    "level": "base",
+    "value": "#CC9E3B",
+    "computedValue": "#CC9E3B",
+    "fallback": "{base.palette.orange.300}",
+    "feedbackValue": "oklch(0.7839 0.1608 63.57 / 1)",
+    "deprecatedComment": "replace toasted-marshmallow400 with {base.palette.orange.300}"
+  },
+  {
+    "name": "base.palette.toasted-marshmallow.500",
+    "level": "base",
+    "value": "#b37f10",
+    "computedValue": "#b37f10",
+    "fallback": "{base.palette.amber.500}",
+    "feedbackValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "replace toasted-marshmallow500 with {base.palette.amber.500}"
+  },
+  {
+    "name": "base.palette.toasted-marshmallow.600",
+    "level": "base",
+    "value": "#8C6000",
+    "computedValue": "#8C6000",
+    "fallback": "{base.palette.amber.600}",
+    "feedbackValue": "oklch(0.5505 0.1439 50.78 / 1)",
+    "deprecatedComment": "replace toasted-marshmallow600 with {base.palette.amber.600}"
+  },
+  {
+    "name": "base.palette.licorice.100",
+    "level": "base",
+    "value": "#A1AAB3",
+    "computedValue": "#A1AAB3",
+    "fallback": "{base.palette.slate.400}",
+    "feedbackValue": "oklch(0.754 0.0181 256.33 / 1)",
+    "deprecatedComment": "replace licorice100 with {base.palette.slate.400}. Prefer to replace with `sys.color.bg.muted.softer` if used as a background color, or `sys.color.fg.disabled` if used as a foreground (text/icon) color, or `sys.color.border.input.disabled` if used as a border color."
+  },
+  {
+    "name": "base.palette.licorice.200",
+    "level": "base",
+    "value": "#7b858f",
+    "computedValue": "#7b858f",
+    "fallback": "{base.palette.slate.500}",
+    "feedbackValue": "oklch(0.629 0.0281 255.62 / 1)",
+    "deprecatedComment": "replace licorice200 with {base.palette.slate.500}. Prefer to replace with `sys.color.bg.muted.soft` if used as a background color, or `sys.color.fg.muted.soft` if used as a foreground (text/icon) color, or `sys.color.border.input.default` if used as a border color."
+  },
+  {
+    "name": "base.palette.licorice.300",
+    "level": "base",
+    "value": "#5E6A75",
+    "computedValue": "#5E6A75",
+    "fallback": "{base.palette.slate.600}",
+    "feedbackValue": "oklch(0.5103 0.0255 256.8 / 1)",
+    "deprecatedComment": "replace licorice300 with {base.palette.slate.600}. Prefer to replace with `sys.color.bg.muted.default` if used as a background color, or `sys.color.fg.muted.default` if used as a foreground (text/icon) color, or `sys.color.text.hint` if used as a text hint color."
+  },
+  {
+    "name": "base.palette.licorice.400",
+    "level": "base",
+    "value": "#4a5561",
+    "computedValue": "#4a5561",
+    "fallback": "{base.palette.slate.700}",
+    "feedbackValue": "oklch(0.45 0.022 255.52 / 1)",
+    "deprecatedComment": "replace licorice400 with {base.palette.slate.700}. Prefer to replace with `sys.color.fg.muted.strong` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.licorice.500",
+    "level": "base",
+    "value": "#333d47",
+    "computedValue": "#333d47",
+    "fallback": "{base.palette.slate.800}",
+    "feedbackValue": "oklch(0.3685 0.0218 256.4 / 1)",
+    "deprecatedComment": "replace licorice500 with {base.palette.slate.800}. Prefer to replace with `sys.color.bg.muted.strong` if used as a background color, or `sys.color.fg.muted.stronger` if used as a foreground (text/icon) color, or `sys.color.border.input.strong` if used as a border color."
+  },
+  {
+    "name": "base.palette.licorice.600",
+    "level": "base",
+    "value": "#1f262e",
+    "computedValue": "#1f262e",
+    "fallback": "{base.palette.slate.900}",
+    "feedbackValue": "oklch(0.278 0.0156 252.4 / 1)",
+    "deprecatedComment": "replace licorice600 with {base.palette.slate.900}"
+  },
+  {
+    "name": "base.palette.soap.100",
+    "level": "base",
+    "value": "#f6f7f8",
+    "computedValue": "#f6f7f8",
+    "fallback": "{base.palette.slate.25}",
+    "feedbackValue": "oklch(0.9846 0.0018 248.57 / 1)",
+    "deprecatedComment": "replace soap100 with {base.palette.slate.25}. Prefer to replace with `sys.color.bg.alt.softer` if used as a background color."
+  },
+  {
+    "name": "base.palette.soap.200",
+    "level": "base",
+    "value": "#F0F1F2",
+    "computedValue": "#F0F1F2",
+    "fallback": "{base.palette.slate.50}",
+    "feedbackValue": "oklch(0.9692 0.0035 248.23 / 1)",
+    "deprecatedComment": "replace soap200 with {base.palette.slate.50}. Prefer to replace with `sys.color.bg.alt.soft` if used as a background color."
+  },
+  {
+    "name": "base.palette.soap.300",
+    "level": "base",
+    "value": "#e8ebed",
+    "computedValue": "#e8ebed",
+    "fallback": "{base.palette.slate.100}",
+    "feedbackValue": "oklch(0.9447 0.0053 248.12 / 1)",
+    "deprecatedComment": "replace soap300 with {base.palette.slate.100}. Prefer to replace with `sys.color.bg.alt.default` if used as a background color, or `sys.color.border.input.inverse` if used as a border color."
+  },
+  {
+    "name": "base.palette.soap.400",
+    "level": "base",
+    "value": "#DFE2E6",
+    "computedValue": "#DFE2E6",
+    "fallback": "{base.palette.slate.200}",
+    "feedbackValue": "oklch(0.917 0.0081 254 / 1)",
+    "deprecatedComment": "replace soap400 with {base.palette.slate.200}. Prefer to replace with `sys.color.bg.alt.strong` if used as a background color, or `sys.color.border.divider` if used as a border color."
+  },
+  {
+    "name": "base.palette.soap.500",
+    "level": "base",
+    "value": "#ced3d9",
+    "computedValue": "#ced3d9",
+    "fallback": "{base.palette.slate.300}",
+    "feedbackValue": "oklch(0.856 0.0111 256.85 / 1)",
+    "deprecatedComment": "replace soap500 with {base.palette.slate.300}. Prefer to replace with `sys.color.bg.alt.stronger` if used as a background color, or `sys.color.border.container` if used as a border color."
+  },
+  {
+    "name": "base.palette.soap.600",
+    "level": "base",
+    "value": "#B9C0C7",
+    "computedValue": "#B9C0C7",
+    "fallback": "{base.palette.slate.300}",
+    "feedbackValue": "oklch(0.856 0.0111 256.85 / 1)",
+    "deprecatedComment": "replace soap600 with {base.palette.slate.300}"
+  },
+  {
+    "name": "base.palette.french-vanilla.100",
+    "level": "base",
+    "value": "#ffffff",
+    "computedValue": "#ffffff",
+    "fallback": "{base.palette.neutral.0}",
+    "feedbackValue": "oklch(1 0 0 / 1)",
+    "deprecatedComment": "replace french-vanilla100 with {base.palette.neutral.0}. Prefer to replace with `sys.color.bg.default` if used as a background color, or `sys.color.fg.default` if used as a foreground (text/icon) color, or `sys.color.border.default` if used as a border color."
+  },
+  {
+    "name": "base.palette.french-vanilla.200",
+    "level": "base",
+    "value": "#ebebeb",
+    "computedValue": "#ebebeb",
+    "fallback": "{base.palette.neutral.100}",
+    "feedbackValue": "oklch(0.9431 0 0 / 1)",
+    "deprecatedComment": "replace french-vanilla200 with {base.palette.neutral.100}"
+  },
+  {
+    "name": "base.palette.french-vanilla.300",
+    "level": "base",
+    "value": "#d4d4d4",
+    "computedValue": "#d4d4d4",
+    "fallback": "{base.palette.neutral.200}",
+    "feedbackValue": "oklch(0.8699 0 0 / 1)",
+    "deprecatedComment": "replace french-vanilla300 with {base.palette.neutral.200}"
+  },
+  {
+    "name": "base.palette.french-vanilla.400",
+    "level": "base",
+    "value": "#bdbdbd",
+    "computedValue": "#bdbdbd",
+    "fallback": "{base.palette.neutral.300}",
+    "feedbackValue": "oklch(0.8015 0 0 / 1)",
+    "deprecatedComment": "replace french-vanilla400 with {base.palette.neutral.300}"
+  },
+  {
+    "name": "base.palette.french-vanilla.500",
+    "level": "base",
+    "value": "#a6a6a6",
+    "computedValue": "#a6a6a6",
+    "fallback": "{base.palette.neutral.400}",
+    "feedbackValue": "oklch(0.72 0 0 / 1)",
+    "deprecatedComment": "replace french-vanilla500 with {base.palette.neutral.400}"
+  },
+  {
+    "name": "base.palette.french-vanilla.600",
+    "level": "base",
+    "value": "#8f8f8f",
+    "computedValue": "#8f8f8f",
+    "fallback": "{base.palette.neutral.500}",
+    "feedbackValue": "oklch(0.6234 0 0 / 1)",
+    "deprecatedComment": "replace french-vanilla600 with {base.palette.neutral.500}"
+  },
+  {
+    "name": "base.palette.black-pepper.100",
+    "level": "base",
+    "value": "#787878",
+    "computedValue": "#787878",
+    "fallback": "{base.palette.neutral.500}",
+    "feedbackValue": "oklch(0.6234 0 0 / 1)",
+    "deprecatedComment": "replace black-pepper100 with {base.palette.neutral.500}"
+  },
+  {
+    "name": "base.palette.black-pepper.200",
+    "level": "base",
+    "value": "#616161",
+    "computedValue": "#616161",
+    "fallback": "{base.palette.neutral.700}",
+    "feedbackValue": "oklch(0.4494 0 0 / 1)",
+    "deprecatedComment": "replace black-pepper200 with {base.palette.neutral.700}"
+  },
+  {
+    "name": "base.palette.black-pepper.300",
+    "level": "base",
+    "value": "#494949",
+    "computedValue": "#494949",
+    "fallback": "{base.palette.neutral.800}",
+    "feedbackValue": "oklch(0.3523 0 0 / 1)",
+    "deprecatedComment": "replace black-pepper300 with {base.palette.neutral.800}. Prefer to replace with `sys.color.fg.default` if used as a foreground (text/icon) color."
+  },
+  {
+    "name": "base.palette.black-pepper.400",
+    "level": "base",
+    "value": "#333333",
+    "computedValue": "#333333",
+    "fallback": "{base.palette.neutral.900}",
+    "feedbackValue": "oklch(0.2891 0 0 / 1)",
+    "deprecatedComment": "replace black-pepper400 with {base.palette.neutral.900}. Prefer to replace with `sys.color.bg.contrast.default` if used as a contrast background color, or `sys.color.fg.strong` if used as a foreground (text/icon) color, or `sys.color.border.contrast.default` if used as a border color."
+  },
+  {
+    "name": "base.palette.black-pepper.500",
+    "level": "base",
+    "value": "#1e1e1e",
+    "computedValue": "#1e1e1e",
+    "fallback": "{base.palette.neutral.950}",
+    "feedbackValue": "oklch(0.2308 0 0 / 1)",
+    "deprecatedComment": "replace black-pepper500 with {base.palette.neutral.950}. Prefer to replace with `sys.color.bg.contrast.strong` if used as a contrast background color, or `sys.color.fg.stronger` if used as a foreground (text/icon) color, or `sys.color.border.contrast.strong` if used as a border color."
+  },
+  {
+    "name": "base.palette.black-pepper.600",
+    "level": "base",
+    "value": "#000000",
+    "computedValue": "#000000",
+    "fallback": "{base.palette.neutral.1000}",
+    "feedbackValue": "oklch(0 0 0 / 1)",
+    "deprecatedComment": "replace black-pepper600 with {base.palette.neutral.1000}"
+  },
+  {
+    "name": "base.palette.coconut.100",
+    "level": "base",
+    "value": "#F0EEEE",
+    "computedValue": "#F0EEEE",
+    "deprecatedComment": "replace coconut100 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.coconut.200",
+    "level": "base",
+    "value": "#e3dfdf",
+    "computedValue": "#e3dfdf",
+    "deprecatedComment": "replace coconut200 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.coconut.300",
+    "level": "base",
+    "value": "#d1cbcc",
+    "computedValue": "#d1cbcc",
+    "deprecatedComment": "replace coconut300 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.coconut.400",
+    "level": "base",
+    "value": "#b3acac",
+    "computedValue": "#b3acac",
+    "deprecatedComment": "replace coconut400 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.coconut.500",
+    "level": "base",
+    "value": "#9e9595",
+    "computedValue": "#9e9595",
+    "deprecatedComment": "replace coconut500 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.coconut.600",
+    "level": "base",
+    "value": "#8F8687",
+    "computedValue": "#8F8687",
+    "deprecatedComment": "replace coconut600 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.cappuccino.100",
+    "level": "base",
+    "value": "#7A7374",
+    "computedValue": "#7A7374",
+    "deprecatedComment": "replace cappuccino100 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.cappuccino.200",
+    "level": "base",
+    "value": "#706869",
+    "computedValue": "#706869",
+    "deprecatedComment": "replace cappuccino200 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.cappuccino.300",
+    "level": "base",
+    "value": "#5E5757",
+    "computedValue": "#5E5757",
+    "deprecatedComment": "replace cappuccino300 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.cappuccino.400",
+    "level": "base",
+    "value": "#4A4242",
+    "computedValue": "#4A4242",
+    "deprecatedComment": "replace cappuccino400 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.cappuccino.500",
+    "level": "base",
+    "value": "#352f2f",
+    "computedValue": "#352f2f",
+    "deprecatedComment": "replace cappuccino500 with appropriate replacement color"
+  },
+  {
+    "name": "base.palette.cappuccino.600",
+    "level": "base",
+    "value": "#231f20",
+    "computedValue": "#231f20",
+    "deprecatedComment": "replace cappuccino600 with appropriate replacement color"
+  },
+  {
+    "name": "base.unit",
+    "level": "base",
+    "value": "0.25rem",
+    "computedValue": "0.25rem",
+    "deprecatedComment": "Use {base.baseline} instead for consistent sizing calculations"
+  },
+  {
+    "name": "base.extended.palette.dragon-fruit.100",
+    "level": "base",
+    "value": "#fbf5ff",
+    "computedValue": "#fbf5ff",
+    "fallback": "{base.palette.purple.25}",
+    "feedbackValue": "oklch(0.9776 0.0147 312 / 1)",
+    "deprecatedComment": "replace dragon-fruit100 with {base.palette.purple.25}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`."
+  },
+  {
+    "name": "base.extended.palette.dragon-fruit.200",
+    "level": "base",
+    "value": "#f1d5ff",
+    "computedValue": "#f1d5ff",
+    "fallback": "{base.palette.purple.100}",
+    "feedbackValue": "oklch(0.909 0.0637 314.43 / 1)",
+    "deprecatedComment": "replace dragon-fruit200 with {base.palette.purple.100}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`."
+  },
+  {
+    "name": "base.extended.palette.dragon-fruit.300",
+    "level": "base",
+    "value": "#736bff",
+    "computedValue": "#736bff",
+    "fallback": "{base.palette.indigo.500}",
+    "feedbackValue": "oklch(0.615 0.2131 280.7 / 1)",
+    "deprecatedComment": "replace dragon-fruit300 with {base.palette.indigo.500}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`."
+  },
+  {
+    "name": "base.extended.palette.dragon-fruit.400",
+    "level": "base",
+    "value": "#5f4ae6",
+    "computedValue": "#5f4ae6",
+    "fallback": "{base.palette.indigo.600}",
+    "feedbackValue": "oklch(0.5289 0.2241 281.65 / 1)",
+    "deprecatedComment": "replace dragon-fruit400 with {base.palette.indigo.600}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`."
+  },
+  {
+    "name": "base.extended.palette.dragon-fruit.500",
+    "level": "base",
+    "value": "#4e3ec2",
+    "computedValue": "#4e3ec2",
+    "fallback": "{base.palette.indigo.700}",
+    "feedbackValue": "oklch(0.466 0.1961 280.9 / 1)",
+    "deprecatedComment": "replace dragon-fruit500 with {base.palette.indigo.700}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`."
+  },
+  {
+    "name": "base.extended.palette.dragon-fruit.600",
+    "level": "base",
+    "value": "#272077",
+    "computedValue": "#272077",
+    "fallback": "{base.palette.indigo.900}",
+    "feedbackValue": "oklch(0.317 0.142 278.2 / 1)",
+    "deprecatedComment": "replace dragon-fruit600 with {base.palette.indigo.900}. Prefer to replace it with ai system tokens: `sys.color.bg.ai.*`, `sys.color.border.ai` or `sys.color.text.ai`."
+  },
+  {
+    "name": "base.level",
+    "level": "base",
+    "value": 2,
+    "computedValue": 2,
+    "deprecatedComment": "Use explicit size tokens instead of calculated type ramp values"
+  },
+  {
+    "name": "base.font-size.25",
+    "level": "base",
+    "value": "0.625rem",
+    "computedValue": "0.625rem",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.50",
+    "level": "base",
+    "value": "{base.font-size.25} + {base.typescale.size.default}",
+    "computedValue": "0.625rem + 0.125rem",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.75",
+    "level": "base",
+    "value": "{base.font-size.50} + {base.typescale.size.default}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.100",
+    "level": "base",
+    "value": "{base.font-size.75} + {base.typescale.size.default}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.125",
+    "level": "base",
+    "value": "{base.font-size.100} + {base.typescale.size.default}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.150",
+    "level": "base",
+    "value": "{base.font-size.125} + {base.typescale.size.default}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.200",
+    "level": "base",
+    "value": "{base.font-size.150} + {base.typescale.size.heading}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.250",
+    "level": "base",
+    "value": "{base.font-size.200} + {base.typescale.size.heading}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.300",
+    "level": "base",
+    "value": "{base.font-size.250} + {base.typescale.size.heading}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.400",
+    "level": "base",
+    "value": "{base.font-size.300} + {base.typescale.size.title}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.500",
+    "level": "base",
+    "value": "{base.font-size.400} + {base.typescale.size.title}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.600",
+    "level": "base",
+    "value": "{base.font-size.500} + {base.typescale.size.title}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.750",
+    "level": "base",
+    "value": "{base.font-size.600} + {base.typescale.size.display}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 * 2",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.900",
+    "level": "base",
+    "value": "{base.font-size.750} + {base.typescale.size.display}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 * 2 + 0.125rem * 2 * 2 * 2",
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.font-size.1050",
+    "level": "base",
+    "value": "{base.font-size.900} + {base.typescale.size.display}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 * 2 + 0.125rem * 2 * 2 * 2 + 0.125rem * 2 * 2 * 2",
+    "deprecatedComment": "Use {base.size.1100} for consistent spacing and sizing"
+  },
+  {
+    "name": "base.line-height.50",
+    "level": "base",
+    "value": 16,
+    "computedValue": 16,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.100",
+    "level": "base",
+    "value": 20,
+    "computedValue": 20,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.150",
+    "level": "base",
+    "value": 24,
+    "computedValue": 24,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.200",
+    "level": "base",
+    "value": 28,
+    "computedValue": 28,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.250",
+    "level": "base",
+    "value": 32,
+    "computedValue": 32,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.300",
+    "level": "base",
+    "value": 36,
+    "computedValue": 36,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.350",
+    "level": "base",
+    "value": 40,
+    "computedValue": 40,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.400",
+    "level": "base",
+    "value": 48,
+    "computedValue": 48,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.500",
+    "level": "base",
+    "value": 56,
+    "computedValue": 56,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.600",
+    "level": "base",
+    "value": 64,
+    "computedValue": 64,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.750",
+    "level": "base",
+    "value": 72,
+    "computedValue": 72,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.900",
+    "level": "base",
+    "value": 88,
+    "computedValue": 88,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.line-height.1050",
+    "level": "base",
+    "value": 104,
+    "computedValue": 104,
+    "deprecatedComment": "Use system instead"
+  },
+  {
+    "name": "base.typescale.size.default",
+    "level": "base",
+    "value": "0.125rem",
+    "computedValue": "0.125rem"
+  },
+  {
+    "name": "base.typescale.size.heading",
+    "level": "base",
+    "value": "{base.typescale.size.default} * {base.level}",
+    "computedValue": "0.125rem * 2"
+  },
+  {
+    "name": "base.typescale.size.title",
+    "level": "base",
+    "value": "{base.typescale.size.heading} * {base.level}",
+    "computedValue": "0.125rem * 2 * 2"
+  },
+  {
+    "name": "base.typescale.size.display",
+    "level": "base",
+    "value": "{base.typescale.size.title} * {base.level}",
+    "computedValue": "0.125rem * 2 * 2 * 2"
+  },
+  {
+    "name": "base.typescale.height.default",
+    "level": "base",
+    "value": "0.25rem",
+    "computedValue": "0.25rem"
+  },
+  {
+    "name": "base.typescale.height.title",
+    "level": "base",
+    "value": "{base.typescale.height.default} * {base.level}",
+    "computedValue": "0.25rem * 2"
+  },
+  {
+    "name": "base.typescale.height.display",
+    "level": "base",
+    "value": "1rem",
+    "computedValue": "1rem"
+  },
+  {
+    "name": "brand.primary.base",
+    "level": "brand",
+    "value": "{base.palette.blue.600}",
+    "computedValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "fallback": "{brand.primary.600}",
+    "feedbackValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "replace primary.base with {brand.primary.600}"
+  },
+  {
+    "name": "brand.primary.lightest",
+    "level": "brand",
+    "value": "{base.palette.blue.25}",
+    "computedValue": "oklch(0.969 0.0155 248.07 / 1)",
+    "fallback": "{brand.primary.25}",
+    "feedbackValue": "oklch(0.969 0.0155 248.07 / 1)",
+    "deprecatedComment": "replace primary.lightest with {brand.primary.25}"
+  },
+  {
+    "name": "brand.primary.darkest",
+    "level": "brand",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "fallback": "{brand.primary.800}",
+    "feedbackValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "replace primary.darkest with {brand.primary.800}"
+  },
+  {
+    "name": "brand.primary.dark",
+    "level": "brand",
+    "value": "{base.palette.blue.700}",
+    "computedValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "fallback": "{brand.primary.700}",
+    "feedbackValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "replace primary.dark with {brand.primary.700}"
+  },
+  {
+    "name": "brand.primary.accent",
+    "level": "brand",
+    "value": "{base.palette.neutral.0}",
+    "computedValue": "oklch(1 0 0 / 1)",
+    "fallback": "{sys.color.fg.inverse}",
+    "feedbackValue": "oklch(1 0 0 / 1)",
+    "deprecatedComment": "replace primary.accent with {sys.color.fg.inverse}"
+  },
+  {
+    "name": "brand.primary.lighter",
+    "level": "brand",
+    "value": "{base.palette.blue.50}",
+    "computedValue": "oklch(0.9523 0.0239 248.12 / 1)",
+    "fallback": "{brand.primary.50}",
+    "feedbackValue": "oklch(0.9523 0.0239 248.12 / 1)",
+    "deprecatedComment": "replace primary.lighter with {brand.primary.50}"
+  },
+  {
+    "name": "brand.primary.light",
+    "level": "brand",
+    "value": "{base.palette.blue.200}",
+    "computedValue": "oklch(0.8627 0.0701 250.6 / 1)",
+    "fallback": "{brand.primary.200}",
+    "feedbackValue": "oklch(0.8627 0.0701 250.6 / 1)",
+    "deprecatedComment": "replace primary.light with {brand.primary.200}"
+  },
+  {
+    "name": "brand.error.base",
+    "level": "brand",
+    "value": "{base.palette.red.600}",
+    "computedValue": "oklch(0.5342 0.2172 29.53 / 1)",
+    "fallback": "{brand.critical.600}",
+    "feedbackValue": "oklch(0.5342 0.2172 29.53 / 1)",
+    "deprecatedComment": "replace error.base with {brand.critical.600}"
+  },
+  {
+    "name": "brand.error.lightest",
+    "level": "brand",
+    "value": "{base.palette.red.25}",
+    "computedValue": "oklch(0.9667 0.0163 21.82 / 1)",
+    "fallback": "{brand.critical.25}",
+    "feedbackValue": "oklch(0.9667 0.0163 21.82 / 1)",
+    "deprecatedComment": "replace error.lightest with {brand.critical.25}"
+  },
+  {
+    "name": "brand.error.dark",
+    "level": "brand",
+    "value": "{base.palette.red.700}",
+    "computedValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "fallback": "{brand.critical.700}",
+    "feedbackValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "deprecatedComment": "replace error.dark with {brand.critical.700}"
+  },
+  {
+    "name": "brand.error.darkest",
+    "level": "brand",
+    "value": "{base.palette.red.800}",
+    "computedValue": "oklch(0.3712 0.1509 26.08 / 1)",
+    "fallback": "{brand.critical.800}",
+    "feedbackValue": "oklch(0.3712 0.1509 26.08 / 1)",
+    "deprecatedComment": "replace error.darkest with {brand.critical.800}"
+  },
+  {
+    "name": "brand.error.accent",
+    "level": "brand",
+    "value": "{base.palette.neutral.0}",
+    "computedValue": "oklch(1 0 0 / 1)",
+    "fallback": "{sys.color.fg.inverse}",
+    "feedbackValue": "oklch(1 0 0 / 1)",
+    "deprecatedComment": "replace error.accent with {sys.color.fg.inverse}"
+  },
+  {
+    "name": "brand.error.lighter",
+    "level": "brand",
+    "value": "{base.palette.red.50}",
+    "computedValue": "oklch(0.9533 0.0231 23.95 / 1)",
+    "fallback": "{brand.critical.50}",
+    "feedbackValue": "oklch(0.9533 0.0231 23.95 / 1)",
+    "deprecatedComment": "replace error.lighter with {brand.critical.50}"
+  },
+  {
+    "name": "brand.error.light",
+    "level": "brand",
+    "value": "{base.palette.red.200}",
+    "computedValue": "oklch(0.8339 0.092 28.19 / 1)",
+    "fallback": "{brand.critical.200}",
+    "feedbackValue": "oklch(0.8339 0.092 28.19 / 1)",
+    "deprecatedComment": "replace error.light with {brand.critical.200}"
+  },
+  {
+    "name": "brand.alert.base",
+    "level": "brand",
+    "value": "{base.palette.amber.400}",
+    "computedValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "fallback": "{brand.caution.400}",
+    "feedbackValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "deprecatedComment": "replace alert.base with {brand.caution.400}"
+  },
+  {
+    "name": "brand.alert.lighter",
+    "level": "brand",
+    "value": "{base.palette.amber.50}",
+    "computedValue": "oklch(0.969 0.0619 101.63 / 1)",
+    "fallback": "{brand.caution.50}",
+    "feedbackValue": "oklch(0.969 0.0619 101.63 / 1)",
+    "deprecatedComment": "replace alert.lighter with {brand.caution.50}"
+  },
+  {
+    "name": "brand.alert.lightest",
+    "level": "brand",
+    "value": "{base.palette.amber.25}",
+    "computedValue": "oklch(0.9779 0.0214 95.33 / 1)",
+    "fallback": "{brand.caution.25}",
+    "feedbackValue": "oklch(0.9779 0.0214 95.33 / 1)",
+    "deprecatedComment": "replace alert.lightest with {brand.caution.25}"
+  },
+  {
+    "name": "brand.alert.dark",
+    "level": "brand",
+    "value": "{base.palette.amber.500}",
+    "computedValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "fallback": "{brand.caution.500}",
+    "feedbackValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "replace alert.dark with {brand.caution.500}"
+  },
+  {
+    "name": "brand.alert.darkest",
+    "level": "brand",
+    "value": "{base.palette.amber.600}",
+    "computedValue": "oklch(0.5505 0.1439 50.78 / 1)",
+    "fallback": "{brand.caution.600}",
+    "feedbackValue": "oklch(0.5505 0.1439 50.78 / 1)",
+    "deprecatedComment": "replace alert.darkest with {brand.caution.600}"
+  },
+  {
+    "name": "brand.alert.accent",
+    "level": "brand",
+    "value": "{base.palette.neutral.950}",
+    "computedValue": "oklch(0.2308 0 0 / 1)",
+    "fallback": "{sys.color.fg.contrast.default}",
+    "feedbackValue": "oklch(0.0969 0 0 / 0.84)",
+    "deprecatedComment": "replace alert.accent with {sys.color.fg.contrast.default}"
+  },
+  {
+    "name": "brand.alert.light",
+    "level": "brand",
+    "value": "{base.palette.amber.200}",
+    "computedValue": "oklch(0.9191 0.1547 99.7 / 1)",
+    "fallback": "{brand.caution.200}",
+    "feedbackValue": "oklch(0.9191 0.1547 99.7 / 1)",
+    "deprecatedComment": "replace alert.light with {brand.caution.200}"
+  },
+  {
+    "name": "brand.success.base",
+    "level": "brand",
+    "value": "{base.palette.green.600}",
+    "computedValue": "oklch(0.5069 0.1569 145.56 / 1)",
+    "fallback": "{brand.positive.600}",
+    "feedbackValue": "oklch(0.5069 0.1569 145.56 / 1)",
+    "deprecatedComment": "replace success.base with {brand.positive.600}"
+  },
+  {
+    "name": "brand.success.lightest",
+    "level": "brand",
+    "value": "{base.palette.green.25}",
+    "computedValue": "oklch(0.9824 0.0282 148.77 / 1)",
+    "fallback": "{brand.positive.25}",
+    "feedbackValue": "oklch(0.9824 0.0282 148.77 / 1)",
+    "deprecatedComment": "replace success.lightest with {brand.positive.25}"
+  },
+  {
+    "name": "brand.success.lighter",
+    "level": "brand",
+    "value": "{base.palette.green.50}",
+    "computedValue": "oklch(0.9655 0.0561 149.93 / 1)",
+    "fallback": "{brand.positive.50}",
+    "feedbackValue": "oklch(0.9655 0.0561 149.93 / 1)",
+    "deprecatedComment": "replace success.lighter with {brand.positive.50}"
+  },
+  {
+    "name": "brand.success.dark",
+    "level": "brand",
+    "value": "{base.palette.green.700}",
+    "computedValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "fallback": "{brand.positive.700}",
+    "feedbackValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "deprecatedComment": "replace success.dark with {brand.positive.700}"
+  },
+  {
+    "name": "brand.success.darkest",
+    "level": "brand",
+    "value": "{base.palette.green.800}",
+    "computedValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "fallback": "{brand.positive.800}",
+    "feedbackValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "deprecatedComment": "replace success.darkest with {brand.positive.800}"
+  },
+  {
+    "name": "brand.success.accent",
+    "level": "brand",
+    "value": "{base.palette.neutral.0}",
+    "computedValue": "oklch(1 0 0 / 1)",
+    "fallback": "{sys.color.fg.inverse}",
+    "feedbackValue": "oklch(1 0 0 / 1)",
+    "deprecatedComment": "replace success.accent with {sys.color.fg.inverse}"
+  },
+  {
+    "name": "brand.success.light",
+    "level": "brand",
+    "value": "{base.palette.green.200}",
+    "computedValue": "oklch(0.8506 0.1804 149.93 / 1)",
+    "fallback": "{brand.positive.200}",
+    "feedbackValue": "oklch(0.8506 0.1804 149.93 / 1)",
+    "deprecatedComment": "replace success.light with {brand.positive.200}"
+  },
+  {
+    "name": "brand.neutral.lightest",
+    "level": "brand",
+    "value": "{base.palette.neutral.25}",
+    "computedValue": "oklch(0.9851 0 0 / 1)",
+    "fallback": "{brand.neutral.25}",
+    "feedbackValue": "oklch(0.9846 0.0018 248.57 / 1)",
+    "deprecatedComment": "replace neutral.lightest with {brand.neutral.25}"
+  },
+  {
+    "name": "brand.neutral.base",
+    "level": "brand",
+    "value": "{base.palette.neutral.600}",
+    "computedValue": "oklch(0.5103 0 0 / 1)",
+    "fallback": "{brand.neutral.600}",
+    "feedbackValue": "oklch(0.5103 0.0255 256.8 / 1)",
+    "deprecatedComment": "replace neutral.base with {brand.neutral.600}"
+  },
+  {
+    "name": "brand.neutral.dark",
+    "level": "brand",
+    "value": "{base.palette.neutral.700}",
+    "computedValue": "oklch(0.4494 0 0 / 1)",
+    "fallback": "{brand.neutral.700}",
+    "feedbackValue": "oklch(0.45 0.022 255.52 / 1)",
+    "deprecatedComment": "replace neutral.dark with {brand.neutral.700}"
+  },
+  {
+    "name": "brand.neutral.darkest",
+    "level": "brand",
+    "value": "{base.palette.neutral.800}",
+    "computedValue": "oklch(0.3523 0 0 / 1)",
+    "fallback": "{brand.neutral.800}",
+    "feedbackValue": "oklch(0.3685 0.0218 256.4 / 1)",
+    "deprecatedComment": "replace neutral.darkest with {brand.neutral.800}"
+  },
+  {
+    "name": "brand.neutral.accent",
+    "level": "brand",
+    "value": "{base.palette.neutral.0}",
+    "computedValue": "oklch(1 0 0 / 1)",
+    "fallback": "{sys.color.fg.inverse}",
+    "feedbackValue": "oklch(1 0 0 / 1)",
+    "deprecatedComment": "replace neutral.accent with {sys.color.fg.inverse}"
+  },
+  {
+    "name": "brand.neutral.lighter",
+    "level": "brand",
+    "value": "{base.palette.neutral.50}",
+    "computedValue": "oklch(0.9702 0 0 / 1)",
+    "fallback": "{brand.neutral.50}",
+    "feedbackValue": "oklch(0.9692 0.0035 248.23 / 1)",
+    "deprecatedComment": "replace neutral.lighter with {brand.neutral.50}"
+  },
+  {
+    "name": "brand.neutral.light",
+    "level": "brand",
+    "value": "{base.palette.neutral.200}",
+    "computedValue": "oklch(0.8699 0 0 / 1)",
+    "fallback": "{brand.neutral.200}",
+    "feedbackValue": "oklch(0.917 0.0081 254 / 1)",
+    "deprecatedComment": "replace neutral.light with {brand.neutral.200}"
+  },
+  {
+    "name": "brand.common.focus-outline",
+    "level": "brand",
+    "value": "{base.palette.blue.500}",
+    "computedValue": "oklch(0.6023 0.2032 255.68 / 1)",
+    "fallback": "{brand.common.focus}",
+    "feedbackValue": "oklch(0.6023 0.2032 255.68 / 1)",
+    "deprecatedComment": "replace focus-outline with {brand.common.focus}"
+  },
+  {
+    "name": "brand.common.error-inner",
+    "level": "brand",
+    "value": "{base.palette.red.500}",
+    "computedValue": "oklch(0.6495 0.2369 30.04 / 1)",
+    "fallback": "{brand.common.critical}",
+    "feedbackValue": "oklch(0.6495 0.2369 30.04 / 1)",
+    "deprecatedComment": "replace error-inner with {brand.common.critical}"
+  },
+  {
+    "name": "brand.common.alert-inner",
+    "level": "brand",
+    "value": "{base.palette.amber.400}",
+    "computedValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "fallback": "{brand.common.caution.inner}",
+    "feedbackValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "deprecatedComment": "replace alert-inner with {brand.common.caution.inner}"
+  },
+  {
+    "name": "brand.common.alert-outer",
+    "level": "brand",
+    "value": "{base.palette.amber.500}",
+    "computedValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "fallback": "{brand.common.caution.outer}",
+    "feedbackValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "replace alert-outer with {brand.common.caution.outer}"
+  },
+  {
+    "name": "sys.breakpoints.s",
+    "level": "sys",
+    "value": "{base.unit} * 80",
+    "computedValue": "0.25rem * 80"
+  },
+  {
+    "name": "sys.breakpoints.m",
+    "level": "sys",
+    "value": "{base.unit} * 192",
+    "computedValue": "0.25rem * 192"
+  },
+  {
+    "name": "sys.breakpoints.l",
+    "level": "sys",
+    "value": "{base.unit} * 256",
+    "computedValue": "0.25rem * 256"
+  },
+  {
+    "name": "sys.shape.zero",
+    "level": "sys",
+    "value": "{sys.shape.none}",
+    "computedValue": "0",
+    "deprecatedComment": "Use {sys.shape.none} instead"
+  },
+  {
+    "name": "sys.shape.half",
+    "level": "sys",
+    "value": "{base.unit} * 0.5",
+    "computedValue": "0.25rem * 0.5"
+  },
+  {
+    "name": "sys.shape.x1",
+    "level": "sys",
+    "value": "{base.unit}",
+    "computedValue": "0.25rem"
+  },
+  {
+    "name": "sys.shape.x1-half",
+    "level": "sys",
+    "value": "{base.unit} * 1.5",
+    "computedValue": "0.25rem * 1.5"
+  },
+  {
+    "name": "sys.shape.x2",
+    "level": "sys",
+    "value": "{base.unit} * 2",
+    "computedValue": "0.25rem * 2"
+  },
+  {
+    "name": "sys.shape.x4",
+    "level": "sys",
+    "value": "{base.unit} * 4",
+    "computedValue": "0.25rem * 4"
+  },
+  {
+    "name": "sys.shape.x6",
+    "level": "sys",
+    "value": "{base.unit} * 6",
+    "computedValue": "0.25rem * 6"
+  },
+  {
+    "name": "sys.shape.round",
+    "level": "sys",
+    "value": "{base.unit} * 250",
+    "computedValue": "0.25rem * 250"
+  },
+  {
+    "name": "sys.space.zero",
+    "level": "sys",
+    "value": "0",
+    "computedValue": "0",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.half",
+    "level": "sys",
+    "value": "{base.unit} * 0.5",
+    "computedValue": "0.25rem * 0.5",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x1",
+    "level": "sys",
+    "value": "{base.unit}",
+    "computedValue": "0.25rem",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x2",
+    "level": "sys",
+    "value": "{base.unit} * 2",
+    "computedValue": "0.25rem * 2",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x3",
+    "level": "sys",
+    "value": "{base.unit} * 3",
+    "computedValue": "0.25rem * 3",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x4",
+    "level": "sys",
+    "value": "{base.unit} * 4",
+    "computedValue": "0.25rem * 4",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x5",
+    "level": "sys",
+    "value": "{base.unit} * 5",
+    "computedValue": "0.25rem * 5",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x6",
+    "level": "sys",
+    "value": "{base.unit} * 6",
+    "computedValue": "0.25rem * 6",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x8",
+    "level": "sys",
+    "value": "{base.unit} * 8",
+    "computedValue": "0.25rem * 8",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x10",
+    "level": "sys",
+    "value": "{base.unit} * 10",
+    "computedValue": "0.25rem * 10",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x14",
+    "level": "sys",
+    "value": "{base.unit} * 14",
+    "computedValue": "0.25rem * 14",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x16",
+    "level": "sys",
+    "value": "{base.unit} * 16",
+    "computedValue": "0.25rem * 16",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.space.x20",
+    "level": "sys",
+    "value": "{base.unit} * 20",
+    "computedValue": "0.25rem * 20",
+    "deprecatedComment": "Use semantic padding and gap values instead"
+  },
+  {
+    "name": "sys.font-size.subtext.small",
+    "level": "sys",
+    "value": "{base.font-size.25}",
+    "computedValue": "0.625rem"
+  },
+  {
+    "name": "sys.font-size.subtext.medium",
+    "level": "sys",
+    "value": "{base.font-size.50}",
+    "computedValue": "0.625rem + 0.125rem"
+  },
+  {
+    "name": "sys.font-size.subtext.large",
+    "level": "sys",
+    "value": "{base.font-size.75}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem"
+  },
+  {
+    "name": "sys.font-size.body.small",
+    "level": "sys",
+    "value": "{base.font-size.100}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem"
+  },
+  {
+    "name": "sys.font-size.body.medium",
+    "level": "sys",
+    "value": "{base.font-size.125}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem"
+  },
+  {
+    "name": "sys.font-size.body.large",
+    "level": "sys",
+    "value": "{base.font-size.150}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem"
+  },
+  {
+    "name": "sys.font-size.heading.small",
+    "level": "sys",
+    "value": "{base.font-size.200}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2"
+  },
+  {
+    "name": "sys.font-size.heading.medium",
+    "level": "sys",
+    "value": "{base.font-size.250}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2"
+  },
+  {
+    "name": "sys.font-size.heading.large",
+    "level": "sys",
+    "value": "{base.font-size.300}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2"
+  },
+  {
+    "name": "sys.font-size.title.small",
+    "level": "sys",
+    "value": "{base.font-size.400}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2"
+  },
+  {
+    "name": "sys.font-size.title.medium",
+    "level": "sys",
+    "value": "{base.font-size.500}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2"
+  },
+  {
+    "name": "sys.font-size.title.large",
+    "level": "sys",
+    "value": "{base.font-size.600}",
+    "computedValue": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2"
+  },
+  {
+    "name": "sys.line-height.subtext.small",
+    "level": "sys",
+    "value": "{base.line-height.50}",
+    "computedValue": 16
+  },
+  {
+    "name": "sys.line-height.subtext.medium",
+    "level": "sys",
+    "value": "{base.line-height.50}",
+    "computedValue": 16
+  },
+  {
+    "name": "sys.line-height.subtext.large",
+    "level": "sys",
+    "value": "{base.line-height.100}",
+    "computedValue": 20
+  },
+  {
+    "name": "sys.line-height.body.small",
+    "level": "sys",
+    "value": "{base.line-height.150}",
+    "computedValue": 24
+  },
+  {
+    "name": "sys.line-height.body.medium",
+    "level": "sys",
+    "value": "{base.line-height.200}",
+    "computedValue": 28
+  },
+  {
+    "name": "sys.line-height.body.large",
+    "level": "sys",
+    "value": "{base.line-height.200}",
+    "computedValue": 28
+  },
+  {
+    "name": "sys.line-height.heading.small",
+    "level": "sys",
+    "value": "{base.line-height.250}",
+    "computedValue": 32
+  },
+  {
+    "name": "sys.line-height.heading.medium",
+    "level": "sys",
+    "value": "{base.line-height.300}",
+    "computedValue": 36
+  },
+  {
+    "name": "sys.line-height.heading.large",
+    "level": "sys",
+    "value": "{base.line-height.350}",
+    "computedValue": 40
+  },
+  {
+    "name": "sys.line-height.title.small",
+    "level": "sys",
+    "value": "{base.line-height.400}",
+    "computedValue": 48
+  },
+  {
+    "name": "sys.line-height.title.medium",
+    "level": "sys",
+    "value": "{base.line-height.500}",
+    "computedValue": 56
+  },
+  {
+    "name": "sys.line-height.title.large",
+    "level": "sys",
+    "value": "{base.line-height.600}",
+    "computedValue": 64
+  },
+  {
+    "name": "sys.type.subtext.small",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.normal}",
+      "line-height": "{sys.line-height.subtext.small}",
+      "font-size": "{sys.font-size.subtext.small}",
+      "letter-spacing": "{base.letter-spacing.50}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Regular",
+      "line-height": 16,
+      "font-size": "0.625rem",
+      "letter-spacing": 0.4
+    }
+  },
+  {
+    "name": "sys.type.subtext.medium",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.normal}",
+      "line-height": "{sys.line-height.subtext.medium}",
+      "font-size": "{sys.font-size.subtext.medium}",
+      "letter-spacing": "{base.letter-spacing.100}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Regular",
+      "line-height": 16,
+      "font-size": "0.625rem + 0.125rem",
+      "letter-spacing": 0.32
+    }
+  },
+  {
+    "name": "sys.type.subtext.large",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.normal}",
+      "line-height": "{sys.line-height.subtext.large}",
+      "font-size": "{sys.font-size.subtext.large}",
+      "letter-spacing": "{base.letter-spacing.150}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Regular",
+      "line-height": 20,
+      "font-size": "0.625rem + 0.125rem + 0.125rem",
+      "letter-spacing": 0.24
+    }
+  },
+  {
+    "name": "sys.type.body.small",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.normal}",
+      "line-height": "{sys.line-height.body.small}",
+      "font-size": "{sys.font-size.body.small}",
+      "letter-spacing": "{base.letter-spacing.200}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Regular",
+      "line-height": 24,
+      "font-size": "0.625rem + 0.125rem + 0.125rem + 0.125rem",
+      "letter-spacing": 0.16
+    }
+  },
+  {
+    "name": "sys.type.body.medium",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.normal}",
+      "line-height": "{sys.line-height.body.medium}",
+      "font-size": "{sys.font-size.body.medium}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Regular",
+      "line-height": 28,
+      "font-size": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem"
+    }
+  },
+  {
+    "name": "sys.type.body.large",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.normal}",
+      "line-height": "{sys.line-height.body.large}",
+      "font-size": "{sys.font-size.body.large}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Regular",
+      "line-height": 28,
+      "font-size": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem"
+    }
+  },
+  {
+    "name": "sys.type.heading.small",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.bold}",
+      "line-height": "{sys.line-height.heading.small}",
+      "font-size": "{sys.font-size.heading.small}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Bold",
+      "line-height": 32,
+      "font-size": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2"
+    }
+  },
+  {
+    "name": "sys.type.heading.medium",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.bold}",
+      "line-height": "{sys.line-height.heading.medium}",
+      "font-size": "{sys.font-size.heading.medium}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Bold",
+      "line-height": 36,
+      "font-size": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2"
+    }
+  },
+  {
+    "name": "sys.type.heading.large",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.bold}",
+      "line-height": "{sys.line-height.heading.large}",
+      "font-size": "{sys.font-size.heading.large}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Bold",
+      "line-height": 40,
+      "font-size": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2"
+    }
+  },
+  {
+    "name": "sys.type.title.small",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.bold}",
+      "line-height": "{sys.line-height.title.small}",
+      "font-size": "{sys.font-size.title.small}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Bold",
+      "line-height": 48,
+      "font-size": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2"
+    }
+  },
+  {
+    "name": "sys.type.title.medium",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.bold}",
+      "line-height": "{sys.line-height.title.medium}",
+      "font-size": "{sys.font-size.title.medium}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Bold",
+      "line-height": 56,
+      "font-size": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2"
+    }
+  },
+  {
+    "name": "sys.type.title.large",
+    "level": "sys",
+    "value": {
+      "font-family": "{sys.font-family.default}",
+      "font-weight": "{sys.font-weight.bold}",
+      "line-height": "{sys.line-height.title.large}",
+      "font-size": "{sys.font-size.title.large}"
+    },
+    "computedValue": {
+      "font-family": "Roboto",
+      "font-weight": "Bold",
+      "line-height": 64,
+      "font-size": "0.625rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2 + 0.125rem * 2 * 2"
+    }
+  },
+  {
+    "name": "sys.color.bg.primary.softest",
+    "level": "sys",
+    "value": "{base.palette.blue.25}",
+    "computedValue": "oklch(0.969 0.0155 248.07 / 1)",
+    "deprecatedComment": "Use sys.color.brand.surface.primary.default instead"
+  },
+  {
+    "name": "sys.color.bg.primary.softer",
+    "level": "sys",
+    "value": "{base.palette.blue.50}",
+    "computedValue": "oklch(0.9523 0.0239 248.12 / 1)",
+    "deprecatedComment": "Use sys.color.brand.surface.primary.strong tokens instead"
+  },
+  {
+    "name": "sys.color.bg.primary.soft",
+    "level": "sys",
+    "value": "{base.palette.blue.100}",
+    "computedValue": "oklch(0.928 0.0359 250.6 / 1)",
+    "deprecatedComment": "Use sys.color.brand.surface.primary.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.primary.default",
+    "level": "sys",
+    "value": "{base.palette.blue.600}",
+    "computedValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.primary instead"
+  },
+  {
+    "name": "sys.color.bg.primary.strong",
+    "level": "sys",
+    "value": "{base.palette.blue.700}",
+    "computedValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.primary instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.bg.primary.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.primary instead with sys.color.accent.overlay.pressed"
+  },
+  {
+    "name": "sys.color.bg.transparent.default",
+    "level": "sys",
+    "value": "oklch({base.palette.neutral.1000} / {base.opacity.0})",
+    "computedValue": "oklch(oklch(0 0 0 / 1) / 0)",
+    "deprecatedComment": "Use sys.color.surface.transparent instead"
+  },
+  {
+    "name": "sys.color.bg.transparent.strong",
+    "level": "sys",
+    "value": "oklch({base.palette.neutral.1000} / {base.opacity.100})",
+    "computedValue": "oklch(oklch(0 0 0 / 1) / 8)",
+    "deprecatedComment": "Use sys.color.surface.overlay.hover.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.transparent.stronger",
+    "level": "sys",
+    "value": "oklch({base.palette.neutral.1000} / {base.opacity.250})",
+    "computedValue": "oklch(oklch(0 0 0 / 1) / 20)",
+    "deprecatedComment": "Use sys.color.surface.overlay.pressed.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.overlay",
+    "level": "sys",
+    "value": "oklch({base.palette.neutral.1000} / {base.opacity.400})",
+    "computedValue": "oklch(oklch(0 0 0 / 1) / 40)",
+    "deprecatedComment": "Use sys.color.surface.overlay.scrim instead"
+  },
+  {
+    "name": "sys.color.bg.translucent",
+    "level": "sys",
+    "value": "oklch({base.palette.neutral.1000} / {base.opacity.500})",
+    "computedValue": "oklch(oklch(0 0 0 / 1) / 84)",
+    "deprecatedComment": "Use sys.color.surface.contrast.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.alt.softer",
+    "level": "sys",
+    "value": "{base.palette.slate.25}",
+    "computedValue": "oklch(0.9846 0.0018 248.57 / 1)",
+    "deprecatedComment": "Use sys.color.surface.raised tokens instead"
+  },
+  {
+    "name": "sys.color.bg.alt.soft",
+    "level": "sys",
+    "value": "{base.palette.slate.50}",
+    "computedValue": "oklch(0.9692 0.0035 248.23 / 1)",
+    "deprecatedComment": "Use sys.color.surface.alt.default instead"
+  },
+  {
+    "name": "sys.color.bg.alt.strong",
+    "level": "sys",
+    "value": "{base.palette.slate.200}",
+    "computedValue": "oklch(0.917 0.0081 254 / 1)",
+    "deprecatedComment": "Use sys.color.surface.default tokens instead with sys.color.surface.overlay.hover"
+  },
+  {
+    "name": "sys.color.bg.alt.stronger",
+    "level": "sys",
+    "value": "{base.palette.slate.300}",
+    "computedValue": "oklch(0.856 0.0111 256.85 / 1)",
+    "deprecatedComment": "Use sys.color.surface.alt.default with sys.color.surface.overlay.pressed"
+  },
+  {
+    "name": "sys.color.bg.muted.softer",
+    "level": "sys",
+    "value": "{base.palette.slate.400}",
+    "computedValue": "oklch(0.754 0.0181 256.33 / 1)",
+    "deprecatedComment": "Use sys.color.accent.muted.soft token instead"
+  },
+  {
+    "name": "sys.color.bg.muted.soft",
+    "level": "sys",
+    "value": "{base.palette.slate.500}",
+    "computedValue": "oklch(0.629 0.0281 255.62 / 1)",
+    "deprecatedComment": "Use sys.color.accent.muted.soft token instead"
+  },
+  {
+    "name": "sys.color.bg.muted.default",
+    "level": "sys",
+    "value": "{base.palette.slate.600}",
+    "computedValue": "oklch(0.5103 0.0255 256.8 / 1)",
+    "deprecatedComment": "Use sys.color.accent.muted.default instead"
+  },
+  {
+    "name": "sys.color.bg.muted.strong",
+    "level": "sys",
+    "value": "{base.palette.slate.700}",
+    "computedValue": "oklch(0.45 0.022 255.52 / 1)",
+    "deprecatedComment": "Use sys.color.accent.muted.default token instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.bg.contrast.default",
+    "level": "sys",
+    "value": "{base.palette.neutral.900}",
+    "computedValue": "oklch(0.2891 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.surface.contrast.default instead"
+  },
+  {
+    "name": "sys.color.bg.contrast.strong",
+    "level": "sys",
+    "value": "{base.palette.neutral.950}",
+    "computedValue": "oklch(0.2308 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.surface.contrast.strong with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.bg.positive.softest",
+    "level": "sys",
+    "value": "{base.palette.green.25}",
+    "computedValue": "oklch(0.9824 0.0282 148.77 / 1)",
+    "deprecatedComment": "Use sys.color.surface.success tokens instead"
+  },
+  {
+    "name": "sys.color.bg.positive.softer",
+    "level": "sys",
+    "value": "{base.palette.green.50}",
+    "computedValue": "oklch(0.9655 0.0561 149.93 / 1)",
+    "deprecatedComment": "Use sys.color.brand.surface.positive.strong tokens instead"
+  },
+  {
+    "name": "sys.color.bg.positive.soft",
+    "level": "sys",
+    "value": "{base.palette.green.100}",
+    "computedValue": "oklch(0.9278 0.1024 149.88 / 1)",
+    "deprecatedComment": "Use sys.color.brand.surface.positive.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.positive.default",
+    "level": "sys",
+    "value": "{base.palette.green.600}",
+    "computedValue": "oklch(0.5069 0.1569 145.56 / 1)",
+    "deprecatedComment": "Use sys.color.accent.success instead"
+  },
+  {
+    "name": "sys.color.bg.positive.strong",
+    "level": "sys",
+    "value": "{base.palette.green.700}",
+    "computedValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.positive instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.bg.positive.stronger",
+    "level": "sys",
+    "value": "{base.palette.green.800}",
+    "computedValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.positive instead with sys.color.accent.overlay.pressed"
+  },
+  {
+    "name": "sys.color.bg.caution.softest",
+    "level": "sys",
+    "value": "{base.palette.amber.25}",
+    "computedValue": "oklch(0.9779 0.0214 95.33 / 1)",
+    "deprecatedComment": "Use sys.color.brand.surface.caution.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.caution.softer",
+    "level": "sys",
+    "value": "{base.palette.amber.50}",
+    "computedValue": "oklch(0.969 0.0619 101.63 / 1)",
+    "deprecatedComment": "Use sys.color.brand.surface.caution.strong tokens instead"
+  },
+  {
+    "name": "sys.color.bg.caution.soft",
+    "level": "sys",
+    "value": "{base.palette.amber.100}",
+    "computedValue": "oklch(0.9567 0.0948 100.22 / 1)",
+    "deprecatedComment": "Use sys.color.surface.warning.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.caution.default",
+    "level": "sys",
+    "value": "{base.palette.amber.400}",
+    "computedValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.caution instead"
+  },
+  {
+    "name": "sys.color.bg.caution.strong",
+    "level": "sys",
+    "value": "{base.palette.amber.500}",
+    "computedValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.caution instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.bg.caution.stronger",
+    "level": "sys",
+    "value": "{base.palette.amber.600}",
+    "computedValue": "oklch(0.5505 0.1439 50.78 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.caution instead with sys.color.accent.overlay.pressed"
+  },
+  {
+    "name": "sys.color.bg.critical.softest",
+    "level": "sys",
+    "value": "{base.palette.red.25}",
+    "computedValue": "oklch(0.9667 0.0163 21.82 / 1)",
+    "deprecatedComment": "Use sys.color.brand.surface.critical.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.critical.softer",
+    "level": "sys",
+    "value": "{base.palette.red.50}",
+    "computedValue": "oklch(0.9533 0.0231 23.95 / 1)",
+    "deprecatedComment": "Use sys.color.brand.surface.critical.strong tokens instead"
+  },
+  {
+    "name": "sys.color.bg.critical.soft",
+    "level": "sys",
+    "value": "{base.palette.red.100}",
+    "computedValue": "oklch(0.9225 0.0394 25.51 / 1)",
+    "deprecatedComment": "Use sys.color.surface.danger.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.critical.default",
+    "level": "sys",
+    "value": "{base.palette.red.600}",
+    "computedValue": "oklch(0.5342 0.2172 29.53 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.critical instead"
+  },
+  {
+    "name": "sys.color.bg.critical.strong",
+    "level": "sys",
+    "value": "{base.palette.red.700}",
+    "computedValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.critical instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.bg.critical.stronger",
+    "level": "sys",
+    "value": "{base.palette.red.800}",
+    "computedValue": "oklch(0.3712 0.1509 26.08 / 1)",
+    "deprecatedComment": "Use sys.color.brand.accent.critical instead with sys.color.accent.overlay.pressed"
+  },
+  {
+    "name": "sys.color.bg.ai.default",
+    "level": "sys",
+    "value": "{base.palette.blue.100}",
+    "computedValue": "oklch(0.928 0.0359 250.6 / 1)",
+    "deprecatedComment": "Use sys.color.surface.ai.default instead"
+  },
+  {
+    "name": "sys.color.bg.ai.strong",
+    "level": "sys",
+    "value": "{base.palette.blue.200}",
+    "computedValue": "oklch(0.8627 0.0701 250.6 / 1)",
+    "deprecatedComment": "Use sys.color.surface.ai.hover instead"
+  },
+  {
+    "name": "sys.color.bg.ai.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.400}",
+    "computedValue": "oklch(0.708 0.1549 255.41 / 1)",
+    "deprecatedComment": "Use sys.color.surface.ai.pressed instead"
+  },
+  {
+    "name": "sys.color.bg.ai.strongest",
+    "level": "sys",
+    "value": "{base.palette.blue.950}",
+    "computedValue": "oklch(0.2452 0.0752 254.55 / 1)",
+    "deprecatedComment": "Use sys.color.accent.ai instead"
+  },
+  {
+    "name": "sys.color.bg.info.softest",
+    "level": "sys",
+    "value": "{base.palette.blue.25}",
+    "computedValue": "oklch(0.969 0.0155 248.07 / 1)",
+    "deprecatedComment": "Use sys.color.surface.info.default instead"
+  },
+  {
+    "name": "sys.color.bg.info.softer",
+    "level": "sys",
+    "value": "{base.palette.blue.50}",
+    "computedValue": "oklch(0.9523 0.0239 248.12 / 1)",
+    "deprecatedComment": "Use sys.color.surface.info.strong instead"
+  },
+  {
+    "name": "sys.color.bg.info.soft",
+    "level": "sys",
+    "value": "{base.palette.blue.100}",
+    "computedValue": "oklch(0.928 0.0359 250.6 / 1)",
+    "deprecatedComment": "Use sys.color.surface.info.default tokens instead"
+  },
+  {
+    "name": "sys.color.bg.info.default",
+    "level": "sys",
+    "value": "{base.palette.blue.600}",
+    "computedValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "Use sys.color.accent.info instead"
+  },
+  {
+    "name": "sys.color.bg.info.strong",
+    "level": "sys",
+    "value": "{base.palette.blue.700}",
+    "computedValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "Use sys.color.accent.info instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.bg.info.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "Use sys.color.accent.info instead with sys.color.accent.overlay.pressed"
+  },
+  {
+    "name": "sys.color.text.default",
+    "level": "sys",
+    "value": "{base.palette.neutral.800}",
+    "computedValue": "oklch(0.3523 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.fg.default instead"
+  },
+  {
+    "name": "sys.color.text.strong",
+    "level": "sys",
+    "value": "{base.palette.neutral.900}",
+    "computedValue": "oklch(0.2891 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.fg.strong instead"
+  },
+  {
+    "name": "sys.color.text.stronger",
+    "level": "sys",
+    "value": "{base.palette.neutral.950}",
+    "computedValue": "oklch(0.2308 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.fg.strong instead"
+  },
+  {
+    "name": "sys.color.text.disabled",
+    "level": "sys",
+    "value": "{base.palette.slate.400}",
+    "computedValue": "oklch(0.754 0.0181 256.33 / 1)",
+    "deprecatedComment": "Use sys.opacity.disabled instead"
+  },
+  {
+    "name": "sys.color.text.hint",
+    "level": "sys",
+    "value": "{base.palette.slate.600}",
+    "computedValue": "oklch(0.5103 0.0255 256.8 / 1)",
+    "deprecatedComment": "Use sys.color.fg.muted.default instead"
+  },
+  {
+    "name": "sys.color.text.inverse",
+    "level": "sys",
+    "value": "{base.palette.neutral.0}",
+    "computedValue": "oklch(1 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.fg.inverse instead"
+  },
+  {
+    "name": "sys.color.text.critical.default",
+    "level": "sys",
+    "value": "{base.palette.red.600}",
+    "computedValue": "oklch(0.5342 0.2172 29.53 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.critical.default instead"
+  },
+  {
+    "name": "sys.color.text.critical.strong",
+    "level": "sys",
+    "value": "{base.palette.red.700}",
+    "computedValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.critical.strong instead"
+  },
+  {
+    "name": "sys.color.text.critical.stronger",
+    "level": "sys",
+    "value": "{base.palette.red.800}",
+    "computedValue": "oklch(0.3712 0.1509 26.08 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.critical.strong instead"
+  },
+  {
+    "name": "sys.color.text.critical.soft",
+    "level": "sys",
+    "value": "{base.palette.red.400}",
+    "computedValue": "oklch(0.6857 0.2037 29.76 / 1)",
+    "deprecatedComment": "Use sys.color.fg.danger.default instead"
+  },
+  {
+    "name": "sys.color.text.critical.softer",
+    "level": "sys",
+    "value": "{base.palette.red.200}",
+    "computedValue": "oklch(0.8339 0.092 28.19 / 1)",
+    "deprecatedComment": "Use sys.color.fg.danger.default instead"
+  },
+  {
+    "name": "sys.color.text.primary.default",
+    "level": "sys",
+    "value": "{base.palette.blue.600}",
+    "computedValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.primary.default instead"
+  },
+  {
+    "name": "sys.color.text.primary.strong",
+    "level": "sys",
+    "value": "{base.palette.blue.700}",
+    "computedValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.primary.strong instead"
+  },
+  {
+    "name": "sys.color.text.primary.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.primary.strong instead"
+  },
+  {
+    "name": "sys.color.text.primary.soft",
+    "level": "sys",
+    "value": "{base.palette.blue.400}",
+    "computedValue": "oklch(0.708 0.1549 255.41 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default instead"
+  },
+  {
+    "name": "sys.color.text.primary.softer",
+    "level": "sys",
+    "value": "{base.palette.blue.200}",
+    "computedValue": "oklch(0.8627 0.0701 250.6 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default instead"
+  },
+  {
+    "name": "sys.color.text.caution.default",
+    "level": "sys",
+    "value": "{base.palette.amber.900}",
+    "computedValue": "oklch(0.32 0.098 41.19 / 1)",
+    "deprecatedComment": "Use sys.color.fg.warning.default instead"
+  },
+  {
+    "name": "sys.color.text.caution.strong",
+    "level": "sys",
+    "value": "{base.palette.amber.950}",
+    "computedValue": "oklch(0.2489 0.0771 40.64 / 1)",
+    "deprecatedComment": "Use sys.color.fg.contrast.strong instead"
+  },
+  {
+    "name": "sys.color.text.caution.soft",
+    "level": "sys",
+    "value": "{base.palette.amber.400}",
+    "computedValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "deprecatedComment": "Use sys.color.fg.warning.default instead"
+  },
+  {
+    "name": "sys.color.text.caution.stronger",
+    "level": "sys",
+    "value": "{base.palette.amber.975}",
+    "computedValue": "oklch(0.2165 0.0674 40.35 / 1)",
+    "deprecatedComment": "Use sys.color.fg.contrast.strong instead"
+  },
+  {
+    "name": "sys.color.text.caution.softer",
+    "level": "sys",
+    "value": "{base.palette.amber.200}",
+    "computedValue": "oklch(0.9191 0.1547 99.7 / 1)",
+    "deprecatedComment": "Use sys.color.fg.warning.default instead"
+  },
+  {
+    "name": "sys.color.text.ai",
+    "level": "sys",
+    "value": "{base.palette.blue.950}",
+    "computedValue": "oklch(0.2452 0.0752 254.55 / 1)",
+    "deprecatedComment": "Use sys.color.fg.ai instead"
+  },
+  {
+    "name": "sys.color.text.positive.default",
+    "level": "sys",
+    "value": "{base.palette.green.600}",
+    "computedValue": "oklch(0.5069 0.1569 145.56 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.positive.default instead"
+  },
+  {
+    "name": "sys.color.text.positive.strong",
+    "level": "sys",
+    "value": "{base.palette.green.700}",
+    "computedValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.positive.strong instead"
+  },
+  {
+    "name": "sys.color.text.positive.stronger",
+    "level": "sys",
+    "value": "{base.palette.green.800}",
+    "computedValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.positive.strong instead"
+  },
+  {
+    "name": "sys.color.text.positive.soft",
+    "level": "sys",
+    "value": "{base.palette.green.400}",
+    "computedValue": "oklch(0.702 0.1952 148.39 / 1)",
+    "deprecatedComment": "Use sys.color.fg.success.default instead"
+  },
+  {
+    "name": "sys.color.text.positive.softer",
+    "level": "sys",
+    "value": "{base.palette.green.200}",
+    "computedValue": "oklch(0.8506 0.1804 149.93 / 1)",
+    "deprecatedComment": "Use sys.color.fg.success.default instead"
+  },
+  {
+    "name": "sys.color.text.info.default",
+    "level": "sys",
+    "value": "{base.palette.blue.600}",
+    "computedValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default instead"
+  },
+  {
+    "name": "sys.color.text.info.strong",
+    "level": "sys",
+    "value": "{base.palette.blue.700}",
+    "computedValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.strong instead"
+  },
+  {
+    "name": "sys.color.text.info.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.strong instead"
+  },
+  {
+    "name": "sys.color.text.info.soft",
+    "level": "sys",
+    "value": "{base.palette.blue.400}",
+    "computedValue": "oklch(0.708 0.1549 255.41 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default instead"
+  },
+  {
+    "name": "sys.color.text.info.softer",
+    "level": "sys",
+    "value": "{base.palette.blue.200}",
+    "computedValue": "oklch(0.8627 0.0701 250.6 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default instead"
+  },
+  {
+    "name": "sys.color.icon.default",
+    "level": "sys",
+    "value": "{base.palette.neutral.800}",
+    "computedValue": "oklch(0.3523 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.fg.default instead"
+  },
+  {
+    "name": "sys.color.icon.soft",
+    "level": "sys",
+    "value": "{base.palette.slate.600}",
+    "computedValue": "oklch(0.5103 0.0255 256.8 / 1)",
+    "deprecatedComment": "Use sys.color.fg.muted.default instead"
+  },
+  {
+    "name": "sys.color.icon.strong",
+    "level": "sys",
+    "value": "{base.palette.neutral.900}",
+    "computedValue": "oklch(0.2891 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.fg.muted.strong instead"
+  },
+  {
+    "name": "sys.color.icon.inverse",
+    "level": "sys",
+    "value": "{base.palette.neutral.0}",
+    "computedValue": "oklch(1 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.fg.inverse instead"
+  },
+  {
+    "name": "sys.color.icon.primary.default",
+    "level": "sys",
+    "value": "{base.palette.blue.600}",
+    "computedValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.primary.default instead"
+  },
+  {
+    "name": "sys.color.icon.primary.strong",
+    "level": "sys",
+    "value": "{base.palette.blue.700}",
+    "computedValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.primary.strong instead"
+  },
+  {
+    "name": "sys.color.icon.primary.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.primary.strong instead"
+  },
+  {
+    "name": "sys.color.icon.primary.soft",
+    "level": "sys",
+    "value": "{base.palette.blue.400}",
+    "computedValue": "oklch(0.708 0.1549 255.41 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default instead"
+  },
+  {
+    "name": "sys.color.icon.primary.softer",
+    "level": "sys",
+    "value": "{base.palette.blue.200}",
+    "computedValue": "oklch(0.8627 0.0701 250.6 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default instead"
+  },
+  {
+    "name": "sys.color.icon.positive.default",
+    "level": "sys",
+    "value": "{base.palette.green.600}",
+    "computedValue": "oklch(0.5069 0.1569 145.56 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.positive.default instead"
+  },
+  {
+    "name": "sys.color.icon.positive.strong",
+    "level": "sys",
+    "value": "{base.palette.green.700}",
+    "computedValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.positive.strong instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.icon.positive.stronger",
+    "level": "sys",
+    "value": "{base.palette.green.800}",
+    "computedValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.positive.strong instead with sys.color.accent.overlay.pressed"
+  },
+  {
+    "name": "sys.color.icon.positive.soft",
+    "level": "sys",
+    "value": "{base.palette.green.400}",
+    "computedValue": "oklch(0.702 0.1952 148.39 / 1)",
+    "deprecatedComment": "Use sys.color.fg.success.default instead"
+  },
+  {
+    "name": "sys.color.icon.positive.softer",
+    "level": "sys",
+    "value": "{base.palette.green.200}",
+    "computedValue": "oklch(0.8506 0.1804 149.93 / 1)",
+    "deprecatedComment": "Use sys.color.fg.success.default instead"
+  },
+  {
+    "name": "sys.color.icon.critical.default",
+    "level": "sys",
+    "value": "{base.palette.red.600}",
+    "computedValue": "oklch(0.5342 0.2172 29.53 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.critical.default instead"
+  },
+  {
+    "name": "sys.color.icon.critical.strong",
+    "level": "sys",
+    "value": "{base.palette.red.700}",
+    "computedValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "deprecatedComment": "Use sys.color.fg.danger.strong instead"
+  },
+  {
+    "name": "sys.color.icon.critical.stronger",
+    "level": "sys",
+    "value": "{base.palette.red.800}",
+    "computedValue": "oklch(0.3712 0.1509 26.08 / 1)",
+    "deprecatedComment": "Use sys.color.fg.danger.strong instead"
+  },
+  {
+    "name": "sys.color.icon.critical.soft",
+    "level": "sys",
+    "value": "{base.palette.red.400}",
+    "computedValue": "oklch(0.6857 0.2037 29.76 / 1)",
+    "deprecatedComment": "Use sys.color.fg.danger.default instead"
+  },
+  {
+    "name": "sys.color.icon.critical.softer",
+    "level": "sys",
+    "value": "{base.palette.red.200}",
+    "computedValue": "oklch(0.8339 0.092 28.19 / 1)",
+    "deprecatedComment": "Use sys.color.fg.danger.default instead"
+  },
+  {
+    "name": "sys.color.icon.caution.default",
+    "level": "sys",
+    "value": "{base.palette.amber.900}",
+    "computedValue": "oklch(0.32 0.098 41.19 / 1)",
+    "deprecatedComment": "Use sys.color.fg.contrast.default instead"
+  },
+  {
+    "name": "sys.color.icon.caution.strong",
+    "level": "sys",
+    "value": "{base.palette.amber.950}",
+    "computedValue": "oklch(0.2489 0.0771 40.64 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.caution.default instead"
+  },
+  {
+    "name": "sys.color.icon.caution.stronger",
+    "level": "sys",
+    "value": "{base.palette.amber.975}",
+    "computedValue": "oklch(0.2165 0.0674 40.35 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.caution.strong instead"
+  },
+  {
+    "name": "sys.color.icon.caution.soft",
+    "level": "sys",
+    "value": "{base.palette.amber.700}",
+    "computedValue": "oklch(0.4824 0.1353 46.11 / 1)",
+    "deprecatedComment": "Use sys.color.fg.warning.default instead"
+  },
+  {
+    "name": "sys.color.icon.caution.softer",
+    "level": "sys",
+    "value": "{base.palette.amber.500}",
+    "computedValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "Use sys.color.fg.warning.default instead"
+  },
+  {
+    "name": "sys.color.icon.disabled",
+    "level": "sys",
+    "value": "{base.palette.slate.400}",
+    "computedValue": "oklch(0.754 0.0181 256.33 / 1)",
+    "deprecatedComment": "Use sys.color.fg.disabled instead"
+  },
+  {
+    "name": "sys.color.icon.info.default",
+    "level": "sys",
+    "value": "{base.palette.blue.600}",
+    "computedValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default instead"
+  },
+  {
+    "name": "sys.color.icon.info.strong",
+    "level": "sys",
+    "value": "{base.palette.blue.700}",
+    "computedValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.strong instead"
+  },
+  {
+    "name": "sys.color.icon.info.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.strong instead"
+  },
+  {
+    "name": "sys.color.fg.critical.default",
+    "level": "sys",
+    "value": "{base.palette.red.600}",
+    "computedValue": "oklch(0.5342 0.2172 29.53 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.critical.default instead"
+  },
+  {
+    "name": "sys.color.fg.critical.strong",
+    "level": "sys",
+    "value": "{base.palette.red.700}",
+    "computedValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.critical.strong instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.fg.critical.stronger",
+    "level": "sys",
+    "value": "{base.palette.red.800}",
+    "computedValue": "oklch(0.3712 0.1509 26.08 / 1)",
+    "deprecatedComment": "Use sys.color.fg.danger.default tokens instead"
+  },
+  {
+    "name": "sys.color.fg.critical.soft",
+    "level": "sys",
+    "value": "{base.palette.red.400}",
+    "computedValue": "oklch(0.6857 0.2037 29.76 / 1)",
+    "deprecatedComment": "Use sys.color.fg.danger.default instead"
+  },
+  {
+    "name": "sys.color.fg.critical.softer",
+    "level": "sys",
+    "value": "{base.palette.red.200}",
+    "computedValue": "oklch(0.8339 0.092 28.19 / 1)",
+    "deprecatedComment": "Use sys.color.fg.danger.default instead"
+  },
+  {
+    "name": "sys.color.fg.muted.stronger",
+    "level": "sys",
+    "value": "{base.palette.slate.800}",
+    "computedValue": "oklch(0.3685 0.0218 256.4 / 1)",
+    "deprecatedComment": "Use sys.color.fg.muted.strong instead"
+  },
+  {
+    "name": "sys.color.fg.muted.soft",
+    "level": "sys",
+    "value": "{base.palette.slate.400}",
+    "computedValue": "oklch(0.754 0.0181 256.33 / 1)",
+    "deprecatedComment": "Use sys.color.fg.muted.default instead"
+  },
+  {
+    "name": "sys.color.fg.primary.default",
+    "level": "sys",
+    "value": "{base.palette.blue.600}",
+    "computedValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.primary.default instead"
+  },
+  {
+    "name": "sys.color.fg.primary.soft",
+    "level": "sys",
+    "value": "{base.palette.blue.400}",
+    "computedValue": "oklch(0.708 0.1549 255.41 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default or sys.color.brand.fg.primary.default instead"
+  },
+  {
+    "name": "sys.color.fg.primary.softer",
+    "level": "sys",
+    "value": "{base.palette.blue.200}",
+    "computedValue": "oklch(0.8627 0.0701 250.6 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default or sys.color.brand.fg.primary.default instead"
+  },
+  {
+    "name": "sys.color.fg.primary.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.primary.strong instead"
+  },
+  {
+    "name": "sys.color.fg.primary.strong",
+    "level": "sys",
+    "value": "{base.palette.blue.700}",
+    "computedValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.primary.strong instead"
+  },
+  {
+    "name": "sys.color.fg.caution.default",
+    "level": "sys",
+    "value": "{base.palette.amber.900}",
+    "computedValue": "oklch(0.32 0.098 41.19 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.caution.default instead"
+  },
+  {
+    "name": "sys.color.fg.caution.strong",
+    "level": "sys",
+    "value": "{base.palette.amber.950}",
+    "computedValue": "oklch(0.2489 0.0771 40.64 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.caution.strong instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.fg.caution.soft",
+    "level": "sys",
+    "value": "{base.palette.amber.700}",
+    "computedValue": "oklch(0.4824 0.1353 46.11 / 1)",
+    "deprecatedComment": "Use sys.color.fg.warning.default instead"
+  },
+  {
+    "name": "sys.color.fg.caution.stronger",
+    "level": "sys",
+    "value": "{base.palette.amber.975}",
+    "computedValue": "oklch(0.2165 0.0674 40.35 / 1)",
+    "deprecatedComment": "Use sys.color.fg.warning.strong instead"
+  },
+  {
+    "name": "sys.color.fg.caution.softer",
+    "level": "sys",
+    "value": "{base.palette.amber.500}",
+    "computedValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "Use sys.color.fg.warning.default instead"
+  },
+  {
+    "name": "sys.color.fg.info.softer",
+    "level": "sys",
+    "value": "{base.palette.blue.200}",
+    "computedValue": "oklch(0.8627 0.0701 250.6 / 1)",
+    "deprecatedComment": "Use sys.color.fg.ai instead"
+  },
+  {
+    "name": "sys.color.fg.info.soft",
+    "level": "sys",
+    "value": "{base.palette.blue.400}",
+    "computedValue": "oklch(0.708 0.1549 255.41 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.default instead"
+  },
+  {
+    "name": "sys.color.fg.info.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "Use sys.color.fg.info.strong instead"
+  },
+  {
+    "name": "sys.color.fg.positive.default",
+    "level": "sys",
+    "value": "{base.palette.green.600}",
+    "computedValue": "oklch(0.5069 0.1569 145.56 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.positive.default instead"
+  },
+  {
+    "name": "sys.color.fg.positive.softer",
+    "level": "sys",
+    "value": "{base.palette.green.200}",
+    "computedValue": "oklch(0.8506 0.1804 149.93 / 1)",
+    "deprecatedComment": "Use sys.color.fg.success.default instead"
+  },
+  {
+    "name": "sys.color.fg.positive.soft",
+    "level": "sys",
+    "value": "{base.palette.green.400}",
+    "computedValue": "oklch(0.702 0.1952 148.39 / 1)",
+    "deprecatedComment": "Use sys.color.fg.success.default instead"
+  },
+  {
+    "name": "sys.color.fg.positive.strong",
+    "level": "sys",
+    "value": "{base.palette.green.700}",
+    "computedValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.positive.strong instead with sys.color.accent.overlay.hover"
+  },
+  {
+    "name": "sys.color.fg.positive.stronger",
+    "level": "sys",
+    "value": "{base.palette.green.800}",
+    "computedValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "deprecatedComment": "Use sys.color.brand.fg.positive.strong instead with sys.color.accent.overlay.pressed"
+  },
+  {
+    "name": "sys.color.border.ai",
+    "level": "sys",
+    "value": "{base.palette.blue.950}",
+    "computedValue": "oklch(0.2452 0.0752 254.55 / 1)",
+    "deprecatedComment": "Use sys.color.accent.ai instead"
+  },
+  {
+    "name": "sys.color.border.input.disabled",
+    "level": "sys",
+    "value": "{base.palette.slate.400}",
+    "computedValue": "oklch(0.754 0.0181 256.33 / 1)",
+    "deprecatedComment": "Use sys.color.fg.disabled instead"
+  },
+  {
+    "name": "sys.color.border.input.strong",
+    "level": "sys",
+    "value": "{base.palette.slate.700}",
+    "computedValue": "oklch(0.45 0.022 255.52 / 1)",
+    "deprecatedComment": "Use sys.color.border.input.hover instead"
+  },
+  {
+    "name": "sys.color.border.input.inverse",
+    "level": "sys",
+    "value": "{base.palette.neutral.0}",
+    "computedValue": "oklch(1 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.border.inverse.default instead"
+  },
+  {
+    "name": "sys.color.border.contrast.strong",
+    "level": "sys",
+    "value": "{base.palette.neutral.950}",
+    "computedValue": "oklch(0.2308 0 0 / 1)",
+    "deprecatedComment": "Use sys.color.border.contrast.default instead"
+  },
+  {
+    "name": "sys.color.border.critical.default",
+    "level": "sys",
+    "value": "{base.palette.red.500}",
+    "computedValue": "oklch(0.6495 0.2369 30.04 / 1)",
+    "deprecatedComment": "Use sys.color.brand.border.critical instead"
+  },
+  {
+    "name": "sys.color.border.caution.default",
+    "level": "sys",
+    "value": "{base.palette.amber.400}",
+    "computedValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "deprecatedComment": "Use sys.color.brand.focus.caution.inner instead"
+  },
+  {
+    "name": "sys.color.border.caution.strong",
+    "level": "sys",
+    "value": "{base.palette.amber.500}",
+    "computedValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "Use sys.color.brand.focus.caution.outer instead"
+  },
+  {
+    "name": "sys.color.border.divider",
+    "level": "sys",
+    "value": "{base.palette.slate.200}",
+    "computedValue": "oklch(0.917 0.0081 254 / 1)",
+    "deprecatedComment": "Use sys.color.border.default instead"
+  },
+  {
+    "name": "sys.color.border.primary.default",
+    "level": "sys",
+    "value": "{base.palette.blue.500}",
+    "computedValue": "oklch(0.6023 0.2032 255.68 / 1)",
+    "deprecatedComment": "Use sys.color.brand.border.primary instead"
+  },
+  {
+    "name": "sys.color.border.container",
+    "level": "sys",
+    "value": "{base.palette.slate.300}",
+    "computedValue": "oklch(0.856 0.0111 256.85 / 1)",
+    "deprecatedComment": "Use sys.color.border.strong instead"
+  },
+  {
+    "name": "sys.color.shadow.1",
+    "level": "sys",
+    "value": "{sys.color.shadow.base}",
+    "computedValue": "oklch(0.3057 0.079 256.22 / 0.13)",
+    "deprecatedComment": "Use sys.color.shadow.base instead"
+  },
+  {
+    "name": "sys.color.shadow.2",
+    "level": "sys",
+    "value": "{sys.color.shadow.ambient}",
+    "computedValue": "oklch(0.3337 0.0688 250.79 / 0.09)",
+    "deprecatedComment": "Use sys.color.shadow.ambient instead"
+  },
+  {
+    "name": "sys.color.shadow.default",
+    "level": "sys",
+    "value": "{sys.color.shadow.base}",
+    "computedValue": "oklch(0.3057 0.079 256.22 / 0.13)",
+    "deprecatedComment": "Use sys.color.shadow.base instead"
+  },
+  {
+    "name": "sys.color.static.gold.stronger",
+    "level": "sys",
+    "value": "{base.palette.amber.600}",
+    "computedValue": "oklch(0.5505 0.1439 50.78 / 1)",
+    "deprecatedComment": "replace static.gold.stronger with {sys.color.static.amber.stronger}. Prefer to replace with `sys.color.bg.caution.stronger` if used as a background color."
+  },
+  {
+    "name": "sys.color.static.orange.default",
+    "level": "sys",
+    "value": "{base.palette.amber.400}",
+    "computedValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "deprecatedComment": "replace static.orange.default with {sys.color.static.amber.default}. Prefer to replace with `sys.color.bg.caution.default` if used as a background color."
+  },
+  {
+    "name": "sys.color.static.orange.soft",
+    "level": "sys",
+    "value": "{base.palette.amber.100}",
+    "computedValue": "oklch(0.9567 0.0948 100.22 / 1)",
+    "deprecatedComment": "replace static.orange.soft with {sys.color.static.amber.soft}. Prefer to replace with `sys.color.bg.caution.soft` if used as a background color."
+  },
+  {
+    "name": "sys.color.static.orange.strong",
+    "level": "sys",
+    "value": "{base.palette.amber.500}",
+    "computedValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "replace static.orange.strong with {sys.color.static.amber.strong}. Prefer to replace with `sys.color.bg.caution.strong` if used as a background color."
+  },
+  {
+    "name": "sys.color.static.blue.default",
+    "level": "sys",
+    "value": "{base.palette.blue.600}",
+    "computedValue": "oklch(0.5198 0.1782 256.11 / 1)",
+    "deprecatedComment": "Use sys.color.accent.info instead"
+  },
+  {
+    "name": "sys.color.static.blue.softest",
+    "level": "sys",
+    "value": "{base.palette.blue.25}",
+    "computedValue": "oklch(0.969 0.0155 248.07 / 1)",
+    "deprecatedComment": "Use palette.blue tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.blue.strong",
+    "level": "sys",
+    "value": "{base.palette.blue.700}",
+    "computedValue": "oklch(0.4658 0.1562 255.5 / 1)",
+    "deprecatedComment": "Use palette.blue tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.blue.stronger",
+    "level": "sys",
+    "value": "{base.palette.blue.800}",
+    "computedValue": "oklch(0.3908 0.128 256 / 1)",
+    "deprecatedComment": "Use palette.blue tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.blue.softer",
+    "level": "sys",
+    "value": "{base.palette.blue.50}",
+    "computedValue": "oklch(0.9523 0.0239 248.12 / 1)",
+    "deprecatedComment": "Use palette.blue tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.blue.soft",
+    "level": "sys",
+    "value": "{base.palette.blue.100}",
+    "computedValue": "oklch(0.928 0.0359 250.6 / 1)",
+    "deprecatedComment": "Use palette.blue tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.blue.strongest",
+    "level": "sys",
+    "value": "{base.palette.blue.950}",
+    "computedValue": "oklch(0.2452 0.0752 254.55 / 1)",
+    "deprecatedComment": "Use palette.blue tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.green.default",
+    "level": "sys",
+    "value": "{base.palette.green.600}",
+    "computedValue": "oklch(0.5069 0.1569 145.56 / 1)",
+    "deprecatedComment": "Use palette.green tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.green.soft",
+    "level": "sys",
+    "value": "{base.palette.green.100}",
+    "computedValue": "oklch(0.9278 0.1024 149.88 / 1)",
+    "deprecatedComment": "Use palette.green tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.green.strong",
+    "level": "sys",
+    "value": "{base.palette.green.700}",
+    "computedValue": "oklch(0.4463 0.1422 144.58 / 1)",
+    "deprecatedComment": "Use palette.green tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.green.softer",
+    "level": "sys",
+    "value": "{base.palette.green.50}",
+    "computedValue": "oklch(0.9655 0.0561 149.93 / 1)",
+    "deprecatedComment": "Use palette.green tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.green.stronger",
+    "level": "sys",
+    "value": "{base.palette.green.800}",
+    "computedValue": "oklch(0.3955 0.1156 147.66 / 1)",
+    "deprecatedComment": "Use palette.green tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.green.softest",
+    "level": "sys",
+    "value": "{base.palette.green.25}",
+    "computedValue": "oklch(0.9824 0.0282 148.77 / 1)",
+    "deprecatedComment": "Use palette.green tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.green.strongest",
+    "level": "sys",
+    "value": "{base.palette.green.950}",
+    "computedValue": "oklch(0.2548 0.0796 145.23 / 1)",
+    "deprecatedComment": "Use palette.green tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.red.default",
+    "level": "sys",
+    "value": "{base.palette.red.600}",
+    "computedValue": "oklch(0.5342 0.2172 29.53 / 1)",
+    "deprecatedComment": "Use palette.red tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.red.soft",
+    "level": "sys",
+    "value": "{base.palette.red.100}",
+    "computedValue": "oklch(0.9225 0.0394 25.51 / 1)",
+    "deprecatedComment": "Use palette.red tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.red.strong",
+    "level": "sys",
+    "value": "{base.palette.red.700}",
+    "computedValue": "oklch(0.4517 0.1847 28.2 / 1)",
+    "deprecatedComment": "Use palette.red tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.red.stronger",
+    "level": "sys",
+    "value": "{base.palette.red.800}",
+    "computedValue": "oklch(0.3712 0.1509 26.08 / 1)",
+    "deprecatedComment": "Use palette.red tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.red.softest",
+    "level": "sys",
+    "value": "{base.palette.red.25}",
+    "computedValue": "oklch(0.9667 0.0163 21.82 / 1)",
+    "deprecatedComment": "Use palette.red tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.red.strongest",
+    "level": "sys",
+    "value": "{base.palette.red.950}",
+    "computedValue": "oklch(0.2318 0.0937 24.02 / 1)",
+    "deprecatedComment": "Use palette.red tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.red.softer",
+    "level": "sys",
+    "value": "{base.palette.red.50}",
+    "computedValue": "oklch(0.9533 0.0231 23.95 / 1)",
+    "deprecatedComment": "Use palette.red tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.white",
+    "level": "sys",
+    "value": "{base.palette.neutral.0}",
+    "computedValue": "oklch(1 0 0 / 1)",
+    "deprecatedComment": "Use palette.neutral.0 directly instead"
+  },
+  {
+    "name": "sys.color.static.black",
+    "level": "sys",
+    "value": "{base.palette.neutral.1000}",
+    "computedValue": "oklch(0 0 0 / 1)",
+    "deprecatedComment": "Use palette.neutral.1000 directly instead"
+  },
+  {
+    "name": "sys.color.static.gray.default",
+    "level": "sys",
+    "value": "{base.palette.slate.600}",
+    "computedValue": "oklch(0.5103 0.0255 256.8 / 1)",
+    "deprecatedComment": "Use palette.slate tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.gray.soft",
+    "level": "sys",
+    "value": "{base.palette.slate.200}",
+    "computedValue": "oklch(0.917 0.0081 254 / 1)",
+    "deprecatedComment": "Use palette.slate tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.gray.strong",
+    "level": "sys",
+    "value": "{base.palette.slate.700}",
+    "computedValue": "oklch(0.45 0.022 255.52 / 1)",
+    "deprecatedComment": "Use palette.slate tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.gray.stronger",
+    "level": "sys",
+    "value": "{base.palette.slate.800}",
+    "computedValue": "oklch(0.3685 0.0218 256.4 / 1)",
+    "deprecatedComment": "Use palette.slate tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.gray.strongest",
+    "level": "sys",
+    "value": "{base.palette.slate.950}",
+    "computedValue": "oklch(0.2453 0.0136 253.1 / 1)",
+    "deprecatedComment": "Use palette.slate tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.gray.softest",
+    "level": "sys",
+    "value": "{base.palette.slate.50}",
+    "computedValue": "oklch(0.9692 0.0035 248.23 / 1)",
+    "deprecatedComment": "Use palette.slate tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.gray.softer",
+    "level": "sys",
+    "value": "{base.palette.slate.100}",
+    "computedValue": "oklch(0.9447 0.0053 248.12 / 1)",
+    "deprecatedComment": "Use palette.slate tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.amber.default",
+    "level": "sys",
+    "value": "{base.palette.amber.400}",
+    "computedValue": "oklch(0.7909 0.1711 70.15 / 1)",
+    "deprecatedComment": "Use sys.color.accent.warning token instead"
+  },
+  {
+    "name": "sys.color.static.amber.softest",
+    "level": "sys",
+    "value": "{base.palette.amber.25}",
+    "computedValue": "oklch(0.9779 0.0214 95.33 / 1)",
+    "deprecatedComment": "Use sys.color.accent.warning instead"
+  },
+  {
+    "name": "sys.color.static.amber.strong",
+    "level": "sys",
+    "value": "{base.palette.amber.500}",
+    "computedValue": "oklch(0.6601 0.1537 60.7 / 1)",
+    "deprecatedComment": "Use sys.color.accent.warning instead"
+  },
+  {
+    "name": "sys.color.static.amber.stronger",
+    "level": "sys",
+    "value": "{base.palette.amber.600}",
+    "computedValue": "oklch(0.5505 0.1439 50.78 / 1)",
+    "deprecatedComment": "Use sys.color.accent.warning instead"
+  },
+  {
+    "name": "sys.color.static.amber.softer",
+    "level": "sys",
+    "value": "{base.palette.amber.50}",
+    "computedValue": "oklch(0.969 0.0619 101.63 / 1)",
+    "deprecatedComment": "Use palette.amber tokens directly instead"
+  },
+  {
+    "name": "sys.color.static.amber.strongest",
+    "level": "sys",
+    "value": "{base.palette.amber.950}",
+    "computedValue": "oklch(0.2489 0.0771 40.64 / 1)",
+    "deprecatedComment": "Use sys.color.fg.warning.strong instead"
+  },
+  {
+    "name": "sys.color.static.amber.soft",
+    "level": "sys",
+    "value": "{base.palette.amber.100}",
+    "computedValue": "oklch(0.9567 0.0948 100.22 / 1)",
+    "deprecatedComment": "Use sys.color.surface.warning.strong instead"
+  }
+]

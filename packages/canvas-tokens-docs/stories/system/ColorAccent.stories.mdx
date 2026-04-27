@@ -1,5 +1,6 @@
 import {Meta, Unstyled} from '@storybook/blocks';
 
+import {PageHeader} from '../../components/PageHeader';
 import {
   AccentColors,
   AccentMutedColors,
@@ -10,20 +11,20 @@ import {
 
 <Unstyled>
 
-## Accent Colors
-
-Accent colors are saturated colors - like blue, red, orange, purple. Accent colors are used to draw attention towards them and should be used sparingly, and for a specific purpose.
-
-**Do:**
-- ✅ Use accent colors to highlight important information
-- ✅  Use existing color roles to inform selection
-- ✅  Use accent colors sparingly
-- ✅  for important actions, alerts, or states
-
-
-**Don’t** 
-- ❌ Avoid decorative use of accent colors
-- ❌ Avoid applying accent colors to secondary or supporting content
+<PageHeader
+  title="Accent Colors"
+  description="Accent colors are saturated colors — like blue, red, orange, and purple. They draw attention and should be used sparingly, with a specific purpose."
+  dos={[
+    'Use accent colors to highlight important information',
+    'Use existing color roles to inform selection',
+    'Use accent colors sparingly',
+    'Apply to important actions, alerts, or states',
+  ]}
+  donts={[
+    'Avoid decorative use of accent colors',
+    'Avoid applying accent colors to secondary or supporting content',
+  ]}
+/>
 
 <AccentColors />
 

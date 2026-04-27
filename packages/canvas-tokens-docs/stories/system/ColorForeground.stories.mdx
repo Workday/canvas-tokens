@@ -1,4 +1,6 @@
 import {Meta, Unstyled} from '@storybook/blocks';
+
+import {PageHeader} from '../../components/PageHeader';
 import {
   ForegroundColors,
   ForegroundStatusColors,
@@ -6,17 +8,17 @@ import {
   ForegroundPrimaryColors,
   ForegroundContrastColors,
   ForegroundAIColors,
-  ForegroundInfoColors
+  ForegroundInfoColors,
 } from './examples/Color/Foreground';
-
 
 <Meta title="Docs/System Tokens/Color/Foreground" />
 
 <Unstyled>
 
-# Foreground Colors
-
-Foreground colors are applied to elements that appear on top of backgrounds, inclusive of both text and icons.
+<PageHeader
+  title="Foreground Colors"
+  description="Foreground colors apply to elements that appear on top of backgrounds, including both text and icons."
+/>
 
 <ForegroundColors />
 

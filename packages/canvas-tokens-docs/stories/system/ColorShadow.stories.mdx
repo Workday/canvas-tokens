@@ -1,14 +1,16 @@
 import {Meta, Unstyled} from '@storybook/blocks';
 
+import {PageHeader} from '../../components/PageHeader';
 import {ShadowColors} from './examples/Color/Shadow';
 
 <Meta title="Docs/System Tokens/Color/Shadow" />
 
 <Unstyled>
 
-# Shadow Colors
-
-Shadow colors are used in Depth tokens to create a sense of depth and hierarchy between surfaces.
+<PageHeader
+  title="Shadow Colors"
+  description="Shadow colors are used in Depth tokens to create a sense of depth and hierarchy between surfaces."
+/>
 
 ## Usage
 
@@ -22,18 +24,14 @@ const styles = {
 ```
 
 ```css
-// styles.css
-.card-text {
-  boxshadow: 0 0 0 var(--cnvs-sys-color-shadow-1);
+/* styles.css */
+.card {
+  box-shadow: 0 0 0 var(--cnvs-sys-color-shadow-1);
 }
 ```
-
----
 
 ## Tokens
 
 <ShadowColors />
-
----
 
 </Unstyled>

@@ -1,13 +1,16 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-import {BorderColors } from './examples/Color/Border';
+
+import {PageHeader} from '../../components/PageHeader';
+import {BorderColors} from './examples/Color/Border';
 
 <Meta title="Docs/System Tokens/Color/Border" />
 
 <Unstyled>
 
-# Border Colors
-
-Border colors are used to define boundaries against a background, or to separate content areas.
+<PageHeader
+  title="Border Colors"
+  description="Border colors define boundaries against a background and separate content areas."
+/>
 
 ## Usage
 
@@ -21,7 +24,7 @@ const styles = {
 ```
 
 ```css
-// styles.css
+/* styles.css */
 .card {
   border-color: var(--cnvs-sys-color-border-container);
 }
@@ -30,6 +33,5 @@ const styles = {
 ## Tokens
 
 <BorderColors />
-
 
 </Unstyled>
