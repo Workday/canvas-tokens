@@ -23,10 +23,10 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
     const cssVarName = `--cnvs-${getCSSVarName(path)}`;
 
     if (typeof original.deprecatedValues === 'object' && original.deprecatedValues !== null) {
-      const {raw, ...refs} = original.deprecatedValues as Record<string, unknown>;
+      const {base: baseValue, ...refs} = original.deprecatedValues as Record<string, unknown>;
       acc += `exports.${name} = "var(${cssVarName}, ${generateFallbacks(
         Object.values(refs).filter(v => typeof v === 'string') as string[],
-        raw || original.value
+        baseValue || original.value
       )})";\n`;
 
       return acc;
@@ -49,11 +49,11 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
     const cssVarName = `--cnvs-${getCSSVarName(path)}`;
 
     if (typeof original.deprecatedValues === 'object' && original.deprecatedValues !== null) {
-      const {raw, ...refs} = original.deprecatedValues as Record<string, unknown>;
+      const {base: baseValue, ...refs} = original.deprecatedValues as Record<string, unknown>;
 
       acc += `export const ${name} = "var(${cssVarName}, ${generateFallbacks(
         Object.values(refs).filter(v => typeof v === 'string') as string[],
-        raw || original.value
+        baseValue || original.value
       )})";\n`;
 
       return acc;
@@ -78,11 +78,11 @@ export const formatInlineTypes: Formatter = ({dictionary, file}) => {
     const deprecatedText = deprecated ? `/** @deprecated ${deprecatedComment} */\n` : '';
 
     if (typeof original.deprecatedValues === 'object' && original.deprecatedValues !== null) {
-      const {raw, ...refs} = original.deprecatedValues as Record<string, unknown>;
+      const {base: baseValue, ...refs} = original.deprecatedValues as Record<string, unknown>;
 
       acc += `${deprecatedText}export declare const ${name}: "var(${cssVarName}, ${generateFallbacks(
         Object.values(refs).filter(v => typeof v === 'string') as string[],
-        raw || original.value
+        baseValue || original.value
       )})";\n`;
 
       return acc;

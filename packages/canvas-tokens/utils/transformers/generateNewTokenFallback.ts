@@ -43,7 +43,7 @@ export const generateFallbacks = (array: string[], rawValue: string): string => 
 export const generateNewTokenFallback: Transform['transformer'] = token => {
   const deprecatedValues = token.original.deprecatedValues;
   if (typeof deprecatedValues === 'object' && deprecatedValues !== null) {
-    const {raw, ...refs} = deprecatedValues as Record<string, unknown>;
+    const {base: baseValue, ...refs} = deprecatedValues as Record<string, unknown>;
     const fallbackValues = Object.values(refs).filter(v => typeof v === 'string') as string[];
 
     const originalRef = token.original.value.replace(
@@ -58,7 +58,7 @@ export const generateNewTokenFallback: Transform['transformer'] = token => {
           : `calc(${originalRef})`
         : token.value;
 
-    return generateFallbacks(fallbackValues, raw || rawValue);
+    return generateFallbacks(fallbackValues, baseValue || rawValue);
   }
 
   const newValue =

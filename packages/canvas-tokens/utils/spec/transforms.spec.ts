@@ -97,17 +97,17 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should handle fallback value with raw value', () => {
+  it('should handle fallback value with base value', () => {
     const result = transforms['value/deprecated-values'].transformer(
       {
         ...defaultToken,
         value: 'blue',
         original: {
           value: 'blue',
-          deprecatedValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
+          deprecatedValues: {v2: 'base.palette.blueberry.400', base: 'light-blue'},
         },
         path: ['base', 'palette', 'blue', '600'],
-        deprecatedValues: {v2: 'base.palette.blueberry.400', raw: 'light-blue'},
+        deprecatedValues: {v2: 'base.palette.blueberry.400', base: 'light-blue'},
       },
       defaultOptions
     );
@@ -137,14 +137,14 @@ describe('transforms', () => {
     expect(result).toBe(expected);
   });
 
-  it('should return use last as a raw value if provided', () => {
+  it('should return use last as a base value if provided', () => {
     const result = generateFallbacks(['base.palette.cinnamon.100', 'light-red'], 'red');
     const expected = 'var(--cnvs-base-palette-cinnamon-100, light-red)';
 
     expect(result).toBe(expected);
   });
 
-  it('should return raw value if empty array is provided', () => {
+  it('should return a base value if empty array is provided', () => {
     const result = generateFallbacks([], 'red');
     const expected = 'red';
 

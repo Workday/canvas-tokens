@@ -105,7 +105,7 @@ describe('formats', () => {
       expect(result).toBe(expected);
     });
 
-    it('should use deprecatedValues.raw as the inner fallback when present', () => {
+    it('should use deprecatedValues.base as the inner fallback when present', () => {
       const result = formats['js/es6']({
         ...defaultArgs,
         dictionary: {
@@ -120,7 +120,7 @@ describe('formats', () => {
                 value: 'oklch(0.9567 0.0948 100.22 / 1)',
                 deprecatedValues: {
                   v2: 'base.palette.cinnamon.100',
-                  raw: 'oklch(0.9 0.05 100 / 1)',
+                  base: 'oklch(0.9 0.05 100 / 1)',
                 },
               },
             },
