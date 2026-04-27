@@ -5,470 +5,636 @@
       "25": {
         "value": "{base.palette.blue.25}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.primary.lightest"
+        }
       },
       "50": {
         "value": "{base.palette.blue.50}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.primary.lighter"
+        }
       },
       "100": {
         "value": "{base.palette.blue.100}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "200": {
         "value": "{base.palette.blue.200}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.primary.light"
+        }
       },
       "300": {
         "value": "{base.palette.blue.300}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "400": {
         "value": "{base.palette.blue.400}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "500": {
         "value": "{base.palette.blue.500}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "600": {
         "value": "{base.palette.blue.600}",
         "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.primary.base"
+        },
         "comment": "Base primary color. Use fg.inverse instead"
       },
       "700": {
         "value": "{base.palette.blue.700}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.primary.dark"
+        }
       },
       "800": {
         "value": "{base.palette.blue.800}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.primary.darkest"
+        }
       },
       "900": {
         "value": "{base.palette.blue.900}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "950": {
         "value": "{base.palette.blue.950}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "975": {
         "value": "{base.palette.blue.975}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "A25": {
         "value": "{base.palette.blue.A25}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A50": {
         "value": "{base.palette.blue.A50}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A100": {
         "value": "{base.palette.blue.A100}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A200": {
         "value": "{base.palette.blue.A200}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       }
     },
     "critical": {
       "25": {
         "value": "{base.palette.red.25}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.error.lightest"
+        }
       },
       "50": {
         "value": "{base.palette.red.50}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.error.lighter"
+        }
       },
       "100": {
         "value": "{base.palette.red.100}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "200": {
         "value": "{base.palette.red.200}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.error.light"
+        }
       },
       "300": {
         "value": "{base.palette.red.300}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "400": {
         "value": "{base.palette.red.400}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "500": {
         "value": "{base.palette.red.500}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "600": {
         "value": "{base.palette.red.600}",
         "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.error.base"
+        },
         "comment": "Base critical color. Use fg.inverse instead"
       },
       "700": {
         "value": "{base.palette.red.700}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.error.dark"
+        }
       },
       "800": {
         "value": "{base.palette.red.800}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.error.darkest"
+        }
       },
       "900": {
         "value": "{base.palette.red.900}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "950": {
         "value": "{base.palette.red.950}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "975": {
         "value": "{base.palette.red.975}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "A25": {
         "value": "{base.palette.red.A25}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A50": {
         "value": "{base.palette.red.A50}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A100": {
         "value": "{base.palette.red.A100}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A200": {
         "value": "{base.palette.red.A200}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       }
     },
     "caution": {
       "25": {
         "value": "{base.palette.amber.25}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.alert.lightest"
+        }
       },
       "50": {
         "value": "{base.palette.amber.50}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.alert.lighter"
+        }
       },
       "100": {
         "value": "{base.palette.amber.100}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "200": {
         "value": "{base.palette.amber.200}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.alert.light"
+        }
       },
       "300": {
         "value": "{base.palette.amber.300}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "400": {
         "value": "{base.palette.amber.400}",
         "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.alert.base"
+        },
         "comment": "Base caution color (amber.400). Use fg.contrast.default instead"
       },
       "500": {
         "value": "{base.palette.amber.500}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.alert.dark"
+        }
       },
       "600": {
         "value": "{base.palette.amber.600}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.alert.darkest"
+        }
       },
       "700": {
         "value": "{base.palette.amber.700}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "800": {
         "value": "{base.palette.amber.800}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "900": {
         "value": "{base.palette.amber.900}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "950": {
         "value": "{base.palette.amber.950}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "975": {
         "value": "{base.palette.amber.975}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "A25": {
         "value": "{base.palette.amber.A25}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A50": {
         "value": "{base.palette.amber.A50}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A100": {
         "value": "{base.palette.amber.A100}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A200": {
         "value": "{base.palette.amber.A200}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       }
     },
     "positive": {
       "25": {
         "value": "{base.palette.green.25}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.success.lightest"
+        }
       },
       "50": {
         "value": "{base.palette.green.50}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.success.lighter"
+        }
       },
       "100": {
         "value": "{base.palette.green.100}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "200": {
         "value": "{base.palette.green.200}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.success.light"
+        }
       },
       "300": {
         "value": "{base.palette.green.300}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "400": {
         "value": "{base.palette.green.400}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "500": {
         "value": "{base.palette.green.500}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "600": {
         "value": "{base.palette.green.600}",
         "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.success.base"
+        },
         "comment": "Base success color. Use fg.inverse instead"
       },
       "700": {
         "value": "{base.palette.green.700}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.success.dark"
+        }
       },
       "800": {
         "value": "{base.palette.green.800}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.success.darkest"
+        }
       },
       "900": {
         "value": "{base.palette.green.900}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "950": {
         "value": "{base.palette.green.950}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "975": {
         "value": "{base.palette.green.975}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "A25": {
         "value": "{base.palette.green.A25}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A50": {
         "value": "{base.palette.green.A50}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A100": {
         "value": "{base.palette.green.A100}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A200": {
         "value": "{base.palette.green.A200}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       }
     },
     "neutral": {
       "25": {
         "value": "{base.palette.slate.25}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.neutral.lightest"
+        }
       },
       "50": {
         "value": "{base.palette.slate.50}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.neutral.lighter"
+        }
       },
       "100": {
         "value": "{base.palette.slate.100}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "200": {
         "value": "{base.palette.slate.200}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.neutral.light"
+        }
       },
       "300": {
         "value": "{base.palette.slate.300}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "400": {
         "value": "{base.palette.slate.400}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "500": {
         "value": "{base.palette.slate.500}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "600": {
         "value": "{base.palette.slate.600}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.neutral.base"
+        }
       },
       "700": {
         "value": "{base.palette.slate.700}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.neutral.dark"
+        }
       },
       "800": {
         "value": "{base.palette.slate.800}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {
+          "v3": "brand.neutral.darkest"
+        }
       },
       "900": {
         "value": "{base.palette.slate.900}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "950": {
         "value": "{base.palette.slate.950}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "975": {
         "value": "{base.palette.slate.975}",
         "type": "color",
-        "description": ""
+        "description": "",
+        "deprecatedValues": {}
       },
       "A25": {
         "value": "{base.palette.slate.A25}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A50": {
         "value": "{base.palette.slate.A50}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A100": {
         "value": "{base.palette.slate.A100}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A200": {
         "value": "{base.palette.slate.A200}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A300": {
         "value": "{base.palette.slate.A300}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A400": {
         "value": "{base.palette.slate.A400}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A500": {
         "value": "{base.palette.slate.A500}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A600": {
         "value": "{base.palette.slate.A600}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A700": {
         "value": "{base.palette.slate.A700}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A800": {
         "value": "{base.palette.slate.A800}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A900": {
         "value": "{base.palette.slate.A900}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A950": {
         "value": "{base.palette.slate.A950}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       },
       "A975": {
         "value": "{base.palette.slate.A975}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {}
       }
     },
     "common": {
       "focus": {
         "value": "{brand.primary.500}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.common.focus-outline"
+        }
       },
       "critical": {
         "value": "{brand.critical.500}",
-        "type": "color"
+        "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.common.error-inner"
+        }
       },
       "caution": {
         "inner": {
           "value": "{brand.caution.400}",
-          "type": "color"
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "brand.common.alert-inner"
+          }
         },
         "outer": {
           "value": "{brand.caution.500}",
-          "type": "color"
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "brand.common.alert-outer"
+          }
         }
       }
     },
