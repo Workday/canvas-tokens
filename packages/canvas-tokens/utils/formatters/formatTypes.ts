@@ -1,5 +1,6 @@
 import * as math from 'mathjs';
 import {Formatter, TransformedToken, formatHelpers} from 'style-dictionary';
+import {recursivelyFlatObjectValue} from './helpers/recursivelyFlatObjectValue';
 
 /**
  * Style Dictionary format function that creates token type definitions with JSDoc.
@@ -10,7 +11,9 @@ export const formatJSToTypes: Formatter = ({dictionary, file, options}) => {
   const {originalValues} = options;
   const headerContent = formatHelpers.fileHeader({file});
 
-  const placeholders = Object.keys(dictionary.properties)
+  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+
+  const placeholders = Object.keys(mainTokens)
     .map(k => `**${k}**`)
     .join('\n');
 
@@ -23,13 +26,28 @@ export const formatJSToTypes: Formatter = ({dictionary, file, options}) => {
 
   recursivelyCreateFileStructure({
     originalValues,
-    tokens: dictionary.properties,
+    tokens: mainTokens,
     allTokens: dictionary.allTokens,
     content,
     replaceInContent,
   });
 
-  return headerContent + content;
+  const legacyTokens = recursivelyFlatObjectValue({
+    tokens: dictionary.properties,
+    isFallback: true,
+    isRoot: true,
+  });
+
+  const legacyContent =
+    legacyTokens && Object.keys(legacyTokens).length
+      ? `\n/**\n * Temporary legacy object including fallback values to older versions of the tokens\n * for internal use only, will be removed in the future\n */\nexport declare const legacy: ${JSON.stringify(
+          legacyTokens,
+          null,
+          2
+        )};\n`
+      : '';
+
+  return headerContent + content + legacyContent;
 };
 
 const startingText = 'export declare const';

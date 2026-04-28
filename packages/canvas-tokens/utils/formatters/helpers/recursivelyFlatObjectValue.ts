@@ -11,6 +11,10 @@ export const recursivelyFlatObjectValue: RecursivelyFlatObjectFunction = ({
   isFallback,
   isRoot = true,
 }) => {
+  if (!tokens || typeof tokens !== 'object' || Array.isArray(tokens)) {
+    return tokens;
+  }
+
   if (isFallback) {
     if ('fallbackValue' in tokens) {
       return tokens.fallbackValue;

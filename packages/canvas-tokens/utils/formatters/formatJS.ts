@@ -75,7 +75,7 @@ export const formatInlineTypes: Formatter = ({dictionary, file}) => {
   }, '');
 
   const legacyBlock = legacyEntries.length
-    ? `\nexport declare const legacy = {\n${legacyEntries
+    ? `\nexport declare const legacy: {\n${legacyEntries
         .map(({name, value}) => `  ${name}: "${value}"`)
         .join(',\n')}\n};\n`
     : '';
@@ -95,19 +95,22 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
     : formatHelpers.fileHeader({file});
 
   const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
-  const body = mainTokens
-    ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
-        return (acc += `exports.${key} = ` + JSON.stringify(values, null, 2) + ';\n');
-      }, headerContent)
-    : '';
+  const body =
+    mainTokens && Object.keys(mainTokens).length
+      ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
+          return (acc += `exports.${key} = ` + JSON.stringify(values, null, 2) + ';\n');
+        }, headerContent)
+      : '';
 
   const legacyTokens = recursivelyFlatObjectValue({
     tokens: dictionary.properties,
     isFallback: true,
   });
-  const legacyBlock = legacyTokens
-    ? `exports.legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
-    : '';
+
+  const legacyBlock =
+    legacyTokens && Object.keys(legacyTokens).length
+      ? `exports.legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+      : '';
 
   return body + legacyBlock;
 };
@@ -121,19 +124,21 @@ export const formatES6ToObjects: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
   const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
 
-  const body = mainTokens
-    ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
-        return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
-      }, headerContent)
-    : '';
+  const body =
+    mainTokens && Object.keys(mainTokens).length
+      ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
+          return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
+        }, headerContent)
+      : '';
 
   const legacyTokens = recursivelyFlatObjectValue({
     tokens: dictionary.properties,
     isFallback: true,
   });
-  const legacyBlock = legacyTokens
-    ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
-    : '';
+  const legacyBlock =
+    legacyTokens && Object.keys(legacyTokens).length
+      ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+      : '';
 
   return body + legacyBlock;
 };

@@ -187,7 +187,7 @@ describe('formats', () => {
       const result = formats['ts/inline'](defaultArgs);
       const expected =
         headerContent +
-        `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport declare const amber100 = "--cnvs-base-palette-amber-100";\n\nexport declare const legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
+        `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport declare const amber100 = "--cnvs-base-palette-amber-100";\n\nexport declare const legacy: {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
 
       expect(result).toBe(expected);
     });
@@ -504,15 +504,31 @@ describe('formats', () => {
         dictionary: {
           properties: {
             opacity: {
-              disabled: '--cnvs-base-opacity-300',
+              disabled: {
+                cssVarName: '--cnvs-base-opacity-300',
+              },
+              legacy: {
+                cssVarName: '--cnvs-base-opacity-legacy',
+                fallbackValue: 'var(--cnvs-base-opacity-legacy, 0.3)',
+              },
             },
           },
         },
       });
 
+      const legacyJSDoc = `\n/**\n * Temporary legacy object including fallback values to older versions of the tokens\n * for internal use only, will be removed in the future\n */\n`;
+
+      const expectedLegacy = {
+        opacity: {
+          legacy: 'var(--cnvs-base-opacity-legacy, 0.3)',
+        },
+      };
+
       const expected =
         headerContent +
-        'export declare const opacity: {\n  /**\n   * **value**: `0.4`\n   * \n   * **CSS Var**: `--cnvs-base-opacity-300`\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n};\n';
+        'export declare const opacity: {\n  /**\n   * **value**: `0.4`\n   * \n   * **CSS Var**: `--cnvs-base-opacity-300`\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n  "legacy": "--cnvs-base-opacity-legacy",\n};\n' +
+        legacyJSDoc +
+        `export declare const legacy: ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });
@@ -532,15 +548,29 @@ describe('formats', () => {
         dictionary: {
           properties: {
             opacity: {
-              disabled: '--cnvs-base-opacity-300',
+              disabled: {cssVarName: '--cnvs-base-opacity-300'},
+              legacy: {
+                cssVarName: '--cnvs-base-opacity-legacy',
+                fallbackValue: 'var(--cnvs-base-opacity-legacy, 0.3)',
+              },
             },
           },
         },
       });
 
+      const legacyJSDoc = `\n/**\n * Temporary legacy object including fallback values to older versions of the tokens\n * for internal use only, will be removed in the future\n */\n`;
+
+      const expectedLegacy = {
+        opacity: {
+          legacy: 'var(--cnvs-base-opacity-legacy, 0.3)',
+        },
+      };
+
       const expected =
         headerContent +
-        'export declare const opacity: {\n  /**\n   * **value**: `0.4`\n   * \n   * **CSS Var**: `--cnvs-base-opacity-300`\n   */\n  "disabled": "--cnvs-base-opacity-300",\n};\n';
+        'export declare const opacity: {\n  /**\n   * **value**: `0.4`\n   * \n   * **CSS Var**: `--cnvs-base-opacity-300`\n   */\n  "disabled": "--cnvs-base-opacity-300",\n  "legacy": "--cnvs-base-opacity-legacy",\n};\n' +
+        legacyJSDoc +
+        `export declare const legacy: ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });
