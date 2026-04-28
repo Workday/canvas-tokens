@@ -124,6 +124,11 @@ export const changeValuesToCSSVars = (
   const isFallback = deprecatedValues != null && typeof deprecatedValues === 'object';
   const {base: baseValue, ...refs} = isFallback ? deprecatedValues : ({} as Record<string, string>);
   const fallbackValues = Object.values(refs).filter(item => typeof item === 'string') as string[];
+  const cssVarName = `--cnvs-${token.path.join('-').toLowerCase()}`;
+
+  const getFullFallback = (value: string) => {
+    return `var(${cssVarName}, ${generateFallbacks(fallbackValues, baseValue || value)})`;
+  };
 
   if (isComposite(token) && typeof originalValue !== 'string') {
     return Object.entries<string>(originalValue).reduce(
@@ -138,7 +143,7 @@ export const changeValuesToCSSVars = (
             ...acc,
             [name]: {
               cssVarName,
-              fallbackValue: generateFallbacks(fallbackValues, baseValue || value),
+              fallbackValue: getFullFallback(value),
             },
           };
         }
@@ -149,7 +154,6 @@ export const changeValuesToCSSVars = (
     );
   }
 
-  const cssVarName = `--cnvs-${token.path.join('-').toLowerCase()}`;
   const rawValue = !(typeof originalValue === 'string' && originalValue.startsWith('{'))
     ? originalValue
     : token.value;
@@ -157,7 +161,7 @@ export const changeValuesToCSSVars = (
   if (isFallback) {
     return {
       cssVarName,
-      fallbackValue: generateFallbacks(fallbackValues, baseValue || rawValue),
+      fallbackValue: getFullFallback(rawValue),
     };
   }
 

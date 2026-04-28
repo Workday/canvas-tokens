@@ -447,7 +447,8 @@ describe('formats', () => {
           border: {
             input: {
               inverse: {
-                default: 'var(--cnvs-base-palette-neutral-0, #FFFFFF)',
+                default:
+                  'var(--cnvs-sys-color-border-input-inverse-default, var(--cnvs-base-palette-neutral-0, #FFFFFF))',
               },
             },
           },

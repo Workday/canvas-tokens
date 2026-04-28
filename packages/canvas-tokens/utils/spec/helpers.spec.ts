@@ -143,7 +143,7 @@ describe('utils to change value', () => {
 
     const expected = {
       cssVarName: '--cnvs-brand-primary-a600',
-      fallbackValue: 'var(--cnvs-base-palette-blueberry-400, blue)',
+      fallbackValue: 'var(--cnvs-brand-primary-a600, var(--cnvs-base-palette-blueberry-400, blue))',
     };
 
     expect(result).toStrictEqual(expected);
@@ -154,7 +154,8 @@ describe('utils to change value', () => {
 
     const expected = {
       cssVarName: '--cnvs-base-palette-blue-600',
-      fallbackValue: 'var(--cnvs-base-palette-blueberry-400, blue)',
+      fallbackValue:
+        'var(--cnvs-base-palette-blue-600, var(--cnvs-base-palette-blueberry-400, blue))',
     };
 
     expect(result).toStrictEqual(expected);
