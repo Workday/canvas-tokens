@@ -6,34 +6,56 @@
         "accent": {
           "value": "{base.palette.neutral.A200}",
           "type": "color",
+          "deprecatedValues": {},
           "comment": "Component level color used on the soft filled areas of expressive icons"
         },
         "fill": {
           "value": "{base.palette.neutral.800}",
           "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.fg.default"
+          },
           "comment": "Component level color used on the visible outlines of expressive icons"
         }
       },
       "size": {
         "xs": {
           "value": "{base.size.500}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "v3": "sys.space.x10",
+            "base": "2.5rem"
+          }
         },
         "sm": {
           "value": "{base.size.600}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "base": "3rem"
+          }
         },
         "md": {
           "value": "{base.size.700}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "v3": "sys.space.x14",
+            "base": "3.5rem"
+          }
         },
         "lg": {
           "value": "{base.size.800}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "v3": "sys.space.x16",
+            "base": "4rem"
+          }
         },
         "xl": {
           "value": "{base.size.1200}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "base": "6rem"
+          }
         }
       }
     },
@@ -42,43 +64,74 @@
         "accent": {
           "value": "{base.palette.neutral.800}",
           "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.fg.default"
+          },
           "comment": "Component level color used on the accent areas of system icons"
         },
         "fill": {
           "value": "{base.palette.neutral.800}",
           "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.fg.default"
+          },
           "comment": "Component level color used on the fill areas of system icons"
         },
         "background": {
           "value": "{base.palette.neutral.A0}",
           "type": "color",
+          "deprecatedValues": {
+            "base": "transparent"
+          },
           "comment": "Component level color used on the background of system icons"
         }
       },
       "size": {
         "xxs": {
           "value": "{base.size.175}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "base": "0.875rem"
+          }
         },
         "xs": {
           "value": "{base.size.200}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "v3": "sys.space.x4",
+            "base": "1rem"
+          }
         },
         "sm": {
           "value": "{base.size.225}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "base": "1.125rem"
+          }
         },
         "md": {
           "value": "{base.size.250}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "v3": "sys.space.x5",
+            "base": "1.25rem"
+          }
         },
         "lg": {
           "value": "{base.size.300}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "v3": "sys.space.x6",
+            "base": "1.5rem"
+          }
         },
         "xl": {
           "value": "{base.size.400}",
-          "type": "size"
+          "type": "size",
+          "deprecatedValues": {
+            "v3": "sys.space.x8",
+            "base": "2rem"
+          }
         }
       }
     }

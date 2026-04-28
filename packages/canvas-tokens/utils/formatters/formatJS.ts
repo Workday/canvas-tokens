@@ -1,11 +1,7 @@
 import {Formatter, formatHelpers} from 'style-dictionary';
 import {jsFileHeader} from './helpers/jsFileHeader';
-import {kebabCase} from 'case-anything';
-import {generateFallbacks} from '../transformers/generateNewTokenFallback';
-
-const getCSSVarName = (path: string[]) => {
-  return path.map(i => (!i.match(/^A\d+$/) ? kebabCase(i) : i.toLowerCase())).join('-');
-};
+import {recursivelyFlatObjectValue} from './helpers/recursivelyFlatObjectValue';
+import {getCSSVarName, getLegacyEntries} from './helpers/cssVar';
 
 /**
  * Style Dictionary format function that creates common-js file structure.
@@ -19,22 +15,22 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
     ? jsFileHeader({file})
     : formatHelpers.fileHeader({file});
 
-  return dictionary.allTokens.reduce((acc: string, {name, path, original}) => {
-    const cssVarName = `--cnvs-${getCSSVarName(path)}`;
+  const legacyEntries: {name: string; value: string}[] = getLegacyEntries(dictionary.allTokens);
 
-    if (typeof original.deprecatedValues === 'object' && original.deprecatedValues !== null) {
-      const {raw, ...refs} = original.deprecatedValues as Record<string, unknown>;
-      acc += `exports.${name} = "var(${cssVarName}, ${generateFallbacks(
-        Object.values(refs).filter(v => typeof v === 'string') as string[],
-        raw || original.value
-      )})";\n`;
+  const body = dictionary.allTokens.reduce((acc: string, token) => {
+    const cssVarName = getCSSVarName(token.path);
+    acc += `exports.${token.name} = "${cssVarName}";\n`;
 
-      return acc;
-    }
-
-    acc += `exports.${name} = "${cssVarName}";\n`;
     return acc;
-  }, headerContent);
+  }, '');
+
+  const legacyBlock = legacyEntries.length
+    ? `\nexports.legacy = {\n${legacyEntries
+        .map(({name, value}) => `  ${name}: "${value}"`)
+        .join(',\n')}\n};\n`
+    : '';
+
+  return headerContent + body + legacyBlock;
 };
 
 /**
@@ -45,23 +41,21 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
  */
 export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
-  return dictionary.allTokens.reduce((acc: string, {name, path, original}) => {
-    const cssVarName = `--cnvs-${getCSSVarName(path)}`;
+  const legacyEntries = getLegacyEntries(dictionary.allTokens);
 
-    if (typeof original.deprecatedValues === 'object' && original.deprecatedValues !== null) {
-      const {raw, ...refs} = original.deprecatedValues as Record<string, unknown>;
-
-      acc += `export const ${name} = "var(${cssVarName}, ${generateFallbacks(
-        Object.values(refs).filter(v => typeof v === 'string') as string[],
-        raw || original.value
-      )})";\n`;
-
-      return acc;
-    }
-
-    acc += `export const ${name} = "${cssVarName}";\n`;
+  const body = dictionary.allTokens.reduce((acc: string, token) => {
+    const cssVarName = getCSSVarName(token.path);
+    acc += `export const ${token.name} = "${cssVarName}";\n`;
     return acc;
-  }, headerContent);
+  }, '');
+
+  const legacyBlock = legacyEntries.length
+    ? `\nexport const legacy = {\n${legacyEntries
+        .map(({name, value}) => `  ${name}: "${value}"`)
+        .join(',\n')}\n};\n`
+    : '';
+
+  return headerContent + body + legacyBlock;
 };
 
 /**
@@ -72,25 +66,21 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
  */
 export const formatInlineTypes: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
-  return dictionary.allTokens.reduce((acc: string, token) => {
-    const {name, path, deprecated, deprecatedComment, original} = token;
-    const cssVarName = `--cnvs-${getCSSVarName(path)}`;
-    const deprecatedText = deprecated ? `/** @deprecated ${deprecatedComment} */\n` : '';
+  const legacyEntries = getLegacyEntries(dictionary.allTokens);
 
-    if (typeof original.deprecatedValues === 'object' && original.deprecatedValues !== null) {
-      const {raw, ...refs} = original.deprecatedValues as Record<string, unknown>;
-
-      acc += `${deprecatedText}export declare const ${name}: "var(${cssVarName}, ${generateFallbacks(
-        Object.values(refs).filter(v => typeof v === 'string') as string[],
-        raw || original.value
-      )})";\n`;
-
-      return acc;
-    }
-
-    acc += `${deprecatedText}export declare const ${name}: "${cssVarName}";\n`;
+  const body = dictionary.allTokens.reduce((acc: string, token) => {
+    const cssVarName = getCSSVarName(token.path);
+    acc += `export declare const ${token.name} = "${cssVarName}";\n`;
     return acc;
-  }, headerContent);
+  }, '');
+
+  const legacyBlock = legacyEntries.length
+    ? `\nexport declare const legacy: {\n${legacyEntries
+        .map(({name, value}) => `  ${name}: "${value}"`)
+        .join(',\n')}\n};\n`
+    : '';
+
+  return headerContent + body + legacyBlock;
 };
 
 /**
@@ -103,9 +93,26 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
   const headerContent = !options.withoutModule
     ? jsFileHeader({file})
     : formatHelpers.fileHeader({file});
-  return Object.entries(dictionary.properties).reduce((acc: string, [key, values]) => {
-    return (acc += `exports.${key} = ` + JSON.stringify(values, null, 2) + ';\n');
-  }, headerContent);
+
+  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+  const body =
+    mainTokens && Object.keys(mainTokens).length
+      ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
+          return (acc += `exports.${key} = ` + JSON.stringify(values, null, 2) + ';\n');
+        }, headerContent)
+      : '';
+
+  const legacyTokens = recursivelyFlatObjectValue({
+    tokens: dictionary.properties,
+    isFallback: true,
+  });
+
+  const legacyBlock =
+    legacyTokens && Object.keys(legacyTokens).length
+      ? `exports.legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+      : '';
+
+  return body + legacyBlock;
 };
 
 /**
@@ -115,9 +122,25 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
  */
 export const formatES6ToObjects: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
-  return Object.entries(dictionary.properties).reduce((acc: string, [key, values]) => {
-    return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
-  }, headerContent);
+  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+
+  const body =
+    mainTokens && Object.keys(mainTokens).length
+      ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
+          return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
+        }, headerContent)
+      : '';
+
+  const legacyTokens = recursivelyFlatObjectValue({
+    tokens: dictionary.properties,
+    isFallback: true,
+  });
+  const legacyBlock =
+    legacyTokens && Object.keys(legacyTokens).length
+      ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+      : '';
+
+  return body + legacyBlock;
 };
 
 /**

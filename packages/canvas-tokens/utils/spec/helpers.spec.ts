@@ -133,7 +133,7 @@ describe('utils to change value', () => {
   it('should transform single value token to css variable', () => {
     const result = changeValuesToCSSVars(mockBrandToken, () => [mockBaseToken]);
 
-    const expected = '--cnvs-brand-primary-base';
+    const expected = {cssVarName: '--cnvs-brand-primary-base'};
 
     expect(result).toStrictEqual(expected);
   });
@@ -141,7 +141,10 @@ describe('utils to change value', () => {
   it('should transform fallback brand token to css variable', () => {
     const result = changeValuesToCSSVars(mockFallbackBrandToken, () => [mockBaseToken]);
 
-    const expected = 'var(--cnvs-brand-primary-a600, var(--cnvs-base-palette-blueberry-400, blue))';
+    const expected = {
+      cssVarName: '--cnvs-brand-primary-a600',
+      fallbackValue: 'var(--cnvs-brand-primary-a600, var(--cnvs-base-palette-blueberry-400, blue))',
+    };
 
     expect(result).toStrictEqual(expected);
   });
@@ -149,8 +152,11 @@ describe('utils to change value', () => {
   it('should transform fallback base token to css variable', () => {
     const result = changeValuesToCSSVars(mockFallbackBaseToken, () => [mockBaseToken]);
 
-    const expected =
-      'var(--cnvs-base-palette-blue-600, var(--cnvs-base-palette-blueberry-400, blue))';
+    const expected = {
+      cssVarName: '--cnvs-base-palette-blue-600',
+      fallbackValue:
+        'var(--cnvs-base-palette-blue-600, var(--cnvs-base-palette-blueberry-400, blue))',
+    };
 
     expect(result).toStrictEqual(expected);
   });
@@ -158,7 +164,7 @@ describe('utils to change value', () => {
   it('should transform composite tokens into css rule sets', () => {
     const result = changeValuesToCSSVars(mockCompositeToken, () => [mockBaseToken]);
 
-    const expected = {color: '--cnvs-base-palette-blueberry-400'};
+    const expected = {color: {cssVarName: '--cnvs-base-palette-blueberry-400'}};
 
     expect(result).toStrictEqual(expected);
   });

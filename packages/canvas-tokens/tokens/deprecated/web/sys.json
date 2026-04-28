@@ -126,21 +126,21 @@
         "type": "spacing",
         "deprecated": true,
         "deprecatedComment": "Use semantic padding and gap values instead",
-        "comment": "• Padding around card content; • Related elements where more space between them can be afforded; • Separate section headings or titles from body text or inputs"
+        "comment": "- Padding around card content; - Related elements where more space between them can be afforded; - Separate section headings or titles from body text or inputs"
       },
       "x8": {
         "value": "{base.unit} * 8",
         "type": "spacing",
         "deprecated": true,
         "deprecatedComment": "Use semantic padding and gap values instead",
-        "comment": "• Standard spacing between cards; • Used to separate groups of content ; • Separate section headings or titles from body text or inputs"
+        "comment": "- Standard spacing between cards; - Used to separate groups of content ; - Separate section headings or titles from body text or inputs"
       },
       "x10": {
         "value": "{base.unit} * 10",
         "type": "spacing",
         "deprecated": true,
         "deprecatedComment": "Use semantic padding and gap values instead",
-        "comment": "• Used for outer margins on the overall page content ; • Used for inner margins on large items such as page sections"
+        "comment": "- Used for outer margins on the overall page content ; - Used for inner margins on large items such as page sections"
       },
       "x14": {
         "value": "{base.unit} * 14",
