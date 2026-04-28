@@ -112,6 +112,11 @@ const generateJSDoc = (
   const spaces = '  '.repeat(depth);
   const extraSpaces = spaces + ' ';
   const newJSDocLineStart = `\n${extraSpaces}* `;
+
+  if (!original) {
+    return '';
+  }
+
   const {value, comment, deprecated, deprecatedComment} = original;
 
   const computedValue =
