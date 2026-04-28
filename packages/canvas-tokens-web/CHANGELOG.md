@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.3.0-beta.3
+
+### Minor Changes
+
+- ### Components
+
+  - feat: Add fallbacks to tokens ([#306](https://github.com/Workday/canvas-tokens/pull/306))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.3.0-beta.2
 
 ### Minor Changes
