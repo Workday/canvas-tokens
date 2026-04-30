@@ -3,12 +3,57 @@ import {formats} from '../formatters';
 jest.mock('style-dictionary', () => ({
   format: {
     'es6/objects': ({dictionary}: any) => {
-      const [first] = Object.keys(dictionary.properties);
-      return `export const ${first} = ` + JSON.stringify(dictionary.properties[first], null, 2);
-    },
-    'javascript/es6': ({dictionary}: any) => {
-      const [first] = Object.keys(dictionary.properties);
-      return `exports.${first} = ` + JSON.stringify(dictionary.properties[first], null, 2);
+      const recursivelyFlatObjectValue = ({tokens, isFallback, isRoot = true}: any) => {
+        if (isFallback) {
+          if ('fallbackValue' in tokens) {
+            return tokens.fallbackValue;
+          }
+          if ('cssVarName' in tokens) {
+            return undefined;
+          }
+        }
+
+        if ('cssVarName' in tokens) {
+          return tokens.cssVarName;
+        }
+
+        const next: Record<string, any> = {};
+
+        for (const key of Object.keys(tokens)) {
+          const value = recursivelyFlatObjectValue({
+            tokens: tokens[key],
+            isFallback,
+            isRoot: false,
+          });
+
+          if (!(isFallback && value === undefined)) {
+            next[key] = value;
+          }
+        }
+
+        if (isFallback && !isRoot && !Object.keys(next).length) {
+          return undefined;
+        }
+
+        return next;
+      };
+
+      const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+      const body = mainTokens
+        ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
+            return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
+          }, '')
+        : '';
+
+      const legacyTokens = recursivelyFlatObjectValue({
+        tokens: dictionary.properties,
+        isFallback: true,
+      });
+      const legacyBlock = legacyTokens
+        ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+        : '';
+
+      return body + legacyBlock;
     },
     'javascript/types': () =>
       `export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}`,
@@ -44,12 +89,15 @@ describe('formats', () => {
           original: {value: '#ffefee'},
         },
         {
-          name: 'cinnamon200',
-          value: '#fcc9c5',
-          path: ['base', 'palette', 'cinnamon', '200'],
+          name: 'amber100',
+          value: 'oklch(0.9567 0.0948 100.22 / 1)',
+          path: ['base', 'palette', 'amber', '100'],
           filePath: '',
           isSource: true,
-          original: {value: '#fcc9c5'},
+          original: {
+            value: 'oklch(0.9567 0.0948 100.22 / 1)',
+            deprecatedValues: {v2: 'base.palette.cinnamon.100'},
+          },
         },
       ],
       getReferences: () => [
@@ -86,7 +134,7 @@ describe('formats', () => {
       const expected =
         headerContent +
         moduleContent +
-        `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexports.cinnamon200 = "--cnvs-base-palette-cinnamon-200";\n`;
+        `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexports.amber100 = "--cnvs-base-palette-amber-100";\n\nexports.legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
 
       expect(result).toBe(expected);
     });
@@ -97,7 +145,38 @@ describe('formats', () => {
       const result = formats['js/es6'](defaultArgs);
       const expected =
         headerContent +
-        `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const cinnamon200 = "--cnvs-base-palette-cinnamon-200";\n`;
+        `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const amber100 = "--cnvs-base-palette-amber-100";\n\nexport const legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
+
+      expect(result).toBe(expected);
+    });
+
+    it('should use deprecatedValues.base as the inner fallback when present', () => {
+      const result = formats['js/es6']({
+        ...defaultArgs,
+        dictionary: {
+          allTokens: [
+            {
+              name: 'amber100',
+              value: 'oklch(0.9567 0.0948 100.22 / 1)',
+              path: ['base', 'palette', 'amber', '100'],
+              filePath: '',
+              isSource: true,
+              original: {
+                value: 'oklch(0.9567 0.0948 100.22 / 1)',
+                deprecatedValues: {
+                  v2: 'base.palette.cinnamon.100',
+                  base: 'oklch(0.9 0.05 100 / 1)',
+                },
+              },
+            },
+          ],
+          getReferences: () => [],
+        },
+      });
+
+      const expected =
+        headerContent +
+        'export const amber100 = "--cnvs-base-palette-amber-100";\n\nexport const legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9 0.05 100 / 1)))"\n};\n';
 
       expect(result).toBe(expected);
     });
@@ -108,7 +187,7 @@ describe('formats', () => {
       const result = formats['ts/inline'](defaultArgs);
       const expected =
         headerContent +
-        `export declare const cinnamon100: "--cnvs-base-palette-cinnamon-100";\nexport declare const cinnamon200: "--cnvs-base-palette-cinnamon-200";\n`;
+        `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport declare const amber100 = "--cnvs-base-palette-amber-100";\n\nexport declare const legacy: {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
 
       expect(result).toBe(expected);
     });
@@ -122,13 +201,23 @@ describe('formats', () => {
           ...defaultArgs.dictionary,
           properties: {
             opacity: {
-              disabled: '--cnvs-base-opacity-300',
+              disabled: {
+                cssVarName: '--cnvs-base-opacity-300',
+                fallbackValue: 'var(--cnvs-base-opacity-300, 0.3)',
+              },
             },
           },
         },
       });
+      const expectedLegacy = {
+        opacity: {
+          disabled: 'var(--cnvs-base-opacity-300, 0.3)',
+        },
+      };
       const expected =
-        headerContent + `export const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n};\n`;
+        headerContent +
+        `export const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n};\n` +
+        `export const legacy = ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });
@@ -142,15 +231,24 @@ describe('formats', () => {
           ...defaultArgs.dictionary,
           properties: {
             opacity: {
-              disabled: '--cnvs-base-opacity-300',
+              disabled: {
+                cssVarName: '--cnvs-base-opacity-300',
+                fallbackValue: 'var(--cnvs-base-opacity-300, 0.3)',
+              },
             },
           },
         },
       });
+      const expectedLegacy = {
+        opacity: {
+          disabled: 'var(--cnvs-base-opacity-300, 0.3)',
+        },
+      };
       const expected =
         headerContent +
         moduleContent +
-        `exports.opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n};\n`;
+        `exports.opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n};\n` +
+        `exports.legacy = ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });
@@ -292,16 +390,47 @@ describe('formats', () => {
         path: ['sys', 'border', 'input', 'disabled'],
       };
 
+      const legacyBorderToken = {
+        value: '--cnvs-sys-color-border-input-inverse-default',
+        type: 'color',
+        filePath: 'tokens/all.json',
+        isSource: true,
+        original: {
+          value: '{base.palette.neutral.0}',
+          type: 'composition',
+          deprecatedValues: {
+            v2: 'base.palette.neutral.0',
+            base: '#FFFFFF',
+          },
+        },
+        name: 'borderColorInputInverseDefault',
+        deprecatedValues: {
+          v3: 'sys.color.border.input.inverse',
+          base: '#FFFFFF',
+        },
+        attributes: {},
+        path: ['sys', 'color', 'border', 'input', 'inverse', 'default'],
+      };
+
       const result = formats['merge/objects']({
         ...defaultArgs,
         dictionary: {
           ...defaultArgs.dictionary,
-          allTokens: [borderToken],
+          allTokens: [borderToken, legacyBorderToken],
           properties: {
             sys: {
               border: {
                 input: {
                   disabled: borderToken,
+                },
+              },
+              color: {
+                border: {
+                  input: {
+                    inverse: {
+                      default: legacyBorderToken,
+                    },
+                  },
                 },
               },
             },
@@ -313,7 +442,22 @@ describe('formats', () => {
         },
       });
 
-      const expected = `export const border = {\n  "input": {\n    "disabled": "--cnvs-sys-border-input-disabled"\n  }\n}`;
+      const expectedLegacy = {
+        color: {
+          border: {
+            input: {
+              inverse: {
+                default:
+                  'var(--cnvs-sys-color-border-input-inverse-default, var(--cnvs-base-palette-neutral-0, #FFFFFF))',
+              },
+            },
+          },
+        },
+      };
+      const expected =
+        `export const border = {\n  "input": {\n    "disabled": "--cnvs-sys-border-input-disabled"\n  }\n};\n` +
+        `export const color = {\n  "border": {\n    "input": {\n      "inverse": {\n        "default": "--cnvs-sys-color-border-input-inverse-default"\n      }\n    }\n  }\n};\n` +
+        `export const legacy = ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });
@@ -361,15 +505,31 @@ describe('formats', () => {
         dictionary: {
           properties: {
             opacity: {
-              disabled: '--cnvs-base-opacity-300',
+              disabled: {
+                cssVarName: '--cnvs-base-opacity-300',
+              },
+              legacy: {
+                cssVarName: '--cnvs-base-opacity-legacy',
+                fallbackValue: 'var(--cnvs-base-opacity-legacy, 0.3)',
+              },
             },
           },
         },
       });
 
+      const legacyJSDoc = `\n/**\n * Temporary legacy object including fallback values to older versions of the tokens\n * for internal use only, will be removed in the future\n */\n`;
+
+      const expectedLegacy = {
+        opacity: {
+          legacy: 'var(--cnvs-base-opacity-legacy, 0.3)',
+        },
+      };
+
       const expected =
         headerContent +
-        'export declare const opacity: {\n  /**\n   * **value**: `0.4`\n   * \n   * **CSS Var**: `--cnvs-base-opacity-300`\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n};\n';
+        'export declare const opacity: {\n  /**\n   * **value**: `0.4`\n   * \n   * **CSS Var**: `--cnvs-base-opacity-300`\n   * \n   * Test JSDoc\n   */\n  "disabled": "--cnvs-base-opacity-300",\n  "legacy": "--cnvs-base-opacity-legacy",\n};\n' +
+        legacyJSDoc +
+        `export declare const legacy: ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });
@@ -389,15 +549,29 @@ describe('formats', () => {
         dictionary: {
           properties: {
             opacity: {
-              disabled: '--cnvs-base-opacity-300',
+              disabled: {cssVarName: '--cnvs-base-opacity-300'},
+              legacy: {
+                cssVarName: '--cnvs-base-opacity-legacy',
+                fallbackValue: 'var(--cnvs-base-opacity-legacy, 0.3)',
+              },
             },
           },
         },
       });
 
+      const legacyJSDoc = `\n/**\n * Temporary legacy object including fallback values to older versions of the tokens\n * for internal use only, will be removed in the future\n */\n`;
+
+      const expectedLegacy = {
+        opacity: {
+          legacy: 'var(--cnvs-base-opacity-legacy, 0.3)',
+        },
+      };
+
       const expected =
         headerContent +
-        'export declare const opacity: {\n  /**\n   * **value**: `0.4`\n   * \n   * **CSS Var**: `--cnvs-base-opacity-300`\n   */\n  "disabled": "--cnvs-base-opacity-300",\n};\n';
+        'export declare const opacity: {\n  /**\n   * **value**: `0.4`\n   * \n   * **CSS Var**: `--cnvs-base-opacity-300`\n   */\n  "disabled": "--cnvs-base-opacity-300",\n  "legacy": "--cnvs-base-opacity-legacy",\n};\n' +
+        legacyJSDoc +
+        `export declare const legacy: ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });

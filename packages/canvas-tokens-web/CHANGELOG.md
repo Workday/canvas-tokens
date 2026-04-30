@@ -1,5 +1,55 @@
 # @workday/canvas-tokens-web
 
+## 4.3.0
+
+### Minor Changes
+
+-
+
+## 4.3.0-beta.3
+
+### Minor Changes
+
+- ### Components
+
+  - feat: Add fallbacks to tokens ([#306](https://github.com/Workday/canvas-tokens/pull/306))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+## 4.3.0-beta.2
+
+### Minor Changes
+
+- ### Infrastructure
+
+  - fix: Fix build issues ([#305](https://github.com/Workday/canvas-tokens/pull/305))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@Copilot](https://github.com/Copilot),
+    [@alanbsmith](https://github.com/alanbsmith))
+
+## 4.3.0-beta.1
+
+### Minor Changes
+
+- ### Infrastructure
+
+  - fix: Use deprecatedValues prop name ([#304](https://github.com/Workday/canvas-tokens/pull/304))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@Copilot](https://github.com/Copilot),
+    [@alanbsmith](https://github.com/alanbsmith))
+
+## 4.3.0-beta.0
+
+### Minor Changes
+
+- ### Infrastructure
+
+  - feat: Add transform to handle new token old values
+    ([#303](https://github.com/Workday/canvas-tokens/pull/303))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Optional release note message. Add before
+    message if it's a breaking change. Changelog and release summaries will contain a pull request
+    title. This section will add additional notes under that title. This section is not a summary,
+    but something extra to point out in release notes. An example might be calling out breaking
+    changes in a labs component or minor visual changes that need visual regression updates. Remove
+    this section if no additional release notes are required.
+
 ## 4.2.0
 
 ### Minor Changes

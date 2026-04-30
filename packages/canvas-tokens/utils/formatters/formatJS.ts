@@ -1,10 +1,7 @@
 import {Formatter, formatHelpers} from 'style-dictionary';
 import {jsFileHeader} from './helpers/jsFileHeader';
-import {kebabCase} from 'case-anything';
-
-const getCSSVarName = (path: string[]) => {
-  return path.map(i => (!i.match(/^A\d+$/) ? kebabCase(i) : i.toLowerCase())).join('-');
-};
+import {recursivelyFlatObjectValue} from './helpers/recursivelyFlatObjectValue';
+import {getCSSVarName, getLegacyEntries} from './helpers/cssVar';
 
 /**
  * Style Dictionary format function that creates common-js file structure.
@@ -17,11 +14,23 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
   const headerContent = !options.withoutModule
     ? jsFileHeader({file})
     : formatHelpers.fileHeader({file});
-  return dictionary.allTokens.reduce((acc: string, {name, path}) => {
-    const cssVarName = getCSSVarName(path);
-    acc += `exports.${name} = "--cnvs-${cssVarName}";\n`;
+
+  const legacyEntries: {name: string; value: string}[] = getLegacyEntries(dictionary.allTokens);
+
+  const body = dictionary.allTokens.reduce((acc: string, token) => {
+    const cssVarName = getCSSVarName(token.path);
+    acc += `exports.${token.name} = "${cssVarName}";\n`;
+
     return acc;
-  }, headerContent);
+  }, '');
+
+  const legacyBlock = legacyEntries.length
+    ? `\nexports.legacy = {\n${legacyEntries
+        .map(({name, value}) => `  ${name}: "${value}"`)
+        .join(',\n')}\n};\n`
+    : '';
+
+  return headerContent + body + legacyBlock;
 };
 
 /**
@@ -32,11 +41,21 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
  */
 export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
-  return dictionary.allTokens.reduce((acc: string, {name, path}) => {
-    const cssVarName = getCSSVarName(path);
-    acc += `export const ${name} = "--cnvs-${cssVarName}";\n`;
+  const legacyEntries = getLegacyEntries(dictionary.allTokens);
+
+  const body = dictionary.allTokens.reduce((acc: string, token) => {
+    const cssVarName = getCSSVarName(token.path);
+    acc += `export const ${token.name} = "${cssVarName}";\n`;
     return acc;
-  }, headerContent);
+  }, '');
+
+  const legacyBlock = legacyEntries.length
+    ? `\nexport const legacy = {\n${legacyEntries
+        .map(({name, value}) => `  ${name}: "${value}"`)
+        .join(',\n')}\n};\n`
+    : '';
+
+  return headerContent + body + legacyBlock;
 };
 
 /**
@@ -47,13 +66,21 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
  */
 export const formatInlineTypes: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
-  return dictionary.allTokens.reduce((acc: string, token) => {
-    const {name, path, deprecated, deprecatedComment} = token;
-    const cssVarName = getCSSVarName(path);
-    const deprecatedText = deprecated ? `/** @deprecated ${deprecatedComment} */\n` : '';
-    acc += `${deprecatedText}export declare const ${name}: "--cnvs-${cssVarName}";\n`;
+  const legacyEntries = getLegacyEntries(dictionary.allTokens);
+
+  const body = dictionary.allTokens.reduce((acc: string, token) => {
+    const cssVarName = getCSSVarName(token.path);
+    acc += `export declare const ${token.name} = "${cssVarName}";\n`;
     return acc;
-  }, headerContent);
+  }, '');
+
+  const legacyBlock = legacyEntries.length
+    ? `\nexport declare const legacy: {\n${legacyEntries
+        .map(({name, value}) => `  ${name}: "${value}"`)
+        .join(',\n')}\n};\n`
+    : '';
+
+  return headerContent + body + legacyBlock;
 };
 
 /**
@@ -66,9 +93,26 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
   const headerContent = !options.withoutModule
     ? jsFileHeader({file})
     : formatHelpers.fileHeader({file});
-  return Object.entries(dictionary.properties).reduce((acc: string, [key, values]) => {
-    return (acc += `exports.${key} = ` + JSON.stringify(values, null, 2) + ';\n');
-  }, headerContent);
+
+  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+  const body =
+    mainTokens && Object.keys(mainTokens).length
+      ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
+          return (acc += `exports.${key} = ` + JSON.stringify(values, null, 2) + ';\n');
+        }, headerContent)
+      : '';
+
+  const legacyTokens = recursivelyFlatObjectValue({
+    tokens: dictionary.properties,
+    isFallback: true,
+  });
+
+  const legacyBlock =
+    legacyTokens && Object.keys(legacyTokens).length
+      ? `exports.legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+      : '';
+
+  return body + legacyBlock;
 };
 
 /**
@@ -78,9 +122,25 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
  */
 export const formatES6ToObjects: Formatter = ({dictionary, file}) => {
   const headerContent = formatHelpers.fileHeader({file});
-  return Object.entries(dictionary.properties).reduce((acc: string, [key, values]) => {
-    return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
-  }, headerContent);
+  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+
+  const body =
+    mainTokens && Object.keys(mainTokens).length
+      ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
+          return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
+        }, headerContent)
+      : '';
+
+  const legacyTokens = recursivelyFlatObjectValue({
+    tokens: dictionary.properties,
+    isFallback: true,
+  });
+  const legacyBlock =
+    legacyTokens && Object.keys(legacyTokens).length
+      ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+      : '';
+
+  return body + legacyBlock;
 };
 
 /**
