@@ -72,6 +72,7 @@ export function EasingTokens() {
   return (
     <TokenGrid
       caption="easing tokens"
+      columns="4.5rem minmax(11rem, 1fr) minmax(11rem, 1.1fr) minmax(18rem, 2.5fr) minmax(5rem, auto) minmax(6.5rem, auto)"
       headings={['Sample', 'CSS Variable', 'JS Variable', 'Value', 'Category', 'Type']}
       rows={easingTokens}
     >
@@ -106,7 +107,9 @@ export function EasingTokens() {
           </TokenGrid.RowItem>
 
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{computedValues[token.cssVar] || '...'}</TokenGrid.MonospaceLabel>
+            <TokenGrid.MonospaceLabel allowWrap>
+              {computedValues[token.cssVar] || '...'}
+            </TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
 
           <TokenGrid.RowItem>{token.category}</TokenGrid.RowItem>

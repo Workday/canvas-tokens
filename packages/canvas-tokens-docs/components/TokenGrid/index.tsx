@@ -35,6 +35,20 @@ export function formatJSVar(varName: string) {
   });
 }
 
+/** Inserts optional breaks after each hyphen so custom property names wrap instead of truncating. */
+export function formatCssVarLineBreaks(cssVar: string): React.ReactNode {
+  return cssVar.split('-').map((segment, i) => (
+    <React.Fragment key={i}>
+      {i > 0 ? (
+        <>
+          -<wbr />
+        </>
+      ) : null}
+      {segment}
+    </React.Fragment>
+  ));
+}
+
 export function TokenGrid<T>({caption, children, columns, headings, rows}: TokenGridProps<T>) {
   const style = columns
     ? ({'--token-grid-columns': columns} as React.CSSProperties)
@@ -126,9 +140,19 @@ const CheckIcon = () => (
 );
 
 const TokenGridMonospaceLabel: React.FC<
-  React.HTMLProps<HTMLButtonElement> & {isDeprecated?: boolean; copyText?: string}
-> = ({className, children, isDeprecated, copyText, ...props}) => {
+  React.HTMLProps<HTMLButtonElement> & {
+    isDeprecated?: boolean;
+    copyText?: string;
+    /** When true, value text wraps instead of single-line ellipsis (use for long computed values). */
+    allowWrap?: boolean;
+  }
+> = ({className, children, isDeprecated, copyText, allowWrap, ...props}) => {
   const [copied, setCopied] = React.useState(false);
+
+  const hyphenBreakCssVar =
+    typeof children === 'string' && children.startsWith('--');
+  const displayContent = hyphenBreakCssVar ? formatCssVarLineBreaks(children) : children;
+  const multilineLayout = Boolean(allowWrap || hyphenBreakCssVar);
 
   const handleCopy = React.useCallback(() => {
     if (!copyText) return;
@@ -149,14 +173,21 @@ const TokenGridMonospaceLabel: React.FC<
             : copyText
             ? 'token-grid__monospace-label--copyable'
             : ''
-        } ${className || ''}`
+        }${multilineLayout ? ' token-grid__monospace-label--multiline' : ''} ${className || ''}`
       )}
       onClick={copyText ? handleCopy : undefined}
       aria-label={copyText ? `Copy ${copyText}` : undefined}
       title={copyText ? `Click to copy` : undefined}
       {...(props as any)}
     >
-      <span className="token-grid__monospace-label-text">{children}</span>
+      <span
+        className={classNames(
+          'token-grid__monospace-label-text',
+          allowWrap ? 'token-grid__monospace-label-text--wrap' : ''
+        )}
+      >
+        {displayContent}
+      </span>
       {copyText && (copied ? <CheckIcon /> : <CopyIcon />)}
     </button>
   );

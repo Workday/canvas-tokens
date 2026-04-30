@@ -52,6 +52,7 @@ export function DurationTokens() {
   return (
     <TokenGrid
       caption="duration tokens"
+      columns="minmax(12rem, 1.2fr) minmax(12rem, 1.2fr) minmax(8rem, auto)"
       headings={['CSS Variable', 'JS Variable', 'Value']}
       rows={durationTokens}
     >
