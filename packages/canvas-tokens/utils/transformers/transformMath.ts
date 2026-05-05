@@ -12,5 +12,9 @@ export const transformMath: Transformer = ({value, path}) => {
   if (path.includes('shadow')) return value;
 
   const expression = value.replace(/rem/g, '');
-  return path[0] === 'base' ? `${math.evaluate(expression)}rem` : `calc(${value})`;
+  return path[0] === 'base' && !value.includes('var')
+    ? `${math.evaluate(expression)}rem`
+    : value.startsWith('calc')
+    ? value
+    : `calc(${value})`;
 };

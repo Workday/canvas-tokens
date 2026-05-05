@@ -10,7 +10,9 @@ const transformNumber = (number: string | number) => {
   const isRem = isString && number.includes('rem');
 
   const finalvalue =
-    typeof cleanedNumber === 'string' && mathSigns.some(sign => cleanedNumber.includes(` ${sign} `))
+    typeof cleanedNumber === 'string' &&
+    mathSigns.some(sign => cleanedNumber.includes(` ${sign} `)) &&
+    !cleanedNumber.includes('var')
       ? math.evaluate(cleanedNumber)
       : cleanedNumber;
 

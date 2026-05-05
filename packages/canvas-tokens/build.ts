@@ -6,7 +6,7 @@ import {setConfig} from './utils/setConfig';
 
 const config = setConfig({
   source: ['tokens/**/*.json'],
-  platforms: ['css', 'scss', 'less', 'es6', 'common-js', 'docs'],
+  platforms: ['css', 'scss', 'less', 'es6', 'common-js', 'docs', 'legacy'],
   levels: ['base', 'brand', 'sys', 'component', 'main', 'deprecated'],
   platformOptions: {
     'css, scss, less': {
@@ -82,6 +82,21 @@ const config = setConfig({
         },
       ],
     },
+    legacy: {
+      buildPath: '../canvas-tokens-web/css/legacy/',
+      transformGroup: 'legacy-web',
+      fileName: '{level}',
+      prefix: 'cnvs-',
+      format: 'css/variables',
+      extensions: ['css'],
+      modifiers: [
+        {
+          level: ['base', 'brand', 'sys', 'component'],
+          filter: filters.isOldValues,
+          filterByLevel: true,
+        },
+      ],
+    },
     docs: {
       buildPath: '../canvas-tokens-docs/lib/tokens/',
       extensions: ['json', 'csv'],
@@ -117,7 +132,6 @@ const config = setConfig({
 });
 
 // Setup format to create ts file with type declarations
-
 Object.entries(formats).forEach(([key, value]) => {
   StyleDictionary.registerFormat({
     name: key,
@@ -139,22 +153,29 @@ Object.entries(transforms).forEach(([key, value]) => {
   });
 });
 
+const webTransforms = [
+  'name/cti/kebab',
+  'value/duration/ms',
+  'value/flatten-border',
+  'value/flatten-oklch',
+  'value/shadow/flat-sys',
+  'value/breakpoints/px',
+  'value/wrapped-font-family',
+  'value/math',
+  'value/opacity',
+  'value/letter-spacing/px2rem',
+  'value/font-weight/numbers',
+  'value/line-height/px2rem',
+];
+
 StyleDictionary.registerTransformGroup({
   name: 'web',
-  transforms: [
-    'name/cti/kebab',
-    'value/duration/ms',
-    'value/flatten-border',
-    'value/flatten-oklch',
-    'value/shadow/flat-sys',
-    'value/breakpoints/px',
-    'value/wrapped-font-family',
-    'value/math',
-    'value/opacity',
-    'value/letter-spacing/px2rem',
-    'value/font-weight/numbers',
-    'value/line-height/px2rem',
-  ],
+  transforms: webTransforms,
+});
+
+StyleDictionary.registerTransformGroup({
+  name: 'legacy-web',
+  transforms: [...webTransforms, 'value/deprecated-values'],
 });
 
 StyleDictionary.registerTransformGroup({

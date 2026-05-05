@@ -44,11 +44,17 @@ export const mergeObjects: Formatter = ({dictionary, options, ...rest}) => {
 
   const params = {
     dictionary: {...dictionary, properties},
-    options: {...options, originalValues},
+    options: {
+      ...options,
+      originalValues,
+    },
     ...rest,
   };
 
-  return typeof defaultFormat === 'string'
-    ? StyleDictionary.format[defaultFormat](params)
-    : defaultFormat(params);
+  const content =
+    typeof defaultFormat === 'string'
+      ? StyleDictionary.format[defaultFormat](params)
+      : defaultFormat(params);
+
+  return content;
 };
