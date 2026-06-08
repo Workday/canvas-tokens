@@ -6,5 +6,9 @@ interface StackProps {
 }
 
 export function Stack({children}: StackProps) {
-  return <div className="stack">{children}</div>;
+  return (
+    <div className="stack" data-theme="sana">
+      {children}
+    </div>
+  );
 }
