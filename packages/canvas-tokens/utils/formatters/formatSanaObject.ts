@@ -5,16 +5,60 @@ import {getCSSVarName} from './helpers/cssVar';
 
 type SanaTree = {[key: string]: string | SanaTree};
 
+const REFERENCE_RE = /^\s*\{([^}]+)\}\s*$/;
+
+const escapeFallback = (value: unknown): string => String(value).replace(/"/g, '\\"');
+
+const buildVarExpression = (cssVarName: string, fallback: unknown) =>
+  `var(--${cssVarName}, ${escapeFallback(fallback)})`;
+
+/**
+ * Typography tokens are composite (object) values. They cannot be expressed
+ * as a single CSS variable, so we expand them into a nested object whose
+ * leaves point at the inner referenced tokens (e.g. `fontFamily` →
+ * `var(--cnvs-sys-font-family-default, "Sana Sans")`). The fallback for each
+ * leaf is the resolved value of the referenced token, which keeps the
+ * generated declarations usable even when no CSS theme is loaded.
+ */
+const buildTypographyValue = (token: TransformedToken): SanaTree => {
+  const original = token.original?.value as Record<string, unknown> | undefined;
+  const resolved = (token.value ?? {}) as Record<string, unknown>;
+  const tree: SanaTree = {};
+
+  if (!original || typeof original !== 'object') return tree;
+
+  for (const key of Object.keys(original)) {
+    const ref = original[key];
+    const normalizedKey = camelCase(key);
+    const resolvedLeaf = resolved[key] ?? resolved[normalizedKey];
+
+    if (typeof ref === 'string') {
+      const match = ref.match(REFERENCE_RE);
+      if (match) {
+        const refPath = match[1].split('.');
+        tree[normalizedKey] = buildVarExpression(getCSSVarName(refPath), resolvedLeaf);
+        continue;
+      }
+    }
+
+    tree[normalizedKey] = escapeFallback(resolvedLeaf ?? ref);
+  }
+
+  return tree;
+};
+
 /**
  * Builds the `var(--cnvs-..., <sana-value>)` expression for a single token.
  * Inner double quotes (e.g. in font-family values) are escaped so the result
- * is a valid JS/TS string.
+ * is a valid JS/TS string. Typography tokens return a nested object (one
+ * entry per sub-property) instead of a flat string.
  */
-const buildSanaValue = (token: TransformedToken): string => {
-  const cssVarName = getCSSVarName(token.path);
-  const fallback = String(token.value).replace(/"/g, '\\"');
+const buildSanaValue = (token: TransformedToken): string | SanaTree => {
+  if (token.type === 'typography') {
+    return buildTypographyValue(token);
+  }
 
-  return `var(--${cssVarName}, ${fallback})`;
+  return buildVarExpression(getCSSVarName(token.path), token.value);
 };
 
 /**
@@ -28,7 +72,7 @@ const setSanaProperty = (
   output: SanaTree,
   path: string[],
   level: string,
-  value: string
+  value: string | SanaTree
 ): void => {
   const [head, ...rest] = path;
 
@@ -63,7 +107,19 @@ const buildSanaTree = (tokens: Dictionary['allTokens'], level: string): SanaTree
 
 /** Builds flat `{name, value}` entries for the `base` level. */
 const getFlatSanaEntries = (tokens: Dictionary['allTokens']) =>
-  tokens.map(token => ({name: token.name, value: buildSanaValue(token)}));
+  tokens.map(token => {
+    const value = buildSanaValue(token);
+    return {
+      name: token.name,
+      // Typography tokens (composite objects) are not expected at the `base`
+      // level, but if encountered fall back to a single var() to keep the
+      // flat shape valid.
+      value:
+        typeof value === 'string'
+          ? value
+          : buildVarExpression(getCSSVarName(token.path), token.value),
+    };
+  });
 
 const VALID_IDENTIFIER = /^[A-Za-z_$][\w$]*$/;
 const formatKey = (key: string) => (VALID_IDENTIFIER.test(key) ? key : JSON.stringify(key));

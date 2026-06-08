@@ -144,7 +144,7 @@ const sanaConfig = setConfig({
       modifiers: [
         {
           level: ['base', 'brand', 'sys'],
-          filter: filters.isSanaTheme,
+          filter: token => filters.isSanaTheme(token) && token.type !== 'typography',
           format: '{platform}/theme',
           options: {
             outputReferences: true,
