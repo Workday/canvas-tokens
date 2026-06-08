@@ -2,6 +2,12 @@ import * as math from 'mathjs';
 import {Formatter, TransformedToken, formatHelpers} from 'style-dictionary';
 import {recursivelyFlatObjectValue} from './helpers/recursivelyFlatObjectValue';
 
+/** Levels for which a sibling `sana.d.ts` file is generated. */
+const SANA_LEVELS = ['base', 'brand', 'sys'];
+
+const hasSanaModule = (level: unknown): boolean =>
+  typeof level === 'string' && SANA_LEVELS.includes(level);
+
 /**
  * Style Dictionary format function that creates token type definitions with JSDoc.
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
@@ -47,7 +53,9 @@ export const formatJSToTypes: Formatter = ({dictionary, file, options}) => {
         )};\n`
       : '';
 
-  return headerContent + content + legacyContent;
+  const sanaContent = hasSanaModule(options.level) ? `\nexport {sana} from "./sana";\n` : '';
+
+  return headerContent + content + legacyContent + sanaContent;
 };
 
 const startingText = 'export declare const';

@@ -133,7 +133,7 @@ const config = setConfig({
 
 const sanaConfig = setConfig({
   source: ['tokens/**/*.json', 'theme/sana.json'],
-  platforms: ['css', 'scss', 'less'],
+  platforms: ['css', 'scss', 'less', 'es6', 'common-js'],
   levels: ['base', 'brand', 'sys'],
   platformOptions: {
     'css, scss, less': {
@@ -144,10 +144,7 @@ const sanaConfig = setConfig({
       modifiers: [
         {
           level: ['base', 'brand', 'sys'],
-          filter: ({filePath, path}) =>
-            filePath.includes('theme/sana.json') &&
-            !path.includes('shadow') &&
-            !path.join('-').includes('brand.action'),
+          filter: filters.isSanaTheme,
           format: '{platform}/theme',
           options: {
             outputReferences: true,
@@ -157,6 +154,28 @@ const sanaConfig = setConfig({
     },
     scss: {
       extensions: ['sass', 'scss'],
+    },
+    'es6, common-js': {
+      buildPath: '../canvas-tokens-web/dist/',
+      transformGroup: 'sana-js',
+      fileName: '{platform}/{level}/sana',
+      extensions: ['js', 'd.ts'],
+      modifiers: [
+        {
+          level: ['base', 'brand', 'sys'],
+          extensions: ['js'],
+          format: 'js/{platform}/sana-object',
+          filterByLevel: true,
+          filter: filters.isSanaTheme,
+        },
+        {
+          level: ['base', 'brand', 'sys'],
+          extensions: ['d.ts'],
+          format: 'ts/sana-object',
+          filterByLevel: true,
+          filter: filters.isSanaTheme,
+        },
+      ],
     },
   },
 });
@@ -197,6 +216,26 @@ const webTransforms = [
   'value/font-weight/numbers',
   'value/line-height/px2rem',
 ];
+
+const sanaJSTransforms = [
+  'value/duration/ms',
+  'value/flatten-border',
+  'value/shadow/flat-sys',
+  'value/breakpoints/px',
+  'value/wrapped-font-family',
+  'value/math',
+  'value/opacity',
+  'value/letter-spacing/px2rem',
+  'value/font-weight/numbers',
+  'value/line-height/px2rem',
+  'oklch/flatten',
+  'name/camel',
+];
+
+StyleDictionary.registerTransformGroup({
+  name: 'sana-js',
+  transforms: sanaJSTransforms,
+});
 
 StyleDictionary.registerTransformGroup({
   name: 'web',

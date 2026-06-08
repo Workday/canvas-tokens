@@ -16,6 +16,11 @@ import {mergeTypes} from './mergeTypes';
 import {mergeStyleReferences} from './mergeStyleReferences';
 import {formatCSSShadow, formatLessShadow, formatSassShadow} from './formatShadowStyles';
 import {formatCSSTheme, formatSassTheme, formatLessTheme} from './formatToTheme';
+import {
+  formatSanaObjectCommonJS,
+  formatSanaObjectES6,
+  formatSanaObjectTypes,
+} from './formatSanaObject';
 
 export const formats: Record<string, Formatter> = {
   // formatter creating the inline common-js file structure
@@ -78,4 +83,13 @@ export const formats: Record<string, Formatter> = {
   'scss/theme': formatSassTheme,
   // formatter creating the less theme file structure
   'less/theme': formatLessTheme,
+  // formatter creating the common-js file structure with a single
+  // `sana` object containing tokens defined in `theme/sana.json`
+  'js/common-js/sana-object': formatSanaObjectCommonJS,
+  // formatter creating the es6 file structure with a single
+  // `sana` object containing tokens defined in `theme/sana.json`
+  'js/es6/sana-object': formatSanaObjectES6,
+  // formatter creating the ts type declarations with a single
+  // `sana` object containing tokens defined in `theme/sana.json`
+  'ts/sana-object': formatSanaObjectTypes,
 };

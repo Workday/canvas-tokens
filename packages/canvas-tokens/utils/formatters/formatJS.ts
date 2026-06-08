@@ -3,6 +3,12 @@ import {jsFileHeader} from './helpers/jsFileHeader';
 import {recursivelyFlatObjectValue} from './helpers/recursivelyFlatObjectValue';
 import {getCSSVarName, getLegacyEntries} from './helpers/cssVar';
 
+/** Levels for which a sibling `sana.{js,d.ts}` file is generated. */
+const SANA_LEVELS = ['base', 'brand', 'sys'];
+
+const hasSanaModule = (level: unknown): boolean =>
+  typeof level === 'string' && SANA_LEVELS.includes(level);
+
 /**
  * Style Dictionary format function that creates common-js file structure.
  * This structure contains separated exports of each token.
@@ -30,7 +36,11 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
         .join(',\n')}\n};\n`
     : '';
 
-  return headerContent + body + legacyBlock;
+  const sanaBlock = hasSanaModule(options.level)
+    ? `\nexports.sana = require("./sana").sana;\n`
+    : '';
+
+  return headerContent + body + legacyBlock + sanaBlock;
 };
 
 /**
@@ -39,7 +49,7 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
+export const formatToInlineES6Module: Formatter = ({dictionary, file, options}) => {
   const headerContent = formatHelpers.fileHeader({file});
   const legacyEntries = getLegacyEntries(dictionary.allTokens);
 
@@ -55,7 +65,9 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
         .join(',\n')}\n};\n`
     : '';
 
-  return headerContent + body + legacyBlock;
+  const sanaBlock = hasSanaModule(options.level) ? `\nexport {sana} from "./sana";\n` : '';
+
+  return headerContent + body + legacyBlock + sanaBlock;
 };
 
 /**
@@ -64,7 +76,7 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatInlineTypes: Formatter = ({dictionary, file}) => {
+export const formatInlineTypes: Formatter = ({dictionary, file, options}) => {
   const headerContent = formatHelpers.fileHeader({file});
   const legacyEntries = getLegacyEntries(dictionary.allTokens);
 
@@ -80,7 +92,9 @@ export const formatInlineTypes: Formatter = ({dictionary, file}) => {
         .join(',\n')}\n};\n`
     : '';
 
-  return headerContent + body + legacyBlock;
+  const sanaBlock = hasSanaModule(options.level) ? `\nexport {sana} from "./sana";\n` : '';
+
+  return headerContent + body + legacyBlock + sanaBlock;
 };
 
 /**
@@ -112,7 +126,11 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
       ? `exports.legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
       : '';
 
-  return body + legacyBlock;
+  const sanaBlock = hasSanaModule(options.level)
+    ? `exports.sana = require("./sana").sana;\n`
+    : '';
+
+  return body + legacyBlock + sanaBlock;
 };
 
 /**
@@ -120,7 +138,7 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatES6ToObjects: Formatter = ({dictionary, file}) => {
+export const formatES6ToObjects: Formatter = ({dictionary, file, options}) => {
   const headerContent = formatHelpers.fileHeader({file});
   const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
 
@@ -140,7 +158,9 @@ export const formatES6ToObjects: Formatter = ({dictionary, file}) => {
       ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
       : '';
 
-  return body + legacyBlock;
+  const sanaBlock = hasSanaModule(options.level) ? `export {sana} from "./sana";\n` : '';
+
+  return body + legacyBlock + sanaBlock;
 };
 
 /**

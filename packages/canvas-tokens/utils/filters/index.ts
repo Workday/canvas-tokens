@@ -89,3 +89,14 @@ export const filterActionTokens: Matcher = token => {
 export const isOldValues: Matcher = token => {
   return Boolean(token.original.deprecatedValues) && token.path[1] !== 'type';
 };
+
+export const isSanaTheme: Matcher = token => {
+  const [level, category] = token.path;
+  const isBrandAction = level === 'brand' && category === 'action';
+
+  return (
+    token.filePath.includes('theme/sana.json') &&
+    !token.path.includes('shadow') &&
+    !isBrandAction
+  );
+};
