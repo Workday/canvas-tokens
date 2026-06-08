@@ -21,6 +21,7 @@ const preview: Preview = {
             'Brand Tokens',
             'System Tokens',
             ['Overview'],
+            'Sana Theme',
           ],
           'Guides',
           ['Upgrade Guides', 'Migrations'],
