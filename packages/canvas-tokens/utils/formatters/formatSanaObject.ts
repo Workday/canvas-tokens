@@ -14,7 +14,7 @@ const buildSanaValue = (token: TransformedToken): string => {
   const cssVarName = getCSSVarName(token.path);
   const fallback = String(token.value).replace(/"/g, '\\"');
 
-  return `var(${cssVarName}, ${fallback})`;
+  return `var(--${cssVarName}, ${fallback})`;
 };
 
 /**

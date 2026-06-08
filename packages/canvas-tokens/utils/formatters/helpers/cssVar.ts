@@ -29,7 +29,7 @@ export const getLegacyEntries = (tokens: Dictionary['allTokens']) => {
 
       return {
         name: token.name,
-        value: `var(${cssVarName}, ${generateFallbacks(fallbackValues, baseValue || token.value)})`,
+        value: `var(--${cssVarName}, ${generateFallbacks(fallbackValues, baseValue || token.value)})`,
       };
     });
 };

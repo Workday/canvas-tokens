@@ -25,7 +25,7 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
 
   const body = dictionary.allTokens.reduce((acc: string, token) => {
     const cssVarName = getCSSVarName(token.path);
-    acc += `exports.${token.name} = "${cssVarName}";\n`;
+    acc += `exports.${token.name} = "--${cssVarName}";\n`;
 
     return acc;
   }, '');
@@ -55,7 +55,7 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file, options}) 
 
   const body = dictionary.allTokens.reduce((acc: string, token) => {
     const cssVarName = getCSSVarName(token.path);
-    acc += `export const ${token.name} = "${cssVarName}";\n`;
+    acc += `export const ${token.name} = "--${cssVarName}";\n`;
     return acc;
   }, '');
 
@@ -82,7 +82,7 @@ export const formatInlineTypes: Formatter = ({dictionary, file, options}) => {
 
   const body = dictionary.allTokens.reduce((acc: string, token) => {
     const cssVarName = getCSSVarName(token.path);
-    acc += `export declare const ${token.name} = "${cssVarName}";\n`;
+    acc += `export declare const ${token.name} = "--${cssVarName}";\n`;
     return acc;
   }, '');
 
