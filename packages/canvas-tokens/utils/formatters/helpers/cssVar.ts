@@ -3,13 +3,13 @@ import {kebabCase} from 'case-anything';
 import {generateFallbacks} from '../../transformers/generateNewTokenFallback';
 
 export const getCSSVarName = (path: string[]) => {
-  return '--cnvs-' + path.map(i => (!i.match(/^A\d+$/) ? kebabCase(i) : i.toLowerCase())).join('-');
+  return 'cnvs-' + path.map(i => (!i.match(/^A\d+$/) ? kebabCase(i) : i.toLowerCase())).join('-');
 };
 
 export const getCSSVarNameFromRef = (ref: string, type: 'css' | 'sass' | 'less') => {
   return ref.replace(/\{([^}]+)\}/gi, (_, path) =>
     type === 'css'
-      ? `var(${getCSSVarName(path.split('.'))})`
+      ? `var(--${getCSSVarName(path.split('.'))})`
       : type === 'sass'
       ? `$${getCSSVarName(path.split('.'))}`
       : `@${getCSSVarName(path.split('.'))}`
