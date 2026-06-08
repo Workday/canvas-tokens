@@ -1418,6 +1418,18 @@
       "0": {
         "value": "-apple-system, BlinkMacSystemFont, \"Sana Serif\", Roboto, Inter, system-ui, sans-serif, Avenir, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
         "type": "text"
+      },
+      "50": {
+        "value": "Sana Sans LCG 05 VF",
+        "type": "text"
+      },
+      "100": {
+        "value": "IBM Plex Mono",
+        "type": "text"
+      },
+      "200": {
+        "value": "Noto Sans",
+        "type": "text"
       }
     },
     "font-weight": {
