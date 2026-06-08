@@ -41,7 +41,7 @@ export const formatSassTheme: Formatter = ({dictionary}) => {
     ${dictionary.allTokens
       .map(
         token =>
-          `${token.path.join('-').toLowerCase()}: ${getValue(
+          `$cnvs-${token.path.join('-').toLowerCase()}: ${getValue(
             token.value,
             token.original.value,
             'sass'
@@ -56,7 +56,7 @@ export const formatLessTheme: Formatter = ({dictionary}) => {
     ${dictionary.allTokens
       .map(
         token =>
-          `@${token.path.join('-').toLowerCase()}: ${getValue(
+          `@cnvs-${token.path.join('-').toLowerCase()}: ${getValue(
             token.value,
             token.original.value,
             'less'
