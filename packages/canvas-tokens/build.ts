@@ -145,7 +145,9 @@ const sanaConfig = setConfig({
         {
           level: ['base', 'brand', 'sys'],
           filter: ({filePath, path}) =>
-            filePath.includes('theme/sana.json') && !path.includes('shadow'),
+            filePath.includes('theme/sana.json') &&
+            !path.includes('shadow') &&
+            !path.join('-').includes('brand.action'),
           format: '{platform}/theme',
           options: {
             outputReferences: true,
