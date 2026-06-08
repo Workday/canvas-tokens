@@ -31,7 +31,7 @@ export function formatJSVar(varName: string) {
 
 export function TokenGrid<T>({caption, children, headings, rows}: TokenGridProps<T>) {
   return (
-    <table className="token-grid">
+    <table className="token-grid" data-theme="sana">
       {caption && (
         <caption className="token-grid__caption cnvs-sys-type-subtext-large">{caption}</caption>
       )}
