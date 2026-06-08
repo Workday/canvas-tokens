@@ -15,6 +15,7 @@ import {mergeObjects} from './mergeObjects';
 import {mergeTypes} from './mergeTypes';
 import {mergeStyleReferences} from './mergeStyleReferences';
 import {formatCSSShadow, formatLessShadow, formatSassShadow} from './formatShadowStyles';
+import {formatCSSTheme, formatSassTheme, formatLessTheme} from './formatToTheme';
 
 export const formats: Record<string, Formatter> = {
   // formatter creating the inline common-js file structure
@@ -71,4 +72,10 @@ export const formats: Record<string, Formatter> = {
   // formatter creating the csv file structure
   // with tokens info
   'csv/tokens-info-export': formatTokensInfoExportCSV,
+  // formatter creating the css theme file structure
+  'css/theme': formatCSSTheme,
+  // formatter creating the sass theme file structure
+  'scss/theme': formatSassTheme,
+  // formatter creating the less theme file structure
+  'less/theme': formatLessTheme,
 };

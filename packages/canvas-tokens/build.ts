@@ -131,6 +131,34 @@ const config = setConfig({
   },
 });
 
+const sanaConfig = setConfig({
+  source: ['tokens/**/*.json', 'theme/sana.json'],
+  platforms: ['css', 'scss', 'less'],
+  levels: ['base', 'brand', 'sys'],
+  platformOptions: {
+    'css, scss, less': {
+      buildPath: '../canvas-tokens-web/',
+      transformGroup: 'sana-web',
+      fileName: '{platform}/sana/_variables',
+      prefix: 'cnvs-',
+      modifiers: [
+        {
+          level: ['base', 'brand', 'sys'],
+          filter: ({filePath, path}) =>
+            filePath.includes('theme/sana.json') && !path.includes('shadow'),
+          format: '{platform}/theme',
+          options: {
+            outputReferences: true,
+          },
+        },
+      ],
+    },
+    scss: {
+      extensions: ['sass', 'scss'],
+    },
+  },
+});
+
 // Setup format to create ts file with type declarations
 Object.entries(formats).forEach(([key, value]) => {
   StyleDictionary.registerFormat({
@@ -174,6 +202,11 @@ StyleDictionary.registerTransformGroup({
 });
 
 StyleDictionary.registerTransformGroup({
+  name: 'sana-web',
+  transforms: [...webTransforms, 'oklch/flatten'],
+});
+
+StyleDictionary.registerTransformGroup({
   name: 'legacy-web',
   transforms: [...webTransforms, 'value/deprecated-values'],
 });
@@ -184,3 +217,4 @@ StyleDictionary.registerTransformGroup({
 });
 
 StyleDictionary.extend(config).buildAllPlatforms();
+StyleDictionary.extend(sanaConfig).buildAllPlatforms();

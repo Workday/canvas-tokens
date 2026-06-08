@@ -4,8 +4,8 @@ export const isSysShadow: Matcher = ({path: [level, type]}) => {
   return level === 'sys' && type === 'depth';
 };
 
-export const isBaseFontFamily: Matcher = ({path: [level, category]}) => {
-  return level === 'base' && category === 'font-family';
+export const isBaseFontFamily: Matcher = ({path: [level, category, name]}) => {
+  return level === 'base' && category === 'font-family' && !['0', 'fallback'].includes(name);
 };
 
 export const isBaseFontWeight: Matcher = ({type, path: [level, category]}) => {

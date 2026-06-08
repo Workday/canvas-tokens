@@ -13,6 +13,14 @@ import {transformMath} from './transformMath';
 import {transformNameToCamelCase} from './transformNameToCamelCase';
 
 export const transforms: Record<string, Transform> = {
+  'oklch/flatten': {
+    type: 'value',
+    transitive: true,
+    matcher: ({value}) => typeof value === 'object' && 'components' in value,
+    transformer: ({value}) => {
+      return `oklch(${value.components.join(' ')} / ${value.alpha})`;
+    },
+  },
   // transform function that generates fallback as deprecated values for a new token
   'value/deprecated-values': {
     type: 'value',
