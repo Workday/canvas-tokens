@@ -22,7 +22,7 @@ const getValue = (value: any, originalValue: any, type: 'css' | 'sass' | 'less')
  * @returns file content as a string
  */
 export const formatCSSTheme: Formatter = ({dictionary}) => {
-  return `[data-theme="sana"] {
+  return `[data-theme="sana-canvas"] {
     ${dictionary.allTokens
       .map(
         token =>
@@ -37,7 +37,7 @@ export const formatCSSTheme: Formatter = ({dictionary}) => {
 };
 
 export const formatSassTheme: Formatter = ({dictionary}) => {
-  return `[data-theme="sana"] {
+  return `[data-theme="sana-canvas"] {
     ${dictionary.allTokens
       .map(
         token =>
@@ -52,7 +52,7 @@ export const formatSassTheme: Formatter = ({dictionary}) => {
 };
 
 export const formatLessTheme: Formatter = ({dictionary}) => {
-  return `[data-theme="sana"] {
+  return `[data-theme="sana-canvas"] {
     ${dictionary.allTokens
       .map(
         token =>
