@@ -41,7 +41,7 @@ jobs:
       
       - uses: actions/setup-node@v6
         with:
-          node-version: 22.x
+          node-version: 24.x
           # Do NOT set registry-url - it creates token-based auth that conflicts with OIDC
       
       - uses: Workday/canvas-kit-actions/install@v1
