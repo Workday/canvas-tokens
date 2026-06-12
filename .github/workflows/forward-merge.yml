@@ -86,7 +86,7 @@ jobs:
 
       - name: Cache Build
         id: build-cache
-        uses: actions/cache/@v2
+        uses: actions/cache@v5
         with:
           path: docs
           key: ${{ runner.os }}-build-${{ github.sha }}
