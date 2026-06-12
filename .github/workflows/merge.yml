@@ -19,7 +19,7 @@ jobs:
         run: yarn install
       # - uses: Workday/canvas-kit-actions/install@v1
       #   with:
-      #     node_version: 18.x
+      #     node_version: 24.x
       
       - name: Build Tokens
         shell: bash
