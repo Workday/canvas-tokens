@@ -3,6 +3,7 @@ import {camelCase} from 'case-anything';
 import * as math from 'mathjs';
 import {isMathExpression, isComposite} from '../../filters';
 import {generateFallbacks} from '../../transformers/generateNewTokenFallback';
+import {mapFontWeight} from '../../transformers/mapFontWeight';
 
 type ChangeValueFunction = (token: TransformedToken) => Record<string, any> | string;
 
@@ -110,6 +111,41 @@ type CSSVarObject = {
 };
 
 /**
+ * Resolves the literal fallback value for a single composite (typography)
+ * sub-property from its referenced token. The es6/common-js platform does not
+ * run the web value transforms, so `ref.value` is still raw here. We therefore
+ * derive a clean value the same way those transforms would:
+ *  - prefer the token's own `deprecatedValues.base` literal when present
+ *    (e.g. `font-size`/`line-height` resolve to `1.125rem`/`1.75rem`),
+ *  - otherwise format the resolved value by category (font family, font
+ *    weight, letter spacing, math expressions).
+ */
+const resolveCompositeLeafFallback = (ref: TransformedToken): string => {
+  const deprecatedValues = ref.original?.deprecatedValues as Record<string, unknown> | undefined;
+
+  if (deprecatedValues && typeof deprecatedValues.base === 'string') {
+    return deprecatedValues.base;
+  }
+
+  const category = ref.path[1];
+  const rawValue = String(ref.value);
+
+  if (category === 'font-family') {
+    return `"${rawValue}"`;
+  }
+
+  if (category === 'font-weight') {
+    return mapFontWeight({value: rawValue} as TransformedToken);
+  }
+
+  if (category === 'letter-spacing') {
+    return `${parseFloat(rawValue) / 16}rem`;
+  }
+
+  return resolveMathExpressions(rawValue);
+};
+
+/**
  * Utility function to change token composite values to css var and keys to camel case and regular token value to CSS var name
  * @param {Object} token the token object
  * @param {Function} getRefs: style dictionary getReferences function
@@ -143,7 +179,10 @@ export const changeValuesToCSSVars = (
             ...acc,
             [name]: {
               cssVarName,
-              fallbackValue: getFullFallback(value),
+              // Each sub-property must fall back to its own referenced token
+              // (e.g. `fontSize` → the `font-size` token), not to the composite
+              // typography token itself. Mirrors the `sana` object structure.
+              fallbackValue: `var(${cssVarName}, ${resolveCompositeLeafFallback(ref)})`,
             },
           };
         }
