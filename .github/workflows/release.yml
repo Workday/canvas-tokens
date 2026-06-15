@@ -34,19 +34,19 @@ jobs:
       ## First, we'll checkout the repository. We don't persist credentials because we need a
       ## Personal Access Token to push on a branch that is protected. See
       ## https://github.com/cycjimmy/semantic-release-action#basic-usage
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
           fetch-depth: 0 # Used for conventional commit ranges
       
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22.x
+          node-version: 24.x
           # Do NOT set registry-url - it creates token-based auth that conflicts with OIDC
       
-      - uses: Workday/canvas-kit-actions/install@v1
+      - uses: Workday/canvas-kit-actions/install@v2
         with:
-          node_version: 22.x
+          node_version: 24.x
       
       # Upgrade npm to 11.5.1+ for OIDC support (Node.js 22.x comes with npm 10.x)
       - name: Upgrade npm for OIDC support
@@ -95,7 +95,7 @@ jobs:
             echo "preid=beta" >> "$GITHUB_OUTPUT"
           fi
       
-      - uses: Workday/canvas-kit-actions/do-release@v1
+      - uses: Workday/canvas-kit-actions/do-release@v2
         if: ${{ steps.set_version.outputs.version }}
         id: release
         with:
