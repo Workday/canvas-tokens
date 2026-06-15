@@ -131,6 +131,55 @@ const config = setConfig({
   },
 });
 
+const sanaConfig = setConfig({
+  source: ['tokens/**/*.json', 'theme/sana.json'],
+  platforms: ['css', 'scss', 'less', 'es6', 'common-js'],
+  levels: ['base', 'brand', 'sys'],
+  platformOptions: {
+    'css, scss, less': {
+      buildPath: '../canvas-tokens-web/',
+      transformGroup: 'sana-web',
+      fileName: '{platform}/sana/_variables',
+      prefix: 'cnvs-',
+      modifiers: [
+        {
+          level: ['base', 'brand', 'sys'],
+          filter: token => filters.isSanaTheme(token) && token.type !== 'typography',
+          format: '{platform}/theme',
+          options: {
+            outputReferences: true,
+          },
+        },
+      ],
+    },
+    scss: {
+      extensions: ['sass', 'scss'],
+    },
+    'es6, common-js': {
+      buildPath: '../canvas-tokens-web/dist/',
+      transformGroup: 'sana-js',
+      fileName: '{platform}/{level}/sana',
+      extensions: ['js', 'd.ts'],
+      modifiers: [
+        {
+          level: ['base', 'brand', 'sys'],
+          extensions: ['js'],
+          format: 'js/{platform}/sana-object',
+          filterByLevel: true,
+          filter: filters.isSanaTheme,
+        },
+        {
+          level: ['base', 'brand', 'sys'],
+          extensions: ['d.ts'],
+          format: 'ts/sana-object',
+          filterByLevel: true,
+          filter: filters.isSanaTheme,
+        },
+      ],
+    },
+  },
+});
+
 // Setup format to create ts file with type declarations
 Object.entries(formats).forEach(([key, value]) => {
   StyleDictionary.registerFormat({
@@ -168,9 +217,34 @@ const webTransforms = [
   'value/line-height/px2rem',
 ];
 
+const sanaJSTransforms = [
+  'value/duration/ms',
+  'value/flatten-border',
+  'value/shadow/flat-sys',
+  'value/breakpoints/px',
+  'value/wrapped-font-family',
+  'value/math',
+  'value/opacity',
+  'value/letter-spacing/px2rem',
+  'value/font-weight/numbers',
+  'value/line-height/px2rem',
+  'oklch/flatten',
+  'name/camel',
+];
+
+StyleDictionary.registerTransformGroup({
+  name: 'sana-js',
+  transforms: sanaJSTransforms,
+});
+
 StyleDictionary.registerTransformGroup({
   name: 'web',
   transforms: webTransforms,
+});
+
+StyleDictionary.registerTransformGroup({
+  name: 'sana-web',
+  transforms: [...webTransforms, 'oklch/flatten'],
 });
 
 StyleDictionary.registerTransformGroup({
@@ -184,3 +258,4 @@ StyleDictionary.registerTransformGroup({
 });
 
 StyleDictionary.extend(config).buildAllPlatforms();
+StyleDictionary.extend(sanaConfig).buildAllPlatforms();

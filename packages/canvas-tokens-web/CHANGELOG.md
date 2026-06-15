@@ -1,5 +1,28 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.0
+
+### Minor Changes
+
+- ### Documentation
+
+  - docs: Add missing to Deprecated Space Tokens in v4UpgradeGuideStories.mdx
+    ([#310](https://github.com/Workday/canvas-tokens/pull/310))
+    ([@mike-kerley](https://github.com/mike-kerley))
+
+  ### Infrastructure
+
+  - chore: Set up coderabbit rules ([#312](https://github.com/Workday/canvas-tokens/pull/312))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Tokens
+
+  - feat: Add Sana theme token set and comparison report
+    ([#311](https://github.com/Workday/canvas-tokens/pull/311))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) New Sana theme tokens have added as a css file
+    and they can be applied to any html element by adding attribute. The new or updated tokens for
+    sana can be used as in JS.
+
 ## 4.3.0
 
 ### Minor Changes
