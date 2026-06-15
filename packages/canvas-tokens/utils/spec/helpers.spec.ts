@@ -169,6 +169,102 @@ describe('utils to change value', () => {
     expect(result).toStrictEqual(expected);
   });
 
+  it('should fall back each typography sub-property to its own referenced token', () => {
+    const refMap: Record<string, any> = {
+      '{sys.font-family.default}': {
+        path: ['sys', 'font-family', 'default'],
+        value: 'Roboto',
+        original: {value: '{base.font-family.50}', type: 'text'},
+      },
+      '{sys.font-weight.normal}': {
+        path: ['sys', 'font-weight', 'normal'],
+        value: 'Regular',
+        original: {value: '{base.font-weight.400}', type: 'text'},
+      },
+      '{sys.line-height.body.md}': {
+        path: ['sys', 'line-height', 'body', 'md'],
+        value: '1rem / 2 * 3.50',
+        original: {
+          value: '{base.size.350}',
+          type: 'number',
+          deprecatedValues: {v3: 'sys.line-height.body.medium', base: '1.75rem'},
+        },
+      },
+      '{sys.font-size.body.md}': {
+        path: ['sys', 'font-size', 'body', 'md'],
+        value: '1rem / 2 * 2.25',
+        original: {
+          value: '{base.size.225}',
+          type: 'sizing',
+          deprecatedValues: {v3: 'sys.font-size.body.medium', base: '1.125rem'},
+        },
+      },
+      '{sys.letter-spacing.body.sm}': {
+        path: ['sys', 'letter-spacing', 'body', 'sm'],
+        value: 0.4,
+        original: {
+          value: '{base.letter-spacing.200}',
+          type: 'number',
+          deprecatedValues: {v3: 'sys.type.letter-spacing.body.small'},
+        },
+      },
+    };
+
+    const mockTypographyToken = {
+      value: {
+        'font-family': 'Roboto',
+        'font-weight': 'Regular',
+        'line-height': '1rem / 2 * 3.50',
+        'font-size': '1rem / 2 * 2.25',
+        'letter-spacing': 0.4,
+      },
+      type: 'typography',
+      filePath: 'tokens/web/sys.json',
+      isSource: true,
+      original: {
+        value: {
+          'font-family': '{sys.font-family.default}',
+          'font-weight': '{sys.font-weight.normal}',
+          'line-height': '{sys.line-height.body.md}',
+          'font-size': '{sys.font-size.body.md}',
+          'letter-spacing': '{sys.letter-spacing.body.sm}',
+        },
+        type: 'typography',
+        deprecatedValues: {v3: 'sys.type.body.md'},
+      },
+      name: 'typeBodyMd',
+      attributes: {},
+      path: ['sys', 'type', 'body', 'md'],
+    };
+
+    const result = changeValuesToCSSVars(mockTypographyToken as any, value => [refMap[value as string]]);
+
+    const expected = {
+      fontFamily: {
+        cssVarName: '--cnvs-sys-font-family-default',
+        fallbackValue: 'var(--cnvs-sys-font-family-default, "Roboto")',
+      },
+      fontWeight: {
+        cssVarName: '--cnvs-sys-font-weight-normal',
+        fallbackValue: 'var(--cnvs-sys-font-weight-normal, 400)',
+      },
+      lineHeight: {
+        cssVarName: '--cnvs-sys-line-height-body-md',
+        fallbackValue: 'var(--cnvs-sys-line-height-body-md, 1.75rem)',
+      },
+      fontSize: {
+        cssVarName: '--cnvs-sys-font-size-body-md',
+        fallbackValue: 'var(--cnvs-sys-font-size-body-md, 1.125rem)',
+      },
+      letterSpacing: {
+        cssVarName: '--cnvs-sys-letter-spacing-body-sm',
+        fallbackValue: 'var(--cnvs-sys-letter-spacing-body-sm, 0.025rem)',
+      },
+    };
+
+    expect(result).toStrictEqual(expected);
+  });
+
   it('should transform to original value', () => {
     const result = getOriginalValues(mockCompositeToken);
 
