@@ -1,0 +1,287 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+import {BaseSanaColors, BrandSanaColors, SystemSanaColors} from './examples/Color';
+
+<Meta title="Docs/Sana Theme/Tokens" />
+
+<Unstyled>
+
+# Sana Theme Tokens
+
+The Sana token set is an alternate theme for Canvas tokens. The values are scoped to a
+`[data-theme="sana"]` selector, so they only apply when an ancestor element opts in to the theme.
+This makes it possible to render the Sana palette inside an otherwise default Canvas application.
+
+## Usage
+
+### CSS
+
+Import the Sana stylesheet alongside the standard token stylesheets. Then add `data-theme="sana"` to
+any element you'd like to opt in (commonly the `<html>` or `<body>` element, or a single subtree if
+you want to scope the theme).
+
+```css
+/* styles.css */
+@import '@workday/canvas-tokens-web/css/base/_variables.css';
+@import '@workday/canvas-tokens-web/css/brand/_variables.css';
+@import '@workday/canvas-tokens-web/css/system/_variables.css';
+@import '@workday/canvas-tokens-web/css/component/_variables.css';
+@import '@workday/canvas-tokens-web/css/sana/_variables.css';
+```
+
+```html
+<!-- Apply the theme to a whole document... -->
+<html data-theme="sana">
+  ...
+</html>
+
+<!-- ...or just a subtree. -->
+<section data-theme="sana">
+  <button class="cnvs-button">I use Sana tokens</button>
+</section>
+```
+
+### JavaScript / TypeScript
+
+Each token level (`base`, `brand`, `system`) ships a `sana` entry point. Unlike the standard JS
+exports, every value is pre-wrapped with `var()` and includes the Sana fallback inline, so it can be
+assigned directly to a style property.
+
+```ts
+// styles.ts
+import '@workday/canvas-tokens-web/css/sana/_variables.css';
+import {base, brand, system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  backgroundColor: system.sana.color.bg.default,
+  color: system.sana.color.fg.default,
+  borderColor: brand.sana.neutral200,
+  outlineColor: base.sana.blueA300,
+};
+```
+
+> The Sana CSS variables only resolve to their themed values when `data-theme="sana"` is present on
+> an ancestor element. If the attribute is missing, the fallback baked into each `var()` expression
+> is used instead.
+
+---
+
+## Base Tokens
+
+Sana base tokens extend the base palette with the alpha variants and additional shades used by the
+Sana surface, accent, and chart systems.
+
+### New base tokens (not in the default theme)
+
+#### Palette — new `A300` alpha shades
+
+- `amberA300`
+- `azureA300`
+- `blueA300`
+- `coralA300`
+- `greenA300`
+- `indigoA300`
+- `magentaA300`
+- `orangeA300`
+- `purpleA300`
+- `redA300`
+- `tealA300`
+
+#### Palette — new neutral / slate / white shades
+
+- `neutral150`
+- `neutral850`
+- `neutralA150`
+- `neutralA850`
+- `slate150`
+- `slate850`
+- `slateA150`
+- `slateA850`
+- `whiteA150`
+- `whiteA850`
+
+#### Size — new large sizes
+
+- `size1600`
+- `size1800`
+- `size2000`
+- `size2400`
+- `size2800`
+- `size3200`
+
+#### Type — new font and weight tokens
+
+- `fontFamily0`
+- `fontWeight600`
+
+#### Type — new letter-spacing scale
+
+- `letterSpacing1`
+- `letterSpacing2`
+- `letterSpacing3`
+- `letterSpacing4`
+- `letterSpacing5`
+- `letterSpacing6`
+- `letterSpacing7`
+- `letterSpacing8`
+- `letterSpacing9`
+- `letterSpacing10`
+- `letterSpacing11`
+- `letterSpacing12`
+
+### Full base palette
+
+<BaseSanaColors />
+
+---
+
+## Brand Tokens
+
+Sana brand tokens add the alpha and neutral variants used by Sana branded components such as
+banners, focus rings, and selected states.
+
+### New brand tokens (not in the default theme)
+
+#### New `A300` alpha shades
+
+- `primaryA300`
+- `criticalA300`
+- `cautionA300`
+- `positiveA300`
+
+#### New brand neutral shades
+
+- `neutral150`
+- `neutral850`
+- `neutralA150`
+- `neutralA850`
+
+### Full brand palette
+
+<BrandSanaColors />
+
+---
+
+## System Tokens
+
+Sana system tokens are introduced under a brand new `--cnvs-sys-color-color-*` namespace (distinct
+from the default `--cnvs-sys-color-*` tokens), so every token in this section is effectively new.
+Non-color system tokens also gain new entries under existing namespaces.
+
+### New system tokens (not in the default theme)
+
+#### `breakpoints`
+
+- `breakpoints.xxl`
+
+#### `shape`
+
+- `shape.xs`
+- `shape.sm`
+- `shape.xxl`
+- `shape.xxxl`
+
+#### `lineHeight`
+
+- `lineHeight.body.md`
+
+#### `color.chart.diverging.azure.coral.*`
+
+- `color.chart.diverging.azure.coral.1`
+- `color.chart.diverging.azure.coral.2`
+- `color.chart.diverging.azure.coral.3`
+- `color.chart.diverging.azure.coral.4`
+- `color.chart.diverging.azure.coral.5`
+- `color.chart.diverging.azure.coral.6`
+- `color.chart.diverging.azure.coral.7`
+- `color.chart.diverging.azure.coral.8`
+- `color.chart.diverging.azure.coral.9`
+- `color.chart.diverging.azure.coral.10`
+- `color.chart.diverging.azure.coral.11`
+- `color.chart.diverging.azure.coral.12`
+- `color.chart.diverging.azure.coral.13`
+- `color.chart.diverging.azure.coral.14`
+- `color.chart.diverging.azure.coral.15`
+- `color.chart.diverging.azure.coral.16`
+- `color.chart.diverging.azure.coral.17`
+- `color.chart.diverging.azure.coral.18`
+- `color.chart.diverging.azure.coral.19`
+- `color.chart.diverging.azure.coral.20`
+- `color.chart.diverging.azure.coral.21`
+- `color.chart.diverging.azure.coral.22`
+- `color.chart.diverging.azure.coral.23`
+
+#### `color.chart.categorical.*`
+
+- `color.chart.categorical.1`
+- `color.chart.categorical.2`
+- `color.chart.categorical.3`
+- `color.chart.categorical.4`
+- `color.chart.categorical.5`
+- `color.chart.categorical.6`
+- `color.chart.categorical.7`
+- `color.chart.categorical.8`
+- `color.chart.categorical.9`
+- `color.chart.categorical.10`
+- `color.chart.categorical.11`
+- `color.chart.categorical.12`
+- `color.chart.categorical.13`
+- `color.chart.categorical.14`
+- `color.chart.categorical.15`
+- `color.chart.categorical.16`
+
+#### `color.chart.sequential.*`
+
+- `color.chart.sequential.1`
+- `color.chart.sequential.2`
+- `color.chart.sequential.3`
+- `color.chart.sequential.4`
+- `color.chart.sequential.5`
+- `color.chart.sequential.6`
+- `color.chart.sequential.7`
+- `color.chart.sequential.8`
+- `color.chart.sequential.9`
+- `color.chart.sequential.10`
+- `color.chart.sequential.11`
+
+#### `depth.*`
+
+- `depth.1`
+- `depth.2`
+- `depth.3`
+- `depth.4`
+- `depth.5`
+- `depth.6`
+
+#### `fontFamily.*`
+
+- `fontFamily.fallback`
+
+#### `letterSpacing.*`
+
+- `letterSpacing.subtext.sm`
+- `letterSpacing.subtext.md`
+- `letterSpacing.subtext.lg`
+- `letterSpacing.body.sm`
+- `letterSpacing.body.md`
+- `letterSpacing.body.lg`
+- `letterSpacing.heading.sm`
+- `letterSpacing.heading.md`
+- `letterSpacing.heading.lg`
+- `letterSpacing.title.sm`
+- `letterSpacing.title.md`
+- `letterSpacing.title.lg`
+
+#### `fontWeight.*`
+
+- `fontWeight.regular`
+- `fontWeight.semibold`
+
+### Full system palette
+
+Each grid below is rendered inside a `data-theme="sana"` container so the swatches reflect the
+themed values.
+
+<SystemSanaColors />
+
+</Unstyled>

@@ -1,0 +1,3149 @@
+{
+  "base": {
+    "palette": {
+      "amber": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7792, 0.1592, 90.57],
+            "alpha": 0.0902,
+            "hex": "#DEB10017"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8854, 0.1841, 100.16],
+            "alpha": 0.2196,
+            "hex": "#F6DB0138"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8964, 0.1849, 97.38],
+            "alpha": 0.3412,
+            "hex": "#FFDC0157"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8846, 0.1822, 96.67],
+            "alpha": 0.6314,
+            "hex": "#FCD700A1"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8372, 0.1718, 83.95],
+            "alpha": 0.9529,
+            "hex": "#FEBE00F3"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "azure": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7461, 0.1557, 233.78],
+            "alpha": 0.0588,
+            "hex": "#00BBFF0F"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7349, 0.1588, 236.29],
+            "alpha": 0.1373,
+            "hex": "#00B6FF23"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6542, 0.1794, 248.76],
+            "alpha": 0.5255,
+            "hex": "#0094F786"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "blue": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6141, 0.2114, 256.22],
+            "alpha": 0.0706,
+            "hex": "#007FFF12"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6141, 0.2114, 256.22],
+            "alpha": 0.1098,
+            "hex": "#007FFF1C"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6077, 0.215, 256.92],
+            "alpha": 0.1608,
+            "hex": "#007CFF29"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.5987, 0.22, 257.83],
+            "alpha": 0.4667,
+            "hex": "#0078FF77"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "coral": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6672, 0.2239, 36.87],
+            "alpha": 0.0392,
+            "hex": "#FF4D000A"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6482, 0.2393, 32.96],
+            "alpha": 0.0745,
+            "hex": "#FF360013"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6492, 0.2384, 33.16],
+            "alpha": 0.1451,
+            "hex": "#FF370025"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6524, 0.2357, 33.8],
+            "alpha": 0.3529,
+            "hex": "#FF3C005A"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.654, 0.2344, 34.12],
+            "alpha": 0.5686,
+            "hex": "#FF3E0091"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "green": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8669, 0.2908, 142.93],
+            "alpha": 0.0706,
+            "hex": "#00FF1D12"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8673, 0.2872, 143.33],
+            "alpha": 0.1451,
+            "hex": "#00FF2A25"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8314, 0.2728, 143.62],
+            "alpha": 0.2863,
+            "hex": "#00F12E49"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7945, 0.2509, 144.87],
+            "alpha": 0.5961,
+            "hex": "#00E33E98"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7417, 0.2214, 146.84],
+            "alpha": 0.7765,
+            "hex": "#00CE4BC6"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "indigo": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.452, 0.3132, 264.06],
+            "alpha": 0.0431,
+            "hex": "#0000FF0B"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.4624, 0.3062, 264.19],
+            "alpha": 0.0784,
+            "hex": "#0019FF14"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.4576, 0.3094, 264.14],
+            "alpha": 0.1216,
+            "hex": "#0010FF1F"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.4602, 0.3077, 264.17],
+            "alpha": 0.2314,
+            "hex": "#0015FF3B"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.4556, 0.3108, 264.11],
+            "alpha": 0.3569,
+            "hex": "#000BFF5B"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "magenta": {
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7017, 0.3225, 328.36],
+            "alpha": 0.0745,
+            "hex": "#FF00FF13"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.687, 0.3067, 334.22],
+            "alpha": 0.1529,
+            "hex": "#FF00E527"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6972, 0.3174, 330.1],
+            "alpha": 0.24,
+            "hex": "#FF01F73D"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6773, 0.2957, 338.89],
+            "alpha": 0.4196,
+            "hex": "#FF00D26B"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "neutral": {
+        "150": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.906, 0, 89.88],
+            "alpha": 1,
+            "hex": "#e0e0e0"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8047, 0, 89.88],
+            "alpha": 1,
+            "hex": "#bfbfbf"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "400": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7219, 0, 89.88],
+            "alpha": 1,
+            "hex": "#a5a5a5"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "700": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.4386, 0, 89.88],
+            "alpha": 1,
+            "hex": "#525252"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "800": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.3171, 0, 89.88],
+            "alpha": 1,
+            "hex": "#323232"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "850": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.2645, 0, 89.88],
+            "alpha": 1,
+            "hex": "#252525"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "900": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.2478, 0, 89.88],
+            "alpha": 1,
+            "hex": "#212121"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "950": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.228, 0, 89.88],
+            "alpha": 1,
+            "hex": "#1c1c1c"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "975": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.196, 0, 89.88],
+            "alpha": 1,
+            "hex": "#151515"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.0196,
+            "hex": "#00000005"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.0392,
+            "hex": "#0000000A"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.0745,
+            "hex": "#00000013"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A150": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.1216,
+            "hex": "#0000001F"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.1686,
+            "hex": "#0000002B"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.251,
+            "hex": "#00000040"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A400": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.3529,
+            "hex": "#0000005A"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A500": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.4706,
+            "hex": "#00000078"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A600": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.6,
+            "hex": "#00000099"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A700": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.6784,
+            "hex": "#000000AD"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A800": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.8039,
+            "hex": "#000000CD"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A850": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.8549,
+            "hex": "#000000DA"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A900": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.8706,
+            "hex": "#000000DE"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A950": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.8902,
+            "hex": "#000000E3"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A975": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0, 0, 0],
+            "alpha": 0.9176,
+            "hex": "#000000EA"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "orange": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7093, 0.1802, 52.88],
+            "alpha": 0.098,
+            "hex": "#F57A0019"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.75, 0.1792, 58.11],
+            "alpha": 0.1647,
+            "hex": "#FF8C012A"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7342, 0.1848, 53.62],
+            "alpha": 0.2471,
+            "hex": "#FF82003F"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7295, 0.1867, 52.32],
+            "alpha": 0.4588,
+            "hex": "#FF7E0075"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7426, 0.1817, 56.01],
+            "alpha": 0.8,
+            "hex": "#FF8700CC"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "purple": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.5597, 0.2956, 301.91],
+            "alpha": 0.0392,
+            "hex": "#9900FF0A"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.5569, 0.2953, 301.2],
+            "alpha": 0.0863,
+            "hex": "#9700FF16"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.5812, 0.2986, 307.02],
+            "alpha": 0.1647,
+            "hex": "#AA00FF2A"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6012, 0.302, 311.32],
+            "alpha": 0.2431,
+            "hex": "#B900FF3E"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.5935, 0.3006, 309.71],
+            "alpha": 0.3569,
+            "hex": "#B300FF5B"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "red": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6329, 0.253, 30.1],
+            "alpha": 0.0431,
+            "hex": "#FF17000B"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6326, 0.2533, 30.04],
+            "alpha": 0.0902,
+            "hex": "#FF160017"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6339, 0.2521, 30.28],
+            "alpha": 0.1529,
+            "hex": "#FF1A0027"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6361, 0.25, 30.68],
+            "alpha": 0.3451,
+            "hex": "#FF200058"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6347, 0.2513, 30.42],
+            "alpha": 0.5294,
+            "hex": "#FF1C0087"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "slate": {
+        "25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.9849, 0.0029, 264.51],
+            "alpha": 1,
+            "hex": "#f9fafc"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.9695, 0.0046, 258.42],
+            "alpha": 1,
+            "hex": "#f3f5f8"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.9442, 0.007, 248.08],
+            "alpha": 1,
+            "hex": "#e9edf1"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "150": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.908, 0.011, 256.7],
+            "alpha": 1,
+            "hex": "#dce1e8"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8706, 0.0158, 257.2],
+            "alpha": 1,
+            "hex": "#ced5df"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.804, 0.0214, 254.94],
+            "alpha": 1,
+            "hex": "#b6c0cd"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "400": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.721, 0.024, 254.4],
+            "alpha": 1,
+            "hex": "#9ba6b4"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "500": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.6225, 0.0248, 254.47],
+            "alpha": 1,
+            "hex": "#7d8896"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "600": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.5099, 0.0241, 255.01],
+            "alpha": 1,
+            "hex": "#5d6774"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "700": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.44, 0.023, 255.6],
+            "alpha": 1,
+            "hex": "#4a535f"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "800": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.3147, 0.0128, 253],
+            "alpha": 1,
+            "hex": "#2d3238"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "850": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.2667, 0.011, 254.03],
+            "alpha": 1,
+            "hex": "#22262b"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "900": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.2458, 0.0112, 254.05],
+            "alpha": 1,
+            "hex": "#1d2126"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "950": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.2202, 0.0115, 254.08],
+            "alpha": 1,
+            "hex": "#171b20"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "975": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.1933, 0.0102, 248.36],
+            "alpha": 1,
+            "hex": "#111519"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.3276, 0.1499, 261.85],
+            "alpha": 0.0235,
+            "hex": "#002A8006"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.3064, 0.1202, 259.24],
+            "alpha": 0.0471,
+            "hex": "#002A6A0C"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.3039, 0.0952, 253.5],
+            "alpha": 0.0863,
+            "hex": "#002E5D16"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A150": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.2742, 0.101, 257.89],
+            "alpha": 0.1373,
+            "hex": "#00245723"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.2751, 0.1026, 258.16],
+            "alpha": 0.1922,
+            "hex": "#00245831"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.2639, 0.0924, 256.67],
+            "alpha": 0.2863,
+            "hex": "#00235049"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A400": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.2307, 0.0767, 255.27],
+            "alpha": 0.3922,
+            "hex": "#001C4064"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A500": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.1993, 0.0626, 253.59],
+            "alpha": 0.5098,
+            "hex": "#00163182"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A600": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.1704, 0.05, 251.35],
+            "alpha": 0.6353,
+            "hex": "#001024A2"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A700": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.1549, 0.0434, 249.61],
+            "alpha": 0.7098,
+            "hex": "#000D1EB5"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A800": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.1165, 0.026, 238.48],
+            "alpha": 0.8235,
+            "hex": "#00060DD2"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A850": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.1063, 0.0237, 238.42],
+            "alpha": 0.8667,
+            "hex": "#00050ADD"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A900": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.1055, 0.0236, 238.48],
+            "alpha": 0.8863,
+            "hex": "#00050AE2"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A950": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.1046, 0.0233, 238.41],
+            "alpha": 0.9098,
+            "hex": "#00040AE8"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A975": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.1028, 0.0214, 233.55],
+            "alpha": 0.9333,
+            "hex": "#000409EE"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "teal": {
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.8768, 0.1491, 201.26],
+            "alpha": 0.0824,
+            "hex": "#00F3FF15"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.838, 0.1438, 207.32],
+            "alpha": 0.1804,
+            "hex": "#00E3FA2E"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7626, 0.1316, 209.35],
+            "alpha": 0.22,
+            "hex": "#00C8DF38"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.7093, 0.1219, 208.01],
+            "alpha": 0.3686,
+            "hex": "#00B6C95E"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [0.644, 0.1109, 208.68],
+            "alpha": 0.5647,
+            "hex": "#009FB190"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      },
+      "white": {
+        "A0": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 0],
+            "alpha": 0,
+            "hex": "#FFFFFF00"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A25": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.023,
+            "hex": "#FFFFFF06"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A50": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.045,
+            "hex": "#FFFFFF0B"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A100": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.118,
+            "hex": "#FFFFFF1E"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A200": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.25,
+            "hex": "#FFFFFF40"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A300": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.374,
+            "hex": "#FFFFFF5F"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A400": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.489,
+            "hex": "#FFFFFF7D"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A500": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.591,
+            "hex": "#FFFFFF97"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A600": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.698,
+            "hex": "#FFFFFFB2"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A700": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.788,
+            "hex": "#FFFFFFC9"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A800": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.861,
+            "hex": "#FFFFFFDC"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A900": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.921,
+            "hex": "#FFFFFFEB"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A950": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.947,
+            "hex": "#FFFFFFF1"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A975": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.974,
+            "hex": "#FFFFFFF8"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A150": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.1841,
+            "hex": "#FFFFFF2F"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        },
+        "A850": {
+          "value": {
+            "colorSpace": "oklch",
+            "components": [1, 0, 89.88],
+            "alpha": 0.8909,
+            "hex": "#FFFFFFE3"
+          },
+          "type": "color",
+          "deprecatedValues": {}
+        }
+      }
+    },
+    "shadow": {
+      "5": {
+        "100": {
+          "y": {
+            "value": 5,
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.250}",
+            "type": "number"
+          },
+          "spread": {
+            "value": -4,
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "{base.shadow.5.100.y} * 2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.500}",
+            "type": "number"
+          },
+          "spread": {
+            "value": -3,
+            "type": "number"
+          }
+        }
+      },
+      "6": {
+        "100": {
+          "y": {
+            "value": 6,
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.300}",
+            "type": "number"
+          },
+          "spread": {
+            "value": -4,
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": "{base.shadow.6.100.y} * 2",
+            "type": "number"
+          },
+          "blur": {
+            "value": "{base.size.600}",
+            "type": "number"
+          },
+          "spread": {
+            "value": -12,
+            "type": "number"
+          }
+        }
+      }
+    },
+    "size": {
+      "1600": {
+        "value": "{base.baseline} * 16.00",
+        "type": "sizing",
+        "deprecatedValues": {
+          "base": "8rem"
+        },
+        "description": "128px / 8rem"
+      },
+      "1800": {
+        "value": "{base.baseline} * 18.00",
+        "type": "sizing",
+        "deprecatedValues": {
+          "base": "9rem"
+        },
+        "description": "144px / 9rem"
+      },
+      "2000": {
+        "value": "{base.baseline} * 20.00",
+        "type": "sizing",
+        "deprecatedValues": {
+          "base": "10rem"
+        },
+        "description": "160px / 10rem"
+      },
+      "2400": {
+        "value": "{base.baseline} * 24.00",
+        "type": "sizing",
+        "deprecatedValues": {
+          "base": "12rem"
+        },
+        "description": "192px / 12rem"
+      },
+      "2800": {
+        "value": "{base.baseline} * 28.00",
+        "type": "sizing",
+        "deprecatedValues": {
+          "base": "14rem"
+        },
+        "description": "224px / 14rem"
+      },
+      "3200": {
+        "value": "{base.baseline} * 32.00",
+        "type": "sizing",
+        "deprecatedValues": {
+          "base": "16rem"
+        },
+        "description": "256px / 16rem"
+      }
+    },
+    "letter-spacing": {
+      "1": {
+        "value": 0.13,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "2": {
+        "value": 0.12,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "3": {
+        "value": 0.11,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "4": {
+        "value": 0.1,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "5": {
+        "value": 0,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "6": {
+        "value": -0.1,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "7": {
+        "value": -0.3,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "8": {
+        "value": -0.34,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "9": {
+        "value": -0.38,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "10": {
+        "value": -0.46,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "11": {
+        "value": -0.54,
+        "type": "number",
+        "deprecatedValues": {}
+      },
+      "12": {
+        "value": -0.62,
+        "type": "number",
+        "deprecatedValues": {}
+      }
+    },
+    "font-family": {
+      "0": {
+        "value": "-apple-system, BlinkMacSystemFont, \"Sana Serif\", Roboto, Inter, system-ui, sans-serif, Avenir, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "type": "text"
+      },
+      "50": {
+        "value": "Sana Sans LCG 05 VF",
+        "type": "text"
+      },
+      "100": {
+        "value": "IBM Plex Mono",
+        "type": "text"
+      },
+      "200": {
+        "value": "Noto Sans",
+        "type": "text"
+      }
+    },
+    "font-weight": {
+      "600": {
+        "value": 600,
+        "type": "text"
+      }
+    }
+  },
+  "brand": {
+    "primary": {
+      "A300": {
+        "value": "{base.palette.blue.A300}",
+        "type": "color",
+        "deprecatedValues": {}
+      }
+    },
+    "critical": {
+      "A300": {
+        "value": "{base.palette.red.A300}",
+        "type": "color",
+        "deprecatedValues": {}
+      }
+    },
+    "caution": {
+      "A300": {
+        "value": "{base.palette.amber.A300}",
+        "type": "color",
+        "deprecatedValues": {}
+      }
+    },
+    "positive": {
+      "A300": {
+        "value": "{base.palette.green.A300}",
+        "type": "color",
+        "deprecatedValues": {}
+      }
+    },
+    "neutral": {
+      "25": {
+        "value": "{base.palette.neutral.25}",
+        "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.neutral.lightest"
+        },
+        "description": ""
+      },
+      "50": {
+        "value": "{base.palette.neutral.50}",
+        "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.neutral.lighter"
+        },
+        "description": ""
+      },
+      "100": {
+        "value": "{base.palette.neutral.100}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": ""
+      },
+      "150": {
+        "value": "{base.palette.neutral.150}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "200": {
+        "value": "{base.palette.neutral.200}",
+        "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.neutral.light"
+        },
+        "description": ""
+      },
+      "300": {
+        "value": "{base.palette.neutral.300}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": ""
+      },
+      "400": {
+        "value": "{base.palette.neutral.400}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": ""
+      },
+      "500": {
+        "value": "{base.palette.neutral.500}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": ""
+      },
+      "600": {
+        "value": "{base.palette.neutral.600}",
+        "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.neutral.base"
+        },
+        "description": ""
+      },
+      "700": {
+        "value": "{base.palette.neutral.700}",
+        "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.neutral.dark"
+        },
+        "description": ""
+      },
+      "800": {
+        "value": "{base.palette.neutral.800}",
+        "type": "color",
+        "deprecatedValues": {
+          "v3": "brand.neutral.darkest"
+        },
+        "description": ""
+      },
+      "850": {
+        "value": "{base.palette.neutral.850}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "900": {
+        "value": "{base.palette.neutral.900}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": ""
+      },
+      "950": {
+        "value": "{base.palette.neutral.950}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": ""
+      },
+      "975": {
+        "value": "{base.palette.neutral.975}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": ""
+      },
+      "A25": {
+        "value": "{base.palette.neutral.A25}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A50": {
+        "value": "{base.palette.neutral.A50}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A100": {
+        "value": "{base.palette.neutral.A100}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A150": {
+        "value": "{base.palette.neutral.A150}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A200": {
+        "value": "{base.palette.neutral.A200}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A300": {
+        "value": "{base.palette.neutral.A300}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A400": {
+        "value": "{base.palette.neutral.A400}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A500": {
+        "value": "{base.palette.neutral.A500}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A600": {
+        "value": "{base.palette.neutral.A600}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A700": {
+        "value": "{base.palette.neutral.A700}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A800": {
+        "value": "{base.palette.neutral.A800}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A850": {
+        "value": "{base.palette.neutral.A850}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A900": {
+        "value": "{base.palette.neutral.A900}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A950": {
+        "value": "{base.palette.neutral.A950}",
+        "type": "color",
+        "deprecatedValues": {}
+      },
+      "A975": {
+        "value": "{base.palette.neutral.A975}",
+        "type": "color",
+        "deprecatedValues": {}
+      }
+    },
+    "action": {
+      "base": {
+        "value": "{brand.neutral.975}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": "Base action color"
+      },
+      "lightest": {
+        "value": "{brand.neutral.25}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": "Lightest action color"
+      },
+      "light": {
+        "value": "{brand.neutral.200}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": "Light action color"
+      },
+      "darkest": {
+        "value": "{brand.neutral.975}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": "Darkest action color"
+      },
+      "dark": {
+        "value": "{brand.neutral.975}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": "Dark action color"
+      },
+      "accent": {
+        "value": "{base.palette.neutral.0}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": "Foreground color in actions"
+      },
+      "darker": {
+        "value": "{brand.neutral.975}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": "Dark action color"
+      },
+      "lighter": {
+        "value": "{brand.neutral.100}",
+        "type": "color",
+        "deprecatedValues": {},
+        "description": "Lightest action color"
+      }
+    }
+  },
+  "sys": {
+    "breakpoints": {
+      "xxl": {
+        "value": "{base.baseline} * 272.5",
+        "type": "dimension",
+        "description": "Figma only. Use as the max-width on xl media query."
+      }
+    },
+    "depth": {
+      "1": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{base.shadow.1.100.y}",
+            "blur": "{base.shadow.1.100.blur}",
+            "spread": "0",
+            "color": "{sys.color.shadow.base}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{base.shadow.1.200.y}",
+            "blur": "{base.shadow.1.200.blur}",
+            "spread": "0",
+            "color": "{sys.color.shadow.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Standard card depth"
+      },
+      "2": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{base.shadow.2.100.y}",
+            "blur": "{base.shadow.2.100.blur}",
+            "spread": "0",
+            "color": "{sys.color.shadow.base}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{base.shadow.2.200.y}",
+            "blur": "{base.shadow.2.200.blur}",
+            "spread": "0",
+            "color": "{sys.color.shadow.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Top navigation, Bottom Navigation"
+      },
+      "3": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{base.shadow.3.100.y}",
+            "blur": "{base.shadow.3.100.blur}",
+            "spread": "0",
+            "color": "{sys.color.shadow.base}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{base.shadow.3.200.y}",
+            "blur": "{base.shadow.3.200.blur}",
+            "spread": "0",
+            "color": "{sys.color.shadow.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Floating Action Buttons (FAB), Menus"
+      },
+      "4": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{base.shadow.4.100.y}",
+            "blur": "{base.shadow.4.100.blur}",
+            "spread": "0",
+            "color": "{sys.color.shadow.ambient}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{base.shadow.4.200.y}",
+            "blur": "{base.shadow.4.200.blur}",
+            "spread": "0",
+            "color": "{sys.color.shadow.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Bottom Sheets"
+      },
+      "5": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{base.shadow.5.100.y}",
+            "blur": "{base.shadow.5.100.blur}",
+            "spread": "{base.shadow.5.100.spread}",
+            "color": "{base.palette.neutral.A150}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{base.shadow.5.200.y}",
+            "blur": "{base.shadow.5.200.blur}",
+            "spread": "{base.shadow.5.200.spread}",
+            "color": "{base.palette.neutral.A150}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Modals"
+      },
+      "6": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{base.shadow.6.100.y}",
+            "blur": "{base.shadow.6.100.blur}",
+            "spread": "{base.shadow.6.100.spread}",
+            "color": "{base.palette.neutral.A300}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{base.shadow.6.200.y}",
+            "blur": "{base.shadow.6.200.blur}",
+            "spread": "{base.shadow.6.200.spread}",
+            "color": "{base.palette.neutral.A300}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Modal Popovers"
+      }
+    },
+    "shape": {
+      "xs": {
+        "value": "{base.size.50}",
+        "type": "borderRadius",
+        "description": "Checkbox"
+      },
+      "sm": {
+        "value": "{base.size.75}",
+        "type": "borderRadius",
+        "description": "Compact components that leverage smaller typography, like Pills or Status Indicator"
+      },
+      "xxl": {
+        "value": "{base.size.250}",
+        "type": "borderRadius",
+        "description": "Flat or raised surfaces, like Cards or Menu"
+      },
+      "xxxl": {
+        "value": "{base.size.350}",
+        "type": "borderRadius",
+        "description": "Large elevated surfaces, like Modals"
+      }
+    },
+    "font-family": {
+      "fallback": {
+        "value": "{base.font-family.0}",
+        "type": "text"
+      }
+    },
+    "line-height": {
+      "body": {
+        "md": {
+          "value": "{base.size.300}",
+          "type": "number",
+          "deprecatedValues": {
+            "v3": "sys.line-height.body.medium",
+            "base": "1.75rem"
+          }
+        }
+      }
+    },
+    "letter-spacing": {
+      "subtext": {
+        "sm": {
+          "value": "{base.letter-spacing.1}",
+          "type": "number",
+          "deprecatedValues": {
+            "v3": "sys.type.letter-spacing.subtext.small"
+          }
+        },
+        "md": {
+          "value": "{base.letter-spacing.2}",
+          "type": "number",
+          "deprecatedValues": {
+            "v3": "sys.type.letter-spacing.subtext.medium"
+          }
+        },
+        "lg": {
+          "value": "{base.letter-spacing.3}",
+          "type": "number",
+          "deprecatedValues": {
+            "v3": "sys.type.letter-spacing.subtext.large"
+          }
+        }
+      },
+      "body": {
+        "sm": {
+          "value": "{base.letter-spacing.4}",
+          "type": "number",
+          "deprecatedValues": {
+            "v3": "sys.type.letter-spacing.body.small"
+          }
+        },
+        "md": {
+          "value": "{base.letter-spacing.5}",
+          "type": "number"
+        },
+        "lg": {
+          "value": "{base.letter-spacing.6}",
+          "type": "number"
+        }
+      },
+      "heading": {
+        "sm": {
+          "value": "{base.letter-spacing.7}",
+          "type": "number"
+        },
+        "md": {
+          "value": "{base.letter-spacing.8}",
+          "type": "number"
+        },
+        "lg": {
+          "value": "{base.letter-spacing.9}",
+          "type": "number"
+        }
+      },
+      "title": {
+        "sm": {
+          "value": "{base.letter-spacing.10}",
+          "type": "number"
+        },
+        "md": {
+          "value": "{base.letter-spacing.11}",
+          "type": "number"
+        },
+        "lg": {
+          "value": "{base.letter-spacing.12}",
+          "type": "number"
+        }
+      }
+    },
+    "font-weight": {
+      "regular": {
+        "value": "{base.font-weight.400}",
+        "type": "text"
+      },
+      "semibold": {
+        "value": "{base.font-weight.600}",
+        "type": "text"
+      }
+    },
+    "type": {
+      "body": {
+        "md": {
+          "value": {
+            "fontFamily": "{sys.font-family.default}",
+            "fontWeight": "{sys.font-weight.normal}",
+            "lineHeight": "{sys.line-height.body.md}",
+            "fontSize": "{sys.font-size.body.md}",
+            "letterSpacing": "{sys.letter-spacing.body.md}"
+          },
+          "type": "typography"
+        },
+        "lg": {
+          "value": {
+            "fontFamily": "{sys.font-family.default}",
+            "fontWeight": "{sys.font-weight.normal}",
+            "lineHeight": "{sys.line-height.body.lg}",
+            "fontSize": "{sys.font-size.body.lg}",
+            "letterSpacing": "{sys.letter-spacing.body.lg}"
+          },
+          "type": "typography"
+        }
+      },
+      "heading": {
+        "sm": {
+          "value": {
+            "fontFamily": "{sys.font-family.default}",
+            "fontWeight": "{sys.font-weight.bold}",
+            "lineHeight": "{sys.line-height.heading.sm}",
+            "fontSize": "{sys.font-size.heading.sm}",
+            "letterSpacing": "{sys.letter-spacing.heading.sm}"
+          },
+          "type": "typography"
+        },
+        "md": {
+          "value": {
+            "fontFamily": "{sys.font-family.default}",
+            "fontWeight": "{sys.font-weight.bold}",
+            "lineHeight": "{sys.line-height.heading.md}",
+            "fontSize": "{sys.font-size.heading.md}",
+            "letterSpacing": "{sys.letter-spacing.heading.md}"
+          },
+          "type": "typography"
+        },
+        "lg": {
+          "value": {
+            "fontFamily": "{sys.font-family.default}",
+            "fontWeight": "{sys.font-weight.bold}",
+            "lineHeight": "{sys.line-height.heading.lg}",
+            "fontSize": "{sys.font-size.heading.lg}",
+            "letterSpacing": "{sys.letter-spacing.heading.lg}"
+          },
+          "type": "typography"
+        }
+      },
+      "title": {
+        "sm": {
+          "value": {
+            "fontFamily": "{sys.font-family.default}",
+            "fontWeight": "{sys.font-weight.bold}",
+            "lineHeight": "{sys.line-height.title.sm}",
+            "fontSize": "{sys.font-size.title.sm}",
+            "letterSpacing": "{sys.letter-spacing.title.sm}"
+          },
+          "type": "typography"
+        },
+        "md": {
+          "value": {
+            "fontFamily": "{sys.font-family.default}",
+            "fontWeight": "{sys.font-weight.bold}",
+            "lineHeight": "{sys.line-height.title.md}",
+            "fontSize": "{sys.font-size.title.md}",
+            "letterSpacing": "{sys.letter-spacing.title.md}"
+          },
+          "type": "typography"
+        },
+        "lg": {
+          "value": {
+            "fontFamily": "{sys.font-family.default}",
+            "fontWeight": "{sys.font-weight.bold}",
+            "lineHeight": "{sys.line-height.title.lg}",
+            "fontSize": "{sys.font-size.title.lg}",
+            "letterSpacing": "{sys.letter-spacing.title.lg}"
+          },
+          "type": "typography"
+        }
+      }
+    },
+    "color": {
+      "bg": {
+        "default": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Default page background"
+        },
+        "alt": {
+          "default": {
+            "value": "{brand.neutral.50}",
+            "type": "color",
+            "deprecatedValues": {},
+            "oldValue": "base.palette.slate.25",
+            "description": "Alternative page background"
+          }
+        }
+      },
+      "surface": {
+        "default": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.default"
+          },
+          "description": "Default surface background"
+        },
+        "inverse": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.default"
+          },
+          "description": "Container background for use on dark backgrounds"
+        },
+        "raised": {
+          "value": "{brand.neutral.A25}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.alt.softer"
+          },
+          "description": "Separates a layer from the surface, e.g. table headers or sticky elements"
+        },
+        "overlay": {
+          "hover": {
+            "default": {
+              "value": "{brand.neutral.A50}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Hover state overlay for interactive containers"
+            },
+            "inverse": {
+              "value": "{base.palette.white.A200}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Hover overlay for containers on dark backgrounds"
+            }
+          },
+          "pressed": {
+            "default": {
+              "value": "{brand.neutral.A100}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Pressed state overlay for interactive containers"
+            },
+            "inverse": {
+              "value": "{base.palette.white.A300}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Pressed overlay for containers on dark backgrounds"
+            }
+          },
+          "raised": {
+            "value": "{base.palette.white.A400}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Semi-transparent backdrop behind modals and dialogs"
+          },
+          "scrim": {
+            "value": "{brand.neutral.A400}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Semi-transparent backdrop behind modals and dialogs"
+          },
+          "mixin": {
+            "value": "{base.palette.neutral.1000}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Pressed state overlay for interactive containers"
+          }
+        },
+        "ai": {
+          "default": {
+            "value": "{base.palette.blue.A100}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.ai.default"
+            },
+            "description": "Container background indicating AI-generated content"
+          },
+          "hover": {
+            "value": "{base.palette.blue.A200}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.ai.strong"
+            },
+            "description": "Hover state for AI-generated content containers"
+          },
+          "pressed": {
+            "value": "{base.palette.blue.400}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.ai.stronger"
+            },
+            "description": "Pressed state for AI-generated content containers"
+          }
+        },
+        "alt": {
+          "default": {
+            "value": "{brand.neutral.A50}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.alt.soft"
+            },
+            "description": "De-emphasized container background for secondary information"
+          },
+          "strong": {
+            "value": "{brand.neutral.A100}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.alt.default"
+            },
+            "description": "Stronger de-emphasized container background"
+          }
+        },
+        "contrast": {
+          "default": {
+            "value": "{brand.neutral.A900}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.contrast.default"
+            },
+            "description": "High contrast dark container background"
+          },
+          "strong": {
+            "value": "{brand.neutral.A950}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.contrast.strong"
+            },
+            "description": "Stronger high contrast dark container background"
+          }
+        },
+        "danger": {
+          "default": {
+            "value": "{brand.critical.A25}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Container background for error states (not tenant themeable)"
+          },
+          "strong": {
+            "value": "{brand.critical.A50}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Stronger container background for error states"
+          }
+        },
+        "info": {
+          "default": {
+            "value": "{base.palette.blue.A25}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.info.softest"
+            },
+            "description": "Container background for informational callouts"
+          },
+          "strong": {
+            "value": "{base.palette.blue.A50}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.info.softer"
+            },
+            "description": "Stronger container background for info badges and indicators"
+          }
+        },
+        "success": {
+          "default": {
+            "value": "{brand.positive.A25}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Container background for success states (not tenant themeable)"
+          },
+          "strong": {
+            "value": "{brand.positive.A50}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Stronger container background for success states"
+          }
+        },
+        "warning": {
+          "default": {
+            "value": "{brand.caution.A25}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.static.amber.softest"
+            },
+            "description": "Container background for warning states (not tenant themeable)"
+          },
+          "strong": {
+            "value": "{brand.caution.A50}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.static.amber.stronger"
+            },
+            "description": "Stronger container background for warning states"
+          }
+        },
+        "loading": {
+          "value": "{brand.neutral.A50}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Background for skeleton loaders and loading states"
+        },
+        "modal": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.default"
+          },
+          "description": "Modal views, sits on top of a scrim overlay"
+        },
+        "navigation": {
+          "value": "{brand.neutral.50}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Fixed navigation elements"
+        },
+        "popover": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.default"
+          },
+          "description": "Floating containers like Menus or Tooltip"
+        },
+        "transparent": {
+          "value": "{base.palette.white.A0}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.transparent.default"
+          },
+          "description": "Fully transparent container background"
+        }
+      },
+      "accent": {
+        "muted": {
+          "default": {
+            "value": "{brand.neutral.600}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.muted.default"
+            },
+            "description": "Muted accent for secondary visual elements"
+          },
+          "soft": {
+            "value": "{brand.neutral.400}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.bg.muted.softer"
+            },
+            "description": "Softer muted accent for tertiary elements"
+          }
+        },
+        "overlay": {
+          "hover": {
+            "value": "{base.palette.white.A100}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Hover overlay for accent-colored elements"
+          },
+          "pressed": {
+            "value": "{base.palette.white.A200}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Pressed overlay for accent-colored elements"
+          },
+          "mixin": {
+            "value": "{base.palette.neutral.1000}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Pressed overlay for accent-colored elements"
+          }
+        },
+        "ai": {
+          "value": "{base.palette.blue.950}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.ai.stronger"
+          },
+          "description": "Dark accent indicating AI-generated content"
+        },
+        "danger": {
+          "value": "{brand.critical.600}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.critical.default"
+          },
+          "description": "Solid danger accent for error indicators (not tenant themeable)"
+        },
+        "info": {
+          "value": "{base.palette.blue.600}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.info.default"
+          },
+          "description": "Solid info accent for indicators (not tenant themeable)"
+        },
+        "success": {
+          "value": "{brand.positive.600}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.bg.positive.default"
+          },
+          "description": "Solid success accent for positive indicators (not tenant themeable)"
+        },
+        "warning": {
+          "value": "{brand.caution.400}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Solid warning accent for caution indicators (not tenant themeable)"
+        },
+        "contrast": {
+          "value": "{brand.neutral.A900}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "High contrast accent for maximum visibility"
+        }
+      },
+      "fg": {
+        "default": {
+          "value": "{brand.neutral.A800}",
+          "type": "color",
+          "deprecatedValues": {},
+          "oldValue": "base.palette.neutral.850",
+          "description": "Default body text and icons"
+        },
+        "strong": {
+          "value": "{brand.neutral.A900}",
+          "type": "color",
+          "deprecatedValues": {},
+          "oldValue": "base.palette.neutral.900",
+          "description": "Stronger text for headings and labels"
+        },
+        "stronger": {
+          "value": "{brand.neutral.A950}",
+          "type": "color",
+          "deprecatedValues": {},
+          "oldValue": "base.palette.neutral.950",
+          "description": "Strongest text for titles"
+        },
+        "muted": {
+          "default": {
+            "value": "{brand.neutral.A600}",
+            "type": "color",
+            "deprecatedValues": {},
+            "oldValue": "base.palette.slate.600",
+            "description": "Secondary text for hints and placeholders"
+          },
+          "strong": {
+            "value": "{brand.neutral.A700}",
+            "type": "color",
+            "deprecatedValues": {},
+            "oldValue": "base.palette.slate.700",
+            "description": "Stronger secondary text"
+          }
+        },
+        "disabled": {
+          "value": "{brand.neutral.A400}",
+          "type": "color",
+          "deprecatedValues": {},
+          "oldValue": "base.palette.slate.400",
+          "description": "Disabled state text and icons"
+        },
+        "danger": {
+          "default": {
+            "value": "{brand.critical.600}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.fg.critical.default"
+            },
+            "description": "Error text and icons (not tenant themeable)"
+          },
+          "strong": {
+            "value": "{brand.critical.700}",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "warning": {
+          "default": {
+            "value": "{brand.caution.600}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Warning text and icons (not tenant themeable)"
+          },
+          "strong": {
+            "value": "{brand.caution.700}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Stronger warning text and icons"
+          }
+        },
+        "success": {
+          "default": {
+            "value": "{brand.positive.600}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Success text and icons (not tenant themeable)"
+          },
+          "strong": {
+            "value": "{brand.positive.700}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Stronger success text and icons"
+          }
+        },
+        "info": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Informational text and icons (not tenant themeable)"
+          },
+          "strong": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.fg.primary.strong"
+            },
+            "description": "Stronger informational text and icons"
+          }
+        },
+        "ai": {
+          "value": "{base.palette.blue.950}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Text and icons indicating AI-generated content"
+        },
+        "contrast": {
+          "default": {
+            "value": "{base.palette.neutral.A900}",
+            "type": "color",
+            "deprecatedValues": {},
+            "oldValue": "base.palette.neutral.900",
+            "description": "High contrast text for maximum readability"
+          },
+          "strong": {
+            "value": "{base.palette.neutral.A950}",
+            "type": "color",
+            "deprecatedValues": {},
+            "oldValue": "base.palette.neutral.950",
+            "description": "Stronger high contrast text"
+          }
+        },
+        "inverse": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Text and icons for use on dark backgrounds"
+        }
+      },
+      "border": {
+        "default": {
+          "value": "{brand.neutral.A100}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.border.divider"
+          },
+          "description": "Default border for containers and dividers"
+        },
+        "strong": {
+          "value": "{brand.neutral.A200}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.border.container"
+          },
+          "description": "Stronger border for more visible separation"
+        },
+        "inverse": {
+          "default": {
+            "value": "{base.palette.neutral.0}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.border.inverse"
+            },
+            "description": "Border for use on dark backgrounds"
+          },
+          "strong": {
+            "value": "{base.palette.white.A700}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Stronger border for use on dark backgrounds"
+          }
+        },
+        "input": {
+          "default": {
+            "value": "{brand.neutral.A500}",
+            "type": "color",
+            "deprecatedValues": {},
+            "oldValue": "base.palette.slate.500",
+            "description": "Default border for form inputs"
+          },
+          "hover": {
+            "value": "{brand.neutral.A700}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.border.input.strong"
+            },
+            "description": "Hover state border for form inputs"
+          }
+        },
+        "ai": {
+          "value": "{base.palette.blue.950}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Invisible border for layout spacing"
+        },
+        "contrast": {
+          "default": {
+            "value": "{base.palette.neutral.A900}",
+            "type": "color",
+            "deprecatedValues": {},
+            "oldValue": "base.palette.neutral.900",
+            "description": "High contrast border for maximum visibility"
+          }
+        },
+        "danger": {
+          "value": "{brand.critical.500}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.border.critical.default"
+          },
+          "description": "Border for error states (not tenant themeable)"
+        },
+        "warning": {
+          "value": "{brand.caution.500}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.border.caution.default"
+          },
+          "description": "Border for warning states (not tenant themeable)"
+        },
+        "info": {
+          "default": {
+            "value": "{base.palette.blue.500}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "sys.color.border.primary.default"
+            },
+            "description": "Border for informational containers (not tenant themeable)"
+          }
+        },
+        "transparent": {
+          "value": "{base.palette.white.A0}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Invisible border for layout spacing"
+        }
+      },
+      "focus": {
+        "inverse": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "deprecatedValues": {
+            "v3": "sys.color.border.input.inverse"
+          },
+          "description": "Focus ring for use on dark backgrounds"
+        },
+        "contrast": {
+          "value": "{brand.neutral.A900}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "High contrast focus ring for accessibility"
+        }
+      },
+      "shadow": {
+        "ambient": {
+          "value": "{base.palette.neutral.A50}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Subtle ambient shadow for soft depth"
+        },
+        "base": {
+          "value": "{base.palette.neutral.A25}",
+          "type": "color",
+          "deprecatedValues": {},
+          "description": "Primary shadow color for elevated elements"
+        }
+      },
+      "brand": {
+        "focus": {
+          "caution": {
+            "inner": {
+              "value": "{brand.caution.400}",
+              "type": "color",
+              "deprecatedValues": {
+                "v3": "brand.common.alert-inner"
+              },
+              "description": "Tenant-themeable inner focus ring for caution-state elements"
+            },
+            "outer": {
+              "value": "{brand.caution.500}",
+              "type": "color",
+              "deprecatedValues": {
+                "v3": "brand.common.alert-outer"
+              },
+              "description": "Tenant-themeable outer focus ring for caution-state elements"
+            }
+          },
+          "critical": {
+            "value": "{brand.critical.500}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "brand.common.error-inner"
+            },
+            "description": "Tenant-themeable focus ring for error-state elements"
+          },
+          "primary": {
+            "value": "{base.palette.blue.500}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "brand.common.focus-outline"
+            },
+            "description": "Tenant-themeable focus ring for interactive elements"
+          }
+        },
+        "surface": {
+          "caution": {
+            "default": {
+              "value": "{brand.caution.A25}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Tenant-themeable caution/warning container background"
+            },
+            "strong": {
+              "value": "{brand.caution.A50}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Stronger tenant-themeable caution container background"
+            }
+          },
+          "critical": {
+            "default": {
+              "value": "{brand.critical.A25}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Tenant-themeable critical/error container background"
+            },
+            "strong": {
+              "value": "{brand.critical.A50}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Stronger tenant-themeable critical container background"
+            }
+          },
+          "positive": {
+            "default": {
+              "value": "{brand.positive.A25}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Tenant-themeable positive/success container background"
+            },
+            "strong": {
+              "value": "{brand.positive.A50}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Stronger tenant-themeable positive container background"
+            }
+          },
+          "primary": {
+            "default": {
+              "value": "{brand.neutral.A25}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Tenant-themeable primary container background"
+            },
+            "strong": {
+              "value": "{brand.neutral.A50}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Stronger tenant-themeable primary container background"
+            }
+          },
+          "selected": {
+            "value": "{brand.neutral.A100}",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "accent": {
+          "caution": {
+            "value": "{brand.caution.400}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Tenant-themeable solid caution accent"
+          },
+          "critical": {
+            "value": "{brand.critical.600}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "brand.error.base"
+            },
+            "description": "Tenant-themeable solid critical accent for destructive actions"
+          },
+          "positive": {
+            "value": "{brand.positive.600}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "brand.success.base"
+            },
+            "description": "Positive status color used to communicate success"
+          },
+          "primary": {
+            "value": "{brand.neutral.975}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "brand.primary.base"
+            },
+            "description": "Primary accent for buttons and key actions"
+          },
+          "action": {
+            "value": "{brand.neutral.975}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Tenant-themeable primary action color for CTAs"
+          }
+        },
+        "border": {
+          "caution": {
+            "value": "{brand.caution.500}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "brand.alert.dark"
+            },
+            "description": "Border for warning states (not tenant themeable)"
+          },
+          "critical": {
+            "value": "{brand.critical.500}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Tenant-themeable critical border for error states"
+          },
+          "primary": {
+            "value": "{base.palette.blue.500}",
+            "type": "color",
+            "deprecatedValues": {},
+            "description": "Tenant-themeable primary border for focused inputs"
+          }
+        },
+        "fg": {
+          "primary": {
+            "default": {
+              "value": "{brand.neutral.A900}",
+              "type": "color",
+              "deprecatedValues": {
+                "v3": "brand.primary.base"
+              },
+              "description": "Tenant-themeable primary text and icon color"
+            },
+            "strong": {
+              "value": "{brand.neutral.A950}",
+              "type": "color",
+              "deprecatedValues": {
+                "v3": "brand.primary.dark"
+              },
+              "description": "Stronger tenant-themeable primary text and icon color"
+            }
+          },
+          "critical": {
+            "default": {
+              "value": "{brand.critical.600}",
+              "type": "color",
+              "deprecatedValues": {
+                "v3": "sys.color.fg.critical.default"
+              },
+              "description": "Tenant-themeable critical text and icon color"
+            },
+            "strong": {
+              "value": "{brand.critical.700}",
+              "type": "color",
+              "deprecatedValues": {
+                "v3": "brand.error.dark"
+              },
+              "description": "Stronger tenant-themeable critical text and icon color"
+            }
+          },
+          "caution": {
+            "default": {
+              "value": "{brand.caution.600}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Tenant-themeable caution text and icon color"
+            },
+            "strong": {
+              "value": "{brand.caution.700}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Stronger tenant-themeable caution text and icon color"
+            }
+          },
+          "positive": {
+            "default": {
+              "value": "{brand.positive.600}",
+              "type": "color",
+              "deprecatedValues": {},
+              "description": "Tenant-themeable positive text and icon color"
+            },
+            "strong": {
+              "value": "{brand.positive.700}",
+              "type": "color",
+              "deprecatedValues": {
+                "v3": "brand.success.dark"
+              },
+              "description": "Stronger tenant-themeable positive text and icon color"
+            }
+          },
+          "selected": {
+            "value": "{brand.neutral.A900}",
+            "type": "color",
+            "deprecatedValues": {
+              "v3": "brand.primary.dark"
+            },
+            "description": "Tenant-themeable text color for selected items"
+          }
+        }
+      },
+      "chart": {
+        "diverging": {
+          "azure": {
+            "coral": {
+              "1": {
+                "value": "{base.palette.azure.900}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "2": {
+                "value": "{base.palette.azure.800}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "3": {
+                "value": "{base.palette.azure.700}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "4": {
+                "value": "{base.palette.azure.600}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "5": {
+                "value": "{base.palette.azure.500}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "6": {
+                "value": "{base.palette.azure.400}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "7": {
+                "value": "{base.palette.azure.300}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "8": {
+                "value": "{base.palette.azure.200}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "9": {
+                "value": "{base.palette.azure.100}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "10": {
+                "value": "{base.palette.azure.50}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "11": {
+                "value": "{base.palette.azure.25}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "12": {
+                "value": "{base.palette.neutral.0}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "13": {
+                "value": "{base.palette.coral.25}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "14": {
+                "value": "{base.palette.coral.50}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "15": {
+                "value": "{base.palette.coral.100}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "16": {
+                "value": "{base.palette.coral.200}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "17": {
+                "value": "{base.palette.coral.300}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "18": {
+                "value": "{base.palette.coral.400}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "19": {
+                "value": "{base.palette.coral.500}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "20": {
+                "value": "{base.palette.coral.600}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "21": {
+                "value": "{base.palette.coral.700}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "22": {
+                "value": "{base.palette.coral.800}",
+                "type": "color",
+                "deprecatedValues": {}
+              },
+              "23": {
+                "value": "{base.palette.coral.900}",
+                "type": "color",
+                "deprecatedValues": {}
+              }
+            }
+          }
+        },
+        "categorical": {
+          "1": {
+            "value": "{base.palette.teal.500}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "2": {
+            "value": "{base.palette.blue.800}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "3": {
+            "value": "{base.palette.orange.500}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "4": {
+            "value": "{base.palette.azure.500}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "5": {
+            "value": "{base.palette.magenta.600}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "6": {
+            "value": "{brand.positive.600}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "7": {
+            "value": "{base.palette.purple.500}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "8": {
+            "value": "{brand.caution.500}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "9": {
+            "value": "{base.palette.teal.700}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "10": {
+            "value": "{base.palette.indigo.600}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "11": {
+            "value": "{base.palette.orange.700}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "12": {
+            "value": "{base.palette.azure.700}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "13": {
+            "value": "{base.palette.purple.700}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "14": {
+            "value": "{base.palette.coral.600}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "15": {
+            "value": "{brand.positive.800}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "16": {
+            "value": "{brand.caution.700}",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "sequential": {
+          "1": {
+            "value": "{base.palette.teal.25}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "2": {
+            "value": "{base.palette.teal.50}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "3": {
+            "value": "{base.palette.teal.100}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "4": {
+            "value": "{base.palette.teal.200}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "5": {
+            "value": "{base.palette.teal.300}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "6": {
+            "value": "{base.palette.teal.400}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "7": {
+            "value": "{base.palette.teal.500}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "8": {
+            "value": "{base.palette.teal.600}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "9": {
+            "value": "{base.palette.teal.700}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "10": {
+            "value": "{base.palette.teal.800}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "11": {
+            "value": "{base.palette.teal.900}",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        }
+      }
+    }
+  }
+}

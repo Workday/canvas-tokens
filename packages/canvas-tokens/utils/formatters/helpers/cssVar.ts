@@ -3,7 +3,17 @@ import {kebabCase} from 'case-anything';
 import {generateFallbacks} from '../../transformers/generateNewTokenFallback';
 
 export const getCSSVarName = (path: string[]) => {
-  return '--cnvs-' + path.map(i => (!i.match(/^A\d+$/) ? kebabCase(i) : i.toLowerCase())).join('-');
+  return 'cnvs-' + path.map(i => (!i.match(/^A\d+$/) ? kebabCase(i) : i.toLowerCase())).join('-');
+};
+
+export const getCSSVarNameFromRef = (ref: string, type: 'css' | 'sass' | 'less') => {
+  return ref.replace(/\{([^}]+)\}/gi, (_, path) =>
+    type === 'css'
+      ? `var(--${getCSSVarName(path.split('.'))})`
+      : type === 'sass'
+      ? `$${getCSSVarName(path.split('.'))}`
+      : `@${getCSSVarName(path.split('.'))}`
+  );
 };
 
 export const getLegacyEntries = (tokens: Dictionary['allTokens']) => {
@@ -19,7 +29,7 @@ export const getLegacyEntries = (tokens: Dictionary['allTokens']) => {
 
       return {
         name: token.name,
-        value: `var(${cssVarName}, ${generateFallbacks(fallbackValues, baseValue || token.value)})`,
+        value: `var(--${cssVarName}, ${generateFallbacks(fallbackValues, baseValue || token.value)})`,
       };
     });
 };
