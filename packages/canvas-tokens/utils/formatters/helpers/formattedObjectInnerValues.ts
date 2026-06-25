@@ -130,6 +130,47 @@ export const changeValuesToCSSVars = (
     return `var(${cssVarName}, ${generateFallbacks(fallbackValues, baseValue || value)})`;
   };
 
+  // Builds the fallback chain for a single property of a composite token.
+  // Each deprecated value ref (e.g. `sys.type.subtext.small`) points to a deprecated
+  // composite token, so we resolve it and grab the matching inner property reference
+  // (e.g. its `font-size`) to fall back to the proper low level CSS variable.
+  const getCompositePropertyFallback = (
+    propertyKey: string,
+    propertyCSSVarName: string,
+    propertyValue: string
+  ): string => {
+    const propertyFallbackRefs = fallbackValues.reduce((refsAcc: string[], fallbackRef) => {
+      const wrappedRef =
+        fallbackRef.startsWith('{') && fallbackRef.endsWith('}') ? fallbackRef : `{${fallbackRef}}`;
+      const [deprecatedToken] = getRefs(wrappedRef);
+      const deprecatedValue = deprecatedToken?.original?.value;
+
+      if (deprecatedValue && typeof deprecatedValue === 'object') {
+        const deprecatedPropertyValue = (deprecatedValue as Record<string, unknown>)[propertyKey];
+
+        if (typeof deprecatedPropertyValue === 'string') {
+          refsAcc.push(
+            deprecatedPropertyValue.startsWith('{') && deprecatedPropertyValue.endsWith('}')
+              ? deprecatedPropertyValue.slice(1, -1)
+              : deprecatedPropertyValue
+          );
+        }
+      }
+
+      return refsAcc;
+    }, []);
+
+    const fallbackChain = propertyFallbackRefs.length
+      ? generateFallbacks(propertyFallbackRefs, propertyValue)
+      : '';
+
+    // Skip the fallback when it resolves to the same variable (e.g. font-family that
+    // didn't change between versions) to avoid redundant `var(--x, var(--x))` output.
+    return fallbackChain && fallbackChain !== `var(${propertyCSSVarName})`
+      ? `var(${propertyCSSVarName}, ${fallbackChain})`
+      : `var(${propertyCSSVarName})`;
+  };
+
   if (isComposite(token) && typeof originalValue !== 'string') {
     return Object.entries<string>(originalValue).reduce(
       (acc: {[key: string]: CSSVarObject}, [key, value]: string[]) => {
@@ -143,7 +184,10 @@ export const changeValuesToCSSVars = (
             ...acc,
             [name]: {
               cssVarName,
-              fallbackValue: getFullFallback(value),
+              // The fallback must point to each property's own deprecated value token
+              // (e.g. `font-size`), not the high level composite token (e.g. `type`),
+              // which is never emitted as a CSS variable.
+              fallbackValue: getCompositePropertyFallback(key, cssVarName, value),
             },
           };
         }
