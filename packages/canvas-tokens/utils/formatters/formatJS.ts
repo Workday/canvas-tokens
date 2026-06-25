@@ -26,7 +26,7 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
 
   const legacyBlock = legacyEntries.length
     ? `\nexports.legacy = {\n${legacyEntries
-        .map(({name, value}) => `  ${name}: "${value}"`)
+        .map(({name, value}) => `  ${name}: ${JSON.stringify(value)}`)
         .join(',\n')}\n};\n`
     : '';
 
@@ -51,7 +51,7 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file}) => {
 
   const legacyBlock = legacyEntries.length
     ? `\nexport const legacy = {\n${legacyEntries
-        .map(({name, value}) => `  ${name}: "${value}"`)
+        .map(({name, value}) => `  ${name}: ${JSON.stringify(value)}`)
         .join(',\n')}\n};\n`
     : '';
 
@@ -76,7 +76,7 @@ export const formatInlineTypes: Formatter = ({dictionary, file}) => {
 
   const legacyBlock = legacyEntries.length
     ? `\nexport declare const legacy: {\n${legacyEntries
-        .map(({name, value}) => `  ${name}: "${value}"`)
+        .map(({name, value}) => `  ${name}: ${JSON.stringify(value)}`)
         .join(',\n')}\n};\n`
     : '';
 
