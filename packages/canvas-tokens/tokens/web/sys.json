@@ -10,28 +10,16 @@
       "sm": {
         "value": "{base.baseline} * 40",
         "type": "dimension",
-        "deprecatedValues": {
-          "v3": "sys.breakpoints.s",
-          "base": "320px"
-        },
         "comment": "The `min-width` for mobile devices, such as phones and tablets."
       },
       "md": {
         "value": "{base.baseline} * 96",
         "type": "dimension",
-        "deprecatedValues": {
-          "v3": "sys.breakpoints.m",
-          "base": "768px"
-        },
         "comment": "Medium screens, such as laptops."
       },
       "lg": {
         "value": "{base.baseline} * 128",
         "type": "dimension",
-        "deprecatedValues": {
-          "v3": "sys.breakpoints.l",
-          "base": "1024px"
-        },
         "comment": "Large screens, such as desktops."
       },
       "xl": {
@@ -248,13 +236,11 @@
         "hover": {
           "value": "{base.opacity.100}",
           "type": "number",
-          "deprecatedValues": {},
           "comment": "State layer applied to surface colors on hover"
         },
         "pressed": {
           "value": "{base.opacity.180}",
           "type": "number",
-          "deprecatedValues": {},
           "comment": "State layer applied to surface colors while pressing"
         }
       },
@@ -262,13 +248,11 @@
         "hover": {
           "value": "{base.opacity.180}",
           "type": "number",
-          "deprecatedValues": {},
           "comment": "State layer applied to accent colors on hover"
         },
         "pressed": {
           "value": "{base.opacity.360}",
           "type": "number",
-          "deprecatedValues": {},
           "comment": "State layer applied to accent colors while pressing"
         }
       }
@@ -276,144 +260,84 @@
     "shape": {
       "none": {
         "value": "{base.size.0}",
-        "type": "borderRadius",
-        "deprecatedValues": {
-          "v3": "sys.shape.zero"
-        },
+        "type": "dimension",
         "comment": "Full-width and background containers. Fixed navigation containers such as headers, and side-panels."
       },
       "sm": {
         "value": "{base.size.50}",
-        "type": "borderRadius",
-        "deprecatedValues": {
-          "v3": "sys.shape.x1",
-          "base": "0.25rem"
-        },
+        "type": "dimension",
         "comment": "Pill, Status Indicator, Checkbox"
       },
       "md": {
         "value": "{base.size.100}",
-        "type": "borderRadius",
-        "deprecatedValues": {
-          "v3": "sys.shape.x2",
-          "base": "0.5rem"
-        },
+        "type": "dimension",
         "comment": "Inputs, Toast, Tooltip, Snackbar"
       },
       "lg": {
         "value": "{base.size.150}",
-        "type": "borderRadius",
-        "deprecatedValues": {
-          "base": "0.75rem"
-        },
+        "type": "dimension",
         "comment": "Rich text editor"
       },
       "xl": {
         "value": "{base.size.200}",
-        "type": "borderRadius",
-        "deprecatedValues": {
-          "v3": "sys.shape.x4",
-          "base": "1rem"
-        },
+        "type": "dimension",
         "comment": "Extra large rounding for prominent containers"
       },
       "xxl": {
         "value": "{base.size.300}",
-        "type": "borderRadius",
-        "deprecatedValues": {
-          "v3": "sys.shape.x6",
-          "base": "1.5rem"
-        },
+        "type": "dimension",
         "comment": "Extra extra large rounding for cards and items"
       },
       "xxxl": {
         "value": "{base.size.400}",
-        "type": "borderRadius",
-        "deprecatedValues": {
-          "base": "2rem"
-        },
+        "type": "dimension",
         "comment": "Maximum rounding for modals and large containers"
       },
       "full": {
         "value": "{base.size.75} * 100",
-        "type": "borderRadius",
-        "deprecatedValues": {
-          "v3": "sys.shape.round",
-          "base": "65rem"
-        },
+        "type": "dimension",
         "comment": "Full rounding is reserved high-visibility components. This shape is intended to draw attention. Buttons, Badge, Status Indicator, Essential Inputs, Border Containers (Not Cards)"
       }
     },
     "size": {
       "xxxs": {
         "value": "{base.size.200}",
-        "type": "size",
-        "deprecatedValues": {
-          "v3": "sys.space.x4",
-          "base": "1rem"
-        },
+        "type": "dimension",
         "comment": "Used for switch toggle."
       },
       "xxs": {
         "value": "{base.size.250}",
-        "type": "size",
-        "deprecatedValues": {
-          "v3": "sys.space.x5",
-          "base": "1.25rem"
-        },
+        "type": "dimension",
         "comment": "Compact indicators. Used for status indicators and count badges."
       },
       "xs": {
         "value": "{base.size.300}",
-        "type": "size",
-        "deprecatedValues": {
-          "v3": "sys.space.x6",
-          "base": "1.5rem"
-        },
+        "type": "dimension",
         "comment": "Compact interactive elements. Used for small buttons, pills, checkboxes, and radio buttons."
       },
       "sm": {
         "value": "{base.size.400}",
-        "type": "size",
-        "deprecatedValues": {
-          "v3": "sys.space.x8",
-          "base": "2rem"
-        },
+        "type": "dimension",
         "comment": "Standard interactive components. Used for buttons, segmented controls, tooltips, and avatars."
       },
       "md": {
         "value": "{base.size.500}",
-        "type": "size",
-        "deprecatedValues": {
-          "v3": "sys.space.x10",
-          "base": "2.5rem"
-        },
+        "type": "dimension",
         "comment": "Default size for most components. Used for buttons, segmented controls, banners, input fields, and menu items."
       },
       "lg": {
         "value": "{base.size.600}",
-        "type": "size",
-        "deprecatedValues": {
-          "base": "3rem"
-        },
+        "type": "dimension",
         "comment": "Prominent components. Used for large buttons, segmented controls, expandable triggers, tabs, and avatars."
       },
       "xl": {
         "value": "{base.size.700}",
-        "type": "size",
-        "deprecatedValues": {
-          "v3": "sys.space.x14",
-          "base": "3.5rem"
-        },
+        "type": "dimension",
         "comment": "Content containers. Used for table cells and toasts."
       },
       "xxl": {
         "value": "{base.size.800}",
-        "type": "size",
-        "deprecatedValues": {
-          "v3": "sys.space.x16",
-          "base": "4rem"
-        },
+        "type": "dimension",
         "comment": "Expandable containers. Used for expandable containers in their collapsed state."
       }
     },
@@ -421,72 +345,41 @@
       "none": {
         "value": "{base.size.0}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.zero"
-        },
         "comment": "Use when there should be no space between content and element's edges."
       },
       "xxs": {
         "value": "{base.size.50}",
         "type": "spacing",
-        "description": "",
-        "deprecatedValues": {
-          "v3": "sys.space.x1",
-          "base": "0.25rem"
-        }
+        "description": ""
       },
       "xs": {
         "value": "{base.size.100}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x2",
-          "base": "0.5rem"
-        },
         "comment": "Horizontal padding on Input Fields"
       },
       "sm": {
         "value": "{base.size.150}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x3",
-          "base": "0.75rem"
-        },
         "comment": "Compact padding, used in Rich Text Editor, or X-Small Buttons"
       },
       "md": {
         "value": "{base.size.200}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x4",
-          "base": "1rem"
-        },
         "comment": "Default padding used for components used around Small Button content."
       },
       "lg": {
         "value": "{base.size.250}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x5",
-          "base": "1.25rem"
-        },
         "comment": "Large padding, used in Medium Buttons with Icons"
       },
       "xl": {
         "value": "{base.size.300}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x6",
-          "base": "1.5rem"
-        },
         "comment": "Padding used around Card and Medium Button content"
       },
       "xxl": {
         "value": "{base.size.400}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x8",
-          "base": "2rem"
-        },
         "comment": "Padding used around Modal and Large Button content"
       }
     },
@@ -494,289 +387,166 @@
       "none": {
         "value": "{base.size.0}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.zero"
-        },
         "comment": "Use when there is no space between elements"
       },
       "xs": {
         "value": "{base.size.50}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x1",
-          "base": "0.25rem"
-        },
         "comment": "Compact spacing from icon to text, labels to inputs, between tab items."
       },
       "sm": {
         "value": "{base.size.100}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x2",
-          "base": "0.5rem"
-        },
         "comment": "Horizontal space between pills, tighter space between buttons, inline icon to text, segmented controls."
       },
       "md": {
         "value": "{base.size.200}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x4",
-          "base": "1rem"
-        },
         "comment": "Use the default inline spacing when other gap tokens may not fit."
       },
       "lg": {
         "value": "{base.size.300}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x6",
-          "base": "1.5rem"
-        },
         "comment": "Use this for tighter spacing between cards. Cards are self contained blocks of content."
       },
       "xl": {
         "value": "{base.size.400}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x8",
-          "base": "2rem"
-        },
         "comment": "Use this for the default spacing between cards, as well as the gutter width used in the large 12-column grid."
       },
       "xxl": {
         "value": "{base.size.800}",
         "type": "spacing",
-        "deprecatedValues": {
-          "v3": "sys.space.x16",
-          "base": "4rem"
-        },
         "comment": "Use this for the space between content sections"
       }
     },
     "font-family": {
       "default": {
         "value": "{base.font-family.50}",
-        "type": "text"
+        "type": "fontFamily"
       },
       "mono": {
         "value": "{base.font-family.100}",
-        "type": "text"
+        "type": "fontFamily"
       },
       "global": {
         "value": "{base.font-family.200}",
-        "type": "text"
+        "type": "fontFamily"
       }
     },
     "font-size": {
       "subtext": {
         "sm": {
           "value": "{base.size.125}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.subtext.small",
-            "base": "0.625rem"
-          }
+          "type": "fontSize"
         },
         "md": {
           "value": "{base.size.150}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.subtext.medium",
-            "base": "0.75rem"
-          }
+          "type": "fontSize"
         },
         "lg": {
           "value": "{base.size.175}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.subtext.large",
-            "base": "0.875rem"
-          }
+          "type": "fontSize"
         }
       },
       "body": {
         "sm": {
           "value": "{base.size.200}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.body.small",
-            "base": "1rem"
-          }
+          "type": "fontSize"
         },
         "md": {
           "value": "{base.size.225}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.body.medium",
-            "base": "1.125rem"
-          }
+          "type": "fontSize"
         },
         "lg": {
           "value": "{base.size.250}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.body.large",
-            "base": "1.25rem"
-          }
+          "type": "fontSize"
         }
       },
       "heading": {
         "sm": {
           "value": "{base.size.300}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.heading.small",
-            "base": "1.5rem"
-          }
+          "type": "fontSize"
         },
         "md": {
           "value": "{base.size.350}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.heading.medium",
-            "base": "1.75rem"
-          }
+          "type": "fontSize"
         },
         "lg": {
           "value": "{base.size.400}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.heading.large",
-            "base": "2rem"
-          }
+          "type": "fontSize"
         }
       },
       "title": {
         "sm": {
           "value": "{base.size.500}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.title.small",
-            "base": "2.5rem"
-          }
+          "type": "sizing"
         },
         "md": {
           "value": "{base.size.600}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.title.medium",
-            "base": "3rem"
-          }
+          "type": "sizing"
         },
         "lg": {
           "value": "{base.size.700}",
-          "type": "sizing",
-          "deprecatedValues": {
-            "v3": "sys.font-size.title.large",
-            "base": "3.5rem"
-          }
+          "type": "sizing"
         }
       }
     },
     "line-height": {
       "subtext": {
         "sm": {
-          "value": "{base.size.200}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.subtext.small",
-            "base": "1rem"
-          }
+          "value": "{base.size.175}",
+          "type": "number"
         },
         "md": {
           "value": "{base.size.200}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.subtext.medium",
-            "base": "1rem"
-          }
+          "type": "number"
         },
         "lg": {
           "value": "{base.size.250}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.subtext.large",
-            "base": "1.25rem"
-          }
+          "type": "number"
         }
       },
       "body": {
         "sm": {
           "value": "{base.size.300}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.body.small",
-            "base": "1.5rem"
-          }
+          "type": "number"
         },
         "md": {
-          "value": "{base.size.350}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.body.medium",
-            "base": "1.75rem"
-          }
+          "value": "{base.size.325}",
+          "type": "number"
         },
         "lg": {
           "value": "{base.size.350}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.body.large",
-            "base": "1.75rem"
-          }
+          "type": "number"
         }
       },
       "heading": {
         "sm": {
           "value": "{base.size.400}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.heading.small",
-            "base": "2rem"
-          }
+          "type": "number"
         },
         "md": {
           "value": "{base.size.450}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.heading.medium",
-            "base": "2.25rem"
-          }
+          "type": "number"
         },
         "lg": {
           "value": "{base.size.500}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.heading.large",
-            "base": "2.5rem"
-          }
+          "type": "number"
         }
       },
       "title": {
         "sm": {
           "value": "{base.size.600}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.title.small",
-            "base": "3rem"
-          }
+          "type": "number"
         },
         "md": {
           "value": "{base.size.700}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.title.medium",
-            "base": "3.5rem"
-          }
+          "type": "number"
         },
         "lg": {
           "value": "{base.size.800}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.line-height.title.large",
-            "base": "4rem"
-          }
+          "type": "number"
         }
       }
     },
@@ -784,52 +554,40 @@
       "subtext": {
         "sm": {
           "value": "{base.letter-spacing.50}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.type.letter-spacing.subtext.small"
-          }
+          "type": "number"
         },
         "md": {
           "value": "{base.letter-spacing.100}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.type.letter-spacing.subtext.medium"
-          }
+          "type": "number"
         },
         "lg": {
           "value": "{base.letter-spacing.150}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.type.letter-spacing.subtext.large"
-          }
+          "type": "number"
         }
       },
       "body": {
         "sm": {
           "value": "{base.letter-spacing.200}",
-          "type": "number",
-          "deprecatedValues": {
-            "v3": "sys.type.letter-spacing.body.small"
-          }
+          "type": "number"
         }
       }
     },
     "font-weight": {
       "light": {
         "value": "{base.font-weight.300}",
-        "type": "text"
+        "type": "fontWeight"
       },
       "normal": {
         "value": "{base.font-weight.400}",
-        "type": "text"
+        "type": "fontWeight"
       },
       "medium": {
         "value": "{base.font-weight.500}",
-        "type": "text"
+        "type": "fontWeight"
       },
       "bold": {
         "value": "{base.font-weight.700}",
-        "type": "text"
+        "type": "fontWeight"
       }
     },
     "type": {
@@ -842,10 +600,7 @@
             "font-size": "{sys.font-size.subtext.sm}",
             "letter-spacing": "{sys.letter-spacing.subtext.sm}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.subtext.small"
-          }
+          "type": "typography"
         },
         "md": {
           "value": {
@@ -855,10 +610,7 @@
             "font-size": "{sys.font-size.subtext.md}",
             "letter-spacing": "{sys.letter-spacing.subtext.md}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.subtext.medium"
-          }
+          "type": "typography"
         },
         "lg": {
           "value": {
@@ -868,10 +620,7 @@
             "font-size": "{sys.font-size.subtext.lg}",
             "letter-spacing": "{sys.letter-spacing.subtext.lg}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.subtext.large"
-          }
+          "type": "typography"
         }
       },
       "body": {
@@ -883,10 +632,7 @@
             "font-size": "{sys.font-size.body.sm}",
             "letter-spacing": "{sys.letter-spacing.body.sm}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.body.small"
-          }
+          "type": "typography"
         },
         "md": {
           "value": {
@@ -895,10 +641,7 @@
             "line-height": "{sys.line-height.body.md}",
             "font-size": "{sys.font-size.body.md}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.body.medium"
-          }
+          "type": "typography"
         },
         "lg": {
           "value": {
@@ -907,10 +650,7 @@
             "line-height": "{sys.line-height.body.lg}",
             "font-size": "{sys.font-size.body.lg}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.body.large"
-          }
+          "type": "typography"
         }
       },
       "heading": {
@@ -921,10 +661,7 @@
             "line-height": "{sys.line-height.heading.sm}",
             "font-size": "{sys.font-size.heading.sm}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.heading.small"
-          }
+          "type": "typography"
         },
         "md": {
           "value": {
@@ -933,10 +670,7 @@
             "line-height": "{sys.line-height.heading.md}",
             "font-size": "{sys.font-size.heading.md}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.heading.medium"
-          }
+          "type": "typography"
         },
         "lg": {
           "value": {
@@ -945,10 +679,7 @@
             "line-height": "{sys.line-height.heading.lg}",
             "font-size": "{sys.font-size.heading.lg}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.heading.large"
-          }
+          "type": "typography"
         }
       },
       "title": {
@@ -959,10 +690,7 @@
             "line-height": "{sys.line-height.title.sm}",
             "font-size": "{sys.font-size.title.sm}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.title.small"
-          }
+          "type": "typography"
         },
         "md": {
           "value": {
@@ -971,10 +699,7 @@
             "line-height": "{sys.line-height.title.md}",
             "font-size": "{sys.font-size.title.md}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.title.medium"
-          }
+          "type": "typography"
         },
         "lg": {
           "value": {
@@ -983,10 +708,7 @@
             "line-height": "{sys.line-height.title.lg}",
             "font-size": "{sys.font-size.title.lg}"
           },
-          "type": "typography",
-          "deprecatedValues": {
-            "v3": "sys.type.title.large"
-          }
+          "type": "typography"
         }
       }
     },
@@ -995,80 +717,54 @@
         "default": {
           "value": "{base.palette.neutral.0}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.default"
-          },
           "comment": "Default background for containers on top of the page"
         },
         "navigation": {
           "value": "{base.palette.slate.50}",
           "type": "color",
-          "deprecatedValues": {},
           "comment": "Background for navigation containers like sidebars and top bars"
         },
         "popover": {
           "value": "{base.palette.neutral.0}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.default"
-          },
           "comment": "Background for floating containers like dropdowns and tooltips"
         },
         "modal": {
           "value": "{base.palette.neutral.0}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.default"
-          },
           "comment": "Background for modal dialog containers"
         },
         "raised": {
           "value": "{base.palette.slate.A25}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.alt.softer"
-          },
           "comment": "Separates a layer from the surface, e.g. table headers or sticky elements"
         },
         "alt": {
           "default": {
             "value": "{base.palette.slate.A50}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.alt.soft"
-            },
             "comment": "De-emphasized container background for secondary information"
           },
           "strong": {
             "value": "{base.palette.slate.A100}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.alt.default"
-            },
             "comment": "Stronger de-emphasized container background"
           }
         },
         "loading": {
           "value": "{base.palette.slate.A200}",
           "type": "color",
-          "deprecatedValues": {},
           "comment": "Background for skeleton loaders and loading states"
         },
         "info": {
           "default": {
             "value": "{base.palette.blue.A25}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.info.softest"
-            },
             "comment": "Container background for informational callouts"
           },
           "strong": {
             "value": "{base.palette.blue.A50}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.info.softer"
-            },
             "comment": "Stronger container background for info badges and indicators"
           }
         },
@@ -1076,13 +772,11 @@
           "default": {
             "value": "{base.palette.red.A25}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Container background for error states (not tenant themeable)"
           },
           "strong": {
             "value": "{base.palette.red.A50}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Stronger container background for error states"
           }
         },
@@ -1090,17 +784,11 @@
           "default": {
             "value": "{base.palette.amber.A25}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.static.amber.softest"
-            },
             "comment": "Container background for warning states (not tenant themeable)"
           },
           "strong": {
             "value": "{base.palette.amber.A50}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.static.amber.stronger"
-            },
             "comment": "Stronger container background for warning states"
           }
         },
@@ -1108,13 +796,11 @@
           "default": {
             "value": "{base.palette.green.A25}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Container background for success states (not tenant themeable)"
           },
           "strong": {
             "value": "{base.palette.green.A50}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Stronger container background for success states"
           }
         },
@@ -1122,59 +808,38 @@
           "default": {
             "value": "{base.palette.blue.A100}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.ai.default"
-            },
             "comment": "Container background indicating AI-generated content"
           },
           "hover": {
             "value": "{base.palette.blue.A200}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.ai.strong"
-            },
             "comment": "Hover state for AI-generated content containers"
           },
           "pressed": {
             "value": "{base.palette.blue.400}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.ai.stronger"
-            },
             "comment": "Pressed state for AI-generated content containers"
           }
         },
         "transparent": {
           "value": "{base.palette.neutral.A0}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.transparent.default"
-          },
           "comment": "Fully transparent container background"
         },
         "inverse": {
           "value": "{base.palette.neutral.0}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.default"
-          },
           "comment": "Container background for use on dark backgrounds"
         },
         "contrast": {
           "default": {
             "value": "{base.palette.neutral.A900}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.contrast.default"
-            },
             "comment": "High contrast dark container background"
           },
           "strong": {
             "value": "{base.palette.neutral.A950}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.contrast.strong"
-            },
             "comment": "Stronger high contrast dark container background"
           }
         },
@@ -1183,40 +848,34 @@
             "default": {
               "value": "{base.palette.slate.A50}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Hover state overlay for interactive containers"
             },
             "inverse": {
               "value": "{base.palette.white.A200}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Hover overlay for containers on dark backgrounds"
             }
           },
           "mixin": {
             "value": "{base.palette.slate.500}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Pressed state overlay for interactive containers"
           },
           "pressed": {
             "default": {
               "value": "{base.palette.slate.A100}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Pressed state overlay for interactive containers"
             },
             "inverse": {
               "value": "{base.palette.white.A300}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Pressed overlay for containers on dark backgrounds"
             }
           },
           "scrim": {
             "value": "{base.palette.neutral.A400}",
-            "type": "color",
-            "deprecatedValues": {}
+            "type": "color"
           }
         }
       },
@@ -1224,62 +883,42 @@
         "ai": {
           "value": "{base.palette.blue.950}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.ai.stronger"
-          },
           "comment": "Dark accent indicating AI-generated content"
         },
         "info": {
           "value": "{base.palette.blue.600}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.info.default"
-          },
           "comment": "Solid info accent for indicators (not tenant themeable)"
         },
         "danger": {
           "value": "{base.palette.red.600}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.critical.default"
-          },
           "comment": "Solid danger accent for error indicators (not tenant themeable)"
         },
         "warning": {
           "value": "{base.palette.amber.400}",
           "type": "color",
-          "deprecatedValues": {},
           "comment": "Solid warning accent for caution indicators (not tenant themeable)"
         },
         "success": {
           "value": "{base.palette.green.600}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.bg.positive.default"
-          },
           "comment": "Solid success accent for positive indicators (not tenant themeable)"
         },
         "contrast": {
           "value": "{base.palette.neutral.A900}",
           "type": "color",
-          "deprecatedValues": {},
           "comment": "High contrast accent for maximum visibility"
         },
         "muted": {
           "default": {
             "value": "{base.palette.slate.600}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.muted.default"
-            },
             "comment": "Muted accent for secondary visual elements"
           },
           "soft": {
             "value": "{base.palette.slate.400}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.bg.muted.softer"
-            },
             "comment": "Softer muted accent for tertiary elements"
           }
         },
@@ -1287,19 +926,16 @@
           "hover": {
             "value": "{base.palette.neutral.A200}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Hover overlay for accent-colored elements"
           },
           "pressed": {
             "value": "{base.palette.neutral.A400}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Pressed overlay for accent-colored elements"
           },
           "mixin": {
             "value": "{base.palette.neutral.1000}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Pressed overlay mixin color for accent-colored elements"
           }
         }
@@ -1309,34 +945,22 @@
           "primary": {
             "value": "{brand.primary.500}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "brand.common.focus-outline"
-            },
             "comment": "Tenant-themeable focus ring for interactive elements"
           },
           "critical": {
             "value": "{brand.critical.500}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "brand.common.error-inner"
-            },
             "comment": "Tenant-themeable focus ring for error-state elements"
           },
           "caution": {
             "outer": {
               "value": "{brand.caution.500}",
               "type": "color",
-              "deprecatedValues": {
-                "v3": "brand.common.alert-outer"
-              },
               "comment": "Tenant-themeable outer focus ring for caution-state elements"
             },
             "inner": {
               "value": "{brand.caution.400}",
               "type": "color",
-              "deprecatedValues": {
-                "v3": "brand.common.alert-inner"
-              },
               "comment": "Tenant-themeable inner focus ring for caution-state elements"
             }
           }
@@ -1346,13 +970,11 @@
             "default": {
               "value": "{brand.primary.A25}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Tenant-themeable primary container background"
             },
             "strong": {
               "value": "{brand.primary.A50}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Stronger tenant-themeable primary container background"
             }
           },
@@ -1360,13 +982,11 @@
             "default": {
               "value": "{brand.critical.A25}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Tenant-themeable critical/error container background"
             },
             "strong": {
               "value": "{brand.critical.A50}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Stronger tenant-themeable critical container background"
             }
           },
@@ -1374,13 +994,11 @@
             "default": {
               "value": "{brand.caution.A25}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Tenant-themeable caution/warning container background"
             },
             "strong": {
               "value": "{brand.caution.A50}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Stronger tenant-themeable caution container background"
             }
           },
@@ -1388,20 +1006,17 @@
             "default": {
               "value": "{brand.positive.A25}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Tenant-themeable positive/success container background"
             },
             "strong": {
               "value": "{brand.positive.A50}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Stronger tenant-themeable positive container background"
             }
           },
           "selected": {
             "value": "{brand.primary.A50}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Tenant-themeable background for selected items"
           }
         },
@@ -1409,39 +1024,26 @@
           "primary": {
             "value": "{brand.primary.600}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "brand.primary.base"
-            },
             "comment": "Tenant-themeable solid primary accent for buttons and key actions"
           },
           "critical": {
             "value": "{brand.critical.600}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "brand.error.base"
-            },
             "comment": "Tenant-themeable solid critical accent for destructive actions"
           },
           "caution": {
             "value": "{brand.caution.400}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Tenant-themeable solid caution accent"
           },
           "positive": {
             "value": "{brand.positive.600}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "brand.success.base"
-            },
             "comment": "Tenant-themeable solid positive accent"
           },
           "action": {
             "value": "{brand.primary.600}",
-            "type": "color",
-            "deprecatedValues": {
-              "v3": "brand.primary.base"
-            }
+            "type": "color"
           }
         },
         "fg": {
@@ -1449,17 +1051,11 @@
             "default": {
               "value": "{brand.primary.600}",
               "type": "color",
-              "deprecatedValues": {
-                "v3": "brand.primary.base"
-              },
               "comment": "Tenant-themeable primary text and icon color"
             },
             "strong": {
               "value": "{brand.primary.700}",
               "type": "color",
-              "deprecatedValues": {
-                "v3": "brand.primary.dark"
-              },
               "comment": "Stronger tenant-themeable primary text and icon color"
             }
           },
@@ -1467,17 +1063,11 @@
             "default": {
               "value": "{brand.critical.600}",
               "type": "color",
-              "deprecatedValues": {
-                "v3": "brand.error.base"
-              },
               "comment": "Tenant-themeable critical text and icon color"
             },
             "strong": {
               "value": "{brand.critical.700}",
               "type": "color",
-              "deprecatedValues": {
-                "v3": "brand.error.dark"
-              },
               "comment": "Stronger tenant-themeable critical text and icon color"
             }
           },
@@ -1485,15 +1075,11 @@
             "default": {
               "value": "{brand.caution.600}",
               "type": "color",
-              "deprecatedValues": {
-                "v3": "brand.alert.darkest"
-              },
               "comment": "Tenant-themeable caution text and icon color"
             },
             "strong": {
               "value": "{brand.caution.700}",
               "type": "color",
-              "deprecatedValues": {},
               "comment": "Stronger tenant-themeable caution text and icon color"
             }
           },
@@ -1501,26 +1087,17 @@
             "default": {
               "value": "{brand.positive.600}",
               "type": "color",
-              "deprecatedValues": {
-                "v3": "brand.success.base"
-              },
               "comment": "Tenant-themeable positive text and icon color"
             },
             "strong": {
               "value": "{brand.positive.700}",
               "type": "color",
-              "deprecatedValues": {
-                "v3": "brand.success.dark"
-              },
               "comment": "Stronger tenant-themeable positive text and icon color"
             }
           },
           "selected": {
             "value": "{brand.primary.700}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "brand.primary.dark"
-            },
             "comment": "Tenant-themeable text color for selected items"
           }
         },
@@ -1528,21 +1105,16 @@
           "primary": {
             "value": "{brand.primary.500}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Tenant-themeable primary border for focused inputs"
           },
           "critical": {
             "value": "{brand.critical.500}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Tenant-themeable critical border for error states"
           },
           "caution": {
             "value": "{brand.caution.500}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "brand.alert.dark"
-            },
             "comment": "Tenant-themeable caution border for warning states"
           }
         }
@@ -1551,15 +1123,11 @@
         "inverse": {
           "value": "{base.palette.neutral.0}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.border.input.inverse"
-          },
           "comment": "Focus ring for use on dark backgrounds"
         },
         "contrast": {
           "value": "{base.palette.neutral.A900}",
           "type": "color",
-          "deprecatedValues": {},
           "comment": "High contrast focus ring for accessibility"
         }
       },
@@ -1573,7 +1141,6 @@
           "default": {
             "value": "{base.palette.slate.50}",
             "type": "color",
-            "oldValue": "base.palette.slate.25",
             "comment": "Alternative page background for visual separation between page sections"
           }
         }
@@ -1582,38 +1149,32 @@
         "default": {
           "value": "{base.palette.neutral.A800}",
           "type": "color",
-          "oldValue": "base.palette.neutral.850",
           "comment": "Default body text and icons"
         },
         "strong": {
           "value": "{base.palette.neutral.A900}",
           "type": "color",
-          "oldValue": "base.palette.neutral.900",
           "comment": "Stronger text for headings and labels"
         },
         "stronger": {
           "value": "{base.palette.neutral.A950}",
           "type": "color",
-          "oldValue": "base.palette.neutral.950",
           "comment": "Strongest text for titles"
         },
         "disabled": {
           "value": "{base.palette.slate.A400}",
           "type": "color",
-          "oldValue": "base.palette.slate.400",
           "comment": "Disabled state text and icons"
         },
         "muted": {
           "default": {
             "value": "{base.palette.slate.A600}",
             "type": "color",
-            "oldValue": "base.palette.slate.600",
             "comment": "Secondary text for hints and placeholders"
           },
           "strong": {
             "value": "{base.palette.slate.A700}",
             "type": "color",
-            "oldValue": "base.palette.slate.700",
             "comment": "Stronger secondary text"
           }
         },
@@ -1626,17 +1187,11 @@
           "default": {
             "value": "{base.palette.blue.600}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.fg.primary.default"
-            },
             "comment": "Informational text and icons (not tenant themeable)"
           },
           "strong": {
             "value": "{base.palette.blue.700}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.fg.primary.strong"
-            },
             "comment": "Stronger informational text and icons"
           }
         },
@@ -1644,17 +1199,11 @@
           "default": {
             "value": "{base.palette.red.600}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.fg.critical.default"
-            },
             "comment": "Error text and icons (not tenant themeable)"
           },
           "strong": {
             "value": "{base.palette.red.700}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.fg.critical.strong"
-            },
             "comment": "Stronger error text and icons"
           }
         },
@@ -1662,13 +1211,11 @@
           "default": {
             "value": "{base.palette.amber.600}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Warning text and icons (not tenant themeable)"
           },
           "strong": {
             "value": "{base.palette.amber.700}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Stronger warning text and icons"
           }
         },
@@ -1676,13 +1223,11 @@
           "default": {
             "value": "{base.palette.green.600}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Success text and icons (not tenant themeable)"
           },
           "strong": {
             "value": "{base.palette.green.700}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Stronger success text and icons"
           }
         },
@@ -1695,13 +1240,11 @@
           "default": {
             "value": "{base.palette.neutral.A900}",
             "type": "color",
-            "oldValue": "base.palette.neutral.900",
             "comment": "High contrast text for maximum readability"
           },
           "strong": {
             "value": "{base.palette.neutral.A950}",
             "type": "color",
-            "oldValue": "base.palette.neutral.950",
             "comment": "Stronger high contrast text"
           }
         }
@@ -1710,32 +1253,22 @@
         "default": {
           "value": "{base.palette.slate.A200}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.border.divider"
-          },
           "comment": "Default border for containers and dividers"
         },
         "strong": {
           "value": "{base.palette.slate.A300}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.border.container"
-          },
           "comment": "Stronger border for more visible separation"
         },
         "input": {
           "default": {
             "value": "{base.palette.slate.A500}",
             "type": "color",
-            "oldValue": "base.palette.slate.500",
             "comment": "Default border for form inputs"
           },
           "hover": {
             "value": "{base.palette.slate.A700}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.border.input.strong"
-            },
             "comment": "Hover state border for form inputs"
           }
         },
@@ -1743,41 +1276,28 @@
           "default": {
             "value": "{base.palette.blue.500}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.border.primary.default"
-            },
             "comment": "Border for informational containers (not tenant themeable)"
           }
         },
         "danger": {
           "value": "{base.palette.red.500}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.border.critical.default"
-          },
           "comment": "Border for error states (not tenant themeable)"
         },
         "warning": {
           "value": "{base.palette.amber.400}",
           "type": "color",
-          "deprecatedValues": {
-            "v3": "sys.color.border.caution.default"
-          },
           "comment": "Border for warning states (not tenant themeable)"
         },
         "inverse": {
           "default": {
             "value": "{base.palette.neutral.0}",
             "type": "color",
-            "deprecatedValues": {
-              "v3": "sys.color.border.inverse"
-            },
             "comment": "Border for use on dark backgrounds"
           },
           "strong": {
             "value": "{base.palette.white.A700}",
             "type": "color",
-            "deprecatedValues": {},
             "comment": "Stronger border for use on dark backgrounds"
           }
         },
@@ -1785,7 +1305,6 @@
           "default": {
             "value": "{base.palette.neutral.A900}",
             "type": "color",
-            "oldValue": "base.palette.neutral.900",
             "comment": "High contrast border for maximum visibility"
           }
         },
@@ -1799,13 +1318,11 @@
         "base": {
           "value": "{base.palette.slate.A200}",
           "type": "color",
-          "deprecatedValues": {},
           "comment": "Primary shadow color for elevated elements"
         },
         "ambient": {
           "value": "{base.palette.slate.A100}",
           "type": "color",
-          "deprecatedValues": {},
           "comment": "Subtle ambient shadow for soft depth"
         }
       }
