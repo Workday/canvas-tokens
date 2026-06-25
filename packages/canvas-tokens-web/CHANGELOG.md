@@ -1,5 +1,47 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.1
+
+### Major Changes
+
+- ### Components
+
+  - chore: Pin npm version to 11.10.1 ([#296](https://github.com/Workday/canvas-tokens/pull/296))
+    ([@alanbsmith](https://github.com/alanbsmith))
+  - feat: Add system + expressive icon component level tokens
+    ([#294](https://github.com/Workday/canvas-tokens/pull/294))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@alanbsmith](https://github.com/alanbsmith))
+  - feat: Add fallbacks to tokens ([#306](https://github.com/Workday/canvas-tokens/pull/306))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - chore: Fix workflows ([@RayRedGoose](https://github.com/RayRedGoose))
+  - feat: Add Sana tokens ([#326](https://github.com/Workday/canvas-tokens/pull/326))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Documentation
+
+  - docs: Add missing to Deprecated Space Tokens in v4UpgradeGuideStories.mdx
+    ([#310](https://github.com/Workday/canvas-tokens/pull/310))
+    ([@mike-kerley](https://github.com/mike-kerley))
+
+  ### Infrastructure
+
+  - feat: Add transform to handle new token old values
+    ([#303](https://github.com/Workday/canvas-tokens/pull/303))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Optional release note message. Add before
+    message if it's a breaking change. Changelog and release summaries will contain a pull request
+    title. This section will add additional notes under that title. This section is not a summary,
+    but something extra to point out in release notes. An example might be calling out breaking
+    changes in a labs component or minor visual changes that need visual regression updates. Remove
+    this section if no additional release notes are required.
+  - fix: Use deprecatedValues prop name ([#304](https://github.com/Workday/canvas-tokens/pull/304))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@Copilot](https://github.com/Copilot),
+    [@alanbsmith](https://github.com/alanbsmith))
+  - fix: Fix build issues ([#305](https://github.com/Workday/canvas-tokens/pull/305))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@Copilot](https://github.com/Copilot),
+    [@alanbsmith](https://github.com/alanbsmith))
+  - chore: Set up coderabbit rules ([#312](https://github.com/Workday/canvas-tokens/pull/312))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.3.0
 
 ### Minor Changes
