@@ -1854,13 +1854,13 @@
       },
       "shadow": {
         "base": {
-          "value": "{base.palette.neutral.A25}",
+          "value": "{base.palette.slate.A200}",
           "type": "color",
           "deprecatedValues": {},
           "comment": "Primary shadow color for elevated elements"
         },
         "ambient": {
-          "value": "{base.palette.neutral.A50}",
+          "value": "{base.palette.slate.A100}",
           "type": "color",
           "deprecatedValues": {},
           "comment": "Subtle ambient shadow for soft depth"
