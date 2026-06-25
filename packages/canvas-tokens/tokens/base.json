@@ -1697,10 +1697,6 @@
           "blur": {
             "value": "{base.size.250}",
             "type": "number"
-          },
-          "spread": {
-            "value": -4,
-            "type": "number"
           }
         },
         "200": {
@@ -1710,10 +1706,6 @@
           },
           "blur": {
             "value": "{base.size.500}",
-            "type": "number"
-          },
-          "spread": {
-            "value": -3,
             "type": "number"
           }
         }
@@ -1727,10 +1719,6 @@
           "blur": {
             "value": "{base.size.300}",
             "type": "number"
-          },
-          "spread": {
-            "value": -4,
-            "type": "number"
           }
         },
         "200": {
@@ -1740,10 +1728,6 @@
           },
           "blur": {
             "value": "{base.size.600}",
-            "type": "number"
-          },
-          "spread": {
-            "value": -12,
             "type": "number"
           }
         }

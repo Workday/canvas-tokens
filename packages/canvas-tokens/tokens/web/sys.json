@@ -55,7 +55,7 @@
             "y": "{base.shadow.1.100.y}",
             "blur": "{base.shadow.1.100.blur}",
             "spread": "0",
-            "color": "{sys.color.shadow.base}",
+            "color": "{sys.color.shadow.1}",
             "type": "dropShadow"
           },
           {
@@ -63,7 +63,7 @@
             "y": "{base.shadow.1.200.y}",
             "blur": "{base.shadow.1.200.blur}",
             "spread": "0",
-            "color": "{sys.color.shadow.ambient}",
+            "color": "{sys.color.shadow.2}",
             "type": "dropShadow"
           }
         ],
@@ -77,7 +77,7 @@
             "y": "{base.shadow.2.100.y}",
             "blur": "{base.shadow.2.100.blur}",
             "spread": "0",
-            "color": "{sys.color.shadow.base}",
+            "color": "{sys.color.shadow.1}",
             "type": "dropShadow"
           },
           {
@@ -85,7 +85,7 @@
             "y": "{base.shadow.2.200.y}",
             "blur": "{base.shadow.2.200.blur}",
             "spread": "0",
-            "color": "{sys.color.shadow.ambient}",
+            "color": "{sys.color.shadow.2}",
             "type": "dropShadow"
           }
         ],
@@ -99,7 +99,7 @@
             "y": "{base.shadow.3.100.y}",
             "blur": "{base.shadow.3.100.blur}",
             "spread": "0",
-            "color": "{sys.color.shadow.base}",
+            "color": "{sys.color.shadow.1}",
             "type": "dropShadow"
           },
           {
@@ -107,7 +107,7 @@
             "y": "{base.shadow.3.200.y}",
             "blur": "{base.shadow.3.200.blur}",
             "spread": "0",
-            "color": "{sys.color.shadow.ambient}",
+            "color": "{sys.color.shadow.2}",
             "type": "dropShadow"
           }
         ],
@@ -121,7 +121,7 @@
             "y": "{base.shadow.4.100.y}",
             "blur": "{base.shadow.4.100.blur}",
             "spread": "0",
-            "color": "{sys.color.shadow.ambient}",
+            "color": "{sys.color.shadow.1}",
             "type": "dropShadow"
           },
           {
@@ -129,7 +129,7 @@
             "y": "{base.shadow.4.200.y}",
             "blur": "{base.shadow.4.200.blur}",
             "spread": "0",
-            "color": "{sys.color.shadow.ambient}",
+            "color": "{sys.color.shadow.2}",
             "type": "dropShadow"
           }
         ],
@@ -142,21 +142,21 @@
             "x": "0",
             "y": "{base.shadow.5.100.y}",
             "blur": "{base.shadow.5.100.blur}",
-            "spread": "{base.shadow.5.100.spread}",
-            "color": "{base.palette.neutral.A150}",
+            "spread": "0",
+            "color": "{sys.color.shadow.1}",
             "type": "dropShadow"
           },
           {
             "x": "0",
             "y": "{base.shadow.5.200.y}",
             "blur": "{base.shadow.5.200.blur}",
-            "spread": "{base.shadow.5.200.spread}",
-            "color": "{base.palette.neutral.A150}",
+            "spread": "0",
+            "color": "{sys.color.shadow.2}",
             "type": "dropShadow"
           }
         ],
         "type": "boxShadow",
-        "comment": "Modals"
+        "comment": "Banners, Snackbars, Toast Messages, Non modal Dialogs, ; Side Panels (when opacity overlay behaviour is not applied)"
       },
       "6": {
         "value": [
@@ -164,21 +164,21 @@
             "x": "0",
             "y": "{base.shadow.6.100.y}",
             "blur": "{base.shadow.6.100.blur}",
-            "spread": "{base.shadow.6.100.spread}",
-            "color": "{base.palette.neutral.A300}",
+            "spread": "0",
+            "color": "{sys.color.shadow.1}",
             "type": "dropShadow"
           },
           {
             "x": "0",
             "y": "{base.shadow.6.200.y}",
             "blur": "{base.shadow.6.200.blur}",
-            "spread": "{base.shadow.6.200.spread}",
-            "color": "{base.palette.neutral.A300}",
+            "spread": "0",
+            "color": "{sys.color.shadow.2}",
             "type": "dropShadow"
           }
         ],
         "type": "boxShadow",
-        "comment": "Modal Popovers"
+        "comment": "Modal Dialogs, Side Panels (when opacity overlay behaviour; is applied)"
       }
     },
     "motion": {
