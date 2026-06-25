@@ -18,7 +18,7 @@ const transformNumber = (number: string | number) => {
 
   const pxValue = !isRem ? parseFloat(finalvalue) / 16 : finalvalue;
 
-  return pxValue > 0 ? pxValue + 'rem' : pxValue;
+  return pxValue !== 0 ? pxValue + 'rem' : pxValue;
 };
 
 /**
