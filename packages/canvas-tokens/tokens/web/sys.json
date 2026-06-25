@@ -269,12 +269,14 @@
         "hover": {
           "value": "0.045",
           "type": "number",
-          "comment": "State layer applied to accent colors on hover"
+          "comment": "State layer applied to accent colors on hover",
+          "deprecatedValues": {}
         },
         "pressed": {
           "value": "0.118",
           "type": "number",
-          "comment": "State layer applied to accent colors while pressing"
+          "comment": "State layer applied to accent colors while pressing",
+          "deprecatedValues": {}
         }
       }
     },
