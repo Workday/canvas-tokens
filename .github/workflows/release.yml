@@ -12,15 +12,23 @@ on:
         description:
           'The version override: patch, minor or major'
         required: false
+
 permissions:
   id-token: write  # Required for OIDC
   contents: write
+  
 jobs:
   release:
     # Only run if:
     # - The commit message does not contain `[skip release]`
     # - OR the workflow was manually triggered and has a `version` string
-    if: ${{!contains(github.event.head_commit.message, '[skip release]') && !startsWith(github.event.head_commit.message, 'chore') && !startsWith(github.event.head_commit.message, 'Merge')}}
+    if: |
+      (github.event_name == 'push'
+          && !contains(github.event.head_commit.message, '[skip release]')
+          && !contains(github.event.head_commit.message, '[ci skip]')
+          && (startsWith(github.event.head_commit.message, 'fix')
+              || startsWith(github.event.head_commit.message, 'feat')))
+      || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       ## First, we'll checkout the repository. We don't persist credentials because we need a
