@@ -1,5 +1,13 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.2
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix opacity accent ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 5.0.0-alpha.1
 
 ### Major Changes
