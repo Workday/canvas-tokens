@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Workday/canvas-kit-actions/install@v1
+      - uses: Workday/canvas-kit-actions/install@v2
         with:
           node_version: 22.x
 
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Workday/canvas-kit-actions/install@v1
+      - uses: Workday/canvas-kit-actions/install@v2
         with:
           node_version: 22.x
 
@@ -44,7 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Workday/canvas-kit-actions/install@v1
+      - uses: Workday/canvas-kit-actions/install@v2
         with:
           node_version: 22.x
       
@@ -79,7 +79,7 @@ jobs:
         with:
           fetch-depth: 0 # Required to retrieve git history
 
-      - uses: Workday/canvas-kit-actions/install@v1
+      - uses: Workday/canvas-kit-actions/install@v2
         with:
           node_version: 22.x
 
