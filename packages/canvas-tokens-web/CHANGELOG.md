@@ -1,5 +1,13 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.2
+
+### Minor Changes
+
+- ### Components
+
+  - fix: Update sana tokens ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0-beta.1
 
 ### Minor Changes
