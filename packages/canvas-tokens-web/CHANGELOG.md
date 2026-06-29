@@ -1,5 +1,23 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.1
+
+### Minor Changes
+
+- ### Components
+
+  - chore: merge main into prerelease/minor
+    ([#321](https://github.com/Workday/canvas-tokens/pull/321))
+    ([@alanbsmith](https://github.com/alanbsmith),
+    [@dependabot[bot]](https://github.com/dependabot[bot]))
+  - chore: Fix workflows ([@RayRedGoose](https://github.com/RayRedGoose))
+  - feat: Commit to initiate beta release ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Tokens
+
+  - fix: Fix legacy types ([#317](https://github.com/Workday/canvas-tokens/pull/317))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0-beta.0
 
 ### Minor Changes
