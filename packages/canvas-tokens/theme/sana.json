@@ -1478,57 +1478,69 @@
       "subtext": {
         "sm": {
           "value": "{base.letter-spacing.1}",
-          "type": "number"
+          "type": "number",
+          "fallback": "sys.type.letter-spacing.subtext.small"
         },
         "md": {
           "value": "{base.letter-spacing.2}",
-          "type": "number"
+          "type": "number",
+          "fallback": "sys.type.letter-spacing.subtext.medium"
         },
         "lg": {
           "value": "{base.letter-spacing.3}",
-          "type": "number"
+          "type": "number",
+          "fallback": "sys.type.letter-spacing.subtext.large"
         }
       },
       "body": {
         "sm": {
           "value": "{base.letter-spacing.4}",
-          "type": "number"
+          "type": "number",
+          "fallback": "sys.type.letter-spacing.body.small"
         },
         "md": {
           "value": "{base.letter-spacing.5}",
-          "type": "number"
+          "type": "number",
+          "fallback": ""
         },
         "lg": {
           "value": "{base.letter-spacing.6}",
-          "type": "number"
+          "type": "number",
+          "fallback": ""
         }
       },
       "heading": {
         "sm": {
           "value": "{base.letter-spacing.7}",
-          "type": "number"
+          "type": "number",
+          "fallback": ""
         },
         "md": {
           "value": "{base.letter-spacing.8}",
-          "type": "number"
+          "type": "number",
+          "fallback": ""
         },
         "lg": {
           "value": "{base.letter-spacing.9}",
-          "type": "number"
+          "type": "number",
+          "fallback": ""
         }
       },
       "title": {
         "sm": {
           "value": "{base.letter-spacing.10}",
-          "type": "number"
+          "type": "number",
+          "fallback": ""
         },
         "md": {
           "value": "{base.letter-spacing.11}",
-          "type": "number"
+          "type": "number",
+          "fallback": ""
         },
         "lg": {
           "value": "{base.letter-spacing.12}",
-          "type": "number"
+          "type": "number",
+          "fallback": ""
         }
       }
     },

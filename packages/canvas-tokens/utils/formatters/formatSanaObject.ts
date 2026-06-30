@@ -12,15 +12,51 @@ const escapeFallback = (value: unknown): string => String(value).replace(/"/g, '
 const buildVarExpression = (cssVarName: string, fallback: unknown) =>
   `var(--${cssVarName}, ${escapeFallback(fallback)})`;
 
+/** Converts a token path reference (e.g. `{sys.type.x}` or `sys.type.x`) to its CSS var name. */
+const refToCSSVarName = (ref: string): string =>
+  getCSSVarName(ref.replace(/^\{|\}$/g, '').split('.'));
+
+/**
+ * Builds a `var(...)` expression honoring an optional authored `fallback`:
+ *  - `fallback` is a non-empty string: nest an extra `var()` pointing at the
+ *    referenced token, keeping `rawValue` as the deepest fallback
+ *    (e.g. `var(--cnvs-self, var(--cnvs-fallback-ref, <raw>))`).
+ *  - `fallback` is an empty string: omit the fallback entirely (`var(--cnvs-self)`).
+ *  - no `fallback` (undefined): keep the previous strategy (`var(--cnvs-self, <raw>)`).
+ */
+const buildVarWithFallback = (
+  cssVarName: string,
+  fallback: unknown,
+  rawValue: unknown
+): string => {
+  if (typeof fallback === 'string') {
+    if (fallback.length === 0) {
+      return `var(--${cssVarName})`;
+    }
+
+    return `var(--${cssVarName}, ${buildVarExpression(refToCSSVarName(fallback), rawValue)})`;
+  }
+
+  return buildVarExpression(cssVarName, rawValue);
+};
+
+/** Builds the `var(...)` expression for a regular (non-composite) token from its own `fallback`. */
+const buildVarExpressionWithFallback = (token: TransformedToken): string =>
+  buildVarWithFallback(getCSSVarName(token.path), token.original?.fallback, token.value);
+
 /**
  * Typography tokens are composite (object) values. They cannot be expressed
  * as a single CSS variable, so we expand them into a nested object whose
  * leaves point at the inner referenced tokens (e.g. `fontFamily` →
- * `var(--cnvs-sys-font-family-default, "Sana Sans")`). The fallback for each
- * leaf is the resolved value of the referenced token, which keeps the
- * generated declarations usable even when no CSS theme is loaded.
+ * `var(--cnvs-sys-font-family-default, "Sana Sans")`). Each leaf honors the
+ * referenced token's authored `fallback` property the same way regular tokens
+ * do, falling back to the resolved value so the declarations stay usable even
+ * when no CSS theme is loaded.
  */
-const buildTypographyValue = (token: TransformedToken): SanaTree => {
+const buildTypographyValue = (
+  token: TransformedToken,
+  getRefs: Dictionary['getReferences']
+): SanaTree => {
   const original = token.original?.value as Record<string, unknown> | undefined;
   const resolved = (token.value ?? {}) as Record<string, unknown>;
   const tree: SanaTree = {};
@@ -36,7 +72,12 @@ const buildTypographyValue = (token: TransformedToken): SanaTree => {
       const match = ref.match(REFERENCE_RE);
       if (match) {
         const refPath = match[1].split('.');
-        tree[normalizedKey] = buildVarExpression(getCSSVarName(refPath), resolvedLeaf);
+        const [referenced] = getRefs(ref);
+        tree[normalizedKey] = buildVarWithFallback(
+          getCSSVarName(refPath),
+          referenced?.original?.fallback,
+          resolvedLeaf
+        );
         continue;
       }
     }
@@ -53,12 +94,15 @@ const buildTypographyValue = (token: TransformedToken): SanaTree => {
  * is a valid JS/TS string. Typography tokens return a nested object (one
  * entry per sub-property) instead of a flat string.
  */
-const buildSanaValue = (token: TransformedToken): string | SanaTree => {
+const buildSanaValue = (
+  token: TransformedToken,
+  getRefs: Dictionary['getReferences']
+): string | SanaTree => {
   if (token.type === 'typography') {
-    return buildTypographyValue(token);
+    return buildTypographyValue(token, getRefs);
   }
 
-  return buildVarExpression(getCSSVarName(token.path), token.value);
+  return buildVarExpressionWithFallback(token);
 };
 
 /**
@@ -95,20 +139,27 @@ const setSanaProperty = (
 };
 
 /** Builds the full sana tree for `brand` / `sys` levels. */
-const buildSanaTree = (tokens: Dictionary['allTokens'], level: string): SanaTree => {
+const buildSanaTree = (
+  tokens: Dictionary['allTokens'],
+  level: string,
+  getRefs: Dictionary['getReferences']
+): SanaTree => {
   const tree: SanaTree = {};
 
   for (const token of tokens) {
-    setSanaProperty(tree, token.path.slice(1), level, buildSanaValue(token));
+    setSanaProperty(tree, token.path.slice(1), level, buildSanaValue(token, getRefs));
   }
 
   return tree;
 };
 
 /** Builds flat `{name, value}` entries for the `base` level. */
-const getFlatSanaEntries = (tokens: Dictionary['allTokens']) =>
+const getFlatSanaEntries = (
+  tokens: Dictionary['allTokens'],
+  getRefs: Dictionary['getReferences']
+) =>
   tokens.map(token => {
-    const value = buildSanaValue(token);
+    const value = buildSanaValue(token, getRefs);
     return {
       name: token.name,
       // Typography tokens (composite objects) are not expected at the `base`
@@ -139,8 +190,11 @@ const renderSanaTree = (tree: SanaTree, depth = 1): string => {
   return `{\n${lines.join(',\n')}\n${closeIndent}}`;
 };
 
-const renderFlatBody = (tokens: Dictionary['allTokens']) => {
-  const entries = getFlatSanaEntries(tokens);
+const renderFlatBody = (
+  tokens: Dictionary['allTokens'],
+  getRefs: Dictionary['getReferences']
+) => {
+  const entries = getFlatSanaEntries(tokens, getRefs);
 
   return `{\n${entries.map(({name, value}) => `  ${name}: "${value}"`).join(',\n')}\n}`;
 };
@@ -150,11 +204,13 @@ const renderSanaBody = (dictionary: Dictionary, level: string) => {
     return null;
   }
 
+  const getRefs: Dictionary['getReferences'] = value => dictionary.getReferences(value);
+
   if (level === 'brand' || level === 'sys') {
-    return renderSanaTree(buildSanaTree(dictionary.allTokens, level));
+    return renderSanaTree(buildSanaTree(dictionary.allTokens, level, getRefs));
   }
 
-  return renderFlatBody(dictionary.allTokens);
+  return renderFlatBody(dictionary.allTokens, getRefs);
 };
 
 /**
