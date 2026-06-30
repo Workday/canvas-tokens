@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.3
+
+### Minor Changes
+
+- ### Components
+
+  - fix: Remove fallbacks from letter-spacing tokens
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0-beta.2
 
 ### Minor Changes
