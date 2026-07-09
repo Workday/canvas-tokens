@@ -1307,7 +1307,7 @@
       "brand": {
         "focus": {
           "primary": {
-            "value": "{base.palette.blue.500}",
+            "value": "{brand.primary.500}",
             "type": "color",
             "deprecatedValues": {
               "v3": "brand.common.focus-outline"
@@ -1526,7 +1526,7 @@
         },
         "border": {
           "primary": {
-            "value": "{base.palette.blue.500}",
+            "value": "{brand.primary.500}",
             "type": "color",
             "deprecatedValues": {},
             "comment": "Tenant-themeable primary border for focused inputs"
