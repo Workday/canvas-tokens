@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.4
+
+### Minor Changes
+
+- ### Components
+
+  - feat: remove selected colors from sana.json and update focus and border brand colors
+    ([#331](https://github.com/Workday/canvas-tokens/pull/331))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
 ## 4.4.0-beta.3
 
 ### Minor Changes
