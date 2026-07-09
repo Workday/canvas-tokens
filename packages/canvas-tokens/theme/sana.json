@@ -1813,12 +1813,6 @@
         }
       },
       "brand": {
-        "surface": {
-          "selected": {
-            "value": "{brand.neutral.A100}",
-            "type": "color"
-          }
-        },
         "accent": {
           "primary": {
             "value": "{brand.neutral.975}",
@@ -1829,6 +1823,13 @@
             "value": "{brand.neutral.975}",
             "type": "color",
             "description": "Tenant-themeable primary action color for CTAs"
+          }
+        },
+        "focus": {
+          "primary": {
+            "value": "{base.palette.blue.500}",
+            "type": "color",
+            "description": "Tenant-themeable focus ring for interactive elements"
           }
         },
         "border": {
@@ -1845,7 +1846,6 @@
           "primary": {
             "value": "{base.palette.blue.500}",
             "type": "color",
-
             "description": "Tenant-themeable primary border for focused inputs"
           }
         },
@@ -1861,11 +1861,6 @@
               "type": "color",
               "description": "Stronger tenant-themeable primary text and icon color"
             }
-          },
-          "selected": {
-            "value": "{brand.neutral.A900}",
-            "type": "color",
-            "description": "Tenant-themeable text color for selected items"
           },
           "link": {
             "default": {
