@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.5
+
+### Minor Changes
+
+- ### Components
+
+  - feat: add shadow depth system to sana theme
+    ([#333](https://github.com/Workday/canvas-tokens/pull/333))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0-beta.4
 
 ### Minor Changes
