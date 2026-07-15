@@ -1151,6 +1151,164 @@
         "description": "256px / 16rem"
       }
     },
+    "shadow": {
+      "1": {
+        "100": {
+          "y": {
+            "value": 1,
+            "type": "number"
+          },
+          "blur": {
+            "value": 4,
+            "type": "number"
+          },
+          "spread": {
+            "value": -1,
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": 2,
+            "type": "number"
+          },
+          "blur": {
+            "value": 8,
+            "type": "number"
+          }
+        }
+      },
+      "2": {
+        "100": {
+          "y": {
+            "value": 2,
+            "type": "number"
+          },
+          "blur": {
+            "value": 8,
+            "type": "number"
+          },
+          "spread": {
+            "value": -1,
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": 4,
+            "type": "number"
+          },
+          "blur": {
+            "value": 16,
+            "type": "number"
+          }
+        }
+      },
+      "3": {
+        "100": {
+          "y": {
+            "value": 3,
+            "type": "number"
+          },
+          "blur": {
+            "value": 12,
+            "type": "number"
+          },
+          "spread": {
+            "value": -1,
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": 6,
+            "type": "number"
+          },
+          "blur": {
+            "value": 24,
+            "type": "number"
+          }
+        }
+      },
+      "4": {
+        "100": {
+          "y": {
+            "value": 4,
+            "type": "number"
+          },
+          "blur": {
+            "value": 16,
+            "type": "number"
+          },
+          "spread": {
+            "value": -2,
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": 8,
+            "type": "number"
+          },
+          "blur": {
+            "value": 32,
+            "type": "number"
+          }
+        }
+      },
+      "5": {
+        "100": {
+          "y": {
+            "value": 8,
+            "type": "number"
+          },
+          "blur": {
+            "value": 24,
+            "type": "number"
+          },
+          "spread": {
+            "value": -2,
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": 16,
+            "type": "number"
+          },
+          "blur": {
+            "value": 48,
+            "type": "number"
+          }
+        }
+      },
+      "6": {
+        "100": {
+          "y": {
+            "value": 16,
+            "type": "number"
+          },
+          "blur": {
+            "value": 48,
+            "type": "number"
+          },
+          "spread": {
+            "value": -3,
+            "type": "number"
+          }
+        },
+        "200": {
+          "y": {
+            "value": 32,
+            "type": "number"
+          },
+          "blur": {
+            "value": 96,
+            "type": "number"
+          }
+        }
+      }
+    },
     "letter-spacing": {
       "1": {
         "value": 0.13,
@@ -1801,15 +1959,126 @@
         }
       },
       "shadow": {
-        "ambient": {
-          "value": "{base.palette.neutral.A50}",
-          "type": "color",
-          "description": "Subtle ambient shadow for soft depth"
+        "strength": {
+          "light": {
+            "value": 0.01,
+            "type": "number"
+          },
+          "dark": {
+            "value": 0.1,
+            "type": "number"
+          }
+        },
+        "step-unit": {
+          "light": {
+            "value": 0.02,
+            "type": "number"
+          },
+          "dark": {
+            "value": 0.06,
+            "type": "number"
+          }
+        },
+        "ambient-ratio": {
+          "value": 0.667,
+          "type": "number"
         },
         "base": {
-          "value": "{base.palette.neutral.A25}",
-          "type": "color",
-          "description": "Primary shadow color for elevated elements"
+          "light": {
+            "value": "{base.palette.neutral.1000}",
+            "type": "color",
+            "oldValue": "base.palette.neutral.1000",
+            "deprecatedValues": {}
+          },
+          "dark": {
+            "value": "{base.palette.neutral.25}",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "chroma": {
+          "light": {
+            "value": "{color.shadow.base.light}",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "dark": {
+            "value": "{color.shadow.base.dark}",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "1": {
+          "key": {
+            "value": "rgba({color.shadow.base.light}, 0.03)",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "ambient": {
+            "value": "rgba({color.shadow.base.light}, 0.02)",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "2": {
+          "key": {
+            "value": "rgba({color.shadow.base.light}, 0.05)",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "ambient": {
+            "value": "rgba({color.shadow.base.light}, 0.0334)",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "3": {
+          "key": {
+            "value": "rgba({color.shadow.base.light}, 0.07)",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "ambient": {
+            "value": "rgba({color.shadow.base.light}, 0.0467)",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "4": {
+          "key": {
+            "value": "rgba({color.shadow.base.light}, 0.09)",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "ambient": {
+            "value": "rgba({color.shadow.base.light}, 0.06)",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "5": {
+          "key": {
+            "value": "rgba({color.shadow.base.light}, 0.11)",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "ambient": {
+            "value": "rgba({color.shadow.base.light}, 0.0734)",
+            "type": "color",
+            "deprecatedValues": {}
+          }
+        },
+        "6": {
+          "key": {
+            "value": "rgba({color.shadow.base.light}, 0.13)",
+            "type": "color",
+            "deprecatedValues": {}
+          },
+          "ambient": {
+            "value": "rgba({color.shadow.base.light}, 0.0867)",
+            "type": "color",
+            "deprecatedValues": {}
+          }
         }
       },
       "brand": {
@@ -2087,6 +2356,140 @@
             "type": "color"
           }
         }
+      }
+    },
+    "depth": {
+      "1": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.1.100.y}",
+            "blur": "{shadow.1.100.blur}",
+            "spread": "{shadow.1.100.spread}",
+            "color": "{color.shadow.1.key}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.1.200.y}",
+            "blur": "{shadow.1.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.1.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Standard card depth"
+      },
+      "2": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.2.100.y}",
+            "blur": "{shadow.2.100.blur}",
+            "spread": "{shadow.2.100.spread}",
+            "color": "{color.shadow.2.key}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.2.200.y}",
+            "blur": "{shadow.2.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.2.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Top navigation, bottom navigation"
+      },
+      "3": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.3.100.y}",
+            "blur": "{shadow.3.100.blur}",
+            "spread": "{shadow.3.100.spread}",
+            "color": "{color.shadow.3.key}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.3.200.y}",
+            "blur": "{shadow.3.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.3.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Floating action buttons (FAB), menus"
+      },
+      "4": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.4.100.y}",
+            "blur": "{shadow.4.100.blur}",
+            "spread": "{shadow.4.100.spread}",
+            "color": "{color.shadow.4.key}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.4.200.y}",
+            "blur": "{shadow.4.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.4.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Bottom sheets"
+      },
+      "5": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.5.100.y}",
+            "blur": "{shadow.5.100.blur}",
+            "spread": "{shadow.5.100.spread}",
+            "color": "{color.shadow.5.key}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.5.200.y}",
+            "blur": "{shadow.5.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.5.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Banners, snackbars, toast messages, non-modal dialogs, side panels (no overlay)"
+      },
+      "6": {
+        "value": [
+          {
+            "x": "0",
+            "y": "{shadow.6.100.y}",
+            "blur": "{shadow.6.100.blur}",
+            "spread": "{shadow.6.100.spread}",
+            "color": "{color.shadow.6.key}",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "{shadow.6.200.y}",
+            "blur": "{shadow.6.200.blur}",
+            "spread": "0",
+            "color": "{color.shadow.6.ambient}",
+            "type": "dropShadow"
+          }
+        ],
+        "type": "boxShadow",
+        "description": "Modal dialogs, side panels (with overlay)"
       }
     },
     "opacity": {
