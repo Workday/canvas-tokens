@@ -1998,84 +1998,84 @@
         },
         "chroma": {
           "light": {
-            "value": "{color.shadow.base.light}",
+            "value": "{sys.color.shadow.base.light}",
             "type": "color",
             "deprecatedValues": {}
           },
           "dark": {
-            "value": "{color.shadow.base.dark}",
+            "value": "{sys.color.shadow.base.dark}",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "1": {
           "key": {
-            "value": "rgba({color.shadow.base.light}, 0.03)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.03)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "rgba({color.shadow.base.light}, 0.02)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.02)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "2": {
           "key": {
-            "value": "rgba({color.shadow.base.light}, 0.05)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.05)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "rgba({color.shadow.base.light}, 0.0334)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.0334)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "3": {
           "key": {
-            "value": "rgba({color.shadow.base.light}, 0.07)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.07)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "rgba({color.shadow.base.light}, 0.0467)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.0467)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "4": {
           "key": {
-            "value": "rgba({color.shadow.base.light}, 0.09)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.09)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "rgba({color.shadow.base.light}, 0.06)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.06)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "5": {
           "key": {
-            "value": "rgba({color.shadow.base.light}, 0.11)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.11)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "rgba({color.shadow.base.light}, 0.0734)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.0734)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "6": {
           "key": {
-            "value": "rgba({color.shadow.base.light}, 0.13)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.13)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "rgba({color.shadow.base.light}, 0.0867)",
+            "value": "rgba({sys.color.shadow.base.light}, 0.0867)",
             "type": "color",
             "deprecatedValues": {}
           }
@@ -2363,18 +2363,18 @@
         "value": [
           {
             "x": "0",
-            "y": "{shadow.1.100.y}",
-            "blur": "{shadow.1.100.blur}",
-            "spread": "{shadow.1.100.spread}",
-            "color": "{color.shadow.1.key}",
+            "y": "{base.shadow.1.100.y}",
+            "blur": "{base.shadow.1.100.blur}",
+            "spread": "{base.shadow.1.100.spread}",
+            "color": "{sys.color.shadow.1.key}",
             "type": "dropShadow"
           },
           {
             "x": "0",
-            "y": "{shadow.1.200.y}",
-            "blur": "{shadow.1.200.blur}",
+            "y": "{base.shadow.1.200.y}",
+            "blur": "{base.shadow.1.200.blur}",
             "spread": "0",
-            "color": "{color.shadow.1.ambient}",
+            "color": "{sys,color.shadow.1.ambient}",
             "type": "dropShadow"
           }
         ],
@@ -2385,18 +2385,18 @@
         "value": [
           {
             "x": "0",
-            "y": "{shadow.2.100.y}",
-            "blur": "{shadow.2.100.blur}",
-            "spread": "{shadow.2.100.spread}",
-            "color": "{color.shadow.2.key}",
+            "y": "{base.shadow.2.100.y}",
+            "blur": "{base.shadow.2.100.blur}",
+            "spread": "{base.shadow.2.100.spread}",
+            "color": "{sys.color.shadow.2.key}",
             "type": "dropShadow"
           },
           {
             "x": "0",
-            "y": "{shadow.2.200.y}",
-            "blur": "{shadow.2.200.blur}",
+            "y": "{base.shadow.2.200.y}",
+            "blur": "{base.shadow.2.200.blur}",
             "spread": "0",
-            "color": "{color.shadow.2.ambient}",
+            "color": "{sys.color.shadow.2.ambient}",
             "type": "dropShadow"
           }
         ],
@@ -2407,18 +2407,18 @@
         "value": [
           {
             "x": "0",
-            "y": "{shadow.3.100.y}",
-            "blur": "{shadow.3.100.blur}",
-            "spread": "{shadow.3.100.spread}",
-            "color": "{color.shadow.3.key}",
+            "y": "{base.shadow.3.100.y}",
+            "blur": "{base.shadow.3.100.blur}",
+            "spread": "{base.shadow.3.100.spread}",
+            "color": "{sys.color.shadow.3.key}",
             "type": "dropShadow"
           },
           {
             "x": "0",
-            "y": "{shadow.3.200.y}",
-            "blur": "{shadow.3.200.blur}",
+            "y": "{base.shadow.3.200.y}",
+            "blur": "{base.shadow.3.200.blur}",
             "spread": "0",
-            "color": "{color.shadow.3.ambient}",
+            "color": "{sys.color.shadow.3.ambient}",
             "type": "dropShadow"
           }
         ],
@@ -2429,18 +2429,18 @@
         "value": [
           {
             "x": "0",
-            "y": "{shadow.4.100.y}",
-            "blur": "{shadow.4.100.blur}",
-            "spread": "{shadow.4.100.spread}",
-            "color": "{color.shadow.4.key}",
+            "y": "{base.shadow.4.100.y}",
+            "blur": "{base.shadow.4.100.blur}",
+            "spread": "{base.shadow.4.100.spread}",
+            "color": "{sys.color.shadow.4.key}",
             "type": "dropShadow"
           },
           {
             "x": "0",
-            "y": "{shadow.4.200.y}",
-            "blur": "{shadow.4.200.blur}",
+            "y": "{base.shadow.4.200.y}",
+            "blur": "{base.shadow.4.200.blur}",
             "spread": "0",
-            "color": "{color.shadow.4.ambient}",
+            "color": "{sys.color.shadow.4.ambient}",
             "type": "dropShadow"
           }
         ],
@@ -2451,18 +2451,18 @@
         "value": [
           {
             "x": "0",
-            "y": "{shadow.5.100.y}",
-            "blur": "{shadow.5.100.blur}",
-            "spread": "{shadow.5.100.spread}",
-            "color": "{color.shadow.5.key}",
+            "y": "{base.shadow.5.100.y}",
+            "blur": "{base.shadow.5.100.blur}",
+            "spread": "{base.shadow.5.100.spread}",
+            "color": "{sys.color.shadow.5.key}",
             "type": "dropShadow"
           },
           {
             "x": "0",
-            "y": "{shadow.5.200.y}",
-            "blur": "{shadow.5.200.blur}",
+            "y": "{base.shadow.5.200.y}",
+            "blur": "{base.shadow.5.200.blur}",
             "spread": "0",
-            "color": "{color.shadow.5.ambient}",
+            "color": "{sys.color.shadow.5.ambient}",
             "type": "dropShadow"
           }
         ],
@@ -2473,18 +2473,18 @@
         "value": [
           {
             "x": "0",
-            "y": "{shadow.6.100.y}",
-            "blur": "{shadow.6.100.blur}",
-            "spread": "{shadow.6.100.spread}",
-            "color": "{color.shadow.6.key}",
+            "y": "{base.shadow.6.100.y}",
+            "blur": "{base.shadow.6.100.blur}",
+            "spread": "{base.shadow.6.100.spread}",
+            "color": "{sys.color.shadow.6.key}",
             "type": "dropShadow"
           },
           {
             "x": "0",
-            "y": "{shadow.6.200.y}",
-            "blur": "{shadow.6.200.blur}",
+            "y": "{base.shadow.6.200.y}",
+            "blur": "{base.shadow.6.200.blur}",
             "spread": "0",
-            "color": "{color.shadow.6.ambient}",
+            "color": "{sys.color.shadow.6.ambient}",
             "type": "dropShadow"
           }
         ],
