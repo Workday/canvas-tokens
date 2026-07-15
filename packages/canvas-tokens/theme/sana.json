@@ -2374,7 +2374,7 @@
             "y": "{base.shadow.1.200.y}",
             "blur": "{base.shadow.1.200.blur}",
             "spread": "0",
-            "color": "{sys,color.shadow.1.ambient}",
+            "color": "{sys.color.shadow.1.ambient}",
             "type": "dropShadow"
           }
         ],
