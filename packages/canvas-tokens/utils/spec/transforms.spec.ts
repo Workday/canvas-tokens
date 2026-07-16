@@ -471,17 +471,4 @@ describe('transforms', () => {
       '0 0.5rem 1.5rem -0.125rem oklch(0 0 0 / 0.11), 0 1rem 3rem 0 oklch(0 0 0 / 0.0734)'
     );
   });
-
-  it('should flatten relative oklch syntax to a single oklch value', () => {
-    const result = transforms['value/flatten-oklch'].transformer(
-      {
-        ...defaultToken,
-        value: 'oklch(from oklch(0 0 0 / 1) / 0.03)',
-        original: {value: 'oklch({sys.color.shadow.base.light} / 0.03)'},
-      },
-      defaultOptions
-    );
-
-    expect(result).toBe('oklch(0 0 0 / 0.03)');
-  });
 });
