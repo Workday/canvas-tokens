@@ -220,7 +220,6 @@ const webTransforms = [
 const sanaJSTransforms = [
   'value/duration/ms',
   'value/flatten-border',
-  'value/flatten-oklch',
   'value/shadow/flat-sys',
   'value/breakpoints/px',
   'value/wrapped-font-family',

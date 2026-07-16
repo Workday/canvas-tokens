@@ -1,8 +1,6 @@
 import {DesignToken} from 'style-dictionary';
 import * as math from 'mathjs';
 
-import {flattenOklchInString} from './flatOklchColor';
-
 const transformNumber = (number: string | number) => {
   const isString = typeof number === 'string';
   const mathSigns = ['+', '-', '*', '/'];
@@ -44,8 +42,8 @@ export const flatShadow = ({value}: DesignToken): string => {
 
     const numbers = [xNumber, yNumber, blurNumber, spreadNumber].join(' ');
 
-    return `${numbers} ${flattenOklchInString(color)}`;
+    return `${numbers} ${color}`;
   });
 
-  return flattenOklchInString(flatValue.join(', '));
+  return flatValue.join(', ');
 };
