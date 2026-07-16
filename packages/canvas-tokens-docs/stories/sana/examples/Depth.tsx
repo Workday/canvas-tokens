@@ -76,7 +76,7 @@ export function SystemSanaDepth() {
                   style={{
                     width: '7rem',
                     height: '5rem',
-                    backgroundColor: 'var(--cnvs-sys-color-color-bg-default)',
+                    backgroundColor: 'var(--cnvs-sys-color-bg-default)',
                     borderRadius: '0.25rem',
                     boxShadow: token.shadow,
                   }}
