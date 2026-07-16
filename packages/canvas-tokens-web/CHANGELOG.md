@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.6
+
+### Minor Changes
+
+- ### Components
+
+  - fix: Wrap shadow tokens in oklch and not rgba
+    ([#334](https://github.com/Workday/canvas-tokens/pull/334))
+    ([@RayRedGoose](https://github.com/RayRedGoose), manuel.carrera)
+
 ## 4.4.0-beta.5
 
 ### Minor Changes
