@@ -2010,72 +2010,72 @@
         },
         "1": {
           "key": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.03)",
+            "value": "oklch(0 0 0 / 0.03)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.02)",
+            "value": "oklch(0 0 0 / 0.02)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "2": {
           "key": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.05)",
+            "value": "oklch(0 0 0 / 0.05)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.0334)",
+            "value": "oklch(0 0 0 / 0.0334)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "3": {
           "key": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.07)",
+            "value": "oklch(0 0 0 / 0.07)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.0467)",
+            "value": "oklch(0 0 0 / 0.0467)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "4": {
           "key": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.09)",
+            "value": "oklch(0 0 0 / 0.09)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.06)",
+            "value": "oklch(0 0 0 / 0.06)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "5": {
           "key": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.11)",
+            "value": "oklch(0 0 0 / 0.11)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.0734)",
+            "value": "oklch(0 0 0 / 0.0734)",
             "type": "color",
             "deprecatedValues": {}
           }
         },
         "6": {
           "key": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.13)",
+            "value": "oklch(0 0 0 / 0.13)",
             "type": "color",
             "deprecatedValues": {}
           },
           "ambient": {
-            "value": "oklch({sys.color.shadow.base.light} / 0.0867)",
+            "value": "oklch(0 0 0 / 0.0867)",
             "type": "color",
             "deprecatedValues": {}
           }
