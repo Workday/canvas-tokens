@@ -439,4 +439,36 @@ describe('transforms', () => {
 
     expect(result).toBe(expected);
   });
+
+  it('should append rem units to negative px spread values', () => {
+    const result = transforms['value/shadow/flat-sys'].transformer(
+      {
+        ...defaultToken,
+        value: [
+          {
+            x: '0',
+            y: '8',
+            blur: '24',
+            spread: '-2',
+            color: 'oklch(0 0 0 / 0.11)',
+            type: 'dropShadow',
+          },
+          {
+            x: '0',
+            y: '16',
+            blur: '48',
+            spread: '0',
+            color: 'oklch(0 0 0 / 0.0734)',
+            type: 'dropShadow',
+          },
+        ],
+        path: ['sys', 'depth', '5'],
+      },
+      defaultOptions
+    );
+
+    expect(result).toBe(
+      '0 0.5rem 1.5rem -0.125rem oklch(0 0 0 / 0.11), 0 1rem 3rem 0 oklch(0 0 0 / 0.0734)'
+    );
+  });
 });

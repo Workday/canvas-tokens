@@ -16,9 +16,15 @@ const transformNumber = (number: string | number) => {
       ? math.evaluate(cleanedNumber)
       : cleanedNumber;
 
-  const pxValue = !isRem ? parseFloat(finalvalue) / 16 : finalvalue;
+  const numericValue = isRem
+    ? parseFloat(String(finalvalue))
+    : parseFloat(String(finalvalue)) / 16;
 
-  return pxValue > 0 ? pxValue + 'rem' : pxValue;
+  if (numericValue === 0) {
+    return '0';
+  }
+
+  return `${numericValue}rem`;
 };
 
 /**
