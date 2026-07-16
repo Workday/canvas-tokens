@@ -1,6 +1,7 @@
 import {Meta, Unstyled} from '@storybook/blocks';
 
 import {BaseSanaColors, BrandSanaColors, SystemSanaColors} from './examples/Color';
+import {SystemSanaDepth} from './examples/Depth';
 
 <Meta title="Docs/Sana Theme/Tokens" />
 
@@ -9,14 +10,14 @@ import {BaseSanaColors, BrandSanaColors, SystemSanaColors} from './examples/Colo
 # Sana Theme Tokens
 
 The Sana token set is an alternate theme for Canvas tokens. The values are scoped to a
-`[data-theme="sana"]` selector, so they only apply when an ancestor element opts in to the theme.
+`[data-theme="sana-canvas"]` selector, so they only apply when an ancestor element opts in to the theme.
 This makes it possible to render the Sana palette inside an otherwise default Canvas application.
 
 ## Usage
 
 ### CSS
 
-Import the Sana stylesheet alongside the standard token stylesheets. Then add `data-theme="sana"` to
+Import the Sana stylesheet alongside the standard token stylesheets. Then add `data-theme="sana-canvas"` to
 any element you'd like to opt in (commonly the `<html>` or `<body>` element, or a single subtree if
 you want to scope the theme).
 
@@ -31,12 +32,12 @@ you want to scope the theme).
 
 ```html
 <!-- Apply the theme to a whole document... -->
-<html data-theme="sana">
+<html data-theme="sana-canvas">
   ...
 </html>
 
 <!-- ...or just a subtree. -->
-<section data-theme="sana">
+<section data-theme="sana-canvas">
   <button class="cnvs-button">I use Sana tokens</button>
 </section>
 ```
@@ -60,7 +61,7 @@ const styles = {
 };
 ```
 
-> The Sana CSS variables only resolve to their themed values when `data-theme="sana"` is present on
+> The Sana CSS variables only resolve to their themed values when `data-theme="sana-canvas"` is present on
 > an ancestor element. If the attribute is missing, the fallback baked into each `var()` expression
 > is used instead.
 
@@ -279,9 +280,16 @@ Non-color system tokens also gain new entries under existing namespaces.
 
 ### Full system palette
 
-Each grid below is rendered inside a `data-theme="sana"` container so the swatches reflect the
+Each grid below is rendered inside a `data-theme="sana-canvas"` container so the swatches reflect the
 themed values.
 
 <SystemSanaColors />
+
+### Depth tokens
+
+Depth tokens use the Sana shadow scale. The grid below is rendered inside a `data-theme="sana-canvas"`
+container so the samples reflect the themed values.
+
+<SystemSanaDepth />
 
 </Unstyled>

@@ -33,9 +33,9 @@ function buildSanaSwatch(sanaValue: string, jsVarName: string): ColorSwatch {
   };
 }
 
-/** Wraps content in a `data-theme="sana"` container so CSS variables resolve to the sana values. */
+/** Wraps content in a `data-theme="sana-canvas"` container so CSS variables resolve to the sana values. */
 const SanaTheme = ({children}: {children: React.ReactNode}) => (
-  <div data-theme="sana">{children}</div>
+  <div data-theme="sana-canvas">{children}</div>
 );
 
 function shadeSort(a: ColorSwatch, b: ColorSwatch) {
@@ -154,13 +154,13 @@ function* walkSystemColorTokens(
 function buildSystemSanaGroups() {
   const groups: Record<string, ColorSwatch[]> = {};
 
-  const root = (systemSana.color as unknown as {color?: Record<string, unknown>})?.color;
+  const root = systemSana.color;
   if (!root) return [];
 
   for (const [groupName, groupNode] of Object.entries(root)) {
     const swatches: ColorSwatch[] = [];
     for (const {path, value} of walkSystemColorTokens(groupNode)) {
-      const jsPath = ['system', 'sana', 'color', 'color', groupName, ...path].join('.');
+      const jsPath = ['system', 'sana', 'color', groupName, ...path].join('.');
       swatches.push(buildSanaSwatch(value, jsPath));
     }
     if (swatches.length) {

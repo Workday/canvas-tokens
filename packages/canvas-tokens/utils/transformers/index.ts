@@ -5,6 +5,7 @@ import * as filter from '../filters';
 
 import {durationMs} from './duration-ms';
 import {generateNewTokenFallback} from './generateNewTokenFallback';
+import {flatOklchColor} from './flatOklchColor';
 import {flatRGBAColor} from './flatRGBAColor';
 import {flatShadow} from './flatShadow';
 import {mapFontWeight} from './mapFontWeight';
@@ -72,13 +73,7 @@ export const transforms: Record<string, Transform> = {
     type: 'value',
     transitive: true,
     matcher: filter.isSysColor,
-    transformer: ({original: {value}}) => {
-      // eslint-disable-next-line no-useless-escape
-      const updatedValue = value.replace(/{[\w\.]*}/g, (a: string) =>
-        a.includes('palette') ? `from ${a} l c h ` : ' ' + a
-      );
-      return value.includes('{base.opacity.0}') ? 'transparent' : updatedValue;
-    },
+    transformer: flatOklchColor,
   },
   'value/opacity': {
     type: 'value',

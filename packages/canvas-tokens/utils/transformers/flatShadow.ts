@@ -1,6 +1,8 @@
 import {DesignToken} from 'style-dictionary';
 import * as math from 'mathjs';
 
+import {flattenOklchInString} from './flatOklchColor';
+
 const transformNumber = (number: string | number) => {
   const isString = typeof number === 'string';
   const mathSigns = ['+', '-', '*', '/'];
@@ -16,9 +18,15 @@ const transformNumber = (number: string | number) => {
       ? math.evaluate(cleanedNumber)
       : cleanedNumber;
 
-  const pxValue = !isRem ? parseFloat(finalvalue) / 16 : finalvalue;
+  const numericValue = isRem
+    ? parseFloat(String(finalvalue))
+    : parseFloat(String(finalvalue)) / 16;
 
-  return pxValue > 0 ? pxValue + 'rem' : pxValue;
+  if (numericValue === 0) {
+    return '0';
+  }
+
+  return `${numericValue}rem`;
 };
 
 /**
@@ -36,8 +44,8 @@ export const flatShadow = ({value}: DesignToken): string => {
 
     const numbers = [xNumber, yNumber, blurNumber, spreadNumber].join(' ');
 
-    return `${numbers} ${color}`;
+    return `${numbers} ${flattenOklchInString(color)}`;
   });
 
-  return flatValue.join(', ');
+  return flattenOklchInString(flatValue.join(', '));
 };
