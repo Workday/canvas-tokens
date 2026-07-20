@@ -1922,6 +1922,18 @@
           "value": "{base.palette.neutral.A400}",
           "type": "color",
           "description": "Disabled state text and icons"
+        },
+        "link": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "description": "Default text color for hyperlinks"
+          },
+          "hover": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "description": "Text color for hyperlinks on hover"
+          }
         }
       },
       "border": {
@@ -2129,18 +2141,6 @@
               "value": "{brand.neutral.A950}",
               "type": "color",
               "description": "Stronger tenant-themeable primary text and icon color"
-            }
-          },
-          "link": {
-            "default": {
-              "value": "{base.palette.blue.600}",
-              "type": "color",
-              "description": "Default text color for hyperlinks"
-            },
-            "hover": {
-              "value": "{base.palette.blue.700}",
-              "type": "color",
-              "description": "Text color for hyperlinks on hover"
             }
           }
         }
