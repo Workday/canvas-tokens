@@ -1686,6 +1686,18 @@
             "comment": "Stronger success text and icons"
           }
         },
+        "link": {
+          "default": {
+            "value": "{base.palette.blue.600}",
+            "type": "color",
+            "comment": "Default text color for hyperlinks (not tenant themeable)"
+          },
+          "hover": {
+            "value": "{base.palette.blue.700}",
+            "type": "color",
+            "comment": "Text color for hyperlinks on hover"
+          }
+        },
         "ai": {
           "value": "{base.palette.blue.950}",
           "type": "color",
