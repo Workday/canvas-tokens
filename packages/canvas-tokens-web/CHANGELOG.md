@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.7
+
+### Minor Changes
+
+- ### Components
+
+  - feat: Add fg link tokens ([#335](https://github.com/Workday/canvas-tokens/pull/335))
+    ([@RayRedGoose](https://github.com/RayRedGoose), sheelah)
+
 ## 4.4.0-beta.6
 
 ### Minor Changes
