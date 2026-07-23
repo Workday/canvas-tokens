@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.9
+
+### Minor Changes
+
+- ### Components
+
+  - fix: Change token from gradient to elevated
+    ([#337](https://github.com/Workday/canvas-tokens/pull/337))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0-beta.8
 
 ### Minor Changes
