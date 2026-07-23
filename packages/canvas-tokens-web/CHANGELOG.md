@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.8
+
+### Minor Changes
+
+- ### Components
+
+  - fix: Add alt gradient for containers ([#336](https://github.com/Workday/canvas-tokens/pull/336))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0-beta.7
 
 ### Minor Changes
