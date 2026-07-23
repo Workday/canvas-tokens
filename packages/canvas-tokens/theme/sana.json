@@ -1867,6 +1867,11 @@
             "value": "{brand.neutral.A100}",
             "type": "color",
             "description": "Stronger de-emphasized container background"
+          },
+          "gradient": {
+            "value": "linear-gradient(0deg, {sys.color.surface.overlay.raised} 0%, {sys.color.surface.overlay.raised} 100%), linear-gradient(0deg, {sys.color.surface.raised} 0%, {sys.color.surface.raised} 100%), {sys.color.surface.popover}",
+            "type": "color",
+            "description": "Gradient used on alt background containers"
           }
         },
         "loading": {
