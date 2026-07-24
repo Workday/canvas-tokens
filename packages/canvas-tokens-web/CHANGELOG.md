@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.10
+
+### Minor Changes
+
+- ### Components
+
+  - fix: Refactor elevated color definition in sana.json
+    ([#339](https://github.com/Workday/canvas-tokens/pull/339))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0-beta.9
 
 ### Minor Changes
