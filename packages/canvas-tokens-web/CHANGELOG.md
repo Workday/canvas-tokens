@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.11
+
+### Minor Changes
+
+- ### Components
+
+  - feat: Add border elevated token ([#340](https://github.com/Workday/canvas-tokens/pull/340))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0-beta.10
 
 ### Minor Changes
