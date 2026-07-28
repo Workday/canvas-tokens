@@ -1952,6 +1952,11 @@
           "type": "color",
           "description": "Stronger border for more visible separation"
         },
+        "elevated": {
+          "value": "{base.palette.neutral.0}",
+          "type": "color",
+          "description": "Border for containers on alternative backgrounds"
+        },
         "input": {
           "default": {
             "value": "{base.palette.neutral.A500}",
