@@ -1181,7 +1181,7 @@
         "overlay": {
           "hover": {
             "default": {
-              "value": "{base.palette.slate.A50}",
+              "value": "{base.palette.slate.500}",
               "type": "color",
               "deprecatedValues": {},
               "comment": "Hover state overlay for interactive containers"
@@ -1285,7 +1285,7 @@
         },
         "overlay": {
           "hover": {
-            "value": "{base.palette.neutral.A200}",
+            "value": "{base.palette.neutral.1000}",
             "type": "color",
             "deprecatedValues": {},
             "comment": "Hover overlay for accent-colored elements"
