@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.12
+
+### Minor Changes
+
+- ### Components
+
+  - fix: Update non sana canvas overlay values
+    ([#341](https://github.com/Workday/canvas-tokens/pull/341))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0-beta.11
 
 ### Minor Changes
