@@ -1,5 +1,11 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0
+
+### Minor Changes
+
+-
+
 ## 4.4.0-beta.13
 
 ### Minor Changes
