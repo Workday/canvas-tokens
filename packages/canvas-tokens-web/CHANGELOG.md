@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 4.4.0-beta.13
+
+### Minor Changes
+
+- ### Components
+
+  - fix: Revert token changes ([#342](https://github.com/Workday/canvas-tokens/pull/342))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@sheelah](https://github.com/sheelah))
+
 ## 4.4.0-beta.12
 
 ### Minor Changes
