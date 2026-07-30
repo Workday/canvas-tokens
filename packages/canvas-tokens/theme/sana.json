@@ -1361,11 +1361,11 @@
     },
     "font-family": {
       "0": {
-        "value": "-apple-system, BlinkMacSystemFont, \"Sana Serif\", Roboto, Inter, system-ui, sans-serif, Avenir, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "value": "Roboto, -apple-system, BlinkMacSystemFont, \"Sana Serif\", Inter, system-ui, sans-serif, Avenir, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
         "type": "text"
       },
       "50": {
-        "value": "Sana Sans LCG 05 VF",
+        "value": "Sana Sans VF",
         "type": "text"
       },
       "100": {
@@ -1621,6 +1621,14 @@
     "font-family": {
       "fallback": {
         "value": "{base.font-family.0}",
+        "type": "text"
+      },
+      "default": {
+        "value": "{base.font-family.50}, {sys.font-family.fallback}",
+        "type": "text"
+      },
+      "mono": {
+        "value": "{base.font-family.100}, \"Roboto Mono\", monospace",
         "type": "text"
       }
     },
