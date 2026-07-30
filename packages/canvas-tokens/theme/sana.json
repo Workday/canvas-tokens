@@ -1860,7 +1860,7 @@
             "description": "Semi-transparent backdrop behind modals and dialogs"
           },
           "mixin": {
-            "value": "{base.palette.neutral.1000}",
+            "value": "{sys.color.surface.overlay.hover.default}",
             "type": "color",
             "description": "Pressed state overlay for interactive containers"
           }
@@ -1924,7 +1924,7 @@
             "description": "Pressed overlay for accent-colored elements"
           },
           "mixin": {
-            "value": "{base.palette.neutral.0}",
+            "value": "{sys.color.accent.overlay.hover}",
             "type": "color",
             "description": "Pressed overlay for accent-colored elements"
           }
