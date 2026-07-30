@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - uses: Workday/canvas-kit-actions/install@v2
         with:
@@ -18,7 +18,7 @@ jobs:
     needs: 'install'
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - uses: Workday/canvas-kit-actions/install@v2
         with:
@@ -32,7 +32,7 @@ jobs:
 
       - name: Cache Build
         id: build-cache
-        uses: actions/cache@v5
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: docs
           key: ${{ runner.os }}-build-${{ github.sha }}
@@ -42,7 +42,11 @@ jobs:
     needs: ['install', 'build']
 
     steps:
+<<<<<<< HEAD
       - uses: actions/checkout@v6
+=======
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+>>>>>>> 4c0ac97 (chore: Update all external actions to use SHA1 for versioning)
 
       - uses: Workday/canvas-kit-actions/install@v2
         with:
@@ -65,7 +69,7 @@ jobs:
         run: yarn test
 
       - name: Set tokens info artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: tokens-info
           path: packages/canvas-tokens-docs/tokens
@@ -75,7 +79,7 @@ jobs:
     needs: 'build'
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           fetch-depth: 0 # Required to retrieve git history
 
@@ -84,12 +88,12 @@ jobs:
           node_version: 24.x
 
       - name: Restore Build
-        uses: actions/cache@v5
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: docs
           key: ${{ runner.os }}-build-${{ github.sha }}
 
-      - uses: chromaui/action@main
+      - uses: chromaui/action@94713c544284a14195de3b50ef24301579f1877e # v18.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: chpt_a9e354687a28e6e

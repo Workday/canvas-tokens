@@ -14,7 +14,7 @@ jobs:
       ## First, we'll checkout the repository. We don't persist credentials because we need a
       ## Personal Access Token to push on a branch that is protected. See
       ## https://github.com/cycjimmy/semantic-release-action#basic-usage
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
           ref: prerelease/major # checkout the next branch
@@ -28,7 +28,7 @@ jobs:
 
       ## If the previous step passed, push the verified commit directly to the next branch
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1.3.0
         with:
           github_token: ${{ secrets.GH_RW_TOKEN }}
           branch: refs/heads/prerelease/major
@@ -44,7 +44,7 @@ jobs:
       ## First, we'll checkout the repository. We don't persist credentials because we need a
       ## Personal Access Token to push on a branch that is protected. See
       ## https://github.com/cycjimmy/semantic-release-action#basic-usage
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
           fetch-depth: 0 # Needed to do merges
@@ -86,14 +86,14 @@ jobs:
 
       - name: Cache Build
         id: build-cache
-        uses: actions/cache@v5
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: docs
           key: ${{ runner.os }}-build-${{ github.sha }}
 
       ## Push both the commit and tag created by Lerna's version command using a PAT
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1.3.0
         with:
           github_token: ${{ secrets.GH_RW_TOKEN }}
           branch: refs/heads/prerelease/major
@@ -109,7 +109,7 @@ jobs:
 
     steps:
       ## If we've failed any previous step, we'll need to create a PR instead
-      - uses: NicholasBoll/action-forward-merge-pr@main
+      - uses: NicholasBoll/action-forward-merge-pr@89b33d1968555fb5d6a5814b4ab78221e47c37ab # v1.1.1
         with:
           token: ${{secrets.GH_RW_TOKEN}} # use PAT to force GH Actions to run the PR verify. The regular token will not
           branches: main+prerelease/major
