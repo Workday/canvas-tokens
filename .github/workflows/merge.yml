@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           fetch-depth: 0 # Used for conventional commit ranges
       
@@ -20,7 +20,7 @@ jobs:
       # - uses: Workday/canvas-kit-actions/install@v2
       #   with:
       #     node_version: 24.x
-      
+
       - name: Build Tokens
         shell: bash
         run: yarn build:tokens
@@ -32,7 +32,7 @@ jobs:
         run: yarn build-storybook
 
       - name: Publish Storybook
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
         with:
           branch: gh-pages
           folder: docs/storybook/@workday/canvas-tokens-docs/
@@ -42,7 +42,7 @@ jobs:
       ## used for future PRs. New PRs may show extra Chromatic changes until the "Update Branch"
       ## button is used in PRs which will pull this new baseline.
       - name: Update Chromatic Baseline
-        uses: chromaui/action@main
+        uses: chromaui/action@94713c544284a14195de3b50ef24301579f1877e # v18.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: chpt_a9e354687a28e6e
