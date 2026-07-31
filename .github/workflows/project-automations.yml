@@ -22,7 +22,7 @@ jobs:
     if: github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'reopened')
     steps:
       - name: Move issue to ${{ env.new }}
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
+        uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859 # v2.2.1
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.gh_organization }}
@@ -35,7 +35,7 @@ jobs:
     if: github.event_name == 'issues' && github.event.action == 'closed'
     steps:
       - name: Moved issue to ${{ env.done }}
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
+        uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859 # v2.2.1
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.gh_organization }}
@@ -49,7 +49,7 @@ jobs:
     steps:
       - name: Add Issue Type - Bug
         if: github.event.label.name == 'bug'
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
+        uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859 # v2.2.1
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.gh_organization }}
