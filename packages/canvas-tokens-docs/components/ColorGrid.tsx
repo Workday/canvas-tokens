@@ -11,6 +11,7 @@ const sortMap: Record<string, number> = {
   strongest: 6,
 };
 
+// This is a system color map for the purpose of the color grid.
 const purposeMap: Record<string, string> = {
   'system.color.bg.default': 'Main page background',
   'system.color.bg.transparent.default': 'Transparent background',
