@@ -14,7 +14,7 @@ on:
           - prerelease/major
 
 jobs:
-  generate-icons:
+  sync-tokens:
     runs-on: ubuntu-latest
     permissions:
       packages: write
