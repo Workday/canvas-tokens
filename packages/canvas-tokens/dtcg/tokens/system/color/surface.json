@@ -70,182 +70,194 @@
     }
   },
   "alt": {
-    "$value": "{brand.neutral.A50}",
-    "$type": "color",
-    "$description": "De-emphasized container background for secondary information",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{white.A50}"
+    "default": {
+      "$value": "{brand.neutral.A50}",
+      "$type": "color",
+      "$description": "De-emphasized container background for secondary information",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A50}"
+            }
           }
         }
       }
-    }
-  },
-  "alt-strong": {
-    "$value": "{brand.neutral.A100}",
-    "$type": "color",
-    "$description": "Stronger de-emphasized container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{white.A100}"
+    },
+    "strong": {
+      "$value": "{brand.neutral.A100}",
+      "$type": "color",
+      "$description": "Stronger de-emphasized container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A100}"
+            }
           }
         }
       }
     }
   },
   "info": {
-    "$value": "{brand.primary.A25}",
-    "$type": "color",
-    "$description": "Container background for informational callouts",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.primary.A25}"
+    "default": {
+      "$value": "{brand.primary.A25}",
+      "$type": "color",
+      "$description": "Container background for informational callouts",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.A25}"
+            }
           }
         }
       }
-    }
-  },
-  "info-strong": {
-    "$value": "{brand.primary.A50}",
-    "$type": "color",
-    "$description": "Stronger container background for info badges and indicators",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.primary.A50}"
+    },
+    "strong": {
+      "$value": "{brand.primary.A50}",
+      "$type": "color",
+      "$description": "Stronger container background for info badges and indicators",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.A50}"
+            }
           }
         }
       }
     }
   },
   "danger": {
-    "$value": "{brand.critical.A25}",
-    "$type": "color",
-    "$description": "Container background for error states (not tenant themeable)",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.critical.A25}"
+    "default": {
+      "$value": "{brand.critical.A25}",
+      "$type": "color",
+      "$description": "Container background for error states (not tenant themeable)",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.A25}"
+            }
           }
         }
       }
-    }
-  },
-  "danger-strong": {
-    "$value": "{brand.critical.A50}",
-    "$type": "color",
-    "$description": "Stronger container background for error states",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.critical.A50}"
+    },
+    "strong": {
+      "$value": "{brand.critical.A50}",
+      "$type": "color",
+      "$description": "Stronger container background for error states",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.A50}"
+            }
           }
         }
       }
     }
   },
   "warning": {
-    "$value": "{brand.caution.A25}",
-    "$type": "color",
-    "$description": "Container background for warning states (not tenant themeable)",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.caution.A25}"
+    "default": {
+      "$value": "{brand.caution.A25}",
+      "$type": "color",
+      "$description": "Container background for warning states (not tenant themeable)",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.A25}"
+            }
           }
         }
       }
-    }
-  },
-  "warning-strong": {
-    "$value": "{brand.caution.A50}",
-    "$type": "color",
-    "$description": "Stronger container background for warning states",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.caution.A50}"
+    },
+    "strong": {
+      "$value": "{brand.caution.A50}",
+      "$type": "color",
+      "$description": "Stronger container background for warning states",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.A50}"
+            }
           }
         }
       }
     }
   },
   "success": {
-    "$value": "{brand.positive.A25}",
-    "$type": "color",
-    "$description": "Container background for success states (not tenant themeable)",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.positive.A25}"
+    "default": {
+      "$value": "{brand.positive.A25}",
+      "$type": "color",
+      "$description": "Container background for success states (not tenant themeable)",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.positive.A25}"
+            }
           }
         }
       }
-    }
-  },
-  "success-strong": {
-    "$value": "{brand.positive.A50}",
-    "$type": "color",
-    "$description": "Stronger container background for success states",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.positive.A50}"
+    },
+    "strong": {
+      "$value": "{brand.positive.A50}",
+      "$type": "color",
+      "$description": "Stronger container background for success states",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.positive.A50}"
+            }
           }
         }
       }
     }
   },
   "ai": {
-    "$value": "{brand.primary.A100}",
-    "$type": "color",
-    "$description": "Container background indicating AI-generated content",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.primary.A100}"
+    "default": {
+      "$value": "{brand.primary.A100}",
+      "$type": "color",
+      "$description": "Container background indicating AI-generated content",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.A100}"
+            }
           }
         }
       }
-    }
-  },
-  "ai-hover": {
-    "$value": "{brand.primary.A200}",
-    "$type": "color",
-    "$description": "Hover state for AI-generated content containers",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.primary.A200}"
+    },
+    "hover": {
+      "$value": "{brand.primary.A200}",
+      "$type": "color",
+      "$description": "Hover state for AI-generated content containers",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.A200}"
+            }
           }
         }
       }
-    }
-  },
-  "ai-pressed": {
-    "$value": "{brand.primary.400}",
-    "$type": "color",
-    "$description": "Pressed state for AI-generated content containers",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.primary.400}"
+    },
+    "pressed": {
+      "$value": "{brand.primary.400}",
+      "$type": "color",
+      "$description": "Pressed state for AI-generated content containers",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.400}"
+            }
           }
         }
       }
@@ -289,75 +301,79 @@
     }
   },
   "contrast": {
-    "$value": "{brand.neutral.A900}",
-    "$type": "color",
-    "$description": "High contrast dark container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.neutral.A900}"
-          }
-        }
-      }
-    }
-  },
-  "contrast-strong": {
-    "$value": "{brand.neutral.A950}",
-    "$type": "color",
-    "$description": "Stronger high contrast dark container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.neutral.A950}"
-          }
-        }
-      }
-    }
-  },
-  "primary": {
-    "$value": "{brand.neutral.A25}",
-    "$type": "color",
-    "$description": "Tenant-themeable primary container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.neutral.A50}"
-          }
-        },
-        "themes": {
-          "brand": {
-            "light": {
-              "$value": "{brand.primary.A25}"
-            },
+    "default": {
+      "$value": "{brand.neutral.A900}",
+      "$type": "color",
+      "$description": "High contrast dark container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
             "dark": {
-              "$value": "{brand.dark.primary.A25}"
+              "$value": "{brand.dark.neutral.A900}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.neutral.A950}",
+      "$type": "color",
+      "$description": "Stronger high contrast dark container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.neutral.A950}"
             }
           }
         }
       }
     }
   },
-  "primary-strong": {
-    "$value": "{brand.neutral.A50}",
-    "$type": "color",
-    "$description": "Stronger tenant-themeable primary container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.neutral.A100}"
-          }
-        },
-        "themes": {
-          "brand": {
-            "light": {
-              "$value": "{brand.primary.A50}"
-            },
+  "primary": {
+    "default": {
+      "$value": "{neutral.A25}",
+      "$type": "color",
+      "$description": "Tenant-themeable primary container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
             "dark": {
-              "$value": "{brand.dark.primary.A50}"
+              "$value": "{dark.neutral.A50}"
+            }
+          },
+          "themes": {
+            "brand": {
+              "light": {
+                "$value": "{brand.primary.A25}"
+              },
+              "dark": {
+                "$value": "{brand.dark.primary.A25}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{neutral.A50}",
+      "$type": "color",
+      "$description": "Stronger tenant-themeable primary container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{dark.neutral.A100}"
+            }
+          },
+          "themes": {
+            "brand": {
+              "light": {
+                "$value": "{brand.primary.A50}"
+              },
+              "dark": {
+                "$value": "{brand.dark.primary.A50}"
+              }
             }
           }
         }
@@ -365,98 +381,104 @@
     }
   },
   "critical": {
-    "$value": "{brand.critical.A25}",
-    "$type": "color",
-    "$description": "Tenant-themeable critical/error container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.critical.A25}"
+    "default": {
+      "$value": "{brand.critical.A25}",
+      "$type": "color",
+      "$description": "Tenant-themeable critical/error container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.A25}"
+            }
           }
         }
       }
-    }
-  },
-  "critical-strong": {
-    "$value": "{brand.critical.A50}",
-    "$type": "color",
-    "$description": "Stronger tenant-themeable critical container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.critical.A50}"
+    },
+    "strong": {
+      "$value": "{brand.critical.A50}",
+      "$type": "color",
+      "$description": "Stronger tenant-themeable critical container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.A50}"
+            }
           }
         }
       }
     }
   },
   "caution": {
-    "$value": "{brand.caution.A25}",
-    "$type": "color",
-    "$description": "Tenant-themeable caution/warning container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.caution.A25}"
+    "default": {
+      "$value": "{brand.caution.A25}",
+      "$type": "color",
+      "$description": "Tenant-themeable caution/warning container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.A25}"
+            }
           }
         }
       }
-    }
-  },
-  "caution-strong": {
-    "$value": "{brand.caution.A50}",
-    "$type": "color",
-    "$description": "Stronger tenant-themeable caution container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.caution.A50}"
+    },
+    "strong": {
+      "$value": "{brand.caution.A50}",
+      "$type": "color",
+      "$description": "Stronger tenant-themeable caution container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.A50}"
+            }
           }
         }
       }
     }
   },
   "positive": {
-    "$value": "{brand.positive.A25}",
-    "$type": "color",
-    "$description": "Tenant-themeable positive/success container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.positive.A25}"
+    "default": {
+      "$value": "{brand.positive.A25}",
+      "$type": "color",
+      "$description": "Tenant-themeable positive/success container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.positive.A25}"
+            }
           }
         }
       }
-    }
-  },
-  "positive-strong": {
-    "$value": "{brand.positive.A50}",
-    "$type": "color",
-    "$description": "Stronger tenant-themeable positive container background",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.positive.A50}"
+    },
+    "strong": {
+      "$value": "{brand.positive.A50}",
+      "$type": "color",
+      "$description": "Stronger tenant-themeable positive container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.positive.A50}"
+            }
           }
         }
       }
     }
   },
   "selected": {
-    "$value": "{brand.primary.A50}",
+    "$value": "{blue.A50}",
     "$type": "color",
     "$description": "Tenant-themeable background for selected items",
     "$extensions": {
       "sana.canvas.tokens": {
         "modes": {
           "dark": {
-            "$value": "{brand.dark.primary.A50}"
+            "$value": "{dark.blue.A50}"
           }
         },
         "themes": {
@@ -502,28 +524,60 @@
   },
   "overlay": {
     "hover": {
-      "$value": "{brand.neutral.A50}",
-      "$type": "color",
-      "$description": "Hover state overlay for interactive containers",
-      "$extensions": {
-        "sana.canvas.tokens": {
-          "modes": {
-            "dark": {
-              "$value": "{white.A50}"
+      "default": {
+        "$value": "{brand.neutral.A50}",
+        "$type": "color",
+        "$description": "Hover state overlay for interactive containers",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{white.A50}"
+              }
+            }
+          }
+        }
+      },
+      "inverse": {
+        "$value": "{white.A150}",
+        "$type": "color",
+        "$description": "Hover overlay for containers on dark backgrounds",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{black.A200}"
+              }
             }
           }
         }
       }
     },
     "pressed": {
-      "$value": "{brand.neutral.A100}",
-      "$type": "color",
-      "$description": "Pressed state overlay for interactive containers",
-      "$extensions": {
-        "sana.canvas.tokens": {
-          "modes": {
-            "dark": {
-              "$value": "{white.A100}"
+      "default": {
+        "$value": "{brand.neutral.A100}",
+        "$type": "color",
+        "$description": "Pressed state overlay for interactive containers",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{white.A100}"
+              }
+            }
+          }
+        }
+      },
+      "inverse": {
+        "$value": "{white.A200}",
+        "$type": "color",
+        "$description": "Pressed overlay for containers on dark backgrounds",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{black.A300}"
+              }
             }
           }
         }
@@ -538,34 +592,6 @@
           "modes": {
             "dark": {
               "$value": "{white}"
-            }
-          }
-        }
-      }
-    },
-    "hover-inverse": {
-      "$value": "{white.A150}",
-      "$type": "color",
-      "$description": "Hover overlay for containers on dark backgrounds",
-      "$extensions": {
-        "sana.canvas.tokens": {
-          "modes": {
-            "dark": {
-              "$value": "{black.A200}"
-            }
-          }
-        }
-      }
-    },
-    "pressed-inverse": {
-      "$value": "{white.A200}",
-      "$type": "color",
-      "$description": "Pressed overlay for containers on dark backgrounds",
-      "$extensions": {
-        "sana.canvas.tokens": {
-          "modes": {
-            "dark": {
-              "$value": "{black.A300}"
             }
           }
         }

@@ -1,13 +1,13 @@
 {
   "primary": {
-    "$value": "{brand.neutral.975}",
+    "$value": "{neutral.975}",
     "$type": "color",
     "$description": "Primary accent for buttons and key actions",
     "$extensions": {
       "sana.canvas.tokens": {
         "modes": {
           "dark": {
-            "$value": "{brand.dark.neutral.975}"
+            "$value": "{dark.neutral.975}"
           }
         },
         "themes": {
@@ -38,14 +38,14 @@
     }
   },
   "caution": {
-    "$value": "{brand.caution.400}",
+    "$value": "{amber.400}",
     "$type": "color",
     "$description": "Tenant-themeable solid caution accent",
     "$extensions": {
       "sana.canvas.tokens": {
         "modes": {
           "dark": {
-            "$value": "{brand.dark.caution.400}"
+            "$value": "{dark.amber.400}"
           }
         },
         "themes": {
@@ -143,28 +143,30 @@
     }
   },
   "muted": {
-    "$value": "{brand.neutral.600}",
-    "$type": "color",
-    "$description": "Muted accent for secondary visual elements",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.neutral.600}"
+    "default": {
+      "$value": "{brand.neutral.600}",
+      "$type": "color",
+      "$description": "Muted accent for secondary visual elements",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.neutral.600}"
+            }
           }
         }
       }
-    }
-  },
-  "muted-soft": {
-    "$value": "{brand.neutral.400}",
-    "$type": "color",
-    "$description": "Softer muted accent for tertiary elements",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.neutral.400}"
+    },
+    "soft": {
+      "$value": "{brand.neutral.400}",
+      "$type": "color",
+      "$description": "Softer muted accent for tertiary elements",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.neutral.400}"
+            }
           }
         }
       }

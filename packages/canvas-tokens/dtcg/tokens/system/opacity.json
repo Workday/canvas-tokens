@@ -1,18 +1,18 @@
 {
   "zero": {
-    "$value": "{opacity.opacity.0}",
+    "$value": "{opacity.0}",
     "$type": "number"
   },
   "disabled": {
-    "$value": "{opacity.opacity.400}",
+    "$value": "{opacity.400}",
     "$type": "number"
   },
   "overlay": {
-    "$value": "{opacity.opacity.640}",
+    "$value": "{opacity.640}",
     "$type": "number"
   },
   "contrast": {
-    "$value": "{opacity.opacity.840}",
+    "$value": "{opacity.840}",
     "$type": "number"
   },
   "full": {
@@ -21,24 +21,24 @@
   },
   "surface": {
     "hover": {
-      "$value": "{opacity.opacity.100}",
+      "$value": "{opacity.100}",
       "$type": "number",
       "$description": "State layer applied to surface colors on hover"
     },
     "pressed": {
-      "$value": "{opacity.opacity.180}",
+      "$value": "{opacity.180}",
       "$type": "number",
       "$description": "State layer applied to surface colors while pressing"
     }
   },
   "accent": {
     "hover": {
-      "$value": "{opacity.opacity.180}",
+      "$value": "{opacity.180}",
       "$type": "number",
       "$description": "State layer applied to accent colors on hover"
     },
     "pressed": {
-      "$value": "{opacity.opacity.360}",
+      "$value": "{opacity.360}",
       "$type": "number",
       "$description": "State layer applied to accent colors while pressing"
     }

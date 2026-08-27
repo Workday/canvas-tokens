@@ -23,7 +23,8 @@
     "storybook": "nx storybook @workday/canvas-tokens-docs",
     "build-storybook": "nx build-storybook @workday/canvas-tokens-docs",
     "serve-storybook": "npx http-server docs/storybook/@workday/canvas-tokens-docs",
-    "test": "jest -c jest.config.ts",
+    "test": "jest -c jest.config.ts && vitest run -c vitest.config.ts",
+    "test:parser": "vitest run -c vitest.config.ts",
     "typecheck": "tsc -p . --noEmit",
     "prerelease": "yarn clean:tokens && yarn build:tokens",
     "release": "changeset publish"
@@ -60,7 +61,8 @@
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.0.4",
-    "vite": "~6.4.2"
+    "vite": "~6.4.2",
+    "vitest": "^3.0.5"
   },
   "workspaces": [
     "packages/*"

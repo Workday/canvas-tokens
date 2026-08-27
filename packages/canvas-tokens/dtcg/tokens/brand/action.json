@@ -1,0 +1,34 @@
+{
+  "base": {
+    "$value": "{brand.neutral.975}",
+    "$type": "color"
+  },
+  "dark": {
+    "$value": "{brand.neutral.975}",
+    "$type": "color"
+  },
+  "darker": {
+    "$value": "{neutral.975}",
+    "$type": "color"
+  },
+  "darkest": {
+    "$value": "{neutral.975}",
+    "$type": "color"
+  },
+  "light": {
+    "$value": "{brand.neutral.200}",
+    "$type": "color"
+  },
+  "lighter": {
+    "$value": "{brand.neutral.100}",
+    "$type": "color"
+  },
+  "lightest": {
+    "$value": "{brand.neutral.25}",
+    "$type": "color"
+  },
+  "accent": {
+    "$value": "{neutral.1000}",
+    "$type": "color"
+  }
+}

@@ -1,0 +1,82 @@
+export function buildToken({value, type, description, extensions}) {
+  return {
+    $value: value,
+    ...(type && {$type: type}),
+    ...(description && {$description: description}),
+    ...(extensions && Object.keys(extensions).length && {$extensions: extensions}),
+  };
+}
+
+export function addTokenToFiles(files, filePath, path, token) {
+  if (!files.has(filePath)) {
+    files.set(filePath, {});
+  }
+
+  const node = path.slice(0, -1).reduce((cursor, key) => {
+    if (!cursor[key] || cursor[key].$value) {
+      cursor[key] = {};
+    }
+    return cursor[key];
+  }, files.get(filePath));
+
+  node[path.at(-1)] = token;
+}
+
+function isTokenLeaf(value) {
+  return Boolean(value && typeof value === 'object' && !Array.isArray(value) && value.$value);
+}
+
+export function nestDashedVariants(node) {
+  if (!node || typeof node !== 'object' || Array.isArray(node) || node.$value) {
+    return node;
+  }
+
+  for (const value of Object.values(node)) {
+    nestDashedVariants(value);
+  }
+
+  const dashedByPrefix = new Map();
+
+  for (const key of Object.keys(node)) {
+    if (!isTokenLeaf(node[key])) {
+      continue;
+    }
+
+    const separator = key.lastIndexOf('-');
+    if (separator <= 0) {
+      continue;
+    }
+
+    const prefix = key.slice(0, separator);
+    const suffix = key.slice(separator + 1);
+    if (!prefix || !suffix) {
+      continue;
+    }
+
+    if (!dashedByPrefix.has(prefix)) {
+      dashedByPrefix.set(prefix, []);
+    }
+    dashedByPrefix.get(prefix).push({key, suffix});
+  }
+
+  for (const [prefix, variants] of dashedByPrefix) {
+    const hasBase = Object.hasOwn(node, prefix);
+    if (!hasBase && variants.length < 2) {
+      continue;
+    }
+
+    const group = isTokenLeaf(node[prefix]) || !hasBase ? {} : node[prefix];
+    if (isTokenLeaf(node[prefix])) {
+      group.default = node[prefix];
+    }
+
+    for (const {key, suffix} of variants) {
+      group[suffix] = node[key];
+      delete node[key];
+    }
+
+    node[prefix] = group;
+  }
+
+  return node;
+}

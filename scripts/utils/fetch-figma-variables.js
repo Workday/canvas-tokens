@@ -1,207 +1,202 @@
 #!/usr/bin/env node
-import {mkdirSync, writeFileSync} from 'fs';
+import fs from 'fs';
 import {resolve} from 'path';
 
 const FIGMA_API_BASE = 'https://api.figma.com/v1';
 const DEFAULT_OUTPUT_DIR = 'figma-raw-tokens';
+const SKIP_STYLE_TYPES = ['FILL', 'GRID'];
 
 const {FIGMA_ACCESS_TOKEN, FIGMA_BASE_FILE_KEY, FIGMA_MAIN_FILE_KEY} = process.env;
 
-function toOutputFileName(libraryName) {
-  const normalized = libraryName.includes('Base') ? 'base' : 'tokens';
-  return `${normalized || 'figma-library'}.json`;
+function warn(message) {
+  console.warn(`Warning: ${message}`);
 }
 
-async function figmaRequest(path, token, {allowFailure = false} = {}) {
-  const response = await fetch(`${FIGMA_API_BASE}${path}`, {
-    headers: {
-      'X-Figma-Token': token,
-    },
-  });
+/**
+ * Makes a request to the Figma API.
+ * @param {string} path - The path to the Figma API.
+ * @param {string} token - The Figma access token.
+ * @returns {Promise<Object>} The response from the Figma API.
+ */
+async function figmaRequest(path, token) {
+  try {
+    const response = await fetch(`${FIGMA_API_BASE}${path}`, {
+      headers: {'X-Figma-Token': token},
+    });
 
-  const body = await response.json().catch(() => ({}));
+    const body = await response.json();
 
-  if (!response.ok) {
-    const message =
-      typeof body.message === 'string'
-        ? body.message
-        : typeof body.err === 'string'
-        ? body.err
-        : `Figma API request failed with status ${response.status}`;
+    if (!response.ok || body.error) {
+      const message =
+        typeof body.message === 'string'
+          ? body.message
+          : typeof body.err === 'string'
+          ? body.err
+          : `Figma API request failed with status ${response.status}`;
 
-    if (allowFailure) {
-      return {error: message, status: response.status};
+      throw new Error(message);
     }
 
-    throw new Error(message);
+    return body;
+  } catch (error) {
+    return {error: error.message};
   }
-
-  if (body.error) {
-    const message = body.message || 'Figma API returned an error response';
-
-    if (allowFailure) {
-      return {error: message, status: response.status || 400};
-    }
-
-    throw new Error(message);
-  }
-
-  return body;
 }
 
-function chunk(values, size) {
-  const chunks = [];
-
-  for (let index = 0; index < values.length; index += size) {
-    chunks.push(values.slice(index, index + size));
-  }
-
-  return chunks;
-}
-
-async function fetchFile(fileKey, token) {
-  const response = await figmaRequest(`/files/${fileKey}?depth=1`, token);
-  return {
-    name: response.name,
-    lastModified: response.lastModified,
-    version: response.version,
-    styles: response.styles || {},
-  };
-}
-
+/**
+ * Fetches the variables from the Figma API.
+ * @param {string} fileKey - The key of the file to fetch.
+ * @param {string} token - The Figma access token.
+ * @returns {Promise<Object>} The variables from the Figma API.
+ */
 async function fetchVariables(fileKey, token) {
-  const response = await figmaRequest(`/files/${fileKey}/variables/local`, token);
-  return response.meta || {};
-}
+  try {
+    const response = await figmaRequest(`/files/${fileKey}/variables/local`, token);
 
-async function fetchPublishedStyles(fileKey, token) {
-  const response = await figmaRequest(`/files/${fileKey}/styles`, token, {
-    allowFailure: true,
-  });
+    if (response.error || !response.meta) {
+      warn(`Variables fetch failed: ${response.error || 'No metadata returned'}`);
+      return {meta: {}};
+    }
 
-  if (response.error) {
-    return {
-      styles: [],
-      warning: response.error,
-    };
+    return {meta: response.meta};
+  } catch (error) {
+    console.error(`Error fetching variables: ${error.message}`);
+    return {meta: {}};
   }
-
-  return {
-    styles: response.meta?.styles || [],
-    warning: undefined,
-  };
 }
 
-async function fetchStyleNodes(fileKey, token, styles) {
-  const nodeIds = [...new Set(styles.map(style => style.node_id).filter(Boolean))];
+/**
+ * Fetches the published styles from the Figma API.
+ * @param {string} fileKey - The key of the file to fetch.
+ * @param {string} token - The Figma access token.
+ * @returns {Promise<Object>} The published styles from the Figma API.
+ */
+async function fetchPublishedStyles(fileKey, token) {
+  try {
+    const response = await figmaRequest(`/files/${fileKey}/styles`, token);
 
-  if (!nodeIds.length) {
+    if (response.error || !Array.isArray(response.meta?.styles)) {
+      warn(`Published styles fetch failed: ${response.error || 'No styles metadata returned'}`);
+      return {styles: []};
+    }
+
+    const styles = response.meta.styles.filter(
+      style =>
+        !/more styles/i.test(style.name || '') && !SKIP_STYLE_TYPES.includes(style.style_type)
+    );
+
+    return {styles};
+  } catch (error) {
+    console.error(`Error fetching published styles: ${error.message}`);
+    return {styles: []};
+  }
+}
+
+/**
+ * Fetches the style nodes from the Figma API.
+ * @param {string} fileKey - The key of the file to fetch.
+ * @param {string} token - The Figma access token.
+ * @param {Array} styles - The styles to fetch.
+ * @returns {Promise<Object>} The style nodes from the Figma API.
+ */
+async function fetchStyleNodes(fileKey, token, styles) {
+  try {
+    const nodeIds = [...new Set(styles.map(style => style.node_id).filter(Boolean))];
+    const ids = encodeURIComponent(nodeIds.join(','));
+    const response = nodeIds.length
+      ? await figmaRequest(`/files/${fileKey}/nodes?ids=${ids}`, token)
+      : {};
+
+    if (response.error) {
+      warn(`Style nodes fetch failed: ${response.error}`);
+      return {nodes: {}, file: {}};
+    }
+
+    const nodes = response.nodes || {};
+
+    return {
+      file: {
+        name: response.name,
+        lastModified: response.lastModified,
+        version: response.version,
+      },
+      nodes,
+    };
+  } catch (error) {
+    console.error(`Error fetching style nodes: ${error.message}`);
+    return {nodes: {}, file: {}};
+  }
+}
+
+/**
+ * Fetches the styles from the Figma API.
+ * @param {string} fileKey - The key of the file to fetch.
+ * @param {string} token - The Figma access token.
+ * @returns {Promise<Object>} The styles from the Figma API.
+ */
+async function fetchStyles(fileKey, token) {
+  try {
+    const published = await fetchPublishedStyles(fileKey, token);
+    const nodeResult = await fetchStyleNodes(fileKey, token, published.styles);
+
+    return {
+      published: published.styles,
+      nodes: nodeResult.nodes,
+      file: nodeResult.file,
+    };
+  } catch (error) {
+    console.error(`Error fetching styles: ${error.message}`);
     return {};
   }
-
-  const nodes = {};
-
-  for (const batch of chunk(nodeIds, 50)) {
-    const ids = encodeURIComponent(batch.join(','));
-    const response = await figmaRequest(`/files/${fileKey}/nodes?ids=${ids}`, token);
-    Object.assign(nodes, response.nodes || {});
-  }
-
-  return nodes;
 }
 
-async function fetchStyles(fileKey, token) {
-  const publishedResult = await fetchPublishedStyles(fileKey, token);
-  const published = publishedResult.styles;
-  const nodes = published.length > 0 ? await fetchStyleNodes(fileKey, token, published) : {};
-
-  return {
-    published,
-    nodes,
-    warnings: publishedResult.warning ? [publishedResult.warning] : [],
-  };
-}
-
-function countStyles(stylesPayload) {
-  if (Array.isArray(stylesPayload?.published) && stylesPayload.published.length > 0) {
-    return stylesPayload.published.length;
-  }
-
-  return Object.keys(stylesPayload?.local || {}).length;
-}
-
+/**
+ * Fetches the library from the Figma API.
+ * @param {string} fileKey - The key of the file to fetch.
+ * @param {string} token - The Figma access token.
+ * @returns {Promise<Object>} The library from the Figma API.
+ */
 async function fetchLibrary(fileKey, token) {
-  const [file, variables, styles] = await Promise.all([
-    fetchFile(fileKey, token),
-    fetchVariables(fileKey, token),
-    fetchStyles(fileKey, token),
-  ]);
+  const variables = await fetchVariables(fileKey, token);
+  const styles = await fetchStyles(fileKey, token);
+  const name = fileKey === FIGMA_BASE_FILE_KEY ? 'Base' : 'Tokens';
+
+  const published = styles.published || [];
+  const nodes = styles.nodes || {};
+  const lastModified = styles.file?.lastModified || '';
 
   return {
     library: {
-      fileKey,
-      name: file.name,
-      lastModified: file.lastModified,
-      version: file.version,
+      name,
+      lastModified,
       fetchedAt: new Date().toISOString(),
-      endpoint: 'local',
     },
-    meta: variables,
-    styles: {
-      local: file.styles,
-      published: styles.published,
-      nodes: styles.nodes,
-      warnings: styles.warnings,
-    },
+    meta: variables.meta,
+    styles: {published, nodes},
   };
 }
 
 async function main() {
+  if (!FIGMA_ACCESS_TOKEN || !FIGMA_BASE_FILE_KEY || !FIGMA_MAIN_FILE_KEY) {
+    throw new Error(
+      'Missing Figma access token or file keys. Set FIGMA_ACCESS_TOKEN, FIGMA_BASE_FILE_KEY, and FIGMA_MAIN_FILE_KEY.'
+    );
+  }
+
   const token = FIGMA_ACCESS_TOKEN || '';
   const fileKeys = [FIGMA_BASE_FILE_KEY, FIGMA_MAIN_FILE_KEY];
   const outputDirName = DEFAULT_OUTPUT_DIR;
 
-  if (!token) {
-    throw new Error('Missing Figma access token. Set FIGMA_ACCESS_TOKEN.');
-  }
-
-  if (!fileKeys.length) {
-    throw new Error('Missing Figma file keys. Set FIGMA_FILE_KEYS.');
-  }
-
   const outputDir = resolve(process.cwd(), outputDirName);
-  mkdirSync(outputDir, {recursive: true});
-
-  const usedFileNames = new Set();
+  fs.mkdirSync(outputDir, {recursive: true});
 
   for (const fileKey of fileKeys) {
     console.log(`Fetching variables and styles for library file key: ${fileKey}`);
 
     const payload = await fetchLibrary(fileKey, token);
-    let fileName = toOutputFileName(payload.library.name);
-
-    if (usedFileNames.has(fileName)) {
-      fileName = toOutputFileName(`${payload.library.name}-${fileKey}`);
-    }
-
-    usedFileNames.add(fileName);
-
+    const fileName = `${payload.library.name.toLowerCase()}.json`;
     const outputPath = resolve(outputDir, fileName);
-    writeFileSync(outputPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-
-    const variableCount = Object.keys(payload.meta.variables || {}).length;
-    const collectionCount = Object.keys(payload.meta.variableCollections || {}).length;
-    const styleCount = countStyles(payload.styles);
-    const styleNodeCount = Object.keys(payload.styles.nodes || {}).length;
-    const warnings = payload.styles.warnings || [];
-
-    console.log(
-      `Saved "${payload.library.name}" (${variableCount} variables, ${collectionCount} collections, ${styleCount} styles, ${styleNodeCount} style nodes) to ${outputPath}`
-    );
-
-    for (const warning of warnings) {
-      console.warn(`  Warning: ${warning}`);
-    }
+    fs.writeFileSync(outputPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
   }
 }
 

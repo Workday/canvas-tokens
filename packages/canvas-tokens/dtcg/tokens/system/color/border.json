@@ -28,42 +28,44 @@
     }
   },
   "input": {
-    "$value": "{brand.neutral.A500}",
-    "$type": "color",
-    "$description": "Default border for form inputs",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{white.A500}"
+    "default": {
+      "$value": "{brand.neutral.A500}",
+      "$type": "color",
+      "$description": "Default border for form inputs",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A500}"
+            }
           }
         }
       }
-    }
-  },
-  "input-hover": {
-    "$value": "{brand.neutral.A700}",
-    "$type": "color",
-    "$description": "Hover state border for form inputs",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{white.A700}"
+    },
+    "hover": {
+      "$value": "{brand.neutral.A700}",
+      "$type": "color",
+      "$description": "Hover state border for form inputs",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A700}"
+            }
           }
         }
       }
     }
   },
   "primary": {
-    "$value": "{brand.primary.500}",
+    "$value": "{blue.500}",
     "$type": "color",
     "$description": "Tenant-themeable primary border for focused inputs",
     "$extensions": {
       "sana.canvas.tokens": {
         "modes": {
           "dark": {
-            "$value": "{brand.dark.neutral.700}"
+            "$value": "{dark.neutral.700}"
           }
         },
         "themes": {
@@ -147,28 +149,30 @@
     }
   },
   "inverse": {
-    "$value": "{white}",
-    "$type": "color",
-    "$description": "Border for use on dark backgrounds",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{brand.dark.neutral.25}"
+    "default": {
+      "$value": "{white}",
+      "$type": "color",
+      "$description": "Border for use on dark backgrounds",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.neutral.25}"
+            }
           }
         }
       }
-    }
-  },
-  "inverse-strong": {
-    "$value": "{white.A700}",
-    "$type": "color",
-    "$description": "Stronger border for use on dark backgrounds",
-    "$extensions": {
-      "sana.canvas.tokens": {
-        "modes": {
-          "dark": {
-            "$value": "{black.A700}"
+    },
+    "strong": {
+      "$value": "{white.A700}",
+      "$type": "color",
+      "$description": "Stronger border for use on dark backgrounds",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{black.A700}"
+            }
           }
         }
       }
