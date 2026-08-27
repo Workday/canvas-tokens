@@ -1,5 +1,65 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.3
+
+### Major Changes
+
+- ### Components
+
+  - chore: merge main into prerelease/minor
+    ([#321](https://github.com/Workday/canvas-tokens/pull/321))
+    ([@alanbsmith](https://github.com/alanbsmith),
+    [@dependabot[bot]](https://github.com/dependabot[bot]))
+  - feat: Commit to initiate beta release ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Update sana tokens ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Remove fallbacks from letter-spacing tokens
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - feat: remove selected colors from sana.json and update focus and border brand colors
+    ([#331](https://github.com/Workday/canvas-tokens/pull/331))
+    ([@RayRedGoose](https://github.com/RayRedGoose),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+  - feat: add shadow depth system to sana theme
+    ([#333](https://github.com/Workday/canvas-tokens/pull/333))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Wrap shadow tokens in oklch and not rgba
+    ([#334](https://github.com/Workday/canvas-tokens/pull/334))
+    ([@RayRedGoose](https://github.com/RayRedGoose), manuel.carrera)
+  - feat: Add fg link tokens ([#335](https://github.com/Workday/canvas-tokens/pull/335))
+    ([@RayRedGoose](https://github.com/RayRedGoose), sheelah)
+  - fix: Add alt gradient for containers ([#336](https://github.com/Workday/canvas-tokens/pull/336))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Change token from gradient to elevated
+    ([#337](https://github.com/Workday/canvas-tokens/pull/337))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Refactor elevated color definition in sana.json
+    ([#339](https://github.com/Workday/canvas-tokens/pull/339))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - feat: Add border elevated token ([#340](https://github.com/Workday/canvas-tokens/pull/340))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Update non sana canvas overlay values
+    ([#341](https://github.com/Workday/canvas-tokens/pull/341))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Revert token changes ([#342](https://github.com/Workday/canvas-tokens/pull/342))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@sheelah](https://github.com/sheelah))
+  - feat: Fix version for alpha ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - chore: Update external GH actions to use SHA1 and Node 24
+    ([#330](https://github.com/Workday/canvas-tokens/pull/330))
+    ([@alanbsmith](https://github.com/alanbsmith),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+  ### Tokens
+
+  - feat: Add Sana theme token set and comparison report
+    ([#311](https://github.com/Workday/canvas-tokens/pull/311))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) New Sana theme tokens have added as a css file
+    and they can be applied to any html element by adding attribute. The new or updated tokens for
+    sana can be used as in JS.
+  - fix: Fix legacy types ([#317](https://github.com/Workday/canvas-tokens/pull/317))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0
 
 ### Minor Changes
