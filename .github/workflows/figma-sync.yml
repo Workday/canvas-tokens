@@ -1,0 +1,105 @@
+name: Tokens Sync automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      toBranch:
+        description: 'Branch to sync tokens to'
+        required: true
+        default: main
+        type: choice
+        options:
+          - main
+          - prerelease/minor
+          - prerelease/major
+
+jobs:
+  generate-icons:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      pull-requests: write
+      contents: write
+    env:
+        NODE_VERSION: 24.x
+
+    steps:
+      - name: Set target branch name
+        id: target-branch
+        run: echo "name=sync-tokens-from-figma-${{ inputs.toBranch }}" >> $GITHUB_OUTPUT
+
+      - name: Checkout code
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ inputs.toBranch }}
+
+      - name: Set global user
+        run: |
+            git config --global user.name "${{ github.actor }}"
+            git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+        
+      - name: Create branch
+        run: |
+            git checkout -b ${{ steps.target-branch.outputs.name }}
+
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Cache node modules
+        id: yarn-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # 6.1.0
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-node-modules-hash-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dev dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --production=false
+
+      - name: Fetch Figma variables
+        run: yarn fetch-tokens
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+          FIGMA_BASE_FILE_KEY: ${{ secrets.FIGMA_BASE_FILE_KEY }}
+          FIGMA_MAIN_FILE_KEY: ${{ secrets.FIGMA_MAIN_FILE_KEY }}
+
+      - name: Parse Figma variables
+        run: yarn parse-tokens
+
+      - name: Clear raw tokens
+        run: rm -rf figma-raw-tokens
+
+      - name: Check for token changes
+        id: changes
+        run: |
+            git add packages/canvas-tokens/dtcg/tokens
+            if git diff --cached --quiet; then
+              echo "No token changes found."
+              echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            else
+              echo "Token changes found."
+              echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            fi
+
+      - name: Commit changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+            git commit -m "feat: Sync tokens from Figma"
+            git push origin ${{ steps.target-branch.outputs.name }}
+
+      - name: Create pull request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ secrets.GH_RW_TOKEN }}
+          script: |
+            github.rest.pulls.create({
+              owner: 'Workday',
+              repo: 'canvas-tokens',
+              title: 'feat: Sync tokens from Figma',
+              head: '${{ steps.target-branch.outputs.name }}',
+              base: '${{ inputs.toBranch }}'
+            });
+
+

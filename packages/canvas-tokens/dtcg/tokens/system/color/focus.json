@@ -1,0 +1,109 @@
+{
+  "primary": {
+    "$value": "{brand.primary.500}",
+    "$type": "color",
+    "$description": "Tenant-themeable focus ring for interactive elements",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.neutral.700}"
+          }
+        },
+        "themes": {
+          "brand": {
+            "dark": {
+              "$value": "{brand.dark.neutral.700}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "critical": {
+    "$value": "{brand.critical.500}",
+    "$type": "color",
+    "$description": "Tenant-themeable focus ring for error-state elements",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.critical.500}"
+          }
+        }
+      }
+    }
+  },
+  "caution-inner": {
+    "$value": "{brand.caution.400}",
+    "$type": "color",
+    "$description": "Tenant-themeable inner focus ring for caution-state elements",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.caution.400}"
+          }
+        }
+      }
+    }
+  },
+  "caution-outer": {
+    "$value": "{brand.caution.500}",
+    "$type": "color",
+    "$description": "Tenant-themeable outer focus ring for caution-state elements",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.caution.500}"
+          }
+        }
+      }
+    }
+  },
+  "inverse": {
+    "$value": "{white}",
+    "$type": "color",
+    "$description": "Focus ring for use on dark backgrounds",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.neutral.25}"
+          }
+        }
+      }
+    }
+  },
+  "contrast": {
+    "$value": "{brand.neutral.A900}",
+    "$type": "color",
+    "$description": "High contrast focus ring for accessibility",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{white.A900}"
+          }
+        }
+      }
+    }
+  },
+  "inner": {
+    "$value": {
+      "value": 2,
+      "unit": "px"
+    },
+    "$type": "dimension",
+    "$description": "Size of focus offset"
+  },
+  "outer": {
+    "$value": {
+      "value": 4,
+      "unit": "px"
+    },
+    "$type": "dimension",
+    "$description": "Size of outer focus ring"
+  }
+}
