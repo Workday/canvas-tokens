@@ -1,5 +1,5 @@
 {
-  "default": {
+  "$root": {
     "$value": "{white}",
     "$type": "color",
     "$description": "Default surface background",
@@ -70,7 +70,7 @@
     }
   },
   "alt": {
-    "default": {
+    "$root": {
       "$value": "{brand.neutral.A50}",
       "$type": "color",
       "$description": "De-emphasized container background for secondary information",
@@ -100,7 +100,7 @@
     }
   },
   "info": {
-    "default": {
+    "$root": {
       "$value": "{brand.primary.A25}",
       "$type": "color",
       "$description": "Container background for informational callouts",
@@ -130,7 +130,7 @@
     }
   },
   "danger": {
-    "default": {
+    "$root": {
       "$value": "{brand.critical.A25}",
       "$type": "color",
       "$description": "Container background for error states (not tenant themeable)",
@@ -160,7 +160,7 @@
     }
   },
   "warning": {
-    "default": {
+    "$root": {
       "$value": "{brand.caution.A25}",
       "$type": "color",
       "$description": "Container background for warning states (not tenant themeable)",
@@ -190,7 +190,7 @@
     }
   },
   "success": {
-    "default": {
+    "$root": {
       "$value": "{brand.positive.A25}",
       "$type": "color",
       "$description": "Container background for success states (not tenant themeable)",
@@ -220,7 +220,7 @@
     }
   },
   "ai": {
-    "default": {
+    "$root": {
       "$value": "{brand.primary.A100}",
       "$type": "color",
       "$description": "Container background indicating AI-generated content",
@@ -301,7 +301,7 @@
     }
   },
   "contrast": {
-    "default": {
+    "$root": {
       "$value": "{brand.neutral.A900}",
       "$type": "color",
       "$description": "High contrast dark container background",
@@ -331,7 +331,7 @@
     }
   },
   "primary": {
-    "default": {
+    "$root": {
       "$value": "{neutral.A25}",
       "$type": "color",
       "$description": "Tenant-themeable primary container background",
@@ -381,7 +381,7 @@
     }
   },
   "critical": {
-    "default": {
+    "$root": {
       "$value": "{brand.critical.A25}",
       "$type": "color",
       "$description": "Tenant-themeable critical/error container background",
@@ -411,7 +411,7 @@
     }
   },
   "caution": {
-    "default": {
+    "$root": {
       "$value": "{brand.caution.A25}",
       "$type": "color",
       "$description": "Tenant-themeable caution/warning container background",
@@ -441,7 +441,7 @@
     }
   },
   "positive": {
-    "default": {
+    "$root": {
       "$value": "{brand.positive.A25}",
       "$type": "color",
       "$description": "Tenant-themeable positive/success container background",
@@ -524,7 +524,7 @@
   },
   "overlay": {
     "hover": {
-      "default": {
+      "$root": {
         "$value": "{brand.neutral.A50}",
         "$type": "color",
         "$description": "Hover state overlay for interactive containers",
@@ -554,7 +554,7 @@
       }
     },
     "pressed": {
-      "default": {
+      "$root": {
         "$value": "{brand.neutral.A100}",
         "$type": "color",
         "$description": "Pressed state overlay for interactive containers",

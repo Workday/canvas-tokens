@@ -1,5 +1,5 @@
 {
-  "default": {
+  "$root": {
     "$value": "{brand.neutral.A100}",
     "$type": "color",
     "$description": "Default border for containers and dividers",
@@ -28,7 +28,7 @@
     }
   },
   "input": {
-    "default": {
+    "$root": {
       "$value": "{brand.neutral.A500}",
       "$type": "color",
       "$description": "Default border for form inputs",
@@ -149,7 +149,7 @@
     }
   },
   "inverse": {
-    "default": {
+    "$root": {
       "$value": "{white}",
       "$type": "color",
       "$description": "Border for use on dark backgrounds",

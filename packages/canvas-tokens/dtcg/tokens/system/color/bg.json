@@ -1,5 +1,5 @@
 {
-  "default": {
+  "$root": {
     "$value": "{white}",
     "$type": "color",
     "$description": "Default page background",

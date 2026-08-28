@@ -1,6 +1,6 @@
 {
   "font-family": {
-    "default": {
+    "$root": {
       "$value": "{font-family.50}",
       "$type": "fontFamily"
     },
