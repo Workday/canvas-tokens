@@ -1,0 +1,24 @@
+{
+  "size": {
+    "xs": {
+      "$value": "{size.175}",
+      "$type": "dimension"
+    },
+    "sm": {
+      "$value": "{size.200}",
+      "$type": "dimension"
+    },
+    "md": {
+      "$value": "{size.225}",
+      "$type": "dimension"
+    },
+    "lg": {
+      "$value": "{size.250}",
+      "$type": "dimension"
+    },
+    "xl": {
+      "$value": "{size.300}",
+      "$type": "dimension"
+    }
+  }
+}

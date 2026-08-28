@@ -1,0 +1,511 @@
+{
+  "font-family": {
+    "default": {
+      "$value": "{font-family.50}",
+      "$type": "fontFamily"
+    },
+    "mono": {
+      "$value": "{font-family.100}",
+      "$type": "fontFamily"
+    },
+    "global": {
+      "$value": "{font-family.200}",
+      "$type": "fontFamily"
+    },
+    "fallback": {
+      "$value": "-apple-system, BlinkMacSystemFont, \"Sana Serif\", Roboto, Inter, system-ui, sans-serif, Avenir, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "$type": "fontFamily"
+    }
+  },
+  "font-weight": {
+    "light": {
+      "$value": "{font-weight.300}",
+      "$type": "number"
+    },
+    "regular": {
+      "$value": "{font-weight.400}",
+      "$type": "number"
+    },
+    "medium": {
+      "$value": "{font-weight.500}",
+      "$type": "number"
+    },
+    "semibold": {
+      "$value": "{font-weight.600}",
+      "$type": "number"
+    },
+    "bold": {
+      "$value": "{font-weight.700}",
+      "$type": "number"
+    }
+  },
+  "font-size": {
+    "subtext": {
+      "sm": {
+        "$value": "{size.125}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{size.150}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{size.175}",
+        "$type": "number"
+      }
+    },
+    "body": {
+      "sm": {
+        "$value": "{size.200}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{size.225}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{size.250}",
+        "$type": "number"
+      }
+    },
+    "heading": {
+      "sm": {
+        "$value": "{size.300}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{size.350}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{size.400}",
+        "$type": "number"
+      }
+    },
+    "title": {
+      "sm": {
+        "$value": "{size.500}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{size.600}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{size.700}",
+        "$type": "number"
+      }
+    }
+  },
+  "letter-spacing": {
+    "subtext": {
+      "sm": {
+        "$value": "{letter-spacing.1}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{letter-spacing.2}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{letter-spacing.3}",
+        "$type": "number"
+      }
+    },
+    "body": {
+      "sm": {
+        "$value": "{letter-spacing.4}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{letter-spacing.5}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{letter-spacing.6}",
+        "$type": "number"
+      }
+    },
+    "heading": {
+      "sm": {
+        "$value": "{letter-spacing.7}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{letter-spacing.8}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{letter-spacing.9}",
+        "$type": "number"
+      }
+    },
+    "title": {
+      "sm": {
+        "$value": "{letter-spacing.10}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{letter-spacing.11}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{letter-spacing.12}",
+        "$type": "number"
+      }
+    }
+  },
+  "line-height": {
+    "subtext": {
+      "sm": {
+        "$value": "{size.200}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{size.200}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{size.250}",
+        "$type": "number"
+      }
+    },
+    "body": {
+      "sm": {
+        "$value": "{size.300}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{size.300}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{size.350}",
+        "$type": "number"
+      }
+    },
+    "heading": {
+      "sm": {
+        "$value": "{size.400}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{size.450}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{size.500}",
+        "$type": "number"
+      }
+    },
+    "title": {
+      "sm": {
+        "$value": "{size.600}",
+        "$type": "number"
+      },
+      "md": {
+        "$value": "{size.700}",
+        "$type": "number"
+      },
+      "lg": {
+        "$value": "{size.800}",
+        "$type": "number"
+      }
+    }
+  },
+  "more-styles": {
+    "sm": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 400,
+        "fontSize": {
+          "value": 40,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 48,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.46,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "lg": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 500,
+        "fontSize": {
+          "value": 56,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 64,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.62,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "md": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 400,
+        "fontSize": {
+          "value": 48,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 56,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.54,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    }
+  },
+  "subtext": {
+    "md": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 400,
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 16,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": 0.12,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "sm": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 400,
+        "fontSize": {
+          "value": 10,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 16,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": 0.13,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "lg": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 400,
+        "fontSize": {
+          "value": 14,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 20,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": 0.11,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    }
+  },
+  "heading": {
+    "sm": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 700,
+        "fontSize": {
+          "value": 24,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 32,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.3,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "lg": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 700,
+        "fontSize": {
+          "value": 32,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 40,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.38,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "md": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 700,
+        "fontSize": {
+          "value": 28,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 36,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.34,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    }
+  },
+  "body": {
+    "md": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 400,
+        "fontSize": {
+          "value": 18,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 24,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "sm": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 400,
+        "fontSize": {
+          "value": 16,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 24,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": 0.1,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "lg": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 400,
+        "fontSize": {
+          "value": 20,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 28,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.1,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    }
+  },
+  "title": {
+    "lg": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 700,
+        "fontSize": {
+          "value": 56,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 64,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.62,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "md": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 700,
+        "fontSize": {
+          "value": 48,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 56,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.54,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    },
+    "sm": {
+      "$value": {
+        "fontFamily": "Sana Sans LCG 05 VF",
+        "fontWeight": 700,
+        "fontSize": {
+          "value": 40,
+          "unit": "px"
+        },
+        "lineHeight": {
+          "value": 48,
+          "unit": "px"
+        },
+        "letterSpacing": {
+          "value": -0.46,
+          "unit": "px"
+        }
+      },
+      "$type": "typography"
+    }
+  }
+}

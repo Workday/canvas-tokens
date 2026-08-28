@@ -1,0 +1,106 @@
+{
+  "25": {
+    "$value": "{dark.amber.25}",
+    "$type": "color"
+  },
+  "50": {
+    "$value": "{dark.amber.50}",
+    "$type": "color"
+  },
+  "100": {
+    "$value": "{dark.amber.100}",
+    "$type": "color"
+  },
+  "200": {
+    "$value": "{dark.amber.200}",
+    "$type": "color"
+  },
+  "300": {
+    "$value": "{dark.amber.300}",
+    "$type": "color"
+  },
+  "400": {
+    "$value": "{dark.amber.400}",
+    "$type": "color"
+  },
+  "500": {
+    "$value": "{dark.amber.500}",
+    "$type": "color"
+  },
+  "600": {
+    "$value": "{dark.amber.600}",
+    "$type": "color"
+  },
+  "700": {
+    "$value": "{dark.amber.700}",
+    "$type": "color"
+  },
+  "800": {
+    "$value": "{dark.amber.800}",
+    "$type": "color"
+  },
+  "900": {
+    "$value": "{dark.amber.900}",
+    "$type": "color"
+  },
+  "950": {
+    "$value": "{dark.amber.950}",
+    "$type": "color"
+  },
+  "975": {
+    "$value": "{dark.amber.975}",
+    "$type": "color"
+  },
+  "A25": {
+    "$value": "{dark.amber.A25}",
+    "$type": "color"
+  },
+  "A50": {
+    "$value": "{dark.amber.A50}",
+    "$type": "color"
+  },
+  "A100": {
+    "$value": "{dark.amber.A100}",
+    "$type": "color"
+  },
+  "A200": {
+    "$value": "{dark.amber.A200}",
+    "$type": "color"
+  },
+  "A300": {
+    "$value": "{dark.amber.A300}",
+    "$type": "color"
+  },
+  "A400": {
+    "$value": "{dark.amber.A400}",
+    "$type": "color"
+  },
+  "A500": {
+    "$value": "{dark.amber.A500}",
+    "$type": "color"
+  },
+  "A600": {
+    "$value": "{dark.amber.A600}",
+    "$type": "color"
+  },
+  "A700": {
+    "$value": "{dark.amber.A700}",
+    "$type": "color"
+  },
+  "A800": {
+    "$value": "{dark.amber.A800}",
+    "$type": "color"
+  },
+  "A900": {
+    "$value": "{dark.amber.A900}",
+    "$type": "color"
+  },
+  "A950": {
+    "$value": "{dark.amber.A950}",
+    "$type": "color"
+  },
+  "A975": {
+    "$value": "{dark.amber.A975}",
+    "$type": "color"
+  }
+}

@@ -1,0 +1,629 @@
+{
+  "default": {
+    "$value": "{white}",
+    "$type": "color",
+    "$description": "Default surface background",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.neutral.50}"
+          }
+        }
+      }
+    }
+  },
+  "navigation": {
+    "$value": "{brand.neutral.50}",
+    "$type": "color",
+    "$description": "Fixed navigation elements",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.neutral.100}"
+          }
+        }
+      }
+    }
+  },
+  "popover": {
+    "$value": "{white}",
+    "$type": "color",
+    "$description": "Floating containers like Menus or Tooltip",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.neutral.150}"
+          }
+        }
+      }
+    }
+  },
+  "modal": {
+    "$value": "{white}",
+    "$type": "color",
+    "$description": "Modal views, sits on top of a scrim overlay",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.neutral.200}"
+          }
+        }
+      }
+    }
+  },
+  "raised": {
+    "$value": "{brand.neutral.A25}",
+    "$type": "color",
+    "$description": "Table headers",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{white.A25}"
+          }
+        }
+      }
+    }
+  },
+  "alt": {
+    "default": {
+      "$value": "{brand.neutral.A50}",
+      "$type": "color",
+      "$description": "De-emphasized container background for secondary information",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A50}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.neutral.A100}",
+      "$type": "color",
+      "$description": "Stronger de-emphasized container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A100}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "default": {
+      "$value": "{brand.primary.A25}",
+      "$type": "color",
+      "$description": "Container background for informational callouts",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.A25}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.primary.A50}",
+      "$type": "color",
+      "$description": "Stronger container background for info badges and indicators",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.A50}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "danger": {
+    "default": {
+      "$value": "{brand.critical.A25}",
+      "$type": "color",
+      "$description": "Container background for error states (not tenant themeable)",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.A25}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.critical.A50}",
+      "$type": "color",
+      "$description": "Stronger container background for error states",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.A50}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "warning": {
+    "default": {
+      "$value": "{brand.caution.A25}",
+      "$type": "color",
+      "$description": "Container background for warning states (not tenant themeable)",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.A25}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.caution.A50}",
+      "$type": "color",
+      "$description": "Stronger container background for warning states",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.A50}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "success": {
+    "default": {
+      "$value": "{brand.positive.A25}",
+      "$type": "color",
+      "$description": "Container background for success states (not tenant themeable)",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.positive.A25}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.positive.A50}",
+      "$type": "color",
+      "$description": "Stronger container background for success states",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.positive.A50}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "ai": {
+    "default": {
+      "$value": "{brand.primary.A100}",
+      "$type": "color",
+      "$description": "Container background indicating AI-generated content",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.A100}"
+            }
+          }
+        }
+      }
+    },
+    "hover": {
+      "$value": "{brand.primary.A200}",
+      "$type": "color",
+      "$description": "Hover state for AI-generated content containers",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.A200}"
+            }
+          }
+        }
+      }
+    },
+    "pressed": {
+      "$value": "{brand.primary.400}",
+      "$type": "color",
+      "$description": "Pressed state for AI-generated content containers",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.400}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "transparent": {
+    "$value": "{white.A0}",
+    "$type": "color",
+    "$description": "Fully transparent container background",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.2002,
+                0.0001,
+                89.88
+              ],
+              "hex": "#16161600",
+              "alpha": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "inverse": {
+    "$value": "{white}",
+    "$type": "color",
+    "$description": "Container background for use on dark backgrounds",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{brand.dark.neutral.25}"
+          }
+        }
+      }
+    }
+  },
+  "contrast": {
+    "default": {
+      "$value": "{brand.neutral.A900}",
+      "$type": "color",
+      "$description": "High contrast dark container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.neutral.A900}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.neutral.A950}",
+      "$type": "color",
+      "$description": "Stronger high contrast dark container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.neutral.A950}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "primary": {
+    "default": {
+      "$value": "{neutral.A25}",
+      "$type": "color",
+      "$description": "Tenant-themeable primary container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{dark.neutral.A50}"
+            }
+          },
+          "themes": {
+            "brand": {
+              "light": {
+                "$value": "{brand.primary.A25}"
+              },
+              "dark": {
+                "$value": "{brand.dark.primary.A25}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{neutral.A50}",
+      "$type": "color",
+      "$description": "Stronger tenant-themeable primary container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{dark.neutral.A100}"
+            }
+          },
+          "themes": {
+            "brand": {
+              "light": {
+                "$value": "{brand.primary.A50}"
+              },
+              "dark": {
+                "$value": "{brand.dark.primary.A50}"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "critical": {
+    "default": {
+      "$value": "{brand.critical.A25}",
+      "$type": "color",
+      "$description": "Tenant-themeable critical/error container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.A25}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.critical.A50}",
+      "$type": "color",
+      "$description": "Stronger tenant-themeable critical container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.A50}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "caution": {
+    "default": {
+      "$value": "{brand.caution.A25}",
+      "$type": "color",
+      "$description": "Tenant-themeable caution/warning container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.A25}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.caution.A50}",
+      "$type": "color",
+      "$description": "Stronger tenant-themeable caution container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.A50}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "positive": {
+    "default": {
+      "$value": "{brand.positive.A25}",
+      "$type": "color",
+      "$description": "Tenant-themeable positive/success container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.positive.A25}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.positive.A50}",
+      "$type": "color",
+      "$description": "Stronger tenant-themeable positive container background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.positive.A50}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "selected": {
+    "$value": "{blue.A50}",
+    "$type": "color",
+    "$description": "Tenant-themeable background for selected items",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{dark.blue.A50}"
+          }
+        },
+        "themes": {
+          "brand": {
+            "light": {
+              "$value": "{brand.primary.A50}"
+            },
+            "dark": {
+              "$value": "{brand.dark.primary.A50}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "loading": {
+    "$value": "{brand.neutral.A50}",
+    "$type": "color",
+    "$description": "Background for skeleton loaders and loading states",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{white.A50}"
+          }
+        }
+      }
+    }
+  },
+  "text-highlight": {
+    "$value": "{indigo.A200}",
+    "$type": "color",
+    "$description": "Background highlight for selected text in body copy",
+    "$extensions": {
+      "sana.canvas.tokens": {
+        "modes": {
+          "dark": {
+            "$value": "{dark.indigo.A200}"
+          }
+        }
+      }
+    }
+  },
+  "overlay": {
+    "hover": {
+      "default": {
+        "$value": "{brand.neutral.A50}",
+        "$type": "color",
+        "$description": "Hover state overlay for interactive containers",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{white.A50}"
+              }
+            }
+          }
+        }
+      },
+      "inverse": {
+        "$value": "{white.A150}",
+        "$type": "color",
+        "$description": "Hover overlay for containers on dark backgrounds",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{black.A200}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "pressed": {
+      "default": {
+        "$value": "{brand.neutral.A100}",
+        "$type": "color",
+        "$description": "Pressed state overlay for interactive containers",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{white.A100}"
+              }
+            }
+          }
+        }
+      },
+      "inverse": {
+        "$value": "{white.A200}",
+        "$type": "color",
+        "$description": "Pressed overlay for containers on dark backgrounds",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{black.A300}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "mixin": {
+      "$value": "{black}",
+      "$type": "color",
+      "$description": "Pressed state overlay for interactive containers",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white}"
+            }
+          }
+        }
+      }
+    },
+    "scrim": {
+      "$value": "{brand.neutral.A400}",
+      "$type": "color",
+      "$description": "Semi-transparent backdrop behind modals and dialogs",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.neutral.A500}"
+            }
+          }
+        }
+      }
+    },
+    "raised": {
+      "$value": "{white.A300}",
+      "$type": "color",
+      "$description": "Semi-transparent backdrop behind modals and dialogs",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{black.A200}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

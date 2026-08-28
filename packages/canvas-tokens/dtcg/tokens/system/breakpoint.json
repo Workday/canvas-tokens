@@ -1,0 +1,45 @@
+{
+  "zero": {
+    "$value": {
+      "value": 0,
+      "unit": "px"
+    },
+    "$type": "dimension"
+  },
+  "sm": {
+    "$value": {
+      "value": 320,
+      "unit": "px"
+    },
+    "$type": "dimension"
+  },
+  "md": {
+    "$value": {
+      "value": 767,
+      "unit": "px"
+    },
+    "$type": "dimension"
+  },
+  "lg": {
+    "$value": {
+      "value": 1024,
+      "unit": "px"
+    },
+    "$type": "dimension"
+  },
+  "xl": {
+    "$value": {
+      "value": 1440,
+      "unit": "px"
+    },
+    "$type": "dimension"
+  },
+  "xxl": {
+    "$value": {
+      "value": 2180,
+      "unit": "px"
+    },
+    "$type": "dimension",
+    "$description": "Figma only. Use as the max-width on xl media query."
+  }
+}

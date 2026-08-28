@@ -1,0 +1,42 @@
+{
+  "xxxs": {
+    "$value": "{size.200}",
+    "$type": "number",
+    "$description": "Used for switch toggle"
+  },
+  "xxs": {
+    "$value": "{size.250}",
+    "$type": "number",
+    "$description": "Compact indicators. Used for status indicators and count badges."
+  },
+  "xs": {
+    "$value": "{size.300}",
+    "$type": "number",
+    "$description": "Compact interactive elements. Used for small buttons, pills, checkboxes, and radio buttons."
+  },
+  "sm": {
+    "$value": "{size.400}",
+    "$type": "number",
+    "$description": "Standard interactive components. Used for buttons, segmented controls, tooltips, and avatars."
+  },
+  "md": {
+    "$value": "{size.500}",
+    "$type": "number",
+    "$description": "Default size for most components. Used for buttons, segmented controls, banners, input fields, and menu list items."
+  },
+  "lg": {
+    "$value": "{size.600}",
+    "$type": "number",
+    "$description": "Prominent components. Used for large buttons, segmented controls, expandable triggers, tabs, and avatars."
+  },
+  "xl": {
+    "$value": "{size.700}",
+    "$type": "number",
+    "$description": "Content containers. Used for table cells and toasts."
+  },
+  "xxl": {
+    "$value": "{size.800}",
+    "$type": "number",
+    "$description": "Expandable containers. Used for expandable containers in their collapsed state."
+  }
+}
