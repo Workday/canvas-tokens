@@ -299,8 +299,10 @@ export function generateVariableTokens(payload, sharedContext) {
       });
     });
 
-  for (const content of files.values()) {
-    nestDashedVariants(content);
+  for (const [filePath, content] of files) {
+    if (!filePath.endsWith('motion.json')) {
+      nestDashedVariants(content);
+    }
   }
 
   return files;

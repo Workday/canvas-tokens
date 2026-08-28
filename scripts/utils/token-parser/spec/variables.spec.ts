@@ -185,4 +185,36 @@ describe('generateVariableTokens', () => {
 
     expect(files.get('brand/focus.json')?.primary.$value).toBe('{brand.primary.500}');
   });
+
+  it('keeps motion easing names dashed instead of nesting them', () => {
+    const motionCollectionId = 'col-motion';
+    const files = generateVariableTokens(
+      createPayload(
+        [
+          createVariable({
+            id: 'easing-a-100',
+            name: 'easing/a-100',
+            variableCollectionId: motionCollectionId,
+            resolvedType: 'FLOAT',
+            valuesByMode: {[lightModeId]: 0.2},
+          }),
+          createVariable({
+            id: 'easing-a-200',
+            name: 'easing/a-200',
+            variableCollectionId: motionCollectionId,
+            resolvedType: 'FLOAT',
+            valuesByMode: {[lightModeId]: 0.4},
+          }),
+        ],
+        {
+          [motionCollectionId]: createCollection(motionCollectionId, 'Motion'),
+        }
+      )
+    );
+    const easing = files.get('base/motion.json')?.easing;
+
+    expect(easing).toHaveProperty('a-100');
+    expect(easing).toHaveProperty('a-200');
+    expect(easing).not.toHaveProperty('a');
+  });
 });
