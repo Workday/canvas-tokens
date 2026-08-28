@@ -67,9 +67,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "resolutions": {
-    "@types/minimatch": "5.1.2"
-  },
   "lint-staged": {
     "*.ts": "eslint --cache --fix",
     "*.{ts,md}": "prettier --write"
