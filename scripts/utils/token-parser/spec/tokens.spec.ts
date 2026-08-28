@@ -55,7 +55,7 @@ describe('tokens', () => {
   });
 
   describe('nestDashedVariants', () => {
-    it('nests dashed names under the undashed token as default and state', () => {
+    it('nests dashed names under the undashed token as $root and state', () => {
       expect(
         nestDashedVariants({
           input: {$value: '{brand.neutral.A500}'},
@@ -64,10 +64,40 @@ describe('tokens', () => {
         })
       ).toEqual({
         input: {
-          default: {$value: '{brand.neutral.A500}'},
+          $root: {$value: '{brand.neutral.A500}'},
           hover: {$value: '{brand.neutral.A700}'},
         },
         strong: {$value: '{brand.neutral.A200}'},
+      });
+    });
+
+    it('promotes a default variant to $root when the group has other variants', () => {
+      expect(
+        nestDashedVariants({
+          muted: {
+            default: {$value: '{brand.neutral.600}'},
+            soft: {$value: '{brand.neutral.400}'},
+          },
+          default: {$value: '{brand.neutral.A800}'},
+          strong: {$value: '{brand.neutral.A900}'},
+        })
+      ).toEqual({
+        $root: {$value: '{brand.neutral.A800}'},
+        muted: {
+          $root: {$value: '{brand.neutral.600}'},
+          soft: {$value: '{brand.neutral.400}'},
+        },
+        strong: {$value: '{brand.neutral.A900}'},
+      });
+    });
+
+    it('leaves a lone default token unchanged', () => {
+      expect(
+        nestDashedVariants({
+          default: {$value: '{white}'},
+        })
+      ).toEqual({
+        default: {$value: '{white}'},
       });
     });
 

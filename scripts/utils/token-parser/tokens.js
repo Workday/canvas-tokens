@@ -22,8 +22,38 @@ export function addTokenToFiles(files, filePath, path, token) {
   node[path.at(-1)] = token;
 }
 
+const ROOT_KEY = '$root';
+
 function isTokenLeaf(value) {
   return Boolean(value && typeof value === 'object' && !Array.isArray(value) && value.$value);
+}
+
+function isGroupKey(key) {
+  return !key.startsWith('$');
+}
+
+function promoteDefaultToRoot(node) {
+  if (!Object.hasOwn(node, 'default') || Object.hasOwn(node, ROOT_KEY)) {
+    return;
+  }
+
+  const groupKeys = Object.keys(node).filter(isGroupKey);
+  if (groupKeys.length < 2) {
+    return;
+  }
+
+  const reordered = {[ROOT_KEY]: node.default};
+  for (const [key, value] of Object.entries(node)) {
+    if (key !== 'default') {
+      reordered[key] = value;
+    }
+  }
+
+  for (const key of Object.keys(node)) {
+    delete node[key];
+  }
+
+  Object.assign(node, reordered);
 }
 
 export function nestDashedVariants(node) {
@@ -67,7 +97,7 @@ export function nestDashedVariants(node) {
 
     const group = isTokenLeaf(node[prefix]) || !hasBase ? {} : node[prefix];
     if (isTokenLeaf(node[prefix])) {
-      group.default = node[prefix];
+      group[ROOT_KEY] = node[prefix];
     }
 
     for (const {key, suffix} of variants) {
@@ -77,6 +107,8 @@ export function nestDashedVariants(node) {
 
     node[prefix] = group;
   }
+
+  promoteDefaultToRoot(node);
 
   return node;
 }
