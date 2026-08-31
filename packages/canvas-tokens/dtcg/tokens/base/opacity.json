@@ -1,42 +1,44 @@
 {
-  "0": {
-    "$value": 0,
-    "$type": "number"
-  },
-  "80": {
-    "$value": 0.08,
-    "$type": "number"
-  },
-  "100": {
-    "$value": 0.1,
-    "$type": "number"
-  },
-  "120": {
-    "$value": 0.12,
-    "$type": "number"
-  },
-  "180": {
-    "$value": 0.18,
-    "$type": "number"
-  },
-  "200": {
-    "$value": 0.2,
-    "$type": "number"
-  },
-  "360": {
-    "$value": 0.36,
-    "$type": "number"
-  },
-  "400": {
-    "$value": 0.4,
-    "$type": "number"
-  },
-  "640": {
-    "$value": 0.64,
-    "$type": "number"
-  },
-  "840": {
-    "$value": 0.84,
-    "$type": "number"
+  "opacity": {
+    "0": {
+      "$value": 0,
+      "$type": "number"
+    },
+    "80": {
+      "$value": 0.08,
+      "$type": "number"
+    },
+    "100": {
+      "$value": 0.1,
+      "$type": "number"
+    },
+    "120": {
+      "$value": 0.12,
+      "$type": "number"
+    },
+    "180": {
+      "$value": 0.18,
+      "$type": "number"
+    },
+    "200": {
+      "$value": 0.2,
+      "$type": "number"
+    },
+    "360": {
+      "$value": 0.36,
+      "$type": "number"
+    },
+    "400": {
+      "$value": 0.4,
+      "$type": "number"
+    },
+    "640": {
+      "$value": 0.64,
+      "$type": "number"
+    },
+    "840": {
+      "$value": 0.84,
+      "$type": "number"
+    }
   }
 }

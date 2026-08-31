@@ -1,7 +1,7 @@
 {
   "brand": {
-    "focus": {
-      "primary": {
+    "common": {
+      "focus": {
         "$value": "{brand.primary.500}",
         "$type": "color",
         "$description": "Tenant-themeable focus ring for interactive elements",
@@ -10,13 +10,6 @@
             "modes": {
               "dark": {
                 "$value": "{brand.dark.neutral.700}"
-              }
-            },
-            "themes": {
-              "brand": {
-                "dark": {
-                  "$value": "{brand.dark.neutral.700}"
-                }
               }
             }
           }
@@ -65,6 +58,12 @@
             }
           }
         }
+      }
+    },
+    "gradient": {
+      "primary": {
+        "$value": "linear-gradient(90deg, {brand.primary.base} 0%, {brand.primary.dark} 100%)",
+        "$type": "color"
       }
     }
   }

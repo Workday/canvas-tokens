@@ -1,386 +1,190 @@
 {
-  "1": {
-    "$value": [
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
+  "depth": {
+    "1": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.1.100.y}",
+          "blur": "{shadow.1.100.blur}",
+          "spread": "{shadow.1.100.spread}",
+          "color": "{shadow.1.key}"
         },
-        "y": {
-          "value": 1,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 4,
-          "unit": "px"
-        },
-        "spread": {
-          "value": -1,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#00000008",
-          "alpha": 0.03
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.1.200.y}",
+          "blur": "{shadow.1.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.1.ambient}"
         }
-      },
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
+      ],
+      "$type": "shadow",
+      "$description": "Raised surfaces, cards"
+    },
+    "2": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.2.100.y}",
+          "blur": "{shadow.2.100.blur}",
+          "spread": "{shadow.2.100.spread}",
+          "color": "{shadow.2.key}"
         },
-        "y": {
-          "value": 2,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 8,
-          "unit": "px"
-        },
-        "spread": {
-          "value": 0,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#00000005",
-          "alpha": 0.02
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.2.200.y}",
+          "blur": "{shadow.2.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.2.ambient}"
         }
-      }
-    ],
-    "$type": "shadow",
-    "$description": "Raised surfaces, cards"
-  },
-  "2": {
-    "$value": [
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
+      ],
+      "$type": "shadow",
+      "$description": "Top and bottom navigation, sticky elements"
+    },
+    "3": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.3.100.y}",
+          "blur": "{shadow.3.100.blur}",
+          "spread": "{shadow.3.100.spread}",
+          "color": "{shadow.3.key}"
         },
-        "y": {
-          "value": 2,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 8,
-          "unit": "px"
-        },
-        "spread": {
-          "value": -1,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#0000000d",
-          "alpha": 0.05
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.3.200.y}",
+          "blur": "{shadow.3.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.3.ambient}"
         }
-      },
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
+      ],
+      "$type": "shadow",
+      "$description": "Floating Action Button, Menu"
+    },
+    "4": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.4.100.y}",
+          "blur": "{shadow.4.100.blur}",
+          "spread": "{shadow.4.100.spread}",
+          "color": "{shadow.4.key}"
         },
-        "y": {
-          "value": 4,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 16,
-          "unit": "px"
-        },
-        "spread": {
-          "value": 0,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#00000009",
-          "alpha": 0.03
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.4.200.y}",
+          "blur": "{shadow.4.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.4.ambient}"
         }
-      }
-    ],
-    "$type": "shadow",
-    "$description": "Top and bottom navigation, sticky elements"
-  },
-  "3": {
-    "$value": [
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
+      ],
+      "$type": "shadow",
+      "$description": "Sheets"
+    },
+    "5": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.5.100.y}",
+          "blur": "{shadow.5.100.blur}",
+          "spread": "{shadow.5.100.spread}",
+          "color": "{shadow.5.key}"
         },
-        "y": {
-          "value": 3,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 12,
-          "unit": "px"
-        },
-        "spread": {
-          "value": -1,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#00000012",
-          "alpha": 0.07
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.5.200.y}",
+          "blur": "{shadow.5.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.5.ambient}"
         }
-      },
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
+      ],
+      "$type": "shadow",
+      "$description": "Banners, snackbars, toast, non-modal dialogs, non-modal side panels"
+    },
+    "6": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.6.100.y}",
+          "blur": "{shadow.6.100.blur}",
+          "spread": "{shadow.6.100.spread}",
+          "color": "{shadow.6.key}"
         },
-        "y": {
-          "value": 6,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 24,
-          "unit": "px"
-        },
-        "spread": {
-          "value": 0,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#0000000c",
-          "alpha": 0.05
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.6.200.y}",
+          "blur": "{shadow.6.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.6.ambient}"
         }
-      }
-    ],
-    "$type": "shadow",
-    "$description": "Floating Action Button, Menu"
-  },
-  "4": {
-    "$value": [
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
-        },
-        "y": {
-          "value": 4,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 16,
-          "unit": "px"
-        },
-        "spread": {
-          "value": -2,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#00000017",
-          "alpha": 0.09
-        }
-      },
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
-        },
-        "y": {
-          "value": 8,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 32,
-          "unit": "px"
-        },
-        "spread": {
-          "value": 0,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#0000000f",
-          "alpha": 0.06
-        }
-      }
-    ],
-    "$type": "shadow",
-    "$description": "Sheets"
-  },
-  "5": {
-    "$value": [
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
-        },
-        "y": {
-          "value": 8,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 24,
-          "unit": "px"
-        },
-        "spread": {
-          "value": -2,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#0000001c",
-          "alpha": 0.11
-        }
-      },
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
-        },
-        "y": {
-          "value": 16,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 48,
-          "unit": "px"
-        },
-        "spread": {
-          "value": 0,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#00000013",
-          "alpha": 0.07
-        }
-      }
-    ],
-    "$type": "shadow",
-    "$description": "Banners, snackbars, toast, non-modal dialogs, non-modal side panels"
-  },
-  "6": {
-    "$value": [
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
-        },
-        "y": {
-          "value": 16,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 48,
-          "unit": "px"
-        },
-        "spread": {
-          "value": -3,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#00000021",
-          "alpha": 0.13
-        }
-      },
-      {
-        "type": "dropShadow",
-        "x": {
-          "value": 0,
-          "unit": "px"
-        },
-        "y": {
-          "value": 32,
-          "unit": "px"
-        },
-        "blur": {
-          "value": 96,
-          "unit": "px"
-        },
-        "spread": {
-          "value": 0,
-          "unit": "px"
-        },
-        "color": {
-          "colorSpace": "oklch",
-          "components": [
-            0,
-            0.0001,
-            0
-          ],
-          "hex": "#00000016",
-          "alpha": 0.09
-        }
-      }
-    ],
-    "$type": "shadow",
-    "$description": "Modal dialogs, modal side panels"
+      ],
+      "$type": "shadow",
+      "$description": "Modal dialogs, modal side panels"
+    }
   }
 }

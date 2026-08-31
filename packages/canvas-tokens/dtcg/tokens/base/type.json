@@ -108,6 +108,11 @@
     }
   },
   "font-family": {
+    "0": {
+      "value": "Roboto, -apple-system, BlinkMacSystemFont, \"Sana Serif\", Inter, system-ui, sans-serif, Avenir, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "$type": "fontFamily",
+      "$description": "Fallback font-family"
+    },
     "50": {
       "$value": "Sana Sans LCG 05 VF",
       "$type": "fontFamily",
