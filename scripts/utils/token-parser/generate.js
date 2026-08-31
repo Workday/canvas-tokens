@@ -16,7 +16,7 @@ export const DEFAULT_OUTPUT_DIR = 'packages/canvas-tokens/dtcg/tokens';
 
 function createSharedContext(payloads) {
   return payloads.reduce((context, payload, index) => {
-    if (index === 0) {
+    if (!index) {
       return createContext(payload);
     }
 
