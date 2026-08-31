@@ -16,7 +16,14 @@ import {addTokenToFiles, buildToken, nestDashedVariants} from './tokens.js';
 const SKIP_THEME_CATEGORIES = new Set(['slot']);
 const SKIP_FOCUS_TOKENS = new Set(['inverse', 'contrast', 'inner', 'outer']);
 
-function shouldSkipPaletteVariable(collection, variable) {
+function shouldSkipVariable(collection, themeCollection, variable) {
+  if (
+    collection.id === themeCollection?.id &&
+    SKIP_THEME_CATEGORIES.has(getThemeCategory(variable))
+  ) {
+    return true;
+  }
+
   if (collection.name !== 'Colors') {
     return false;
   }
@@ -222,14 +229,6 @@ function findBrandExtension(collections) {
   );
 }
 
-function shouldSkipThemeVariable(collection, themeCollection, variable) {
-  if (collection.id !== themeCollection?.id) {
-    return false;
-  }
-
-  return SKIP_THEME_CATEGORIES.has(getThemeCategory(variable));
-}
-
 function buildVariableToken({
   variable,
   context,
@@ -288,24 +287,23 @@ export function generateVariableTokens(payload, sharedContext) {
       Object.values(payload.meta.variables)
         .filter(variable => !variable.remote && variable.variableCollectionId === collection.id)
         .forEach(variable => {
-        if (shouldSkipThemeVariable(collection, themeCollection, variable)) {
-          return;
-        }
+          if (shouldSkipVariable(collection, themeCollection, variable)) {
+            return;
+          }
 
-        if (shouldSkipPaletteVariable(collection, variable)) {
-          return;
-        }
+          const token = buildVariableToken({
+            variable,
+            context,
+            collection,
+            lightModeId,
+            themeCollection,
+            brandExtension,
+          });
 
-        const token = buildVariableToken({
-          variable,
-          context,
-          collection,
-          lightModeId,
-          themeCollection,
-          brandExtension,
-        });
+          if (!token) {
+            return;
+          }
 
-        if (token) {
           const destination = COLLECTION_ROUTES[collection.name]?.(
             variable,
             libraryPrefix,
@@ -316,8 +314,7 @@ export function generateVariableTokens(payload, sharedContext) {
           if (destination) {
             addTokenToFiles(files, destination.file, destination.path, token);
           }
-        }
-      });
+        });
     });
 
   for (const [filePath, content] of files) {

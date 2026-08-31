@@ -70,26 +70,22 @@ export function mergeFileMaps(target, ...sources) {
   return target;
 }
 
-/**
- * Writes the token files to the output directory.
- * @param {Map<string, object>} fileMap - The map of file paths to token contents.
- * @param {string} outputDir - The output directory.
- */
+export function listOutputFiles(outputDir) {
+  const resolvedOutputDir = path.resolve(process.cwd(), outputDir);
+
+  if (!fs.existsSync(resolvedOutputDir)) {
+    return [];
+  }
+
+  return fs.readdirSync(resolvedOutputDir, {recursive: true});
+}
+
 export function writeOutputFiles(fileMap, outputDir) {
   const resolvedOutputDir = path.resolve(process.cwd(), outputDir);
 
   for (const [relativePath, content] of fileMap.entries()) {
     const outputPath = path.resolve(resolvedOutputDir, relativePath);
     fs.mkdirSync(path.dirname(outputPath), {recursive: true});
-
-    const existing = fs.existsSync(outputPath)
-      ? JSON.parse(fs.readFileSync(outputPath, 'utf8'))
-      : {};
-
-    fs.writeFileSync(
-      outputPath,
-      `${JSON.stringify(Object.assign(existing, content), null, 2)}\n`,
-      'utf8'
-    );
+    fs.writeFileSync(outputPath, `${JSON.stringify(content, null, 2)}\n`, 'utf8');
   }
 }

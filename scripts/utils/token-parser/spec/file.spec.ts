@@ -135,15 +135,15 @@ describe('file', () => {
       );
     });
 
-    it('merges with existing file contents on disk', () => {
+    it('overwrites existing file contents on disk', () => {
       fsMocks.existsSync.mockReturnValue(true);
-      fsMocks.readFileSync.mockReturnValue(JSON.stringify({existing: {$value: 1}}));
 
       writeOutputFiles(new Map([['system/gap.json', {sm: {$value: 8}}]]), 'out');
 
+      expect(fsMocks.readFileSync).not.toHaveBeenCalled();
       expect(fsMocks.writeFileSync).toHaveBeenCalledWith(
         expect.stringMatching(/out\/system\/gap\.json$/),
-        `${JSON.stringify({existing: {$value: 1}, sm: {$value: 8}}, null, 2)}\n`,
+        `${JSON.stringify({sm: {$value: 8}}, null, 2)}\n`,
         'utf8'
       );
     });

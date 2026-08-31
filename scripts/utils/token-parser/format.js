@@ -161,7 +161,7 @@ export function figmaTypeToDtcg(resolvedType, value) {
     case 'TIMING':
       return 'duration';
     case 'EASING':
-      return 'cubic-bezier';
+      return 'cubicBezier';
     default:
       return undefined;
   }

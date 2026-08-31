@@ -211,16 +211,6 @@ describe('context', () => {
     expect(
       context.resolveValue(themeAccent.valuesByMode[lightModeId], themeAccent, lightModeId)
     ).toBe('{brand.caution.25}');
-    expect(
-      context.resolveValue(themeAccent.valuesByMode[lightModeId], themeAccent, lightModeId, {
-        useInnerValue: true,
-      })
-    ).toBe('{amber.25}');
-    expect(
-      context.resolveValue(themeAccent.valuesByMode[lightModeId], themeAccent, lightModeId, {
-        allowAliasLookup: true,
-      })
-    ).toBe('{brand.caution.25}');
   });
 
   it('reads mode values using fallback modes and supports zero values', () => {

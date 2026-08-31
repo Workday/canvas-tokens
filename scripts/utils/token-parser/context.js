@@ -246,7 +246,7 @@ function resolveValue(state, rawValue, variable, modeId, options = {}) {
         : resolveAlias(state, rawValue.id, modeId),
       {
         ...options,
-        remapToBrand: !isBrandSource && (Boolean(options.allowAliasLookup) || !options.useInnerValue),
+        remapToBrand: !isBrandSource || Boolean(options.allowAliasLookup),
       }
     );
   }
