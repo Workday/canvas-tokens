@@ -114,7 +114,7 @@
       "$description": "Fallback font-family"
     },
     "50": {
-      "$value": "Sana Sans LCG 05 VF",
+      "$value": "Sana Sans VF",
       "$type": "fontFamily",
       "$description": "Default font-family"
     },
