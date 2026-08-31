@@ -26,9 +26,13 @@ describe('generateVariableTokens', () => {
     );
 
     expect(files.has('system/color/focus.json')).toBe(false);
-    expect(files.get('brand/focus.json')).toMatchObject({
-      primary: {
-        $type: 'color',
+    expect(files.get('brand/common.json')).toMatchObject({
+      brand: {
+        common: {
+          focus: {
+            $type: 'color',
+          },
+        },
       },
     });
   });
@@ -53,17 +57,21 @@ describe('generateVariableTokens', () => {
         }
       )
     );
-    const focus = files.get('brand/focus.json');
+    const common = files.get('brand/common.json');
 
-    expect(focus).toMatchObject({
-      primary: {
-        $type: 'color',
+    expect(common).toMatchObject({
+      brand: {
+        common: {
+          focus: {
+            $type: 'color',
+          },
+        },
       },
     });
-    expect(focus).not.toHaveProperty('inverse');
-    expect(focus).not.toHaveProperty('contrast');
-    expect(focus).not.toHaveProperty('inner');
-    expect(focus).not.toHaveProperty('outer');
+    expect(common?.brand?.common).not.toHaveProperty('inverse');
+    expect(common?.brand?.common).not.toHaveProperty('contrast');
+    expect(common?.brand?.common).not.toHaveProperty('inner');
+    expect(common?.brand?.common).not.toHaveProperty('outer');
   });
 
   it('keeps other theme color tokens in system/color', () => {
@@ -82,13 +90,51 @@ describe('generateVariableTokens', () => {
     );
 
     expect(files.get('system/color/fg.json')).toMatchObject({
-      default: {
-        $type: 'color',
+      fg: {
+        default: {
+          $type: 'color',
+        },
       },
     });
   });
 
-  it('uses inner palette values only for color tokens with brand themes', () => {
+  it('omits tenant palette colors', () => {
+    const colorsCollectionId = 'col-colors';
+    const files = generateVariableTokens(
+      createPayload(
+        [
+          createVariable({
+            id: 'neutral-100',
+            name: 'neutral/100',
+            variableCollectionId: colorsCollectionId,
+            valuesByMode: {[lightModeId]: {r: 0.9, g: 0.9, b: 0.9, a: 1}},
+          }),
+          createVariable({
+            id: 'tenant-airbnb-25',
+            name: 'tenant/airbnb/25',
+            variableCollectionId: colorsCollectionId,
+            valuesByMode: {[lightModeId]: {r: 1, g: 0.9, b: 0.9, a: 1}},
+          }),
+          createVariable({
+            id: 'dark-tenant-airbnb-25',
+            name: 'dark/tenant/airbnb/25',
+            variableCollectionId: colorsCollectionId,
+            valuesByMode: {[lightModeId]: {r: 0.2, g: 0.1, b: 0.1, a: 1}},
+          }),
+        ],
+        {
+          [colorsCollectionId]: createCollection(colorsCollectionId, 'Colors'),
+        }
+      )
+    );
+    const palette = files.get('base/palette.json');
+
+    expect(palette).toHaveProperty('neutral.100');
+    expect(palette).not.toHaveProperty('tenant');
+    expect(palette?.dark ?? {}).not.toHaveProperty('tenant');
+  });
+
+  it('keeps brand references as the main value for theme color tokens', () => {
     const palette = createVariable({
       id: 'green-600',
       key: 'green-600',
@@ -138,8 +184,9 @@ describe('generateVariableTokens', () => {
     );
     const accent = files.get('system/color/accent.json');
 
-    expect(accent?.primary.$value).toBe('{green.600}');
-    expect(accent?.positive.$value).toBe('{brand.positive.600}');
+    expect(accent?.accent?.primary.$value).toBe('{brand.positive.600}');
+    expect(accent?.accent?.positive.$value).toBe('{brand.positive.600}');
+    expect(accent?.accent?.primary.$extensions).toBeUndefined();
   });
 
   it('keeps brand references as the main value for focus tokens', () => {
@@ -183,7 +230,7 @@ describe('generateVariableTokens', () => {
       })
     );
 
-    expect(files.get('brand/focus.json')?.primary.$value).toBe('{brand.primary.500}');
+    expect(files.get('brand/common.json')?.brand?.common?.focus.$value).toBe('{brand.primary.500}');
   });
 
   it('keeps motion easing names dashed instead of nesting them', () => {

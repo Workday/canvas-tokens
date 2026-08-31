@@ -22,6 +22,51 @@ describe('context', () => {
     });
   });
 
+  it('remaps white and black palette references to neutral endpoints', () => {
+    const white = createVariable({
+      id: 'white',
+      key: 'white-key',
+      name: 'white',
+      valuesByMode: {[lightModeId]: {r: 1, g: 1, b: 1, a: 1}},
+    });
+    const black = createVariable({
+      id: 'black',
+      key: 'black-key',
+      name: 'black',
+      valuesByMode: {[lightModeId]: {r: 0, g: 0, b: 0, a: 1}},
+    });
+    const whiteAlias = createVariable({
+      id: 'white-alias',
+      key: 'white-alias-key',
+      name: 'fg/on-contrast',
+      variableCollectionId: themeCollectionId,
+      valuesByMode: {
+        [lightModeId]: {type: 'VARIABLE_ALIAS', id: 'white'},
+      },
+    });
+    const blackAlias = createVariable({
+      id: 'black-alias',
+      key: 'black-alias-key',
+      name: 'fg/default',
+      variableCollectionId: themeCollectionId,
+      valuesByMode: {
+        [lightModeId]: {type: 'VARIABLE_ALIAS', id: 'black'},
+      },
+    });
+    const context = createContext(
+      createPayload([white, black, whiteAlias, blackAlias], {
+        [themeCollectionId]: createCollection(themeCollectionId, 'Theme'),
+      })
+    );
+
+    expect(context.resolveValue(whiteAlias.valuesByMode[lightModeId], whiteAlias, lightModeId)).toBe(
+      '{neutral.0}'
+    );
+    expect(context.resolveValue(blackAlias.valuesByMode[lightModeId], blackAlias, lightModeId)).toBe(
+      '{neutral.1000}'
+    );
+  });
+
   it('resolves variable aliases using collection-specific reference formatting', () => {
     const target = createVariable({
       id: 'target',
@@ -196,5 +241,31 @@ describe('context', () => {
 
     expect(context.getModeValue(variable, lightModeId)).toBe(0);
     expect(context.getModeValue(variable, 'missing-mode')).toBe(0);
+  });
+
+  it('resolves style bound variables to theme type token paths', () => {
+    const themeVariable = createVariable({
+      id: 'type-font-size-body-md',
+      name: 'type/font/size/body/md',
+      variableCollectionId: themeCollectionId,
+      resolvedType: 'FLOAT',
+      valuesByMode: {
+        [lightModeId]: {type: 'VARIABLE_ALIAS', id: 'base-size'},
+      },
+    });
+    const baseVariable = createVariable({
+      id: 'base-size',
+      name: 'size/225',
+      resolvedType: 'FLOAT',
+      valuesByMode: {[lightModeId]: 18},
+    });
+    const context = createContext(
+      createPayload([baseVariable, themeVariable], {
+        [themeCollectionId]: createCollection(themeCollectionId, 'Theme'),
+      })
+    );
+
+    expect(context.resolveStyleBoundVariable('type-font-size-body-md')).toBe('{font-size.body.md}');
+    expect(context.resolveBoundVariable('type-font-size-body-md')).toBe('{size.225}');
   });
 });

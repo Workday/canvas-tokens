@@ -7,19 +7,61 @@ export function buildToken({value, type, description, extensions}) {
   };
 }
 
+const WRAPPED_FILE_NAMES = new Set([
+  'size',
+  'opacity',
+  'shadow',
+  'depth',
+  'breakpoint',
+  'shape',
+  'gap',
+  'padding',
+]);
+
+export function getFileWrapperKey(filePath) {
+  const fileName = filePath.replace(/\.json$/, '').split('/').at(-1);
+
+  if (WRAPPED_FILE_NAMES.has(fileName)) {
+    return fileName;
+  }
+
+  if (filePath.startsWith('system/color/') && filePath.endsWith('.json')) {
+    return fileName;
+  }
+
+  return undefined;
+}
+
+export function getBrandTokenPath(filePath, path) {
+  const relative = filePath.replace(/^brand\//, '').replace(/\.json$/, '');
+
+  return ['brand', ...relative.split('/'), ...path];
+}
+
+export function getTokenPath(filePath, path) {
+  if (filePath.startsWith('brand/')) {
+    return getBrandTokenPath(filePath, path);
+  }
+
+  const wrapperKey = getFileWrapperKey(filePath);
+  return wrapperKey ? [wrapperKey, ...path] : path;
+}
+
 export function addTokenToFiles(files, filePath, path, token) {
   if (!files.has(filePath)) {
     files.set(filePath, {});
   }
 
-  const node = path.slice(0, -1).reduce((cursor, key) => {
+  const resolvedPath = getTokenPath(filePath, path);
+
+  const node = resolvedPath.slice(0, -1).reduce((cursor, key) => {
     if (!cursor[key] || cursor[key].$value) {
       cursor[key] = {};
     }
     return cursor[key];
   }, files.get(filePath));
 
-  node[path.at(-1)] = token;
+  node[resolvedPath.at(-1)] = token;
 }
 
 const ROOT_KEY = '$root';

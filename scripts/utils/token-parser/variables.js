@@ -16,6 +16,15 @@ import {addTokenToFiles, buildToken, nestDashedVariants} from './tokens.js';
 const SKIP_THEME_CATEGORIES = new Set(['slot']);
 const SKIP_FOCUS_TOKENS = new Set(['inverse', 'contrast', 'inner', 'outer']);
 
+function shouldSkipPaletteVariable(collection, variable) {
+  if (collection.name !== 'Colors') {
+    return false;
+  }
+
+  const [first, second] = toTokenPath(variable.name);
+  return first === 'tenant' || (first === 'dark' && second === 'tenant');
+}
+
 function registerRoute(context, variable, outputKey, file, path) {
   context.registerOutputPath(variable.id, outputKey);
   return {file, path};
@@ -150,6 +159,14 @@ function routeSizeCollectionVariable(variable, libraryPrefix, context) {
   return routeBaseSizeVariable(variable, context);
 }
 
+function getFocusTokenPath(path) {
+  if (path[0] === 'primary') {
+    return ['focus', ...path.slice(1)];
+  }
+
+  return path;
+}
+
 function routeThemeVariable(variable, _libraryPrefix, _context, category) {
   if (category === 'type') {
     return {file: 'system/type.json', path: flattenThemeTypePath(variable.name)};
@@ -158,7 +175,9 @@ function routeThemeVariable(variable, _libraryPrefix, _context, category) {
   const path = getThemePathSegments(variable);
 
   if (category === 'focus') {
-    return SKIP_FOCUS_TOKENS.has(path[0]) ? null : {file: 'brand/focus.json', path};
+    return SKIP_FOCUS_TOKENS.has(path[0])
+      ? null
+      : {file: 'brand/common.json', path: getFocusTokenPath(path)};
   }
 
   return {
@@ -225,13 +244,11 @@ function buildVariableToken({
   }
 
   const isTheme = collection.id === themeCollection?.id;
+  const defaultValue = context.resolveValue(defaultRaw, variable, lightModeId);
   const brandThemes =
     isTheme && brandExtension
-      ? buildBrandThemeExtensions(variable, brandExtension, context)
+      ? buildBrandThemeExtensions(variable, brandExtension, context, collection, defaultValue)
       : undefined;
-  const resolveOptions =
-    brandThemes && getThemeCategory(variable) !== 'focus' ? {useInnerValue: true} : undefined;
-  const defaultValue = context.resolveValue(defaultRaw, variable, lightModeId, resolveOptions);
   let type = figmaTypeToDtcg(variable.resolvedType, defaultValue);
 
   if (
@@ -243,7 +260,7 @@ function buildVariableToken({
   }
 
   const extensions = mergeExtensions(
-    isTheme ? buildModeExtensions(variable, collection, context, resolveOptions) : undefined,
+    isTheme ? buildModeExtensions(variable, collection, context) : undefined,
     brandThemes
   );
 
@@ -272,6 +289,10 @@ export function generateVariableTokens(payload, sharedContext) {
         .filter(variable => !variable.remote && variable.variableCollectionId === collection.id)
         .forEach(variable => {
         if (shouldSkipThemeVariable(collection, themeCollection, variable)) {
+          return;
+        }
+
+        if (shouldSkipPaletteVariable(collection, variable)) {
           return;
         }
 

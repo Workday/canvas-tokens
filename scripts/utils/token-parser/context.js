@@ -1,4 +1,4 @@
-import {flattenFontPath, toTokenPath} from './naming.js';
+import {flattenFontPath, flattenThemeTypePath, toTokenPath} from './naming.js';
 import {formatEasingValue, formatNumericValue, rgbaToOklchColor} from './format.js';
 
 const PALETTE_TO_BRAND = {
@@ -9,6 +9,25 @@ const PALETTE_TO_BRAND = {
 };
 
 const SEMANTIC_BRAND_GROUPS = ['neutral', 'primary', 'positive', 'caution', 'critical'];
+
+const PALETTE_REFERENCE_ALIASES = {
+  white: 'neutral.0',
+  black: 'neutral.1000',
+};
+
+function normalizePaletteReference(reference) {
+  if (typeof reference !== 'string') {
+    return reference;
+  }
+
+  const match = reference.match(/^\{([^.}]+)\}$/);
+  if (!match) {
+    return reference;
+  }
+
+  const remapped = PALETTE_REFERENCE_ALIASES[match[1]];
+  return remapped ? `{${remapped}}` : reference;
+}
 
 const toVariableMap = (variables, key) =>
   Object.values(variables).map(variable => [variable[key], variable]);
@@ -207,11 +226,13 @@ function valueToReference(state, resolved, options = {}) {
   );
 
   if (formatted) {
-    return formatted;
+    return normalizePaletteReference(formatted);
   }
 
   const mapped = state.output.get(variable.id);
-  return mapped ? `{${mapped}}` : formatReferencePath(pathSegments, collectionName);
+  return normalizePaletteReference(
+    mapped ? `{${mapped}}` : formatReferencePath(pathSegments, collectionName)
+  );
 }
 
 function resolveValue(state, rawValue, variable, modeId, options = {}) {
@@ -241,6 +262,41 @@ function resolveValue(state, rawValue, variable, modeId, options = {}) {
   return formatNumericValue(rawValue, variable);
 }
 
+function formatThemeTypeReference(variable) {
+  const path = flattenThemeTypePath(variable.name);
+  const referencePath =
+    path[0] === 'font-family' && path[path.length - 1] === 'default'
+      ? 'font-family.$root'
+      : path.join('.');
+
+  return `{${referencePath}}`;
+}
+
+function resolveBoundVariable(state, aliasId, modeId) {
+  const resolved = resolveAlias(state, aliasId, modeId);
+  if (!resolved?.variable) {
+    return undefined;
+  }
+
+  return valueToReference(state, resolved, {});
+}
+
+function resolveStyleBoundVariable(state, aliasId) {
+  const resolved = resolveImmediateAlias(state, aliasId);
+  if (!resolved?.variable) {
+    return undefined;
+  }
+
+  const {variable} = resolved;
+  const collectionName = getCollection(state, variable)?.name;
+
+  if (collectionName === 'Theme' && variable.name.startsWith('type/')) {
+    return formatThemeTypeReference(variable);
+  }
+
+  return valueToReference(state, resolved, {});
+}
+
 export function createContext(payload) {
   const state = createState(payload);
 
@@ -251,6 +307,8 @@ export function createContext(payload) {
     getModeValue: (variable, modeId) => getModeValue(state, variable, modeId),
     resolveValue: (rawValue, variable, modeId, options) =>
       resolveValue(state, rawValue, variable, modeId, options),
+    resolveBoundVariable: (aliasId, modeId) => resolveBoundVariable(state, aliasId, modeId),
+    resolveStyleBoundVariable: aliasId => resolveStyleBoundVariable(state, aliasId),
     registerOutputPath: (variableId, path) => state.output.set(variableId, path),
   };
 }

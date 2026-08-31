@@ -84,21 +84,12 @@ function rgbaToHex({r, g, b, a = 1}) {
   return `${hex}${channel(a)}`;
 }
 
-function formatOklchComponent(value, index) {
-  if (index === 2) {
-    return roundNumber(value, 2);
-  }
+function formatOklchComponents({l, c, h}) {
+  const chroma = roundNumber(c, 4);
+  const formattedChroma = Math.abs(chroma) < 0.0002 ? 0 : chroma;
+  const formattedHue = formattedChroma === 0 ? 0 : roundNumber(h, 2);
 
-  const rounded = roundNumber(value, 4);
-  if (index === 1 && Math.abs(rounded) < 0.0002) {
-    return 0.0001;
-  }
-
-  if (index === 0) {
-    return roundNumber(rounded, 4);
-  }
-
-  return rounded;
+  return [roundNumber(l, 4), formattedChroma, formattedHue];
 }
 
 export function rgbaToOklchColor(rgba) {
@@ -107,19 +98,16 @@ export function rgbaToOklchColor(rgba) {
   const linearB = srgbToLinear(rgba.b);
   const oklab = linearRgbToOklab(linearR, linearG, linearB);
   const oklch = oklabToOklch(oklab);
+  const alpha = rgba.a !== undefined && rgba.a < 1 ? roundOpacity(rgba.a) : undefined;
 
   const color = {
     colorSpace: 'oklch',
-    components: [
-      formatOklchComponent(oklch.l, 0),
-      formatOklchComponent(oklch.c, 1),
-      formatOklchComponent(oklch.h, 2),
-    ],
-    hex: rgbaToHex(rgba),
+    components: formatOklchComponents(oklch),
+    hex: rgbaToHex({...rgba, a: alpha ?? rgba.a}),
   };
 
-  if (rgba.a !== undefined && rgba.a < 1) {
-    color.alpha = roundOpacity(rgba.a);
+  if (alpha !== undefined) {
+    color.alpha = alpha;
   }
 
   return color;

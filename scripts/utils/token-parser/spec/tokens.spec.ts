@@ -1,10 +1,17 @@
 import {describe, expect, it} from 'vitest';
-import {addTokenToFiles, buildToken, nestDashedVariants} from '../tokens.js';
+import {
+  addTokenToFiles,
+  buildToken,
+  getBrandTokenPath,
+  getFileWrapperKey,
+  getTokenPath,
+  nestDashedVariants,
+} from '../tokens.js';
 
 describe('tokens', () => {
   describe('buildToken', () => {
     it('builds a minimal token with only $value', () => {
-      expect(buildToken({value: 8})).toEqual({$value: 8});
+      expect(buildToken({value: 8} as Parameters<typeof buildToken>)).toEqual({$value: 8});
     });
 
     it('includes optional token fields when provided', () => {
@@ -24,11 +31,79 @@ describe('tokens', () => {
     });
 
     it('omits empty extensions', () => {
-      expect(buildToken({value: 1, extensions: {}})).toEqual({$value: 1});
+      expect(buildToken({value: 1, extensions: {}} as Parameters<typeof buildToken>)).toEqual({
+        $value: 1,
+      });
+    });
+  });
+
+  describe('getFileWrapperKey', () => {
+    it('returns the file name for wrapped system and base files', () => {
+      expect(getFileWrapperKey('system/gap.json')).toBe('gap');
+      expect(getFileWrapperKey('base/size.json')).toBe('size');
+      expect(getFileWrapperKey('system/depth.json')).toBe('depth');
+    });
+
+    it('returns the color file name for system color tokens', () => {
+      expect(getFileWrapperKey('system/color/bg.json')).toBe('bg');
+      expect(getFileWrapperKey('system/color/accent.json')).toBe('accent');
+    });
+
+    it('returns undefined for unwrapped files', () => {
+      expect(getFileWrapperKey('system/type.json')).toBeUndefined();
+      expect(getFileWrapperKey('base/palette.json')).toBeUndefined();
+    });
+  });
+
+  describe('getTokenPath', () => {
+    it('wraps system color and spacing tokens with the file name', () => {
+      expect(getTokenPath('system/color/bg.json', ['alt'])).toEqual(['bg', 'alt']);
+      expect(getTokenPath('system/gap.json', ['sm'])).toEqual(['gap', 'sm']);
+    });
+  });
+
+  describe('getBrandTokenPath', () => {
+    it('wraps brand file paths with brand and the file name', () => {
+      expect(getBrandTokenPath('brand/action.json', ['base'])).toEqual(['brand', 'action', 'base']);
+      expect(getBrandTokenPath('brand/dark/neutral.json', ['975'])).toEqual([
+        'brand',
+        'dark',
+        'neutral',
+        '975',
+      ]);
+      expect(getBrandTokenPath('brand/common.json', ['focus'])).toEqual([
+        'brand',
+        'common',
+        'focus',
+      ]);
     });
   });
 
   describe('addTokenToFiles', () => {
+    it('wraps brand tokens with brand and the file name', () => {
+      const files = new Map<string, Record<string, unknown>>();
+
+      addTokenToFiles(files, 'brand/action.json', ['base'], {$value: '#000'});
+      addTokenToFiles(files, 'brand/dark/action.json', ['accent'], {$value: '#fff'});
+
+      expect(files.get('brand/action.json')).toEqual({
+        brand: {
+          action: {
+            base: {$value: '#000'},
+          },
+        },
+      });
+      expect(files.get('brand/dark/action.json')).toEqual({
+        brand: {
+          dark: {
+            action: {
+              accent: {$value: '#fff'},
+            },
+          },
+        },
+      });
+    });
+
     it('creates nested token paths', () => {
       const files = new Map<string, Record<string, unknown>>();
 
@@ -36,8 +111,10 @@ describe('tokens', () => {
       addTokenToFiles(files, 'system/color/accent.json', ['positive', 'default'], {$value: '#0f0'});
 
       expect(files.get('system/color/accent.json')).toEqual({
-        primary: {default: {$value: '#000'}},
-        positive: {default: {$value: '#0f0'}},
+        accent: {
+          primary: {default: {$value: '#000'}},
+          positive: {default: {$value: '#0f0'}},
+        },
       });
     });
 

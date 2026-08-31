@@ -30,7 +30,11 @@ function main() {
       context = createContext(payload);
     }
 
-    mergeFileMaps(output, generateVariableTokens(payload, context), generateStyleTokens(payload));
+    mergeFileMaps(
+      output,
+      generateVariableTokens(payload, context),
+      generateStyleTokens(payload, context)
+    );
   }
 
   writeOutputFiles(output, OUTPUT_DIR);

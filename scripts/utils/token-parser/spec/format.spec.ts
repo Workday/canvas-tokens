@@ -30,12 +30,21 @@ describe('format', () => {
       expect(rgbaToOklchColor({r: 1, g: 1, b: 1, a: 1})).toMatchObject({
         colorSpace: 'oklch',
         hex: '#ffffff',
-        components: expect.any(Array),
+        components: [1, 0, 0],
       });
     });
 
-    it('includes alpha for translucent colors', () => {
+    it('normalizes achromatic colors to zero chroma and hue', () => {
+      expect(rgbaToOklchColor({r: 1, g: 1, b: 1, a: 0.02})).toEqual({
+        colorSpace: 'oklch',
+        components: [1, 0, 0],
+        hex: '#ffffff05',
+        alpha: 0.02,
+      });
       expect(rgbaToOklchColor({r: 0, g: 0, b: 0, a: 0.5})).toMatchObject({
+        colorSpace: 'oklch',
+        components: [0, 0, 0],
+        hex: '#00000080',
         alpha: 0.5,
       });
     });

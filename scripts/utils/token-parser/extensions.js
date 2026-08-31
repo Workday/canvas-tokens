@@ -4,7 +4,7 @@ const CANVAS_TOKENS_EXTENSION = 'sana.canvas.tokens';
 const DARK_MODE_KEY = 'dark';
 const BRAND_THEME_KEY = 'brand';
 
-export function buildModeExtensions(variable, collection, context, options = {}) {
+export function buildModeExtensions(variable, collection, context) {
   const darkMode = findDarkMode(collection);
   if (!darkMode) {
     return undefined;
@@ -20,8 +20,8 @@ export function buildModeExtensions(variable, collection, context, options = {})
     return undefined;
   }
 
-  const darkValue = context.resolveValue(darkRaw, variable, darkMode.modeId, options);
-  const defaultValue = context.resolveValue(lightValue, variable, lightMode?.modeId, options);
+  const darkValue = context.resolveValue(darkRaw, variable, darkMode.modeId);
+  const defaultValue = context.resolveValue(lightValue, variable, lightMode?.modeId);
 
   if (JSON.stringify(darkValue) === JSON.stringify(defaultValue)) {
     return undefined;
@@ -38,10 +38,25 @@ export function buildModeExtensions(variable, collection, context, options = {})
   };
 }
 
-export function buildBrandThemeExtensions(variable, brandExtension, context) {
+export function buildBrandThemeExtensions(
+  variable,
+  brandExtension,
+  context,
+  collection,
+  defaultLightValue
+) {
   if (!brandExtension?.variableOverrides?.[variable.id]) {
     return undefined;
   }
+
+  const darkMode = findDarkMode(collection);
+  const defaultDarkValue = darkMode
+    ? context.resolveValue(
+        context.getModeValue(variable, darkMode.modeId),
+        variable,
+        darkMode.modeId
+      )
+    : undefined;
 
   const overrides = brandExtension.variableOverrides[variable.id];
   const brandTheme = {};
@@ -56,9 +71,16 @@ export function buildBrandThemeExtensions(variable, brandExtension, context) {
       allowAliasLookup: true,
     });
     const modeKey = toSlug(mode.name);
-    if (modeKey === 'light' || modeKey === 'dark') {
-      brandTheme[modeKey] = {$value: resolved};
+    if (modeKey !== 'light' && modeKey !== 'dark') {
+      continue;
     }
+
+    const defaultForMode = modeKey === 'dark' ? defaultDarkValue : defaultLightValue;
+    if (JSON.stringify(resolved) === JSON.stringify(defaultForMode)) {
+      continue;
+    }
+
+    brandTheme[modeKey] = {$value: resolved};
   }
 
   if (!Object.keys(brandTheme).length) {

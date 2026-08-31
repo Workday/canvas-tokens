@@ -2,9 +2,49 @@ import {rgbaToOklchColor, roundNumber, valueWithUnit} from './format.js';
 import {toSlug} from './naming.js';
 import {addTokenToFiles, buildToken} from './tokens.js';
 
+const TYPOGRAPHY_STYLE_CATEGORIES = new Set(['subtext', 'body', 'heading', 'title']);
+const TYPOGRAPHY_BOUND_KEYS = [
+  'fontFamily',
+  'fontWeight',
+  'fontSize',
+  'lineHeight',
+  'letterSpacing',
+];
+
+function getBoundVariableAlias(boundVariables, boundKey) {
+  const bound = boundVariables?.[boundKey];
+  return Array.isArray(bound) ? bound[0] : bound;
+}
+
+function resolveDocumentBoundVariable(context, boundVariables, boundKey) {
+  const alias = getBoundVariableAlias(boundVariables, boundKey);
+  if (alias?.type !== 'VARIABLE_ALIAS' || !context) {
+    return undefined;
+  }
+
+  return context.resolveStyleBoundVariable(alias.id);
+}
+
+function extractTypographyStyleValue(node, context) {
+  const boundVariables = node?.document?.boundVariables;
+  if (!boundVariables) {
+    return undefined;
+  }
+
+  const value = Object.fromEntries(
+    TYPOGRAPHY_BOUND_KEYS.map(key => [key, resolveDocumentBoundVariable(context, boundVariables, key)])
+  );
+
+  return TYPOGRAPHY_BOUND_KEYS.every(key => value[key]) ? value : undefined;
+}
+
 function parseTypographyStyleName(styleName) {
   const parts = styleName.split('/').filter(Boolean);
   if (!parts.length) {
+    return null;
+  }
+
+  if (/^more styles$/i.test(parts[0].trim())) {
     return null;
   }
 
@@ -15,6 +55,10 @@ function parseTypographyStyleName(styleName) {
   const size = sizeMatch ? sizeMap[sizeMatch[1].toLowerCase()] : toSlug(detail).split('-').pop();
   const isMono = /mono/i.test(detail);
   const isLink = /link/i.test(detail);
+
+  if (!TYPOGRAPHY_STYLE_CATEGORIES.has(category) || isMono || isLink) {
+    return null;
+  }
 
   return {category, size, isMono, isLink, detail};
 }
@@ -31,54 +75,67 @@ function scoreTypographyStyle(style) {
   return score;
 }
 
-function extractTextStyleValue(node) {
-  const style = node?.document?.style || node?.styles?.text || node?.document;
-  if (!style) {
-    return undefined;
+function resolveEffectField(context, effect, boundKey, literalValue) {
+  const bound = effect.boundVariables?.[boundKey];
+  if (bound?.type === 'VARIABLE_ALIAS' && context) {
+    const reference = context.resolveBoundVariable(bound.id);
+    if (reference) {
+      return reference;
+    }
   }
 
-  const fontSize = style.fontSize;
-  const lineHeight = style.lineHeightPx ?? style.lineHeightPercentFontSize ?? style.lineHeight;
-  const letterSpacing = style.letterSpacing;
-
-  return {
-    fontFamily: style.fontFamily,
-    fontWeight: style.fontWeight,
-    fontSize: typeof fontSize === 'number' ? valueWithUnit(fontSize, 'px') : fontSize,
-    lineHeight:
-      typeof lineHeight === 'number' && lineHeight > 3
-        ? valueWithUnit(lineHeight, 'px')
-        : roundNumber(lineHeight),
-    letterSpacing:
-      typeof letterSpacing === 'number' ? valueWithUnit(letterSpacing, 'px') : letterSpacing,
-    textDecoration: style.textDecoration === 'UNDERLINE' ? 'underline' : undefined,
-  };
+  return literalValue;
 }
 
-function extractEffectStyleValue(node) {
+function extractEffectStyleValue(node, context) {
   const effects = node?.document?.effects || [];
   const shadows = effects
     .filter(effect => effect.type === 'DROP_SHADOW' || effect.type === 'INNER_SHADOW')
     .map(effect => ({
       type: effect.type === 'INNER_SHADOW' ? 'innerShadow' : 'dropShadow',
-      x: valueWithUnit(roundNumber(effect.offset?.x || 0), 'px'),
-      y: valueWithUnit(roundNumber(effect.offset?.y || 0), 'px'),
-      blur: valueWithUnit(roundNumber(effect.radius || 0), 'px'),
-      spread: valueWithUnit(roundNumber(effect.spread || 0), 'px'),
-      color: effect.color
-        ? rgbaToOklchColor({
-            r: effect.color.r,
-            g: effect.color.g,
-            b: effect.color.b,
-            a: effect.color.a,
-          })
-        : undefined,
+      x: resolveEffectField(
+        context,
+        effect,
+        'offsetX',
+        valueWithUnit(roundNumber(effect.offset?.x || 0), 'px')
+      ),
+      y: resolveEffectField(
+        context,
+        effect,
+        'offsetY',
+        valueWithUnit(roundNumber(effect.offset?.y || 0), 'px')
+      ),
+      blur: resolveEffectField(
+        context,
+        effect,
+        'radius',
+        valueWithUnit(roundNumber(effect.radius || 0), 'px')
+      ),
+      spread: resolveEffectField(
+        context,
+        effect,
+        'spread',
+        valueWithUnit(roundNumber(effect.spread || 0), 'px')
+      ),
+      color: resolveEffectField(
+        context,
+        effect,
+        'color',
+        effect.color
+          ? rgbaToOklchColor({
+              r: effect.color.r,
+              g: effect.color.g,
+              b: effect.color.b,
+              a: effect.color.a,
+            })
+          : undefined
+      ),
     }));
 
   return shadows.length ? shadows : undefined;
 }
 
-export function generateStyleTokens(payload) {
+export function generateStyleTokens(payload, context) {
   const files = new Map();
   const styles = payload.styles?.published || [];
   const nodes = payload.styles?.nodes || {};
@@ -100,7 +157,7 @@ export function generateStyleTokens(payload) {
     }
 
     const node = nodes[style.node_id];
-    const value = extractTextStyleValue(node);
+    const value = extractTypographyStyleValue(node, context);
     if (!value) {
       continue;
     }
@@ -117,7 +174,7 @@ export function generateStyleTokens(payload) {
 
   for (const [key, token] of bestTextStyles) {
     const [category, size] = key.split('.');
-    addTokenToFiles(files, 'system/type.json', [category, size], token);
+    addTokenToFiles(files, 'system/type.json', ['type', category, size], token);
   }
 
   for (const style of effectStyles) {
@@ -128,7 +185,7 @@ export function generateStyleTokens(payload) {
     }
 
     const node = nodes[style.node_id];
-    const value = extractEffectStyleValue(node);
+    const value = extractEffectStyleValue(node, context);
     if (!value) {
       continue;
     }
