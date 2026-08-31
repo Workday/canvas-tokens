@@ -1,106 +1,110 @@
 {
-  "25": {
-    "$value": "{amber.25}",
-    "$type": "color"
-  },
-  "50": {
-    "$value": "{amber.50}",
-    "$type": "color"
-  },
-  "100": {
-    "$value": "{amber.100}",
-    "$type": "color"
-  },
-  "200": {
-    "$value": "{amber.200}",
-    "$type": "color"
-  },
-  "300": {
-    "$value": "{amber.300}",
-    "$type": "color"
-  },
-  "400": {
-    "$value": "{amber.400}",
-    "$type": "color"
-  },
-  "500": {
-    "$value": "{amber.500}",
-    "$type": "color"
-  },
-  "600": {
-    "$value": "{amber.600}",
-    "$type": "color"
-  },
-  "700": {
-    "$value": "{amber.700}",
-    "$type": "color"
-  },
-  "800": {
-    "$value": "{amber.800}",
-    "$type": "color"
-  },
-  "900": {
-    "$value": "{amber.900}",
-    "$type": "color"
-  },
-  "950": {
-    "$value": "{amber.950}",
-    "$type": "color"
-  },
-  "975": {
-    "$value": "{amber.975}",
-    "$type": "color"
-  },
-  "A25": {
-    "$value": "{amber.A25}",
-    "$type": "color"
-  },
-  "A50": {
-    "$value": "{amber.A50}",
-    "$type": "color"
-  },
-  "A100": {
-    "$value": "{amber.A100}",
-    "$type": "color"
-  },
-  "A200": {
-    "$value": "{amber.A200}",
-    "$type": "color"
-  },
-  "A300": {
-    "$value": "{amber.A300}",
-    "$type": "color"
-  },
-  "A400": {
-    "$value": "{amber.400}",
-    "$type": "color"
-  },
-  "A500": {
-    "$value": "{amber.500}",
-    "$type": "color"
-  },
-  "A600": {
-    "$value": "{amber.600}",
-    "$type": "color"
-  },
-  "A700": {
-    "$value": "{amber.700}",
-    "$type": "color"
-  },
-  "A800": {
-    "$value": "{amber.800}",
-    "$type": "color"
-  },
-  "A900": {
-    "$value": "{amber.900}",
-    "$type": "color"
-  },
-  "A950": {
-    "$value": "{amber.950}",
-    "$type": "color"
-  },
-  "A975": {
-    "$value": "{amber.975}",
-    "$type": "color"
+  "brand": {
+    "caution": {
+      "25": {
+        "$value": "{amber.25}",
+        "$type": "color"
+      },
+      "50": {
+        "$value": "{amber.50}",
+        "$type": "color"
+      },
+      "100": {
+        "$value": "{amber.100}",
+        "$type": "color"
+      },
+      "200": {
+        "$value": "{amber.200}",
+        "$type": "color"
+      },
+      "300": {
+        "$value": "{amber.300}",
+        "$type": "color"
+      },
+      "400": {
+        "$value": "{amber.400}",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "{amber.500}",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "{amber.600}",
+        "$type": "color"
+      },
+      "700": {
+        "$value": "{amber.700}",
+        "$type": "color"
+      },
+      "800": {
+        "$value": "{amber.800}",
+        "$type": "color"
+      },
+      "900": {
+        "$value": "{amber.900}",
+        "$type": "color"
+      },
+      "950": {
+        "$value": "{amber.950}",
+        "$type": "color"
+      },
+      "975": {
+        "$value": "{amber.975}",
+        "$type": "color"
+      },
+      "A25": {
+        "$value": "{amber.A25}",
+        "$type": "color"
+      },
+      "A50": {
+        "$value": "{amber.A50}",
+        "$type": "color"
+      },
+      "A100": {
+        "$value": "{amber.A100}",
+        "$type": "color"
+      },
+      "A200": {
+        "$value": "{amber.A200}",
+        "$type": "color"
+      },
+      "A300": {
+        "$value": "{amber.A300}",
+        "$type": "color"
+      },
+      "A400": {
+        "$value": "{amber.400}",
+        "$type": "color"
+      },
+      "A500": {
+        "$value": "{amber.500}",
+        "$type": "color"
+      },
+      "A600": {
+        "$value": "{amber.600}",
+        "$type": "color"
+      },
+      "A700": {
+        "$value": "{amber.700}",
+        "$type": "color"
+      },
+      "A800": {
+        "$value": "{amber.800}",
+        "$type": "color"
+      },
+      "A900": {
+        "$value": "{amber.900}",
+        "$type": "color"
+      },
+      "A950": {
+        "$value": "{amber.950}",
+        "$type": "color"
+      },
+      "A975": {
+        "$value": "{amber.975}",
+        "$type": "color"
+      }
+    }
   }
 }

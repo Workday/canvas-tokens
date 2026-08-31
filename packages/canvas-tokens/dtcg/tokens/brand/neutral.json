@@ -1,122 +1,126 @@
 {
-  "25": {
-    "$value": "{neutral.25}",
-    "$type": "color"
-  },
-  "50": {
-    "$value": "{neutral.50}",
-    "$type": "color"
-  },
-  "100": {
-    "$value": "{neutral.100}",
-    "$type": "color"
-  },
-  "150": {
-    "$value": "{neutral.150}",
-    "$type": "color"
-  },
-  "200": {
-    "$value": "{neutral.200}",
-    "$type": "color"
-  },
-  "300": {
-    "$value": "{neutral.300}",
-    "$type": "color"
-  },
-  "400": {
-    "$value": "{neutral.400}",
-    "$type": "color"
-  },
-  "500": {
-    "$value": "{neutral.500}",
-    "$type": "color"
-  },
-  "600": {
-    "$value": "{neutral.600}",
-    "$type": "color"
-  },
-  "700": {
-    "$value": "{neutral.700}",
-    "$type": "color"
-  },
-  "800": {
-    "$value": "{neutral.800}",
-    "$type": "color"
-  },
-  "850": {
-    "$value": "{neutral.850}",
-    "$type": "color"
-  },
-  "900": {
-    "$value": "{neutral.900}",
-    "$type": "color"
-  },
-  "950": {
-    "$value": "{neutral.950}",
-    "$type": "color"
-  },
-  "975": {
-    "$value": "{neutral.975}",
-    "$type": "color"
-  },
-  "A25": {
-    "$value": "{neutral.A25}",
-    "$type": "color"
-  },
-  "A50": {
-    "$value": "{neutral.A50}",
-    "$type": "color"
-  },
-  "A100": {
-    "$value": "{neutral.A100}",
-    "$type": "color"
-  },
-  "A150": {
-    "$value": "{neutral.A150}",
-    "$type": "color"
-  },
-  "A200": {
-    "$value": "{neutral.A200}",
-    "$type": "color"
-  },
-  "A300": {
-    "$value": "{neutral.A300}",
-    "$type": "color"
-  },
-  "A400": {
-    "$value": "{neutral.A400}",
-    "$type": "color"
-  },
-  "A500": {
-    "$value": "{neutral.A500}",
-    "$type": "color"
-  },
-  "A600": {
-    "$value": "{neutral.A600}",
-    "$type": "color"
-  },
-  "A700": {
-    "$value": "{neutral.A700}",
-    "$type": "color"
-  },
-  "A800": {
-    "$value": "{neutral.A800}",
-    "$type": "color"
-  },
-  "A850": {
-    "$value": "{neutral.A850}",
-    "$type": "color"
-  },
-  "A900": {
-    "$value": "{neutral.A900}",
-    "$type": "color"
-  },
-  "A950": {
-    "$value": "{neutral.A950}",
-    "$type": "color"
-  },
-  "A975": {
-    "$value": "{neutral.A975}",
-    "$type": "color"
+  "brand": {
+    "neutral": {
+      "25": {
+        "$value": "{neutral.25}",
+        "$type": "color"
+      },
+      "50": {
+        "$value": "{neutral.50}",
+        "$type": "color"
+      },
+      "100": {
+        "$value": "{neutral.100}",
+        "$type": "color"
+      },
+      "150": {
+        "$value": "{neutral.150}",
+        "$type": "color"
+      },
+      "200": {
+        "$value": "{neutral.200}",
+        "$type": "color"
+      },
+      "300": {
+        "$value": "{neutral.300}",
+        "$type": "color"
+      },
+      "400": {
+        "$value": "{neutral.400}",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "{neutral.500}",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "{neutral.600}",
+        "$type": "color"
+      },
+      "700": {
+        "$value": "{neutral.700}",
+        "$type": "color"
+      },
+      "800": {
+        "$value": "{neutral.800}",
+        "$type": "color"
+      },
+      "850": {
+        "$value": "{neutral.850}",
+        "$type": "color"
+      },
+      "900": {
+        "$value": "{neutral.900}",
+        "$type": "color"
+      },
+      "950": {
+        "$value": "{neutral.950}",
+        "$type": "color"
+      },
+      "975": {
+        "$value": "{neutral.975}",
+        "$type": "color"
+      },
+      "A25": {
+        "$value": "{neutral.A25}",
+        "$type": "color"
+      },
+      "A50": {
+        "$value": "{neutral.A50}",
+        "$type": "color"
+      },
+      "A100": {
+        "$value": "{neutral.A100}",
+        "$type": "color"
+      },
+      "A150": {
+        "$value": "{neutral.A150}",
+        "$type": "color"
+      },
+      "A200": {
+        "$value": "{neutral.A200}",
+        "$type": "color"
+      },
+      "A300": {
+        "$value": "{neutral.A300}",
+        "$type": "color"
+      },
+      "A400": {
+        "$value": "{neutral.A400}",
+        "$type": "color"
+      },
+      "A500": {
+        "$value": "{neutral.A500}",
+        "$type": "color"
+      },
+      "A600": {
+        "$value": "{neutral.A600}",
+        "$type": "color"
+      },
+      "A700": {
+        "$value": "{neutral.A700}",
+        "$type": "color"
+      },
+      "A800": {
+        "$value": "{neutral.A800}",
+        "$type": "color"
+      },
+      "A850": {
+        "$value": "{neutral.A850}",
+        "$type": "color"
+      },
+      "A900": {
+        "$value": "{neutral.A900}",
+        "$type": "color"
+      },
+      "A950": {
+        "$value": "{neutral.A950}",
+        "$type": "color"
+      },
+      "A975": {
+        "$value": "{neutral.A975}",
+        "$type": "color"
+      }
+    }
   }
 }
