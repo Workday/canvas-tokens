@@ -120,7 +120,7 @@ yarn yarn tokens-config create-pull prerelease/major
 
 ### Unit Tests
 
-We use [Jest](https://jestjs.io/docs/getting-started) to unit test internal logic. To run these
+We use [Vitest](https://vitest.dev/guide/) to unit test internal logic. To run these
 tests locally:
 
 ```sh

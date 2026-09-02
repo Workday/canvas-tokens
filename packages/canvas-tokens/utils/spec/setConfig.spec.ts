@@ -1,3 +1,4 @@
+import {describe, expect, it} from 'vitest';
 import {setConfig} from '../setConfig';
 import mockOptions from './mockOptions';
 
