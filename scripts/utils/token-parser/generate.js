@@ -15,28 +15,20 @@ export const DEFAULT_INPUT_DIR = 'figma-raw-tokens';
 export const DEFAULT_OUTPUT_DIR = 'packages/canvas-tokens/dtcg/tokens';
 
 function createSharedContext(payloads) {
-  return payloads.reduce((context, payload, index) => {
-    if (!index) {
-      return createContext(payload);
-    }
-
-    context.extend(payload);
-    return context;
-  }, null);
+  const [first, ...rest] = payloads;
+  const context = createContext(first);
+  rest.forEach(payload => context.extend(payload));
+  return context;
 }
 
 function generateFromPayloads(payloads) {
   const context = createSharedContext(payloads);
+  const fileMaps = payloads.flatMap(payload => [
+    generateVariableTokens(payload, context),
+    generateStyleTokens(payload, context),
+  ]);
 
-  return payloads.reduce(
-    (files, payload) =>
-      mergeFileMaps(
-        files,
-        generateVariableTokens(payload, context),
-        generateStyleTokens(payload, context)
-      ),
-    new Map()
-  );
+  return mergeFileMaps(new Map(), ...fileMaps);
 }
 
 export function generateDtcgTokens({
