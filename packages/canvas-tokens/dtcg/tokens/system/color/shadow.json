@@ -1,0 +1,320 @@
+{
+  "shadow": {
+    "1": {
+      "key": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#00000008",
+          "alpha": 0.03
+        },
+        "$type": "color",
+        "$description": "Key paint for depth 1. CSS: --color-shadow-1-key. Baked RGBA from shadow/strength + shadow/step × shadow/ambient-ratio. CSS: --color-shadow-N-key|ambient",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#05050829",
+                  "alpha": 0.16
+                }
+              }
+            }
+          }
+        }
+      },
+      "ambient": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#00000005",
+          "alpha": 0.02
+        },
+        "$type": "color",
+        "$description": "Ambient shadow color for depth 1. CSS: --color-shadow-1-ambient",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#0505081c",
+                  "alpha": 0.11
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "key": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#0000000d",
+          "alpha": 0.05
+        },
+        "$type": "color",
+        "$description": "Key shadow color for depth 2. CSS: --color-shadow-2-key",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#05050838",
+                  "alpha": 0.22
+                }
+              }
+            }
+          }
+        }
+      },
+      "ambient": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#00000008",
+          "alpha": 0.03
+        },
+        "$type": "color",
+        "$description": "Ambient shadow color for depth 2. CSS: --color-shadow-2-ambient",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#05050826",
+                  "alpha": 0.15
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "3": {
+      "key": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#00000012",
+          "alpha": 0.07
+        },
+        "$type": "color",
+        "$description": "Key shadow color for depth 3. CSS: --color-shadow-3-key",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#05050847",
+                  "alpha": 0.28
+                }
+              }
+            }
+          }
+        }
+      },
+      "ambient": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#0000000d",
+          "alpha": 0.05
+        },
+        "$type": "color",
+        "$description": "Ambient shadow color for depth 3. CSS: --color-shadow-3-ambient",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#05050830",
+                  "alpha": 0.19
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "4": {
+      "key": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#00000017",
+          "alpha": 0.09
+        },
+        "$type": "color",
+        "$description": "Key shadow color for depth 4. CSS: --color-shadow-4-key",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#05050857",
+                  "alpha": 0.34
+                }
+              }
+            }
+          }
+        }
+      },
+      "ambient": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#0000000f",
+          "alpha": 0.06
+        },
+        "$type": "color",
+        "$description": "Ambient shadow color for depth 4. CSS: --color-shadow-4-ambient",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#0505083b",
+                  "alpha": 0.23
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "5": {
+      "key": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#0000001c",
+          "alpha": 0.11
+        },
+        "$type": "color",
+        "$description": "Key shadow color for depth 5. CSS: --color-shadow-5-key",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#05050866",
+                  "alpha": 0.4
+                }
+              }
+            }
+          }
+        }
+      },
+      "ambient": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#00000012",
+          "alpha": 0.07
+        },
+        "$type": "color",
+        "$description": "Ambient shadow color for depth 5. CSS: --color-shadow-5-ambient",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#05050845",
+                  "alpha": 0.27
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "6": {
+      "key": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#00000021",
+          "alpha": 0.13
+        },
+        "$type": "color",
+        "$description": "Key shadow color for depth 6. CSS: --color-shadow-6-key",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#05050875",
+                  "alpha": 0.46
+                }
+              }
+            }
+          }
+        }
+      },
+      "ambient": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#00000017",
+          "alpha": 0.09
+        },
+        "$type": "color",
+        "$description": "Ambient shadow color for depth 6. CSS: --color-shadow-6-ambient",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": {
+                  "colorSpace": "oklch",
+                  "components": [0.117, 0.0089, 284.95],
+                  "hex": "#0505084f",
+                  "alpha": 0.31
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "chroma": {
+      "accent": {
+        "$value": "{brand.primary.975}",
+        "$type": "color",
+        "$description": "Accent surface chroma override. CSS: override --color-shadow-chroma-light on container.",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{brand.primary.950}"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

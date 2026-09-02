@@ -1,0 +1,170 @@
+{
+  "duration": {
+    "50": {
+      "$value": {
+        "value": 50,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "100": {
+      "$value": {
+        "value": 100,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "150": {
+      "$value": {
+        "value": 150,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "200": {
+      "$value": {
+        "value": 200,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "250": {
+      "$value": {
+        "value": 250,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "300": {
+      "$value": {
+        "value": 300,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "350": {
+      "$value": {
+        "value": 350,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "400": {
+      "$value": {
+        "value": 400,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "450": {
+      "$value": {
+        "value": 450,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "500": {
+      "$value": {
+        "value": 500,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "550": {
+      "$value": {
+        "value": 550,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "600": {
+      "$value": {
+        "value": 600,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "650": {
+      "$value": {
+        "value": 650,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "700": {
+      "$value": {
+        "value": 700,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "750": {
+      "$value": {
+        "value": 750,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "800": {
+      "$value": {
+        "value": 800,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "850": {
+      "$value": {
+        "value": 850,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "900": {
+      "$value": {
+        "value": 900,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "950": {
+      "$value": {
+        "value": 950,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "1000": {
+      "$value": {
+        "value": 1000,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    }
+  },
+  "easing": {
+    "a-100": {
+      "$value": "cubic-bezier(0.2, 0, 0.2, 1)",
+      "$type": "cubic-bezier"
+    },
+    "a-200": {
+      "$value": "cubic-bezier(0.4, 0, 0.95, 0.8)",
+      "$type": "cubic-bezier"
+    },
+    "a-300": {
+      "$value": "cubic-bezier(0.05, 0.4, 0.3, 1)",
+      "$type": "cubic-bezier"
+    },
+    "b-100": {
+      "$value": "cubic-bezier(0.35, 0, 0.05, 1)",
+      "$type": "cubic-bezier"
+    },
+    "b-200": {
+      "$value": "cubic-bezier(0.4, 0, 0.8, 0.3)",
+      "$type": "cubic-bezier"
+    },
+    "b-300": {
+      "$value": "cubic-bezier(0, 0.4, 0.2, 1)",
+      "$type": "cubic-bezier"
+    }
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "border": {
+    "$root": {
+      "$value": "{brand.neutral.A100}",
+      "$type": "color",
+      "$description": "Default border for containers and dividers",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A50}"
+            }
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{brand.neutral.A200}",
+      "$type": "color",
+      "$description": "Stronger border for more visible separation",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A100}"
+            }
+          }
+        }
+      }
+    },
+    "input": {
+      "$root": {
+        "$value": "{brand.neutral.A500}",
+        "$type": "color",
+        "$description": "Default border for form inputs",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{white.A500}"
+              }
+            }
+          }
+        }
+      },
+      "hover": {
+        "$value": "{brand.neutral.A700}",
+        "$type": "color",
+        "$description": "Hover state border for form inputs",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{white.A700}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "primary": {
+      "$value": "{brand.primary.500}",
+      "$type": "color",
+      "$description": "Tenant-themeable primary border for focused inputs",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.neutral.700}"
+            }
+          }
+        }
+      }
+    },
+    "critical": {
+      "$value": "{brand.critical.500}",
+      "$type": "color",
+      "$description": "Tenant-themeable critical border for error states",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.500}"
+            }
+          }
+        }
+      }
+    },
+    "caution": {
+      "$value": "{brand.caution.500}",
+      "$type": "color",
+      "$description": "Tenant-themeable caution border for warning states",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.500}"
+            }
+          }
+        }
+      }
+    },
+    "info": {
+      "$value": "{brand.primary.500}",
+      "$type": "color",
+      "$description": "Border for informational containers (not tenant themeable)",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.500}"
+            }
+          }
+        }
+      }
+    },
+    "danger": {
+      "$value": "{brand.critical.500}",
+      "$type": "color",
+      "$description": "Border for error states (not tenant themeable)",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.critical.500}"
+            }
+          }
+        }
+      }
+    },
+    "warning": {
+      "$value": "{brand.caution.500}",
+      "$type": "color",
+      "$description": "Border for warning states (not tenant themeable)",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.caution.500}"
+            }
+          }
+        }
+      }
+    },
+    "inverse": {
+      "$root": {
+        "$value": "{neutral.0}",
+        "$type": "color",
+        "$description": "Border for use on dark backgrounds",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{brand.dark.neutral.25}"
+              }
+            }
+          }
+        }
+      },
+      "strong": {
+        "$value": "{white.A700}",
+        "$type": "color",
+        "$description": "Stronger border for use on dark backgrounds",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{black.A700}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "contrast": {
+      "$value": "{brand.neutral.A900}",
+      "$type": "color",
+      "$description": "High contrast border for maximum visibility",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A900}"
+            }
+          }
+        }
+      }
+    },
+    "transparent": {
+      "$value": "{white.A0}",
+      "$type": "color",
+      "$description": "Invisible border for layout spacing",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{black.A0}"
+            }
+          }
+        }
+      }
+    },
+    "ai": {
+      "$value": "{brand.primary.950}",
+      "$type": "color",
+      "$description": "Invisible border for layout spacing",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.primary.950}"
+            }
+          }
+        }
+      }
+    },
+    "elevated": {
+      "$value": "{neutral.0}",
+      "$type": "color",
+      "$description": "Border used on surface/elevated",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{white.A25}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

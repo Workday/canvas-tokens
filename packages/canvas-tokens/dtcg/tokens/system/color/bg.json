@@ -1,0 +1,32 @@
+{
+  "bg": {
+    "$root": {
+      "$value": "{neutral.0}",
+      "$type": "color",
+      "$description": "Default page background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.neutral.25}"
+            }
+          }
+        }
+      }
+    },
+    "alt": {
+      "$value": "{brand.neutral.50}",
+      "$type": "color",
+      "$description": "Alternative page background",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "modes": {
+            "dark": {
+              "$value": "{brand.dark.neutral.50}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

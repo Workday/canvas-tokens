@@ -1,0 +1,190 @@
+{
+  "depth": {
+    "1": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.1.100.y}",
+          "blur": "{shadow.1.100.blur}",
+          "spread": "{shadow.1.100.spread}",
+          "color": "{shadow.1.key}"
+        },
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.1.200.y}",
+          "blur": "{shadow.1.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.1.ambient}"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Raised surfaces, cards"
+    },
+    "2": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.2.100.y}",
+          "blur": "{shadow.2.100.blur}",
+          "spread": "{shadow.2.100.spread}",
+          "color": "{shadow.2.key}"
+        },
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.2.200.y}",
+          "blur": "{shadow.2.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.2.ambient}"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Top and bottom navigation, sticky elements"
+    },
+    "3": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.3.100.y}",
+          "blur": "{shadow.3.100.blur}",
+          "spread": "{shadow.3.100.spread}",
+          "color": "{shadow.3.key}"
+        },
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.3.200.y}",
+          "blur": "{shadow.3.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.3.ambient}"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Floating Action Button, Menu"
+    },
+    "4": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.4.100.y}",
+          "blur": "{shadow.4.100.blur}",
+          "spread": "{shadow.4.100.spread}",
+          "color": "{shadow.4.key}"
+        },
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.4.200.y}",
+          "blur": "{shadow.4.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.4.ambient}"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Sheets"
+    },
+    "5": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.5.100.y}",
+          "blur": "{shadow.5.100.blur}",
+          "spread": "{shadow.5.100.spread}",
+          "color": "{shadow.5.key}"
+        },
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.5.200.y}",
+          "blur": "{shadow.5.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.5.ambient}"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Banners, snackbars, toast, non-modal dialogs, non-modal side panels"
+    },
+    "6": {
+      "$value": [
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.6.100.y}",
+          "blur": "{shadow.6.100.blur}",
+          "spread": "{shadow.6.100.spread}",
+          "color": "{shadow.6.key}"
+        },
+        {
+          "type": "dropShadow",
+          "x": {
+            "value": 0,
+            "unit": "px"
+          },
+          "y": "{shadow.6.200.y}",
+          "blur": "{shadow.6.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "color": "{shadow.6.ambient}"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Modal dialogs, modal side panels"
+    }
+  }
+}

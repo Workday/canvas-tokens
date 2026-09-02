@@ -1,0 +1,52 @@
+{
+  "shape": {
+    "none": {
+      "$value": "{size.0}",
+      "$type": "number",
+      "$description": "Persistent navigational elements, like Global Nav, SidePanel, Action Bar"
+    },
+    "xs": {
+      "$value": "{size.50}",
+      "$type": "number",
+      "$description": "Checkbox"
+    },
+    "sm": {
+      "$value": "{size.75}",
+      "$type": "number",
+      "$description": "Compact components that leverage smaller typography, like Pills or Status Indicator"
+    },
+    "md": {
+      "$value": "{size.100}",
+      "$type": "number",
+      "$description": "Form field inputs"
+    },
+    "lg": {
+      "$value": "{size.150}",
+      "$type": "number",
+      "$description": "Rich text editor"
+    },
+    "xl": {
+      "$value": "{size.200}",
+      "$type": "number",
+      "$description": "Compact cards, like horizontal cards or list items"
+    },
+    "xxl": {
+      "$value": "{size.250}",
+      "$type": "number",
+      "$description": "Flat or raised surfaces, like Cards or Menu"
+    },
+    "xxxl": {
+      "$value": "{size.350}",
+      "$type": "number",
+      "$description": "Large elevated surfaces, like Modals"
+    },
+    "full": {
+      "$value": {
+        "value": 1000,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$description": "Fully rounded to indicate interactivity"
+    }
+  }
+}

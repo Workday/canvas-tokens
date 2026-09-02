@@ -1,0 +1,112 @@
+{
+  "brand": {
+    "dark": {
+      "positive": {
+        "25": {
+          "$value": "{dark.green.25}",
+          "$type": "color"
+        },
+        "50": {
+          "$value": "{dark.green.50}",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "{dark.green.100}",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "{dark.green.200}",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "{dark.green.300}",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "{dark.green.400}",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "{dark.green.500}",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "{dark.green.600}",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "{dark.green.700}",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "{dark.green.800}",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "{dark.green.900}",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "{dark.green.950}",
+          "$type": "color"
+        },
+        "975": {
+          "$value": "{dark.green.975}",
+          "$type": "color"
+        },
+        "A25": {
+          "$value": "{dark.green.A25}",
+          "$type": "color"
+        },
+        "A50": {
+          "$value": "{dark.green.A50}",
+          "$type": "color"
+        },
+        "A100": {
+          "$value": "{dark.green.A100}",
+          "$type": "color"
+        },
+        "A200": {
+          "$value": "{dark.green.A200}",
+          "$type": "color"
+        },
+        "A300": {
+          "$value": "{dark.green.A300}",
+          "$type": "color"
+        },
+        "A400": {
+          "$value": "{dark.green.A400}",
+          "$type": "color"
+        },
+        "A500": {
+          "$value": "{dark.green.A500}",
+          "$type": "color"
+        },
+        "A600": {
+          "$value": "{dark.green.A600}",
+          "$type": "color"
+        },
+        "A700": {
+          "$value": "{dark.green.A700}",
+          "$type": "color"
+        },
+        "A800": {
+          "$value": "{dark.green.A800}",
+          "$type": "color"
+        },
+        "A900": {
+          "$value": "{dark.green.A900}",
+          "$type": "color"
+        },
+        "A950": {
+          "$value": "{dark.green.A950}",
+          "$type": "color"
+        },
+        "A975": {
+          "$value": "{dark.green.A975}",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

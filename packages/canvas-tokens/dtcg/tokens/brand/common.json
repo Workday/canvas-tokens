@@ -1,0 +1,70 @@
+{
+  "brand": {
+    "common": {
+      "focus": {
+        "$value": "{brand.primary.500}",
+        "$type": "color",
+        "$description": "Tenant-themeable focus ring for interactive elements",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{brand.dark.neutral.700}"
+              }
+            }
+          }
+        }
+      },
+      "critical": {
+        "$value": "{brand.critical.500}",
+        "$type": "color",
+        "$description": "Tenant-themeable focus ring for error-state elements",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{brand.dark.critical.500}"
+              }
+            }
+          }
+        }
+      },
+      "caution": {
+        "inner": {
+          "$value": "{brand.caution.400}",
+          "$type": "color",
+          "$description": "Tenant-themeable inner focus ring for caution-state elements",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.caution.400}"
+                }
+              }
+            }
+          }
+        },
+        "outer": {
+          "$value": "{brand.caution.500}",
+          "$type": "color",
+          "$description": "Tenant-themeable outer focus ring for caution-state elements",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.caution.500}"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "gradient": {
+      "primary": {
+        "$value": "linear-gradient(90deg, {brand.primary.base} 0%, {brand.primary.dark} 100%)",
+        "$type": "color"
+      }
+    }
+  }
+}
