@@ -89,7 +89,7 @@ describe('format', () => {
       expect(figmaTypeToDtcg('FLOAT', 2)).toBe('number');
       expect(figmaTypeToDtcg('STRING', 'Inter')).toBe('fontFamily');
       expect(figmaTypeToDtcg('TIMING', 0.2)).toBe('duration');
-      expect(figmaTypeToDtcg('EASING', 'ease')).toBe('cubic-bezier');
+      expect(figmaTypeToDtcg('EASING', 'ease')).toBe('cubicBezier');
       expect(figmaTypeToDtcg('UNKNOWN', null)).toBeUndefined();
     });
   });
