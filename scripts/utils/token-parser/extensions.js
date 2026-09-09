@@ -43,7 +43,8 @@ export function buildBrandThemeExtensions(
   brandExtension,
   context,
   collection,
-  defaultLightValue
+  defaultLightValue,
+  {ignoreDarkMode = false} = {}
 ) {
   if (!brandExtension?.variableOverrides?.[variable.id]) {
     return undefined;
@@ -67,14 +68,18 @@ export function buildBrandThemeExtensions(
       continue;
     }
 
-    const resolved = context.resolveValue(overrideValue, variable, mode.modeId, {
-      allowAliasLookup: true,
-    });
     const modeKey = toSlug(mode.name);
     if (modeKey !== 'light' && modeKey !== 'dark') {
       continue;
     }
 
+    if (modeKey === 'dark' && ignoreDarkMode) {
+      continue;
+    }
+
+    const resolved = context.resolveValue(overrideValue, variable, mode.modeId, {
+      allowAliasLookup: true,
+    });
     const defaultForMode = modeKey === 'dark' ? defaultDarkValue : defaultLightValue;
     if (JSON.stringify(resolved) === JSON.stringify(defaultForMode)) {
       continue;

@@ -90,9 +90,11 @@ describe('generateVariableTokens', () => {
     );
 
     expect(files.get('system/color/fg.json')).toMatchObject({
-      fg: {
-        default: {
-          $type: 'color',
+      color: {
+        fg: {
+          default: {
+            $type: 'color',
+          },
         },
       },
     });
@@ -184,9 +186,9 @@ describe('generateVariableTokens', () => {
     );
     const accent = files.get('system/color/accent.json');
 
-    expect(accent?.accent?.primary.$value).toBe('{brand.positive.600}');
-    expect(accent?.accent?.positive.$value).toBe('{brand.positive.600}');
-    expect(accent?.accent?.primary.$extensions).toBeUndefined();
+    expect(accent?.color?.accent?.primary.$value).toBe('{brand.positive.600}');
+    expect(accent?.color?.accent?.positive.$value).toBe('{brand.positive.600}');
+    expect(accent?.color?.accent?.primary.$extensions).toBeUndefined();
   });
 
   it('keeps brand references as the main value for focus tokens', () => {

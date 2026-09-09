@@ -56,8 +56,8 @@ describe('tokens', () => {
   });
 
   describe('getTokenPath', () => {
-    it('wraps system color and spacing tokens with the file name', () => {
-      expect(getTokenPath('system/color/bg.json', ['alt'])).toEqual(['bg', 'alt']);
+    it('wraps system color tokens under color and the file name', () => {
+      expect(getTokenPath('system/color/bg.json', ['alt'])).toEqual(['color', 'bg', 'alt']);
       expect(getTokenPath('system/gap.json', ['sm'])).toEqual(['gap', 'sm']);
     });
   });
@@ -111,9 +111,11 @@ describe('tokens', () => {
       addTokenToFiles(files, 'system/color/accent.json', ['positive', 'default'], {$value: '#0f0'});
 
       expect(files.get('system/color/accent.json')).toEqual({
-        accent: {
-          primary: {default: {$value: '#000'}},
-          positive: {default: {$value: '#0f0'}},
+        color: {
+          accent: {
+            primary: {default: {$value: '#000'}},
+            positive: {default: {$value: '#0f0'}},
+          },
         },
       });
     });

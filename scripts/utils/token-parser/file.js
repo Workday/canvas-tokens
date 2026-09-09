@@ -70,6 +70,38 @@ export function mergeFileMaps(target, ...sources) {
   return target;
 }
 
+/**
+ * Reads a previously generated output directory into a Map of relative file
+ * path -> parsed JSON content. Used to diff generations for deprecated tokens.
+ * @param {string} outputDir - The output directory.
+ * @returns {Map<string, object>} The previous output, keyed by relative file path.
+ */
+export function readOutputDir(outputDir) {
+  const resolvedOutputDir = path.resolve(process.cwd(), outputDir);
+  const files = new Map();
+
+  if (!fs.existsSync(resolvedOutputDir)) {
+    return files;
+  }
+
+  const walk = (dir, relativeDir) => {
+    for (const entry of fs.readdirSync(dir, {withFileTypes: true})) {
+      const relativePath = relativeDir ? `${relativeDir}/${entry.name}` : entry.name;
+      const entryPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        walk(entryPath, relativePath);
+      } else if (entry.name.endsWith('.json')) {
+        files.set(relativePath, JSON.parse(fs.readFileSync(entryPath, 'utf8')));
+      }
+    }
+  };
+
+  walk(resolvedOutputDir, '');
+
+  return files;
+}
+
 export function listOutputFiles(outputDir) {
   const resolvedOutputDir = path.resolve(process.cwd(), outputDir);
 

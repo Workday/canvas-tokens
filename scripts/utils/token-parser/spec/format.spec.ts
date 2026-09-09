@@ -2,6 +2,7 @@ import {describe, expect, it} from 'vitest';
 import {
   figmaTypeToDtcg,
   formatEasingValue,
+  formatFontFamilyValue,
   formatNumericValue,
   rgbaToOklchColor,
   roundNumber,
@@ -72,13 +73,28 @@ describe('format', () => {
   });
 
   describe('formatEasingValue', () => {
-    it('returns strings unchanged and formats bezier values', () => {
+    it('returns strings unchanged and formats bezier values as an array of numbers', () => {
       expect(formatEasingValue('ease-in-out')).toBe('ease-in-out');
       expect(
         formatEasingValue({
           bezierValues: {p1x: 0.2, p1y: 0, p2x: 0.4, p2y: 1},
         })
-      ).toBe('cubic-bezier(0.2, 0, 0.4, 1)');
+      ).toEqual([0.2, 0, 0.4, 1]);
+    });
+  });
+
+  describe('formatFontFamilyValue', () => {
+    it('strips the LCG 05 suffix from a single font family', () => {
+      expect(formatFontFamilyValue('Sana Sans LCG 05 VF')).toBe('Sana Sans VF');
+    });
+
+    it('splits a font family fallback stack into an array of strings', () => {
+      expect(formatFontFamilyValue('-apple-system, BlinkMacSystemFont, "Sana Serif", Roboto')).toEqual([
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Sana Serif',
+        'Roboto',
+      ]);
     });
   });
 

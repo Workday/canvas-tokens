@@ -89,12 +89,11 @@ describe('generateStyleTokens', () => {
 
     expect(depth?.depth?.['1'].$value).toEqual([
       {
-        type: 'dropShadow',
-        x: {value: 0, unit: 'px'},
-        y: '{shadow.1.100.y}',
+        color: '{color.shadow.1.key}',
+        offsetX: {value: 0, unit: 'px'},
+        offsetY: '{shadow.1.100.y}',
         blur: '{shadow.1.100.blur}',
         spread: {value: -1, unit: 'px'},
-        color: '{shadow.1.key}',
       },
     ]);
   });

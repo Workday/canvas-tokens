@@ -58,7 +58,13 @@ async function fetchVariables(fileKey, token) {
       return {meta: {}};
     }
 
-    return {meta: response.meta};
+    const variables = Object.fromEntries(
+      Object.entries(response.meta.variables || {}).filter(
+        ([, variable]) => !variable.hiddenFromPublishing
+      )
+    );
+
+    return {meta: {...response.meta, variables}};
   } catch (error) {
     console.error(`Error fetching variables: ${error.message}`);
     return {meta: {}};

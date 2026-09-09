@@ -43,6 +43,11 @@ export function getTokenPath(filePath, path) {
     return getBrandTokenPath(filePath, path);
   }
 
+  if (filePath.startsWith('system/color/') && filePath.endsWith('.json')) {
+    const fileName = filePath.replace(/\.json$/, '').split('/').at(-1);
+    return ['color', fileName, ...path];
+  }
+
   const wrapperKey = getFileWrapperKey(filePath);
   return wrapperKey ? [wrapperKey, ...path] : path;
 }
@@ -66,7 +71,7 @@ export function addTokenToFiles(files, filePath, path, token) {
 
 const ROOT_KEY = '$root';
 
-function isTokenLeaf(value) {
+export function isTokenLeaf(value) {
   return Boolean(value && typeof value === 'object' && !Array.isArray(value) && value.$value);
 }
 
@@ -153,4 +158,62 @@ export function nestDashedVariants(node) {
   promoteDefaultToRoot(node);
 
   return node;
+}
+
+function collectLeaves(node, prefix = []) {
+  if (isTokenLeaf(node)) {
+    return [{path: prefix, token: node}];
+  }
+
+  if (node && typeof node === 'object' && !Array.isArray(node)) {
+    return Object.entries(node).flatMap(([key, value]) => collectLeaves(value, [...prefix, key]));
+  }
+
+  return [];
+}
+
+function getAtPath(node, path) {
+  return path.reduce(
+    (cursor, key) => (cursor && typeof cursor === 'object' ? cursor[key] : undefined),
+    node
+  );
+}
+
+function setAtPath(files, filePath, path, token) {
+  if (!files.has(filePath)) {
+    files.set(filePath, {});
+  }
+
+  const node = path.slice(0, -1).reduce((cursor, key) => {
+    if (!cursor[key] || cursor[key].$value) {
+      cursor[key] = {};
+    }
+    return cursor[key];
+  }, files.get(filePath));
+
+  node[path.at(-1)] = token;
+}
+
+/**
+ * Diffs a previous generation's output against the newly generated output.
+ * Any token leaf that existed before but is no longer produced is re-inserted
+ * at its original file path with `$deprecated: true`, instead of being
+ * dropped. A token that reappears in a later generation is written fresh by
+ * the normal pipeline and naturally loses the flag.
+ * Mutates and returns `nextFiles`.
+ */
+export function markDeprecatedTokens(previousFiles, nextFiles) {
+  for (const [filePath, previousContent] of previousFiles) {
+    const nextContent = nextFiles.get(filePath);
+
+    for (const {path, token} of collectLeaves(previousContent)) {
+      const nextLeaf = nextContent && getAtPath(nextContent, path);
+
+      if (!isTokenLeaf(nextLeaf)) {
+        setAtPath(nextFiles, filePath, path, {...token, $deprecated: true});
+      }
+    }
+  }
+
+  return nextFiles;
 }

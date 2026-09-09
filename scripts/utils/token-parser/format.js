@@ -133,7 +133,7 @@ export function formatNumericValue(rawValue, variable) {
 }
 
 export function formatEasingValue(value) {
-  if (typeof value === 'string') {
+  if (Array.isArray(value) || typeof value === 'string') {
     return value;
   }
 
@@ -142,12 +142,47 @@ export function formatEasingValue(value) {
     return value;
   }
 
-  const p1x = roundNumber(bezier.p1x, 2);
-  const p1y = roundNumber(bezier.p1y, 2);
-  const p2x = roundNumber(bezier.p2x, 2);
-  const p2y = roundNumber(bezier.p2y, 2);
+  return [
+    roundNumber(bezier.p1x, 2),
+    roundNumber(bezier.p1y, 2),
+    roundNumber(bezier.p2x, 2),
+    roundNumber(bezier.p2y, 2),
+  ];
+}
 
-  return `cubic-bezier(${p1x}, ${p1y}, ${p2x}, ${p2y})`;
+function splitFontFamilyStack(value) {
+  const parts = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (const char of value) {
+    if (char === '"') {
+      inQuotes = !inQuotes;
+      continue;
+    }
+    if (char === ',' && !inQuotes) {
+      parts.push(current.trim());
+      current = '';
+      continue;
+    }
+    current += char;
+  }
+
+  if (current.trim()) {
+    parts.push(current.trim());
+  }
+
+  return parts;
+}
+
+export function formatFontFamilyValue(value) {
+  const cleaned = value
+    .replace(/\bLCG 05\b\s*/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  const parts = splitFontFamilyStack(cleaned);
+
+  return parts.length > 1 ? parts : cleaned;
 }
 
 export function figmaTypeToDtcg(resolvedType, value) {

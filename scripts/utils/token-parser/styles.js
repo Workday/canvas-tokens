@@ -92,14 +92,26 @@ function extractEffectStyleValue(node, context) {
   const shadows = effects
     .filter(effect => effect.type === 'DROP_SHADOW' || effect.type === 'INNER_SHADOW')
     .map(effect => ({
-      type: effect.type === 'INNER_SHADOW' ? 'innerShadow' : 'dropShadow',
-      x: resolveEffectField(
+      color: resolveEffectField(
+        context,
+        effect,
+        'color',
+        effect.color
+          ? rgbaToOklchColor({
+              r: effect.color.r,
+              g: effect.color.g,
+              b: effect.color.b,
+              a: effect.color.a,
+            })
+          : undefined
+      ),
+      offsetX: resolveEffectField(
         context,
         effect,
         'offsetX',
         valueWithUnit(roundNumber(effect.offset?.x || 0), 'px')
       ),
-      y: resolveEffectField(
+      offsetY: resolveEffectField(
         context,
         effect,
         'offsetY',
@@ -117,19 +129,7 @@ function extractEffectStyleValue(node, context) {
         'spread',
         valueWithUnit(roundNumber(effect.spread || 0), 'px')
       ),
-      color: resolveEffectField(
-        context,
-        effect,
-        'color',
-        effect.color
-          ? rgbaToOklchColor({
-              r: effect.color.r,
-              g: effect.color.g,
-              b: effect.color.b,
-              a: effect.color.a,
-            })
-          : undefined
-      ),
+      ...(effect.type === 'INNER_SHADOW' && {inset: true}),
     }));
 
   return shadows.length ? shadows : undefined;

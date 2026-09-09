@@ -1,5 +1,5 @@
 import {flattenFontPath, flattenThemeTypePath, toTokenPath} from './naming.js';
-import {formatEasingValue, formatNumericValue, rgbaToOklchColor} from './format.js';
+import {formatEasingValue, formatFontFamilyValue, formatNumericValue, rgbaToOklchColor} from './format.js';
 
 const PALETTE_TO_BRAND = {
   green: 'positive',
@@ -43,8 +43,6 @@ function createState(payload) {
   const variables = payload.meta.variables;
 
   return {
-    collections,
-    variables,
     variablesById: new Map(Object.entries(variables)),
     variablesByKey: new Map(toVariableMap(variables, 'key')),
     variablesByName: new Map(toVariableMap(variables, 'name')),
@@ -53,6 +51,13 @@ function createState(payload) {
   };
 }
 
+// Merges another payload's variables/collections into this context's lookup
+// maps only, for cross-payload alias resolution. Must not mutate either
+// payload's own meta.variables/meta.variableCollections objects, since those
+// are read directly by generateVariableTokens() to determine what belongs to
+// each payload — merging into them would leak one payload's collections into
+// another's (e.g. tokens.json's local "Size"/"Motion" collections bleeding
+// into base.json's during a shared context build).
 function extendState(state, payload) {
   const next = createState(payload);
 
@@ -60,8 +65,6 @@ function extendState(state, payload) {
   mergeIntoMap(state.variablesByKey, next.variablesByKey);
   mergeIntoMap(state.variablesByName, next.variablesByName);
   mergeIntoMap(state.collectionById, next.collectionById);
-  Object.assign(state.variables, next.variables);
-  Object.assign(state.collections, next.collections);
 }
 
 function resolveVariableId(state, id) {
@@ -187,7 +190,14 @@ function formatCollectionReference(state, collectionName, pathSegments, variable
   }
 
   if (collectionName === 'Theme') {
-    return `{${pathSegments.filter(Boolean).join('.')}}`;
+    const joined = pathSegments.filter(Boolean).join('.');
+    const category = pathSegments[0];
+
+    if (category === 'type' || category === 'focus') {
+      return `{${joined}}`;
+    }
+
+    return `{color.${joined}}`;
   }
 
   if (collectionName === 'Size') {
@@ -257,6 +267,10 @@ function resolveValue(state, rawValue, variable, modeId, options = {}) {
 
   if (variable.resolvedType === 'EASING') {
     return formatEasingValue(rawValue);
+  }
+
+  if (variable.resolvedType === 'STRING') {
+    return typeof rawValue === 'string' ? formatFontFamilyValue(rawValue) : rawValue;
   }
 
   return formatNumericValue(rawValue, variable);

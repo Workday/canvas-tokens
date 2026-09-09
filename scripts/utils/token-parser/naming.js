@@ -76,6 +76,10 @@ export function getThemeCategory(variable) {
   return toTokenPath(variable.name)[0];
 }
 
+export function isFontWeightToken(name) {
+  return toTokenPath(name).includes('font-weight');
+}
+
 export function getThemePathSegments(variable) {
   return toTokenPath(variable.name).slice(1);
 }

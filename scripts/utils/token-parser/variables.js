@@ -7,6 +7,7 @@ import {
   flattenThemeTypePath,
   getThemeCategory,
   getThemePathSegments,
+  isFontWeightToken,
   isPxToken,
   toSlug,
   toTokenPath,
@@ -16,7 +17,7 @@ import {addTokenToFiles, buildToken, nestDashedVariants} from './tokens.js';
 const SKIP_THEME_CATEGORIES = new Set(['slot']);
 const SKIP_FOCUS_TOKENS = new Set(['inverse', 'contrast', 'inner', 'outer']);
 
-function shouldSkipVariable(collection, themeCollection, variable) {
+function shouldSkipVariable(collection, themeCollection, variable, {ignoreDarkMode} = {}) {
   if (
     collection.id === themeCollection?.id &&
     SKIP_THEME_CATEGORIES.has(getThemeCategory(variable))
@@ -29,6 +30,11 @@ function shouldSkipVariable(collection, themeCollection, variable) {
   }
 
   const [first, second] = toTokenPath(variable.name);
+
+  if (first === 'dark' && ignoreDarkMode) {
+    return true;
+  }
+
   return first === 'tenant' || (first === 'dark' && second === 'tenant');
 }
 
@@ -236,6 +242,7 @@ function buildVariableToken({
   lightModeId,
   themeCollection,
   brandExtension,
+  ignoreDarkMode,
 }) {
   const defaultRaw = context.getModeValue(variable, lightModeId);
   if (defaultRaw === undefined) {
@@ -244,22 +251,28 @@ function buildVariableToken({
 
   const isTheme = collection.id === themeCollection?.id;
   const defaultValue = context.resolveValue(defaultRaw, variable, lightModeId);
+  if (defaultValue === undefined) {
+    return null;
+  }
+
   const brandThemes =
     isTheme && brandExtension
-      ? buildBrandThemeExtensions(variable, brandExtension, context, collection, defaultValue)
+      ? buildBrandThemeExtensions(variable, brandExtension, context, collection, defaultValue, {
+          ignoreDarkMode,
+        })
       : undefined;
   let type = figmaTypeToDtcg(variable.resolvedType, defaultValue);
 
-  if (
-    variable.name.startsWith('size/icon/') &&
-    typeof defaultValue === 'string' &&
-    defaultValue.startsWith('{size.')
-  ) {
+  if (typeof defaultValue === 'string' && defaultValue.startsWith('{size.')) {
     type = 'dimension';
   }
 
+  if (isFontWeightToken(variable.name)) {
+    type = 'fontWeight';
+  }
+
   const extensions = mergeExtensions(
-    isTheme ? buildModeExtensions(variable, collection, context) : undefined,
+    isTheme && !ignoreDarkMode ? buildModeExtensions(variable, collection, context) : undefined,
     brandThemes
   );
 
@@ -271,7 +284,7 @@ function buildVariableToken({
   });
 }
 
-export function generateVariableTokens(payload, sharedContext) {
+export function generateVariableTokens(payload, sharedContext, {ignoreDarkMode = false} = {}) {
   const context = sharedContext ?? createContext(payload);
   const libraryPrefix = getLibraryPrefix(payload);
   const files = new Map();
@@ -287,7 +300,7 @@ export function generateVariableTokens(payload, sharedContext) {
       Object.values(payload.meta.variables)
         .filter(variable => !variable.remote && variable.variableCollectionId === collection.id)
         .forEach(variable => {
-          if (shouldSkipVariable(collection, themeCollection, variable)) {
+          if (shouldSkipVariable(collection, themeCollection, variable, {ignoreDarkMode})) {
             return;
           }
 
@@ -298,6 +311,7 @@ export function generateVariableTokens(payload, sharedContext) {
             lightModeId,
             themeCollection,
             brandExtension,
+            ignoreDarkMode,
           });
 
           if (!token) {
@@ -311,9 +325,11 @@ export function generateVariableTokens(payload, sharedContext) {
             collection.id === themeCollection?.id ? getThemeCategory(variable) : undefined
           );
 
-          if (destination) {
-            addTokenToFiles(files, destination.file, destination.path, token);
+          if (!destination || (ignoreDarkMode && destination.file.startsWith('brand/dark/'))) {
+            return;
           }
+
+          addTokenToFiles(files, destination.file, destination.path, token);
         });
     });
 
