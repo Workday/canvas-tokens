@@ -5,6 +5,7 @@ import {
   formatFontFamilyValue,
   formatNumericValue,
   rgbaToOklchColor,
+  rgbaToSrgbColor,
   roundNumber,
   roundOpacity,
   valueWithUnit,
@@ -44,6 +45,25 @@ describe('format', () => {
       });
       expect(rgbaToOklchColor({r: 0, g: 0, b: 0, a: 0.5})).toMatchObject({
         colorSpace: 'oklch',
+        components: [0, 0, 0],
+        hex: '#00000080',
+        alpha: 0.5,
+      });
+    });
+  });
+
+  describe('rgbaToSrgbColor', () => {
+    it('passes the raw sRGB channels through without converting to oklch', () => {
+      expect(rgbaToSrgbColor({r: 1, g: 1, b: 1, a: 1})).toEqual({
+        colorSpace: 'srgb',
+        components: [1, 1, 1],
+        hex: '#ffffff',
+      });
+    });
+
+    it('rounds channels and keeps a fractional alpha', () => {
+      expect(rgbaToSrgbColor({r: 0, g: 0, b: 0, a: 0.5})).toEqual({
+        colorSpace: 'srgb',
         components: [0, 0, 0],
         hex: '#00000080',
         alpha: 0.5,

@@ -1,4 +1,4 @@
-import {rgbaToOklchColor, roundNumber, valueWithUnit} from './format.js';
+import {roundNumber, valueWithUnit} from './format.js';
 import {toSlug} from './naming.js';
 import {addTokenToFiles, buildToken} from './tokens.js';
 
@@ -97,7 +97,7 @@ function extractEffectStyleValue(node, context) {
         effect,
         'color',
         effect.color
-          ? rgbaToOklchColor({
+          ? context?.formatColor({
               r: effect.color.r,
               g: effect.color.g,
               b: effect.color.b,

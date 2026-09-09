@@ -1,5 +1,11 @@
 import {flattenFontPath, flattenThemeTypePath, toTokenPath} from './naming.js';
-import {formatEasingValue, formatFontFamilyValue, formatNumericValue, rgbaToOklchColor} from './format.js';
+import {
+  formatEasingValue,
+  formatFontFamilyValue,
+  formatNumericValue,
+  rgbaToOklchColor,
+  rgbaToSrgbColor,
+} from './format.js';
 
 const PALETTE_TO_BRAND = {
   green: 'positive',
@@ -38,7 +44,7 @@ function mergeIntoMap(target, source) {
   }
 }
 
-function createState(payload) {
+function createState(payload, {colorFormat} = {}) {
   const collections = payload.meta.variableCollections;
   const variables = payload.meta.variables;
 
@@ -48,7 +54,12 @@ function createState(payload) {
     variablesByName: new Map(toVariableMap(variables, 'name')),
     collectionById: new Map(Object.entries(collections)),
     output: new Map(),
+    colorFormat,
   };
+}
+
+function formatColor(state, rgba) {
+  return state.colorFormat === 'rgba' ? rgbaToSrgbColor(rgba) : rgbaToOklchColor(rgba);
 }
 
 // Merges another payload's variables/collections into this context's lookup
@@ -262,7 +273,7 @@ function resolveValue(state, rawValue, variable, modeId, options = {}) {
   }
 
   if (variable.resolvedType === 'COLOR' && rawValue?.r !== undefined) {
-    return rgbaToOklchColor(rawValue);
+    return formatColor(state, rawValue);
   }
 
   if (variable.resolvedType === 'EASING') {
@@ -311,8 +322,8 @@ function resolveStyleBoundVariable(state, aliasId) {
   return valueToReference(state, resolved, {});
 }
 
-export function createContext(payload) {
-  const state = createState(payload);
+export function createContext(payload, options = {}) {
+  const state = createState(payload, options);
 
   return {
     extend(nextPayload) {
@@ -324,5 +335,6 @@ export function createContext(payload) {
     resolveBoundVariable: (aliasId, modeId) => resolveBoundVariable(state, aliasId, modeId),
     resolveStyleBoundVariable: aliasId => resolveStyleBoundVariable(state, aliasId),
     registerOutputPath: (variableId, path) => state.output.set(variableId, path),
+    formatColor: rgba => formatColor(state, rgba),
   };
 }

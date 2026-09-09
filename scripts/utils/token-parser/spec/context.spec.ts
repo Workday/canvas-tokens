@@ -22,6 +22,17 @@ describe('context', () => {
     });
   });
 
+  it('resolves color values to raw srgb tokens when colorFormat is rgba', () => {
+    const variable = createVariable();
+    const context = createContext(createPayload([variable]), {colorFormat: 'rgba'});
+
+    expect(context.resolveValue({r: 1, g: 0, b: 0, a: 1}, variable, lightModeId)).toEqual({
+      colorSpace: 'srgb',
+      components: [1, 0, 0],
+      hex: '#ff0000',
+    });
+  });
+
   it('remaps white and black palette references to neutral endpoints', () => {
     const white = createVariable({
       id: 'white',

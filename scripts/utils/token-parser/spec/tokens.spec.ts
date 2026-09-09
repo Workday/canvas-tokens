@@ -5,6 +5,7 @@ import {
   getBrandTokenPath,
   getFileWrapperKey,
   getTokenPath,
+  markDeprecatedTokens,
   nestDashedVariants,
 } from '../tokens.js';
 
@@ -130,6 +131,33 @@ describe('tokens', () => {
       expect(files.get('base/type.json')).toEqual({
         heading: {lg: {$value: 'new'}},
       });
+    });
+  });
+
+  describe('markDeprecatedTokens', () => {
+    it('re-inserts a token missing from the next generation as deprecated', () => {
+      const previous = new Map([['system/opacity.json', {opacity: {zero: {$value: 1}}}]]);
+      const next = new Map([['system/opacity.json', {opacity: {full: {$value: 1}}}]]);
+
+      expect(markDeprecatedTokens(previous, next).get('system/opacity.json')).toEqual({
+        opacity: {
+          full: {$value: 1},
+          zero: {$value: 1, $deprecated: true},
+        },
+      });
+    });
+
+    it('ignores brand/dark files and dark palette entries when ignoreDarkMode is set', () => {
+      const previous = new Map([
+        ['brand/dark/action.json', {brand: {dark: {action: {base: {$value: '#000'}}}}}],
+        ['base/palette.json', {dark: {neutral: {200: {$value: '#111'}}}, white: {$value: '#fff'}}],
+      ]);
+      const next = new Map([['base/palette.json', {white: {$value: '#fff'}}]]);
+
+      const result = markDeprecatedTokens(previous, next, {ignoreDarkMode: true});
+
+      expect(result.has('brand/dark/action.json')).toBe(false);
+      expect(result.get('base/palette.json')).toEqual({white: {$value: '#fff'}});
     });
   });
 

@@ -200,13 +200,36 @@ function setAtPath(files, filePath, path, token) {
  * at its original file path with `$deprecated: true`, instead of being
  * dropped. A token that reappears in a later generation is written fresh by
  * the normal pipeline and naturally loses the flag.
+ *
+ * `removedPaths` (Map<filePath, Set<dotted path>>) identifies leaves that are
+ * intentionally excluded (e.g. Figma variables marked hidden from
+ * publishing) rather than genuinely gone from the source; those are dropped
+ * for good instead of being resurrected as deprecated.
+ *
  * Mutates and returns `nextFiles`.
  */
-export function markDeprecatedTokens(previousFiles, nextFiles) {
+export function markDeprecatedTokens(
+  previousFiles,
+  nextFiles,
+  {ignoreDarkMode = false, removedPaths} = {}
+) {
   for (const [filePath, previousContent] of previousFiles) {
+    if (ignoreDarkMode && filePath.startsWith('brand/dark/')) {
+      continue;
+    }
+
     const nextContent = nextFiles.get(filePath);
+    const removedFilePaths = removedPaths?.get(filePath);
 
     for (const {path, token} of collectLeaves(previousContent)) {
+      if (ignoreDarkMode && path[0] === 'dark') {
+        continue;
+      }
+
+      if (removedFilePaths?.has(path.join('.'))) {
+        continue;
+      }
+
       const nextLeaf = nextContent && getAtPath(nextContent, path);
 
       if (!isTokenLeaf(nextLeaf)) {

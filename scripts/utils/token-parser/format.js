@@ -113,6 +113,28 @@ export function rgbaToOklchColor(rgba) {
   return color;
 }
 
+function formatSrgbComponents({r, g, b}) {
+  return [roundNumber(r, 4), roundNumber(g, 4), roundNumber(b, 4)];
+}
+
+// Passes Figma's raw 0-1 sRGB channel values straight through as a DTCG
+// color, instead of converting them into oklch.
+export function rgbaToSrgbColor(rgba) {
+  const alpha = rgba.a !== undefined && rgba.a < 1 ? roundOpacity(rgba.a) : undefined;
+
+  const color = {
+    colorSpace: 'srgb',
+    components: formatSrgbComponents(rgba),
+    hex: rgbaToHex({...rgba, a: alpha ?? rgba.a}),
+  };
+
+  if (alpha !== undefined) {
+    color.alpha = alpha;
+  }
+
+  return color;
+}
+
 export function formatNumericValue(rawValue, variable) {
   if (variable.resolvedType === 'TIMING') {
     return valueWithUnit(Math.round(rawValue * 1000), 'ms');

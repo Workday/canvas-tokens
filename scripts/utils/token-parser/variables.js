@@ -12,7 +12,7 @@ import {
   toSlug,
   toTokenPath,
 } from './naming.js';
-import {addTokenToFiles, buildToken, nestDashedVariants} from './tokens.js';
+import {addTokenToFiles, buildToken, getTokenPath, nestDashedVariants} from './tokens.js';
 
 const SKIP_THEME_CATEGORIES = new Set(['slot']);
 const SKIP_FOCUS_TOKENS = new Set(['inverse', 'contrast', 'inner', 'outer']);
@@ -41,6 +41,18 @@ function shouldSkipVariable(collection, themeCollection, variable, {ignoreDarkMo
 function registerRoute(context, variable, outputKey, file, path) {
   context.registerOutputPath(variable.id, outputKey);
   return {file, path};
+}
+
+function recordRemovedPath(removedPaths, file, path) {
+  if (!removedPaths) {
+    return;
+  }
+
+  if (!removedPaths.has(file)) {
+    removedPaths.set(file, new Set());
+  }
+
+  removedPaths.get(file).add(getTokenPath(file, path).join('.'));
 }
 
 function getLibraryPrefix(payload) {
@@ -284,7 +296,11 @@ function buildVariableToken({
   });
 }
 
-export function generateVariableTokens(payload, sharedContext, {ignoreDarkMode = false} = {}) {
+export function generateVariableTokens(
+  payload,
+  sharedContext,
+  {ignoreDarkMode = false, removedPaths} = {}
+) {
   const context = sharedContext ?? createContext(payload);
   const libraryPrefix = getLibraryPrefix(payload);
   const files = new Map();
@@ -304,6 +320,22 @@ export function generateVariableTokens(payload, sharedContext, {ignoreDarkMode =
             return;
           }
 
+          const destination = COLLECTION_ROUTES[collection.name]?.(
+            variable,
+            libraryPrefix,
+            context,
+            collection.id === themeCollection?.id ? getThemeCategory(variable) : undefined
+          );
+
+          if (!destination || (ignoreDarkMode && destination.file.startsWith('brand/dark/'))) {
+            return;
+          }
+
+          if (variable.hiddenFromPublishing) {
+            recordRemovedPath(removedPaths, destination.file, destination.path);
+            return;
+          }
+
           const token = buildVariableToken({
             variable,
             context,
@@ -315,17 +347,6 @@ export function generateVariableTokens(payload, sharedContext, {ignoreDarkMode =
           });
 
           if (!token) {
-            return;
-          }
-
-          const destination = COLLECTION_ROUTES[collection.name]?.(
-            variable,
-            libraryPrefix,
-            context,
-            collection.id === themeCollection?.id ? getThemeCategory(variable) : undefined
-          );
-
-          if (!destination || (ignoreDarkMode && destination.file.startsWith('brand/dark/'))) {
             return;
           }
 
