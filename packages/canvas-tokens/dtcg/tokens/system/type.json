@@ -17,6 +17,64 @@
       "$type": "fontFamily"
     }
   },
+  "font-size": {
+    "subtext": {
+      "sm": {
+        "$value": "{size.125}",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "{size.150}",
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": "{size.175}",
+        "$type": "dimension"
+      }
+    },
+    "body": {
+      "sm": {
+        "$value": "{size.200}",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "{size.225}",
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": "{size.250}",
+        "$type": "dimension"
+      }
+    },
+    "heading": {
+      "sm": {
+        "$value": "{size.300}",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "{size.350}",
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": "{size.400}",
+        "$type": "dimension"
+      }
+    },
+    "title": {
+      "sm": {
+        "$value": "{size.500}",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "{size.600}",
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": "{size.700}",
+        "$type": "dimension"
+      }
+    }
+  },
   "font-weight": {
     "light": {
       "$value": "{font-weight.300}",
@@ -37,64 +95,6 @@
     "bold": {
       "$value": "{font-weight.700}",
       "$type": "number"
-    }
-  },
-  "font-size": {
-    "subtext": {
-      "sm": {
-        "$value": "{size.125}",
-        "$type": "number"
-      },
-      "md": {
-        "$value": "{size.150}",
-        "$type": "number"
-      },
-      "lg": {
-        "$value": "{size.175}",
-        "$type": "number"
-      }
-    },
-    "body": {
-      "sm": {
-        "$value": "{size.200}",
-        "$type": "number"
-      },
-      "md": {
-        "$value": "{size.225}",
-        "$type": "number"
-      },
-      "lg": {
-        "$value": "{size.250}",
-        "$type": "number"
-      }
-    },
-    "heading": {
-      "sm": {
-        "$value": "{size.300}",
-        "$type": "number"
-      },
-      "md": {
-        "$value": "{size.350}",
-        "$type": "number"
-      },
-      "lg": {
-        "$value": "{size.400}",
-        "$type": "number"
-      }
-    },
-    "title": {
-      "sm": {
-        "$value": "{size.500}",
-        "$type": "number"
-      },
-      "md": {
-        "$value": "{size.600}",
-        "$type": "number"
-      },
-      "lg": {
-        "$value": "{size.700}",
-        "$type": "number"
-      }
     }
   },
   "letter-spacing": {
@@ -159,57 +159,57 @@
     "subtext": {
       "sm": {
         "$value": "{size.200}",
-        "$type": "number"
+        "$type": "dimension"
       },
       "md": {
         "$value": "{size.200}",
-        "$type": "number"
+        "$type": "dimension"
       },
       "lg": {
         "$value": "{size.250}",
-        "$type": "number"
+        "$type": "dimension"
       }
     },
     "body": {
       "sm": {
         "$value": "{size.300}",
-        "$type": "number"
+        "$type": "dimension"
       },
       "md": {
         "$value": "{size.300}",
-        "$type": "number"
+        "$type": "dimension"
       },
       "lg": {
         "$value": "{size.350}",
-        "$type": "number"
+        "$type": "dimension"
       }
     },
     "heading": {
       "sm": {
         "$value": "{size.400}",
-        "$type": "number"
+        "$type": "dimension"
       },
       "md": {
         "$value": "{size.450}",
-        "$type": "number"
+        "$type": "dimension"
       },
       "lg": {
         "$value": "{size.500}",
-        "$type": "number"
+        "$type": "dimension"
       }
     },
     "title": {
       "sm": {
         "$value": "{size.600}",
-        "$type": "number"
+        "$type": "dimension"
       },
       "md": {
         "$value": "{size.700}",
-        "$type": "number"
+        "$type": "dimension"
       },
       "lg": {
         "$value": "{size.800}",
-        "$type": "number"
+        "$type": "dimension"
       }
     }
   },
@@ -246,49 +246,7 @@
         "$type": "typography"
       }
     },
-    "heading": {
-      "sm": {
-        "$value": {
-          "fontFamily": "{font-family.$root}",
-          "fontWeight": "{font-weight.bold}",
-          "fontSize": "{font-size.heading.sm}",
-          "lineHeight": "{line-height.heading.sm}",
-          "letterSpacing": "{letter-spacing.heading.sm}"
-        },
-        "$type": "typography"
-      },
-      "lg": {
-        "$value": {
-          "fontFamily": "{font-family.$root}",
-          "fontWeight": "{font-weight.bold}",
-          "fontSize": "{font-size.heading.lg}",
-          "lineHeight": "{line-height.heading.lg}",
-          "letterSpacing": "{letter-spacing.heading.lg}"
-        },
-        "$type": "typography"
-      },
-      "md": {
-        "$value": {
-          "fontFamily": "{font-family.$root}",
-          "fontWeight": "{font-weight.bold}",
-          "fontSize": "{font-size.heading.md}",
-          "lineHeight": "{line-height.heading.md}",
-          "letterSpacing": "{letter-spacing.heading.md}"
-        },
-        "$type": "typography"
-      }
-    },
     "body": {
-      "md": {
-        "$value": {
-          "fontFamily": "{font-family.$root}",
-          "fontWeight": "{font-weight.regular}",
-          "fontSize": "{font-size.body.md}",
-          "lineHeight": "{line-height.body.md}",
-          "letterSpacing": "{letter-spacing.body.md}"
-        },
-        "$type": "typography"
-      },
       "sm": {
         "$value": {
           "fontFamily": "{font-family.$root}",
@@ -308,9 +266,61 @@
           "letterSpacing": "{letter-spacing.body.lg}"
         },
         "$type": "typography"
+      },
+      "md": {
+        "$value": {
+          "fontFamily": "{font-family.$root}",
+          "fontWeight": "{font-weight.regular}",
+          "fontSize": "{font-size.body.md}",
+          "lineHeight": "{line-height.body.md}",
+          "letterSpacing": "{letter-spacing.body.md}"
+        },
+        "$type": "typography"
+      }
+    },
+    "heading": {
+      "md": {
+        "$value": {
+          "fontFamily": "{font-family.$root}",
+          "fontWeight": "{font-weight.bold}",
+          "fontSize": "{font-size.heading.md}",
+          "lineHeight": "{line-height.heading.md}",
+          "letterSpacing": "{letter-spacing.heading.md}"
+        },
+        "$type": "typography"
+      },
+      "sm": {
+        "$value": {
+          "fontFamily": "{font-family.$root}",
+          "fontWeight": "{font-weight.bold}",
+          "fontSize": "{font-size.heading.sm}",
+          "lineHeight": "{line-height.heading.sm}",
+          "letterSpacing": "{letter-spacing.heading.sm}"
+        },
+        "$type": "typography"
+      },
+      "lg": {
+        "$value": {
+          "fontFamily": "{font-family.$root}",
+          "fontWeight": "{font-weight.bold}",
+          "fontSize": "{font-size.heading.lg}",
+          "lineHeight": "{line-height.heading.lg}",
+          "letterSpacing": "{letter-spacing.heading.lg}"
+        },
+        "$type": "typography"
       }
     },
     "title": {
+      "sm": {
+        "$value": {
+          "fontFamily": "{font-family.$root}",
+          "fontWeight": "{font-weight.bold}",
+          "fontSize": "{font-size.title.sm}",
+          "lineHeight": "{line-height.title.sm}",
+          "letterSpacing": "{letter-spacing.title.sm}"
+        },
+        "$type": "typography"
+      },
       "lg": {
         "$value": {
           "fontFamily": "{font-family.$root}",
@@ -328,16 +338,6 @@
           "fontSize": "{font-size.title.md}",
           "lineHeight": "{line-height.title.md}",
           "letterSpacing": "{letter-spacing.title.md}"
-        },
-        "$type": "typography"
-      },
-      "sm": {
-        "$value": {
-          "fontFamily": "{font-family.$root}",
-          "fontWeight": "{font-weight.bold}",
-          "fontSize": "{font-size.title.sm}",
-          "lineHeight": "{line-height.title.sm}",
-          "letterSpacing": "{letter-spacing.title.sm}"
         },
         "$type": "typography"
       }

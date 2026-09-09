@@ -72,38 +72,6 @@
       "A300": {
         "$value": "{amber.A300}",
         "$type": "color"
-      },
-      "A400": {
-        "$value": "{amber.400}",
-        "$type": "color"
-      },
-      "A500": {
-        "$value": "{amber.500}",
-        "$type": "color"
-      },
-      "A600": {
-        "$value": "{amber.600}",
-        "$type": "color"
-      },
-      "A700": {
-        "$value": "{amber.700}",
-        "$type": "color"
-      },
-      "A800": {
-        "$value": "{amber.800}",
-        "$type": "color"
-      },
-      "A900": {
-        "$value": "{amber.900}",
-        "$type": "color"
-      },
-      "A950": {
-        "$value": "{amber.950}",
-        "$type": "color"
-      },
-      "A975": {
-        "$value": "{amber.975}",
-        "$type": "color"
       }
     }
   }

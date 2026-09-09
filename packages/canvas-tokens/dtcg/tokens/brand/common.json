@@ -62,8 +62,17 @@
     },
     "gradient": {
       "primary": {
-        "$value": "linear-gradient(90deg, {brand.primary.base} 0%, {brand.primary.dark} 100%)",
-        "$type": "color"
+        "$type": "gradient",
+        "$value": [
+          {"color": "{brand.primary.600}", "position": 0},
+          {"color": "{brand.primary.700}", "position": 1}
+        ],
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "angle": "90deg",
+            "type": "linear"
+          }
+        }
       }
     }
   }

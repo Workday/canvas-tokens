@@ -3,29 +3,27 @@
     "1": {
       "$value": [
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.1.key}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.1.100.y}",
+          "offsetY": "{shadow.1.100.y}",
           "blur": "{shadow.1.100.blur}",
-          "spread": "{shadow.1.100.spread}",
-          "color": "{shadow.1.key}"
+          "spread": "{shadow.1.100.spread}"
         },
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.1.ambient}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.1.200.y}",
+          "offsetY": "{shadow.1.200.y}",
           "blur": "{shadow.1.200.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
-          },
-          "color": "{shadow.1.ambient}"
+          }
         }
       ],
       "$type": "shadow",
@@ -34,29 +32,27 @@
     "2": {
       "$value": [
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.2.key}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.2.100.y}",
+          "offsetY": "{shadow.2.100.y}",
           "blur": "{shadow.2.100.blur}",
-          "spread": "{shadow.2.100.spread}",
-          "color": "{shadow.2.key}"
+          "spread": "{shadow.2.100.spread}"
         },
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.2.ambient}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.2.200.y}",
+          "offsetY": "{shadow.2.200.y}",
           "blur": "{shadow.2.200.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
-          },
-          "color": "{shadow.2.ambient}"
+          }
         }
       ],
       "$type": "shadow",
@@ -65,29 +61,27 @@
     "3": {
       "$value": [
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.3.key}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.3.100.y}",
+          "offsetY": "{shadow.3.100.y}",
           "blur": "{shadow.3.100.blur}",
-          "spread": "{shadow.3.100.spread}",
-          "color": "{shadow.3.key}"
+          "spread": "{shadow.3.100.spread}"
         },
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.3.ambient}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.3.200.y}",
+          "offsetY": "{shadow.3.200.y}",
           "blur": "{shadow.3.200.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
-          },
-          "color": "{shadow.3.ambient}"
+          }
         }
       ],
       "$type": "shadow",
@@ -96,29 +90,27 @@
     "4": {
       "$value": [
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.4.key}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.4.100.y}",
+          "offsetY": "{shadow.4.100.y}",
           "blur": "{shadow.4.100.blur}",
-          "spread": "{shadow.4.100.spread}",
-          "color": "{shadow.4.key}"
+          "spread": "{shadow.4.100.spread}"
         },
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.4.ambient}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.4.200.y}",
+          "offsetY": "{shadow.4.200.y}",
           "blur": "{shadow.4.200.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
-          },
-          "color": "{shadow.4.ambient}"
+          }
         }
       ],
       "$type": "shadow",
@@ -127,29 +119,27 @@
     "5": {
       "$value": [
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.5.key}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.5.100.y}",
+          "offsetY": "{shadow.5.100.y}",
           "blur": "{shadow.5.100.blur}",
-          "spread": "{shadow.5.100.spread}",
-          "color": "{shadow.5.key}"
+          "spread": "{shadow.5.100.spread}"
         },
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.5.ambient}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.5.200.y}",
+          "offsetY": "{shadow.5.200.y}",
           "blur": "{shadow.5.200.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
-          },
-          "color": "{shadow.5.ambient}"
+          }
         }
       ],
       "$type": "shadow",
@@ -158,29 +148,27 @@
     "6": {
       "$value": [
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.6.key}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.6.100.y}",
+          "offsetY": "{shadow.6.100.y}",
           "blur": "{shadow.6.100.blur}",
-          "spread": "{shadow.6.100.spread}",
-          "color": "{shadow.6.key}"
+          "spread": "{shadow.6.100.spread}"
         },
         {
-          "type": "dropShadow",
-          "x": {
+          "color": "{color.shadow.6.ambient}",
+          "offsetX": {
             "value": 0,
             "unit": "px"
           },
-          "y": "{shadow.6.200.y}",
+          "offsetY": "{shadow.6.200.y}",
           "blur": "{shadow.6.200.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
-          },
-          "color": "{shadow.6.ambient}"
+          }
         }
       ],
       "$type": "shadow",

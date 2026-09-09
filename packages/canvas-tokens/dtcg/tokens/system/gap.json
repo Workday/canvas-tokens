@@ -2,31 +2,31 @@
   "gap": {
     "none": {
       "$value": "{size.0}",
-      "$type": "number"
+      "$type": "dimension"
     },
     "xs": {
       "$value": "{size.50}",
-      "$type": "number"
+      "$type": "dimension"
     },
     "sm": {
       "$value": "{size.100}",
-      "$type": "number"
+      "$type": "dimension"
     },
     "md": {
       "$value": "{size.200}",
-      "$type": "number"
+      "$type": "dimension"
     },
     "lg": {
       "$value": "{size.300}",
-      "$type": "number"
+      "$type": "dimension"
     },
     "xl": {
       "$value": "{size.400}",
-      "$type": "number"
+      "$type": "dimension"
     },
     "xxl": {
       "$value": "{size.800}",
-      "$type": "number"
+      "$type": "dimension"
     }
   }
 }

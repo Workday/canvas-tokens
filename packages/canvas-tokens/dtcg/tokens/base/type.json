@@ -1,4 +1,38 @@
 {
+  "font-family": {
+    "0": {
+      "$value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Sana Serif",
+        "Roboto",
+        "Inter",
+        "system-ui",
+        "Avenir",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol"
+      ],
+      "$type": "fontFamily",
+      "$description": "Default font-family"
+    },
+    "50": {
+      "$value": "Sana Sans VF",
+      "$type": "fontFamily",
+      "$description": "Default font-family"
+    },
+    "100": {
+      "$value": "IBM Plex Mono",
+      "$type": "fontFamily"
+    },
+    "200": {
+      "$value": "Noto Sans",
+      "$type": "fontFamily"
+    }
+  },
   "letter-spacing": {
     "1": {
       "$value": {
@@ -88,43 +122,23 @@
   "font-weight": {
     "300": {
       "$value": 300,
-      "$type": "number"
+      "$type": "fontWeight"
     },
     "400": {
       "$value": 400,
-      "$type": "number"
+      "$type": "fontWeight"
     },
     "500": {
       "$value": 500,
-      "$type": "number"
+      "$type": "fontWeight"
     },
     "600": {
       "$value": 600,
-      "$type": "number"
+      "$type": "fontWeight"
     },
     "700": {
       "$value": 700,
-      "$type": "number"
-    }
-  },
-  "font-family": {
-    "0": {
-      "value": "Roboto, -apple-system, BlinkMacSystemFont, \"Sana Serif\", Inter, system-ui, sans-serif, Avenir, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
-      "$type": "fontFamily",
-      "$description": "Fallback font-family"
-    },
-    "50": {
-      "$value": "Sana Sans VF",
-      "$type": "fontFamily",
-      "$description": "Default font-family"
-    },
-    "100": {
-      "$value": "IBM Plex Mono",
-      "$type": "fontFamily"
-    },
-    "200": {
-      "$value": "Noto Sans",
-      "$type": "fontFamily"
+      "$type": "fontWeight"
     }
   }
 }
