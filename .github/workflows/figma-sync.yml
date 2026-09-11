@@ -73,7 +73,7 @@ jobs:
       - name: Check for token changes
         id: changes
         run: |
-            git add packages/canvas-tokens/dtcg/tokens
+            git add packages/canvas-tokens/src/tokens/dtcg
             if git diff --cached --quiet; then
               echo "No token changes found."
               echo "has_changes=false" >> "$GITHUB_OUTPUT"
