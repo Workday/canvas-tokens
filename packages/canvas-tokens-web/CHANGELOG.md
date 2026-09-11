@@ -1,5 +1,26 @@
 # @workday/canvas-tokens-web
 
+## 4.5.0
+
+### Minor Changes
+
+- ### Components
+
+  - chore: Add comment ([@RayRedGoose](https://github.com/RayRedGoose))
+
+  ### Infrastructure
+
+  - chore: Update external GH actions to use SHA1 and Node 24
+    ([#330](https://github.com/Workday/canvas-tokens/pull/330))
+    ([@alanbsmith](https://github.com/alanbsmith),
+    [@mannycarrera4](https://github.com/mannycarrera4))
+
+  ### Tokens
+
+  - feat: Add DTCG tokens synced from Figma
+    ([#350](https://github.com/Workday/canvas-tokens/pull/350))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+
 ## 4.4.0
 
 ### Minor Changes
