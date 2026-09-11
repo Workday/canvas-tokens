@@ -44,7 +44,7 @@
         }
       },
       "modal": {
-        "$value": "{neutral.1000}",
+        "$value": "{neutral.0}",
         "$type": "color",
         "$description": "Modal views, sits on top of a scrim overlay",
         "$extensions": {
@@ -275,7 +275,11 @@
               "dark": {
                 "$value": {
                   "colorSpace": "oklch",
-                  "components": [0.2002, 0, 0],
+                  "components": [
+                    0.2002,
+                    0,
+                    0
+                  ],
                   "hex": "#16161600",
                   "alpha": 0
                 }
@@ -285,7 +289,7 @@
         }
       },
       "inverse": {
-        "$value": "{neutral.1000}",
+        "$value": "{neutral.0}",
         "$type": "color",
         "$description": "Container background for use on dark backgrounds",
         "$extensions": {
@@ -572,14 +576,14 @@
           }
         },
         "mixin": {
-          "$value": "{neutral.0}",
+          "$value": "{neutral.1000}",
           "$type": "color",
           "$description": "Pressed state overlay for interactive containers",
           "$extensions": {
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{neutral.1000}"
+                  "$value": "{neutral.0}"
                 }
               }
             }
