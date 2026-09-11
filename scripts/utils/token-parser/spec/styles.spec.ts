@@ -2,7 +2,7 @@ import {describe, expect, it} from 'vitest';
 import {createContext} from '../context.js';
 import {generateStyleTokens} from '../styles.js';
 import {generateVariableTokens} from '../variables.js';
-import {colorsCollectionId, createCollection, createPayload, createVariable, lightModeId, themeCollectionId} from './fixtures.js';
+import {createCollection, createPayload, createVariable, lightModeId, themeCollectionId} from './fixtures.js';
 
 function createDepthStylePayload() {
   const shadowY = createVariable({
