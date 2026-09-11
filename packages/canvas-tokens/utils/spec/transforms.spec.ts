@@ -1,3 +1,4 @@
+import {describe, expect, it} from 'vitest';
 import {transforms} from '../transformers';
 import {generateFallbacks} from '../transformers/generateNewTokenFallback';
 
