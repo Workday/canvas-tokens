@@ -1,72 +1,77 @@
+import {beforeEach, describe, expect, it, vi} from 'vitest';
 import {formats} from '../formatters';
 
-jest.mock('style-dictionary', () => ({
-  format: {
-    'es6/objects': ({dictionary}: any) => {
-      const recursivelyFlatObjectValue = ({tokens, isFallback, isRoot = true}: any) => {
-        if (isFallback) {
-          if ('fallbackValue' in tokens) {
-            return tokens.fallbackValue;
+vi.mock('style-dictionary', () => {
+  const mockStyleDictionary = {
+    format: {
+      'es6/objects': ({dictionary}: any) => {
+        const recursivelyFlatObjectValue = ({tokens, isFallback, isRoot = true}: any) => {
+          if (isFallback) {
+            if ('fallbackValue' in tokens) {
+              return tokens.fallbackValue;
+            }
+            if ('cssVarName' in tokens) {
+              return undefined;
+            }
           }
+
           if ('cssVarName' in tokens) {
+            return tokens.cssVarName;
+          }
+
+          const next: Record<string, any> = {};
+
+          for (const key of Object.keys(tokens)) {
+            const value = recursivelyFlatObjectValue({
+              tokens: tokens[key],
+              isFallback,
+              isRoot: false,
+            });
+
+            if (!(isFallback && value === undefined)) {
+              next[key] = value;
+            }
+          }
+
+          if (isFallback && !isRoot && !Object.keys(next).length) {
             return undefined;
           }
-        }
 
-        if ('cssVarName' in tokens) {
-          return tokens.cssVarName;
-        }
+          return next;
+        };
 
-        const next: Record<string, any> = {};
+        const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+        const body = mainTokens
+          ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
+              return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
+            }, '')
+          : '';
 
-        for (const key of Object.keys(tokens)) {
-          const value = recursivelyFlatObjectValue({
-            tokens: tokens[key],
-            isFallback,
-            isRoot: false,
-          });
+        const legacyTokens = recursivelyFlatObjectValue({
+          tokens: dictionary.properties,
+          isFallback: true,
+        });
+        const legacyBlock = legacyTokens
+          ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+          : '';
 
-          if (!(isFallback && value === undefined)) {
-            next[key] = value;
-          }
-        }
-
-        if (isFallback && !isRoot && !Object.keys(next).length) {
-          return undefined;
-        }
-
-        return next;
-      };
-
-      const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
-      const body = mainTokens
-        ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
-            return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
-          }, '')
-        : '';
-
-      const legacyTokens = recursivelyFlatObjectValue({
-        tokens: dictionary.properties,
-        isFallback: true,
-      });
-      const legacyBlock = legacyTokens
-        ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
-        : '';
-
-      return body + legacyBlock;
+        return body + legacyBlock;
+      },
+      'javascript/types': () =>
+        `export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}`,
+      'javascript/common-js': () => `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";`,
+      'css/variables': () => `:root {\n --cnvs-sys-shape-zero: 0rem;\n}`,
+      'css/composite': () =>
+        `.cnvs-sys-border-input-default {\n border: var(--cnvs-sys-line-default);\n}`,
+      'css/shadow': () => ` --cnvs-sys-depth-1: 0 0 0 0 black;`,
     },
-    'javascript/types': () =>
-      `export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}`,
-    'javascript/common-js': () => `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";`,
-    'css/variables': () => `:root {\n --cnvs-sys-shape-zero: 0rem;\n}`,
-    'css/composite': () =>
-      `.cnvs-sys-border-input-default {\n border: var(--cnvs-sys-line-default);\n}`,
-    'css/shadow': () => ` --cnvs-sys-depth-1: 0 0 0 0 black;`,
-  },
-  formatHelpers: {
-    fileHeader: () => `// Test Header\n\n`,
-  },
-}));
+    formatHelpers: {
+      fileHeader: () => `// Test Header\n\n`,
+    },
+  };
+
+  return {...mockStyleDictionary, default: mockStyleDictionary};
+});
 
 const headerContent = `// Test Header\n\n`;
 const moduleContent = `"use strict";\nObject.defineProperty(exports, "__esModule", { value: true });\n\n`;

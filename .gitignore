@@ -39,3 +39,5 @@ existing-tokens.json
 
 # Storybook
 build-storybook.log
+
+figma-raw-tokens/

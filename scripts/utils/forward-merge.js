@@ -56,8 +56,7 @@ async function spawn(/** @type {string} */ cmd) {
     error += chunk.toString();
   }
 
-  // eslint-disable-next-line compat/compat
-  const exitCode = await new Promise((resolve, reject) => {
+  const exitCode = await new Promise(resolve => {
     child.on('close', resolve);
   });
 
