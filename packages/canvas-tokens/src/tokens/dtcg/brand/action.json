@@ -30,7 +30,7 @@
         "$type": "color"
       },
       "accent": {
-        "$value": "{neutral.0}",
+        "$value": "{neutral.1000}",
         "$type": "color"
       }
     }

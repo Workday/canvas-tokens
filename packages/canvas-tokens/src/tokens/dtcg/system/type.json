@@ -13,7 +13,22 @@
       "$type": "fontFamily"
     },
     "fallback": {
-      "$value": "{font-family.0}",
+      "$value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Sana Serif",
+        "Roboto",
+        "Inter",
+        "system-ui",
+        "sans-serif",
+        "Avenir",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol"
+      ],
       "$type": "fontFamily"
     }
   },
