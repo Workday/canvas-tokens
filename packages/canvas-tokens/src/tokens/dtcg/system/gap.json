@@ -1,0 +1,32 @@
+{
+  "gap": {
+    "none": {
+      "$value": "{size.0}",
+      "$type": "dimension"
+    },
+    "xs": {
+      "$value": "{size.50}",
+      "$type": "dimension"
+    },
+    "sm": {
+      "$value": "{size.100}",
+      "$type": "dimension"
+    },
+    "md": {
+      "$value": "{size.200}",
+      "$type": "dimension"
+    },
+    "lg": {
+      "$value": "{size.300}",
+      "$type": "dimension"
+    },
+    "xl": {
+      "$value": "{size.400}",
+      "$type": "dimension"
+    },
+    "xxl": {
+      "$value": "{size.800}",
+      "$type": "dimension"
+    }
+  }
+}

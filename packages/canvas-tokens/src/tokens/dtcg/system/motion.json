@@ -1,0 +1,32 @@
+{
+  "easing": {
+    "quick": {
+      "standard": {
+        "$value": "{easing.a-100}",
+        "$type": "cubicBezier"
+      },
+      "acceleration": {
+        "$value": "{easing.a-200}",
+        "$type": "cubicBezier"
+      },
+      "deceleration": {
+        "$value": "{easing.a-300}",
+        "$type": "cubicBezier"
+      }
+    },
+    "purposeful": {
+      "standard": {
+        "$value": "{easing.b-100}",
+        "$type": "cubicBezier"
+      },
+      "acceleration": {
+        "$value": "{easing.b-200}",
+        "$type": "cubicBezier"
+      },
+      "deceleration": {
+        "$value": "{easing.b-300}",
+        "$type": "cubicBezier"
+      }
+    }
+  }
+}

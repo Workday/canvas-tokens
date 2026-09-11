@@ -1,0 +1,178 @@
+{
+  "depth": {
+    "1": {
+      "$value": [
+        {
+          "color": "{color.shadow.1.key}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.1.100.y}",
+          "blur": "{shadow.1.100.blur}",
+          "spread": "{shadow.1.100.spread}"
+        },
+        {
+          "color": "{color.shadow.1.ambient}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.1.200.y}",
+          "blur": "{shadow.1.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Raised surfaces, cards"
+    },
+    "2": {
+      "$value": [
+        {
+          "color": "{color.shadow.2.key}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.2.100.y}",
+          "blur": "{shadow.2.100.blur}",
+          "spread": "{shadow.2.100.spread}"
+        },
+        {
+          "color": "{color.shadow.2.ambient}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.2.200.y}",
+          "blur": "{shadow.2.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Top and bottom navigation, sticky elements"
+    },
+    "3": {
+      "$value": [
+        {
+          "color": "{color.shadow.3.key}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.3.100.y}",
+          "blur": "{shadow.3.100.blur}",
+          "spread": "{shadow.3.100.spread}"
+        },
+        {
+          "color": "{color.shadow.3.ambient}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.3.200.y}",
+          "blur": "{shadow.3.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Floating Action Button, Menu"
+    },
+    "4": {
+      "$value": [
+        {
+          "color": "{color.shadow.4.key}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.4.100.y}",
+          "blur": "{shadow.4.100.blur}",
+          "spread": "{shadow.4.100.spread}"
+        },
+        {
+          "color": "{color.shadow.4.ambient}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.4.200.y}",
+          "blur": "{shadow.4.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Sheets"
+    },
+    "5": {
+      "$value": [
+        {
+          "color": "{color.shadow.5.key}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.5.100.y}",
+          "blur": "{shadow.5.100.blur}",
+          "spread": "{shadow.5.100.spread}"
+        },
+        {
+          "color": "{color.shadow.5.ambient}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.5.200.y}",
+          "blur": "{shadow.5.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Banners, snackbars, toast, non-modal dialogs, non-modal side panels"
+    },
+    "6": {
+      "$value": [
+        {
+          "color": "{color.shadow.6.key}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.6.100.y}",
+          "blur": "{shadow.6.100.blur}",
+          "spread": "{shadow.6.100.spread}"
+        },
+        {
+          "color": "{color.shadow.6.ambient}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{shadow.6.200.y}",
+          "blur": "{shadow.6.200.blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Modal dialogs, modal side panels"
+    }
+  }
+}
