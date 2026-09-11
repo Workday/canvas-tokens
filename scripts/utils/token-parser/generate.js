@@ -14,7 +14,7 @@ import {markDeprecatedTokens} from './tokens.js';
 import {generateVariableTokens} from './variables.js';
 
 export const DEFAULT_INPUT_DIR = 'figma-raw-tokens';
-export const DEFAULT_OUTPUT_DIR = 'packages/canvas-tokens/dtcg/tokens';
+export const DEFAULT_OUTPUT_DIR = 'packages/canvas-tokens/src/tokens/dtcg';
 
 function createSharedContext(payloads, options) {
   const [first, ...rest] = payloads;
