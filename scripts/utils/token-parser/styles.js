@@ -32,7 +32,10 @@ function extractTypographyStyleValue(node, context) {
   }
 
   const value = Object.fromEntries(
-    TYPOGRAPHY_BOUND_KEYS.map(key => [key, resolveDocumentBoundVariable(context, boundVariables, key)])
+    TYPOGRAPHY_BOUND_KEYS.map(key => [
+      key,
+      resolveDocumentBoundVariable(context, boundVariables, key),
+    ])
   );
 
   return TYPOGRAPHY_BOUND_KEYS.every(key => value[key]) ? value : undefined;
@@ -61,18 +64,6 @@ function parseTypographyStyleName(styleName) {
   }
 
   return {category, size, isMono, isLink, detail};
-}
-
-function scoreTypographyStyle(style) {
-  const parsed = parseTypographyStyleName(style.name);
-  if (!parsed) {
-    return -1;
-  }
-
-  let score = 0;
-  if (!parsed.isMono) score += 4;
-  if (!parsed.isLink) score += 2;
-  return score;
 }
 
 function resolveEffectField(context, effect, boundKey, literalValue) {
@@ -143,9 +134,7 @@ export function generateStyleTokens(payload, context) {
   const effectStyles = styles.filter(style => style.style_type === 'EFFECT');
 
   const bestTextStyles = new Map();
-  for (const style of textStyles.sort(
-    (left, right) => scoreTypographyStyle(right) - scoreTypographyStyle(left)
-  )) {
+  for (const style of textStyles) {
     const parsed = parseTypographyStyleName(style.name);
     if (!parsed) {
       continue;
