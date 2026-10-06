@@ -1,4 +1,4 @@
-import {Formatter} from 'style-dictionary';
+import {FormatFn} from 'style-dictionary/types';
 import {isSysShadow} from '../filters';
 
 /**
@@ -6,7 +6,7 @@ import {isSysShadow} from '../filters';
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatCSSShadow: Formatter = ({dictionary}) => {
+export const formatCSSShadow: FormatFn = ({dictionary}) => {
   return dictionary.allTokens
     .filter(isSysShadow)
     .map(token => `  --${token.name}: ${token.value}; /* ${token.comment} */`)
@@ -18,7 +18,7 @@ export const formatCSSShadow: Formatter = ({dictionary}) => {
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatLessShadow: Formatter = ({dictionary}) => {
+export const formatLessShadow: FormatFn = ({dictionary}) => {
   return dictionary.allTokens
     .filter(isSysShadow)
     .map(token => `@${token.name}: ${token.value}; // ${token.comment}`)
@@ -30,7 +30,7 @@ export const formatLessShadow: Formatter = ({dictionary}) => {
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatSassShadow: Formatter = ({dictionary}) => {
+export const formatSassShadow: FormatFn = ({dictionary}) => {
   return dictionary.allTokens
     .filter(isSysShadow)
     .map(token => `$${token.name}: ${token.value}; // ${token.comment}`)

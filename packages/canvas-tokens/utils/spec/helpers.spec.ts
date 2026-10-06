@@ -98,11 +98,8 @@ const mockFallbackBaseToken = {
 
 const mockDicttionary = {
   allTokens: [mockBrandToken, mockMathToken, mockBaseToken, mockCompositeToken],
-  properties: {brand: {primary: {base: mockBrandToken}}},
-  tokens: {sys: {}},
-  allProperties: [],
-  usesReference: () => true,
-  getReferences: () => [],
+  tokens: {brand: {primary: {base: mockBrandToken}}},
+  tokenMap: new Map(),
 };
 
 describe('format helpers', () => {
@@ -238,7 +235,9 @@ describe('utils to change value', () => {
       path: ['sys', 'type', 'body', 'md'],
     };
 
-    const result = changeValuesToCSSVars(mockTypographyToken as any, value => [refMap[value as string]]);
+    const result = changeValuesToCSSVars(mockTypographyToken as any, value => [
+      refMap[value as string],
+    ]);
 
     const expected = {
       fontFamily: {

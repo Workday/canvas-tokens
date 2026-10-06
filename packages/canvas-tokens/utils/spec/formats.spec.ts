@@ -3,75 +3,94 @@ import {formats} from '../formatters';
 
 vi.mock('style-dictionary', () => {
   const mockStyleDictionary = {
-    format: {
-      'es6/objects': ({dictionary}: any) => {
-        const recursivelyFlatObjectValue = ({tokens, isFallback, isRoot = true}: any) => {
-          if (isFallback) {
-            if ('fallbackValue' in tokens) {
-              return tokens.fallbackValue;
+    hooks: {
+      formats: {
+        'es6/objects': ({dictionary}: any) => {
+          const recursivelyFlatObjectValue = ({tokens, isFallback, isRoot = true}: any) => {
+            if (isFallback) {
+              if ('fallbackValue' in tokens) {
+                return tokens.fallbackValue;
+              }
+              if ('cssVarName' in tokens) {
+                return undefined;
+              }
             }
+
             if ('cssVarName' in tokens) {
+              return tokens.cssVarName;
+            }
+
+            const next: Record<string, any> = {};
+
+            for (const key of Object.keys(tokens)) {
+              const value = recursivelyFlatObjectValue({
+                tokens: tokens[key],
+                isFallback,
+                isRoot: false,
+              });
+
+              if (!(isFallback && value === undefined)) {
+                next[key] = value;
+              }
+            }
+
+            if (isFallback && !isRoot && !Object.keys(next).length) {
               return undefined;
             }
-          }
 
-          if ('cssVarName' in tokens) {
-            return tokens.cssVarName;
-          }
+            return next;
+          };
 
-          const next: Record<string, any> = {};
+          const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.tokens});
+          const body = mainTokens
+            ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
+                return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
+              }, '')
+            : '';
 
-          for (const key of Object.keys(tokens)) {
-            const value = recursivelyFlatObjectValue({
-              tokens: tokens[key],
-              isFallback,
-              isRoot: false,
-            });
+          const legacyTokens = recursivelyFlatObjectValue({
+            tokens: dictionary.tokens,
+            isFallback: true,
+          });
+          const legacyBlock = legacyTokens
+            ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+            : '';
 
-            if (!(isFallback && value === undefined)) {
-              next[key] = value;
-            }
-          }
-
-          if (isFallback && !isRoot && !Object.keys(next).length) {
-            return undefined;
-          }
-
-          return next;
-        };
-
-        const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
-        const body = mainTokens
-          ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
-              return (acc += `export const ${key} = ` + JSON.stringify(values, null, 2) + ';\n');
-            }, '')
-          : '';
-
-        const legacyTokens = recursivelyFlatObjectValue({
-          tokens: dictionary.properties,
-          isFallback: true,
-        });
-        const legacyBlock = legacyTokens
-          ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
-          : '';
-
-        return body + legacyBlock;
+          return body + legacyBlock;
+        },
+        'javascript/types': () =>
+          `export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}`,
+        'javascript/common-js': () => `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";`,
+        'css/variables': () => `:root {\n --cnvs-sys-shape-zero: 0rem;\n}`,
+        'css/composite': () =>
+          `.cnvs-sys-border-input-default {\n border: var(--cnvs-sys-line-default);\n}`,
+        'css/shadow': () => ` --cnvs-sys-depth-1: 0 0 0 0 black;`,
       },
-      'javascript/types': () =>
-        `export declare const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n}`,
-      'javascript/common-js': () => `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";`,
-      'css/variables': () => `:root {\n --cnvs-sys-shape-zero: 0rem;\n}`,
-      'css/composite': () =>
-        `.cnvs-sys-border-input-default {\n border: var(--cnvs-sys-line-default);\n}`,
-      'css/shadow': () => ` --cnvs-sys-depth-1: 0 0 0 0 black;`,
-    },
-    formatHelpers: {
-      fileHeader: () => `// Test Header\n\n`,
     },
   };
 
   return {...mockStyleDictionary, default: mockStyleDictionary};
 });
+
+vi.mock('style-dictionary/utils', async importActual => ({
+  ...(await importActual<typeof import('style-dictionary/utils')>()),
+  fileHeader: async () => `// Test Header\n\n`,
+  getReferences: () => [
+    {
+      value: '--cnv-sys-line-disabled',
+      type: 'border',
+      filePath: 'tokens/all.json',
+      isSource: true,
+      original: {
+        value: '1px solid #0875E2',
+        type: 'color',
+      },
+      name: 'lineDefault',
+      attributes: {},
+      path: ['sys', 'line', 'disabled'],
+    },
+  ],
+}));
 
 const headerContent = `// Test Header\n\n`;
 const moduleContent = `"use strict";\nObject.defineProperty(exports, "__esModule", { value: true });\n\n`;
@@ -105,21 +124,6 @@ describe('formats', () => {
           },
         },
       ],
-      getReferences: () => [
-        {
-          value: '--cnv-sys-line-disabled',
-          type: 'border',
-          filePath: 'tokens/all.json',
-          isSource: true,
-          original: {
-            value: '1px solid #0875E2',
-            type: 'color',
-          },
-          name: 'lineDefault',
-          attributes: {},
-          path: ['sys', 'line', 'disabled'],
-        },
-      ],
     };
     mockOptions = {
       fileHeader: () => ['Test Header'],
@@ -134,8 +138,8 @@ describe('formats', () => {
   });
 
   describe('js/common-js', () => {
-    it('should return correct file structure as inline js vars', () => {
-      const result = formats['js/common-js'](defaultArgs);
+    it('should return correct file structure as inline js vars', async () => {
+      const result = await formats['js/common-js'](defaultArgs);
       const expected =
         headerContent +
         moduleContent +
@@ -146,8 +150,8 @@ describe('formats', () => {
   });
 
   describe('js/es6', () => {
-    it('should return correct file structure as inline js vars', () => {
-      const result = formats['js/es6'](defaultArgs);
+    it('should return correct file structure as inline js vars', async () => {
+      const result = await formats['js/es6'](defaultArgs);
       const expected =
         headerContent +
         `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const amber100 = "--cnvs-base-palette-amber-100";\n\nexport const legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
@@ -155,8 +159,8 @@ describe('formats', () => {
       expect(result).toBe(expected);
     });
 
-    it('should use deprecatedValues.base as the inner fallback when present', () => {
-      const result = formats['js/es6']({
+    it('should use deprecatedValues.base as the inner fallback when present', async () => {
+      const result = await formats['js/es6']({
         ...defaultArgs,
         dictionary: {
           allTokens: [
@@ -175,7 +179,6 @@ describe('formats', () => {
               },
             },
           ],
-          getReferences: () => [],
         },
       });
 
@@ -188,8 +191,8 @@ describe('formats', () => {
   });
 
   describe('ts/inline', () => {
-    it('should return correct file structure as inline js vars', () => {
-      const result = formats['ts/inline'](defaultArgs);
+    it('should return correct file structure as inline js vars', async () => {
+      const result = await formats['ts/inline'](defaultArgs);
       const expected =
         headerContent +
         `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport declare const amber100 = "--cnvs-base-palette-amber-100";\n\nexport declare const legacy: {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
@@ -199,12 +202,12 @@ describe('formats', () => {
   });
 
   describe('es6/objects', () => {
-    it('should return correct file structure', () => {
-      const result = formats['es6/objects']({
+    it('should return correct file structure', async () => {
+      const result = await formats['es6/objects']({
         ...defaultArgs,
         dictionary: {
           ...defaultArgs.dictionary,
-          properties: {
+          tokens: {
             opacity: {
               disabled: {
                 cssVarName: '--cnvs-base-opacity-300',
@@ -229,12 +232,12 @@ describe('formats', () => {
   });
 
   describe('common-js/objects', () => {
-    it('should return correct file structure', () => {
-      const result = formats['common-js/objects']({
+    it('should return correct file structure', async () => {
+      const result = await formats['common-js/objects']({
         ...defaultArgs,
         dictionary: {
           ...defaultArgs.dictionary,
-          properties: {
+          tokens: {
             opacity: {
               disabled: {
                 cssVarName: '--cnvs-base-opacity-300',
@@ -260,12 +263,12 @@ describe('formats', () => {
   });
 
   describe('es6/packages-export', () => {
-    it('should return correct file structure', () => {
-      const result = formats['es6/packages-export']({
+    it('should return correct file structure', async () => {
+      const result = await formats['es6/packages-export']({
         ...defaultArgs,
         dictionary: {
           ...defaultArgs.dictionary,
-          properties: {
+          tokens: {
             base: {},
             sys: {},
           },
@@ -280,12 +283,12 @@ describe('formats', () => {
   });
 
   describe('common-js/packages-export', () => {
-    it('should return correct file structure', () => {
-      const result = formats['common-js/packages-export']({
+    it('should return correct file structure', async () => {
+      const result = await formats['common-js/packages-export']({
         ...defaultArgs,
         dictionary: {
           ...defaultArgs.dictionary,
-          properties: {
+          tokens: {
             base: {},
             sys: {},
           },
@@ -301,8 +304,8 @@ describe('formats', () => {
   });
 
   describe('css/composite', () => {
-    it('should return correct file structure', () => {
-      const result = formats['css/composite']({
+    it('should return correct file structure', async () => {
+      const result = await formats['css/composite']({
         ...defaultArgs,
         dictionary: {
           ...defaultArgs.dictionary,
@@ -328,8 +331,8 @@ describe('formats', () => {
   });
 
   describe('scss/composite', () => {
-    it('should return correct file structure', () => {
-      const result = formats['scss/composite']({
+    it('should return correct file structure', async () => {
+      const result = await formats['scss/composite']({
         ...defaultArgs,
         dictionary: {
           ...defaultArgs.dictionary,
@@ -354,8 +357,8 @@ describe('formats', () => {
   });
 
   describe('less/composite', () => {
-    it('should return correct file structure', () => {
-      const result = formats['less/composite']({
+    it('should return correct file structure', async () => {
+      const result = await formats['less/composite']({
         ...defaultArgs,
         dictionary: {
           ...defaultArgs.dictionary,
@@ -380,7 +383,7 @@ describe('formats', () => {
   });
 
   describe('merge/objects', () => {
-    it('should return correct file structure for system tokens', () => {
+    it('should return correct file structure for system tokens', async () => {
       const borderToken = {
         value: '--cnvs-sys-border-input-disabled',
         type: 'composition',
@@ -417,12 +420,12 @@ describe('formats', () => {
         path: ['sys', 'color', 'border', 'input', 'inverse', 'default'],
       };
 
-      const result = formats['merge/objects']({
+      const result = await formats['merge/objects']({
         ...defaultArgs,
         dictionary: {
           ...defaultArgs.dictionary,
           allTokens: [borderToken, legacyBorderToken],
-          properties: {
+          tokens: {
             sys: {
               border: {
                 input: {
@@ -469,15 +472,15 @@ describe('formats', () => {
   });
 
   describe('merge/types', () => {
-    it('should return correct file structure for es6', () => {
-      const result = formats['merge/types']({
+    it('should return correct file structure for es6', async () => {
+      const result = await formats['merge/types']({
         ...defaultArgs,
         options: {
           formats: ['javascript/types'],
           level: 'sys',
         },
         dictionary: {
-          properties: {
+          tokens: {
             opacity: {
               disabled: '--cnvs-base-opacity-300',
             },
@@ -493,8 +496,8 @@ describe('formats', () => {
   });
 
   describe('ts/jsdoc-object', () => {
-    it('should return correct file structure with between line JSDoc', () => {
-      const result = formats['ts/jsdoc-object']({
+    it('should return correct file structure with between line JSDoc', async () => {
+      const result = await formats['ts/jsdoc-object']({
         ...defaultArgs,
         options: {
           originalValues: {
@@ -508,7 +511,7 @@ describe('formats', () => {
           },
         },
         dictionary: {
-          properties: {
+          tokens: {
             opacity: {
               disabled: {
                 cssVarName: '--cnvs-base-opacity-300',
@@ -539,8 +542,8 @@ describe('formats', () => {
       expect(result).toBe(expected);
     });
 
-    it('should have one line jsDoc for tokens without comment', () => {
-      const result = formats['ts/jsdoc-object']({
+    it('should have one line jsDoc for tokens without comment', async () => {
+      const result = await formats['ts/jsdoc-object']({
         ...defaultArgs,
         options: {
           originalValues: {
@@ -552,7 +555,7 @@ describe('formats', () => {
           },
         },
         dictionary: {
-          properties: {
+          tokens: {
             opacity: {
               disabled: {cssVarName: '--cnvs-base-opacity-300'},
               legacy: {
@@ -583,8 +586,8 @@ describe('formats', () => {
   });
 
   describe('merge/refs', () => {
-    it('should return correct file structure for es6', () => {
-      const result = formats['merge/refs']({
+    it('should return correct file structure for es6', async () => {
+      const result = await formats['merge/refs']({
         ...defaultArgs,
         options: {
           formats: ['css/composite', 'css/variables', 'css/shadow'],

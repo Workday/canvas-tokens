@@ -1,7 +1,7 @@
-import {Transform} from 'style-dictionary';
+import {Transform} from 'style-dictionary/types';
 import * as math from 'mathjs';
 
-type Transformer = Transform['transformer'];
+type Transformer = Transform['transform'];
 
 /**
  * [Style Dictionary custom transform function] (https://amzn.github.io/style-dictionary/#/transforms?id=defining-custom-transforms) that transforms hex token value to hsla.

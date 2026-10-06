@@ -1,5 +1,6 @@
+import {fileHeader} from 'style-dictionary/utils';
 import * as math from 'mathjs';
-import {Formatter, TransformedToken, formatHelpers} from 'style-dictionary';
+import {FormatFn, TransformedToken} from 'style-dictionary/types';
 import {recursivelyFlatObjectValue} from './helpers/recursivelyFlatObjectValue';
 
 /** Levels for which a sibling `sana.d.ts` file is generated. */
@@ -13,11 +14,11 @@ const hasSanaModule = (level: unknown): boolean =>
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatJSToTypes: Formatter = ({dictionary, file, options}) => {
+export const formatJSToTypes: FormatFn = async ({dictionary, file, options}) => {
   const {originalValues} = options;
-  const headerContent = formatHelpers.fileHeader({file});
+  const headerContent = await fileHeader({file});
 
-  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.tokens});
 
   const placeholders = Object.keys(mainTokens)
     .map(k => `**${k}**`)
@@ -39,7 +40,7 @@ export const formatJSToTypes: Formatter = ({dictionary, file, options}) => {
   });
 
   const legacyTokens = recursivelyFlatObjectValue({
-    tokens: dictionary.properties,
+    tokens: dictionary.tokens,
     isFallback: true,
     isRoot: true,
   });

@@ -32,7 +32,7 @@ export default {
     },
     es6: {
       transformGroup: 'js',
-      transforms: ['value/variables', 'name/camel'],
+      transforms: ['value/variables', 'name/canvas-camel'],
       fileName: '{level}/{platform}/tokens',
       extensions: ['js', 'd.ts'],
       modifiers: [

@@ -1,4 +1,4 @@
-import {Formatter} from 'style-dictionary';
+import {FormatFn} from 'style-dictionary/types';
 import {formattedCompositeStyles} from './helpers/formattedCompositeStyles';
 
 /**
@@ -6,7 +6,7 @@ import {formattedCompositeStyles} from './helpers/formattedCompositeStyles';
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatCSSComposite: Formatter = ({dictionary, platform}) => {
+export const formatCSSComposite: FormatFn = ({dictionary, platform}) => {
   const {prefix} = platform;
   return formattedCompositeStyles({
     format: (str: string) => `var(--${prefix}${str})`,
@@ -19,7 +19,7 @@ export const formatCSSComposite: Formatter = ({dictionary, platform}) => {
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatLessComposite: Formatter = ({dictionary, platform}) => {
+export const formatLessComposite: FormatFn = ({dictionary, platform}) => {
   const {prefix} = platform;
   return formattedCompositeStyles({
     format: (str: string) => `@${prefix}${str}`,
@@ -32,7 +32,7 @@ export const formatLessComposite: Formatter = ({dictionary, platform}) => {
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatSassComposite: Formatter = ({dictionary, platform}) => {
+export const formatSassComposite: FormatFn = ({dictionary, platform}) => {
   const {prefix} = platform;
   return formattedCompositeStyles({
     format: (str: string) => `$${prefix}${str}`,

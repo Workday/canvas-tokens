@@ -1,4 +1,4 @@
-import {DesignToken} from 'style-dictionary';
+import {DesignToken} from 'style-dictionary/types';
 
 type Transformer = (token: DesignToken) => string;
 

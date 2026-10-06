@@ -1,4 +1,5 @@
-import StyleDictionary, {Formatter} from 'style-dictionary';
+import StyleDictionary from 'style-dictionary';
+import {FormatFn} from 'style-dictionary/types';
 
 /**
  * Style Dictionary format function that transform default format to type file.
@@ -8,13 +9,13 @@ import StyleDictionary, {Formatter} from 'style-dictionary';
  * @returns file content as a string
  */
 
-export const mergeTypes: Formatter = params => {
+export const mergeTypes: FormatFn = async params => {
   const {options} = params;
   const {
     formats: [defaultFormat, ...restFormats],
   } = options;
 
-  const content = StyleDictionary.format[defaultFormat]({
+  const content = await StyleDictionary.hooks.formats[defaultFormat]({
     ...params,
     options: {...options, formats: restFormats},
   });

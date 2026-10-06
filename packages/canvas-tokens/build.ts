@@ -11,7 +11,7 @@ const config = setConfig({
   platformOptions: {
     'css, scss, less': {
       buildPath: '../canvas-tokens-web/',
-      transformGroup: 'web',
+      transformGroup: 'canvas-web',
       fileName: '{platform}/{level}/_variables',
       prefix: 'cnvs-',
       format: '{platform}/variables',
@@ -184,14 +184,14 @@ const sanaConfig = setConfig({
 Object.entries(formats).forEach(([key, value]) => {
   StyleDictionary.registerFormat({
     name: key,
-    formatter: value,
+    format: value,
   });
 });
 
 Object.entries(filters).forEach(([key, value]) => {
   StyleDictionary.registerFilter({
     name: key,
-    matcher: value,
+    filter: value,
   });
 });
 
@@ -203,7 +203,7 @@ Object.entries(transforms).forEach(([key, value]) => {
 });
 
 const webTransforms = [
-  'name/cti/kebab',
+  'name/kebab',
   'value/duration/ms',
   'value/flatten-border',
   'value/flatten-oklch',
@@ -238,7 +238,7 @@ StyleDictionary.registerTransformGroup({
 });
 
 StyleDictionary.registerTransformGroup({
-  name: 'web',
+  name: 'canvas-web',
   transforms: webTransforms,
 });
 
@@ -257,5 +257,11 @@ StyleDictionary.registerTransformGroup({
   transforms: [],
 });
 
-StyleDictionary.extend(config).buildAllPlatforms();
-StyleDictionary.extend(sanaConfig).buildAllPlatforms();
+const build = async () => {
+  await new StyleDictionary(config).buildAllPlatforms();
+  await new StyleDictionary(sanaConfig).buildAllPlatforms();
+};
+
+build().catch(error => {
+  console.error(error);
+});

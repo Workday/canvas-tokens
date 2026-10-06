@@ -1,4 +1,4 @@
-import {Dictionary} from 'style-dictionary';
+import {Dictionary} from 'style-dictionary/types';
 import {kebabCase} from 'case-anything';
 import {generateFallbacks} from '../../transformers/generateNewTokenFallback';
 
@@ -29,7 +29,10 @@ export const getLegacyEntries = (tokens: Dictionary['allTokens']) => {
 
       return {
         name: token.name,
-        value: `var(--${cssVarName}, ${generateFallbacks(fallbackValues, baseValue || token.value)})`,
+        value: `var(--${cssVarName}, ${generateFallbacks(
+          fallbackValues,
+          baseValue || token.value
+        )})`,
       };
     });
 };

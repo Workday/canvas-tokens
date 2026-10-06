@@ -1,4 +1,4 @@
-import {Formatter} from 'style-dictionary';
+import {FormatFn} from 'style-dictionary/types';
 import {
   formatToInlineCommonJSModule,
   formatToInlineES6Module,
@@ -22,7 +22,7 @@ import {
   formatSanaObjectTypes,
 } from './formatSanaObject';
 
-export const formats: Record<string, Formatter> = {
+export const formats: Record<string, FormatFn> = {
   // formatter creating the inline common-js file structure
   // with separated variables of tokens
   'js/common-js': formatToInlineCommonJSModule,

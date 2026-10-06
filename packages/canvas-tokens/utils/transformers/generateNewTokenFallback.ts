@@ -1,4 +1,4 @@
-import {Transform} from 'style-dictionary';
+import {Transform} from 'style-dictionary/types';
 
 const refToCSSVar = (ref: string): string => {
   const path = ref.startsWith('{') && ref.endsWith('}') ? ref.slice(1, -1) : ref;
@@ -40,7 +40,7 @@ export const generateFallbacks = (array: string[], rawValue: string): string => 
   return `var(${currentValue}, ${generateFallbacks(rest, rawValue)})`;
 };
 
-export const generateNewTokenFallback: Transform['transformer'] = token => {
+export const generateNewTokenFallback: Transform['transform'] = token => {
   const deprecatedValues = token.original.deprecatedValues;
   if (typeof deprecatedValues === 'object' && deprecatedValues !== null) {
     const {base: baseValue, ...refs} = deprecatedValues as Record<string, unknown>;

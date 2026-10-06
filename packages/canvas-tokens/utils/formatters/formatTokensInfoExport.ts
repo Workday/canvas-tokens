@@ -1,4 +1,4 @@
-import {Dictionary, Formatter} from 'style-dictionary';
+import {Dictionary, FormatFn} from 'style-dictionary/types';
 import {json2csv} from 'json-2-csv';
 
 const getTokensInfo = (tokens: Dictionary['allTokens']) => {
@@ -18,7 +18,7 @@ const getTokensInfo = (tokens: Dictionary['allTokens']) => {
  * @param {FormatterArguments} - Style Dictionary formatter object containing `dictionary` property.
  * @returns file content as a string
  */
-export const formatTokensInfoExport: Formatter = ({dictionary}) => {
+export const formatTokensInfoExport: FormatFn = ({dictionary}) => {
   const tokens = getTokensInfo(dictionary.allTokens);
   return JSON.stringify(tokens, null, 2);
 };
@@ -28,7 +28,7 @@ export const formatTokensInfoExport: Formatter = ({dictionary}) => {
  * @param {FormatterArguments} - Style Dictionary formatter object containing `dictionary` property.
  * @returns file content as a string
  */
-export const formatTokensInfoExportCSV: Formatter = ({dictionary}) => {
+export const formatTokensInfoExportCSV: FormatFn = ({dictionary}) => {
   const tokens = getTokensInfo(dictionary.allTokens);
   return json2csv(tokens, {emptyFieldValue: ''});
 };

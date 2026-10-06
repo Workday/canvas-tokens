@@ -1,4 +1,4 @@
-import {DesignToken} from 'style-dictionary';
+import {DesignToken} from 'style-dictionary/types';
 
 /**
  * [Style Dictionary custom transform function](https://amzn.github.io/style-dictionary/#/transforms?id=defining-custom-transforms) that

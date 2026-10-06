@@ -1,4 +1,4 @@
-import {Dictionary, TransformedToken} from 'style-dictionary';
+import {Dictionary, TransformedToken} from 'style-dictionary/types';
 import {camelCase} from 'case-anything';
 import * as math from 'mathjs';
 import {isMathExpression, isComposite} from '../../filters';
@@ -28,7 +28,7 @@ export const formattedObjectInnerValues: CompositeHelper = ({
   dictionary,
   changeValueFn,
 }) => {
-  const parsed = dictionary.properties[format];
+  const parsed = dictionary.tokens[format];
   const filteredTokens = dictionary.allTokens.filter(
     ({path: [ctg]}) => ctg !== 'base' && ctg === format
   );
@@ -153,7 +153,7 @@ const resolveCompositeLeafFallback = (ref: TransformedToken): string => {
  */
 export const changeValuesToCSSVars = (
   token: TransformedToken,
-  getRefs: Dictionary['getReferences']
+  getRefs: (value: string) => TransformedToken[]
 ): Record<string, CSSVarObject> | CSSVarObject => {
   const originalValue = token.original.value;
   const deprecatedValues = token.original.deprecatedValues;

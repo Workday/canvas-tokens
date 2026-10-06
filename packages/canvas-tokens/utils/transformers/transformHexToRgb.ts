@@ -1,4 +1,4 @@
-import {DesignToken} from 'style-dictionary';
+import {DesignToken} from 'style-dictionary/types';
 import chroma from 'chroma-js';
 
 type Transformer = (token: DesignToken) => string;

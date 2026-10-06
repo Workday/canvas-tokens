@@ -1,7 +1,10 @@
-import {Dictionary, Formatter, TransformedToken, formatHelpers} from 'style-dictionary';
+import {fileHeader, getReferences} from 'style-dictionary/utils';
+import {Dictionary, FormatFn, TransformedToken} from 'style-dictionary/types';
 import {camelCase} from 'case-anything';
 import {jsFileHeader} from './helpers/jsFileHeader';
 import {getCSSVarName} from './helpers/cssVar';
+
+type GetRefs = (value: string) => TransformedToken[];
 
 type SanaTree = {[key: string]: string | SanaTree};
 
@@ -24,11 +27,7 @@ const refToCSSVarName = (ref: string): string =>
  *  - `fallback` is an empty string: omit the fallback entirely (`var(--cnvs-self)`).
  *  - no `fallback` (undefined): keep the previous strategy (`var(--cnvs-self, <raw>)`).
  */
-const buildVarWithFallback = (
-  cssVarName: string,
-  fallback: unknown,
-  rawValue: unknown
-): string => {
+const buildVarWithFallback = (cssVarName: string, fallback: unknown, rawValue: unknown): string => {
   if (typeof fallback === 'string') {
     if (fallback.length === 0) {
       return `var(--${cssVarName})`;
@@ -53,10 +52,7 @@ const buildVarExpressionWithFallback = (token: TransformedToken): string =>
  * do, falling back to the resolved value so the declarations stay usable even
  * when no CSS theme is loaded.
  */
-const buildTypographyValue = (
-  token: TransformedToken,
-  getRefs: Dictionary['getReferences']
-): SanaTree => {
+const buildTypographyValue = (token: TransformedToken, getRefs: GetRefs): SanaTree => {
   const original = token.original?.value as Record<string, unknown> | undefined;
   const resolved = (token.value ?? {}) as Record<string, unknown>;
   const tree: SanaTree = {};
@@ -94,10 +90,7 @@ const buildTypographyValue = (
  * is a valid JS/TS string. Typography tokens return a nested object (one
  * entry per sub-property) instead of a flat string.
  */
-const buildSanaValue = (
-  token: TransformedToken,
-  getRefs: Dictionary['getReferences']
-): string | SanaTree => {
+const buildSanaValue = (token: TransformedToken, getRefs: GetRefs): string | SanaTree => {
   if (token.type === 'typography') {
     return buildTypographyValue(token, getRefs);
   }
@@ -133,7 +126,9 @@ const setSanaProperty = (
   const key = camelCase(head);
   const existing = output[key];
   const next: SanaTree =
-    existing && typeof existing === 'object' ? existing : ((output[key] = {}), output[key] as SanaTree);
+    existing && typeof existing === 'object'
+      ? existing
+      : ((output[key] = {}), output[key] as SanaTree);
 
   setSanaProperty(next, rest, level, value);
 };
@@ -142,7 +137,7 @@ const setSanaProperty = (
 const buildSanaTree = (
   tokens: Dictionary['allTokens'],
   level: string,
-  getRefs: Dictionary['getReferences']
+  getRefs: GetRefs
 ): SanaTree => {
   const tree: SanaTree = {};
 
@@ -154,10 +149,7 @@ const buildSanaTree = (
 };
 
 /** Builds flat `{name, value}` entries for the `base` level. */
-const getFlatSanaEntries = (
-  tokens: Dictionary['allTokens'],
-  getRefs: Dictionary['getReferences']
-) =>
+const getFlatSanaEntries = (tokens: Dictionary['allTokens'], getRefs: GetRefs) =>
   tokens.map(token => {
     const value = buildSanaValue(token, getRefs);
     return {
@@ -190,10 +182,7 @@ const renderSanaTree = (tree: SanaTree, depth = 1): string => {
   return `{\n${lines.join(',\n')}\n${closeIndent}}`;
 };
 
-const renderFlatBody = (
-  tokens: Dictionary['allTokens'],
-  getRefs: Dictionary['getReferences']
-) => {
+const renderFlatBody = (tokens: Dictionary['allTokens'], getRefs: GetRefs) => {
   const entries = getFlatSanaEntries(tokens, getRefs);
 
   return `{\n${entries.map(({name, value}) => `  ${name}: "${value}"`).join(',\n')}\n}`;
@@ -204,7 +193,8 @@ const renderSanaBody = (dictionary: Dictionary, level: string) => {
     return null;
   }
 
-  const getRefs: Dictionary['getReferences'] = value => dictionary.getReferences(value);
+  const getRefs: GetRefs = value =>
+    getReferences(value, dictionary.unfilteredTokens ?? dictionary.tokens);
 
   if (level === 'brand' || level === 'sys') {
     return renderSanaTree(buildSanaTree(dictionary.allTokens, level, getRefs));
@@ -220,10 +210,10 @@ const renderSanaBody = (dictionary: Dictionary, level: string) => {
  * for `brand`, and fully nested for `sys`.
  * @returns file content as a string
  */
-export const formatSanaObjectCommonJS: Formatter = ({dictionary, file, options}) => {
+export const formatSanaObjectCommonJS: FormatFn = async ({dictionary, file, options}) => {
   const headerContent = !options.withoutModule
-    ? jsFileHeader({file})
-    : formatHelpers.fileHeader({file});
+    ? await jsFileHeader({file})
+    : await fileHeader({file});
 
   const body = renderSanaBody(dictionary, options.level as string);
 
@@ -237,8 +227,8 @@ export const formatSanaObjectCommonJS: Formatter = ({dictionary, file, options})
  * for `brand`, and fully nested for `sys`.
  * @returns file content as a string
  */
-export const formatSanaObjectES6: Formatter = ({dictionary, file, options}) => {
-  const headerContent = formatHelpers.fileHeader({file});
+export const formatSanaObjectES6: FormatFn = async ({dictionary, file, options}) => {
+  const headerContent = await fileHeader({file});
 
   const body = renderSanaBody(dictionary, options.level as string);
 
@@ -251,8 +241,8 @@ export const formatSanaObjectES6: Formatter = ({dictionary, file, options}) => {
  * Each leaf is typed as a literal CSS-variable string.
  * @returns file content as a string
  */
-export const formatSanaObjectTypes: Formatter = ({dictionary, file, options}) => {
-  const headerContent = formatHelpers.fileHeader({file});
+export const formatSanaObjectTypes: FormatFn = async ({dictionary, file, options}) => {
+  const headerContent = await fileHeader({file});
 
   const body = renderSanaBody(dictionary, options.level as string);
 

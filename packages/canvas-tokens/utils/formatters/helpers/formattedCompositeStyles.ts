@@ -1,4 +1,4 @@
-import {Dictionary, TransformedToken} from 'style-dictionary';
+import {Dictionary, TransformedToken} from 'style-dictionary/types';
 import {isComposite} from '../../filters';
 
 export function resolveRef(ref: string, resolver: (full: string, ref: string) => string) {

@@ -1,12 +1,14 @@
-import StyleDictionary, {Formatter, Options, TransformedToken} from 'style-dictionary';
+import StyleDictionary from 'style-dictionary';
+import {Config, FormatFn, LocalOptions, TransformedToken} from 'style-dictionary/types';
+import {getReferences} from 'style-dictionary/utils';
 import {
   formattedObjectInnerValues,
   changeValuesToCSSVars,
   getOriginalValues,
 } from './helpers/formattedObjectInnerValues';
 
-interface ExtendedOptions extends Options {
-  formats: string | Formatter[];
+interface ExtendedOptions extends Config, LocalOptions {
+  formats: (string | FormatFn)[];
   level: 'brand' | 'sys';
 }
 
@@ -23,7 +25,7 @@ interface ExtendedOptions extends Options {
  * `level` property as 'brand' or 'sys' to filter tokens based on levels
  * @returns file content as a string
  */
-export const mergeObjects: Formatter = ({dictionary, options, ...rest}) => {
+export const mergeObjects: FormatFn = async ({dictionary, options, ...rest}) => {
   const {
     formats: [defaultFormat],
     level,
@@ -33,7 +35,9 @@ export const mergeObjects: Formatter = ({dictionary, options, ...rest}) => {
     format: level,
     dictionary,
     changeValueFn: (token: TransformedToken) =>
-      changeValuesToCSSVars(token, value => dictionary.getReferences(value)),
+      changeValuesToCSSVars(token, (value: string) =>
+        getReferences(value, dictionary.unfilteredTokens ?? dictionary.tokens)
+      ),
   });
 
   const originalValues = formattedObjectInnerValues({
@@ -43,7 +47,7 @@ export const mergeObjects: Formatter = ({dictionary, options, ...rest}) => {
   });
 
   const params = {
-    dictionary: {...dictionary, properties},
+    dictionary: {...dictionary, tokens: properties},
     options: {
       ...options,
       originalValues,
@@ -53,7 +57,7 @@ export const mergeObjects: Formatter = ({dictionary, options, ...rest}) => {
 
   const content =
     typeof defaultFormat === 'string'
-      ? StyleDictionary.format[defaultFormat](params)
+      ? StyleDictionary.hooks.formats[defaultFormat](params)
       : defaultFormat(params);
 
   return content;

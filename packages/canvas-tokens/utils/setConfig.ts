@@ -1,13 +1,20 @@
-import {Config, Platform, File, Formatter, Options, Matcher} from 'style-dictionary';
-import {DesignToken} from 'style-dictionary/types/DesignToken';
+import {
+  Config,
+  PlatformConfig,
+  File,
+  FormatFn,
+  LocalOptions,
+  Filter,
+  TransformedToken,
+} from 'style-dictionary/types';
 
 export interface Modifier {
   level: string[];
   format?: string;
-  filter?: Matcher | Matcher[];
+  filter?: Filter['filter'] | Filter['filter'][];
   combineWith?: string[];
   transforms?: string[];
-  options?: Options;
+  options?: LocalOptions;
   filterByLevel?: boolean;
   extensions?: string[];
   destination?: string;
@@ -36,7 +43,7 @@ interface FileGenerationProps {
   platform: string;
   fileName: string;
   modifiers: Modifier[];
-  format?: string | Formatter;
+  format?: string | FormatFn;
   destination?: string;
 }
 
@@ -61,8 +68,8 @@ const generatePlatforms = ({
   platforms,
   platformOptions,
   levels,
-}: ExtraProps): Record<string, Platform> => {
-  return platforms?.reduce((acc: Record<string, Platform>, platform: string) => {
+}: ExtraProps): Record<string, PlatformConfig> => {
+  return platforms?.reduce((acc: Record<string, PlatformConfig>, platform: string) => {
     const {
       transformGroup = platform,
       extensions = [platform],
@@ -86,7 +93,7 @@ const generatePlatforms = ({
   }, {});
 };
 
-const filterPlatformOptions = (options: Options['platformOptions'], platform: string) => {
+const filterPlatformOptions = (options: Record<string, PlatformOptions>, platform: string) => {
   if (!options) return {};
 
   const {'*': allOptions = {}, ...rest} = options;
@@ -142,7 +149,7 @@ const generateFiles = ({
             : defDestination,
         };
 
-        const formats = combineWith.map((format: string | Formatter) =>
+        const formats = combineWith.map((format: string | FormatFn) =>
           validateFormat(platform, level, format)
         );
 
@@ -170,15 +177,15 @@ const generateFiles = ({
 const resolveName = (name: string, platform: string, level: string) =>
   name.replace(/{platform}/g, platform).replace(/{level}/g, level === 'sys' ? 'system' : level);
 
-const validateFormat = (platform: string, level: string, format?: string | Formatter) =>
+const validateFormat = (platform: string, level: string, format?: string | FormatFn) =>
   typeof format === 'string'
     ? resolveName(format, platform, level)
     : format || `${platform}/variables`;
 
 const combineFilters =
-  (filters: Matcher[], {filtered, level}: {filtered?: boolean; level: string}) =>
-  (token: DesignToken) => {
-    const levelFilter = ({path: [ctg]}: DesignToken) => !level || ctg === level;
+  (filters: Filter['filter'][], {filtered, level}: {filtered?: boolean; level: string}) =>
+  (token: TransformedToken) => {
+    const levelFilter = ({path: [ctg]}: TransformedToken) => !level || ctg === level;
     const allFilters = filtered ? [levelFilter, ...filters] : filters;
     return allFilters.map((filter: any) => filter(token)).every((result: boolean) => result);
   };

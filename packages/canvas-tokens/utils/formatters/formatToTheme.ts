@@ -1,4 +1,4 @@
-import {Formatter} from 'style-dictionary';
+import {FormatFn} from 'style-dictionary/types';
 import {getCSSVarNameFromRef} from './helpers/cssVar';
 
 const getValue = (value: any, originalValue: any, type: 'css' | 'sass' | 'less') => {
@@ -21,7 +21,7 @@ const getValue = (value: any, originalValue: any, type: 'css' | 'sass' | 'less')
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatCSSTheme: Formatter = ({dictionary}) => {
+export const formatCSSTheme: FormatFn = ({dictionary}) => {
   return `[data-theme="sana-canvas"] {
     ${dictionary.allTokens
       .map(
@@ -36,7 +36,7 @@ export const formatCSSTheme: Formatter = ({dictionary}) => {
 }`;
 };
 
-export const formatSassTheme: Formatter = ({dictionary}) => {
+export const formatSassTheme: FormatFn = ({dictionary}) => {
   return `[data-theme="sana-canvas"] {
     ${dictionary.allTokens
       .map(
@@ -51,7 +51,7 @@ export const formatSassTheme: Formatter = ({dictionary}) => {
 }`;
 };
 
-export const formatLessTheme: Formatter = ({dictionary}) => {
+export const formatLessTheme: FormatFn = ({dictionary}) => {
   return `[data-theme="sana-canvas"] {
     ${dictionary.allTokens
       .map(

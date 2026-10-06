@@ -3,27 +3,25 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "targets": {
     "storybook": {
-      "executor": "@nx/storybook:storybook",
+      "executor": "nx:run-commands",
       "options": {
-        "port": 4400,
-        "configDir": "packages/canvas-tokens-docs/.storybook"
+        "command": "storybook dev --port 4400 --config-dir packages/canvas-tokens-docs/.storybook"
       },
       "configurations": {
         "ci": {
-          "quiet": true
+          "command": "storybook dev --port 4400 --config-dir packages/canvas-tokens-docs/.storybook --quiet"
         }
       }
     },
     "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/docs/storybook/@workday/canvas-tokens-docs"],
       "options": {
-        "outputDir": "docs/storybook/@workday/canvas-tokens-docs",
-        "configDir": "packages/canvas-tokens-docs/.storybook"
+        "command": "storybook build --config-dir packages/canvas-tokens-docs/.storybook --output-dir docs/storybook/@workday/canvas-tokens-docs"
       },
       "configurations": {
         "ci": {
-          "quiet": true
+          "command": "storybook build --config-dir packages/canvas-tokens-docs/.storybook --output-dir docs/storybook/@workday/canvas-tokens-docs --quiet"
         }
       }
     }

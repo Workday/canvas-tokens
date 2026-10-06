@@ -1,4 +1,4 @@
-import {DesignToken} from 'style-dictionary';
+import {DesignToken} from 'style-dictionary/types';
 import * as math from 'mathjs';
 
 const transformNumber = (number: string | number) => {
@@ -16,9 +16,7 @@ const transformNumber = (number: string | number) => {
       ? math.evaluate(cleanedNumber)
       : cleanedNumber;
 
-  const numericValue = isRem
-    ? parseFloat(String(finalvalue))
-    : parseFloat(String(finalvalue)) / 16;
+  const numericValue = isRem ? parseFloat(String(finalvalue)) : parseFloat(String(finalvalue)) / 16;
 
   if (numericValue === 0) {
     return '0';

@@ -17,8 +17,9 @@ const defaultOptions = {};
 
 describe('transforms', () => {
   it('should turn palette color to rgba', () => {
-    const result = transforms['value/hex-to-rgba'].transformer(
+    const result = transforms['value/hex-to-rgba'].transform(
       {...defaultToken, value: '#ffefee'},
+      {},
       defaultOptions
     );
     const expected = 'rgba(255,239,238,1)';
@@ -27,8 +28,9 @@ describe('transforms', () => {
   });
 
   it('should turn sys color to correct rgba', () => {
-    const result = transforms['value/flatten-rgba'].transformer(
+    const result = transforms['value/flatten-rgba'].transform(
       {...defaultToken, value: 'rgba(rgba(0,0,0,1),0.5)'},
+      {},
       defaultOptions
     );
     const expected = 'rgba(0,0,0,0.5)';
@@ -37,8 +39,9 @@ describe('transforms', () => {
   });
 
   it('should handle percentage alpha in rgba', () => {
-    const result = transforms['value/flatten-rgba'].transformer(
+    const result = transforms['value/flatten-rgba'].transform(
       {...defaultToken, value: 'rgba(rgba(0,0,0,1),50%)'},
+      {},
       defaultOptions
     );
     const expected = 'rgba(0,0,0,0.5)';
@@ -47,8 +50,9 @@ describe('transforms', () => {
   });
 
   it('should handle space before opacity', () => {
-    const result = transforms['value/flatten-rgba'].transformer(
+    const result = transforms['value/flatten-rgba'].transform(
       {...defaultToken, value: 'rgba(rgba(0,0,0,1), 50%)'},
+      {},
       defaultOptions
     );
     const expected = 'rgba(0,0,0,0.5)';
@@ -57,7 +61,7 @@ describe('transforms', () => {
   });
 
   it('should handle fallback value when deprecated values are provided', () => {
-    const result = transforms['value/deprecated-values'].transformer(
+    const result = transforms['value/deprecated-values'].transform(
       {
         ...defaultToken,
         value: 'blue',
@@ -65,6 +69,7 @@ describe('transforms', () => {
         path: ['base', 'palette', 'blue', '600'],
         deprecatedValues: {v2: 'base.palette.blueberry.400'},
       },
+      {},
       defaultOptions
     );
     const expected = 'var(--cnvs-base-palette-blueberry-400, blue)';
@@ -73,7 +78,7 @@ describe('transforms', () => {
   });
 
   it('should handle fallback value when deprecated values are empty', () => {
-    const result = transforms['value/deprecated-values'].transformer(
+    const result = transforms['value/deprecated-values'].transform(
       {
         value: 'oklch(0.4658 0.1562 255.5 / 1)',
         type: 'color',
@@ -91,6 +96,7 @@ describe('transforms', () => {
         attributes: {},
         path: ['brand', 'primary', '700'],
       },
+      {},
       defaultOptions
     );
     const expected = 'oklch(0.4658 0.1562 255.5 / 1)';
@@ -99,7 +105,7 @@ describe('transforms', () => {
   });
 
   it('should handle fallback value with base value', () => {
-    const result = transforms['value/deprecated-values'].transformer(
+    const result = transforms['value/deprecated-values'].transform(
       {
         ...defaultToken,
         value: 'blue',
@@ -110,6 +116,7 @@ describe('transforms', () => {
         path: ['base', 'palette', 'blue', '600'],
         deprecatedValues: {v2: 'base.palette.blueberry.400', base: 'light-blue'},
       },
+      {},
       defaultOptions
     );
     const expected = 'var(--cnvs-base-palette-blueberry-400, light-blue)';
@@ -153,8 +160,9 @@ describe('transforms', () => {
   });
 
   it('should handle space before opacity', () => {
-    const result = transforms['value/flatten-rgba'].transformer(
+    const result = transforms['value/flatten-rgba'].transform(
       {...defaultToken, value: 'rgba(rgba(0,0,0,1),50)'},
+      {},
       defaultOptions
     );
     const expected = 'rgba(0,0,0,0.5)';
@@ -163,8 +171,9 @@ describe('transforms', () => {
   });
 
   it('should handle space before opacity', () => {
-    const result = transforms['value/flatten-rgba'].transformer(
+    const result = transforms['value/flatten-rgba'].transform(
       {...defaultToken, value: 'rgba(rgba(0,0,0,1),.64)'},
+      {},
       defaultOptions
     );
     const expected = 'rgba(0,0,0,0.64)';
@@ -173,12 +182,13 @@ describe('transforms', () => {
   });
 
   it('should turn sys color to correct rgba', () => {
-    const result = transforms['value/flatten-rgba'].transformer(
+    const result = transforms['value/flatten-rgba'].transform(
       {
         ...defaultToken,
         value:
           '0 0.375rem 1.5rem 0 rgba(rgba(31,38,46,1),0.12), 0 0.75rem 3rem 0 rgba(rgba(31,38,46,1),0.08)',
       },
+      {},
       defaultOptions
     );
     const expected =
@@ -188,8 +198,9 @@ describe('transforms', () => {
   });
 
   it('should return token css var name', () => {
-    const result = transforms['value/variables'].transformer(
+    const result = transforms['value/variables'].transform(
       {...defaultToken, path: ['base', 'shadow', '100']},
+      {},
       defaultOptions
     );
     const expected = '--cnvs-base-shadow-100';
@@ -198,8 +209,9 @@ describe('transforms', () => {
   });
 
   it('should wrap font family token with quotes', () => {
-    const result = transforms['value/wrapped-font-family'].transformer(
+    const result = transforms['value/wrapped-font-family'].transform(
       {...defaultToken, value: 'Roboto'},
+      {},
       defaultOptions
     );
     const expected = '"Roboto"';
@@ -208,8 +220,9 @@ describe('transforms', () => {
   });
 
   it('should convert letter spacing values from px to rem', () => {
-    const result = transforms['value/letter-spacing/px2rem'].transformer(
+    const result = transforms['value/letter-spacing/px2rem'].transform(
       {...defaultToken, value: '0.4'},
+      {},
       defaultOptions
     );
     const expected = '0.025rem';
@@ -218,8 +231,9 @@ describe('transforms', () => {
   });
 
   it('should convert line height values from px to rem', () => {
-    const result = transforms['value/line-height/px2rem'].transformer(
+    const result = transforms['value/line-height/px2rem'].transform(
       {...defaultToken, value: '16'},
+      {},
       defaultOptions
     );
     const expected = '1rem';
@@ -228,8 +242,9 @@ describe('transforms', () => {
   });
 
   it('should change font weight value to lower case', () => {
-    const result = transforms['value/font-weight/numbers'].transformer(
+    const result = transforms['value/font-weight/numbers'].transform(
       {...defaultToken, value: 'Bold'},
+      {},
       defaultOptions
     );
     const expected = '700';
@@ -238,12 +253,13 @@ describe('transforms', () => {
   });
 
   it('should resolve math expression for base tokens', () => {
-    const result = transforms['value/math'].transformer(
+    const result = transforms['value/math'].transform(
       {
         ...defaultToken,
         value: '16rem * 0.5',
         path: ['base', 'font-size', '15'],
       },
+      {},
       defaultOptions
     );
     const expected = '8rem';
@@ -252,12 +268,13 @@ describe('transforms', () => {
   });
 
   it('should resolve math expression for sys tokens', () => {
-    const result = transforms['value/math'].transformer(
+    const result = transforms['value/math'].transform(
       {
         ...defaultToken,
         value: '16rem * 0.5',
         path: ['sys', 'space', 'x4'],
       },
+      {},
       defaultOptions
     );
     const expected = 'calc(16rem * 0.5)';
@@ -266,11 +283,12 @@ describe('transforms', () => {
   });
 
   it('should transform name to camel case without token category for palette', () => {
-    const result = transforms['name/camel'].transformer(
+    const result = transforms['name/canvas-camel'].transform(
       {
         ...defaultToken,
         path: ['base', 'palette', 'blueberry', '100'],
       },
+      {},
       defaultOptions
     );
     const expected = 'blueberry100';
@@ -279,11 +297,12 @@ describe('transforms', () => {
   });
 
   it('should transform name to camel case without token category for palette', () => {
-    const result = transforms['name/camel'].transformer(
+    const result = transforms['name/canvas-camel'].transform(
       {
         ...defaultToken,
         path: ['base', 'extended', 'palette', 'dragon-fruit', '100'],
       },
+      {},
       defaultOptions
     );
     const expected = 'extendedDragonFruit100';
@@ -292,11 +311,12 @@ describe('transforms', () => {
   });
 
   it('should transform name to camel case without level', () => {
-    const result = transforms['name/camel'].transformer(
+    const result = transforms['name/canvas-camel'].transform(
       {
         ...defaultToken,
         path: ['base', 'shadow', '100'],
       },
+      {},
       defaultOptions
     );
     const expected = 'shadow100';
@@ -305,11 +325,12 @@ describe('transforms', () => {
   });
 
   it('should transform name to camel case for base level', () => {
-    const result = transforms['name/camel'].transformer(
+    const result = transforms['name/canvas-camel'].transform(
       {
         ...defaultToken,
         path: ['base', 'level'],
       },
+      {},
       defaultOptions
     );
     const expected = 'baseLevel';
@@ -360,7 +381,7 @@ describe('transforms', () => {
       },
       path: ['base', 'shadow', '100'],
     };
-    const result = transforms['value/shadow/flat-sys'].transformer(token, defaultOptions);
+    const result = transforms['value/shadow/flat-sys'].transform(token, {}, defaultOptions);
     const expected =
       '0 0.0625rem 0.25rem 0 rgba({palette.licorice.600},{opacity.200}), 0 0.125rem 1rem 0 rgba({palette.licorice.600},{opacity.100})';
 
@@ -368,7 +389,7 @@ describe('transforms', () => {
   });
 
   it('should flat line value', () => {
-    const result = transforms['value/flatten-border'].transformer(
+    const result = transforms['value/flatten-border'].transform(
       {
         ...defaultToken,
         value: {
@@ -377,6 +398,7 @@ describe('transforms', () => {
           style: 'solid',
         },
       },
+      {},
       defaultOptions
     );
     const expected = '1rem solid {palette.licorice.600}';
@@ -385,8 +407,9 @@ describe('transforms', () => {
   });
 
   it('should convert opacity to number below 1', () => {
-    const result = transforms['value/opacity'].transformer(
+    const result = transforms['value/opacity'].transform(
       {...defaultToken, value: '40'},
+      {},
       defaultOptions
     );
     const expected = '0.4';
@@ -395,8 +418,9 @@ describe('transforms', () => {
   });
 
   it('should add ms suffix to duration values', () => {
-    const result = transforms['value/duration/ms'].transformer(
+    const result = transforms['value/duration/ms'].transform(
       {...defaultToken, value: '1000'},
+      {},
       defaultOptions
     );
     const expected = '1000ms';
@@ -405,7 +429,7 @@ describe('transforms', () => {
   });
 
   it('should wrap combined token references from original.value in calc() for deprecated fallbacks', () => {
-    const result = transforms['value/deprecated-values'].transformer(
+    const result = transforms['value/deprecated-values'].transform(
       {
         ...defaultToken,
         value: '3rem',
@@ -415,6 +439,7 @@ describe('transforms', () => {
         },
         path: ['sys', 'space', 'stack'],
       },
+      {},
       defaultOptions
     );
     const expected =
@@ -424,7 +449,7 @@ describe('transforms', () => {
   });
 
   it('should preserve a leading calc() from original.value when building deprecated fallbacks', () => {
-    const result = transforms['value/deprecated-values'].transformer(
+    const result = transforms['value/deprecated-values'].transform(
       {
         ...defaultToken,
         value: '3rem',
@@ -434,6 +459,7 @@ describe('transforms', () => {
         },
         path: ['sys', 'space', 'stack'],
       },
+      {},
       defaultOptions
     );
     const expected = 'var(--cnvs-base-space-legacy, calc(var(--cnvs-base-space-x1) + 2rem))';
@@ -442,7 +468,7 @@ describe('transforms', () => {
   });
 
   it('should append rem units to negative px spread values', () => {
-    const result = transforms['value/shadow/flat-sys'].transformer(
+    const result = transforms['value/shadow/flat-sys'].transform(
       {
         ...defaultToken,
         value: [
@@ -465,6 +491,7 @@ describe('transforms', () => {
         ],
         path: ['sys', 'depth', '5'],
       },
+      {},
       defaultOptions
     );
 

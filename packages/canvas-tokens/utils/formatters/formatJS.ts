@@ -1,4 +1,5 @@
-import {Formatter, formatHelpers} from 'style-dictionary';
+import {fileHeader} from 'style-dictionary/utils';
+import {FormatFn} from 'style-dictionary/types';
 import {jsFileHeader} from './helpers/jsFileHeader';
 import {recursivelyFlatObjectValue} from './helpers/recursivelyFlatObjectValue';
 import {getCSSVarName, getLegacyEntries} from './helpers/cssVar';
@@ -16,10 +17,10 @@ const hasSanaModule = (level: unknown): boolean =>
  * options can contain `withoutModule` property js module header should not be generated.
  * @returns file content as a string
  */
-export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, options}) => {
+export const formatToInlineCommonJSModule: FormatFn = async ({dictionary, file, options}) => {
   const headerContent = !options.withoutModule
-    ? jsFileHeader({file})
-    : formatHelpers.fileHeader({file});
+    ? await jsFileHeader({file})
+    : await fileHeader({file});
 
   const legacyEntries: {name: string; value: string}[] = getLegacyEntries(dictionary.allTokens);
 
@@ -49,8 +50,8 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatToInlineES6Module: Formatter = ({dictionary, file, options}) => {
-  const headerContent = formatHelpers.fileHeader({file});
+export const formatToInlineES6Module: FormatFn = async ({dictionary, file, options}) => {
+  const headerContent = await fileHeader({file});
   const legacyEntries = getLegacyEntries(dictionary.allTokens);
 
   const body = dictionary.allTokens.reduce((acc: string, token) => {
@@ -76,8 +77,8 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file, options}) 
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatInlineTypes: Formatter = ({dictionary, file, options}) => {
-  const headerContent = formatHelpers.fileHeader({file});
+export const formatInlineTypes: FormatFn = async ({dictionary, file, options}) => {
+  const headerContent = await fileHeader({file});
   const legacyEntries = getLegacyEntries(dictionary.allTokens);
 
   const body = dictionary.allTokens.reduce((acc: string, token) => {
@@ -103,12 +104,12 @@ export const formatInlineTypes: Formatter = ({dictionary, file, options}) => {
  * options can contain `withoutModule` property js module header should not be generated.
  * @returns file content as a string
  */
-export const formatCommonToObjects: Formatter = ({dictionary, file, options}) => {
+export const formatCommonToObjects: FormatFn = async ({dictionary, file, options}) => {
   const headerContent = !options.withoutModule
-    ? jsFileHeader({file})
-    : formatHelpers.fileHeader({file});
+    ? await jsFileHeader({file})
+    : await fileHeader({file});
 
-  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.tokens});
   const body =
     mainTokens && Object.keys(mainTokens).length
       ? Object.entries(mainTokens).reduce((acc: string, [key, values]) => {
@@ -117,7 +118,7 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
       : '';
 
   const legacyTokens = recursivelyFlatObjectValue({
-    tokens: dictionary.properties,
+    tokens: dictionary.tokens,
     isFallback: true,
   });
 
@@ -126,9 +127,7 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
       ? `exports.legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
       : '';
 
-  const sanaBlock = hasSanaModule(options.level)
-    ? `exports.sana = require("./sana").sana;\n`
-    : '';
+  const sanaBlock = hasSanaModule(options.level) ? `exports.sana = require("./sana").sana;\n` : '';
 
   return body + legacyBlock + sanaBlock;
 };
@@ -138,9 +137,9 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatES6ToObjects: Formatter = ({dictionary, file, options}) => {
-  const headerContent = formatHelpers.fileHeader({file});
-  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.properties});
+export const formatES6ToObjects: FormatFn = async ({dictionary, file, options}) => {
+  const headerContent = await fileHeader({file});
+  const mainTokens = recursivelyFlatObjectValue({tokens: dictionary.tokens});
 
   const body =
     mainTokens && Object.keys(mainTokens).length
@@ -150,7 +149,7 @@ export const formatES6ToObjects: Formatter = ({dictionary, file, options}) => {
       : '';
 
   const legacyTokens = recursivelyFlatObjectValue({
-    tokens: dictionary.properties,
+    tokens: dictionary.tokens,
     isFallback: true,
   });
   const legacyBlock =
@@ -168,9 +167,9 @@ export const formatES6ToObjects: Formatter = ({dictionary, file, options}) => {
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatES6Exports: Formatter = ({dictionary, file}) => {
-  const headerContent = formatHelpers.fileHeader({file});
-  const packages = Object.keys(dictionary.properties).map(i => (i === 'sys' ? 'system' : i));
+export const formatES6Exports: FormatFn = async ({dictionary, file}) => {
+  const headerContent = await fileHeader({file});
+  const packages = Object.keys(dictionary.tokens).map(i => (i === 'sys' ? 'system' : i));
   const imports = packages.reduce((acc, item) => {
     return (acc += `import * as ${item} from "./${item}";\n`);
   }, headerContent);
@@ -182,9 +181,9 @@ export const formatES6Exports: Formatter = ({dictionary, file}) => {
  * @param {*} FormatterArguments - Style Dictionary formatter object containing `dictionary`, `options`, `file` and `platform` properties.
  * @returns file content as a string
  */
-export const formatCommonJSExports: Formatter = ({dictionary, file}) => {
-  const headerContent = jsFileHeader({file});
-  return Object.keys(dictionary.properties).reduce((acc, item) => {
+export const formatCommonJSExports: FormatFn = async ({dictionary, file}) => {
+  const headerContent = await jsFileHeader({file});
+  return Object.keys(dictionary.tokens).reduce((acc, item) => {
     const fullItem = item === 'sys' ? 'system' : item;
     return (acc += `var ${fullItem} = require("./${fullItem}");\nexports.${fullItem} = ${fullItem};\n`);
   }, headerContent);

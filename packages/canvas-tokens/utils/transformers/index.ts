@@ -1,10 +1,11 @@
 import * as math from 'mathjs';
-import {Transform} from 'style-dictionary';
+import {Transform} from 'style-dictionary/types';
 
 import * as filter from '../filters';
 
 import {durationMs} from './duration-ms';
 import {generateNewTokenFallback} from './generateNewTokenFallback';
+import {flatOklchValue} from './flatOklch';
 import {flatRGBAColor} from './flatRGBAColor';
 import {flatShadow} from './flatShadow';
 import {mapFontWeight} from './mapFontWeight';
@@ -12,16 +13,18 @@ import {transformHexToRgb} from './transformHexToRgb';
 import {transformMath} from './transformMath';
 import {transformNameToCamelCase} from './transformNameToCamelCase';
 
-export const transforms: Record<string, Transform> = {
+type DistributiveOmit<T, K extends keyof T> = T extends unknown ? Omit<T, K> : never;
+
+export const transforms: Record<string, DistributiveOmit<Transform, 'name'>> = {
   'oklch/flatten': {
     type: 'value',
     transitive: true,
-    matcher: ({value}) =>
+    filter: ({value}) =>
       typeof value === 'object' &&
       'components' in value &&
       typeof value.components === 'object' &&
       value.components.length === 3,
-    transformer: ({value}) => {
+    transform: ({value}) => {
       return `oklch(${value.components.join(' ')} / ${value.alpha})`;
     },
   },
@@ -29,68 +32,62 @@ export const transforms: Record<string, Transform> = {
   'value/deprecated-values': {
     type: 'value',
     transitive: true,
-    matcher: filter.isOldValues,
-    transformer: generateNewTokenFallback,
+    filter: filter.isOldValues,
+    transform: generateNewTokenFallback,
   },
   // transform function that changes any hex color value to rgba
   // not used now in web
   'value/hex-to-rgba': {
     type: 'value',
     transitive: true,
-    matcher: filter.isHexColor,
-    transformer: transformHexToRgb,
+    filter: filter.isHexColor,
+    transform: transformHexToRgb,
   },
   'value/shadow/flat-sys': {
     type: 'value',
     transitive: true,
-    matcher: filter.isSysShadow,
-    transformer: flatShadow,
+    filter: filter.isSysShadow,
+    transform: flatShadow,
   },
   // transform function that changes the shadow object as value to the single line string
   'value/font-weight/numbers': {
     type: 'value',
     transitive: true,
-    matcher: filter.isBaseFontWeight,
-    transformer: mapFontWeight,
+    filter: filter.isBaseFontWeight,
+    transform: mapFontWeight,
   },
   'value/line-height/px2rem': {
     type: 'value',
     transitive: true,
-    matcher: filter.isPxLineHeight,
-    transformer: ({value}) => `${parseFloat(value) / 16}rem`,
+    filter: filter.isPxLineHeight,
+    transform: ({value}) => `${parseFloat(value) / 16}rem`,
   },
   // transform function that removes doubled rgba for tokens with references
   // not used now in web
   'value/flatten-rgba': {
     type: 'value',
     transitive: true,
-    matcher: filter.isSysColor,
-    transformer: flatRGBAColor,
+    filter: filter.isSysColor,
+    transform: flatRGBAColor,
   },
   //  transform function that removes doubled rgba for tokens with references
   'value/flatten-oklch': {
     type: 'value',
     transitive: true,
-    matcher: filter.isSysColor,
-    transformer: ({original: {value}}) => {
-      // eslint-disable-next-line no-useless-escape
-      const updatedValue = value.replace(/{[\w\.]*}/g, (a: string) =>
-        a.includes('palette') ? `from ${a} l c h ` : ' ' + a
-      );
-      return value.includes('{base.opacity.0}') ? 'transparent' : updatedValue;
-    },
+    filter: filter.isSysColor,
+    transform: ({original: {value}}) => flatOklchValue(value),
   },
   'value/opacity': {
     type: 'value',
     transitive: true,
-    matcher: filter.isBaseOpacity,
-    transformer: ({value}) => `${value / 100}`,
+    filter: filter.isBaseOpacity,
+    transform: ({value}) => `${value / 100}`,
   },
   'value/breakpoints/px': {
     type: 'value',
     transitive: true,
-    matcher: filter.isBreakpoints,
-    transformer: ({value}) => {
+    filter: filter.isBreakpoints,
+    transform: ({value}) => {
       if (value.includes('var')) return value;
 
       const isRem = value.includes('rem');
@@ -103,47 +100,47 @@ export const transforms: Record<string, Transform> = {
   'value/variables': {
     type: 'value',
     transitive: true,
-    transformer: ({path}) => `--cnvs-${path.join('-')}`,
+    transform: ({path}) => `--cnvs-${path.join('-')}`,
   },
   // transform function that adds qoutes to font family values
   'value/wrapped-font-family': {
     type: 'value',
     transitive: true,
-    matcher: filter.isBaseFontFamily,
-    transformer: ({value}) => `"${value}"`,
+    filter: filter.isBaseFontFamily,
+    transform: ({value}) => `"${value}"`,
   },
   // transform function that adds em to letter spacing values
   'value/letter-spacing/px2rem': {
     type: 'value',
     transitive: true,
-    matcher: filter.isLetterSpacing,
-    transformer: ({value}) => `${value / 16}rem`,
+    filter: filter.isLetterSpacing,
+    transform: ({value}) => `${value / 16}rem`,
   },
   // transform function that changes any border object value to its single line string
   'value/flatten-border': {
     type: 'value',
     transitive: true,
-    matcher: filter.isBorder,
-    transformer: ({value: {color, width, style}}) => `${width} ${style} ${color}`,
+    filter: filter.isBorder,
+    transform: ({value: {color, width, style}}) => `${width} ${style} ${color}`,
   },
   // transform function that adds ms suffix to duration values
   'value/duration/ms': {
     type: 'value',
     transitive: true,
-    matcher: filter.isBaseDuration,
-    transformer: durationMs,
+    filter: filter.isBaseDuration,
+    transform: durationMs,
   },
   // transform function that resolves math values:
   // calculates base tokens and adds `calc` to sys tokens
   'value/math': {
     type: 'value',
     transitive: true,
-    matcher: filter.isMathExpression,
-    transformer: transformMath,
+    filter: filter.isMathExpression,
+    transform: transformMath,
   },
   // transform names to camel case
-  'name/camel': {
+  'name/canvas-camel': {
     type: 'name',
-    transformer: transformNameToCamelCase,
+    transform: transformNameToCamelCase,
   },
 };

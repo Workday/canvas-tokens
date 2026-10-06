@@ -1,5 +1,5 @@
 import {camelCase} from 'case-anything';
-import {DesignToken} from 'style-dictionary/types/DesignToken';
+import {DesignToken} from 'style-dictionary/types';
 
 type Transformer = (token: DesignToken) => string;
 

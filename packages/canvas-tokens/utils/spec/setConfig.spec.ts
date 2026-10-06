@@ -15,35 +15,35 @@ describe('setConfig', () => {
 
   it('should add platform as a default transform group', () => {
     const result = setConfig(mockOptions);
-    expect(result.platforms.css.transformGroup).toBe('css');
+    expect(result.platforms?.css.transformGroup).toBe('css');
   });
 
   it('should be able to set transform group', () => {
     const result = setConfig(mockOptions);
-    expect(result.platforms.es6.transformGroup).toBe('js');
+    expect(result.platforms?.es6.transformGroup).toBe('js');
   });
 
   it('should add a build path for all platforms', () => {
     const result = setConfig(mockOptions);
-    expect(result.platforms.css.buildPath).toBe('../canvas-tokens-web/dist/');
-    expect(result.platforms.es6.buildPath).toBe('../canvas-tokens-web/dist/');
+    expect(result.platforms?.css.buildPath).toBe('../canvas-tokens-web/dist/');
+    expect(result.platforms?.es6.buildPath).toBe('../canvas-tokens-web/dist/');
   });
 
   it('should not generate file if there is no modifiers', () => {
     const result = setConfig(mockOptions);
-    const expectedFiles = result.platforms.less.files;
+    const expectedFiles = result.platforms?.less.files;
     expect(expectedFiles).toHaveLength(0);
   });
 
   it('should file based on modifiers', () => {
     const result = setConfig(mockOptions);
-    const expectedFiles = result.platforms.css.files || [];
+    const expectedFiles = result.platforms?.css.files || [];
     expect(expectedFiles).toHaveLength(3);
   });
 
   it('should generate file based on modifiers with platform specific info', () => {
     const result = setConfig(mockOptions);
-    const expectedFiles = result.platforms.css.files || [];
+    const expectedFiles = result.platforms?.css.files || [];
     const firstFile = expectedFiles[0];
 
     expect(firstFile.format).toBe('css/variables');
@@ -52,7 +52,7 @@ describe('setConfig', () => {
 
   it('should generate file based on modifiers and add formats if there is merge format', () => {
     const result = setConfig(mockOptions);
-    const expectedFiles = result.platforms.css.files || [];
+    const expectedFiles = result.platforms?.css.files || [];
     const secondFile = expectedFiles[1];
 
     expect(secondFile.format).toBe('merge/test');
@@ -63,13 +63,13 @@ describe('setConfig', () => {
 
   it('should file based on modifiers for each extension', () => {
     const result = setConfig(mockOptions);
-    const expectedFiles = result.platforms.es6.files || [];
+    const expectedFiles = result.platforms?.es6.files || [];
     expect(expectedFiles).toHaveLength(2);
   });
 
   it('should have filter if modifier has filterByLevel as true', () => {
     const result = setConfig(mockOptions);
-    const expectedFiles = result.platforms.es6.files || [];
+    const expectedFiles = result.platforms?.es6.files || [];
     const firstFile = expectedFiles[0];
 
     expect(firstFile).toHaveProperty('filter');
