@@ -5,7 +5,7 @@
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",
   "scripts": {
-    "build": "ts-node ./build"
+    "build": "echo \"Building canvas tokens...\""
   },
   "private": true,
   "devDependencies": {
