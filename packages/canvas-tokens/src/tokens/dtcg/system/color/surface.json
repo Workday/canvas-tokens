@@ -731,7 +731,7 @@
                 "themes": {
                   "canvas": {
                     "light": {
-                      "$value": "{white.A130}"
+                      "$value": "{white.A300}"
                     }
                   }
                 }
