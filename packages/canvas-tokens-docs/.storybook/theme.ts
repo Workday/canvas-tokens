@@ -1,5 +1,5 @@
 import {create} from '@storybook/theming';
-import {version} from '../../canvas-tokens-web/package.json';
+import {version} from '@workday/canvas-tokens-web/package.json';
 
 export default create({
   base: 'light',
