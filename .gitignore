@@ -41,3 +41,6 @@ existing-tokens.json
 build-storybook.log
 
 figma-raw-tokens/
+
+# nx cache
+.nx

@@ -14,7 +14,7 @@
   "include": ["packages/**/*.json"],
   "ts-node": {
     "compilerOptions": {
-      "module": "commonjs"
+      "module": "node20"
     }
   }
 }

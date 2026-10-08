@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import {mergeConfig} from 'vite';
 
 const config: StorybookConfig = {
-  stories: ['../**/*.stories.@(mdx|tsx)', '../stories/*.mdx'],
+  stories: ['../stories/**/*.mdx', '../stories/**/*.stories.tsx'],
   addons: [
     '@storybook/addon-essentials',
     {
