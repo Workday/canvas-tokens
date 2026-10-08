@@ -1,5 +1,6 @@
 import {beforeEach, describe, expect, it, vi} from 'vitest';
 import {formats} from '../formatters';
+import {LEGACY_JSDOC} from '../formatters/helpers/deprecatedDocs';
 
 vi.mock('style-dictionary', () => {
   const mockStyleDictionary = {
@@ -52,7 +53,7 @@ vi.mock('style-dictionary', () => {
           isFallback: true,
         });
         const legacyBlock = legacyTokens
-          ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+          ? `${LEGACY_JSDOC}export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
           : '';
 
         return body + legacyBlock;
@@ -139,7 +140,7 @@ describe('formats', () => {
       const expected =
         headerContent +
         moduleContent +
-        `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexports.amber100 = "--cnvs-base-palette-amber-100";\n\nexports.legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
+        `exports.cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexports.amber100 = "--cnvs-base-palette-amber-100";\n\n${LEGACY_JSDOC}exports.legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
 
       expect(result).toBe(expected);
     });
@@ -150,7 +151,7 @@ describe('formats', () => {
       const result = formats['js/es6'](defaultArgs);
       const expected =
         headerContent +
-        `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const amber100 = "--cnvs-base-palette-amber-100";\n\nexport const legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
+        `export const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport const amber100 = "--cnvs-base-palette-amber-100";\n\n${LEGACY_JSDOC}export const legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
 
       expect(result).toBe(expected);
     });
@@ -181,7 +182,7 @@ describe('formats', () => {
 
       const expected =
         headerContent +
-        'export const amber100 = "--cnvs-base-palette-amber-100";\n\nexport const legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9 0.05 100 / 1)))"\n};\n';
+        `export const amber100 = "--cnvs-base-palette-amber-100";\n\n${LEGACY_JSDOC}export const legacy = {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9 0.05 100 / 1)))"\n};\n`;
 
       expect(result).toBe(expected);
     });
@@ -192,7 +193,7 @@ describe('formats', () => {
       const result = formats['ts/inline'](defaultArgs);
       const expected =
         headerContent +
-        `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport declare const amber100 = "--cnvs-base-palette-amber-100";\n\nexport declare const legacy: {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
+        `export declare const cinnamon100 = "--cnvs-base-palette-cinnamon-100";\nexport declare const amber100 = "--cnvs-base-palette-amber-100";\n\n${LEGACY_JSDOC}export declare const legacy: {\n  amber100: "var(--cnvs-base-palette-amber-100, var(--cnvs-base-palette-cinnamon-100, oklch(0.9567 0.0948 100.22 / 1)))"\n};\n`;
 
       expect(result).toBe(expected);
     });
@@ -222,7 +223,7 @@ describe('formats', () => {
       const expected =
         headerContent +
         `export const opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n};\n` +
-        `export const legacy = ${JSON.stringify(expectedLegacy, null, 2)};\n`;
+        `${LEGACY_JSDOC}export const legacy = ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });
@@ -253,7 +254,7 @@ describe('formats', () => {
         headerContent +
         moduleContent +
         `exports.opacity = {\n  "disabled": "--cnvs-base-opacity-300"\n};\n` +
-        `exports.legacy = ${JSON.stringify(expectedLegacy, null, 2)};\n`;
+        `${LEGACY_JSDOC}exports.legacy = ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });
@@ -462,7 +463,7 @@ describe('formats', () => {
       const expected =
         `export const border = {\n  "input": {\n    "disabled": "--cnvs-sys-border-input-disabled"\n  }\n};\n` +
         `export const color = {\n  "border": {\n    "input": {\n      "inverse": {\n        "default": "--cnvs-sys-color-border-input-inverse-default"\n      }\n    }\n  }\n};\n` +
-        `export const legacy = ${JSON.stringify(expectedLegacy, null, 2)};\n`;
+        `${LEGACY_JSDOC}export const legacy = ${JSON.stringify(expectedLegacy, null, 2)};\n`;
 
       expect(result).toBe(expected);
     });
@@ -522,7 +523,8 @@ describe('formats', () => {
         },
       });
 
-      const legacyJSDoc = `\n/**\n * Temporary legacy object including fallback values to older versions of the tokens\n * for internal use only, will be removed in the future\n */\n`;
+      const legacyJSDoc = `
+${LEGACY_JSDOC}`;
 
       const expectedLegacy = {
         opacity: {
@@ -564,7 +566,8 @@ describe('formats', () => {
         },
       });
 
-      const legacyJSDoc = `\n/**\n * Temporary legacy object including fallback values to older versions of the tokens\n * for internal use only, will be removed in the future\n */\n`;
+      const legacyJSDoc = `
+${LEGACY_JSDOC}`;
 
       const expectedLegacy = {
         opacity: {
