@@ -8,9 +8,9 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.1.100.y}",
-          "blur": "{shadow.1.100.blur}",
-          "spread": "{shadow.1.100.spread}"
+          "offsetY": "{shadow.1.key.y}",
+          "blur": "{shadow.1.key.blur}",
+          "spread": "{shadow.1.key.spread}"
         },
         {
           "color": "{color.shadow.1.ambient}",
@@ -18,8 +18,8 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.1.200.y}",
-          "blur": "{shadow.1.200.blur}",
+          "offsetY": "{shadow.1.ambient.y}",
+          "blur": "{shadow.1.ambient.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
@@ -37,9 +37,9 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.2.100.y}",
-          "blur": "{shadow.2.100.blur}",
-          "spread": "{shadow.2.100.spread}"
+          "offsetY": "{shadow.2.key.y}",
+          "blur": "{shadow.2.key.blur}",
+          "spread": "{shadow.2.key.spread}"
         },
         {
           "color": "{color.shadow.2.ambient}",
@@ -47,8 +47,8 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.2.200.y}",
-          "blur": "{shadow.2.200.blur}",
+          "offsetY": "{shadow.2.ambient.y}",
+          "blur": "{shadow.2.ambient.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
@@ -66,9 +66,9 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.3.100.y}",
-          "blur": "{shadow.3.100.blur}",
-          "spread": "{shadow.3.100.spread}"
+          "offsetY": "{shadow.3.key.y}",
+          "blur": "{shadow.3.key.blur}",
+          "spread": "{shadow.3.key.spread}"
         },
         {
           "color": "{color.shadow.3.ambient}",
@@ -76,8 +76,8 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.3.200.y}",
-          "blur": "{shadow.3.200.blur}",
+          "offsetY": "{shadow.3.ambient.y}",
+          "blur": "{shadow.3.ambient.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
@@ -95,9 +95,9 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.4.100.y}",
-          "blur": "{shadow.4.100.blur}",
-          "spread": "{shadow.4.100.spread}"
+          "offsetY": "{shadow.4.key.y}",
+          "blur": "{shadow.4.key.blur}",
+          "spread": "{shadow.4.key.spread}"
         },
         {
           "color": "{color.shadow.4.ambient}",
@@ -105,8 +105,8 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.4.200.y}",
-          "blur": "{shadow.4.200.blur}",
+          "offsetY": "{shadow.4.ambient.y}",
+          "blur": "{shadow.4.ambient.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
@@ -124,9 +124,9 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.5.100.y}",
-          "blur": "{shadow.5.100.blur}",
-          "spread": "{shadow.5.100.spread}"
+          "offsetY": "{shadow.5.key.y}",
+          "blur": "{shadow.5.key.blur}",
+          "spread": "{shadow.5.key.spread}"
         },
         {
           "color": "{color.shadow.5.ambient}",
@@ -134,8 +134,8 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.5.200.y}",
-          "blur": "{shadow.5.200.blur}",
+          "offsetY": "{shadow.5.ambient.y}",
+          "blur": "{shadow.5.ambient.blur}",
           "spread": {
             "value": 0,
             "unit": "px"
@@ -153,9 +153,9 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.6.100.y}",
-          "blur": "{shadow.6.100.blur}",
-          "spread": "{shadow.6.100.spread}"
+          "offsetY": "{shadow.6.key.y}",
+          "blur": "{shadow.6.key.blur}",
+          "spread": "{shadow.6.key.spread}"
         },
         {
           "color": "{color.shadow.6.ambient}",
@@ -163,8 +163,8 @@
             "value": 0,
             "unit": "px"
           },
-          "offsetY": "{shadow.6.200.y}",
-          "blur": "{shadow.6.200.blur}",
+          "offsetY": "{shadow.6.ambient.y}",
+          "blur": "{shadow.6.ambient.blur}",
           "spread": {
             "value": 0,
             "unit": "px"

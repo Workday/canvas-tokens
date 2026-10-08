@@ -16,14 +16,23 @@
         }
       },
       "alt": {
-        "$value": "{brand.neutral.50}",
-        "$type": "color",
-        "$description": "Alternative page background",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.neutral.50}"
+        "$root": {
+          "$value": "{brand.neutral.50}",
+          "$type": "color",
+          "$description": "Alternative page background",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.neutral.50}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.50}"
+                  }
+                }
               }
             }
           }

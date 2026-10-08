@@ -5,11 +5,7 @@
         "key": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#00000008",
             "alpha": 0.03
           },
@@ -21,11 +17,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#05050829",
                     "alpha": 0.16
                   }
@@ -37,11 +29,7 @@
         "ambient": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#00000005",
             "alpha": 0.02
           },
@@ -53,11 +41,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#0505081c",
                     "alpha": 0.11
                   }
@@ -71,11 +55,7 @@
         "key": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#0000000d",
             "alpha": 0.05
           },
@@ -87,11 +67,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#05050838",
                     "alpha": 0.22
                   }
@@ -103,11 +79,7 @@
         "ambient": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#00000008",
             "alpha": 0.03
           },
@@ -119,11 +91,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#05050826",
                     "alpha": 0.15
                   }
@@ -137,11 +105,7 @@
         "key": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#00000012",
             "alpha": 0.07
           },
@@ -153,11 +117,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#05050847",
                     "alpha": 0.28
                   }
@@ -169,11 +129,7 @@
         "ambient": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#0000000d",
             "alpha": 0.05
           },
@@ -185,11 +141,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#05050830",
                     "alpha": 0.19
                   }
@@ -203,11 +155,7 @@
         "key": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#00000017",
             "alpha": 0.09
           },
@@ -219,11 +167,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#05050857",
                     "alpha": 0.34
                   }
@@ -235,11 +179,7 @@
         "ambient": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#0000000f",
             "alpha": 0.06
           },
@@ -251,11 +191,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#0505083b",
                     "alpha": 0.23
                   }
@@ -269,11 +205,7 @@
         "key": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#0000001c",
             "alpha": 0.11
           },
@@ -285,11 +217,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#05050866",
                     "alpha": 0.4
                   }
@@ -301,11 +229,7 @@
         "ambient": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#00000012",
             "alpha": 0.07
           },
@@ -317,11 +241,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#05050845",
                     "alpha": 0.27
                   }
@@ -335,11 +255,7 @@
         "key": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#00000021",
             "alpha": 0.13
           },
@@ -351,11 +267,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#05050875",
                     "alpha": 0.46
                   }
@@ -367,11 +279,7 @@
         "ambient": {
           "$value": {
             "colorSpace": "oklch",
-            "components": [
-              0,
-              0,
-              0
-            ],
+            "components": [0, 0, 0],
             "hex": "#00000017",
             "alpha": 0.09
           },
@@ -383,11 +291,7 @@
                 "dark": {
                   "$value": {
                     "colorSpace": "oklch",
-                    "components": [
-                      0.117,
-                      0.0089,
-                      284.95
-                    ],
+                    "components": [0.117, 0.0089, 284.95],
                     "hex": "#0505084f",
                     "alpha": 0.31
                   }
@@ -397,21 +301,17 @@
           }
         }
       },
-      "chroma": {
-        "accent": {
-          "$value": "{brand.primary.975}",
-          "$type": "color",
-          "$description": "Accent surface chroma override. CSS: override --color-shadow-chroma-light on container.",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.primary.950}"
-                }
-              }
-            }
-          }
-        }
+      "base": {
+        "$value": "{slate.A200}",
+        "$type": "color",
+        "$description": "Primary shadow color for elevated elements",
+        "$deprecated": true
+      },
+      "ambient": {
+        "$value": "{slate.A100}",
+        "$type": "color",
+        "$description": "Subtle ambient shadow for soft depth",
+        "$deprecated": true
       }
     }
   }
