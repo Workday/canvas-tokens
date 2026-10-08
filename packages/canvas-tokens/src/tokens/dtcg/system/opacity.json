@@ -22,7 +22,7 @@
     },
     "shadow": {
       "first": {
-        "$value": "{base.opacity.120}",
+        "$value": "{opacity.120}",
         "$type": "number",
         "$description": "Alpha on first shadow",
         "$deprecated": true
