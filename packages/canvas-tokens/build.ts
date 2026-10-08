@@ -94,6 +94,13 @@ const config = setConfig({
           level: ['base', 'brand', 'sys', 'component'],
           filter: filters.isOldValues,
           filterByLevel: true,
+          options: {
+            fileHeader: (defaultMessage: string[]) => [
+              ...defaultMessage,
+              '',
+              '@deprecated The legacy CSS tokens will be removed in a future major version.',
+            ],
+          },
         },
       ],
     },
