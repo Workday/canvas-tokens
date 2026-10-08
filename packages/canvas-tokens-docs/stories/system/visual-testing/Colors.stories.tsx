@@ -9,7 +9,6 @@ import {
   BrandFgColors,
   BrandBorderColors,
 } from '../examples/Color/Brand';
-import {DeprecatedColorTokens} from '../examples/Color/Deprecated';
 import {FocusColors} from '../examples/Color/Focus';
 import {
   ForegroundColors,
@@ -127,9 +126,4 @@ export const Border = {
 // FOCUS COLORS TESTS
 export const Focus = {
   render: FocusColors,
-};
-
-// DEPRECATED COLORS TESTS
-export const Deprecated = {
-  render: DeprecatedColorTokens,
 };
