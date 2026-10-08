@@ -28,7 +28,9 @@
             },
             "themes": {
               "canvas": {
-                "light": "{slate.50}"
+                "light": {
+                  "$value": "{slate.50}"
+                }
               }
             }
           }
@@ -75,7 +77,9 @@
             },
             "themes": {
               "canvas": {
-                "light": "{slate.A25}"
+                "light": {
+                  "$value": "{slate.A25}"
+                }
               }
             }
           }
@@ -95,7 +99,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{slate.A50}"
+                  "light": {
+                    "$value": "{slate.A50}"
+                  }
                 }
               }
             }
@@ -114,7 +120,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{slate.A100}"
+                  "light": {
+                    "$value": "{slate.A100}"
+                  }
                 }
               }
             }
@@ -135,7 +143,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{blue.A25}"
+                  "light": {
+                    "$value": "{blue.A25}"
+                  }
                 }
               }
             }
@@ -154,7 +164,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{blue.A50}"
+                  "light": {
+                    "$value": "{blue.A50}"
+                  }
                 }
               }
             }
@@ -175,7 +187,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{red.A25}"
+                  "light": {
+                    "$value": "{red.A25}"
+                  }
                 }
               }
             }
@@ -194,7 +208,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{red.A50}"
+                  "light": {
+                    "$value": "{red.A50}"
+                  }
                 }
               }
             }
@@ -215,7 +231,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{amber.A25}"
+                  "light": {
+                    "$value": "{amber.A25}"
+                  }
                 }
               }
             }
@@ -234,7 +252,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{amber.A50}"
+                  "light": {
+                    "$value": "{amber.A50}"
+                  }
                 }
               }
             }
@@ -255,7 +275,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{green.A25}"
+                  "light": {
+                    "$value": "{green.A25}"
+                  }
                 }
               }
             }
@@ -274,7 +296,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{green.A50}"
+                  "light": {
+                    "$value": "{green.A50}"
+                  }
                 }
               }
             }
@@ -295,7 +319,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{blue.A100}"
+                  "light": {
+                    "$value": "{blue.A100}"
+                  }
                 }
               }
             }
@@ -314,7 +340,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{blue.A200}"
+                  "light": {
+                    "$value": "{blue.A200}"
+                  }
                 }
               }
             }
@@ -333,7 +361,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{blue.400}"
+                  "light": {
+                    "$value": "{blue.400}"
+                  }
                 }
               }
             }
@@ -387,7 +417,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{neutral.A900}"
+                  "light": {
+                    "$value": "{neutral.A900}"
+                  }
                 }
               }
             }
@@ -406,7 +438,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{neutral.A950}"
+                  "light": {
+                    "$value": "{neutral.A950}"
+                  }
                 }
               }
             }
@@ -577,7 +611,9 @@
             },
             "themes": {
               "canvas": {
-                "light": "{slate.A200}"
+                "light": {
+                  "$value": "{slate.A200}"
+                }
               }
             }
           }
@@ -629,7 +665,9 @@
                 },
                 "themes": {
                   "canvas": {
-                    "light": "{slate.A50}"
+                    "light": {
+                      "$value": "{slate.A50}"
+                    }
                   }
                 }
               }
@@ -648,7 +686,9 @@
                 },
                 "themes": {
                   "canvas": {
-                    "light": "{white.A200}"
+                    "light": {
+                      "$value": "{white.A200}"
+                    }
                   }
                 }
               }
@@ -669,7 +709,9 @@
                 },
                 "themes": {
                   "canvas": {
-                    "light": "{slate.A100}"
+                    "light": {
+                      "$value": "{slate.A100}"
+                    }
                   }
                 }
               }
@@ -688,7 +730,9 @@
                 },
                 "themes": {
                   "canvas": {
-                    "light": "{white.A130}"
+                    "light": {
+                      "$value": "{white.A130}"
+                    }
                   }
                 }
               }
@@ -708,7 +752,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{slate.500}"
+                  "light": {
+                    "$value": "{slate.500}"
+                  }
                 }
               }
             }
@@ -727,7 +773,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": "{neutral.A400}"
+                  "light": {
+                    "$value": "{neutral.A400}"
+                  }
                 }
               }
             }
@@ -746,7 +794,9 @@
               },
               "themes": {
                 "canvas": {
-                  "light": ""
+                  "light": {
+                    "$value": ""
+                  }
                 }
               }
             }

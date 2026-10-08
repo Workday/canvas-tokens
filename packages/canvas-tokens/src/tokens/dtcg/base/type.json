@@ -137,35 +137,35 @@
       "$type": "dimension"
     },
     "50": {
-      "value": {
+      "$value": {
         "value": 0.4,
         "unit": "px"
       },
-      "type": "dimension",
+      "$type": "dimension",
       "$deprecated": true
     },
     "100": {
-      "value": {
+      "$value": {
         "value": 0.32,
         "unit": "px"
       },
-      "type": "dimension",
+      "$type": "dimension",
       "$deprecated": true
     },
     "150": {
-      "value": {
+      "$value": {
         "value": 0.24,
         "unit": "px"
       },
-      "type": "dimension",
+      "$type": "dimension",
       "$deprecated": true
     },
     "200": {
-      "value": {
+      "$value": {
         "value": 0.16,
         "unit": "px"
       },
-      "type": "dimension",
+      "$type": "dimension",
       "$deprecated": true
     }
   },

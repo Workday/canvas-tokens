@@ -22,15 +22,15 @@
     },
     "shadow": {
       "first": {
-        "value": "{base.opacity.120}",
-        "type": "number",
-        "comment": "Alpha on first shadow",
+        "$value": "{base.opacity.120}",
+        "$type": "number",
+        "$description": "Alpha on first shadow",
         "$deprecated": true
       },
       "second": {
-        "value": "{base.opacity.80}",
-        "type": "number",
-        "comment": "Alpha on second shadow",
+        "$value": "{base.opacity.80}",
+        "$type": "number",
+        "$description": "Alpha on second shadow",
         "$deprecated": true
       }
     },
