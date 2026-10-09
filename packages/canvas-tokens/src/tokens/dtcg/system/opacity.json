@@ -28,7 +28,7 @@
         "$deprecated": true
       },
       "second": {
-        "$value": "{base.opacity.80}",
+        "$value": "{opacity.80}",
         "$type": "number",
         "$description": "Alpha on second shadow",
         "$deprecated": true
