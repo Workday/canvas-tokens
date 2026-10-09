@@ -1,5 +1,16 @@
 # @workday/canvas-tokens-web
 
+## 4.5.1
+
+### Patch Changes
+
+- ### Tokens
+
+  - fix: Add deprecation labels for legacy and sana utility objects
+    ([#374](https://github.com/Workday/canvas-tokens/pull/374))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova) Add deprecation labels for
+    legacy and sana utility objects, as they will be removed in the next major version.
+
 ## 4.5.0
 
 ### Minor Changes
