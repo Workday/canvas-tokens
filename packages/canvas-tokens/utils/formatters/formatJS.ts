@@ -2,6 +2,7 @@ import {Formatter, formatHelpers} from 'style-dictionary';
 import {jsFileHeader} from './helpers/jsFileHeader';
 import {recursivelyFlatObjectValue} from './helpers/recursivelyFlatObjectValue';
 import {getCSSVarName, getLegacyEntries} from './helpers/cssVar';
+import {LEGACY_JSDOC} from './helpers/deprecatedDocs';
 
 /** Levels for which a sibling `sana.{js,d.ts}` file is generated. */
 const SANA_LEVELS = ['base', 'brand', 'sys'];
@@ -31,7 +32,7 @@ export const formatToInlineCommonJSModule: Formatter = ({dictionary, file, optio
   }, '');
 
   const legacyBlock = legacyEntries.length
-    ? `\nexports.legacy = {\n${legacyEntries
+    ? `\n${LEGACY_JSDOC}exports.legacy = {\n${legacyEntries
         .map(({name, value}) => `  ${name}: "${value}"`)
         .join(',\n')}\n};\n`
     : '';
@@ -60,7 +61,7 @@ export const formatToInlineES6Module: Formatter = ({dictionary, file, options}) 
   }, '');
 
   const legacyBlock = legacyEntries.length
-    ? `\nexport const legacy = {\n${legacyEntries
+    ? `\n${LEGACY_JSDOC}export const legacy = {\n${legacyEntries
         .map(({name, value}) => `  ${name}: "${value}"`)
         .join(',\n')}\n};\n`
     : '';
@@ -87,7 +88,7 @@ export const formatInlineTypes: Formatter = ({dictionary, file, options}) => {
   }, '');
 
   const legacyBlock = legacyEntries.length
-    ? `\nexport declare const legacy: {\n${legacyEntries
+    ? `\n${LEGACY_JSDOC}export declare const legacy: {\n${legacyEntries
         .map(({name, value}) => `  ${name}: "${value}"`)
         .join(',\n')}\n};\n`
     : '';
@@ -123,7 +124,7 @@ export const formatCommonToObjects: Formatter = ({dictionary, file, options}) =>
 
   const legacyBlock =
     legacyTokens && Object.keys(legacyTokens).length
-      ? `exports.legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+      ? `${LEGACY_JSDOC}exports.legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
       : '';
 
   const sanaBlock = hasSanaModule(options.level)
@@ -155,7 +156,7 @@ export const formatES6ToObjects: Formatter = ({dictionary, file, options}) => {
   });
   const legacyBlock =
     legacyTokens && Object.keys(legacyTokens).length
-      ? `export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
+      ? `${LEGACY_JSDOC}export const legacy = ${JSON.stringify(legacyTokens, null, 2)};\n`
       : '';
 
   const sanaBlock = hasSanaModule(options.level) ? `export {sana} from "./sana";\n` : '';

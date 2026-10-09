@@ -2,6 +2,7 @@ import {Dictionary, Formatter, TransformedToken, formatHelpers} from 'style-dict
 import {camelCase} from 'case-anything';
 import {jsFileHeader} from './helpers/jsFileHeader';
 import {getCSSVarName} from './helpers/cssVar';
+import {SANA_JSDOC} from './helpers/deprecatedDocs';
 
 type SanaTree = {[key: string]: string | SanaTree};
 
@@ -227,7 +228,7 @@ export const formatSanaObjectCommonJS: Formatter = ({dictionary, file, options})
 
   const body = renderSanaBody(dictionary, options.level as string);
 
-  return body == null ? headerContent : `${headerContent}exports.sana = ${body};\n`;
+  return body == null ? headerContent : `${headerContent}${SANA_JSDOC}exports.sana = ${body};\n`;
 };
 
 /**
@@ -242,7 +243,7 @@ export const formatSanaObjectES6: Formatter = ({dictionary, file, options}) => {
 
   const body = renderSanaBody(dictionary, options.level as string);
 
-  return body == null ? headerContent : `${headerContent}export const sana = ${body};\n`;
+  return body == null ? headerContent : `${headerContent}${SANA_JSDOC}export const sana = ${body};\n`;
 };
 
 /**
@@ -256,5 +257,5 @@ export const formatSanaObjectTypes: Formatter = ({dictionary, file, options}) =>
 
   const body = renderSanaBody(dictionary, options.level as string);
 
-  return body == null ? headerContent : `${headerContent}export declare const sana: ${body};\n`;
+  return body == null ? headerContent : `${headerContent}${SANA_JSDOC}export declare const sana: ${body};\n`;
 };

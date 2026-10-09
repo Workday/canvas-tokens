@@ -1,6 +1,7 @@
 import * as math from 'mathjs';
 import {Formatter, TransformedToken, formatHelpers} from 'style-dictionary';
 import {recursivelyFlatObjectValue} from './helpers/recursivelyFlatObjectValue';
+import {LEGACY_JSDOC} from './helpers/deprecatedDocs';
 
 /** Levels for which a sibling `sana.d.ts` file is generated. */
 const SANA_LEVELS = ['base', 'brand', 'sys'];
@@ -46,7 +47,7 @@ export const formatJSToTypes: Formatter = ({dictionary, file, options}) => {
 
   const legacyContent =
     legacyTokens && Object.keys(legacyTokens).length
-      ? `\n/**\n * Temporary legacy object including fallback values to older versions of the tokens\n * for internal use only, will be removed in the future\n */\nexport declare const legacy: ${JSON.stringify(
+      ? `\n${LEGACY_JSDOC}export declare const legacy: ${JSON.stringify(
           legacyTokens,
           null,
           2
