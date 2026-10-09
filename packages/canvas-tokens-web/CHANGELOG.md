@@ -1,5 +1,33 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.4
+
+### Major Changes
+
+- ### Components
+
+  - chore: Add comment ([@RayRedGoose](https://github.com/RayRedGoose))
+  - feat: Add new token structure ([#351](https://github.com/Workday/canvas-tokens/pull/351))
+    ([@RayRedGoose](https://github.com/RayRedGoose)) Optional release note message. Add before
+    message if it's a breaking change. Changelog and release summaries will contain a pull request
+    title. This section will add additional notes under that title. This section is not a summary,
+    but something extra to point out in release notes. An example might be calling out breaking
+    changes in a labs component or minor visual changes that need visual regression updates. Remove
+    this section if no additional release notes are required.
+
+  ### Infrastructure
+
+  - chore: Upgrade packages ([#372](https://github.com/Workday/canvas-tokens/pull/372))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
+  ### Tokens
+
+  - feat: Add DTCG tokens synced from Figma
+    ([#350](https://github.com/Workday/canvas-tokens/pull/350))
+    ([@RayRedGoose](https://github.com/RayRedGoose))
+  - fix: Set old values to JSON files ([#373](https://github.com/Workday/canvas-tokens/pull/373))
+    ([@RayRedGoose](https://github.com/RayRedGoose), [@Copilot](https://github.com/Copilot))
+
 ## 4.5.0
 
 ### Minor Changes
