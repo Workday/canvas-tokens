@@ -101,57 +101,165 @@
     "subtext": {
       "sm": {
         "$value": "{letter-spacing.1}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": "{letter-spacing.50}"
+              }
+            }
+          }
+        }
       },
       "md": {
         "$value": "{letter-spacing.2}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": "{letter-spacing.100}"
+              }
+            }
+          }
+        }
       },
       "lg": {
         "$value": "{letter-spacing.3}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": "{letter-spacing.150}"
+              }
+            }
+          }
+        }
       }
     },
     "body": {
       "sm": {
         "$value": "{letter-spacing.4}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": "{letter-spacing.200}"
+              }
+            }
+          }
+        }
       },
       "md": {
         "$value": "{letter-spacing.5}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": ""
+              }
+            }
+          }
+        }
       },
       "lg": {
         "$value": "{letter-spacing.6}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": ""
+              }
+            }
+          }
+        }
       }
     },
     "heading": {
       "sm": {
         "$value": "{letter-spacing.7}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": ""
+              }
+            }
+          }
+        }
       },
       "md": {
         "$value": "{letter-spacing.8}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": ""
+              }
+            }
+          }
+        }
       },
       "lg": {
         "$value": "{letter-spacing.9}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": ""
+              }
+            }
+          }
+        }
       }
     },
     "title": {
       "sm": {
         "$value": "{letter-spacing.10}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": ""
+              }
+            }
+          }
+        }
       },
       "md": {
         "$value": "{letter-spacing.11}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": ""
+              }
+            }
+          }
+        }
       },
       "lg": {
         "$value": "{letter-spacing.12}",
-        "$type": "number"
+        "$type": "number",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": ""
+              }
+            }
+          }
+        }
       }
     }
   },

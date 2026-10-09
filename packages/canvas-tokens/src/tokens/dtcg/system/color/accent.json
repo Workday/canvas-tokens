@@ -16,9 +16,6 @@
               "brand": {
                 "light": {
                   "$value": "{brand.primary.600}"
-                },
-                "dark": {
-                  "$value": "{brand.dark.primary.600}"
                 }
               }
             }
@@ -77,6 +74,13 @@
               "dark": {
                 "$value": "{brand.dark.primary.600}"
               }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{blue.600}"
+                }
+              }
             }
           }
         }
@@ -90,6 +94,13 @@
             "modes": {
               "dark": {
                 "$value": "{brand.dark.positive.600}"
+              }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{green.600}"
+                }
               }
             }
           }
@@ -105,6 +116,13 @@
               "dark": {
                 "$value": "{brand.dark.critical.600}"
               }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{red.600}"
+                }
+              }
             }
           }
         }
@@ -119,6 +137,13 @@
               "dark": {
                 "$value": "{brand.dark.caution.500}"
               }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{amber.400}"
+                }
+              }
             }
           }
         }
@@ -132,6 +157,13 @@
             "modes": {
               "dark": {
                 "$value": "{brand.dark.primary.950}"
+              }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{blue.950}"
+                }
               }
             }
           }
@@ -148,6 +180,13 @@
                 "dark": {
                   "$value": "{brand.dark.neutral.600}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.600}"
+                  }
+                }
               }
             }
           }
@@ -161,6 +200,13 @@
               "modes": {
                 "dark": {
                   "$value": "{brand.dark.neutral.400}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.400}"
+                  }
                 }
               }
             }
@@ -176,6 +222,13 @@
             "modes": {
               "dark": {
                 "$value": "{brand.dark.neutral.975}"
+              }
+            },
+            "themes": {
+              "brand": {
+                "light": {
+                  "$value": "{brand.primary.600}"
+                }
               }
             }
           }
@@ -194,9 +247,9 @@
                 }
               },
               "themes": {
-                "brand": {
+                "canvas": {
                   "light": {
-                    "$value": "{black.A200}"
+                    "$value": "{neutral.A200}"
                   }
                 }
               }
@@ -215,9 +268,9 @@
                 }
               },
               "themes": {
-                "brand": {
+                "canvas": {
                   "light": {
-                    "$value": "{black.A300}"
+                    "$value": "{neutral.A300}"
                   }
                 }
               }
@@ -236,9 +289,9 @@
                 }
               },
               "themes": {
-                "brand": {
+                "canvas": {
                   "light": {
-                    "$value": "{brand.dark.action.accent}"
+                    "$value": "{neutral.1000}"
                   }
                 }
               }

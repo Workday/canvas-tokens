@@ -11,6 +11,13 @@
               "dark": {
                 "$value": "{white.A50}"
               }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{slate.A200}"
+                }
+              }
             }
           }
         }
@@ -24,6 +31,13 @@
             "modes": {
               "dark": {
                 "$value": "{white.A100}"
+              }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{slate.A300}"
+                }
               }
             }
           }
@@ -40,6 +54,13 @@
                 "dark": {
                   "$value": "{white.A500}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A500}"
+                  }
+                }
               }
             }
           }
@@ -53,6 +74,13 @@
               "modes": {
                 "dark": {
                   "$value": "{white.A700}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A700}"
+                  }
                 }
               }
             }
@@ -111,6 +139,13 @@
               "dark": {
                 "$value": "{brand.dark.primary.500}"
               }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{blue.500}"
+                }
+              }
             }
           }
         }
@@ -125,6 +160,13 @@
               "dark": {
                 "$value": "{brand.dark.critical.500}"
               }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{red.500}"
+                }
+              }
             }
           }
         }
@@ -138,6 +180,13 @@
             "modes": {
               "dark": {
                 "$value": "{brand.dark.caution.500}"
+              }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{amber.400}"
+                }
               }
             }
           }
@@ -183,6 +232,13 @@
               "dark": {
                 "$value": "{white.A900}"
               }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{neutral.A900}"
+                }
+              }
             }
           }
         }
@@ -211,6 +267,13 @@
               "dark": {
                 "$value": "{brand.dark.primary.950}"
               }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": ""
+                }
+              }
             }
           }
         }
@@ -224,6 +287,13 @@
             "modes": {
               "dark": {
                 "$value": "{white.A25}"
+              }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": ""
+                }
               }
             }
           }

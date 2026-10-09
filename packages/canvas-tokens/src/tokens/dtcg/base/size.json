@@ -206,7 +206,7 @@
         "unit": "px"
       },
       "$type": "dimension",
-      "$description": "112px / 7rem"
+      "$description": "128px / 8rem"
     },
     "1800": {
       "$value": {
@@ -214,7 +214,7 @@
         "unit": "px"
       },
       "$type": "dimension",
-      "$description": "112px / 7rem"
+      "$description": "144px / 9rem"
     },
     "2000": {
       "$value": {
@@ -222,7 +222,7 @@
         "unit": "px"
       },
       "$type": "dimension",
-      "$description": "112px / 7rem"
+      "$description": "160px / 10rem"
     },
     "2400": {
       "$value": {
@@ -230,7 +230,7 @@
         "unit": "px"
       },
       "$type": "dimension",
-      "$description": "112px / 7rem"
+      "$description": "192px / 12rem"
     },
     "2800": {
       "$value": {
@@ -238,7 +238,7 @@
         "unit": "px"
       },
       "$type": "dimension",
-      "$description": "112px / 7rem"
+      "$description": "224px / 14rem"
     },
     "3200": {
       "$value": {
@@ -246,7 +246,7 @@
         "unit": "px"
       },
       "$type": "dimension",
-      "$description": "112px / 7rem"
+      "$description": "256px / 16rem"
     }
   }
 }

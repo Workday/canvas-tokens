@@ -7,6 +7,50 @@
             "value": 1,
             "unit": "px"
           },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 4,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "spread": {
+          "$value": {
+            "value": -1,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "200": {
+        "y": {
+          "$value": {
+            "value": 2,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 8,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "key": {
+        "y": {
+          "$value": {
+            "value": 1,
+            "unit": "px"
+          },
           "$type": "dimension"
         },
         "blur": {
@@ -24,7 +68,7 @@
           "$type": "dimension"
         }
       },
-      "200": {
+      "ambient": {
         "y": {
           "$value": {
             "value": 2,
@@ -48,6 +92,50 @@
             "value": 2,
             "unit": "px"
           },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 8,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "spread": {
+          "$value": {
+            "value": -1,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "200": {
+        "y": {
+          "$value": {
+            "value": 4,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 16,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "key": {
+        "y": {
+          "$value": {
+            "value": 2,
+            "unit": "px"
+          },
           "$type": "dimension"
         },
         "blur": {
@@ -65,7 +153,7 @@
           "$type": "dimension"
         }
       },
-      "200": {
+      "ambient": {
         "y": {
           "$value": {
             "value": 4,
@@ -89,6 +177,50 @@
             "value": 3,
             "unit": "px"
           },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 12,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "spread": {
+          "$value": {
+            "value": -1,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "200": {
+        "y": {
+          "$value": {
+            "value": 6,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 24,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "key": {
+        "y": {
+          "$value": {
+            "value": 3,
+            "unit": "px"
+          },
           "$type": "dimension"
         },
         "blur": {
@@ -106,7 +238,7 @@
           "$type": "dimension"
         }
       },
-      "200": {
+      "ambient": {
         "y": {
           "$value": {
             "value": 6,
@@ -130,6 +262,50 @@
             "value": 4,
             "unit": "px"
           },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 16,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "spread": {
+          "$value": {
+            "value": -2,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "200": {
+        "y": {
+          "$value": {
+            "value": 8,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 32,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "key": {
+        "y": {
+          "$value": {
+            "value": 4,
+            "unit": "px"
+          },
           "$type": "dimension"
         },
         "blur": {
@@ -147,7 +323,7 @@
           "$type": "dimension"
         }
       },
-      "200": {
+      "ambient": {
         "y": {
           "$value": {
             "value": 8,
@@ -171,6 +347,50 @@
             "value": 8,
             "unit": "px"
           },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 24,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "spread": {
+          "$value": {
+            "value": -2,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "200": {
+        "y": {
+          "$value": {
+            "value": 16,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 48,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "key": {
+        "y": {
+          "$value": {
+            "value": 8,
+            "unit": "px"
+          },
           "$type": "dimension"
         },
         "blur": {
@@ -188,7 +408,7 @@
           "$type": "dimension"
         }
       },
-      "200": {
+      "ambient": {
         "y": {
           "$value": {
             "value": 16,
@@ -212,6 +432,50 @@
             "value": 16,
             "unit": "px"
           },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 48,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "spread": {
+          "$value": {
+            "value": -3,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "200": {
+        "y": {
+          "$value": {
+            "value": 32,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        },
+        "blur": {
+          "$value": {
+            "value": 96,
+            "unit": "px"
+          },
+          "$type": "dimension",
+          "$deprecated": true
+        }
+      },
+      "key": {
+        "y": {
+          "$value": {
+            "value": 16,
+            "unit": "px"
+          },
           "$type": "dimension"
         },
         "blur": {
@@ -229,7 +493,7 @@
           "$type": "dimension"
         }
       },
-      "200": {
+      "ambient": {
         "y": {
           "$value": {
             "value": 32,

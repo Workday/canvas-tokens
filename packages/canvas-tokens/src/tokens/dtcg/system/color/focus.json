@@ -1,0 +1,38 @@
+{
+  "color": {
+    "focus": {
+      "inverse": {
+        "$value": "{neutral.0}",
+        "$type": "color",
+        "$description": "Focus ring for use on dark backgrounds"
+      },
+      "contrast": {
+        "$value": "{neutral.A900}",
+        "$type": "color",
+        "$description": "High contrast focus ring for accessibility"
+      },
+      "primary": {
+        "$value": "{brand.primary.500}",
+        "$type": "color",
+        "$description": "Tenant-themeable focus ring for interactive elements"
+      },
+      "critical": {
+        "$value": "{brand.critical.500}",
+        "$type": "color",
+        "$description": "Tenant-themeable focus ring for error-state elements"
+      },
+      "caution": {
+        "outer": {
+          "$value": "{brand.caution.500}",
+          "$type": "color",
+          "$description": "Tenant-themeable outer focus ring for caution-state elements"
+        },
+        "inner": {
+          "$value": "{brand.caution.400}",
+          "$type": "color",
+          "$description": "Tenant-themeable inner focus ring for caution-state elements"
+        }
+      }
+    }
+  }
+}

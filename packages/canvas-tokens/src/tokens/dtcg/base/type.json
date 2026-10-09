@@ -22,11 +22,29 @@
     "50": {
       "$value": "Sana Sans VF",
       "$type": "fontFamily",
-      "$description": "Default font-family"
+      "$description": "Default font-family",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "themes": {
+            "canvas": {
+              "$value": "Roboto"
+            }
+          }
+        }
+      }
     },
     "100": {
       "$value": "IBM Plex Mono",
-      "$type": "fontFamily"
+      "$type": "fontFamily",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "themes": {
+            "canvas": {
+              "$value": "Roboto Mono"
+            }
+          }
+        }
+      }
     },
     "200": {
       "$value": "Noto Sans",
@@ -117,6 +135,38 @@
         "unit": "px"
       },
       "$type": "dimension"
+    },
+    "50": {
+      "$value": {
+        "value": 0.4,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$deprecated": true
+    },
+    "100": {
+      "$value": {
+        "value": 0.32,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$deprecated": true
+    },
+    "150": {
+      "$value": {
+        "value": 0.24,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$deprecated": true
+    },
+    "200": {
+      "$value": {
+        "value": 0.16,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$deprecated": true
     }
   },
   "font-weight": {
