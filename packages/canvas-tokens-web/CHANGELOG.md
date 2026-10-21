@@ -1,5 +1,14 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.5
+
+### Major Changes
+
+- ### Infrastructure
+
+  - feat: Get script for old css files ([#376](https://github.com/Workday/canvas-tokens/pull/376))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
 ## 5.0.0-alpha.4
 
 ### Major Changes
