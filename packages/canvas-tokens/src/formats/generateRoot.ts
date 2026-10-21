@@ -1,9 +1,12 @@
 import {fileHeader, getReferences} from 'style-dictionary/utils';
 import type {TransformedToken, TransformedTokens} from 'style-dictionary';
+import {kebabCase} from 'case-anything';
 
 export const generateRoot = async ({dictionary, file, options}: any) => {
-  const {prefix, outputReferences, themeSelector, useThemeValues} = options;
+  const {compositeTokens, prefix, outputReferences, themeSelector, useThemeValues} = options;
   const header = await fileHeader({file});
+  const allTokens = dictionary.unfilteredTokens;
+
   const tokens = dictionary.allTokens
     .map((token: TransformedToken) => {
       const name = resolveCSSName(token, {prefix});
@@ -11,7 +14,7 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
       const finalValue = extractValue(token, {
         prefix,
         outputReferences,
-        tokens: dictionary.unfilteredTokens,
+        tokens: allTokens,
         useThemeValues,
       });
       const cssValue = token.$type === 'fontFamily' ? quoteFontFamily(finalValue) : finalValue;
@@ -25,9 +28,14 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
     })
     .join('\n');
 
+  const compositeTokensBlock = dictionary.unfilteredAllTokens
+    .filter((token: TransformedToken) => compositeTokens && compositeTokens.includes(token.$type))
+    .map((token: TransformedToken) => generateCompositeTokens(token, {prefix, tokens: allTokens}))
+    .join('\n');
+
   const scope = themeSelector ? `[data-theme="${themeSelector}"]` : ':root';
 
-  return header + `${scope} {\n` + tokens + '\n}\n';
+  return header + `${scope} {\n` + tokens + '\n}\n\n' + compositeTokensBlock;
 };
 
 const resolveCSSName = (token: TransformedToken, options: {prefix: string; isRef?: boolean}) => {
@@ -89,4 +97,23 @@ const quoteFontFamily = (value: unknown) => {
   return families
     .map(family => (families.length === 1 || /\s/.test(family) ? `"${family}"` : family))
     .join(', ');
+};
+
+const generateCompositeTokens = (
+  token: TransformedToken,
+  options: {prefix: string; tokens: TransformedTokens}
+) => {
+  const values = token.original.$value as Record<string, string>;
+  const properties = Object.entries(values)
+    .map(
+      ([key, value]) =>
+        `\t${kebabCase(key)}: ${
+          typeof value === 'string' ? resolveReferences(value, options) : value
+        };`
+    )
+    .join('\n');
+
+  const className = resolveCSSName(token, {prefix: options.prefix}).replace(/^--/, '');
+
+  return `.${className} {\n${properties}\n}\n`;
 };

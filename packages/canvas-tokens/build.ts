@@ -69,6 +69,10 @@ const config = new StyleDictionary({
             themeSelector: 'sana-canvas',
           },
         },
+        {
+          destination: 'index.css',
+          format: 'styles/index',
+        },
       ],
     },
   },
@@ -77,6 +81,22 @@ const config = new StyleDictionary({
 StyleDictionary.registerFormat({
   name: 'styles/root',
   format: generateRoot,
+});
+
+StyleDictionary.registerFormat({
+  name: 'styles/index',
+  format: () => {
+    const header = `/* Do not edit directly */\n/* Generated on ${new Date().toISOString()} */\n\n`;
+    const imports = [
+      '@import "./base/_variables.css";',
+      '@import "./brand/_variables.css";',
+      '@import "./system/_variables.css";',
+      '@import "./component/_variables.css";',
+      '@import "./sana/_variables.css";',
+    ];
+
+    return header + imports.join('\n');
+  },
 });
 
 const checkExcluded = (token: TransformedToken) => {
