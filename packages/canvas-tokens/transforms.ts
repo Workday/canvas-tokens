@@ -54,13 +54,13 @@ export const transforms = [
     transitive: true,
     name: `css/name`,
     transform: (token: TransformedToken) => {
-      //   console.log(token);
       if (!token.filePath.includes('brand')) {
         const level = token.filePath.match(/dtcg\/(\w*)\//)?.[1];
         const tokenPrefix = level ? `${level.replace('system', 'sys')}-` : '';
         const palette = token.filePath.includes('base/palette.json') ? 'palette-' : '';
         return `${tokenPrefix}${palette}${token.name}`;
       }
+
       return token.name;
     },
   },

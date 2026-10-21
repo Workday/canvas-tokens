@@ -6,8 +6,11 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
   const {compositeTokens, prefix, outputReferences, themeSelector, useThemeValues} = options;
   const header = await fileHeader({file});
   const allTokens = dictionary.unfilteredTokens;
+  const isComposite = (token: TransformedToken) =>
+    compositeTokens && compositeTokens.includes(token.$type);
 
   const tokens = dictionary.allTokens
+    .filter((token: TransformedToken) => !isComposite(token))
     .map((token: TransformedToken) => {
       const name = resolveCSSName(token, {prefix});
 
@@ -17,19 +20,18 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
         tokens: allTokens,
         useThemeValues,
       });
-      const cssValue = token.$type === 'fontFamily' ? quoteFontFamily(finalValue) : finalValue;
 
       const deprecatedWarning = token.$deprecated
-        ? `\t/* Token is deprecated and will be removed in the future version.*/\n`
+        ? `\t/* Token is deprecated and will be removed in a future version.*/\n`
         : '';
       const comment = token.$description ? ` /* ${token.$description} */` : '';
 
-      return `${deprecatedWarning}\t${name}: ${cssValue}${comment};`;
+      return `${deprecatedWarning}\t${name}: ${finalValue}${comment};`;
     })
     .join('\n');
 
   const compositeTokensBlock = dictionary.unfilteredAllTokens
-    .filter((token: TransformedToken) => compositeTokens && compositeTokens.includes(token.$type))
+    .filter(isComposite)
     .map((token: TransformedToken) => generateCompositeTokens(token, {prefix, tokens: allTokens}))
     .join('\n');
 
@@ -83,20 +85,6 @@ const resolveReferences = (value: string, options: {prefix: string; tokens: Tran
     const refToken = ref.find(r => r.key === a);
     return refToken ? resolveCSSName(refToken, {prefix, isRef: true}) : a;
   });
-};
-
-// Font families are always wrapped in double quotes: a single family is always quoted,
-// in a stack only names containing spaces are quoted.
-const quoteFontFamily = (value: unknown) => {
-  if (typeof value !== 'string' || value.includes('var(')) {
-    return value;
-  }
-
-  const families = value.split(',').map(family => family.trim().replace(/^["']|["']$/g, ''));
-
-  return families
-    .map(family => (families.length === 1 || /\s/.test(family) ? `"${family}"` : family))
-    .join(', ');
 };
 
 const generateCompositeTokens = (

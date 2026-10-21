@@ -1,4 +1,5 @@
 import StyleDictionary, {TransformedToken} from 'style-dictionary';
+import {fileHeader} from 'style-dictionary/utils';
 
 import {generateRoot} from './src/formats/generateRoot';
 import {transforms} from './transforms';
@@ -11,7 +12,6 @@ const isOldBrandTokens = (token: TransformedToken) =>
 
 const isOldSystemTokens = (token: TransformedToken) =>
   token.filePath.includes('/system/') &&
-  token.$type !== 'typography' &&
   !token.name.includes('color-chart') &&
   !checkExcluded(token);
 
@@ -85,8 +85,8 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
   name: 'styles/index',
-  format: () => {
-    const header = `/* Do not edit directly */\n/* Generated on ${new Date().toISOString()} */\n\n`;
+  format: async ({file}) => {
+    const header = await fileHeader({file});
     const imports = [
       '@import "./base/_variables.css";',
       '@import "./brand/_variables.css";',
@@ -95,7 +95,7 @@ StyleDictionary.registerFormat({
       '@import "./sana/_variables.css";',
     ];
 
-    return header + imports.join('\n');
+    return header + imports.join('\n') + '\n';
   },
 });
 
