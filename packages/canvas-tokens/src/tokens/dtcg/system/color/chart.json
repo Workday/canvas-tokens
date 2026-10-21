@@ -11,6 +11,13 @@
                 "dark": {
                   "$value": "{dark.teal.500}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -23,6 +30,13 @@
               "modes": {
                 "dark": {
                   "$value": "{brand.dark.primary.800}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -37,6 +51,13 @@
                 "dark": {
                   "$value": "{dark.orange.500}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -49,6 +70,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.azure.500}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -63,6 +91,13 @@
                 "dark": {
                   "$value": "{dark.magenta.600}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -75,6 +110,13 @@
               "modes": {
                 "dark": {
                   "$value": "{brand.dark.positive.600}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -89,6 +131,13 @@
                 "dark": {
                   "$value": "{dark.purple.500}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -101,6 +150,13 @@
               "modes": {
                 "dark": {
                   "$value": "{brand.dark.caution.500}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -115,6 +171,13 @@
                 "dark": {
                   "$value": "{dark.teal.700}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -127,6 +190,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.indigo.600}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -141,6 +211,13 @@
                 "dark": {
                   "$value": "{dark.orange.700}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -153,6 +230,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.azure.700}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -167,6 +251,13 @@
                 "dark": {
                   "$value": "{dark.purple.700}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -179,6 +270,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.coral.600}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -193,6 +291,13 @@
                 "dark": {
                   "$value": "{brand.dark.positive.800}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -205,6 +310,13 @@
               "modes": {
                 "dark": {
                   "$value": "{brand.dark.caution.700}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -223,6 +335,13 @@
                   "dark": {
                     "$value": "{dark.azure.900}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -236,6 +355,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.azure.800}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -251,6 +377,13 @@
                   "dark": {
                     "$value": "{dark.azure.700}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -264,6 +397,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.azure.600}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -279,6 +419,13 @@
                   "dark": {
                     "$value": "{dark.azure.500}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -292,6 +439,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.azure.400}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -307,6 +461,13 @@
                   "dark": {
                     "$value": "{dark.azure.300}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -320,6 +481,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.azure.200}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -335,6 +503,13 @@
                   "dark": {
                     "$value": "{dark.azure.100}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -348,6 +523,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.azure.50}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -363,6 +545,13 @@
                   "dark": {
                     "$value": "{dark.azure.25}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -376,6 +565,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{brand.dark.neutral.25}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -391,6 +587,13 @@
                   "dark": {
                     "$value": "{dark.coral.25}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -404,6 +607,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.coral.50}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -419,6 +629,13 @@
                   "dark": {
                     "$value": "{dark.coral.100}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -432,6 +649,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.coral.200}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -447,6 +671,13 @@
                   "dark": {
                     "$value": "{dark.coral.300}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -460,6 +691,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.coral.400}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -475,6 +713,13 @@
                   "dark": {
                     "$value": "{dark.coral.500}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -488,6 +733,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.coral.600}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -503,6 +755,13 @@
                   "dark": {
                     "$value": "{dark.coral.700}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -516,6 +775,13 @@
                 "modes": {
                   "dark": {
                     "$value": "{dark.coral.800}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
                   }
                 }
               }
@@ -531,6 +797,13 @@
                   "dark": {
                     "$value": "{dark.coral.900}"
                   }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{slate.A300}"
+                    }
+                  }
                 }
               }
             }
@@ -545,6 +818,13 @@
                 "dark": {
                   "$value": "{dark.azure.900}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -557,6 +837,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.azure.800}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -571,6 +858,13 @@
                 "dark": {
                   "$value": "{dark.azure.700}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -583,6 +877,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.azure.600}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -597,6 +898,13 @@
                 "dark": {
                   "$value": "{dark.azure.500}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -609,6 +917,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.azure.400}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -623,6 +938,13 @@
                 "dark": {
                   "$value": "{dark.azure.300}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -635,6 +957,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.azure.200}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -649,6 +978,13 @@
                 "dark": {
                   "$value": "{dark.azure.100}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -661,6 +997,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.azure.50}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -675,6 +1018,13 @@
                 "dark": {
                   "$value": "{dark.azure.25}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -687,6 +1037,13 @@
               "modes": {
                 "dark": {
                   "$value": "{brand.dark.neutral.25}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -701,6 +1058,13 @@
                 "dark": {
                   "$value": "{dark.coral.25}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -713,6 +1077,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.coral.50}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -727,6 +1098,13 @@
                 "dark": {
                   "$value": "{dark.coral.100}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -739,6 +1117,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.coral.200}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -753,6 +1138,13 @@
                 "dark": {
                   "$value": "{dark.coral.300}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -765,6 +1157,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.coral.400}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -779,6 +1178,13 @@
                 "dark": {
                   "$value": "{dark.coral.500}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -791,6 +1197,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.coral.600}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -805,6 +1218,13 @@
                 "dark": {
                   "$value": "{dark.coral.700}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -818,6 +1238,13 @@
                 "dark": {
                   "$value": "{dark.coral.800}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -830,6 +1257,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.coral.900}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -846,6 +1280,13 @@
                 "dark": {
                   "$value": "{dark.teal.25}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -858,6 +1299,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.teal.50}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -872,6 +1320,13 @@
                 "dark": {
                   "$value": "{dark.teal.100}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -884,6 +1339,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.teal.200}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -898,6 +1360,13 @@
                 "dark": {
                   "$value": "{dark.teal.300}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -910,6 +1379,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.teal.400}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -924,6 +1400,13 @@
                 "dark": {
                   "$value": "{dark.teal.500}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -936,6 +1419,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.teal.600}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }
@@ -950,6 +1440,13 @@
                 "dark": {
                   "$value": "{dark.teal.700}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -963,6 +1460,13 @@
                 "dark": {
                   "$value": "{dark.teal.800}"
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
+                }
               }
             }
           }
@@ -975,6 +1479,13 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.teal.900}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{slate.A300}"
+                  }
                 }
               }
             }

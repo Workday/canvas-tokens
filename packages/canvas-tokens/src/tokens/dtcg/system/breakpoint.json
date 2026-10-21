@@ -16,7 +16,7 @@
     },
     "md": {
       "$value": {
-        "value": 767,
+        "value": 768,
         "unit": "px"
       },
       "$type": "dimension"
@@ -42,6 +42,57 @@
       },
       "$type": "dimension",
       "$description": "Figma only. Use as the max-width on xl media query."
+    }
+  },
+  "breakpoints": {
+    "zero": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$deprecated": true
+    },
+    "sm": {
+      "$value": {
+        "value": 320,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$deprecated": true
+    },
+    "md": {
+      "$value": {
+        "value": 768,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$deprecated": true
+    },
+    "lg": {
+      "$value": {
+        "value": 1024,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$deprecated": true
+    },
+    "xl": {
+      "$value": {
+        "value": 1440,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$deprecated": true
+    },
+    "xxl": {
+      "$value": {
+        "value": 2180,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$description": "Figma only. Use as the max-width on xl media query.",
+      "$deprecated": true
     }
   }
 }

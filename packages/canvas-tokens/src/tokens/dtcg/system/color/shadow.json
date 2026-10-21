@@ -22,6 +22,11 @@
                     "alpha": 0.16
                   }
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
+                }
               }
             }
           }
@@ -45,6 +50,11 @@
                     "hex": "#0505081c",
                     "alpha": 0.11
                   }
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
                 }
               }
             }
@@ -72,6 +82,11 @@
                     "alpha": 0.22
                   }
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
+                }
               }
             }
           }
@@ -95,6 +110,11 @@
                     "hex": "#05050826",
                     "alpha": 0.15
                   }
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
                 }
               }
             }
@@ -122,6 +142,11 @@
                     "alpha": 0.28
                   }
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
+                }
               }
             }
           }
@@ -145,6 +170,11 @@
                     "hex": "#05050830",
                     "alpha": 0.19
                   }
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
                 }
               }
             }
@@ -172,6 +202,11 @@
                     "alpha": 0.34
                   }
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
+                }
               }
             }
           }
@@ -195,6 +230,11 @@
                     "hex": "#0505083b",
                     "alpha": 0.23
                   }
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
                 }
               }
             }
@@ -222,6 +262,11 @@
                     "alpha": 0.4
                   }
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
+                }
               }
             }
           }
@@ -245,6 +290,11 @@
                     "hex": "#05050845",
                     "alpha": 0.27
                   }
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
                 }
               }
             }
@@ -272,6 +322,11 @@
                     "alpha": 0.46
                   }
                 }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
+                }
               }
             }
           }
@@ -295,6 +350,11 @@
                     "hex": "#0505084f",
                     "alpha": 0.31
                   }
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "$excluded": true
                 }
               }
             }

@@ -4,7 +4,7 @@
       "$value": [
         "-apple-system",
         "BlinkMacSystemFont",
-        "Sana Serif",
+        "\"Sana Serif\"",
         "Roboto",
         "Inter",
         "Avenir",
@@ -12,15 +12,15 @@
         "Arial",
         "system-ui",
         "sans-serif",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol"
+        "\"Apple Color Emoji\"",
+        "\"Segoe UI Emoji\"",
+        "\"Segoe UI Symbol\""
       ],
       "$type": "fontFamily",
-      "$description": "Default font-family"
+      "$description": "Font-family fallback stack"
     },
     "50": {
-      "$value": "Sana Sans VF",
+      "$value": "\"Sana Sans VF\"",
       "$type": "fontFamily",
       "$description": "Default font-family",
       "$extensions": {
@@ -34,21 +34,30 @@
       }
     },
     "100": {
-      "$value": "IBM Plex Mono",
+      "$value": "\"IBM Plex Mono\"",
       "$type": "fontFamily",
       "$extensions": {
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "$value": "Roboto Mono"
+              "$value": "\"Roboto Mono\""
             }
           }
         }
       }
     },
     "200": {
-      "$value": "Noto Sans",
-      "$type": "fontFamily"
+      "$value": "\"Noto Sans\"",
+      "$type": "fontFamily",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "themes": {
+            "canvas": {
+              "$value": "\"Noto Sans\""
+            }
+          }
+        }
+      }
     }
   },
   "letter-spacing": {
