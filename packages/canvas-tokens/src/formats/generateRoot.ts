@@ -1,9 +1,12 @@
 import {fileHeader, getReferences} from 'style-dictionary/utils';
 import type {TransformedToken, TransformedTokens} from 'style-dictionary';
 import {kebabCase} from 'case-anything';
+import {isOklchToken} from '../../filters';
+import {getOklchValue} from '../../utils';
 
 export const generateRoot = async ({dictionary, file, options}: any) => {
-  const {compositeTokens, prefix, outputReferences, themeSelector, useThemeValues} = options;
+  const {compositeTokens, prefix, outputReferences, themeSelector, useThemeValues, modeSelector} =
+    options;
   const header = await fileHeader({file});
   const allTokens = dictionary.unfilteredTokens;
   const isComposite = (token: TransformedToken) =>
@@ -19,6 +22,7 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
         outputReferences,
         tokens: allTokens,
         useThemeValues,
+        modeSelector,
       });
 
       const deprecatedWarning = token.$deprecated
@@ -35,9 +39,26 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
     .map((token: TransformedToken) => generateCompositeTokens(token, {prefix, tokens: allTokens}))
     .join('\n');
 
-  const scope = themeSelector ? `[data-theme="${themeSelector}"]` : ':root';
+  const scope = getScope(themeSelector, modeSelector);
 
   return header + `${scope} {\n` + tokens + '\n}\n\n' + compositeTokensBlock;
+};
+
+const getScope = (themeSelector?: string, modeSelector?: string) => {
+  const mode = `data-mode="${modeSelector}"`;
+  const theme = `data-theme="${themeSelector}"`;
+
+  if (themeSelector) {
+    return modeSelector
+      ? `[${theme}][${mode}],\n[${theme}] [${mode}],\n[${mode}] [${theme}]`
+      : `[${theme}]`;
+  }
+
+  if (modeSelector) {
+    return `[${mode}]`;
+  }
+
+  return ':root';
 };
 
 const resolveCSSName = (token: TransformedToken, options: {prefix: string; isRef?: boolean}) => {
@@ -55,9 +76,24 @@ const extractValue = (
     outputReferences: boolean;
     tokens: TransformedTokens;
     useThemeValues: string;
+    modeSelector?: string;
   }
 ) => {
-  const {prefix, outputReferences, tokens, useThemeValues} = options;
+  const {prefix, outputReferences, tokens, useThemeValues, modeSelector} = options;
+
+  if (modeSelector) {
+    const modeValue =
+      token.original.$extensions?.['sana.canvas.tokens']?.modes?.[modeSelector]?.$value;
+
+    if (typeof modeValue === 'string') {
+      return outputReferences ? resolveReferences(modeValue, {prefix, tokens}) : modeValue;
+    }
+
+    if (isOklchToken({original: {$value: modeValue}})) {
+      return getOklchValue({original: {$value: modeValue}});
+    }
+  }
+
   const initialValue =
     outputReferences && typeof token.original.$value === 'string'
       ? resolveReferences(token.original.$value, {prefix, tokens})
