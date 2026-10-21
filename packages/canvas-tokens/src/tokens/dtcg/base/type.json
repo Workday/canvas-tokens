@@ -17,7 +17,7 @@
         "Segoe UI Symbol"
       ],
       "$type": "fontFamily",
-      "$description": "Default font-family"
+      "$description": "Font-family fallback stack"
     },
     "50": {
       "$value": "Sana Sans VF",
@@ -27,7 +27,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "$value": "Roboto"
+              "$value": "\"Roboto\""
             }
           }
         }
@@ -40,7 +40,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "$value": "Roboto Mono"
+              "$value": "\"Roboto Mono\""
             }
           }
         }
@@ -48,7 +48,16 @@
     },
     "200": {
       "$value": "Noto Sans",
-      "$type": "fontFamily"
+      "$type": "fontFamily",
+      "$extensions": {
+        "sana.canvas.tokens": {
+          "themes": {
+            "canvas": {
+              "$value": "\"Noto Sans\""
+            }
+          }
+        }
+      }
     }
   },
   "letter-spacing": {

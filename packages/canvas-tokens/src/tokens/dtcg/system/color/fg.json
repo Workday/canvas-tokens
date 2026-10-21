@@ -143,154 +143,6 @@
           }
         }
       },
-      "primary": {
-        "$root": {
-          "$value": "{brand.neutral.A900}",
-          "$type": "color",
-          "$description": "Tenant-themeable primary text and icon color",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{white.A850}"
-                }
-              },
-              "themes": {
-                "brand": {
-                  "light": {
-                    "$value": "{brand.primary.600}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "strong": {
-          "$value": "{brand.neutral.A950}",
-          "$type": "color",
-          "$description": "Stronger tenant-themeable primary text and icon color",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{white.A900}"
-                }
-              },
-              "themes": {
-                "brand": {
-                  "light": {
-                    "$value": "{brand.primary.700}"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "critical": {
-        "$root": {
-          "$value": "{brand.critical.600}",
-          "$type": "color",
-          "$description": "Tenant-themeable critical text and icon color",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.critical.600}"
-                }
-              }
-            }
-          }
-        },
-        "strong": {
-          "$value": "{brand.critical.700}",
-          "$type": "color",
-          "$description": "Stronger tenant-themeable critical text and icon color",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.critical.700}"
-                }
-              }
-            }
-          }
-        }
-      },
-      "caution": {
-        "$root": {
-          "$value": "{brand.caution.600}",
-          "$type": "color",
-          "$description": "Tenant-themeable caution text and icon color",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.caution.600}"
-                }
-              }
-            }
-          }
-        },
-        "strong": {
-          "$value": "{brand.caution.700}",
-          "$type": "color",
-          "$description": "Stronger tenant-themeable caution text and icon color",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.caution.700}"
-                }
-              }
-            }
-          }
-        }
-      },
-      "positive": {
-        "$root": {
-          "$value": "{brand.positive.600}",
-          "$type": "color",
-          "$description": "Tenant-themeable positive text and icon color",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.positive.600}"
-                }
-              }
-            }
-          }
-        },
-        "strong": {
-          "$value": "{brand.positive.700}",
-          "$type": "color",
-          "$description": "Stronger tenant-themeable positive text and icon color",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.positive.700}"
-                }
-              }
-            }
-          }
-        }
-      },
-      "selected": {
-        "$value": "{brand.primary.700}",
-        "$type": "color",
-        "$description": "Tenant-themeable text color for selected items",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.primary.700}"
-              }
-            }
-          }
-        }
-      },
       "info": {
         "$root": {
           "$value": "{brand.primary.600}",
@@ -570,6 +422,158 @@
                   "light": {
                     "$value": "{blue.700}"
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "brand": {
+      "fg": {
+        "primary": {
+          "$root": {
+            "$value": "{brand.neutral.A900}",
+            "$type": "color",
+            "$description": "Tenant-themeable primary text and icon color",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{white.A850}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{brand.primary.600}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "strong": {
+            "$value": "{brand.neutral.A950}",
+            "$type": "color",
+            "$description": "Stronger tenant-themeable primary text and icon color",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{white.A900}"
+                  }
+                },
+                "themes": {
+                  "canvas": {
+                    "light": {
+                      "$value": "{brand.primary.700}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "critical": {
+          "$root": {
+            "$value": "{brand.critical.600}",
+            "$type": "color",
+            "$description": "Tenant-themeable critical text and icon color",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{brand.dark.critical.600}"
+                  }
+                }
+              }
+            }
+          },
+          "strong": {
+            "$value": "{brand.critical.700}",
+            "$type": "color",
+            "$description": "Stronger tenant-themeable critical text and icon color",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{brand.dark.critical.700}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "caution": {
+          "$root": {
+            "$value": "{brand.caution.600}",
+            "$type": "color",
+            "$description": "Tenant-themeable caution text and icon color",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{brand.dark.caution.600}"
+                  }
+                }
+              }
+            }
+          },
+          "strong": {
+            "$value": "{brand.caution.700}",
+            "$type": "color",
+            "$description": "Stronger tenant-themeable caution text and icon color",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{brand.dark.caution.700}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "positive": {
+          "$root": {
+            "$value": "{brand.positive.600}",
+            "$type": "color",
+            "$description": "Tenant-themeable positive text and icon color",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{brand.dark.positive.600}"
+                  }
+                }
+              }
+            }
+          },
+          "strong": {
+            "$value": "{brand.positive.700}",
+            "$type": "color",
+            "$description": "Stronger tenant-themeable positive text and icon color",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{brand.dark.positive.700}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selected": {
+          "$value": "{brand.primary.700}",
+          "$type": "color",
+          "$description": "Tenant-themeable text color for selected items",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.primary.700}"
                 }
               }
             }

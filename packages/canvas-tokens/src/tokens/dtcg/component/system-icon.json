@@ -18,24 +18,28 @@
       }
     },
     "size": {
-      "xs": {
+      "xxs": {
         "$value": "{size.175}",
         "$type": "dimension"
       },
-      "sm": {
+      "xs": {
         "$value": "{size.200}",
         "$type": "dimension"
       },
-      "md": {
+      "sm": {
         "$value": "{size.225}",
         "$type": "dimension"
       },
-      "lg": {
+      "md": {
         "$value": "{size.250}",
         "$type": "dimension"
       },
-      "xl": {
+      "lg": {
         "$value": "{size.300}",
+        "$type": "dimension"
+      },
+      "xl": {
+        "$value": "{size.400}",
         "$type": "dimension"
       }
     }

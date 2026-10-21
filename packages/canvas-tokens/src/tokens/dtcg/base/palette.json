@@ -12,7 +12,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -30,7 +30,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -48,7 +48,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -66,7 +66,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -84,7 +84,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -102,7 +102,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -120,7 +120,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -138,7 +138,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -156,7 +156,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -174,7 +174,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -192,7 +192,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -210,7 +210,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -228,7 +228,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -246,7 +246,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -264,7 +264,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }
@@ -282,7 +282,7 @@
         "sana.canvas.tokens": {
           "themes": {
             "canvas": {
-              "excluded": true
+              "$excluded": true
             }
           }
         }

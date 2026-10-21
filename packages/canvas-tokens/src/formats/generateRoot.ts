@@ -14,8 +14,14 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
         tokens: dictionary.unfilteredTokens,
         useThemeValues,
       });
+      const cssValue = token.$type === 'fontFamily' ? quoteFontFamily(finalValue) : finalValue;
 
-      return `\t${name}: ${finalValue};`;
+      const deprecatedWarning = token.$deprecated
+        ? `\t/* Token is deprecated and will be removed in the future version.*/\n`
+        : '';
+      const comment = token.$description ? ` /* ${token.$description} */` : '';
+
+      return `${deprecatedWarning}\t${name}: ${cssValue}${comment};`;
     })
     .join('\n');
 
@@ -48,11 +54,13 @@ const extractValue = (
       : token.$value;
 
   if (useThemeValues) {
-    const extension = token.$extensions?.theme?.[useThemeValues];
+    const extension = token.original.$extensions?.['sana.canvas.tokens']?.themes?.[useThemeValues];
+
     const value =
       typeof extension === 'object' && extension?.light
         ? extension.light.$value
         : extension?.$value;
+
     return value ? resolveReferences(value, {prefix, tokens}) : initialValue;
   }
 
@@ -63,8 +71,22 @@ const resolveReferences = (value: string, options: {prefix: string; tokens: Tran
   const {prefix, tokens} = options;
   const ref = getReferences(value, tokens);
 
-  return value.replace(/\{([\w.-]+)\}/g, a => {
+  return value.replace(/\{([\w.$-]+)\}/g, a => {
     const refToken = ref.find(r => r.key === a);
     return refToken ? resolveCSSName(refToken, {prefix, isRef: true}) : a;
   });
+};
+
+// Font families are always wrapped in double quotes: a single family is always quoted,
+// in a stack only names containing spaces are quoted.
+const quoteFontFamily = (value: unknown) => {
+  if (typeof value !== 'string' || value.includes('var(')) {
+    return value;
+  }
+
+  const families = value.split(',').map(family => family.trim().replace(/^["']|["']$/g, ''));
+
+  return families
+    .map(family => (families.length === 1 || /\s/.test(family) ? `"${family}"` : family))
+    .join(', ');
 };

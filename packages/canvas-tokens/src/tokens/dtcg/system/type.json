@@ -37,6 +37,11 @@
     "bold": {
       "$value": "{font-weight.700}",
       "$type": "fontWeight"
+    },
+    "normal": {
+      "$value": "{font-weight.400}",
+      "$type": "fontWeight",
+      "$deprecated": true
     }
   },
   "font-size": {
@@ -214,7 +219,7 @@
           "sana.canvas.tokens": {
             "themes": {
               "canvas": {
-                "$value": ""
+                "$excluded": true
               }
             }
           }
@@ -285,7 +290,16 @@
       },
       "md": {
         "$value": "{size.300}",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "themes": {
+              "canvas": {
+                "$value": "{size.350}"
+              }
+            }
+          }
+        }
       },
       "lg": {
         "$value": "{size.350}",

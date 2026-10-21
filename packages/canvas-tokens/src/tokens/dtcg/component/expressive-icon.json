@@ -10,7 +10,7 @@
       "fill": {
         "$value": "{neutral.800}",
         "$type": "color",
-        "$description": "Component level color used on the fill areas of system icons",
+        "$description": "Component level color used on the fill areas of expressive icons",
         "$deprecated": true
       }
     },

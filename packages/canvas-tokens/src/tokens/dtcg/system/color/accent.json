@@ -1,68 +1,31 @@
 {
   "color": {
     "accent": {
-      "primary": {
-        "$value": "{brand.neutral.975}",
+      "ai": {
+        "$value": "{brand.primary.950}",
         "$type": "color",
-        "$description": "Primary accent for buttons and key actions",
+        "$description": "Dark accent indicating AI-generated content",
         "$extensions": {
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.neutral.975}"
+                "$value": "{brand.dark.primary.950}"
               }
             },
             "themes": {
-              "brand": {
+              "canvas": {
                 "light": {
-                  "$value": "{brand.primary.600}"
+                  "$value": "{blue.950}"
                 }
               }
             }
           }
         }
       },
-      "positive": {
-        "$value": "{brand.positive.600}",
+      "contrast": {
+        "$value": "{neutral.A900}",
         "$type": "color",
-        "$description": "Positive status color used to communicate success",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.positive.600}"
-              }
-            }
-          }
-        }
-      },
-      "caution": {
-        "$value": "{brand.caution.400}",
-        "$type": "color",
-        "$description": "Tenant-themeable solid caution accent",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.caution.400}"
-              }
-            }
-          }
-        }
-      },
-      "critical": {
-        "$value": "{brand.critical.600}",
-        "$type": "color",
-        "$description": "Tenant-themeable solid critical accent for destructive actions",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.critical.600}"
-              }
-            }
-          }
-        }
+        "$description": "High contrast accent for maximum visibility"
       },
       "info": {
         "$value": "{brand.primary.600}",
@@ -148,27 +111,6 @@
           }
         }
       },
-      "ai": {
-        "$value": "{brand.primary.950}",
-        "$type": "color",
-        "$description": "Dark accent indicating AI-generated content",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.primary.950}"
-              }
-            },
-            "themes": {
-              "canvas": {
-                "light": {
-                  "$value": "{blue.950}"
-                }
-              }
-            }
-          }
-        }
-      },
       "muted": {
         "$root": {
           "$value": "{brand.neutral.600}",
@@ -213,27 +155,6 @@
           }
         }
       },
-      "action": {
-        "$value": "{brand.neutral.975}",
-        "$type": "color",
-        "$description": "Tenant-themeable primary action color for CTAs",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.neutral.975}"
-              }
-            },
-            "themes": {
-              "brand": {
-                "light": {
-                  "$value": "{brand.primary.600}"
-                }
-              }
-            }
-          }
-        }
-      },
       "overlay": {
         "hover": {
           "$value": "{white.A50}",
@@ -270,7 +191,7 @@
               "themes": {
                 "canvas": {
                   "light": {
-                    "$value": "{neutral.A300}"
+                    "$value": "{neutral.A400}"
                   }
                 }
               }
@@ -278,7 +199,7 @@
           }
         },
         "mixin": {
-          "$value": "{neutral.0}",
+          "$value": "{color.accent.overlay.hover}",
           "$type": "color",
           "$description": "Pressed overlay for accent-colored elements",
           "$extensions": {
@@ -292,6 +213,94 @@
                 "canvas": {
                   "light": {
                     "$value": "{neutral.1000}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "brand": {
+      "accent": {
+        "primary": {
+          "$value": "{brand.neutral.975}",
+          "$type": "color",
+          "$description": "Primary accent for buttons and key actions",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.neutral.975}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{brand.primary.600}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "critical": {
+          "$value": "{brand.critical.600}",
+          "$type": "color",
+          "$description": "Tenant-themeable solid critical accent for destructive actions",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.critical.600}"
+                }
+              }
+            }
+          }
+        },
+        "positive": {
+          "$value": "{brand.positive.600}",
+          "$type": "color",
+          "$description": "Positive status color used to communicate success",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.positive.600}"
+                }
+              }
+            }
+          }
+        },
+        "caution": {
+          "$value": "{brand.caution.400}",
+          "$type": "color",
+          "$description": "Tenant-themeable solid caution accent",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.caution.400}"
+                }
+              }
+            }
+          }
+        },
+        "action": {
+          "$value": "{brand.neutral.975}",
+          "$type": "color",
+          "$description": "Tenant-themeable primary action color for CTAs",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.neutral.975}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{brand.primary.600}"
                   }
                 }
               }

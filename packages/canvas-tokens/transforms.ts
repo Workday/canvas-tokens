@@ -28,7 +28,9 @@ export const transforms = [
     filter: (token: TransformedToken) =>
       typeof token.original.$value === 'object' && token.original.$value.colorSpace === 'oklch',
     transform: (token: TransformedToken) =>
-      `oklch(${token.original.$value.components.join(' ')} / ${token.original.$value.alpha || 1})`,
+      `oklch(${token.original.$value.components.join(' ')} / ${
+        typeof token.original.$value.alpha === 'number' ? token.original.$value.alpha : 1
+      })`,
   },
   // Transform gradients
   {

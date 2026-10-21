@@ -87,63 +87,23 @@
           }
         }
       },
-      "primary": {
-        "$value": "{brand.primary.500}",
-        "$type": "color",
-        "$description": "Tenant-themeable primary border for focused inputs",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.neutral.700}"
-              }
-            }
-          }
-        }
-      },
-      "critical": {
-        "$value": "{brand.critical.500}",
-        "$type": "color",
-        "$description": "Tenant-themeable critical border for error states",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.critical.500}"
-              }
-            }
-          }
-        }
-      },
-      "caution": {
-        "$value": "{brand.caution.500}",
-        "$type": "color",
-        "$description": "Tenant-themeable caution border for warning states",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.caution.500}"
-              }
-            }
-          }
-        }
-      },
       "info": {
-        "$value": "{brand.primary.500}",
-        "$type": "color",
-        "$description": "Border for informational containers (not tenant themeable)",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{brand.dark.primary.500}"
-              }
-            },
-            "themes": {
-              "canvas": {
-                "light": {
-                  "$value": "{blue.500}"
+        "$root": {
+          "$value": "{brand.primary.500}",
+          "$type": "color",
+          "$description": "Border for informational containers (not tenant themeable)",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.primary.500}"
+                }
+              },
+              "themes": {
+                "canvas": {
+                  "light": {
+                    "$value": "{blue.500}"
+                  }
                 }
               }
             }
@@ -223,20 +183,15 @@
         }
       },
       "contrast": {
-        "$value": "{brand.neutral.A900}",
-        "$type": "color",
-        "$description": "High contrast border for maximum visibility",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{white.A900}"
-              }
-            },
-            "themes": {
-              "canvas": {
-                "light": {
-                  "$value": "{neutral.A900}"
+        "$root": {
+          "$value": "{brand.neutral.A900}",
+          "$type": "color",
+          "$description": "High contrast border for maximum visibility",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{white.A900}"
                 }
               }
             }
@@ -252,6 +207,13 @@
             "modes": {
               "dark": {
                 "$value": "{black.A0}"
+              }
+            },
+            "themes": {
+              "canvas": {
+                "light": {
+                  "$value": "{neutral.A0}"
+                }
               }
             }
           }
@@ -270,9 +232,7 @@
             },
             "themes": {
               "canvas": {
-                "light": {
-                  "$value": ""
-                }
+                "$excluded": true
               }
             }
           }
@@ -291,8 +251,52 @@
             },
             "themes": {
               "canvas": {
-                "light": {
-                  "$value": ""
+                "$excluded": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "brand": {
+      "border": {
+        "primary": {
+          "$value": "{brand.primary.500}",
+          "$type": "color",
+          "$description": "Tenant-themeable primary border for focused inputs",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.neutral.700}"
+                }
+              }
+            }
+          }
+        },
+        "critical": {
+          "$value": "{brand.critical.500}",
+          "$type": "color",
+          "$description": "Tenant-themeable critical border for error states",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.critical.500}"
+                }
+              }
+            }
+          }
+        },
+        "caution": {
+          "$value": "{brand.caution.500}",
+          "$type": "color",
+          "$description": "Tenant-themeable caution border for warning states",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.caution.500}"
                 }
               }
             }
