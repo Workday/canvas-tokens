@@ -15,7 +15,7 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
   const tokens = dictionary.allTokens
     .filter((token: TransformedToken) => !isComposite(token))
     .map((token: TransformedToken) => {
-      const name = resolveCSSName(token, {prefix});
+      const name = toCSSVarName(token, prefix);
 
       const finalValue = extractValue(token, {
         prefix,
@@ -61,13 +61,14 @@ const getScope = (themeSelector?: string, modeSelector?: string) => {
   return ':root';
 };
 
-const resolveCSSName = (token: TransformedToken, options: {prefix: string; isRef?: boolean}) => {
-  const {prefix, isRef} = options;
-  const noRootName = token.name.replace(/-root$/, '-default');
-  const name = `--${prefix}-${noRootName}`;
+const getTokenSlug = (token: TransformedToken, prefix: string) =>
+  `${prefix}-${token.name.replace(/-root$/, '-default')}`;
 
-  return isRef ? `var(${name})` : name;
-};
+const toCSSVarName = (token: TransformedToken, prefix: string) =>
+  `--${getTokenSlug(token, prefix)}`;
+
+const toCSSVarRef = (token: TransformedToken, prefix: string) =>
+  `var(${toCSSVarName(token, prefix)})`;
 
 const extractValue = (
   token: TransformedToken,
@@ -119,7 +120,7 @@ const resolveReferences = (value: string, options: {prefix: string; tokens: Tran
 
   return value.replace(/\{([\w.$-]+)\}/g, a => {
     const refToken = ref.find(r => r.key === a);
-    return refToken ? resolveCSSName(refToken, {prefix, isRef: true}) : a;
+    return refToken ? toCSSVarRef(refToken, prefix) : a;
   });
 };
 
@@ -137,7 +138,7 @@ const generateCompositeTokens = (
     )
     .join('\n');
 
-  const className = resolveCSSName(token, {prefix: options.prefix}).replace(/^--/, '');
+  const className = getTokenSlug(token, options.prefix);
 
   return `.${className} {\n${properties}\n}\n`;
 };
