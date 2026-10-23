@@ -118,11 +118,6 @@
           "$description": "Muted accent for secondary visual elements",
           "$extensions": {
             "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.neutral.600}"
-                }
-              },
               "themes": {
                 "canvas": {
                   "light": {
@@ -139,11 +134,6 @@
           "$description": "Softer muted accent for tertiary elements",
           "$extensions": {
             "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.neutral.400}"
-                }
-              },
               "themes": {
                 "canvas": {
                   "light": {
@@ -229,11 +219,6 @@
           "$description": "Primary accent for buttons and key actions",
           "$extensions": {
             "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.neutral.975}"
-                }
-              },
               "themes": {
                 "canvas": {
                   "light": {
@@ -247,44 +232,17 @@
         "critical": {
           "$value": "{brand.critical.600}",
           "$type": "color",
-          "$description": "Tenant-themeable solid critical accent for destructive actions",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.critical.600}"
-                }
-              }
-            }
-          }
+          "$description": "Tenant-themeable solid critical accent for destructive actions"
         },
         "positive": {
           "$value": "{brand.positive.600}",
           "$type": "color",
-          "$description": "Positive status color used to communicate success",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.positive.600}"
-                }
-              }
-            }
-          }
+          "$description": "Positive status color used to communicate success"
         },
         "caution": {
           "$value": "{brand.caution.400}",
           "$type": "color",
-          "$description": "Tenant-themeable solid caution accent",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.caution.400}"
-                }
-              }
-            }
-          }
+          "$description": "Tenant-themeable solid caution accent"
         },
         "action": {
           "$value": "{brand.neutral.975}",
@@ -292,11 +250,6 @@
           "$description": "Tenant-themeable primary action color for CTAs",
           "$extensions": {
             "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.neutral.975}"
-                }
-              },
               "themes": {
                 "canvas": {
                   "light": {

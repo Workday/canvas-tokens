@@ -440,7 +440,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.primary.600}"
+                    "$value": "{brand.primary.600}"
                   }
                 },
                 "themes": {
@@ -461,7 +461,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.primary.700}"
+                    "$value": "{brand.primary.700}"
                   }
                 },
                 "themes": {
@@ -479,105 +479,42 @@
           "$root": {
             "$value": "{brand.critical.600}",
             "$type": "color",
-            "$description": "Tenant-themeable critical text and icon color",
-            "$extensions": {
-              "sana.canvas.tokens": {
-                "modes": {
-                  "dark": {
-                    "$value": "{brand.dark.critical.600}"
-                  }
-                }
-              }
-            }
+            "$description": "Tenant-themeable critical text and icon color"
           },
           "strong": {
             "$value": "{brand.critical.700}",
             "$type": "color",
-            "$description": "Stronger tenant-themeable critical text and icon color",
-            "$extensions": {
-              "sana.canvas.tokens": {
-                "modes": {
-                  "dark": {
-                    "$value": "{brand.dark.critical.700}"
-                  }
-                }
-              }
-            }
+            "$description": "Stronger tenant-themeable critical text and icon color"
           }
         },
         "caution": {
           "$root": {
             "$value": "{brand.caution.600}",
             "$type": "color",
-            "$description": "Tenant-themeable caution text and icon color",
-            "$extensions": {
-              "sana.canvas.tokens": {
-                "modes": {
-                  "dark": {
-                    "$value": "{brand.dark.caution.600}"
-                  }
-                }
-              }
-            }
+            "$description": "Tenant-themeable caution text and icon color"
           },
           "strong": {
             "$value": "{brand.caution.700}",
             "$type": "color",
-            "$description": "Stronger tenant-themeable caution text and icon color",
-            "$extensions": {
-              "sana.canvas.tokens": {
-                "modes": {
-                  "dark": {
-                    "$value": "{brand.dark.caution.700}"
-                  }
-                }
-              }
-            }
+            "$description": "Stronger tenant-themeable caution text and icon color"
           }
         },
         "positive": {
           "$root": {
             "$value": "{brand.positive.600}",
             "$type": "color",
-            "$description": "Tenant-themeable positive text and icon color",
-            "$extensions": {
-              "sana.canvas.tokens": {
-                "modes": {
-                  "dark": {
-                    "$value": "{brand.dark.positive.600}"
-                  }
-                }
-              }
-            }
+            "$description": "Tenant-themeable positive text and icon color"
           },
           "strong": {
             "$value": "{brand.positive.700}",
             "$type": "color",
-            "$description": "Stronger tenant-themeable positive text and icon color",
-            "$extensions": {
-              "sana.canvas.tokens": {
-                "modes": {
-                  "dark": {
-                    "$value": "{brand.dark.positive.700}"
-                  }
-                }
-              }
-            }
+            "$description": "Stronger tenant-themeable positive text and icon color"
           }
         },
         "selected": {
           "$value": "{brand.primary.700}",
           "$type": "color",
-          "$description": "Tenant-themeable text color for selected items",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.primary.700}"
-                }
-              }
-            }
-          }
+          "$description": "Tenant-themeable text color for selected items"
         }
       }
     }

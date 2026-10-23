@@ -4,7 +4,7 @@ export const isOldBaseTokens = (token: TransformedToken) =>
   token.filePath.includes('/base/') && token.path[0] !== 'dark' && !checkExcluded(token);
 
 export const isOldBrandTokens = (token: TransformedToken) =>
-  token.filePath.includes('/brand/') && !['dark', 'action'].includes(token.path[1]);
+  token.filePath.includes('/brand/') && token.path[1] !== 'action';
 
 export const isOldSystemTokens = (token: TransformedToken) =>
   token.filePath.includes('/system/') &&
@@ -19,8 +19,8 @@ export const isSanaTokens = (token: TransformedToken) =>
 
 export const isSanaDarkTokens = (token: TransformedToken) =>
   (token.filePath.includes('/base/') && token.path[0] === 'dark') ||
-  (token.filePath.includes('/brand/') && token.path[1] === 'dark' && token.path[2] !== 'action') ||
-  token.$extensions?.['sana.canvas.tokens']?.modes?.dark;
+  (!(token.filePath.includes('/brand/') && token.path[1] === 'action') &&
+    Boolean(token.$extensions?.['sana.canvas.tokens']?.modes?.dark));
 
 export const isOklchToken = (token: any) => {
   return typeof token.original.$value === 'object' && token.original.$value?.colorSpace === 'oklch';

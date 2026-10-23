@@ -3,75 +3,237 @@
     "caution": {
       "25": {
         "$value": "{amber.25}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.25}"
+              }
+            }
+          }
+        }
       },
       "50": {
         "$value": "{amber.50}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.50}"
+              }
+            }
+          }
+        }
       },
       "100": {
         "$value": "{amber.100}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.100}"
+              }
+            }
+          }
+        }
       },
       "200": {
         "$value": "{amber.200}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.200}"
+              }
+            }
+          }
+        }
       },
       "300": {
         "$value": "{amber.300}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.300}"
+              }
+            }
+          }
+        }
       },
       "400": {
         "$value": "{amber.400}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.400}"
+              }
+            }
+          }
+        }
       },
       "500": {
         "$value": "{amber.500}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.500}"
+              }
+            }
+          }
+        }
       },
       "600": {
         "$value": "{amber.600}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.600}"
+              }
+            }
+          }
+        }
       },
       "700": {
         "$value": "{amber.700}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.700}"
+              }
+            }
+          }
+        }
       },
       "800": {
         "$value": "{amber.800}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.800}"
+              }
+            }
+          }
+        }
       },
       "900": {
         "$value": "{amber.900}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.900}"
+              }
+            }
+          }
+        }
       },
       "950": {
         "$value": "{amber.950}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.950}"
+              }
+            }
+          }
+        }
       },
       "975": {
         "$value": "{amber.975}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.975}"
+              }
+            }
+          }
+        }
       },
       "A25": {
         "$value": "{amber.A25}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.A25}"
+              }
+            }
+          }
+        }
       },
       "A50": {
         "$value": "{amber.A50}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.A50}"
+              }
+            }
+          }
+        }
       },
       "A100": {
         "$value": "{amber.A100}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.A100}"
+              }
+            }
+          }
+        }
       },
       "A200": {
         "$value": "{amber.A200}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.A200}"
+              }
+            }
+          }
+        }
       },
       "A300": {
         "$value": "{amber.A300}",
-        "$type": "color"
+        "$type": "color",
+        "$extensions": {
+          "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.A300}"
+              }
+            }
+          }
+        }
       }
     }
   }
