@@ -7,15 +7,15 @@
           "$type": "color"
         },
         "dark": {
-          "$value": "{brand.dark.neutral.975}",
+          "$value": "{brand.dark.neutral.950}",
           "$type": "color"
         },
         "darker": {
-          "$value": "{brand.dark.neutral.975}",
+          "$value": "{brand.dark.neutral.900}",
           "$type": "color"
         },
         "darkest": {
-          "$value": "{brand.dark.neutral.950}",
+          "$value": "{brand.dark.neutral.850}",
           "$type": "color"
         },
         "light": {
@@ -23,7 +23,7 @@
           "$type": "color"
         },
         "lighter": {
-          "$value": "{brand.dark.neutral.100}",
+          "$value": "{brand.dark.neutral.50}",
           "$type": "color"
         },
         "lightest": {
@@ -31,7 +31,7 @@
           "$type": "color"
         },
         "accent": {
-          "$value": "{neutral.0}",
+          "$value": "{neutral.1000}",
           "$type": "color"
         }
       }

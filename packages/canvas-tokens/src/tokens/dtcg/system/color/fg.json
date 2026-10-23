@@ -152,7 +152,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.primary.600}"
+                  "$value": "{dark.blue.600}"
                 }
               },
               "themes": {
@@ -173,7 +173,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.primary.700}"
+                  "$value": "{dark.blue.700}"
                 }
               },
               "themes": {
@@ -196,7 +196,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.critical.600}"
+                  "$value": "{dark.red.600}"
                 }
               },
               "themes": {
@@ -217,7 +217,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.critical.700}"
+                  "$value": "{dark.red.700}"
                 }
               },
               "themes": {
@@ -240,7 +240,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.caution.600}"
+                  "$value": "{dark.amber.600}"
                 }
               },
               "themes": {
@@ -261,7 +261,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.caution.700}"
+                  "$value": "{dark.amber.700}"
                 }
               },
               "themes": {
@@ -284,7 +284,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.positive.600}"
+                  "$value": "{dark.green.600}"
                 }
               },
               "themes": {
@@ -305,7 +305,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.positive.700}"
+                  "$value": "{dark.green.700}"
                 }
               },
               "themes": {
@@ -327,7 +327,7 @@
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.primary.950}"
+                "$value": "{dark.blue.600}"
               }
             },
             "themes": {
@@ -349,7 +349,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{white.A900}"
+                  "$value": "{dark.neutral.A900}"
                 }
               },
               "themes": {
@@ -370,7 +370,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{white.A950}"
+                  "$value": "{dark.neutral.A950}"
                 }
               },
               "themes": {
@@ -393,7 +393,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{white.A900}"
+                  "$value": "{dark.blue.600}"
                 }
               },
               "themes": {
@@ -414,7 +414,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{white.A950}"
+                  "$value": "{dark.blue.700}"
                 }
               },
               "themes": {
@@ -440,7 +440,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{white.A850}"
+                    "$value": "{brand.dark.primary.600}"
                   }
                 },
                 "themes": {
@@ -461,7 +461,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{white.A900}"
+                    "$value": "{brand.dark.primary.700}"
                   }
                 },
                 "themes": {

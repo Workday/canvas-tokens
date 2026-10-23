@@ -9,7 +9,7 @@
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.neutral.25}"
+                "$value": "{brand.dark.neutral.50}"
               }
             }
           }
@@ -24,7 +24,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.neutral.50}"
+                  "$value": "{brand.dark.neutral.25}"
                 }
               },
               "themes": {

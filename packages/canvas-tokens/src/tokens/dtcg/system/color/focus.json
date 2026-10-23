@@ -22,18 +22,45 @@
         "critical": {
           "$value": "{brand.critical.500}",
           "$type": "color",
-          "$description": "Tenant-themeable focus ring for error-state elements"
+          "$description": "Tenant-themeable focus ring for error-state elements",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{brand.dark.critical.500}"
+                }
+              }
+            }
+          }
         },
         "caution": {
           "outer": {
             "$value": "{brand.caution.500}",
             "$type": "color",
-            "$description": "Tenant-themeable outer focus ring for caution-state elements"
+            "$description": "Tenant-themeable outer focus ring for caution-state elements",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{brand.dark.caution.500}"
+                  }
+                }
+              }
+            }
           },
           "inner": {
             "$value": "{brand.caution.400}",
             "$type": "color",
-            "$description": "Tenant-themeable inner focus ring for caution-state elements"
+            "$description": "Tenant-themeable inner focus ring for caution-state elements",
+            "$extensions": {
+              "sana.canvas.tokens": {
+                "modes": {
+                  "dark": {
+                    "$value": "{brand.dark.caution.400}"
+                  }
+                }
+              }
+            }
           }
         }
       }
