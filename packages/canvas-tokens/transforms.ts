@@ -1,4 +1,6 @@
 import {TransformedToken} from 'style-dictionary';
+import {getOklchValue} from './utils';
+import {isOklchToken} from './filters';
 
 export const transforms = [
   // Transform for duration tokens in the base/motion category
@@ -25,12 +27,8 @@ export const transforms = [
     type: `value`,
     transitive: true,
     name: `toOKLCH`,
-    filter: (token: TransformedToken) =>
-      typeof token.original.$value === 'object' && token.original.$value.colorSpace === 'oklch',
-    transform: (token: TransformedToken) =>
-      `oklch(${token.original.$value.components.join(' ')} / ${
-        typeof token.original.$value.alpha === 'number' ? token.original.$value.alpha : 1
-      })`,
+    filter: isOklchToken,
+    transform: getOklchValue,
   },
   // Transform gradients
   {

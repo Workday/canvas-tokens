@@ -1,25 +1,9 @@
-import StyleDictionary, {TransformedToken} from 'style-dictionary';
+import StyleDictionary from 'style-dictionary';
 import {fileHeader} from 'style-dictionary/utils';
 
 import {generateRoot} from './src/formats/generateRoot';
 import {transforms} from './transforms';
-
-const isOldBaseTokens = (token: TransformedToken) =>
-  token.filePath.includes('/base/') && token.path[0] !== 'dark' && !checkExcluded(token);
-
-const isOldBrandTokens = (token: TransformedToken) =>
-  token.filePath.includes('/brand/') && !['dark', 'action'].includes(token.path[1]);
-
-const isOldSystemTokens = (token: TransformedToken) =>
-  token.filePath.includes('/system/') &&
-  !token.name.includes('color-chart') &&
-  !checkExcluded(token);
-
-const isSanaTokens = (token: TransformedToken) =>
-  token.$type !== 'typography' &&
-  token.path[0] !== 'dark' &&
-  !['dark', 'action'].includes(token.path[1]) &&
-  token.$extensions?.['sana.canvas.tokens']?.themes?.canvas;
+import * as filters from './filters';
 
 const config = new StyleDictionary({
   source: ['src/tokens/dtcg/**/*.json'],
@@ -33,19 +17,19 @@ const config = new StyleDictionary({
         {
           destination: 'base/_variables.css',
           format: 'styles/root',
-          filter: isOldBaseTokens,
+          filter: filters.isOldBaseTokens,
           options: {prefix: 'cnvs', useThemeValues: 'canvas'},
         },
         {
           destination: 'brand/_variables.css',
           format: 'styles/root',
-          filter: isOldBrandTokens,
+          filter: filters.isOldBrandTokens,
           options: {prefix: 'cnvs', outputReferences: true},
         },
         {
           destination: 'system/_variables.css',
           format: 'styles/root',
-          filter: isOldSystemTokens,
+          filter: filters.isOldSystemTokens,
           options: {
             prefix: 'cnvs',
             outputReferences: true,
@@ -62,11 +46,22 @@ const config = new StyleDictionary({
         {
           destination: 'sana/_variables.css',
           format: 'styles/root',
-          filter: isSanaTokens,
+          filter: filters.isSanaTokens,
           options: {
             prefix: 'cnvs',
             outputReferences: true,
             themeSelector: 'sana-canvas',
+          },
+        },
+        {
+          destination: 'sana/_variables-dark.css',
+          format: 'styles/root',
+          filter: filters.isSanaDarkTokens,
+          options: {
+            prefix: 'cnvs',
+            outputReferences: true,
+            themeSelector: 'sana-canvas',
+            modeSelector: 'dark',
           },
         },
         {
@@ -93,15 +88,12 @@ StyleDictionary.registerFormat({
       '@import "./system/_variables.css";',
       '@import "./component/_variables.css";',
       '@import "./sana/_variables.css";',
+      '@import "./sana/_variables-dark.css";',
     ];
 
     return header + imports.join('\n') + '\n';
   },
 });
-
-const checkExcluded = (token: TransformedToken) => {
-  return token?.$extensions?.['sana.canvas.tokens']?.themes?.canvas?.$excluded === true;
-};
 
 transforms.forEach(transform => StyleDictionary.registerTransform(transform));
 

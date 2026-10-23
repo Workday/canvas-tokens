@@ -9,7 +9,7 @@
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.neutral.50}"
+                "$value": "{brand.neutral.100}"
               }
             }
           }
@@ -29,7 +29,6 @@
           }
         }
       },
-
       "navigation": {
         "$value": "{brand.neutral.50}",
         "$type": "color",
@@ -38,7 +37,7 @@
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.neutral.100}"
+                "$value": "{brand.neutral.100}"
               }
             },
             "themes": {
@@ -59,7 +58,7 @@
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.neutral.150}"
+                "$value": "{brand.neutral.150}"
               }
             }
           }
@@ -73,7 +72,7 @@
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.neutral.200}"
+                "$value": "{brand.neutral.200}"
               }
             }
           }
@@ -153,7 +152,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.primary.A25}"
+                  "$value": "{dark.blue.A50}"
                 }
               },
               "themes": {
@@ -174,7 +173,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.primary.A50}"
+                  "$value": "{dark.blue.A100}"
                 }
               },
               "themes": {
@@ -197,7 +196,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.critical.A25}"
+                  "$value": "{dark.red.A50}"
                 }
               },
               "themes": {
@@ -218,7 +217,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.critical.A50}"
+                  "$value": "{dark.red.A100}"
                 }
               },
               "themes": {
@@ -241,7 +240,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.caution.A25}"
+                  "$value": "{dark.amber.A50}"
                 }
               },
               "themes": {
@@ -262,7 +261,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.caution.A50}"
+                  "$value": "{dark.amber.A100}"
                 }
               },
               "themes": {
@@ -285,7 +284,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.positive.A25}"
+                  "$value": "{dark.green.A50}"
                 }
               },
               "themes": {
@@ -306,7 +305,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.positive.A50}"
+                  "$value": "{dark.green.A100}"
                 }
               },
               "themes": {
@@ -329,7 +328,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.primary.A100}"
+                  "$value": "{dark.blue.A100}"
                 }
               },
               "themes": {
@@ -350,7 +349,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.primary.A200}"
+                  "$value": "{dark.blue.A200}"
                 }
               },
               "themes": {
@@ -371,7 +370,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.primary.400}"
+                  "$value": "{dark.blue.400}"
                 }
               },
               "themes": {
@@ -419,7 +418,7 @@
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.neutral.25}"
+                "$value": "{brand.neutral.25}"
               }
             }
           }
@@ -434,7 +433,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.neutral.A900}"
+                  "$value": "{dark.neutral.A900}"
                 }
               },
               "themes": {
@@ -453,11 +452,6 @@
           "$description": "Stronger high contrast dark container background",
           "$extensions": {
             "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.neutral.A950}"
-                }
-              },
               "themes": {
                 "canvas": {
                   "light": {
@@ -542,7 +536,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{black.A200}"
+                    "$value": "{white.A200}"
                   }
                 },
                 "themes": {
@@ -586,7 +580,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{black.A300}"
+                    "$value": "{white.A300}"
                   }
                 },
                 "themes": {
@@ -629,7 +623,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.neutral.A500}"
+                  "$value": "{neutral.A500}"
                 }
               },
               "themes": {
@@ -650,7 +644,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{black.A200}"
+                  "$value": "{white.A200}"
                 }
               },
               "themes": {
@@ -676,7 +670,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.neutral.A50}"
+                    "$value": "{white.A25}"
                   }
                 },
                 "themes": {
@@ -697,7 +691,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.neutral.A100}"
+                    "$value": "{white.A50}"
                   }
                 },
                 "themes": {
@@ -720,7 +714,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.critical.A25}"
+                    "$value": "{brand.critical.A50}"
                   }
                 }
               }
@@ -734,7 +728,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.critical.A50}"
+                    "$value": "{brand.critical.A100}"
                   }
                 }
               }
@@ -750,7 +744,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.caution.A25}"
+                    "$value": "{brand.caution.A50}"
                   }
                 }
               }
@@ -764,7 +758,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.caution.A50}"
+                    "$value": "{brand.caution.A100}"
                   }
                 }
               }
@@ -780,7 +774,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.positive.A25}"
+                    "$value": "{brand.positive.A50}"
                   }
                 }
               }
@@ -794,7 +788,7 @@
               "sana.canvas.tokens": {
                 "modes": {
                   "dark": {
-                    "$value": "{brand.dark.positive.A50}"
+                    "$value": "{brand.positive.A100}"
                   }
                 }
               }
@@ -804,16 +798,7 @@
         "selected": {
           "$value": "{brand.primary.A50}",
           "$type": "color",
-          "$description": "Tenant-themeable background for selected items",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.dark.primary.A50}"
-                }
-              }
-            }
-          }
+          "$description": "Tenant-themeable background for selected items"
         }
       }
     }
