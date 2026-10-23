@@ -18,10 +18,9 @@ export const isSanaTokens = (token: TransformedToken) =>
   token.$extensions?.['sana.canvas.tokens']?.themes?.canvas;
 
 export const isSanaDarkTokens = (token: TransformedToken) =>
-  token.path[1] !== 'action' &&
-  ((token.path[0] === 'dark' && token.filePath.includes('/base/')) ||
-    (token.path[1] === 'dark' && token.filePath.includes('/brand/')) ||
-    token.$extensions?.['sana.canvas.tokens']?.modes?.dark);
+  (token.filePath.includes('/base/') && token.path[0] === 'dark') ||
+  (token.filePath.includes('/brand/') && token.path[1] === 'dark' && token.path[2] !== 'action') ||
+  token.$extensions?.['sana.canvas.tokens']?.modes?.dark;
 
 export const isOklchToken = (token: any) => {
   return typeof token.original.$value === 'object' && token.original.$value?.colorSpace === 'oklch';
