@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.6
+
+### Major Changes
+
+- ### Tokens
+
+  - feat: Add script to generate dark tokens CSS file
+    ([#377](https://github.com/Workday/canvas-tokens/pull/377))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
 ## 5.0.0-alpha.5
 
 ### Major Changes
