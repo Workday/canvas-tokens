@@ -9,7 +9,7 @@
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.neutral.700}"
+                "$value": "{brand.neutral.700}"
               }
             }
           }
@@ -23,7 +23,7 @@
           "sana.canvas.tokens": {
             "modes": {
               "dark": {
-                "$value": "{brand.dark.critical.500}"
+                "$value": "{brand.critical.500}"
               }
             }
           }
@@ -38,7 +38,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.caution.400}"
+                  "$value": "{brand.caution.400}"
                 }
               }
             }
@@ -52,7 +52,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{brand.dark.caution.500}"
+                  "$value": "{brand.caution.500}"
                 }
               }
             }
