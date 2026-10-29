@@ -51,7 +51,7 @@ const generateCommonJsLevelImports = (levels: string[]) => {
   return imports + `\nmodule.exports = {${levels.join(', ')}}\n`;
 };
 
-/** Generate ES module imports for token files based on their paths */
+/** Generate ES module imports for the provided token levels */
 const generateEsModuleLevelImports = (levels: string[]) => {
   const imports = levels
     .map((level: string) => `import * as ${level} from './${level}/index.js';`)
