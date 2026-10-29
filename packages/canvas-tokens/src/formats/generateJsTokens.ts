@@ -149,10 +149,8 @@ const normalizeKey = (key: string) =>
  */
 const getTokenLevel = (filePath: string): string => {
   if (filePath.includes('palette')) return 'base-palette';
-
   const level = filePath.split('/')[3];
   if (level === 'brand') return '';
-
   return level === 'system' ? 'sys' : level;
 };
 

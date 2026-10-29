@@ -52,6 +52,7 @@ export const generateRoot = async ({dictionary, file, options}: Format) => {
       const deprecatedWarning = token.$deprecated
         ? `\t/* Token is deprecated and will be removed in a future version.*/\n`
         : '';
+
       const comment = token.$description ? ` /* ${token.$description} */` : '';
 
       return `${deprecatedWarning}\t${name}: ${finalValue}${comment};`;
