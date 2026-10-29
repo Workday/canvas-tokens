@@ -2,7 +2,7 @@
   "fontSize": {
     "$value": {"value": 16, "unit": "px"},
     "$type": "dimension",
-    "$description": "Default fontSize for the browser, may be overriden by user preferences"
+    "$description": "Default fontSize for the browser, may be overridden by user preferences"
   },
   "baseline": {
     "$value": {"value": 8, "unit": "px"},

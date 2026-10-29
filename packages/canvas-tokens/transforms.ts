@@ -70,11 +70,11 @@ export const transforms = [
     transitive: true,
     name: `js/name`,
     transform: (token: TransformedToken) => {
-      if (token.filePath.includes('brand')) {
-        return camelCase(token.name.replace('Brand', ''));
-      }
+      const name = token.filePath.includes('brand')
+        ? token.name.replace(/^brand/i, '')
+        : token.name;
 
-      return camelCase(token.name);
+      return camelCase(name);
     },
   },
 ] as const;
