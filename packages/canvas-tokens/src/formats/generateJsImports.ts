@@ -30,9 +30,11 @@ export const generateJsImports = async ({file, options}: FormatProps) => {
   const isCommonJs = syntaxStyle === 'commonjs';
 
   if (levels) {
-    return (
-      header + (isCommonJs ? generateCommonJsLevelImports : generateEsModuleLevelImports)(levels)
-    );
+    const body = isCommonJs
+      ? generateCommonJsLevelImports(levels)
+      : generateEsModuleLevelImports(levels);
+
+    return header + body;
   }
 
   if (files) {
