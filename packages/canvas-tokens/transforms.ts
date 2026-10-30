@@ -1,4 +1,6 @@
 import {TransformedToken} from 'style-dictionary';
+import {camelCase} from 'case-anything';
+
 import {getOklchValue} from './utils';
 import {isOklchToken} from './filters';
 
@@ -60,6 +62,19 @@ export const transforms = [
       }
 
       return token.name;
+    },
+  },
+  // transform name to include full name for js
+  {
+    type: `name`,
+    transitive: true,
+    name: `js/name`,
+    transform: (token: TransformedToken) => {
+      const name = token.filePath.includes('brand')
+        ? token.name.replace(/^brand/i, '')
+        : token.name;
+
+      return camelCase(name);
     },
   },
 ] as const;

@@ -1,33 +1,58 @@
+import type {
+  Dictionary,
+  File,
+  OutputReferences,
+  TransformedToken,
+  TransformedTokens,
+} from 'style-dictionary/types';
 import {fileHeader, getReferences} from 'style-dictionary/utils';
-import type {TransformedToken, TransformedTokens} from 'style-dictionary';
 import {kebabCase} from 'case-anything';
-import {isOklchToken} from '../../filters';
-import {getOklchValue} from '../../utils';
 
-export const generateRoot = async ({dictionary, file, options}: any) => {
+import {isOklchToken} from '../../filters';
+import {getOklchValue, joinParts} from '../../utils';
+
+type Format = {
+  dictionary: Dictionary;
+  file: File;
+  options: {
+    compositeTokens?: string[];
+    modeSelector?: string;
+    outputReferences?: OutputReferences;
+    prefix?: string;
+    themeSelector?: string;
+    useThemeValues?: string;
+  };
+};
+
+/**
+ * SD Format for generating a CSS file of custom properties for the scope defined by the
+ * theme and mode selectors, followed by a class for each composite token
+ */
+export const generateRoot = async ({dictionary, file, options}: Format) => {
   const {compositeTokens, prefix, outputReferences, themeSelector, useThemeValues, modeSelector} =
     options;
   const header = await fileHeader({file});
   const allTokens = dictionary.unfilteredTokens;
+  const extractOptions = {
+    prefix,
+    outputReferences,
+    tokens: allTokens,
+    useThemeValues,
+    modeSelector,
+  };
   const isComposite = (token: TransformedToken) =>
-    compositeTokens && compositeTokens.includes(token.$type);
+    compositeTokens && token.$type && compositeTokens.includes(token.$type);
 
   const tokens = dictionary.allTokens
-    .filter((token: TransformedToken) => !isComposite(token))
-    .map((token: TransformedToken) => {
+    .filter(token => !isComposite(token))
+    .map(token => {
       const name = toCSSVarName(token, prefix);
-
-      const finalValue = extractValue(token, {
-        prefix,
-        outputReferences,
-        tokens: allTokens,
-        useThemeValues,
-        modeSelector,
-      });
+      const finalValue = extractValue(token, extractOptions);
 
       const deprecatedWarning = token.$deprecated
         ? `\t/* Token is deprecated and will be removed in a future version.*/\n`
         : '';
+
       const comment = token.$description ? ` /* ${token.$description} */` : '';
 
       return `${deprecatedWarning}\t${name}: ${finalValue}${comment};`;
@@ -35,7 +60,7 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
     .join('\n');
 
   const compositeTokensBlock = dictionary.unfilteredAllTokens
-    .filter(isComposite)
+    ?.filter(isComposite)
     .map((token: TransformedToken) => generateCompositeTokens(token, {prefix, tokens: allTokens}))
     .join('\n');
 
@@ -44,6 +69,10 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
   return header + `${scope} {\n` + tokens + '\n}\n\n' + compositeTokensBlock;
 };
 
+/**
+ * Get the CSS selector a token block is scoped to, based on the theme and mode selectors.
+ * Falls back to `:root` when neither is set.
+ */
 const getScope = (themeSelector?: string, modeSelector?: string) => {
   const mode = `data-mode="${modeSelector}"`;
   const theme = `data-theme="${themeSelector}"`;
@@ -61,37 +90,47 @@ const getScope = (themeSelector?: string, modeSelector?: string) => {
   return ':root';
 };
 
-const getTokenSlug = (token: TransformedToken, prefix: string) =>
-  `${prefix}-${token.name.replace(/-root$/, '-default')}`;
+/** Get the prefixed, kebab-case token name, with a trailing `-root` renamed to `-default` */
+const getTokenSlug = (token: TransformedToken, prefix?: string) => {
+  const cleanName = token.name.replace(/-root$/, '-default');
+  return joinParts(prefix, cleanName);
+};
 
-const toCSSVarName = (token: TransformedToken, prefix: string) =>
+/** Build the CSS custom property name (`--prefix-name`) for a token */
+const toCSSVarName = (token: TransformedToken, prefix?: string) =>
   `--${getTokenSlug(token, prefix)}`;
 
-const toCSSVarRef = (token: TransformedToken, prefix: string) =>
+/** Build a `var(--prefix-name)` reference to a token's CSS custom property */
+const toCSSVarRef = (token: TransformedToken, prefix?: string) =>
   `var(${toCSSVarName(token, prefix)})`;
 
-const extractValue = (
-  token: TransformedToken,
-  options: {
-    prefix: string;
-    outputReferences: boolean;
-    tokens: TransformedTokens;
-    useThemeValues: string;
-    modeSelector?: string;
-  }
-) => {
+type ExtractOptions = {
+  modeSelector?: string;
+  outputReferences?: OutputReferences;
+  prefix?: string;
+  tokens?: TransformedTokens;
+  useThemeValues?: string;
+};
+
+/**
+ * Get the final CSS value of a token. Resolution order: mode value (when a mode selector is set),
+ * theme value (when `useThemeValues` is set), then the token's own value.
+ * References are converted to `var()` when `outputReferences` is enabled.
+ */
+const extractValue = (token: TransformedToken, options: ExtractOptions) => {
   const {prefix, outputReferences, tokens, useThemeValues, modeSelector} = options;
 
   if (modeSelector) {
     const modeValue =
       token.original.$extensions?.['sana.canvas.tokens']?.modes?.[modeSelector]?.$value;
+    const modeToken = {original: {$value: modeValue}};
 
     if (typeof modeValue === 'string') {
       return outputReferences ? resolveReferences(modeValue, {prefix, tokens}) : modeValue;
     }
 
-    if (isOklchToken({original: {$value: modeValue}})) {
-      return getOklchValue({original: {$value: modeValue}});
+    if (isOklchToken(modeToken)) {
+      return getOklchValue(modeToken);
     }
   }
 
@@ -114,9 +153,12 @@ const extractValue = (
   return initialValue;
 };
 
-const resolveReferences = (value: string, options: {prefix: string; tokens: TransformedTokens}) => {
+type ShortenOptions = Pick<ExtractOptions, 'prefix' | 'tokens'>;
+
+/** Replace `{token.reference}` placeholders in a value with `var()` references to the tokens */
+const resolveReferences = (value: string, options: ShortenOptions) => {
   const {prefix, tokens} = options;
-  const ref = getReferences(value, tokens);
+  const ref = tokens ? getReferences(value, tokens) : [];
 
   return value.replace(/\{([\w.$-]+)\}/g, a => {
     const refToken = ref.find(r => r.key === a);
@@ -124,21 +166,17 @@ const resolveReferences = (value: string, options: {prefix: string; tokens: Tran
   });
 };
 
-const generateCompositeTokens = (
-  token: TransformedToken,
-  options: {prefix: string; tokens: TransformedTokens}
-) => {
+/** Generate a CSS class from a composite token, with one declaration per property */
+const generateCompositeTokens = (token: TransformedToken, options: ShortenOptions) => {
   const values = token.original.$value as Record<string, string>;
-  const properties = Object.entries(values)
-    .map(
-      ([key, value]) =>
-        `\t${kebabCase(key)}: ${
-          typeof value === 'string' ? resolveReferences(value, options) : value
-        };`
-    )
-    .join('\n');
-
   const className = getTokenSlug(token, options.prefix);
+  const properties = Object.entries(values)
+    .map(entry => generateClassProps(entry, options))
+    .join('\n');
 
   return `.${className} {\n${properties}\n}\n`;
 };
+
+/** Generate a single kebab-case CSS declaration, resolving references in string values */
+const generateClassProps = ([key, value]: [string, any], options: ShortenOptions) =>
+  `\t${kebabCase(key)}: ${typeof value === 'string' ? resolveReferences(value, options) : value};`;

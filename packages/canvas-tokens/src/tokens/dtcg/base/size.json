@@ -1,4 +1,14 @@
 {
+  "fontSize": {
+    "$value": {"value": 16, "unit": "px"},
+    "$type": "dimension",
+    "$description": "Default fontSize for the browser, may be overridden by user preferences"
+  },
+  "baseline": {
+    "$value": {"value": 8, "unit": "px"},
+    "$type": "dimension",
+    "$description": "Baseline unit used for the 8pt sizing grid"
+  },
   "size": {
     "0": {
       "$value": {

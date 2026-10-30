@@ -21,7 +21,7 @@ jobs:
       pull-requests: write
       contents: write
     env:
-        NODE_VERSION: 24.x
+        NODE_VERSION: 26.x
 
     steps:
       - name: Set target branch name
