@@ -3806,11 +3806,6 @@
     "@webassemblyjs/ast" "1.14.1"
     "@xtuc/long" "4.2.2"
 
-"@workday/canvas-tokens-web@4.5.0":
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/@workday/canvas-tokens-web/-/canvas-tokens-web-4.5.0.tgz#c9bf65344fcb7ab7c1da167a703775d5fadfaac1"
-  integrity sha512-GmEInwU5XaWj2AscZI0c2kUAsTqyn1Z8DfooNZ6XgT6M8e0dQCwp+7jCyiTVmhXiQ341vouUG0paUof0sehiuA==
-
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
