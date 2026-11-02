@@ -155,5 +155,22 @@ function getIndexFiles(platform: 'es6' | 'commonjs'): IndexFile[] {
     options: {syntaxStyle: 'ts', levels: LEVELS},
   };
 
-  return [...files, rootFile, rootTSFile];
+  // `system/color` is spread over several files, so it gets its own entry point
+  // exporting the merged `color` object (the `@workday/canvas-tokens-web/color` import)
+  const colorFiles = tokenFiles.filter(f => f.startsWith('system/color/'));
+  const colorGroups = {color: getColorGroup(colorFiles)};
+  const colorIndexFiles: IndexFile[] = [
+    {
+      destination: 'system/color.js',
+      format: 'javascript/token-index',
+      options: {syntaxStyle: platform, files: colorFiles, groups: colorGroups},
+    },
+    {
+      destination: 'system/color.d.ts',
+      format: 'javascript/token-index',
+      options: {syntaxStyle: 'ts', files: colorFiles, groups: colorGroups},
+    },
+  ];
+
+  return [...files, ...colorIndexFiles, rootFile, rootTSFile];
 }
