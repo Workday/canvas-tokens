@@ -1,4 +1,4 @@
-import {File} from 'style-dictionary';
+import {FormatFnArguments} from 'style-dictionary/types';
 import {fileHeader} from 'style-dictionary/utils';
 
 import {SyntaxStyle} from '../../utils';
@@ -9,43 +9,45 @@ type GroupSource = {file: string; names: string[]};
 /** Export names mapped to the token files that each define a part of that export */
 type Groups = Record<string, GroupSource[]>;
 
-type FormatProps = {
-  file: File;
-  options: {
-    levels?: string[];
-    syntaxStyle?: SyntaxStyle;
-    files?: string[];
-    /**
-     * Files exported as one object per group instead of being re-exported directly.
-     * Names defined in several files of a group (`color.brand`) are merged
-     */
-    groups?: Groups;
-  };
+type BaseOptions = {syntaxStyle?: SyntaxStyle};
+
+// Style Dictionary types `options` loosely, so the required options are enforced
+// where the files are defined (see `IndexFile` in files.ts)
+export type LevelIndexOptions = BaseOptions & {levels: string[]};
+
+export type TokenIndexOptions = BaseOptions & {
+  files: string[];
+  /**
+   * Files exported as one object per group instead of being re-exported directly.
+   * Names defined in several files of a group (`color.brand`) are merged
+   */
+  groups?: Groups;
 };
 
-export const generateJsImports = async ({file, options}: FormatProps) => {
-  const {levels, syntaxStyle, files, groups = {}} = options;
+/** Generate the index that exports each token level as a namespace */
+export const generateJsLevelIndex = async ({file, options}: FormatFnArguments) => {
+  const {levels, syntaxStyle} = options as LevelIndexOptions;
   const header = await fileHeader({file});
 
-  const isCommonJs = syntaxStyle === 'commonjs';
-
-  if (levels) {
-    const body = isCommonJs
+  return (
+    header +
+    (syntaxStyle === 'commonjs'
       ? generateCommonJsLevelImports(levels)
-      : generateEsModuleLevelImports(levels);
-
-    return header + body;
-  }
-
-  if (files) {
-    const generate = isCommonJs ? generateCommonJsTokenImports : generateEsModuleTokenImports;
-    return header + generate(files, groups, syntaxStyle === 'ts');
-  }
-
-  return header;
+      : generateEsModuleLevelImports(levels))
+  );
 };
 
-/** Generate Common JS imports for token files or levels based on the provided options */
+/** Generate the index that re-exports the token files of one level */
+export const generateJsTokenIndex = async ({file, options}: FormatFnArguments) => {
+  const {files, groups = {}, syntaxStyle} = options as TokenIndexOptions;
+  const header = await fileHeader({file});
+  const generate =
+    syntaxStyle === 'commonjs' ? generateCommonJsTokenImports : generateEsModuleTokenImports;
+
+  return header + generate(files, groups, syntaxStyle === 'ts');
+};
+
+/** Generate Common JS imports for the provided token levels */
 const generateCommonJsLevelImports = (levels: string[]) => {
   const imports = levels
     .map((level: string) => `const ${level} = require('./${level}/index.js');`)

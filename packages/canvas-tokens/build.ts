@@ -2,7 +2,7 @@ import StyleDictionary from 'style-dictionary';
 import {fileHeader} from 'style-dictionary/utils';
 
 import {generateRoot} from './src/formats/generateRoot';
-import {generateJsImports} from './src/formats/generateJsImports';
+import {generateJsLevelIndex, generateJsTokenIndex} from './src/formats/generateJsImports';
 import {generateJsTokens} from './src/formats/generateJsTokens';
 
 import {transforms} from './transforms';
@@ -37,7 +37,7 @@ const config = new StyleDictionary({
     commonjs: {
       transformGroup: 'js',
       transforms: jsTransforms,
-      buildPath: '../canvas-tokens-web/dist/commonjs',
+      buildPath: '../canvas-tokens-web/dist/common-js',
       files: getJsFiles('commonjs'),
     },
   },
@@ -66,8 +66,13 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerFormat({
-  name: 'javascript/imports',
-  format: generateJsImports,
+  name: 'javascript/level-index',
+  format: generateJsLevelIndex,
+});
+
+StyleDictionary.registerFormat({
+  name: 'javascript/token-index',
+  format: generateJsTokenIndex,
 });
 
 StyleDictionary.registerFormat({
