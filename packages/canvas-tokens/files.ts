@@ -4,6 +4,7 @@ import {camelCase} from 'case-anything';
 
 import * as filters from './filters';
 import {isInlineTokenFile} from './utils';
+import type {LevelIndexOptions, TokenIndexOptions} from './src/formats/generateJsImports';
 
 /** CSS Files */
 export const cssFiles = [
@@ -111,42 +112,46 @@ function getColorGroup(files: string[]) {
     });
 }
 
+/** Ties each index format to the options it requires */
+type IndexFile =
+  | {destination: string; format: 'javascript/level-index'; options: LevelIndexOptions}
+  | {destination: string; format: 'javascript/token-index'; options: TokenIndexOptions};
+
 /**
  * Generate index files for the specified platform ('es6' or 'commonjs')
  * including index files for tokens on each token level and the root index files
  * and the corresponding TypeScript declaration files
  * @param platform The target platform for the generated index files ('es6' or 'commonjs')
  */
-function getIndexFiles(platform: 'es6' | 'commonjs') {
+function getIndexFiles(platform: 'es6' | 'commonjs'): IndexFile[] {
   const LEVELS = ['base', 'brand', 'system', 'component'];
-  const FORMAT = 'javascript/imports';
 
-  const files = LEVELS.flatMap(level => {
+  const files = LEVELS.flatMap((level): IndexFile[] => {
     const files = tokenFiles.filter(f => f.startsWith(`${level}/`));
     const groups = level === 'system' ? {color: getColorGroup(files)} : undefined;
     return [
       {
         destination: `${level}/index.js`,
-        format: FORMAT,
+        format: 'javascript/token-index',
         options: {syntaxStyle: platform, files, groups},
       },
       {
         destination: `${level}/index.d.ts`,
-        format: FORMAT,
+        format: 'javascript/token-index',
         options: {syntaxStyle: 'ts', files, groups},
       },
     ];
   });
 
-  const rootFile = {
+  const rootFile: IndexFile = {
     destination: 'index.js',
-    format: FORMAT,
+    format: 'javascript/level-index',
     options: {syntaxStyle: platform, levels: LEVELS},
   };
 
-  const rootTSFile = {
+  const rootTSFile: IndexFile = {
     destination: 'index.d.ts',
-    format: FORMAT,
+    format: 'javascript/level-index',
     options: {syntaxStyle: 'ts', levels: LEVELS},
   };
 
