@@ -13,13 +13,11 @@
   "sideEffects": false,
   "types": "dist/es6/index.d.ts",
   "scripts": {
-    "clean": "rimraf dist css less scss"
+    "clean": "rimraf dist css"
   },
   "files": [
     "dist/",
-    "css/",
-    "less/",
-    "scss/"
+    "css/"
   ],
   "dependencies": {}
 }

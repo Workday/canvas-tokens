@@ -35,7 +35,7 @@ The build configuration provides the the following options.
 | Option           | Description                                                                                                                                        |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Source Files     | Token JSON files located in `tokens/**/*.json`. [More](https://workday.github.io/canvas-tokens/?path=/docs/maintaining-token-json-structure--docs) |
-| Platforms        | Multiple output formats including `css`, `scss`, `less`, `es6`, and `common-js`.                                                                   |
+| Platforms        | Multiple output formats including `css`, `es6`, and `common-js`.                                                                   |
 | Token Levels     | Three levels of tokens: `base`, `brand`, and `sys` (system).                                                                                       |
 | Platform Options | Options for each platform. [More](https://styledictionary.com/docs/configuration#platform-options)                                                 |
 
@@ -44,10 +44,10 @@ The build configuration provides the the following options.
 ```ts
 const config = setConfig({
   source: ['tokens/**/*.json'],
-  platforms: ['css', 'scss', 'less', 'es6', 'common-js'],
+  platforms: ['css', 'es6', 'common-js'],
   levels: ['base', 'brand', 'sys'],
     platformOptions: {
-    'css, scss, less': {
+    css: {
       buildPath: '../canvas-tokens-web/',
       ...other options
     },
@@ -76,7 +76,6 @@ The configuration uses modifiers to create different file outputs for different 
 | Base Tokens         | Generate simple variable files with code tokens only.                                                             |
 | Brand/System Tokens | Generate composite files that merge regular tokens, composite tokens (typography/composition), and shadow tokens. |
 
-The build process supports multiple file extensions per platform (e.g., `.sass` and `.scss` for SCSS
-platform) and can generate both JavaScript and TypeScript declaration files.
+The build process can generate both JavaScript and TypeScript declaration files.
 
 </Unstyled>

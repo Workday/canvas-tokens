@@ -18,14 +18,14 @@ import {TokenGrid} from '../components/TokenGrid';
   - [merge/types](#mergetypes)
 - [Direct Transformation Formatters](#direct-transformation-formatters)
   - [JavaScript/TypeScript Formatters](#javascripttypescript-formatters)
-  - [CSS/SCSS/LESS Formatters](#cssscssless-formatters)
+  - [CSS Formatters](#css-formatters)
   - [Tokens Info Formatters](#tokens-info-formatters)
 
 ## Overview
 
 Formatters define how design tokens are transformed into distributable files for various platforms
 and development environments. They take the intermediate Style Dictionary dictionary object and
-produce the platform-specific string output for source files, such as CSS, SCSS, LESS, JavaScript,
+produce the platform-specific string output for source files, such as CSS, JavaScript,
 and TypeScript.
 
 Formatters are essential for:
@@ -88,7 +88,7 @@ Located in `mergeStyleReferences.ts`. Combines several types of formatter output
 - The default formatter (for standard tokens containing references)
 - The shadow formatter (for depth or shadow tokens)
 
-Merges all three to create a comprehensive file, typically used by CSS/SCSS/LESS platforms to
+Merges all three to create a comprehensive file, typically used by CSS platforms to
 provide a complete set of variables and references in a single generated stylesheet.
 
 ### merge/types
@@ -355,21 +355,17 @@ descriptions, and references—improving documentation and type safety.
 };`;
 ```
 
-### CSS/SCSS/LESS Formatters
+### CSS Formatters
 
-These formatters generate stylesheet code for various preprocessors, enabling consumption of tokens
+These formatters generate stylesheet code for CSS, enabling consumption of tokens
 in design systems and UI frameworks.
 
 | Formatter        | Description                                                     |
 | ---------------- | --------------------------------------------------------------- |
 | `css/composite`  | Outputs CSS classes for composite tokens using CSS variables.   |
 | `css/shadow`     | Defines CSS custom properties for shadow or depth tokens.       |
-| `less/composite` | Outputs Less classes for composite tokens using Less variables. |
-| `less/shadow`    | Generates Less variables for shadow tokens.                     |
-| `scss/composite` | Emits SCSS classes for composite tokens using Sass variables.   |
-| `scss/shadow`    | Outputs Sass variables for shadow tokens.                       |
 
-Below is a detailed description of each CSS/SCSS/LESS formatter.
+Below is a detailed description of each CSS formatter.
 
 #### css/composite
 
@@ -422,112 +418,6 @@ consistent reuse and theming for elevation styles.
 
 // output
 `--cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
-```
-
-#### less/composite
-
-Located in `formatLessComposite`. Outputs Less classes for composite tokens, using `@cnvs-*` Less
-variables within the generated class blocks.
-
-```js
-// input
-{
-  allTokens: [
-    {
-      value: {border: '0.0625rem solid rgba(162,171,180,1)'},
-      type: 'composition',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      original: {value: {border: '{sys.line.disabled}'}, type: 'composition'},
-      name: 'cnvs-sys-border-input-disabled',
-      attributes: {},
-      path: ['sys', 'border', 'input', 'disabled'],
-    },
-  ],
-}
-
-// output
-`.cnvs-sys-border-input-disabled {
-  border: @cnvs-sys-line-disabled;
-}`
-```
-
-#### less/shadow
-
-Located in `formatLessShadow`. Generates Less variables for shadow tokens, supporting shadow and
-elevation styling across Less-based projects.
-
-```js
-// input
-{
-  allTokens: [
-    {
-      value: '0 4px 16px rgba(0, 0, 0, 0.1)',
-      type: 'shadow',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      name: 'cnvs-sys-depth-1',
-      attributes: {},
-      path: ['sys', 'depth', '1'],
-    },
-  ],
-}
-
-// output
-`@cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
-```
-
-#### scss/composite
-
-Located in `formatSassComposite`. Emits SCSS classes for composite tokens, referencing the
-appropriate `$cnvs-*` Sass variables for their values.
-
-```js
-// input
-{
-  allTokens: [
-    {
-      value: {border: '0.0625rem solid rgba(162,171,180,1)'},
-      type: 'composition',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      original: {value: {border: '{sys.line.disabled}'}, type: 'composition'},
-      name: 'cnvs-sys-border-input-disabled',
-      attributes: {},
-      path: ['sys', 'border', 'input', 'disabled'],
-    },
-  ],
-}
-
-// output
-`.cnvs-sys-border-input-disabled {
-  border: $cnvs-sys-line-disabled;
-}`
-```
-
-#### scss/shadow
-
-Located in `formatSassShadow`. Outputs Sass variables for shadow tokens, making elevation designs
-accessible in SCSS.
-
-```js
-// input
-{
-  allTokens: [
-    {
-      value: '0 4px 16px rgba(0, 0, 0, 0.1)',
-      type: 'shadow',
-      filePath: 'tokens/all.json',
-      isSource: true,
-      name: 'cnvs-sys-depth-1',
-      attributes: {},
-      path: ['sys', 'depth', '1'],
-    },
-  ],
-}
-
-// output
-`$cnvs-sys-depth-1: 0 4px 16px rgba(0, 0, 0, 0.1); // Small shadow`
 ```
 
 ## Tokens Info Formatters
