@@ -70,6 +70,46 @@ const config = new StyleDictionary({
         },
       ],
     },
+    cssV5: {
+      transformGroup: 'css',
+      transforms: ['duration', 'px2rem', 'toOKLCH', 'gradient', 'css/name/base'],
+      buildPath: '../canvas-tokens-web/css/wdt',
+      files: [
+        {
+          destination: 'base.css',
+          format: 'styles/root',
+          filter: token => token.filePath.includes('/base/') && !token.$deprecated,
+          options: {prefix: 'wdt', themeSelector: 'wdt', outputReferences: true},
+        },
+        {
+          destination: 'brand.css',
+          format: 'styles/root',
+          filter: token =>
+            token.filePath.includes('/brand/') && token.path[1] !== 'action' && !token.$deprecated,
+          options: {prefix: 'wdt', themeSelector: 'wdt', outputReferences: true},
+        },
+        {
+          destination: 'component.css',
+          format: 'styles/root',
+          filter: token => token.filePath.includes('/component/') && !token.$deprecated,
+          options: {prefix: 'wdt', themeSelector: 'wdt', outputReferences: true},
+        },
+        {
+          destination: 'system.css',
+          format: 'styles/root',
+          filter: token =>
+            token.filePath.includes('/system/') &&
+            !token.$deprecated &&
+            token.$type !== 'typography',
+          options: {prefix: 'wdt', themeSelector: 'wdt', outputReferences: true},
+        },
+        {
+          destination: 'index.css',
+          format: 'styles/index',
+          options: {flatFolder: true},
+        },
+      ],
+    },
   },
 });
 
@@ -80,9 +120,10 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
   name: 'styles/index',
-  format: async ({file}) => {
+  format: async ({file, options}) => {
+    const {flatFolder} = options;
     const header = await fileHeader({file});
-    const imports = [
+    const folderImports = [
       '@import "./base/_variables.css";',
       '@import "./brand/_variables.css";',
       '@import "./system/_variables.css";',
@@ -90,6 +131,15 @@ StyleDictionary.registerFormat({
       '@import "./sana/_variables.css";',
       '@import "./sana/_variables-dark.css";',
     ];
+
+    const flatImports = [
+      '@import "./base.css";',
+      '@import "./brand.css";',
+      '@import "./system.css";',
+      '@import "./component.css";',
+    ];
+
+    const imports = flatFolder ? flatImports : folderImports;
 
     return header + imports.join('\n') + '\n';
   },

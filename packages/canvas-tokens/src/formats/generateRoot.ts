@@ -46,7 +46,7 @@ export const generateRoot = async ({dictionary, file, options}: any) => {
 
 const getScope = (themeSelector?: string, modeSelector?: string) => {
   const mode = `data-mode="${modeSelector}"`;
-  const theme = `data-theme="${themeSelector}"`;
+  const theme = `data-theme~="${themeSelector}"`;
 
   if (themeSelector) {
     return modeSelector

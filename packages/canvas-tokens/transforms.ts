@@ -62,6 +62,15 @@ export const transforms = [
       return token.name;
     },
   },
+  {
+    type: `name`,
+    transitive: true,
+    name: `css/name/base`,
+    transform: (token: TransformedToken) =>
+      token.filePath.includes('/base/') && !token.filePath.includes('palette')
+        ? `base-${token.name}`
+        : token.name,
+  },
 ] as const;
 
 type Stop = {
