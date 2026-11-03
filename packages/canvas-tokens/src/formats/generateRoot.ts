@@ -50,8 +50,8 @@ const getScope = (themeSelector?: string, modeSelector?: string) => {
 
   if (themeSelector) {
     return modeSelector
-      ? `[${theme}][${mode}],\n[${theme}] [${mode}],\n[${mode}] [${theme}]`
-      : `[${theme}]`;
+      ? `${theme}[${mode}],\n${theme} [${mode}],\n[${mode}] ${theme}`
+      : `${theme}`;
   }
 
   if (modeSelector) {

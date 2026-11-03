@@ -50,7 +50,7 @@ const config = new StyleDictionary({
           options: {
             prefix: 'cnvs',
             outputReferences: true,
-            themeSelector: 'sana-canvas',
+            themeSelector: '[data-theme="sana-canvas"]',
           },
         },
         {
@@ -60,7 +60,7 @@ const config = new StyleDictionary({
           options: {
             prefix: 'cnvs',
             outputReferences: true,
-            themeSelector: 'sana-canvas',
+            themeSelector: '[data-theme="sana-canvas"]',
             modeSelector: 'dark',
           },
         },
@@ -79,20 +79,32 @@ const config = new StyleDictionary({
           destination: 'base.css',
           format: 'styles/root',
           filter: token => token.filePath.includes('/base/') && !token.$deprecated,
-          options: {prefix: 'wdt', themeSelector: 'wdt', outputReferences: true},
+          options: {
+            prefix: 'wdt',
+            themeSelector: '[data-theme="wdt-sana"]',
+            outputReferences: true,
+          },
         },
         {
           destination: 'brand.css',
           format: 'styles/root',
           filter: token =>
             token.filePath.includes('/brand/') && token.path[1] !== 'action' && !token.$deprecated,
-          options: {prefix: 'wdt', themeSelector: 'wdt', outputReferences: true},
+          options: {
+            prefix: 'wdt',
+            themeSelector: '[data-theme="wdt-sana"]',
+            outputReferences: true,
+          },
         },
         {
           destination: 'component.css',
           format: 'styles/root',
           filter: token => token.filePath.includes('/component/') && !token.$deprecated,
-          options: {prefix: 'wdt', themeSelector: 'wdt', outputReferences: true},
+          options: {
+            prefix: 'wdt',
+            themeSelector: '[data-theme="wdt-sana"]',
+            outputReferences: true,
+          },
         },
         {
           destination: 'system.css',
@@ -101,7 +113,11 @@ const config = new StyleDictionary({
             token.filePath.includes('/system/') &&
             !token.$deprecated &&
             token.$type !== 'typography',
-          options: {prefix: 'wdt', themeSelector: 'wdt', outputReferences: true},
+          options: {
+            prefix: 'wdt',
+            themeSelector: '[data-theme="wdt-sana"]',
+            outputReferences: true,
+          },
         },
         {
           destination: 'index.css',
