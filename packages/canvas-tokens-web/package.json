@@ -153,6 +153,16 @@
         "default": "./dist/common-js/system/type.js"
       }
     },
+    "./css-var": {
+      "import": {
+        "types": "./dist/es6/css-var.d.ts",
+        "default": "./dist/es6/css-var.js"
+      },
+      "require": {
+        "types": "./dist/common-js/css-var.d.ts",
+        "default": "./dist/common-js/css-var.js"
+      }
+    },
     "./css/*": "./css/*",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"

@@ -2,12 +2,13 @@ import {Dictionary, File, TransformedToken, TransformedTokens} from 'style-dicti
 import {fileHeader, getReferences, resolveReferences} from 'style-dictionary/utils';
 import {camelCase} from 'case-anything';
 
-import {isInlineTokenFile, joinParts, SyntaxStyle} from '../../utils';
+import {isComposite, isInlineTokenFile, SyntaxStyle, toCSSVarName} from '../../utils';
 
 type Format = {
   dictionary: Dictionary;
   file: File;
   options: {
+    compositeTokens?: string[];
     includeJsDocs?: boolean;
     prefix?: string;
     style?: 'inline' | 'module';
@@ -19,10 +20,11 @@ type Format = {
  * SD Format for generating JS tokens based on the provided token dictionary and options
  */
 export const generateJsTokens = async ({dictionary, file, options}: Format) => {
-  const {style = 'module', includeJsDocs = false, prefix, syntaxStyle} = options;
+  const {style = 'module', includeJsDocs = false, compositeTokens, prefix, syntaxStyle} = options;
   const header = await fileHeader({file});
 
   const treeOptions = {
+    compositeTokens,
     includeJsDocs,
     prefix,
     syntaxStyle,
@@ -39,6 +41,7 @@ export const generateJsTokens = async ({dictionary, file, options}: Format) => {
 };
 
 type Options = {
+  compositeTokens?: string[];
   includeJsDocs: boolean;
   prefix?: string;
   syntaxStyle?: SyntaxStyle;
@@ -60,9 +63,6 @@ const generateInlineTokens = (tokens: TransformedToken[], options: Options): str
     })
     .join('\n');
 };
-
-/** Composite tokens (typography) have an object of references to other tokens as value */
-const isComposite = (token: TransformedToken) => token.$type === 'typography';
 
 const SANA_EXTENSION = 'sana.canvas.tokens';
 
@@ -116,7 +116,7 @@ const getJsDoc = (token: TransformedToken, options: Options, tabs = ''): string 
   const rawValue = canvasValue ?? JSON.stringify(token.$value);
   const lines = [
     token.comment ?? token.$description,
-    !isComposite(token) && `Root Raw Value: \`${rawValue}\``,
+    !isComposite(token, options.compositeTokens) && `Root Raw Value: \`${rawValue}\``,
     canvasValue !== undefined && `Sana Value: \`${token.$value}\``,
     darkValue && `Dark Value: \`${darkValue}\``,
     token.$deprecated && '@deprecated',
@@ -128,35 +128,6 @@ const getJsDoc = (token: TransformedToken, options: Options, tabs = ''): string 
     ? `${tabs}/** ${lines[0]} */\n`
     : `${tabs}/**\n${lines.map(line => `${tabs} * ${line}\n`).join('')}${tabs} */\n`;
 };
-
-// Utility functions for generating CSS variable names from token keys and file paths
-
-/**
- * Turn a token key into a kebab-case CSS name part.
- * Same as the CSS name transform: digits stay attached to the preceding word (`a25`, not `a-25`)
- */
-const normalizeKey = (key: string) =>
-  key
-    .replace('$root', 'default')
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/[^a-zA-Z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
-    .toLowerCase();
-
-/**
- * Get the CSS variable level segment (`sys`, `base-palette`, ...) from a token's source file path.
- * Brand tokens have no level.
- */
-const getTokenLevel = (filePath: string): string => {
-  if (filePath.includes('palette')) return 'base-palette';
-  const level = filePath.split('/')[3];
-  if (level === 'brand') return '';
-  return level === 'system' ? 'sys' : level;
-};
-
-/** Build the CSS variable name (`--cnvs-sys-...`) a token resolves to */
-const toCSSVarName = (token: TransformedToken, prefix?: string) =>
-  token.key ? `--${joinParts(prefix, getTokenLevel(token.filePath), normalizeKey(token.key))}` : '';
 
 /** Whether a file nests its tokens in a single wrapper root (`color`, `brand`) */
 const hasWrapperRoot = (file: string) => /(^|\/)(color|brand)\//.test(file);
@@ -223,7 +194,7 @@ const getTokensTextRecursively = (
         const token = value as TransformedToken;
         const jsDoc = options.includeJsDocs ? getJsDoc(token, options, tabs) : '';
 
-        if (isComposite(token)) {
+        if (isComposite(token, options.compositeTokens)) {
           const props = getCompositeProps(token, options, depth + 1);
           return `${jsDoc}${tabs}${name}: {\n${props}\n${tabs}},`;
         }

@@ -5,6 +5,7 @@ import {fileHeader} from 'style-dictionary/utils';
 import {generateRoot} from './src/formats/generateRoot';
 import {generateJsLevelIndex, generateJsTokenIndex} from './src/formats/generateJsImports';
 import {generateJsTokens} from './src/formats/generateJsTokens';
+import {generateJsCssVar} from './src/formats/generateJsCssVar';
 
 import {transforms} from './transforms';
 import {cssFiles, getJsFiles} from './files';
@@ -79,6 +80,11 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'javascript/css-var',
   format: generateJsTokens,
+});
+
+StyleDictionary.registerFormat({
+  name: 'javascript/css-var-fn',
+  format: generateJsCssVar,
 });
 
 transforms.forEach(transform => StyleDictionary.registerTransform(transform));

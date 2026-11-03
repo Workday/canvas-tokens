@@ -6,6 +6,9 @@ import * as filters from './filters';
 import {isInlineTokenFile} from './utils';
 import type {LevelIndexOptions, TokenIndexOptions} from './src/formats/generateJsImports';
 
+/** Token types whose value is an object of references to other tokens */
+const COMPOSITE_TOKENS = ['typography'];
+
 /** CSS Files */
 export const cssFiles = [
   {
@@ -27,7 +30,7 @@ export const cssFiles = [
     options: {
       prefix: 'cnvs',
       outputReferences: true,
-      compositeTokens: ['typography'],
+      compositeTokens: COMPOSITE_TOKENS,
       useThemeValues: 'canvas',
     },
   },
@@ -69,7 +72,31 @@ const tokenFiles = fs
 export const getJsFiles = (platform: 'es6' | 'commonjs') => [
   ...getTokenFiles(platform),
   ...getIndexFiles(platform),
+  ...getCssVarFiles(platform),
 ];
+
+/**
+ * Generate the `cssVar` function file with platform-specific syntax
+ * and the corresponding TypeScript declaration file
+ * @param platform The target platform for the generated files ('es6' or 'commonjs')
+ */
+function getCssVarFiles(platform: 'es6' | 'commonjs') {
+  const FORMAT = 'javascript/css-var-fn';
+  const PREFIX = 'cnvs';
+
+  return [
+    {
+      destination: 'css-var.js',
+      format: FORMAT,
+      options: {prefix: PREFIX, syntaxStyle: platform, compositeTokens: COMPOSITE_TOKENS},
+    },
+    {
+      destination: 'css-var.d.ts',
+      format: FORMAT,
+      options: {prefix: PREFIX, syntaxStyle: 'ts', compositeTokens: COMPOSITE_TOKENS},
+    },
+  ];
+}
 
 /**
  * Generate tokens JS files with platform-specific syntax
@@ -90,13 +117,25 @@ function getTokenFiles(platform: 'es6' | 'commonjs') {
         destination: file.replace('.json', '.js'),
         filter,
         format: FORMAT,
-        options: {prefix: PREFIX, syntaxStyle: platform, style, includeJsDocs: true},
+        options: {
+          prefix: PREFIX,
+          syntaxStyle: platform,
+          style,
+          includeJsDocs: true,
+          compositeTokens: COMPOSITE_TOKENS,
+        },
       },
       {
         destination: file.replace('.json', '.d.ts'),
         filter,
         format: FORMAT,
-        options: {prefix: PREFIX, syntaxStyle: 'ts', style, includeJsDocs: true},
+        options: {
+          prefix: PREFIX,
+          syntaxStyle: 'ts',
+          style,
+          includeJsDocs: true,
+          compositeTokens: COMPOSITE_TOKENS,
+        },
       },
     ];
   });
