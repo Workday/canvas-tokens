@@ -6,6 +6,8 @@ docs
 */canvas-tokens-web/css
 */canvas-tokens-web/less
 */canvas-tokens-web/scss
+# generated subpath stubs and dist/es6/package.json
+*/canvas-tokens-web/*/package.json
 tmp
 /out-tsc
 *.tsbuildinfo
