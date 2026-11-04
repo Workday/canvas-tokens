@@ -4,8 +4,7 @@
 dist
 docs
 */canvas-tokens-web/css
-*/canvas-tokens-web/less
-*/canvas-tokens-web/scss
+*/canvas-tokens-web-labs/css
 tmp
 /out-tsc
 *.tsbuildinfo
