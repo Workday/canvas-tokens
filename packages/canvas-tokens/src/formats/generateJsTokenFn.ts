@@ -159,7 +159,9 @@ const indentDoc = (doc: string) =>
 /** Text of the interface of the CSS variable of each token */
 const getTokensInterfaceText = ({tokens}: Config) => {
   const lines = tokens.map(({id, name, doc}) => `${indentDoc(doc)}  '${id}': '${name}';`);
-  return `/** The CSS variable of each token */\nexport interface Tokens {\n${lines.join('\n')}\n}\n`;
+  return `/** The CSS variable of each token */\nexport interface Tokens {\n${lines.join(
+    '\n'
+  )}\n}\n`;
 };
 
 /** Text of the interface of the tokens each type token references */
@@ -191,24 +193,40 @@ type FallbackVar<F extends Fallback> = F extends \`var(\${string}\` ? F : \`var(
 `;
 };
 
-/** Text of the `token` overloads, computing the returned value from the arguments */
-const getOverloadsText = () => `// Type tokens return an object of variables, so they take no fallback
+/**
+ * Text of the `token` overloads. Each token gets its own so the JS Doc of the token
+ * (raw value, deprecation) shows up for the call, followed by the overloads for any token
+ */
+const getOverloadsText = ({tokens, typeTokens}: Config) => {
+  const names = new Map(tokens.map(({id, name}) => [id, name]));
+
+  const typeOverloads = Object.entries(typeTokens).map(([id, {doc, props}]) => {
+    const lines = Object.entries(props).map(
+      ([prop, ref]) => `  ${prop}: \`var(${names.get(ref) ?? '--unknown'})\`;`
+    );
+    return `${doc}export declare function token(token: '${id}'): {\n${lines.join('\n')}\n};\n`;
+  });
+
+  const tokenOverloads = tokens.flatMap(({id, name, doc}) => [
+    `${doc}export declare function token(token: '${id}'): \`var(${name})\`;\n`,
+    `${doc}export declare function token<F extends Fallback>(
+  token: '${id}',
+  fallback: F
+): \`var(${name}, \${FallbackVar<F>})\`;\n`,
+  ]);
+
+  return `${[...typeOverloads, ...tokenOverloads].join('')}
+// Overloads of a union of tokens, which have no single JS Doc
 export declare function token<T extends TypeToken>(
   token: T
 ): {[K in keyof TypeTokens[T]]: \`var(\${VarName<TypeTokens[T][K]>})\`};
-export declare function token<T extends ActiveToken>(token: T): \`var(\${Tokens[T]})\`;
-export declare function token<T extends ActiveToken, F extends Fallback>(
-  token: T,
-  fallback: F
-): \`var(\${Tokens[T]}, \${FallbackVar<F>})\`;
-/** @deprecated */
-export declare function token<T extends DeprecatedToken>(token: T): \`var(\${Tokens[T]})\`;
-/** @deprecated */
-export declare function token<T extends DeprecatedToken, F extends Fallback>(
+export declare function token<T extends Token>(token: T): \`var(\${Tokens[T]})\`;
+export declare function token<T extends Token, F extends Fallback>(
   token: T,
   fallback: F
 ): \`var(\${Tokens[T]}, \${FallbackVar<F>})\`;
 `;
+};
 
 /** Generate the types of `token` */
 const generateDeclaration = (config: Config) =>
@@ -216,5 +234,5 @@ const generateDeclaration = (config: Config) =>
     getTokensInterfaceText(config),
     getTypeTokensInterfaceText(config),
     getHelperTypesText(config),
-    getOverloadsText(),
+    getOverloadsText(config),
   ].join('\n');
