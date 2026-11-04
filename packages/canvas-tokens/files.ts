@@ -5,6 +5,7 @@ import {camelCase} from 'case-anything';
 import * as filters from './filters';
 import {isInlineTokenFile} from './utils';
 import type {LevelIndexOptions, TokenIndexOptions} from './src/formats/generateJsImports';
+import type {TokenFnOptions} from './src/formats/generateJsTokenFn';
 
 const COMPOSITE_TOKENS = ['typography'];
 const SANA_CANVAS_THEME_SELECTOR = '[data-theme="sana-canvas"]';
@@ -129,31 +130,56 @@ const tokenFiles = fs
 export const getJsFiles = (platform: 'es6' | 'commonjs') => [
   ...getTokenFiles(platform),
   ...getIndexFiles(platform),
-  ...getCssVarFiles(platform),
+  ...getTokenFnFiles(platform),
 ];
 
 /**
- * Generate the `cssVar` function file with platform-specific syntax
+ * Generate the `token` function file with platform-specific syntax
  * and the corresponding TypeScript declaration file
  * @param platform The target platform for the generated files ('es6' or 'commonjs')
+ * @param options Overrides of the format options, e.g. the prefix and names of the labs package
+ * @param filter Limits the tokens the function accepts
  */
-function getCssVarFiles(platform: 'es6' | 'commonjs') {
-  const FORMAT = 'javascript/css-var-fn';
-  const PREFIX = 'cnvs';
+function getTokenFnFiles(
+  platform: 'es6' | 'commonjs',
+  options: Partial<TokenFnOptions> = {},
+  filter?: Filter['filter']
+): File[] {
+  const FORMAT = 'javascript/token-fn';
+  const common = {prefix: 'cnvs', compositeTokens: COMPOSITE_TOKENS, ...options};
 
   return [
+    {destination: 'token.js', format: FORMAT, filter, options: {...common, syntaxStyle: platform}},
     {
-      destination: 'css-var.js',
+      destination: 'token.d.ts',
       format: FORMAT,
-      options: {prefix: PREFIX, syntaxStyle: platform, compositeTokens: COMPOSITE_TOKENS},
-    },
-    {
-      destination: 'css-var.d.ts',
-      format: FORMAT,
-      options: {prefix: PREFIX, syntaxStyle: 'ts', compositeTokens: COMPOSITE_TOKENS},
+      filter,
+      options: {...common, syntaxStyle: 'ts', includeJsDocs: true},
     },
   ];
 }
+
+/**
+ * Labs JS files: the `token` function of the simple `--wdt-` names, without deprecated tokens,
+ * and the package index re-exporting it
+ */
+export const getLabsJsFiles = (platform: 'es6' | 'commonjs'): File[] => {
+  const files = ['labs/token.json'];
+
+  return [
+    ...getTokenFnFiles(platform, {prefix: 'wdt', simpleNames: true}, token => !token.$deprecated),
+    {
+      destination: 'index.js',
+      format: 'javascript/token-index',
+      options: {syntaxStyle: platform, files} satisfies TokenIndexOptions,
+    },
+    {
+      destination: 'index.d.ts',
+      format: 'javascript/token-index',
+      options: {syntaxStyle: 'ts', files} satisfies TokenIndexOptions,
+    },
+  ];
+};
 
 /**
  * Generate tokens JS files with platform-specific syntax

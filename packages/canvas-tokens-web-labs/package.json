@@ -11,13 +11,40 @@
   "main": "dist/common-js/index.js",
   "module": "dist/es6/index.js",
   "sideEffects": false,
+  "type": "module",
   "types": "dist/es6/index.d.ts",
   "scripts": {
-    "clean": "rimraf dist css"
+    "clean": "rimraf dist css \"*/package.json\""
   },
   "files": [
     "dist/",
-    "css/"
+    "css/",
+    "*/package.json"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/es6/index.d.ts",
+        "default": "./dist/es6/index.js"
+      },
+      "require": {
+        "types": "./dist/common-js/index.d.ts",
+        "default": "./dist/common-js/index.js"
+      }
+    },
+    "./token": {
+      "import": {
+        "types": "./dist/es6/token.d.ts",
+        "default": "./dist/es6/token.js"
+      },
+      "require": {
+        "types": "./dist/common-js/token.d.ts",
+        "default": "./dist/common-js/token.js"
+      }
+    },
+    "./css/*": "./css/*",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  }
 }

@@ -153,14 +153,14 @@
         "default": "./dist/common-js/system/type.js"
       }
     },
-    "./css-var": {
+    "./token": {
       "import": {
-        "types": "./dist/es6/css-var.d.ts",
-        "default": "./dist/es6/css-var.js"
+        "types": "./dist/es6/token.d.ts",
+        "default": "./dist/es6/token.js"
       },
       "require": {
-        "types": "./dist/common-js/css-var.d.ts",
-        "default": "./dist/common-js/css-var.js"
+        "types": "./dist/common-js/token.d.ts",
+        "default": "./dist/common-js/token.js"
       }
     },
     "./css/*": "./css/*",

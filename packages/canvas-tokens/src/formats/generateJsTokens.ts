@@ -1,8 +1,8 @@
 import {Dictionary, File, TransformedToken, TransformedTokens} from 'style-dictionary/types';
-import {fileHeader, getReferences, resolveReferences} from 'style-dictionary/utils';
+import {fileHeader, getReferences} from 'style-dictionary/utils';
 import {camelCase} from 'case-anything';
 
-import {isComposite, isInlineTokenFile, SyntaxStyle, toCSSVarName} from '../../utils';
+import {getJsDoc, getJsPath, isComposite, SyntaxStyle, toCSSVarName} from '../../utils';
 
 type Format = {
   dictionary: Dictionary;
@@ -62,71 +62,6 @@ const generateInlineTokens = (tokens: TransformedToken[], options: Options): str
       return jsDoc + wrapExport(token.name, `"${toCSSVarName(token, prefix)}";`, syntaxStyle);
     })
     .join('\n');
-};
-
-const SANA_EXTENSION = 'sana.canvas.tokens';
-
-/** Get the resolved value of the Canvas theme, if the token defines one */
-const getCanvasValue = (token: TransformedToken, tokens?: TransformedTokens) => {
-  const canvas = token.original.$extensions?.[SANA_EXTENSION]?.themes?.canvas;
-  const value = canvas?.light?.$value ?? canvas?.$value;
-
-  // An empty theme value means the default value is used, same as in the CSS
-  if (!value) return undefined;
-  if (typeof value !== 'string' || !tokens) return value;
-
-  // A value that is a single reference resolves to the referenced token
-  const resolved: any = resolveReferences(value, tokens);
-  return resolved?.$value ?? resolved;
-};
-
-/** Get the JS access path (`brand.primary100`) of a token, as exported from the package index */
-const getJsPath = (token: TransformedToken): string => {
-  const level = token.filePath.split('/')[3];
-  if (isInlineTokenFile(token.filePath)) return `${level}.${token.name}`;
-
-  // Brand files skip their `brand` root, color files keep their `color` root
-  const path = /(^|\/)brand\//.test(token.filePath) ? token.path.slice(1) : token.path;
-  return [level, ...path.map(key => camelCase(key))].join('.');
-};
-
-/**
- * Get the dark mode value of a token, as a JS access path when it is a reference.
- * References to the base dark palette are skipped as it is not exported
- */
-const getDarkValue = (token: TransformedToken, tokens?: TransformedTokens) => {
-  const value = token.original.$extensions?.[SANA_EXTENSION]?.modes?.dark?.$value;
-  if (typeof value !== 'string') return undefined;
-
-  const [reference] = tokens ? getReferences(value, tokens) : [];
-  if (reference?.path[0] === 'dark') return undefined;
-
-  return reference ? getJsPath(reference) : value;
-};
-
-/**
- * Build a JS Doc block for a token: its description, raw value, Sana and dark values
- * and deprecation flag. When the token has a Canvas theme value, that is the raw value
- * and the default value is the Sana one.
- * Uses the single-line form when there is only one line to show.
- */
-const getJsDoc = (token: TransformedToken, options: Options, tabs = ''): string => {
-  const canvasValue = getCanvasValue(token, options.tokens);
-  const darkValue = getDarkValue(token, options.tokens);
-  const rawValue = canvasValue ?? JSON.stringify(token.$value);
-  const lines = [
-    token.comment ?? token.$description,
-    !isComposite(token, options.compositeTokens) && `Root Raw Value: \`${rawValue}\``,
-    canvasValue !== undefined && `Sana Value: \`${token.$value}\``,
-    darkValue && `Dark Value: \`${darkValue}\``,
-    token.$deprecated && '@deprecated',
-  ].filter(Boolean);
-
-  if (!lines.length) return '';
-
-  return lines.length === 1
-    ? `${tabs}/** ${lines[0]} */\n`
-    : `${tabs}/**\n${lines.map(line => `${tabs} * ${line}\n`).join('')}${tabs} */\n`;
 };
 
 /** Whether a file nests its tokens in a single wrapper root (`color`, `brand`) */
