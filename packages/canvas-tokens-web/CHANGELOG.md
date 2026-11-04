@@ -1,5 +1,20 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.7
+
+### Major Changes
+
+- ### Components
+
+  - chore: Update purposeful easing base motion tokens
+    ([#379](https://github.com/Workday/canvas-tokens/pull/379))
+    ([@sheelah](https://github.com/sheelah))
+
+  ### Tokens
+
+  - feat: Add build script for js tokens ([#381](https://github.com/Workday/canvas-tokens/pull/381))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
 ## 5.0.0-alpha.6
 
 ### Major Changes
