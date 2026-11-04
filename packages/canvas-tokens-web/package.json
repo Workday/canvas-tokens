@@ -1,6 +1,6 @@
 {
   "name": "@workday/canvas-tokens-web",
-  "version": "5.0.0-alpha.6",
+  "version": "5.0.0-alpha.7",
   "description": "Canvas design tokens for web",
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",
@@ -12,12 +12,158 @@
   "module": "dist/es6/index.js",
   "sideEffects": false,
   "types": "dist/es6/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/es6/index.d.ts",
+        "default": "./dist/es6/index.js"
+      },
+      "require": {
+        "types": "./dist/common-js/index.d.ts",
+        "default": "./dist/common-js/index.js"
+      }
+    },
+    "./base": {
+      "import": {
+        "types": "./dist/es6/base/index.d.ts",
+        "default": "./dist/es6/base/index.js"
+      },
+      "require": {
+        "types": "./dist/common-js/base/index.d.ts",
+        "default": "./dist/common-js/base/index.js"
+      }
+    },
+    "./brand": {
+      "import": {
+        "types": "./dist/es6/brand/index.d.ts",
+        "default": "./dist/es6/brand/index.js"
+      },
+      "require": {
+        "types": "./dist/common-js/brand/index.d.ts",
+        "default": "./dist/common-js/brand/index.js"
+      }
+    },
+    "./component": {
+      "import": {
+        "types": "./dist/es6/component/index.d.ts",
+        "default": "./dist/es6/component/index.js"
+      },
+      "require": {
+        "types": "./dist/common-js/component/index.d.ts",
+        "default": "./dist/common-js/component/index.js"
+      }
+    },
+    "./color": {
+      "import": {
+        "types": "./dist/es6/system/color.d.ts",
+        "default": "./dist/es6/system/color.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/color.d.ts",
+        "default": "./dist/common-js/system/color.js"
+      }
+    },
+    "./breakpoint": {
+      "import": {
+        "types": "./dist/es6/system/breakpoint.d.ts",
+        "default": "./dist/es6/system/breakpoint.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/breakpoint.d.ts",
+        "default": "./dist/common-js/system/breakpoint.js"
+      }
+    },
+    "./depth": {
+      "import": {
+        "types": "./dist/es6/system/depth.d.ts",
+        "default": "./dist/es6/system/depth.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/depth.d.ts",
+        "default": "./dist/common-js/system/depth.js"
+      }
+    },
+    "./gap": {
+      "import": {
+        "types": "./dist/es6/system/gap.d.ts",
+        "default": "./dist/es6/system/gap.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/gap.d.ts",
+        "default": "./dist/common-js/system/gap.js"
+      }
+    },
+    "./motion": {
+      "import": {
+        "types": "./dist/es6/system/motion.d.ts",
+        "default": "./dist/es6/system/motion.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/motion.d.ts",
+        "default": "./dist/common-js/system/motion.js"
+      }
+    },
+    "./opacity": {
+      "import": {
+        "types": "./dist/es6/system/opacity.d.ts",
+        "default": "./dist/es6/system/opacity.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/opacity.d.ts",
+        "default": "./dist/common-js/system/opacity.js"
+      }
+    },
+    "./padding": {
+      "import": {
+        "types": "./dist/es6/system/padding.d.ts",
+        "default": "./dist/es6/system/padding.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/padding.d.ts",
+        "default": "./dist/common-js/system/padding.js"
+      }
+    },
+    "./shape": {
+      "import": {
+        "types": "./dist/es6/system/shape.d.ts",
+        "default": "./dist/es6/system/shape.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/shape.d.ts",
+        "default": "./dist/common-js/system/shape.js"
+      }
+    },
+    "./size": {
+      "import": {
+        "types": "./dist/es6/system/size.d.ts",
+        "default": "./dist/es6/system/size.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/size.d.ts",
+        "default": "./dist/common-js/system/size.js"
+      }
+    },
+    "./type": {
+      "import": {
+        "types": "./dist/es6/system/type.d.ts",
+        "default": "./dist/es6/system/type.js"
+      },
+      "require": {
+        "types": "./dist/common-js/system/type.d.ts",
+        "default": "./dist/common-js/system/type.js"
+      }
+    },
+    "./css/*": "./css/*",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "clean": "rimraf dist css"
+    "clean": "rimraf dist css \"*/package.json\""
   },
   "files": [
     "dist/",
-    "css/"
+    "css/",
+    "*/package.json"
   ],
   "dependencies": {}
 }

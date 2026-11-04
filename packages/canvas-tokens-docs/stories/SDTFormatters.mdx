@@ -160,11 +160,11 @@ package modules, for simplified imports and compatibility within CommonJS system
 `'use strict';
 Object.defineProperty(exports, '__esModule', {value: true});
 
-var base = require('./base');
+var base = require('./base/index.js');
 exports.base = base;
-var brand = require('./brand');
+var brand = require('./brand/index.js');
 exports.brand = brand;
-var system = require('./system');
+var system = require('./system/index.js');
 exports.system = system;`;
 ```
 
@@ -201,13 +201,14 @@ export const space = {
 #### es6/packages-export
 
 Located in `formatES6Exports`. Generates an ES6 index barrel file, exporting all token package
-modules (such as base, brand, and system) for broader consumption.
+modules (such as base, brand, and system) for broader consumption. Paths include the explicit
+`.js` extension, so the output also works in native ESM without a bundler.
 
 ```js
 // output
-`export * from './base';
-export * from './brand';
-export * from './system';`;
+`export * from './base/index.js';
+export * from './brand/index.js';
+export * from './system/index.js';`;
 ```
 
 #### js/common-js

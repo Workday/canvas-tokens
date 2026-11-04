@@ -4,6 +4,9 @@
 dist
 docs
 */canvas-tokens-web/css
+*/canvas-tokens-web/*/package.json
+*/canvas-tokens-web-labs/css
+*/canvas-tokens-web-labs/*/package.json
 tmp
 /out-tsc
 *.tsbuildinfo
