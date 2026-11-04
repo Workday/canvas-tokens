@@ -4,7 +4,9 @@
 dist
 docs
 */canvas-tokens-web/css
+*/canvas-tokens-web/*/package.json
 */canvas-tokens-web-labs/css
+*/canvas-tokens-web-labs/*/package.json
 tmp
 /out-tsc
 *.tsbuildinfo
@@ -20,7 +22,6 @@ node_modules
 !.vscode/extensions.json
 
 # misc
-/.sass-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
@@ -43,9 +44,3 @@ figma-raw-tokens/
 
 # nx cache
 .nx
-
-# generated subpath stubs (see packages/canvas-tokens/build.ts)
-packages/canvas-tokens-web/*/*.json
-packages/canvas-tokens-web/*/*.js
-packages/canvas-tokens-web-labs/*/*.json
-packages/canvas-tokens-web-labs/*/*.js

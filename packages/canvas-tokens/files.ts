@@ -6,7 +6,6 @@ import * as filters from './filters';
 import {isInlineTokenFile} from './utils';
 import type {LevelIndexOptions, TokenIndexOptions} from './src/formats/generateJsImports';
 
-/** Token types whose value is an object of references to other tokens */
 const COMPOSITE_TOKENS = ['typography'];
 const SANA_CANVAS_THEME_SELECTOR = '[data-theme="sana-canvas"]';
 

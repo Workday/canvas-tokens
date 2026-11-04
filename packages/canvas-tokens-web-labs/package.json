@@ -17,9 +17,7 @@
   },
   "files": [
     "dist/",
-    "css/",
-    "less/",
-    "scss/"
+    "css/"
   ],
   "dependencies": {}
 }
