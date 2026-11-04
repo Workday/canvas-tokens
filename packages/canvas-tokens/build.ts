@@ -5,6 +5,9 @@ import {generateRoot} from './src/formats/generateRoot';
 import {transforms} from './transforms';
 import * as filters from './filters';
 
+const SANA_CANVAS_THEME_SELECTOR = '[data-theme="sana-canvas"';
+const SANA_CANVAS_LABS_THEME_SELECTOR = '[data-theme~="wdt"][data-theme~="sana-canvas"]';
+
 const config = new StyleDictionary({
   source: ['src/tokens/dtcg/**/*.json'],
   log: {verbosity: 'silent'},
@@ -50,7 +53,7 @@ const config = new StyleDictionary({
           options: {
             prefix: 'cnvs',
             outputReferences: true,
-            themeSelector: '[data-theme="sana-canvas"]',
+            themeSelector: SANA_CANVAS_THEME_SELECTOR,
           },
         },
         {
@@ -60,54 +63,64 @@ const config = new StyleDictionary({
           options: {
             prefix: 'cnvs',
             outputReferences: true,
-            themeSelector: '[data-theme="sana-canvas"]',
+            themeSelector: SANA_CANVAS_THEME_SELECTOR,
             modeSelector: 'dark',
           },
         },
         {
           destination: 'index.css',
           format: 'styles/index',
+          options: {
+            imports: [
+              './base/_variables.css',
+              './brand/_variables.css',
+              './system/_variables.css',
+              './component/_variables.css',
+              './sana/_variables.css',
+              './sana/_variables-dark.css',
+            ],
+          },
         },
       ],
     },
-    cssV5: {
+    'labs-css': {
       transformGroup: 'css',
       transforms: ['duration', 'px2rem', 'toOKLCH', 'gradient', 'css/name/base'],
-      buildPath: '../canvas-tokens-web/css/wdt',
+      buildPath: '../canvas-tokens-web-labs/css',
       files: [
         {
-          destination: 'base.css',
+          destination: 'sana-canvas/base.css',
           format: 'styles/root',
           filter: token => token.filePath.includes('/base/') && !token.$deprecated,
           options: {
             prefix: 'wdt',
-            themeSelector: '[data-theme="wdt-sana"]',
+            themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
             outputReferences: true,
           },
         },
         {
-          destination: 'brand.css',
+          destination: 'sana-canvas/brand.css',
           format: 'styles/root',
           filter: token =>
             token.filePath.includes('/brand/') && token.path[1] !== 'action' && !token.$deprecated,
           options: {
             prefix: 'wdt',
-            themeSelector: '[data-theme="wdt-sana"]',
+            themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
             outputReferences: true,
           },
         },
         {
-          destination: 'component.css',
+          destination: 'sana-canvas/component.css',
           format: 'styles/root',
           filter: token => token.filePath.includes('/component/') && !token.$deprecated,
           options: {
             prefix: 'wdt',
-            themeSelector: '[data-theme="wdt-sana"]',
+            themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
             outputReferences: true,
           },
         },
         {
-          destination: 'system.css',
+          destination: 'sana-canvas/system.css',
           format: 'styles/root',
           filter: token =>
             token.filePath.includes('/system/') &&
@@ -115,14 +128,21 @@ const config = new StyleDictionary({
             token.$type !== 'typography',
           options: {
             prefix: 'wdt',
-            themeSelector: '[data-theme="wdt-sana"]',
+            themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
             outputReferences: true,
           },
         },
         {
           destination: 'index.css',
           format: 'styles/index',
-          options: {flatFolder: true},
+          options: {
+            imports: [
+              './sana-canvas/base.css',
+              './sana-canvas/brand.css',
+              './sana-canvas/system.css',
+              './sana-canvas/component.css',
+            ],
+          },
         },
       ],
     },
@@ -137,27 +157,9 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'styles/index',
   format: async ({file, options}) => {
-    const {flatFolder} = options;
+    const {imports} = options;
     const header = await fileHeader({file});
-    const folderImports = [
-      '@import "./base/_variables.css";',
-      '@import "./brand/_variables.css";',
-      '@import "./system/_variables.css";',
-      '@import "./component/_variables.css";',
-      '@import "./sana/_variables.css";',
-      '@import "./sana/_variables-dark.css";',
-    ];
-
-    const flatImports = [
-      '@import "./base.css";',
-      '@import "./brand.css";',
-      '@import "./system.css";',
-      '@import "./component.css";',
-    ];
-
-    const imports = flatFolder ? flatImports : folderImports;
-
-    return header + imports.join('\n') + '\n';
+    return header + imports.map((i: string) => `@import "${i}";\n`).join('');
   },
 });
 
