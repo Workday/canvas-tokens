@@ -5,10 +5,9 @@ import {fileHeader} from 'style-dictionary/utils';
 import {generateRoot} from './src/formats/generateRoot';
 import {generateJsLevelIndex, generateJsTokenIndex} from './src/formats/generateJsImports';
 import {generateJsTokens} from './src/formats/generateJsTokens';
-import * as filters from './filters';
 
 import {transforms} from './transforms';
-import {cssFiles, getJsFiles} from './files';
+import {cssFiles, getJsFiles, labsCssFiles} from './files';
 
 const jsTransforms = [
   'js/name',
@@ -19,8 +18,6 @@ const jsTransforms = [
   'cubicBezier/css',
   'shadow/css/shorthand',
 ];
-
-const SANA_CANVAS_LABS_THEME_SELECTOR = '[data-theme~="wdt"][data-theme~="sana-canvas"]';
 
 const config = new StyleDictionary({
   source: ['src/tokens/dtcg/**/*.json'],
@@ -36,64 +33,7 @@ const config = new StyleDictionary({
       transformGroup: 'css',
       transforms: ['duration', 'px2rem', 'toOKLCH', 'gradient', 'css/name/base'],
       buildPath: '../canvas-tokens-web-labs/css',
-      files: [
-        {
-          destination: 'sana-canvas/base.css',
-          format: 'styles/root',
-          filter: token => token.filePath.includes('/base/') && !token.$deprecated,
-          options: {
-            prefix: 'wdt',
-            themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
-            outputReferences: true,
-          },
-        },
-        {
-          destination: 'sana-canvas/brand.css',
-          format: 'styles/root',
-          filter: token =>
-            token.filePath.includes('/brand/') && token.path[1] !== 'action' && !token.$deprecated,
-          options: {
-            prefix: 'wdt',
-            themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
-            outputReferences: true,
-          },
-        },
-        {
-          destination: 'sana-canvas/component.css',
-          format: 'styles/root',
-          filter: token => token.filePath.includes('/component/') && !token.$deprecated,
-          options: {
-            prefix: 'wdt',
-            themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
-            outputReferences: true,
-          },
-        },
-        {
-          destination: 'sana-canvas/system.css',
-          format: 'styles/root',
-          filter: token =>
-            token.filePath.includes('/system/') &&
-            !token.$deprecated &&
-            token.$type !== 'typography',
-          options: {
-            prefix: 'wdt',
-            themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
-            outputReferences: true,
-          },
-        },
-        {
-          destination: 'index.css',
-          format: 'styles/index',
-          options: {
-            imports: [
-              './sana-canvas/base.css',
-              './sana-canvas/brand.css',
-              './sana-canvas/system.css',
-              './sana-canvas/component.css',
-            ],
-          },
-        },
-      ],
+      files: labsCssFiles,
     },
     es6: {
       transformGroup: 'js',
