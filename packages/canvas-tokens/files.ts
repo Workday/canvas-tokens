@@ -91,7 +91,14 @@ const isComponentToken = (token: TransformedToken) =>
 const isSystemToken = (token: TransformedToken) =>
   token.filePath.includes('/system/') && !token.$deprecated;
 
-const labsFile = (name: string, filter: Filter['filter']): File => ({
+const isDarkToken = (token: TransformedToken) =>
+  filters.isSanaDarkTokens(token) && !token.$deprecated;
+
+const labsFile = (
+  name: string,
+  filter: Filter['filter'],
+  options: Record<string, unknown> = {}
+): File => ({
   destination: `sana-canvas/${name}.css`,
   format: 'styles/root',
   filter,
@@ -99,6 +106,7 @@ const labsFile = (name: string, filter: Filter['filter']): File => ({
     outputReferences: true,
     prefix: 'wdt',
     themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
+    ...options,
   },
 });
 
@@ -107,6 +115,7 @@ export const labsCssFiles = [
   labsFile('brand', isBrandToken),
   labsFile('component', isComponentToken),
   labsFile('system', isSystemToken),
+  labsFile('dark', isDarkToken, {modeSelector: 'dark'}),
   {
     destination: 'index.css',
     format: 'styles/index',
@@ -116,6 +125,7 @@ export const labsCssFiles = [
         './sana-canvas/brand.css',
         './sana-canvas/component.css',
         './sana-canvas/system.css',
+        './sana-canvas/dark.css',
       ],
     },
   },
