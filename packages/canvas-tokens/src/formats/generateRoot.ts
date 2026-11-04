@@ -75,12 +75,11 @@ export const generateRoot = async ({dictionary, file, options}: Format) => {
  */
 const getScope = (themeSelector?: string, modeSelector?: string) => {
   const mode = `data-mode="${modeSelector}"`;
-  const theme = `data-theme="${themeSelector}"`;
 
   if (themeSelector) {
     return modeSelector
-      ? `[${theme}][${mode}],\n[${theme}] [${mode}],\n[${mode}] [${theme}]`
-      : `[${theme}]`;
+      ? `${themeSelector}[${mode}],\n${themeSelector} [${mode}],\n[${mode}] ${themeSelector}`
+      : `${themeSelector}`;
   }
 
   if (modeSelector) {
