@@ -4,10 +4,9 @@
 dist
 docs
 */canvas-tokens-web/css
-*/canvas-tokens-web/less
-*/canvas-tokens-web/scss
-# generated subpath stubs and dist/es6/package.json
 */canvas-tokens-web/*/package.json
+*/canvas-tokens-web-labs/css
+*/canvas-tokens-web-labs/*/package.json
 tmp
 /out-tsc
 *.tsbuildinfo
@@ -23,7 +22,6 @@ node_modules
 !.vscode/extensions.json
 
 # misc
-/.sass-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
