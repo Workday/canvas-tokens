@@ -1,5 +1,5 @@
 import fs from 'fs';
-import {TransformedToken} from 'style-dictionary';
+import {TransformedToken, Filter, File} from 'style-dictionary/types';
 import {camelCase} from 'case-anything';
 
 import * as filters from './filters';
@@ -8,6 +8,7 @@ import type {LevelIndexOptions, TokenIndexOptions} from './src/formats/generateJ
 
 /** Token types whose value is an object of references to other tokens */
 const COMPOSITE_TOKENS = ['typography'];
+const SANA_CANVAS_THEME_SELECTOR = '[data-theme="sana-canvas"]';
 
 /** CSS Files */
 export const cssFiles = [
@@ -44,7 +45,11 @@ export const cssFiles = [
     destination: 'sana/_variables.css',
     format: 'styles/root',
     filter: filters.isSanaTokens,
-    options: {prefix: 'cnvs', outputReferences: true, themeSelector: 'sana-canvas'},
+    options: {
+      prefix: 'cnvs',
+      outputReferences: true,
+      themeSelector: SANA_CANVAS_THEME_SELECTOR,
+    },
   },
   {
     destination: 'sana/_variables-dark.css',
@@ -53,13 +58,66 @@ export const cssFiles = [
     options: {
       prefix: 'cnvs',
       outputReferences: true,
-      themeSelector: 'sana-canvas',
+      themeSelector: SANA_CANVAS_THEME_SELECTOR,
       modeSelector: 'dark',
     },
   },
   {
     destination: 'index.css',
     format: 'styles/index',
+    options: {
+      imports: [
+        './base/_variables.css',
+        './brand/_variables.css',
+        './system/_variables.css',
+        './component/_variables.css',
+        './sana/_variables.css',
+        './sana/_variables-dark.css',
+      ],
+    },
+  },
+];
+
+/** Labs CSS Files */
+
+const SANA_CANVAS_LABS_THEME_SELECTOR = '[data-theme~="wdt"][data-theme~="sana-canvas"]';
+
+const isBaseToken = (token: TransformedToken) =>
+  token.filePath.includes('/base/') && !token.$deprecated;
+const isBrandToken = (token: TransformedToken) =>
+  token.filePath.includes('/brand/') && !token.$deprecated;
+const isComponentToken = (token: TransformedToken) =>
+  token.filePath.includes('/component/') && !token.$deprecated;
+const isSystemToken = (token: TransformedToken) =>
+  token.filePath.includes('/system/') && !token.$deprecated;
+
+const labsFile = (name: string, filter: Filter['filter']): File => ({
+  destination: `sana-canvas/${name}.css`,
+  format: 'styles/root',
+  filter,
+  options: {
+    outputReferences: true,
+    prefix: 'wdt',
+    themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
+  },
+});
+
+export const labsCssFiles = [
+  labsFile('base', isBaseToken),
+  labsFile('brand', isBrandToken),
+  labsFile('component', isComponentToken),
+  labsFile('system', isSystemToken),
+  {
+    destination: 'index.css',
+    format: 'styles/index',
+    options: {
+      imports: [
+        './sana-canvas/base.css',
+        './sana-canvas/brand.css',
+        './sana-canvas/component.css',
+        './sana-canvas/system.css',
+      ],
+    },
   },
 ];
 

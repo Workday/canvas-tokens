@@ -64,6 +64,15 @@ export const transforms = [
       return token.name;
     },
   },
+  {
+    type: `name`,
+    transitive: true,
+    name: `css/name/base`,
+    transform: (token: TransformedToken) =>
+      token.filePath.includes('/base/') && !token.filePath.includes('palette')
+        ? `base-${token.name}`
+        : token.name,
+  },
   // transform name to include full name for js
   {
     type: `name`,

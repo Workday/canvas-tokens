@@ -4,10 +4,7 @@
 dist
 docs
 */canvas-tokens-web/css
-*/canvas-tokens-web/less
-*/canvas-tokens-web/scss
-# generated subpath stubs and dist/es6/package.json
-*/canvas-tokens-web/*/package.json
+*/canvas-tokens-web-labs/css
 tmp
 /out-tsc
 *.tsbuildinfo
@@ -46,3 +43,9 @@ figma-raw-tokens/
 
 # nx cache
 .nx
+
+# generated subpath stubs (see packages/canvas-tokens/build.ts)
+packages/canvas-tokens-web/*/*.json
+packages/canvas-tokens-web/*/*.js
+packages/canvas-tokens-web-labs/*/*.json
+packages/canvas-tokens-web-labs/*/*.js

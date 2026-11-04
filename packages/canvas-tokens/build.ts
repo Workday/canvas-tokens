@@ -8,7 +8,7 @@ import {generateJsTokens} from './src/formats/generateJsTokens';
 import {generateJsCssVar} from './src/formats/generateJsCssVar';
 
 import {transforms} from './transforms';
-import {cssFiles, getJsFiles} from './files';
+import {cssFiles, getJsFiles, labsCssFiles} from './files';
 
 const jsTransforms = [
   'js/name',
@@ -29,6 +29,12 @@ const config = new StyleDictionary({
       transforms: ['duration', 'px2rem', 'toOKLCH', 'gradient', 'css/name'],
       buildPath: '../canvas-tokens-web/css',
       files: cssFiles,
+    },
+    'labs-css': {
+      transformGroup: 'css',
+      transforms: ['duration', 'px2rem', 'toOKLCH', 'gradient', 'css/name/base'],
+      buildPath: '../canvas-tokens-web-labs/css',
+      files: labsCssFiles,
     },
     es6: {
       transformGroup: 'js',
@@ -52,18 +58,10 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
   name: 'styles/index',
-  format: async ({file}) => {
+  format: async ({file, options}) => {
+    const {imports} = options;
     const header = await fileHeader({file});
-    const imports = [
-      '@import "./base/_variables.css";',
-      '@import "./brand/_variables.css";',
-      '@import "./system/_variables.css";',
-      '@import "./component/_variables.css";',
-      '@import "./sana/_variables.css";',
-      '@import "./sana/_variables-dark.css";',
-    ];
-
-    return header + imports.join('\n') + '\n';
+    return header + imports.map((i: string) => `@import "${i}";\n`).join('');
   },
 });
 
