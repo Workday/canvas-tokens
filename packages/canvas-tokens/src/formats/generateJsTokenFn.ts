@@ -189,7 +189,7 @@ type VarName<T> = T extends Token ? Tokens[T] : never;
 
 // A fallback is a variable name or a var(), which stays unchanged
 type Fallback = \`--\${string}\` | \`var(\${string})\`;
-type FallbackVar<F extends Fallback> = F extends \`var(\${string}\` ? F : \`var(\${F})\`;
+type FallbackVar<F extends Fallback> = F extends \`var(\${string})\` ? F : \`var(\${F})\`;
 `;
 };
 

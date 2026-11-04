@@ -14,12 +14,11 @@
   "type": "module",
   "types": "dist/es6/index.d.ts",
   "scripts": {
-    "clean": "rimraf dist css \"*/package.json\""
+    "clean": "rimraf dist css"
   },
   "files": [
     "dist/",
-    "css/",
-    "*/package.json"
+    "css/"
   ],
   "dependencies": {},
   "exports": {

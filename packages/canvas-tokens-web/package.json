@@ -168,12 +168,11 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "clean": "rimraf dist css \"*/package.json\""
+    "clean": "rimraf dist css"
   },
   "files": [
     "dist/",
-    "css/",
-    "*/package.json"
+    "css/"
   ],
   "dependencies": {}
 }
