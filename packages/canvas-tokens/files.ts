@@ -288,19 +288,19 @@ function getIndexFiles(platform: 'es6' | 'commonjs'): IndexFile[] {
   };
 
   // `system/color` is spread over several files, so it gets its own entry point
-  // exporting the merged `color` object (the `@workday/canvas-tokens-web/color` import)
+  // exporting the color groups (`accent`, `surface`, ...) directly (the `@workday/canvas-tokens-web/color` import)
   const colorFiles = tokenFiles.filter(f => f.startsWith('system/color/'));
   const colorGroups = {color: getColorGroup(colorFiles)};
   const colorIndexFiles: IndexFile[] = [
     {
       destination: 'system/color.js',
       format: 'javascript/token-index',
-      options: {syntaxStyle: platform, files: colorFiles, groups: colorGroups},
+      options: {syntaxStyle: platform, files: colorFiles, groups: colorGroups, flatten: true},
     },
     {
       destination: 'system/color.d.ts',
       format: 'javascript/token-index',
-      options: {syntaxStyle: 'ts', files: colorFiles, groups: colorGroups},
+      options: {syntaxStyle: 'ts', files: colorFiles, groups: colorGroups, flatten: true},
     },
   ];
 
