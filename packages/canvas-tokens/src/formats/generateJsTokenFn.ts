@@ -16,6 +16,9 @@ export type TokenFnOptions = {
 /** Token levels that keep their name in the CSS variable, any other token is a system token */
 const LEVELS = ['base', 'brand', 'component'];
 
+/** Component tokens keep no level in the simple names, `component.system.icon` is `system-icon` */
+const COMPONENT_ID = /^component\./;
+
 type TokenEntry = {id: string; name: string; doc: string; deprecated: boolean};
 
 type Config = {
@@ -74,7 +77,9 @@ export const generateJsTokenFn = async ({dictionary, file, options}: FormatFnArg
       const id = getId(token);
       return {
         id,
-        name: simpleNames ? `--${prefix}-${id.replace(/\./g, '-')}` : toCSSVarName(token, prefix),
+        name: simpleNames
+          ? `--${prefix}-${id.replace(COMPONENT_ID, '').replace(/\./g, '-')}`
+          : toCSSVarName(token, prefix),
         doc: getDoc(token),
         deprecated: !!token.$deprecated,
       };
@@ -117,8 +122,9 @@ const getTypeTokensText = ({typeTokens}: Config) => {
 /** Text of the function that maps an id to its CSS variable name */
 const getVarNameText = ({prefix, simpleNames}: Config) => {
   const level = simpleNames ? '' : '${getLevel(id)}';
+  const path = simpleNames ? `id.replace(${COMPONENT_ID}, '')` : 'id';
   return `const toVarName = id =>
-  id.startsWith('--') ? id : \`--${prefix}-${level}\${id.replace(/\\./g, '-')}\`;\n\n`;
+  id.startsWith('--') ? id : \`--${prefix}-${level}\${${path}.replace(/\\./g, '-')}\`;\n\n`;
 };
 
 /** Text of the exported `token` function */
