@@ -153,17 +153,26 @@
         "default": "./dist/common-js/system/type.js"
       }
     },
+    "./token": {
+      "import": {
+        "types": "./dist/es6/token.d.ts",
+        "default": "./dist/es6/token.js"
+      },
+      "require": {
+        "types": "./dist/common-js/token.d.ts",
+        "default": "./dist/common-js/token.js"
+      }
+    },
     "./css/*": "./css/*",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },
   "scripts": {
-    "clean": "rimraf dist css \"*/package.json\""
+    "clean": "rimraf dist css"
   },
   "files": [
     "dist/",
-    "css/",
-    "*/package.json"
+    "css/"
   ],
   "dependencies": {}
 }

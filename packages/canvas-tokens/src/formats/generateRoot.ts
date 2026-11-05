@@ -9,7 +9,7 @@ import {fileHeader, getReferences} from 'style-dictionary/utils';
 import {kebabCase} from 'case-anything';
 
 import {isOklchToken} from '../../filters';
-import {getOklchValue, joinParts} from '../../utils';
+import {getOklchValue, isComposite as isCompositeToken, joinParts} from '../../utils';
 
 type Format = {
   dictionary: Dictionary;
@@ -40,8 +40,7 @@ export const generateRoot = async ({dictionary, file, options}: Format) => {
     useThemeValues,
     modeSelector,
   };
-  const isComposite = (token: TransformedToken) =>
-    compositeTokens && token.$type && compositeTokens.includes(token.$type);
+  const isComposite = (token: TransformedToken) => isCompositeToken(token, compositeTokens);
 
   const tokens = dictionary.allTokens
     .filter(token => !isComposite(token))
