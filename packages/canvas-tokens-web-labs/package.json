@@ -1,0 +1,49 @@
+{
+  "name": "@workday/canvas-tokens-web-labs",
+  "version": "0.0.1",
+  "description": "Canvas design tokens for web",
+  "author": "Workday, Inc. (https://www.workday.com)",
+  "license": "CC-BY-ND-4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Workday/canvas-tokens"
+  },
+  "main": "dist/common-js/index.js",
+  "module": "dist/es6/index.js",
+  "sideEffects": false,
+  "type": "module",
+  "types": "dist/es6/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist css"
+  },
+  "files": [
+    "dist/",
+    "css/"
+  ],
+  "dependencies": {},
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/es6/index.d.ts",
+        "default": "./dist/es6/index.js"
+      },
+      "require": {
+        "types": "./dist/common-js/index.d.ts",
+        "default": "./dist/common-js/index.js"
+      }
+    },
+    "./token": {
+      "import": {
+        "types": "./dist/es6/token.d.ts",
+        "default": "./dist/es6/token.js"
+      },
+      "require": {
+        "types": "./dist/common-js/token.d.ts",
+        "default": "./dist/common-js/token.js"
+      }
+    },
+    "./css/*": "./css/*",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  }
+}
