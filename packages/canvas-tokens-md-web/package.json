@@ -1,6 +1,6 @@
 {
   "name": "@workday/canvas-tokens-md-web",
-  "version": "5.0.0-alpha.7",
+  "version": "0.0.1",
   "description": "Canvas design tokens documentation (Markdown content and React components) for Canvas Tokens Web",
   "author": "Workday, Inc. (https://www.workday.com)",
   "license": "CC-BY-ND-4.0",
