@@ -9,7 +9,7 @@ import {
 } from '../../../../components/ColorGrid';
 
 const foregroundPalette = buildPalette('system.color.fg', {
-  default: system.color.fg.default,
+  default: system.color.fg.root,
   strong: system.color.fg.strong,
   stronger: system.color.fg.stronger,
   disabled: system.color.fg.disabled,
@@ -23,7 +23,7 @@ export const ForegroundColors = () => (
 // Helper to filter tokens to only include default and strong variants
 function filterStatusTokens(tokens: Record<string, string>) {
   const filtered: Record<string, string> = {};
-  if (tokens.default) filtered.default = tokens.default;
+  if (tokens.root) filtered.default = tokens.root;
   if (tokens.strong) filtered.strong = tokens.strong;
   return filtered;
 }
@@ -34,9 +34,6 @@ const statusPalettes = buildPaletteGroup(
     warning: filterStatusTokens(system.color.fg.warning),
     danger: filterStatusTokens(system.color.fg.danger),
     success: filterStatusTokens(system.color.fg.success),
-    critical: filterStatusTokens(system.color.fg.critical),
-    positive: filterStatusTokens(system.color.fg.positive),
-    caution: filterStatusTokens(system.color.fg.caution)
   },
   sortSystemColorPalette
 );
