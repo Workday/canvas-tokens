@@ -137,5 +137,5 @@ Publishing is currently a manual process. But it's relatively straightforward.
 
 1. Run the [Web Release GitHub Action workflow](https://github.com/Workday/canvas-tokens/actions/workflows/release-web.yml) and choose your version override: `patch`, `minor`, or `major`.
 2. Once the action is complete, pull down the latest `main` locally.
-3. Run `yarn release` to publish to npm
+3. Run `yarn release` to publish to npm. This publishes `@workday/canvas-tokens-web` and `@workday/canvas-tokens-md-web` together (the md package is kept on the web package version).
    a. You'll need a npm token to publish

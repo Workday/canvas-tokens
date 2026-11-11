@@ -102,7 +102,7 @@ jobs:
           ghToken: ${{ secrets.GH_RW_TOKEN }}
           package: "@workday/canvas-tokens-web"
           version: ${{ steps.set_version.outputs.version }}
-          buildScript: echo "Building..."
+          buildScript: yarn sync:md-version
           packagePath: packages/canvas-tokens-web
           prerelease: ${{ contains(github.ref_name, 'prerelease/') }}
           preid: ${{ steps.get_preid.outputs.preid }}
