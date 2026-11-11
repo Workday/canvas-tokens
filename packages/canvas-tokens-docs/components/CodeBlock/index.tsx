@@ -2,7 +2,7 @@ import React from 'react';
 import {SystemIcon} from '@workday/canvas-kit-react/icon';
 import {copyIcon, checkIcon} from '@workday/canvas-system-icons-web';
 
-import {useCopyToClipboard} from '../CopyButton/useCopyToClipboard';
+import {useCopyToClipboard} from '../../util';
 
 import './index.css';
 

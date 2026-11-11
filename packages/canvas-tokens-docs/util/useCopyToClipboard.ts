@@ -10,7 +10,7 @@ export const useCopyToClipboard = (text: string) => {
   React.useEffect(() => () => clearTimeout(timeout.current), []);
 
   const copy = () => {
-    navigator.clipboard.writeText(text);
+    void navigator.clipboard.writeText(text).catch(() => null);
     setCopied(true);
     clearTimeout(timeout.current);
     timeout.current = setTimeout(() => setCopied(false), FEEDBACK_DURATION);
