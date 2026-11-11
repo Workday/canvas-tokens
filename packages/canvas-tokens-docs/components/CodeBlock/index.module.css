@@ -1,0 +1,23 @@
+.codeBlock {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 22px;
+  padding: 2px 8px;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--cnvs-base-palette-neutral-a100);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.codeBlock:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.text {
+  margin-right: 8px;
+  font-family: var(--cnvs-sys-font-family-mono);
+}

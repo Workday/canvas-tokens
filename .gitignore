@@ -8,6 +8,7 @@ docs
 tmp
 /out-tsc
 *.tsbuildinfo
+packages/canvas-tokens-docs/data/tokens
 
 # dependencies
 node_modules

@@ -8,7 +8,10 @@ import type {LevelIndexOptions, TokenIndexOptions} from './src/formats/generateJ
 import type {TokenFnOptions} from './src/formats/generateJsTokenFn';
 
 const COMPOSITE_TOKENS = ['typography'];
-const SANA_CANVAS_THEME_SELECTOR = '[data-theme="sana-canvas"]';
+const SANA_CANVAS_LIGHT_THEME_SELECTOR =
+  '[data-theme="sana-canvas"],\n[data-theme="sana-canvas"][data-color-mode="light"],\n[data-theme="sana-canvas"] [data-color-mode="light"]';
+
+const SANA_CANVAS_THEME_SELECTOR = `[data-theme="sana-canvas"]`;
 
 /** CSS Files */
 export const cssFiles = [
@@ -48,7 +51,7 @@ export const cssFiles = [
     options: {
       prefix: 'cnvs',
       outputReferences: true,
-      themeSelector: SANA_CANVAS_THEME_SELECTOR,
+      themeSelector: SANA_CANVAS_LIGHT_THEME_SELECTOR,
     },
   },
   {
@@ -305,4 +308,14 @@ function getIndexFiles(platform: 'es6' | 'commonjs'): IndexFile[] {
   ];
 
   return [...files, ...colorIndexFiles, rootFile, rootTSFile];
+}
+
+/** Get the JavaScript files for the documentation platform */
+
+export function getDocsJsFiles() {
+  return tokenFiles.map(file => ({
+    destination: file.replace('.json', '.js'),
+    filter: (token: TransformedToken) => token.filePath.endsWith(file),
+    format: 'javascript/esm',
+  }));
 }

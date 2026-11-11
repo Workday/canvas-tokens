@@ -1,0 +1,130 @@
+.card {
+  min-width: 45%;
+  width: 100%;
+}
+
+.heading {
+  text-transform: capitalize;
+}
+
+.hero {
+  --hero-fg-color: var(--cnvs-sys-color-fg-default);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  min-height: 200px;
+  padding: 16px;
+  border: 2px solid var(--cnvs-sys-color-border-inverse);
+  border-radius: 12px;
+  background-color: var(--hero-bg-color);
+  color: var(--hero-fg-color);
+}
+
+/* Modifier: dark steps need light text. Solid heroes are always rendered in light mode. */
+.heroInverse {
+  --hero-fg-color: var(--cnvs-sys-color-fg-inverse);
+}
+
+.chip {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  border: 2px solid var(--cnvs-sys-color-border-default);
+  border-radius: 6px;
+  background-color: var(--chip-bg-color);
+  cursor: pointer;
+}
+
+.chip:hover,
+.chipActive {
+  border-color: var(--cnvs-sys-color-border-input-default);
+}
+
+.chip:focus-visible {
+  /* Two-tone ring so it stays visible on any chip color and in light/dark mode. */
+  outline: 2px solid var(--cnvs-sys-color-focus-contrast, #000);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--cnvs-sys-color-focus-inverse, #fff);
+}
+
+/* Alpha heroes follow the surrounding theme, so inversion is picked per color mode. */
+.heroInverseLight {
+  --hero-fg-color: var(--cnvs-sys-color-fg-inverse);
+}
+
+:global([data-color-mode='dark']) .heroInverseLight {
+  --hero-fg-color: var(--cnvs-sys-color-fg-default);
+}
+
+:global([data-color-mode='dark']) .heroInverseDark {
+  --hero-fg-color: var(--cnvs-sys-color-fg-inverse);
+}
+
+.heroTitle {
+  margin-bottom: 8px;
+  font-family: var(--cnvs-sys-font-family-mono);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16px, 1fr));
+  gap: 4px;
+  margin-top: 14px;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swatchName {
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+.swatchNameActive {
+  font-weight: bold;
+}
+
+/* Alpha hero: the translucent hero sits bottom-right on top of a contrast
+   square, so the square shows through it. */
+.alpha {
+  position: relative;
+  width: 100%;
+  min-width: 280px;
+  height: 200px;
+}
+
+.alpha .hero {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  align-items: end;
+  width: 90%;
+  height: 85%;
+  min-height: 0;
+}
+
+.alphaBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  height: 50%;
+  aspect-ratio: 1 / 0.9;
+  border-radius: 12px;
+  background-color: var(--cnvs-sys-color-surface-contrast-default);
+}
