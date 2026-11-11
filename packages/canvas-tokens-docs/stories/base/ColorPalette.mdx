@@ -2,6 +2,10 @@ import {Meta, Unstyled} from '@storybook/blocks';
 import {ColorPaletteCard} from '../../components/ColorPaletteCard';
 import {ThemeControl} from '../../components/ThemeControl';
 
+import PaletteSolidColors from './examples/PaletteSolidColors';
+import PaletteAlphaColors from './examples/PaletteAlphaColors';
+import PaletteNeutralColors from './examples/PaletteNeutralColors';
+
 <Meta title="Tokens/Base/Color Palette" />
 
 <Unstyled>
@@ -15,19 +19,7 @@ they don't have any inherent contextual meaning on when and where they should be
 
 <br/>
 
-<ThemeControl stack="horizontal">
-    <ColorPaletteCard colorFamily="azure"/>
-    <ColorPaletteCard colorFamily="blue"/>
-    <ColorPaletteCard colorFamily="teal"/>
-    <ColorPaletteCard colorFamily="green"/>
-    <ColorPaletteCard colorFamily="indigo"/>
-    <ColorPaletteCard colorFamily="magenta"/>
-    <ColorPaletteCard colorFamily="purple"/>
-    <ColorPaletteCard colorFamily="coral"/>
-    <ColorPaletteCard colorFamily="red"/>
-    <ColorPaletteCard colorFamily="orange"/>
-    <ColorPaletteCard colorFamily="amber"/>
-</ThemeControl>
+<PaletteSolidColors />
 
 ---
 
@@ -35,20 +27,7 @@ they don't have any inherent contextual meaning on when and where they should be
 
 <br/>
 
-<ThemeControl stack="horizontal">
-    <ColorPaletteCard colorFamily="azure" isAlpha />
-    <ColorPaletteCard colorFamily="blue" isAlpha />
-    <ColorPaletteCard colorFamily="teal" isAlpha />
-    <ColorPaletteCard colorFamily="green" isAlpha />
-    <ColorPaletteCard colorFamily="indigo" isAlpha />
-    <ColorPaletteCard colorFamily="magenta" isAlpha />
-    <ColorPaletteCard colorFamily="purple" isAlpha />
-    <ColorPaletteCard colorFamily="coral" isAlpha />
-    <ColorPaletteCard colorFamily="red" isAlpha />
-    <ColorPaletteCard colorFamily="orange" isAlpha />
-    <ColorPaletteCard colorFamily="amber" isAlpha />
-
-</ThemeControl>
+<PaletteAlphaColors />
 
 <br/>
 
@@ -56,13 +35,6 @@ they don't have any inherent contextual meaning on when and where they should be
 
 <br/>
 
-<ThemeControl stack="horizontal">
-    <ColorPaletteCard colorFamily="slate" hideNames />
-    <ColorPaletteCard colorFamily="neutral" hideNames />
-    <ColorPaletteCard colorFamily="neutral" isAlpha hideNames />
-    <ColorPaletteCard colorFamily="slate" isAlpha hideNames  />
-    <ColorPaletteCard colorFamily="black" isAlpha hideNames />
-    <ColorPaletteCard colorFamily="white" isAlpha hideNames />
-</ThemeControl>
+<PaletteNeutralColors />
 
 </Unstyled>
