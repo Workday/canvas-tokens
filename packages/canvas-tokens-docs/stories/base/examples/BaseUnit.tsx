@@ -29,7 +29,7 @@ export const BaseUnit = () => {
             <TokenGrid.Sample
               style={{
                 width: `var(${token.label})`,
-                backgroundColor: `var(${system.color.bg.primary.default})`,
+                backgroundColor: `var(${system.color.brand.surface.primary.root})`,
               }}
             />
           </TokenGrid.RowItem>

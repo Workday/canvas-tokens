@@ -1,4 +1,4 @@
-import {SizeTokens, PaddingTokens, GapTokens, DeprecatedSpaceTokens} from '../examples/Space';
+import {SizeTokens, PaddingTokens, GapTokens} from '../examples/Space';
 
 export default {
   component: SizeTokens,
@@ -21,13 +21,6 @@ export const Padding = {
 
 export const Gap = {
   component: GapTokens,
-  parameters: {
-    chromatic: {disableSnapshot: false},
-  },
-};
-
-export const DeprecatedSpace = {
-  component: DeprecatedSpaceTokens,
   parameters: {
     chromatic: {disableSnapshot: false},
   },
