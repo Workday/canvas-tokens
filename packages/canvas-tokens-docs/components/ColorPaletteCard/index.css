@@ -1,13 +1,13 @@
-.card {
+.cnvs-docs-palette-card {
   min-width: 45%;
   width: 100%;
 }
 
-.heading {
+.cnvs-docs-palette-heading {
   text-transform: capitalize;
 }
 
-.hero {
+.cnvs-docs-palette-hero {
   --hero-fg-color: var(--cnvs-sys-color-fg-default);
 
   display: flex;
@@ -23,11 +23,11 @@
 }
 
 /* Modifier: dark steps need light text. Solid heroes are always rendered in light mode. */
-.heroInverse {
+.cnvs-docs-palette-hero-inverse {
   --hero-fg-color: var(--cnvs-sys-color-fg-inverse);
 }
 
-.chip {
+.cnvs-docs-palette-chip {
   box-sizing: border-box;
   width: 100%;
   height: 40px;
@@ -38,12 +38,12 @@
   cursor: pointer;
 }
 
-.chip:hover,
-.chipActive {
+.cnvs-docs-palette-chip:hover,
+.cnvs-docs-palette-chip-active {
   border-color: var(--cnvs-sys-color-border-input-default);
 }
 
-.chip:focus-visible {
+.cnvs-docs-palette-chip:focus-visible {
   /* Two-tone ring so it stays visible on any chip color and in light/dark mode. */
   outline: 2px solid var(--cnvs-sys-color-focus-contrast, #000);
   outline-offset: 2px;
@@ -51,61 +51,61 @@
 }
 
 /* Alpha heroes follow the surrounding theme, so inversion is picked per color mode. */
-.heroInverseLight {
+.cnvs-docs-palette-hero-inverse-light {
   --hero-fg-color: var(--cnvs-sys-color-fg-inverse);
 }
 
-:global([data-color-mode='dark']) .heroInverseLight {
+[data-color-mode='dark'] .cnvs-docs-palette-hero-inverse-light {
   --hero-fg-color: var(--cnvs-sys-color-fg-default);
 }
 
-:global([data-color-mode='dark']) .heroInverseDark {
+[data-color-mode='dark'] .cnvs-docs-palette-hero-inverse-dark {
   --hero-fg-color: var(--cnvs-sys-color-fg-inverse);
 }
 
-.heroTitle {
+.cnvs-docs-palette-hero-title {
   margin-bottom: 8px;
   font-family: var(--cnvs-sys-font-family-mono);
 }
 
-.actions {
+.cnvs-docs-palette-actions {
   display: flex;
   gap: 8px;
   margin-top: 4px;
 }
 
-.steps {
+.cnvs-docs-palette-steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16px, 1fr));
   gap: 4px;
   margin-top: 14px;
 }
 
-.swatch {
+.cnvs-docs-palette-swatch {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.swatchName {
+.cnvs-docs-palette-swatch-name {
   white-space: nowrap;
   font-weight: normal;
 }
 
-.swatchNameActive {
+.cnvs-docs-palette-swatch-name-active {
   font-weight: bold;
 }
 
 /* Alpha hero: the translucent hero sits bottom-right on top of a contrast
    square, so the square shows through it. */
-.alpha {
+.cnvs-docs-palette-alpha {
   position: relative;
   width: 100%;
   min-width: 280px;
   height: 200px;
 }
 
-.alpha .hero {
+.cnvs-docs-palette-alpha .cnvs-docs-palette-hero {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -117,7 +117,7 @@
   min-height: 0;
 }
 
-.alphaBg {
+.cnvs-docs-palette-alpha-bg {
   position: absolute;
   top: 0;
   left: 0;

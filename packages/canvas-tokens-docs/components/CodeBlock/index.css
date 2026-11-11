@@ -1,4 +1,4 @@
-.codeBlock {
+.cnvs-docs-code-block {
   display: flex;
   align-items: center;
   width: fit-content;
@@ -12,12 +12,12 @@
   cursor: pointer;
 }
 
-.codeBlock:focus-visible {
+.cnvs-docs-code-block:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }
 
-.text {
+.cnvs-docs-code-block-text {
   margin-right: 8px;
   font-family: var(--cnvs-sys-font-family-mono);
 }

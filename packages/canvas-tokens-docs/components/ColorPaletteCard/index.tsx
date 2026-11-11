@@ -8,8 +8,7 @@ import {CopyButton} from '../CopyButton';
 import {useColorMode} from '../ThemeControl';
 import palette from '../../data/tokens/base/palette';
 
-// @ts-expect-error CSS modules are resolved by the docs build tooling
-import styles from './index.module.css';
+import './index.css';
 
 type Token = Record<string, any>;
 
@@ -90,18 +89,18 @@ const HeroCard = ({step, token, family, isAlpha = false, isDark = false}: HeroPr
     <div
       data-color-mode={!isAlpha ? 'light' : undefined}
       className={[
-        styles.hero,
-        !isAlpha && inverse.light && styles.heroInverse,
-        isAlpha && inverse.light && styles.heroInverseLight,
-        isAlpha && inverse.dark && styles.heroInverseDark,
+        'cnvs-docs-palette-hero',
+        !isAlpha && inverse.light && 'cnvs-docs-palette-hero-inverse',
+        isAlpha && inverse.light && 'cnvs-docs-palette-hero-inverse-light',
+        isAlpha && inverse.dark && 'cnvs-docs-palette-hero-inverse-dark',
       ]
         .filter(Boolean)
         .join(' ')}
       style={style}
     >
-      <div className={`cnvs-sys-type-heading-md ${styles.heroTitle}`}>{getTokenName(token)}</div>
+      <div className="cnvs-sys-type-heading-md cnvs-docs-palette-hero-title">{getTokenName(token)}</div>
       <CodeBlock>{token.$value}</CodeBlock>
-      <div className={styles.actions}>
+      <div className="cnvs-docs-palette-actions">
         <CopyButton text={hex}>{hex}</CopyButton>
         <CopyButton text={jsToken}>JS Code</CopyButton>
         <CopyButton text={cssVariable}>CSS Variable</CopyButton>
@@ -116,9 +115,9 @@ const Hero = (props: HeroProps) => {
   }
 
   return (
-    <div className={styles.alpha}>
+    <div className="cnvs-docs-palette-alpha">
       <HeroCard {...props} />
-      <div className={styles.alphaBg} />
+      <div className="cnvs-docs-palette-alpha-bg" />
     </div>
   );
 };
@@ -139,7 +138,7 @@ const Swatch = ({step, token, isActive, hideName, onSelect}: SwatchProps) => {
       <Tooltip title={step}>
         <button
           type="button"
-          className={`${styles.chip} ${isActive ? styles.chipActive : ''}`}
+          className={`cnvs-docs-palette-chip ${isActive ? 'cnvs-docs-palette-chip-active' : ''}`}
           style={style}
           aria-label={step}
           aria-pressed={isActive}
@@ -150,10 +149,10 @@ const Swatch = ({step, token, isActive, hideName, onSelect}: SwatchProps) => {
   }
 
   return (
-    <div className={styles.swatch}>
+    <div className="cnvs-docs-palette-swatch">
       <button
         type="button"
-        className={`${styles.chip} ${isActive ? styles.chipActive : ''}`}
+        className={`cnvs-docs-palette-chip ${isActive ? 'cnvs-docs-palette-chip-active' : ''}`}
         style={style}
         aria-label={step}
         aria-pressed={isActive}
@@ -162,7 +161,7 @@ const Swatch = ({step, token, isActive, hideName, onSelect}: SwatchProps) => {
       <Subtext
         as="span"
         size="small"
-        className={`${styles.swatchName} ${isActive ? styles.swatchNameActive : ''}`}
+        className={`cnvs-docs-palette-swatch-name ${isActive ? 'cnvs-docs-palette-swatch-name-active' : ''}`}
       >
         {step}
       </Subtext>
@@ -189,8 +188,8 @@ export const ColorPaletteCard = ({
   const steps = Object.keys(tokens).filter(step => isAlphaStep(step) === isAlpha);
 
   return (
-    <Card className={styles.card}>
-      <Card.Heading className={styles.heading}>
+    <Card className="cnvs-docs-palette-card">
+      <Card.Heading className="cnvs-docs-palette-heading">
         {colorFamily}
         {isAlpha && ' (Alpha)'}
       </Card.Heading>
@@ -202,7 +201,7 @@ export const ColorPaletteCard = ({
           isAlpha={isAlpha}
           isDark={useDarkTokens}
         />
-        <div className={styles.steps}>
+        <div className="cnvs-docs-palette-steps">
           {steps.map(step => (
             <Swatch
               key={step}
