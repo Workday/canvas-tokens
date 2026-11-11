@@ -1,0 +1,16 @@
+.cnvs-docs-theme-control {
+  margin-block: 24px;
+}
+
+.cnvs-docs-theme-control-content {
+  --theme-control-columns: 1fr;
+
+  display: grid;
+  grid-template-columns: var(--theme-control-columns);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cnvs-docs-theme-control-horizontal {
+  --theme-control-columns: repeat(auto-fit, minmax(45%, 1fr));
+}

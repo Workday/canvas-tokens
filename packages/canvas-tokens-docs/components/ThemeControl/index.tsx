@@ -1,7 +1,12 @@
 import React from 'react';
 import {SegmentedControl} from '@workday/canvas-kit-react/segmented-control';
 
-export type ColorMode = 'light' | 'dark';
+import {ColorModeContext} from '../../util';
+import type {ColorMode} from '../../util';
+
+import './index.css';
+
+export type {ColorMode};
 
 type ThemeControlProps = {
   children: React.ReactNode;
@@ -9,9 +14,9 @@ type ThemeControlProps = {
 };
 
 export const ThemeControl = ({children, stack = 'vertical'}: ThemeControlProps) => {
-  const [mode, setMode] = React.useState<ColorMode>('dark');
+  const [mode, setMode] = React.useState<ColorMode>('light');
   return (
-    <div className={`theme-control`} style={{marginBlock: '24px'}}>
+    <div className="cnvs-docs-theme-control">
       <SegmentedControl initialValue={mode} onSelect={({id: value}) => setMode(value as ColorMode)}>
         <SegmentedControl.List aria-label="Color Mode">
           <SegmentedControl.Item data-id="light">Light</SegmentedControl.Item>
@@ -20,15 +25,15 @@ export const ThemeControl = ({children, stack = 'vertical'}: ThemeControlProps) 
       </SegmentedControl>
       <div
         data-theme="sana-canvas"
-        data-color-mode={setMode}
-        style={{
-          display: 'grid',
-          gridTemplateColumns: stack === 'vertical' ? '1fr' : 'repeat(auto-fit, minmax(45%, 1fr))',
-          gap: '16px',
-          marginTop: '16px',
-        }}
+        data-color-mode={mode}
+        className={[
+          'cnvs-docs-theme-control-content',
+          stack === 'horizontal' && 'cnvs-docs-theme-control-horizontal',
+        ]
+          .filter(Boolean)
+          .join(' ')}
       >
-        {children}
+        <ColorModeContext.Provider value={mode}>{children}</ColorModeContext.Provider>
       </div>
     </div>
   );

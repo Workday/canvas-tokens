@@ -5,24 +5,36 @@ import {Tooltip} from '@workday/canvas-kit-react/tooltip';
 
 import {CodeBlock} from '../CodeBlock';
 import {CopyButton} from '../CopyButton';
+import {useColorMode} from '../../util';
+import type {ColorMode} from '../../util';
 import palette from '../../data/tokens/base/palette';
 import type {ColorPaletteCardProps, HeroProps, SwatchProps, Token} from './types';
 
-// @ts-expect-error CSS module import
 import './index.css';
 
 export type {ColorFamily, ColorPaletteCardProps} from './types';
 
-/* -------------------------------------------------------------------------------------------------
- * Helpers
- * -----------------------------------------------------------------------------------------------*/
-
-/** Alpha families whose opaque dark steps need inverse text on a light surface. */
-const DARK_ALPHA_FAMILIES = ['black', 'neutral', 'slate'];
-
 const isAlphaStep = (step: string) => /^a\d+/i.test(step);
 const getTokenName = (token: Token): string => token.key.replace(/[{}]/g, '');
 const isHighStep = (step: string) => Number(step.replace(/a/gi, '')) > 400;
+
+/**
+ * Whether the copy buttons use the inverse variant. Solid steps below 500 are default in light mode
+ * and inverse in dark mode, and steps past 500 are the opposite. Alpha steps are default below 500
+ * and inverse past it, in either mode. Some families override both rules (in dark mode alpha black is default and alpha neutral and slate are inverse past 400, matching their hero text).
+ */
+const isInverseButton = (family: string, step: string, isAlpha: boolean, mode: ColorMode) => {
+  if (family === 'white' && mode === 'light') return false;
+  // In dark mode `inverse` flips with the theme (dark label), so these alphas use it only where
+  // their hero text is inverse too.
+  if (family === 'black' && mode === 'dark') return false;
+
+  const isHigh = isHighStep(step);
+  if (isAlpha && ['neutral', 'slate'].includes(family) && mode === 'dark') return isHigh;
+  if (isAlpha) return isHigh;
+
+  return mode === 'light' ? isHigh : !isHigh;
+};
 
 /**
  * Whether the hero text should use the inverse foreground color, per color mode.
@@ -36,10 +48,15 @@ const getInverse = (family: string, step: string, isAlpha: boolean, isDark: bool
   if (!isAlpha) {
     return {light: high, dark: high};
   }
-  if (DARK_ALPHA_FAMILIES.includes(family)) {
+  if (family === 'black') {
     // Black-based alphas get opaque dark steps on a light surface; on a dark surface they vanish
-    // into it, so the theme's default (light) text is always right.
+    // into it, so the theme's default (white) text is always right.
     return {light: high, dark: false};
+  }
+  if (family === 'neutral' || family === 'slate') {
+    // Same on a light surface; in dark mode low steps keep the default (white) text and the
+    // higher, lighter steps need dark (inverse) text.
+    return {light: high, dark: isHighStep(step)};
   }
   if (family === 'white') {
     // White-based alphas are invisible on light surfaces; on dark ones they turn opaque past 400.
@@ -48,12 +65,10 @@ const getInverse = (family: string, step: string, isAlpha: boolean, isDark: bool
   return {light: false, dark: false};
 };
 
-/* -------------------------------------------------------------------------------------------------
- * Components
- * -----------------------------------------------------------------------------------------------*/
-
 /** Large preview of the selected step with copy actions for its value, JS token and CSS variable. */
 const Hero = ({step, token, family, isAlpha, isDark}: HeroProps) => {
+  const mode = useColorMode();
+  const buttonVariant = isInverseButton(family, step, isAlpha, mode) ? 'inverse' : undefined;
   const inverse = getInverse(family, step, isAlpha, isDark);
   const name = getTokenName(token);
   const hex = token.original.$value.hex;
@@ -76,9 +91,16 @@ const Hero = ({step, token, family, isAlpha, isDark}: HeroProps) => {
       <div className="cnvs-sys-type-heading-md cnvs-docs-palette-hero-title">{name}</div>
       <CodeBlock>{token.$value}</CodeBlock>
       <div className="cnvs-docs-palette-actions">
-        <CopyButton text={hex}>{hex}</CopyButton>
-        <CopyButton text={`token('${name}')`}>JS Code</CopyButton>
-        <CopyButton text={`--cnvs-base-palette-${name.replace(/\./g, '-')}`}>
+        <CopyButton text={hex} variant={buttonVariant}>
+          {hex}
+        </CopyButton>
+        <CopyButton text={`token('${name}')`} variant={buttonVariant}>
+          JS Code
+        </CopyButton>
+        <CopyButton
+          text={`--cnvs-base-palette-${name.replace(/\./g, '-')}`}
+          variant={buttonVariant}
+        >
           CSS Variable
         </CopyButton>
       </div>
@@ -135,7 +157,7 @@ export const ColorPaletteCard = ({
   hideNames = false,
 }: ColorPaletteCardProps) => {
   const [activeStep, setActiveStep] = React.useState(isAlpha ? 'A300' : '500');
-  const isDark = !!document.querySelector('.theme-control[data-color-mode="dark"]');
+  const isDark = useColorMode() === 'dark';
 
   const darkTokens = palette.dark[colorFamily as keyof typeof palette.dark];
   const useDarkTokens = isDark && !!darkTokens;
