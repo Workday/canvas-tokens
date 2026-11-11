@@ -3,24 +3,16 @@ import {SegmentedControl} from '@workday/canvas-kit-react/segmented-control';
 
 export type ColorMode = 'light' | 'dark';
 
-const ColorModeContext = React.createContext<ColorMode>('light');
-
-/** Color mode selected in the closest `ThemeControl` (`light` outside of one). */
-export const useColorMode = () => React.useContext(ColorModeContext);
-
 type ThemeControlProps = {
   children: React.ReactNode;
   stack?: 'vertical' | 'horizontal';
 };
 
 export const ThemeControl = ({children, stack = 'vertical'}: ThemeControlProps) => {
-  const [setMode, setSetTheme] = React.useState<ColorMode>('dark');
+  const [mode, setMode] = React.useState<ColorMode>('dark');
   return (
     <div className={`theme-control`} style={{marginBlock: '24px'}}>
-      <SegmentedControl
-        initialValue={setMode}
-        onSelect={({id: value}) => setSetTheme(value as ColorMode)}
-      >
+      <SegmentedControl initialValue={mode} onSelect={({id: value}) => setMode(value as ColorMode)}>
         <SegmentedControl.List aria-label="Color Mode">
           <SegmentedControl.Item data-id="light">Light</SegmentedControl.Item>
           <SegmentedControl.Item data-id="dark">Dark</SegmentedControl.Item>
@@ -36,7 +28,7 @@ export const ThemeControl = ({children, stack = 'vertical'}: ThemeControlProps) 
           marginTop: '16px',
         }}
       >
-        <ColorModeContext.Provider value={setMode}>{children}</ColorModeContext.Provider>
+        {children}
       </div>
     </div>
   );
