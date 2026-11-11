@@ -1,3 +1,4 @@
+import React from 'react';
 import {ThemeControl} from '../../../components/ThemeControl';
 import {ColorPaletteCard} from '../../../components/ColorPaletteCard';
 

@@ -13,8 +13,25 @@ import styles from './index.module.css';
 
 type Token = Record<string, any>;
 
-type ColorPaletteCardProps = {
-  colorFamily: keyof Omit<typeof palette, 'dark'>;
+export type ColorFamily =
+  | 'black'
+  | 'red'
+  | 'coral'
+  | 'orange'
+  | 'amber'
+  | 'azure'
+  | 'blue'
+  | 'indigo'
+  | 'purple'
+  | 'teal'
+  | 'green'
+  | 'magenta'
+  | 'neutral'
+  | 'white'
+  | 'slate';
+
+export type ColorPaletteCardProps = {
+  colorFamily: ColorFamily;
   isAlpha?: boolean;
   hideNames?: boolean;
   isDark?: boolean;

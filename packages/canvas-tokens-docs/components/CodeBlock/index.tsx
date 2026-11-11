@@ -7,7 +7,7 @@ import {useCopyToClipboard} from '../CopyButton/useCopyToClipboard';
 // @ts-expect-error CSS modules are resolved by the docs build tooling
 import styles from './index.module.css';
 
-type CodeBlockProps = {
+export type CodeBlockProps = {
   /** Value shown and copied to the clipboard on click / Enter / Space. */
   children: string;
 };

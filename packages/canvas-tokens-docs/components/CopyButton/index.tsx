@@ -4,7 +4,7 @@ import {copyIcon, checkIcon} from '@workday/canvas-system-icons-web';
 
 import {useCopyToClipboard} from './useCopyToClipboard';
 
-type CopyButtonProps = {
+export type CopyButtonProps = {
   /** Text written to the clipboard on click. */
   text: string;
   children: React.ReactNode;
