@@ -15,6 +15,7 @@ const FAMILIES = [
   'purple',
   'red',
   'slate',
+  'white',
 ] as const;
 
 export const PaletteDarkColorsExample = () => {

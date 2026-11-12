@@ -4,6 +4,7 @@ import {TestPaletteScale} from '../../../components/TestPaletteScale';
 const FAMILIES = [
   'amber',
   'azure',
+  'black',
   'blue',
   'coral',
   'green',
@@ -15,8 +16,6 @@ const FAMILIES = [
   'purple',
   'red',
   'slate',
-  'black',
-  'white',
 ] as const;
 
 export const PaletteColorsExample = () => {
