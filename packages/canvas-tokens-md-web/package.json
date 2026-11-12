@@ -1,0 +1,58 @@
+{
+  "name": "@workday/canvas-tokens-md-web",
+  "version": "0.0.1",
+  "description": "Canvas design tokens documentation (Markdown content and React components) for Canvas Tokens Web",
+  "author": "Workday, Inc. (https://www.workday.com)",
+  "license": "CC-BY-ND-4.0",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "dist/lib/index.js",
+  "module": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/index.d.ts",
+      "default": "./dist/lib/index.js"
+    },
+    "./components/*": {
+      "types": "./dist/lib/components/*/index.d.ts",
+      "default": "./dist/lib/components/*/index.js"
+    },
+    "./examples/*": {
+      "types": "./dist/lib/examples/*.d.ts",
+      "default": "./dist/lib/examples/*.js"
+    },
+    "./tokens/*": "./dist/tokens/*",
+    "./content/*": "./content/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "content/",
+    "dist/lib/",
+    "dist/tokens/"
+  ],
+  "scripts": {
+    "clean": "rimraf dist content",
+    "build:md": "node scripts/build-markdown.mjs",
+    "build:lib": "node scripts/build-lib.mjs",
+    "build": "yarn build:md && yarn build:lib"
+  },
+  "peerDependencies": {
+    "@workday/canvas-kit-react": ">=16.0.0",
+    "@workday/canvas-system-icons-web": ">=5.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "acorn": "^8.14.0",
+    "acorn-jsx": "^5.3.2",
+    "esbuild": "^0.25.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

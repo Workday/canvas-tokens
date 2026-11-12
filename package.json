@@ -13,6 +13,7 @@
   "scripts": {
     "commit": "git-cz",
     "build:tokens": "nx build @workday/canvas-tokens",
+    "build:md": "yarn workspace @workday/canvas-tokens-md-web build",
     "clean:tokens": "nx clean @workday/canvas-tokens-web",
     "lint": "eslint -c ./.eslintrc.js --ext=ts,js .",
     "fetch-tokens": "node scripts/utils/fetch-figma-variables.js",
@@ -25,7 +26,7 @@
     "serve-storybook": "npx http-server docs/storybook/@workday/canvas-tokens-docs",
     "test": "vitest run",
     "typecheck": "tsc -p . --noEmit",
-    "prerelease": "yarn clean:tokens && yarn build:tokens",
+    "prerelease": "yarn clean:tokens && yarn build:tokens && yarn build:md",
     "release": "changeset publish"
   },
   "devDependencies": {
