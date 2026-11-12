@@ -1,6 +1,5 @@
-import PaletteSolidColors from '../examples/PaletteSolidColors';
-import PaletteAlphaColors from '../examples/PaletteAlphaColors';
-import PaletteNeutralColors from '../examples/PaletteNeutralColors';
+import {PaletteColorsExample} from '../examples/TestPaletteColors';
+import {PaletteDarkColorsExample} from '../examples/TestPaletteDarkColors';
 
 export default {
   title: 'Visual Tests/Base Tokens',
@@ -9,14 +8,10 @@ export default {
   },
 };
 
-export const SolidColors = {
-  render: PaletteSolidColors,
+export const PaletteColors = {
+  render: PaletteColorsExample,
 };
 
-export const AlphaColors = {
-  render: PaletteAlphaColors,
-};
-
-export const NeutralColors = {
-  render: PaletteNeutralColors,
+export const PaletteDarkColors = {
+  render: PaletteDarkColorsExample,
 };
