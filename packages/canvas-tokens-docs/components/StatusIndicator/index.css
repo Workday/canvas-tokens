@@ -3,7 +3,7 @@
   align-items: center;
   gap: 8px;
   padding: 0 8px;
-  border-radius: var(--cnvs-sys-shape-round);
+  border-radius: var(--cnvs-sys-shape-full);
   margin-inline-start: 8px;
 }
 

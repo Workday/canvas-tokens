@@ -17,7 +17,7 @@ export const SwatchWithText = ({color, withWhiteText, name = '', jsName = ''}) =
           style={{
             background,
             color: textColor,
-            border: '1px solid var(--cnvs-sys-color-border-divider)',
+            border: '1px solid var(--cnvs-sys-color-border-default)',
             padding: '0.5rem',
             height: '100%',
             display: 'flex',

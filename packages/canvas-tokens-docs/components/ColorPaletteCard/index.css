@@ -16,7 +16,7 @@
   gap: 4px;
   min-height: 200px;
   padding: 16px;
-  border: 2px solid var(--cnvs-sys-color-border-inverse);
+  border: 2px solid var(--cnvs-sys-color-border-inverse-default);
   border-radius: 12px;
   background-color: var(--hero-bg-color);
   color: var(--hero-fg-color);
