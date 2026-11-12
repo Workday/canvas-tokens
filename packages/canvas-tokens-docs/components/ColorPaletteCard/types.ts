@@ -22,6 +22,8 @@ export type ColorPaletteCardProps = {
   colorFamily: ColorFamily;
   isAlpha?: boolean;
   hideNames?: boolean;
+  /** Set by `ThemeControl` to match the selected color mode. */
+  isDark?: boolean;
 };
 
 export type HeroProps = {
@@ -29,7 +31,10 @@ export type HeroProps = {
   token: Token;
   family: string;
   isAlpha: boolean;
+  /** Whether the dark palette tokens are in use. */
   isDark: boolean;
+  /** Whether the surrounding theme is in dark mode. */
+  isDarkMode: boolean;
 };
 
 export type SwatchProps = {

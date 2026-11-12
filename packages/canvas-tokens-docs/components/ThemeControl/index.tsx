@@ -1,20 +1,19 @@
 import React from 'react';
 import {SegmentedControl} from '@workday/canvas-kit-react/segmented-control';
 
-import {ColorModeContext} from '../../util';
-import type {ColorMode} from '../../util';
-
 import './index.css';
 
-export type {ColorMode};
+export type ColorMode = 'light' | 'dark';
 
 type ThemeControlProps = {
+  /** Each element child receives an `isDark` prop reflecting the selected color mode. */
   children: React.ReactNode;
   stack?: 'vertical' | 'horizontal';
 };
 
 export const ThemeControl = ({children, stack = 'vertical'}: ThemeControlProps) => {
   const [mode, setMode] = React.useState<ColorMode>('light');
+  const isDark = mode === 'dark';
   return (
     <div className="cnvs-docs-theme-control">
       <SegmentedControl initialValue={mode} onSelect={({id: value}) => setMode(value as ColorMode)}>
@@ -33,7 +32,9 @@ export const ThemeControl = ({children, stack = 'vertical'}: ThemeControlProps) 
           .filter(Boolean)
           .join(' ')}
       >
-        <ColorModeContext.Provider value={mode}>{children}</ColorModeContext.Provider>
+        {React.Children.map(children, child =>
+          React.isValidElement(child) ? React.cloneElement(child, {isDark} as object) : child
+        )}
       </div>
     </div>
   );

@@ -5,8 +5,6 @@ import {Tooltip} from '@workday/canvas-kit-react/tooltip';
 
 import {CodeBlock} from '../CodeBlock';
 import {CopyButton} from '../CopyButton';
-import {useColorMode} from '../../util';
-import type {ColorMode} from '../../util';
 import palette from '../../data/tokens/base/palette';
 import type {ColorPaletteCardProps, HeroProps, SwatchProps, Token} from './types';
 
@@ -23,17 +21,17 @@ const isHighStep = (step: string) => Number(step.replace(/a/gi, '')) > 400;
  * and inverse in dark mode, and steps past 500 are the opposite. Alpha steps are default below 500
  * and inverse past it, in either mode. Some families override both rules (in dark mode alpha black is default and alpha neutral and slate are inverse past 400, matching their hero text).
  */
-const isInverseButton = (family: string, step: string, isAlpha: boolean, mode: ColorMode) => {
-  if (family === 'white' && mode === 'light') return false;
+const isInverseButton = (family: string, step: string, isAlpha: boolean, isDarkMode: boolean) => {
+  if (family === 'white' && !isDarkMode) return false;
   // In dark mode `inverse` flips with the theme (dark label), so these alphas use it only where
   // their hero text is inverse too.
-  if (family === 'black' && mode === 'dark') return false;
+  if (family === 'black' && isDarkMode) return false;
 
   const isHigh = isHighStep(step);
-  if (isAlpha && ['neutral', 'slate'].includes(family) && mode === 'dark') return isHigh;
+  if (isAlpha && ['neutral', 'slate'].includes(family) && isDarkMode) return isHigh;
   if (isAlpha) return isHigh;
 
-  return mode === 'light' ? isHigh : !isHigh;
+  return isDarkMode ? !isHigh : isHigh;
 };
 
 /**
@@ -66,9 +64,8 @@ const getInverse = (family: string, step: string, isAlpha: boolean, isDark: bool
 };
 
 /** Large preview of the selected step with copy actions for its value, JS token and CSS variable. */
-const Hero = ({step, token, family, isAlpha, isDark}: HeroProps) => {
-  const mode = useColorMode();
-  const buttonVariant = isInverseButton(family, step, isAlpha, mode) ? 'inverse' : undefined;
+const Hero = ({step, token, family, isAlpha, isDark, isDarkMode}: HeroProps) => {
+  const buttonVariant = isInverseButton(family, step, isAlpha, isDarkMode) ? 'inverse' : undefined;
   const inverse = getInverse(family, step, isAlpha, isDark);
   const name = getTokenName(token);
   const hex = token.original.$value.hex;
@@ -155,12 +152,12 @@ export const ColorPaletteCard = ({
   colorFamily,
   isAlpha = false,
   hideNames = false,
+  isDark: isDarkMode = false,
 }: ColorPaletteCardProps) => {
   const [activeStep, setActiveStep] = React.useState(isAlpha ? 'A300' : '500');
-  const isDark = useColorMode() === 'dark';
 
   const darkTokens = palette.dark[colorFamily as keyof typeof palette.dark];
-  const useDarkTokens = isDark && !!darkTokens;
+  const useDarkTokens = isDarkMode && !!darkTokens;
   const tokens: Record<string, Token> = useDarkTokens ? darkTokens : palette[colorFamily];
 
   const steps = Object.keys(tokens).filter(step => isAlphaStep(step) === isAlpha);
@@ -178,6 +175,7 @@ export const ColorPaletteCard = ({
           family={colorFamily as string}
           isAlpha={isAlpha}
           isDark={useDarkTokens}
+          isDarkMode={isDarkMode}
         />
         <div className="cnvs-docs-palette-steps">
           {steps.map(step => (
