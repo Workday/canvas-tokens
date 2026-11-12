@@ -22,7 +22,7 @@ export const PaletteColorsExample = () => {
   return (
     <div style={{display: 'grid', gap: '8px'}}>
       {FAMILIES.map(family => (
-        <TestPaletteScale group={`palette.${family}`} />
+        <TestPaletteScale key={family} group={`palette.${family}`} />
       ))}
     </div>
   );

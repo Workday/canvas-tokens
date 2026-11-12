@@ -21,7 +21,7 @@ export const PaletteDarkColorsExample = () => {
   return (
     <div style={{display: 'grid', gap: '8px'}}>
       {FAMILIES.map(family => (
-        <TestPaletteScale group={`palette.dark.${family}`} isDark />
+        <TestPaletteScale key={family} group={`palette.dark.${family}`} isDark />
       ))}
       <TestPaletteScale group="palette.white" isDark />
     </div>

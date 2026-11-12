@@ -37,8 +37,6 @@ export const TestPaletteScale = ({group, isDark}: TestPaletteScaleProps) => {
   const path = group.split('.');
   const colors = getDeepValue(allColors, path);
 
-  console.log(isDark);
-
   return (
     <Card data-theme="sana-canvas" data-color-mode={isDark ? 'dark' : undefined}>
       <Card.Heading>{group}</Card.Heading>
