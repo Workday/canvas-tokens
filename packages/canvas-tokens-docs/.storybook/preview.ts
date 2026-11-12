@@ -19,6 +19,7 @@ const preview: Preview = {
             ['Overview'],
             'Sana Theme',
           ],
+          'Tokens',
           'Guides',
           ['Upgrade Guides', 'Migrations'],
           'Visual Tests',
