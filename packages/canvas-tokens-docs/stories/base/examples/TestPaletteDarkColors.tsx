@@ -15,7 +15,6 @@ const FAMILIES = [
   'purple',
   'red',
   'slate',
-  'white',
 ] as const;
 
 export const PaletteDarkColorsExample = () => {
@@ -24,6 +23,7 @@ export const PaletteDarkColorsExample = () => {
       {FAMILIES.map(family => (
         <TestPaletteScale group={`palette.dark.${family}`} isDark />
       ))}
+      <TestPaletteScale group="palette.white" isDark />
     </div>
   );
 };
