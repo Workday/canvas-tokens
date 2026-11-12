@@ -1,5 +1,27 @@
 {
   "motion": {
+    "duration": {
+      "instant": {
+        "$value": "{duration.0}",
+        "$type": "duration"
+      },
+      "short": {
+        "$value": "{duration.100}",
+        "$type": "duration"
+      },
+      "medium": {
+        "$value": "{duration.250}",
+        "$type": "duration"
+      },
+      "long": {
+        "$value": "{duration.400}",
+        "$type": "duration"
+      },
+      "xlong": {
+        "$value": "{duration.700}",
+        "$type": "duration"
+      }
+    },
     "easing": {
       "quick": {
         "standard": {

@@ -1,4 +1,5 @@
 import {Meta, Unstyled} from '@storybook/blocks';
+import {DurationTokens} from './examples/Duration';
 import {EasingTokens} from './examples/Easing';
 
 <Meta title="Docs/System Tokens/Motion" />
@@ -7,11 +8,30 @@ import {EasingTokens} from './examples/Easing';
 
 # System Motion Tokens
 
-Currently, only easing tokens are available at the system token level. For motion usage guidelines, including information on how to choose an appropriate easing value, see the [Canvas Motion Documentation](https://canvas.workday.com/styles/tokens/motion).
+System motion tokens include duration and easing. For motion usage guidelines, including information
+on how to choose an appropriate duration and easing value, see the
+[Canvas Motion Documentation](https://design.workday.com/design-system/tokens/motion).
+
+## Duration Tokens
+
+System duration tokens provide standardized timing values for animations and transitions. Each token
+references a base duration token.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  transition: `transform var(${system.motion.duration.medium})`,
+};
+```
+
+<DurationTokens />
 
 ## Easing Tokens
 
-System easing tokens provide standardized cubic-bezier curves for animations and transitions across our UI.
+System easing tokens provide standardized cubic-bezier curves for animations and transitions across
+our UI.
 
 ### Usage
 
@@ -28,8 +48,8 @@ const styles = {
 };
 ```
 
-They can also be consumed as CSS variables. In the example below, we're applying the
-same styles using CSS variables directly.
+They can also be consumed as CSS variables. In the example below, we're applying the same styles
+using CSS variables directly.
 
 ```css
 // styles.css
@@ -46,6 +66,7 @@ System easing tokens are organized into two categories:
 - **Purposeful** - For longer, more meaningful transitions (modals, panels, page transitions)
 
 Each category includes three timing function variants:
+
 - **Standard** - Balanced easing for general use
 - **Acceleration** - Emphasizes the beginning of the animation
 - **Deceleration** - Emphasizes the end of the animation

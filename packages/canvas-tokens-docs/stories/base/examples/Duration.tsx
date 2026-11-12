@@ -10,6 +10,7 @@ interface DurationToken {
 }
 
 const durationTokens: DurationToken[] = [
+  {cssVar: base.duration0, jsVar: formatJSVar('base.duration0')},
   {cssVar: base.duration50, jsVar: formatJSVar('base.duration50')},
   {cssVar: base.duration100, jsVar: formatJSVar('base.duration100')},
   {cssVar: base.duration150, jsVar: formatJSVar('base.duration150')},
