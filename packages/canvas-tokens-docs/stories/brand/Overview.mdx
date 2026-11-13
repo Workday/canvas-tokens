@@ -1,0 +1,22 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {PrimaryBrandTokens} from './examples/PrimaryBrandTokens';
+
+<Meta title="Tokens/Brand/Colors" />
+
+<Unstyled>
+
+# Brand Tokens
+
+Brand tokens are **themed variables** designated for brand / tenant-level customization. They are
+not connected to system tokens, which are intended to be application-wide. They're used for our
+buttons, focus rings, errors, and banners.
+
+## Primary
+
+<PrimaryBrandTokens />
+
+## Action
+
+> **Note:** `--cnvs-brand-action-**` should be used with caution. Defining brand primary colors should cover most of the theming use cases. However, in situations where you want more granular control over actions like `PrimaryButton`, you can define different colors for the action tokens. By Default, the action tokens map to our `--cnvs-brand-primary-**` tokens.
+
+</Unstyled>
