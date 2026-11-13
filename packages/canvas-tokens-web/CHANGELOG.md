@@ -1,5 +1,13 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.11
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix type resolutions ([@](https://github.com/))
+
 ## 5.0.0-alpha.10
 
 ### Major Changes
