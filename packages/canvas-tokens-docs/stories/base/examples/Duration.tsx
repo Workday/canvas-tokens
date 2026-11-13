@@ -52,7 +52,7 @@ export function DurationTokens() {
 
   return (
     <TokenGrid
-      caption="duration tokens"
+      caption="base duration tokens"
       headings={['CSS Variable', 'JS Variable', 'Value']}
       rows={durationTokens}
     >

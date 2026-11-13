@@ -71,7 +71,7 @@ export function EasingTokens() {
 
   return (
     <TokenGrid
-      caption="easing tokens"
+      caption="base easing tokens"
       headings={['Sample', 'CSS Variable', 'JS Variable', 'Value', 'Category', 'Type']}
       rows={easingTokens}
     >
