@@ -73,7 +73,7 @@ export const generateRoot = async ({dictionary, file, options}: Format) => {
  * Falls back to `:root` when neither is set.
  */
 const getScope = (themeSelector?: string, modeSelector?: string) => {
-  const mode = `data-mode="${modeSelector}"`;
+  const mode = `data-color-mode="${modeSelector}"`;
 
   if (themeSelector) {
     return modeSelector

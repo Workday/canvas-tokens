@@ -51,24 +51,6 @@ function multiplyCalcValues(value: string) {
   return numberMatch ? parseFloat(numberMatch[1]) : 0;
 }
 
-const deprecatedSpaceTokens = ['zero', 'half', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x8', 'x10', 'x14', 'x16', 'x20'];
-
-// Deprecated space tokens
-const deprecatedSpaceTokensData: SpaceToken[] = Object.entries(system.space || {})
-  .filter(([key]) => deprecatedSpaceTokens.includes(key))
-  .map(([key, varName]) => {
-    const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
-    const calculatedValue = multiplyCalcValues(value);
-    return {
-      cssVar: varName,
-      jsVar: formatJSVar(`system.space.${key}`),
-      value,
-      calculatedValue: `${calculatedValue}rem`,
-      pxValue: `${calculatedValue * 16}px`,
-    };
-  });
-
-// Size tokens
 const sizeTokens: SpaceToken[] = Object.entries(system.size || {}).map(([key, varName]) => {
   const value = getComputedStyle(document.documentElement).getPropertyValue(varName);
   const calculatedValue = multiplyCalcValues(value);
@@ -107,45 +89,6 @@ const gapTokens: SpaceToken[] = Object.entries(system.gap || {}).map(([key, varN
   };
 });
 
-export const DeprecatedSpaceTokens = () => {
-  return (
-    <TokenGrid
-      caption="deprecated space tokens"
-      headings={[
-        'Sample',
-        'CSS Variable',
-        'JS Variable',
-        'Value',
-        'Calculated Value',
-        'Pixel Value',
-      ]}
-      rows={deprecatedSpaceTokensData}
-    >
-      {token => (
-        <>
-          <TokenGrid.RowItem>
-            <TokenGrid.Sample
-              style={{
-                width: `var(${token.cssVar})`,
-                backgroundColor: `var(${system.color.border.contrast.default})`,
-              }}
-            />
-          </TokenGrid.RowItem>
-          <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.cssVar}</TokenGrid.MonospaceLabel>
-          </TokenGrid.RowItem>
-          <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{token.jsVar}</TokenGrid.MonospaceLabel>
-          </TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.value}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.calculatedValue}</TokenGrid.RowItem>
-          <TokenGrid.RowItem>{token.pxValue}</TokenGrid.RowItem>
-        </>
-      )}
-    </TokenGrid>
-  );
-};
-
 export const SizeTokens = () => {
   return (
     <TokenGrid
@@ -167,7 +110,7 @@ export const SizeTokens = () => {
               style={{
                 width: `var(${token.cssVar})`,
                 height: `var(${token.cssVar})`,
-                backgroundColor: `var(${system.color.border.contrast.default})`,
+                backgroundColor: `var(${system.color.border.contrast.root})`,
               }}
             />
           </TokenGrid.RowItem>
@@ -207,7 +150,7 @@ export const PaddingTokens = () => {
               style={{
                 padding: `var(${token.cssVar})`,
                 border: `solid 0.125rem red`,
-                backgroundColor: `var(${system.color.surface.alt.default})`,
+                backgroundColor: `var(${system.color.surface.alt.root})`,
                 display: 'inline-block',
               }}
             >
@@ -215,7 +158,7 @@ export const PaddingTokens = () => {
                 style={{
                   width: 40,
                   height: 40,
-                  backgroundColor: `var(${system.color.border.contrast.default})`,
+                  backgroundColor: `var(${system.color.border.contrast.root})`,
                 }}
               />
             </div>
@@ -257,14 +200,14 @@ export const GapTokens = () => {
                 style={{
                   width: 40,
                   height: 40,
-                  backgroundColor: `var(${system.color.border.contrast.default})`,
+                  backgroundColor: `var(${system.color.border.contrast.root})`,
                 }}
               />
               <TokenGrid.Sample
                 style={{
                   width: 40,
                   height: 40,
-                  backgroundColor: `var(${system.color.border.contrast.default})`,
+                  backgroundColor: `var(${system.color.border.contrast.root})`,
                 }}
               />
             </div>

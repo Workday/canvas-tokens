@@ -1,0 +1,130 @@
+.cnvs-docs-palette-card {
+  min-width: 45%;
+  width: 100%;
+}
+
+.cnvs-docs-palette-heading {
+  text-transform: capitalize;
+}
+
+.cnvs-docs-palette-hero {
+  --hero-fg-color: var(--cnvs-sys-color-fg-default);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  min-height: 200px;
+  padding: 16px;
+  border: 2px solid var(--cnvs-sys-color-border-inverse-default);
+  border-radius: 12px;
+  background-color: var(--hero-bg-color);
+  color: var(--hero-fg-color);
+}
+
+/* Modifier: dark steps need light text. Solid heroes are always rendered in light mode. */
+.cnvs-docs-palette-hero-inverse {
+  --hero-fg-color: var(--cnvs-sys-color-fg-inverse);
+}
+
+.cnvs-docs-palette-chip {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  border: 2px solid var(--cnvs-sys-color-border-default);
+  border-radius: 6px;
+  background-color: var(--chip-bg-color);
+  cursor: pointer;
+}
+
+.cnvs-docs-palette-chip:hover,
+.cnvs-docs-palette-chip-active {
+  border-color: var(--cnvs-sys-color-border-input-default);
+}
+
+.cnvs-docs-palette-chip:focus-visible {
+  /* Two-tone ring so it stays visible on any chip color and in light/dark mode. */
+  outline: 2px solid var(--cnvs-sys-color-focus-contrast, #000);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--cnvs-sys-color-focus-inverse, #fff);
+}
+
+/* Alpha heroes follow the surrounding theme, so inversion is picked per color mode. */
+.cnvs-docs-palette-hero-inverse-light {
+  --hero-fg-color: var(--cnvs-sys-color-fg-inverse);
+}
+
+[data-color-mode='dark'] .cnvs-docs-palette-hero-inverse-light {
+  --hero-fg-color: var(--cnvs-sys-color-fg-default);
+}
+
+[data-color-mode='dark'] .cnvs-docs-palette-hero-inverse-dark {
+  --hero-fg-color: var(--cnvs-sys-color-fg-inverse);
+}
+
+.cnvs-docs-palette-hero-title {
+  margin-bottom: 8px;
+  font-family: var(--cnvs-sys-font-family-mono);
+}
+
+.cnvs-docs-palette-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.cnvs-docs-palette-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16px, 1fr));
+  gap: 4px;
+  margin-top: 14px;
+}
+
+.cnvs-docs-palette-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cnvs-docs-palette-swatch-name {
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+.cnvs-docs-palette-swatch-name-active {
+  font-weight: bold;
+}
+
+/* Alpha hero: the translucent hero sits bottom-right on top of a contrast
+   square, so the square shows through it. */
+.cnvs-docs-palette-alpha {
+  position: relative;
+  width: 100%;
+  min-width: 280px;
+  height: 200px;
+}
+
+.cnvs-docs-palette-alpha .cnvs-docs-palette-hero {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  align-items: end;
+  width: 90%;
+  height: 85%;
+  min-height: 0;
+}
+
+.cnvs-docs-palette-alpha-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  height: 50%;
+  aspect-ratio: 1 / 0.9;
+  border-radius: 12px;
+  background-color: var(--cnvs-sys-color-surface-contrast-default);
+}

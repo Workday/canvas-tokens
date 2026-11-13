@@ -63,7 +63,7 @@ export const OpacityTokens = () => {
               style={{
                 width: '60px',
                 height: '60px',
-                backgroundColor: `var(${system.color.bg.primary.default})`,
+                backgroundColor: `var(${system.color.brand.surface.primary.root})`,
                 opacity: `var(${token.cssVar})`,
               }}
             />

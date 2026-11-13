@@ -9,7 +9,7 @@ import {
 } from '../../../../components/ColorGrid';
 
 const surfaceBasePalette = buildPalette('system.color.surface', {
-  default: system.color.surface.default,
+  default: system.color.surface.root,
   navigation: system.color.surface.navigation,
   popover: system.color.surface.popover,
   modal: system.color.surface.modal,
@@ -25,7 +25,7 @@ export const SurfaceColors = () => (
 
 const surfaceAltPalette = buildPalette(
   'system.color.surface.alt',
-  {default: system.color.surface.alt.default, strong: system.color.surface.alt.strong},
+  {default: system.color.surface.alt.root, strong: system.color.surface.alt.strong},
 ).sort(sortSystemColorPalette);
 
 export const SurfaceAltColors = () => (
@@ -42,9 +42,9 @@ export const SurfaceContrastColors = () => (
 );
 
 const surfaceOverlayPalette = buildPalette('system.color.surface.overlay', {
-  'hover.default': system.color.surface.overlay.hover.default,
+  'hover.default': system.color.surface.overlay.hover.root,
   'hover.inverse': system.color.surface.overlay.hover.inverse,
-  'pressed.default': system.color.surface.overlay.pressed.default,
+  'pressed.default': system.color.surface.overlay.pressed.root,
   'pressed.inverse': system.color.surface.overlay.pressed.inverse,
   scrim: system.color.surface.overlay.scrim,
 }).sort(sortSystemColorPalette);

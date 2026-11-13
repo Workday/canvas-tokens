@@ -2,15 +2,15 @@
   display: block;
   width: 100%;
   height: fit-content;
-  border-radius: var(--cnvs-sys-shape-x2);
+  border-radius: var(--cnvs-sys-shape-md);
   overflow: hidden;
-  margin-block: var(--cnvs-sys-space-x4);
+  margin-block: var(--cnvs-sys-padding-md);
   position: relative;
   border: 1px solid transparent;
 }
 
 .announcement-banner:hover {
-  border-color: var(--cnvs-sys-color-border-container);
+  border-color: var(--cnvs-sys-color-border-default);
   box-shadow: var(--cnvs-sys-depth-1);
 }
 
@@ -19,7 +19,7 @@
 }
 
 .announcement-banner:visited {
-  color: var(--cnvs-sys-color-text-default);
+  color: var(--cnvs-sys-color-fg-default);
 }
 
 .announcement-banner img {
@@ -31,12 +31,12 @@
 .announcement-banner span {
   display: none;
   position: absolute;
-  bottom: var(--cnvs-sys-space-x4);
-  right: var(--cnvs-sys-space-x4);
+  bottom: var(--cnvs-sys-padding-md);
+  right: var(--cnvs-sys-padding-md);
   color: var(--cnvs-sys-color-fg-strong);
   background-color: var(--cnvs-sys-color-bg-default);
-  padding: var(--cnvs-sys-space-x2) var(--cnvs-sys-space-x6);
+  padding: var(--cnvs-sys-padding-xs) var(--cnvs-sys-padding-xl);
   font-weight: var(--cnvs-sys-font-weight-bold);
-  border-radius: var(--cnvs-sys-shape-round);
+  border-radius: var(--cnvs-sys-shape-full);
   box-shadow: var(--cnvs-sys-depth-1);
 }

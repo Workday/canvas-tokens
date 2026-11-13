@@ -8,17 +8,17 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--cnvs-base-palette-black-pepper-400);
+  color: var(--cnvs-base-palette-neutral-900);
   margin: 0;
 }
 
 ol,
 ul {
-  color: var(--cnvs-base-palette-black-pepper-300);
+  color: var(--cnvs-base-palette-neutral-700);
   font-family: var(--cnvs-base-font-family-50);
   font-weight: var(--cnvs-base-font-weight-400);
-  line-height: var(--cnvs-base-line-height-150);
-  font-size: var(--cnvs-base-font-size-100);
+  line-height: var(--cnvs-sys-line-height-body-sm);
+  font-size: var(--cnvs-sys-font-size-body-sm);
   letter-spacing: var(--cnvs-base-letter-spacing-200);
   margin: 0;
   padding: 0;
@@ -35,37 +35,37 @@ ul ul {
 h1 {
   font-family: var(--cnvs-base-font-family-50);
   font-weight: var(--cnvs-base-font-weight-700);
-  line-height: var(--cnvs-base-line-height-500);
-  font-size: var(--cnvs-base-font-size-500);
+  line-height: var(--cnvs-sys-line-height-heading-lg);
+  font-size: var(--cnvs-sys-font-size-heading-lg);
 }
 
 h2 {
   font-family: var(--cnvs-base-font-family-50);
   font-weight: var(--cnvs-base-font-weight-700);
-  line-height: var(--cnvs-base-line-height-350);
-  font-size: var(--cnvs-base-font-size-300);
+  line-height: var(--cnvs-sys-line-height-heading-md);
+  font-size: var(--cnvs-sys-font-size-heading-md);
 }
 
 h3 {
   font-family: var(--cnvs-base-font-family-50);
   font-weight: var(--cnvs-base-font-weight-700);
-  line-height: var(--cnvs-base-line-height-300);
-  font-size: var(--cnvs-base-font-size-250);
+  line-height: var(--cnvs-sys-line-height-heading-sm);
+  font-size: var(--cnvs-sys-font-size-heading-sm);
 }
 
 h4 {
   font-family: var(--cnvs-base-font-family-50);
   font-weight: var(--cnvs-base-font-weight-700);
-  line-height: var(--cnvs-base-line-height-250);
-  font-size: var(--cnvs-base-font-size-200);
+  line-height: var(--cnvs-sys-line-height-body-lg);
+  font-size: var(--cnvs-sys-font-size-body-lg);
 }
 
 p {
-  color: var(--cnvs-base-palette-black-pepper-300);
+  color: var(--cnvs-base-palette-neutral-700);
   font-family: var(--cnvs-base-font-family-50);
   font-weight: var(--cnvs-base-font-weight-400);
-  line-height: var(--cnvs-base-line-height-150);
-  font-size: var(--cnvs-base-font-size-100);
+  line-height: var(--cnvs-sys-line-height-body-sm);
+  font-size: var(--cnvs-sys-font-size-body-sm);
   letter-spacing: var(--cnvs-base-letter-spacing-200);
   margin: 1rem 0;
 }
@@ -86,14 +86,14 @@ pre {
 
 pre > * {
   font-family: var(--cnvs-base-font-family-100);
-  font-size: var(--cnvs-base-font-size-75);
+  font-size: var(--cnvs-sys-font-size-subtext-lg);
 }
 
 blockquote {
   margin: 0;
-  padding: var(--cnvs-sys-space-x2) var(--cnvs-sys-space-x6);
-  border-left: 0.25rem solid var(--cnvs-base-palette-soap-400);
-  color: var(--cnvs-base-palette-licorice-300);
+  padding: var(--cnvs-sys-padding-xs) var(--cnvs-sys-padding-xl);
+  border-left: 0.25rem solid var(--cnvs-base-palette-slate-200);
+  color: var(--cnvs-base-palette-slate-700);
 }
 
 blockquote > p {
@@ -101,7 +101,7 @@ blockquote > p {
 }
 
 hr {
-  background-color: var(--cnvs-base-palette-soap-500);
+  background-color: var(--cnvs-base-palette-slate-300);
   border: none;
   height: 0.0625rem;
   margin: 2rem 0;

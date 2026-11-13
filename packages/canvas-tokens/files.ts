@@ -8,7 +8,10 @@ import type {LevelIndexOptions, TokenIndexOptions} from './src/formats/generateJ
 import type {TokenFnOptions} from './src/formats/generateJsTokenFn';
 
 const COMPOSITE_TOKENS = ['typography'];
-const SANA_CANVAS_THEME_SELECTOR = '[data-theme="sana-canvas"]';
+const SANA_CANVAS_LIGHT_THEME_SELECTOR =
+  '[data-theme="sana-canvas"],\n[data-theme="sana-canvas"][data-color-mode="light"],\n[data-theme="sana-canvas"] [data-color-mode="light"]';
+
+const SANA_CANVAS_THEME_SELECTOR = `[data-theme="sana-canvas"]`;
 
 /** CSS Files */
 export const cssFiles = [
@@ -48,7 +51,7 @@ export const cssFiles = [
     options: {
       prefix: 'cnvs',
       outputReferences: true,
-      themeSelector: SANA_CANVAS_THEME_SELECTOR,
+      themeSelector: SANA_CANVAS_LIGHT_THEME_SELECTOR,
     },
   },
   {
@@ -288,21 +291,31 @@ function getIndexFiles(platform: 'es6' | 'commonjs'): IndexFile[] {
   };
 
   // `system/color` is spread over several files, so it gets its own entry point
-  // exporting the merged `color` object (the `@workday/canvas-tokens-web/color` import)
+  // exporting the color groups (`accent`, `surface`, ...) directly (the `@workday/canvas-tokens-web/color` import)
   const colorFiles = tokenFiles.filter(f => f.startsWith('system/color/'));
   const colorGroups = {color: getColorGroup(colorFiles)};
   const colorIndexFiles: IndexFile[] = [
     {
       destination: 'system/color.js',
       format: 'javascript/token-index',
-      options: {syntaxStyle: platform, files: colorFiles, groups: colorGroups},
+      options: {syntaxStyle: platform, files: colorFiles, groups: colorGroups, flatten: true},
     },
     {
       destination: 'system/color.d.ts',
       format: 'javascript/token-index',
-      options: {syntaxStyle: 'ts', files: colorFiles, groups: colorGroups},
+      options: {syntaxStyle: 'ts', files: colorFiles, groups: colorGroups, flatten: true},
     },
   ];
 
   return [...files, ...colorIndexFiles, rootFile, rootTSFile];
+}
+
+/** Get the JavaScript files for the documentation platform */
+
+export function getDocsJsFiles() {
+  return tokenFiles.map(file => ({
+    destination: file.replace('.json', '.js'),
+    filter: (token: TransformedToken) => token.filePath.endsWith(file),
+    format: 'javascript/esm',
+  }));
 }

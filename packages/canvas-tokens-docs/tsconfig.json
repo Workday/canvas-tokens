@@ -1,3 +1,7 @@
 {
-  "extends": "../../tsconfig.json"
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true
+  },
+  "include": ["components/**/*", "util/**/*", "data/**/*", ".storybook/css.d.ts"]
 }

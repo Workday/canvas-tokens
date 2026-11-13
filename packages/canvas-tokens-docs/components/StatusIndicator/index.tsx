@@ -4,7 +4,7 @@ import './index.css';
 const styles = {
   ai: {
     color: 'var(--cnvs-sys-color-fg-ai)',
-    backgroundColor: 'var(--cnvs-sys-color-bg-ai-default)',
+    backgroundColor: 'var(--cnvs-sys-color-surface-ai-default)',
   },
 };
 
