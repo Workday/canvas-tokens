@@ -281,13 +281,13 @@ function getIndexFiles(platform: 'es6' | 'commonjs'): IndexFile[] {
   const rootFile: IndexFile = {
     destination: 'index.js',
     format: 'javascript/level-index',
-    options: {syntaxStyle: platform, levels: LEVELS},
+    options: {syntaxStyle: platform, levels: LEVELS, withTokenFn: true},
   };
 
   const rootTSFile: IndexFile = {
     destination: 'index.d.ts',
     format: 'javascript/level-index',
-    options: {syntaxStyle: 'ts', levels: LEVELS},
+    options: {syntaxStyle: 'ts', levels: LEVELS, withTokenFn: true},
   };
 
   // `system/color` is spread over several files, so it gets its own entry point
