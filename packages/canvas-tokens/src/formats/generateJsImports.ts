@@ -22,6 +22,8 @@ export type TokenIndexOptions = BaseOptions & {
    * Names defined in several files of a group (`color.brand`) are merged
    */
   groups?: Groups;
+  /** Export the names of the groups directly instead of wrapping them in an object named after the group */
+  flatten?: boolean;
 };
 
 /** Generate the index that exports each token level as a namespace */
@@ -39,12 +41,19 @@ export const generateJsLevelIndex = async ({file, options}: FormatFnArguments) =
 
 /** Generate the index that re-exports the token files of one level */
 export const generateJsTokenIndex = async ({file, options}: FormatFnArguments) => {
-  const {files, groups = {}, syntaxStyle} = options as TokenIndexOptions;
+  const {files, groups = {}, flatten, syntaxStyle} = options as TokenIndexOptions;
   const header = await fileHeader({file});
   const generate =
     syntaxStyle === 'commonjs' ? generateCommonJsTokenImports : generateEsModuleTokenImports;
 
-  return header + generate(files, groups, syntaxStyle === 'ts');
+  return header + generate({files, groups, isDeclaration: syntaxStyle === 'ts', flatten});
+};
+
+type TokenImportsProps = {
+  files: string[];
+  groups: Groups;
+  isDeclaration?: boolean;
+  flatten?: boolean;
 };
 
 /** Generate Common JS imports for the provided token levels */
@@ -90,7 +99,12 @@ const mergeRefs = (refs: string[]) =>
  * Grouped files are imported as namespaces and exported as one object (or type, for declarations)
  * as `export *` drops names exported by several files
  */
-const generateEsModuleTokenImports = (files: string[], groups: Groups, isDeclaration: boolean) => {
+const generateEsModuleTokenImports = ({
+  files,
+  groups,
+  isDeclaration = false,
+  flatten = false,
+}: TokenImportsProps) => {
   const grouped = getGroupedFiles(groups);
   const reExports = files
     .filter(file => !grouped.includes(file))
@@ -106,6 +120,19 @@ const generateEsModuleTokenImports = (files: string[], groups: Groups, isDeclara
 
       return `  ${name}: ${mergeRefs(refs)},`;
     });
+    if (flatten) {
+      const exports = getGroupProps(sources).map(([name, indexes]) => {
+        const refs = indexes.map(index => `${group}${index}.${name}`);
+        if (isDeclaration) {
+          return `export declare const ${name}: ${refs.map(ref => `typeof ${ref}`).join(' & ')};`;
+        }
+
+        return `export const ${name} = ${mergeRefs(refs)};`;
+      });
+
+      return [...imports, ...exports];
+    }
+
     const declaration = isDeclaration
       ? `export declare const ${group}: {`
       : `export const ${group} = {`;
@@ -117,7 +144,7 @@ const generateEsModuleTokenImports = (files: string[], groups: Groups, isDeclara
 };
 
 /** Generate CommonJS re-exports for token files, merging names exported by several files */
-const generateCommonJsTokenImports = (files: string[], groups: Groups) => {
+const generateCommonJsTokenImports = ({files, groups, flatten = false}: TokenImportsProps) => {
   const grouped = getGroupedFiles(groups);
   const imports = files
     .filter(file => !grouped.includes(file))
@@ -128,6 +155,8 @@ const generateCommonJsTokenImports = (files: string[], groups: Groups) => {
       const refs = indexes.map(index => `require('${toJsPath(sources[index].file)}').${name}`);
       return `    ${name}: ${mergeRefs(refs)},`;
     });
+
+    if (flatten) return props.map(prop => prop.trim()).join('\n  ');
 
     return `${group}: {\n${props.join('\n')}\n  },`;
   });

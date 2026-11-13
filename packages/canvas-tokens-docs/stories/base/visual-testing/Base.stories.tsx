@@ -1,4 +1,5 @@
-import {ColorTokens} from '../examples/Color';
+import {PaletteColorsExample} from '../examples/TestPaletteColors';
+import {PaletteDarkColorsExample} from '../examples/TestPaletteDarkColors';
 
 export default {
   title: 'Visual Tests/Base Tokens',
@@ -7,6 +8,10 @@ export default {
   },
 };
 
-export const Colors = {
-  render: ColorTokens,
+export const PaletteColors = {
+  render: PaletteColorsExample,
+};
+
+export const PaletteDarkColors = {
+  render: PaletteDarkColorsExample,
 };

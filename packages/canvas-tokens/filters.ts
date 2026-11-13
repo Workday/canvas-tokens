@@ -15,7 +15,8 @@ export const isSanaTokens = (token: TransformedToken) =>
   token.$type !== 'typography' &&
   token.path[0] !== 'dark' &&
   !['dark', 'action'].includes(token.path[1]) &&
-  token.$extensions?.['sana.canvas.tokens']?.themes?.canvas;
+  (token.$extensions?.['sana.canvas.tokens']?.themes?.canvas ||
+    ['color', 'brand'].includes(token.path[0]));
 
 export const isSanaDarkTokens = (token: TransformedToken) =>
   (token.filePath.includes('/base/') && token.path[0] === 'dark') ||

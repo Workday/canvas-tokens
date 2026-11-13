@@ -8,7 +8,7 @@ import {generateJsTokens} from './src/formats/generateJsTokens';
 import {generateJsTokenFn} from './src/formats/generateJsTokenFn';
 
 import {transforms} from './transforms';
-import {cssFiles, getJsFiles, getLabsJsFiles, labsCssFiles} from './files';
+import {cssFiles, getDocsJsFiles, getJsFiles, getLabsJsFiles, labsCssFiles} from './files';
 
 const jsTransforms = [
   'js/name',
@@ -59,6 +59,11 @@ const config = new StyleDictionary({
       transforms: jsTransforms,
       buildPath: '../canvas-tokens-web-labs/dist/common-js',
       files: getLabsJsFiles('commonjs'),
+    },
+    docs: {
+      transforms: jsTransforms,
+      buildPath: '../canvas-tokens-docs/data/tokens',
+      files: getDocsJsFiles(),
     },
   },
 });

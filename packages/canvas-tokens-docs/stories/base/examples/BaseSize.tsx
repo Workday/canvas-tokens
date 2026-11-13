@@ -109,7 +109,7 @@ export const BaseSizeTokens = () => {
               style={{
                 width: `var(${token.cssVar})`,
                 height: `var(${token.cssVar})`,
-                backgroundColor: `var(${system.color.border.contrast.default})`,
+                backgroundColor: `var(${system.color.border.contrast.root})`,
               }}
             />
           </TokenGrid.RowItem>

@@ -9,16 +9,16 @@ import {
 } from '../../../../components/ColorGrid';
 
 const borderPalette = buildPalette('system.color.border', {
-  default: system.color.border.default,
+  default: system.color.border.root,
   strong: system.color.border.strong,
   'primary.default': system.color.brand.border.primary,
-  info: system.color.border.info.default,
+  info: system.color.border.info.root,
   danger: system.color.border.danger,
   warning: system.color.border.warning,
-  contrast: system.color.border.contrast.default,
-  input: system.color.border.input.default,
+  contrast: system.color.border.contrast.root,
+  input: system.color.border.input.root,
   inputHover: system.color.border.input.hover,
-  inverse: system.color.border.inverse.default,
+  inverse: system.color.border.inverse.root,
   inverseStrong: system.color.border.inverse.strong,
   transparent: system.color.border.transparent,
   ai: system.color.border.ai,

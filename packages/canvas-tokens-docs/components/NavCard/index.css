@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 16px;
   background-color: var(--cnvs-sys-color-bg-default);
-  border: 1px solid var(--cnvs-sys-color-border-divider);
+  border: 1px solid var(--cnvs-sys-color-border-default);
   border-radius: 8px;
   cursor: pointer;
   font-family: var(--cnvs-sys-font-family-default);
@@ -15,12 +15,12 @@
 }
 
 .nav-card:visited {
-  color: var(--cnvs-sys-color-text-default);
+  color: var(--cnvs-sys-color-fg-default);
 }
 
 .nav-card:hover {
-  background-color: var(--cnvs-sys-color-bg-alt-softer);
-  border-color: var(--cnvs-sys-color-border-container);
+  background-color: var(--cnvs-sys-color-bg-alt-default);
+  border-color: var(--cnvs-sys-color-border-default);
 }
 
 .nav-card-header {

@@ -9,8 +9,8 @@ import {
 } from '../../../../components/ColorGrid';
 
 const iconPalette = buildPalette('system.color.fg', {
-  default: system.color.fg.default,
-  'muted.default': system.color.fg.muted.default,
+  default: system.color.fg.root,
+  'muted.default': system.color.fg.muted.root,
   strong: system.color.fg.strong,
   inverse: system.color.fg.inverse,
 }).sort(sortSystemColorPalette);

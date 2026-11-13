@@ -83,8 +83,8 @@ export function EasingTokens() {
                 style={{
                   width: `var(${system.size.xs})`,
                   height: `var(${system.size.xs})`,
-                  borderRadius: `var(${system.shape.round})`,
-                  backgroundColor: `var(${system.color.bg.primary.default})`,
+                  borderRadius: `var(${system.shape.full})`,
+                  backgroundColor: `var(${system.color.brand.surface.primary.root})`,
                   animation: `ease-slide 2300ms var(${token.cssVar}) infinite`,
                 }}
               />

@@ -8,6 +8,7 @@ docs
 tmp
 /out-tsc
 *.tsbuildinfo
+packages/canvas-tokens-docs/data/tokens
 
 # dependencies
 node_modules
@@ -40,5 +41,5 @@ build-storybook.log
 
 figma-raw-tokens/
 
-# nx cache
-.nx
+.nx/
+.nx/cache/

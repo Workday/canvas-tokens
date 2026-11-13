@@ -1,0 +1,17 @@
+.swatch-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 8px;
+  max-width: 100%;
+}
+
+.swatch {
+  height: 160px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.swatch-item {
+  text-align: center;
+}
