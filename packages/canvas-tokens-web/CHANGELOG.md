@@ -1,5 +1,13 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.12
+
+### Major Changes
+
+- ### Components
+
+  - fix: Export token function globally ([@](https://github.com/))
+
 ## 5.0.0-alpha.11
 
 ### Major Changes
