@@ -7,32 +7,41 @@ import {EasingTokens} from './examples/Easing';
 
 <Unstyled>
 
-## Motion
+# Base Motion Tokens
 
-Base motion tokens provide the foundational timing and easing values for animations and transitions. These tokens are used to build our system easing tokens, which provide semantic naming and usage guidance.
+Base motion tokens provide the foundational timing and easing values for animations and transitions.
+These tokens are used to build our system duration and easing tokens, which provide semantic naming
+and usage guidance. We recommend using system motion tokens for all animations and transitions,
+rather than using base tokens directly.
 
-> **Note:** For motion usage guidelines, including information on how to choose appropriate duration and easing values, see the [Canvas Motion Documentation](https://canvas.workday.com/styles/tokens/motion).
+> **Note:** For motion usage guidelines, including information on how to choose appropriate duration
+> and easing values, see the
+> [Canvas Motion Documentation](https://design.workday.com/design-system/tokens/motion).
 
 ---
 
-### Duration
+## Duration
 
-Duration tokens define timing values for animations and transitions, ranging from 50ms to 1000ms in 50ms increments.
+Duration tokens define timing values for animations and transitions, ranging from 0ms to 1000ms,
+with 50ms increments from 50ms.
 
 <DurationTokens />
 
 ---
 
-### Easing
+## Easing
 
-Easing tokens define timing functions (cubic-bezier curves) for animations and transitions. There are two categories:
+Easing tokens define timing functions (cubic-bezier curves) for animations and transitions. There
+are two categories:
 
 - **Quick (A)** - For shorter, faster interactions
 - **Purposeful (B)** - For longer, more meaningful transitions
 
-Each category includes three variants: Standard, Acceleration, and Deceleration.
+Each category includes three variants:
 
-**Note:** We recommend using system easing tokens for all animations and transitions, rather than using base easing tokens directly.
+- **Standard** - Balanced easing for general use
+- **Acceleration** - Starts slowly and speeds up
+- **Deceleration** - Starts quickly and slows down
 
 <EasingTokens />
 

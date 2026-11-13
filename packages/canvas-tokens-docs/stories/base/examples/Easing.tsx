@@ -71,7 +71,7 @@ export function EasingTokens() {
 
   return (
     <TokenGrid
-      caption="easing tokens"
+      caption="base easing tokens"
       headings={['Sample', 'CSS Variable', 'JS Variable', 'Value', 'Category', 'Type']}
       rows={easingTokens}
     >
@@ -84,7 +84,7 @@ export function EasingTokens() {
                   width: `var(${system.size.xs})`,
                   height: `var(${system.size.xs})`,
                   borderRadius: `var(${system.shape.full})`,
-                  backgroundColor: `var(${system.color.brand.surface.primary.root})`,
+                  backgroundColor: `var(${system.color.brand.fg.primary.strong})`,
                   animation: `ease-slide 2300ms var(${token.cssVar}) infinite`,
                 }}
               />
@@ -106,7 +106,9 @@ export function EasingTokens() {
           </TokenGrid.RowItem>
 
           <TokenGrid.RowItem>
-            <TokenGrid.MonospaceLabel>{computedValues[token.cssVar] || '...'}</TokenGrid.MonospaceLabel>
+            <TokenGrid.MonospaceLabel>
+              {computedValues[token.cssVar] || '...'}
+            </TokenGrid.MonospaceLabel>
           </TokenGrid.RowItem>
 
           <TokenGrid.RowItem>{token.category}</TokenGrid.RowItem>

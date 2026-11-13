@@ -1,5 +1,12 @@
 {
   "duration": {
+    "0": {
+      "$value": {
+        "value": 0,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
     "50": {
       "$value": {
         "value": 50,
