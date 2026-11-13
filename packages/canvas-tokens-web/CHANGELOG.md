@@ -1,5 +1,15 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.10
+
+### Major Changes
+
+- ### Components
+
+  - fix: Fix root tokens to be default in js
+    ([#393](https://github.com/Workday/canvas-tokens/pull/393))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
 ## 5.0.0-alpha.9
 
 ### Major Changes
