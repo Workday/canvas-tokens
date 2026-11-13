@@ -45,5 +45,6 @@
     "./css/*": "./css/*",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
-  }
+  },
+  "private": true
 }
