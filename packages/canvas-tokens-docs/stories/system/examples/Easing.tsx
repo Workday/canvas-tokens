@@ -84,7 +84,7 @@ export function EasingTokens() {
                   width: `var(${system.size.xs})`,
                   height: `var(${system.size.xs})`,
                   borderRadius: `var(${system.shape.full})`,
-                  backgroundColor: `var(${system.color.brand.surface.primary.root})`,
+                  backgroundColor: `var(${system.color.brand.surface.primary.default})`,
                   animation: `ease-slide 2300ms var(${token.cssVar}) infinite`,
                 }}
               />

@@ -2,7 +2,7 @@ import {Dictionary, File, TransformedToken, TransformedTokens} from 'style-dicti
 import {fileHeader, getReferences} from 'style-dictionary/utils';
 import {camelCase} from 'case-anything';
 
-import {getJsDoc, getJsPath, isComposite, SyntaxStyle, toCSSVarName} from '../../utils';
+import {getJsDoc, getJsPath, isComposite, SyntaxStyle, toCSSVarName, toJsKey} from '../../utils';
 
 type Format = {
   dictionary: Dictionary;
@@ -123,7 +123,7 @@ const getTokensTextRecursively = (
   return Object.keys(tokens)
     .map(key => {
       const value = (tokens as TransformedTokens)[key];
-      const name = camelCase(key);
+      const name = toJsKey(key);
 
       if (typeof value === 'object' && value !== null && '$value' in value) {
         const token = value as TransformedToken;
