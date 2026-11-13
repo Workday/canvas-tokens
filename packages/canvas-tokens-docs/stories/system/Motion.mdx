@@ -15,7 +15,8 @@ on how to choose an appropriate duration and easing value, see the
 ## Duration Tokens
 
 System duration tokens provide standardized timing values for animations and transitions. Each token
-references a base duration token.
+references a base duration token, so you'll need to have the base CSS variables imported in your
+application as well.
 
 ```ts
 // styles.ts
@@ -53,7 +54,7 @@ using CSS variables directly.
 
 {/* prettier-ignore */}
 ```css
-// styles.css
+/* styles.css */
 .button {
   transition: transform var(--cnvs-sys-motion-duration-medium) var(--cnvs-sys-motion-easing-quick-standard);
 }
@@ -69,8 +70,8 @@ System easing tokens are organized into two categories:
 Each category includes three timing function variants:
 
 - **Standard** - Balanced easing for general use
-- **Acceleration** - Emphasizes the beginning of the animation
-- **Deceleration** - Emphasizes the end of the animation
+- **Acceleration** - Starts slowly and speeds up
+- **Deceleration** - Starts quickly and slows down
 
 <EasingTokens />
 
