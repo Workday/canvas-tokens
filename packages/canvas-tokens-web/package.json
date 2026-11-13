@@ -12,6 +12,52 @@
   "module": "dist/es6/index.js",
   "sideEffects": false,
   "types": "dist/es6/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "base": [
+        "dist/es6/base/index.d.ts"
+      ],
+      "brand": [
+        "dist/es6/brand/index.d.ts"
+      ],
+      "component": [
+        "dist/es6/component/index.d.ts"
+      ],
+      "color": [
+        "dist/es6/system/color.d.ts"
+      ],
+      "breakpoint": [
+        "dist/es6/system/breakpoint.d.ts"
+      ],
+      "depth": [
+        "dist/es6/system/depth.d.ts"
+      ],
+      "gap": [
+        "dist/es6/system/gap.d.ts"
+      ],
+      "motion": [
+        "dist/es6/system/motion.d.ts"
+      ],
+      "opacity": [
+        "dist/es6/system/opacity.d.ts"
+      ],
+      "padding": [
+        "dist/es6/system/padding.d.ts"
+      ],
+      "shape": [
+        "dist/es6/system/shape.d.ts"
+      ],
+      "size": [
+        "dist/es6/system/size.d.ts"
+      ],
+      "type": [
+        "dist/es6/system/type.d.ts"
+      ],
+      "token": [
+        "dist/es6/token.d.ts"
+      ]
+    }
+  },
   "exports": {
     ".": {
       "import": {
