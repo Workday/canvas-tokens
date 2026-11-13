@@ -110,7 +110,7 @@ export const SizeTokens = () => {
               style={{
                 width: `var(${token.cssVar})`,
                 height: `var(${token.cssVar})`,
-                backgroundColor: `var(${system.color.border.contrast.root})`,
+                backgroundColor: `var(${system.color.border.contrast.default})`,
               }}
             />
           </TokenGrid.RowItem>
@@ -150,7 +150,7 @@ export const PaddingTokens = () => {
               style={{
                 padding: `var(${token.cssVar})`,
                 border: `solid 0.125rem red`,
-                backgroundColor: `var(${system.color.surface.alt.root})`,
+                backgroundColor: `var(${system.color.surface.alt.default})`,
                 display: 'inline-block',
               }}
             >
@@ -158,7 +158,7 @@ export const PaddingTokens = () => {
                 style={{
                   width: 40,
                   height: 40,
-                  backgroundColor: `var(${system.color.border.contrast.root})`,
+                  backgroundColor: `var(${system.color.border.contrast.default})`,
                 }}
               />
             </div>
@@ -200,14 +200,14 @@ export const GapTokens = () => {
                 style={{
                   width: 40,
                   height: 40,
-                  backgroundColor: `var(${system.color.border.contrast.root})`,
+                  backgroundColor: `var(${system.color.border.contrast.default})`,
                 }}
               />
               <TokenGrid.Sample
                 style={{
                   width: 40,
                   height: 40,
-                  backgroundColor: `var(${system.color.border.contrast.root})`,
+                  backgroundColor: `var(${system.color.border.contrast.default})`,
                 }}
               />
             </div>
