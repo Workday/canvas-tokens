@@ -41,20 +41,21 @@ application as well.
 
 ```ts
 // styles.ts
-import {system, base} from '@workday/canvas-tokens-web';
+import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
-  transition: `transform var(${base.duration300}) var(${system.motion.easing.quick.standard})`,
+  transition: `transform var(${system.motion.duration.medium}) var(${system.motion.easing.quick.standard})`,
 };
 ```
 
 They can also be consumed as CSS variables. In the example below, we're applying the same styles
 using CSS variables directly.
 
+{/* prettier-ignore */}
 ```css
 // styles.css
 .button {
-  transition: transform var(--cnvs-base-duration-300) var(--cnvs-sys-motion-easing-quick-standard);
+  transition: transform var(--cnvs-sys-motion-duration-medium) var(--cnvs-sys-motion-easing-quick-standard);
 }
 ```
 
