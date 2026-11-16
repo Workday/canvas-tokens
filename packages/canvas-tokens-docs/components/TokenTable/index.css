@@ -9,6 +9,7 @@
 .token-table td {
   align-content: baseline;
   justify-self: center;
+  width: 100%;
 }
 
 .swatch-cell {

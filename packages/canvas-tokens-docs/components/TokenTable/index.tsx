@@ -74,9 +74,24 @@ const SwatchCell = ({token: sdToken, isDark}: {token: SDToken; isDark?: boolean}
   );
 };
 
+const getCamelCaseName = (token: string[]) => {
+  return token
+    .map((part, index) => (index === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1)))
+    .join('');
+};
+
+const getCapitalizedName = (token: string[]) => {
+  return token.map(part => part.charAt(0).toUpperCase() + part.slice(1)).join('');
+};
+
 const getMobileTokenName = (path: string[]) => {
   if (path[0] === 'brand') {
-    return path[1] !== 'common' ? `SanaCanvasBrand.${path[1]}${path[2]}` : '';
+    const [_, category, ...token] = path;
+    const camelCaseName = getCamelCaseName(token);
+
+    return category !== 'common' && category !== 'gradient'
+      ? `SanaCanvasBrand.${category}${path[2]}`
+      : `SanaCanvasBrand.${getCapitalizedName([category])}.${camelCaseName}`;
   }
 };
 
