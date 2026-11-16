@@ -8,6 +8,7 @@
 
 .token-table td {
   align-content: baseline;
+  justify-self: center;
 }
 
 .swatch-cell {
@@ -51,6 +52,7 @@
 
 .multi-value-block {
   max-width: 320px;
+  min-width: 320px;
   margin-bottom: var(--cnvs-sys-gap-md);
 }
 

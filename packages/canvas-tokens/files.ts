@@ -334,12 +334,24 @@ function getIndexFiles(platform: 'es6' | 'commonjs'): IndexFile[] {
   return [...files, ...colorIndexFiles, rootFile, rootTSFile];
 }
 
-/** Get the JavaScript files for the documentation platform */
+/**
+ * Get the JavaScript files for the documentation platform.
+ * Each file default-exports an array of the transformed tokens, and `index.js` imports them all
+ * into one object nested by the file path
+ */
+export function getDocsJsFiles(): File[] {
+  const FORMAT = 'javascript/token-array';
 
-export function getDocsJsFiles() {
-  return tokenFiles.map(file => ({
-    destination: file.replace('.json', '.js'),
-    filter: (token: TransformedToken) => token.filePath.endsWith(file),
-    format: 'javascript/esm',
-  }));
+  return [
+    ...tokenFiles.map(file => ({
+      destination: file.replace('.json', '.js'),
+      filter: (token: TransformedToken) => token.filePath.endsWith(file),
+      format: FORMAT,
+    })),
+    {
+      destination: 'index.js',
+      format: 'javascript/docs-index',
+      options: {imports: tokenFiles.map(file => file.replace('.json', '.js'))},
+    },
+  ];
 }

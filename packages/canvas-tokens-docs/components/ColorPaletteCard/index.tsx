@@ -5,7 +5,7 @@ import {Tooltip} from '@workday/canvas-kit-react/tooltip';
 
 import {CodeBlock} from '../CodeBlock';
 import {CopyButton} from '../CopyButton';
-import palette from '../../data/tokens/base/palette';
+import {getTokens, getTokensByStep} from '../../util';
 import type {ColorPaletteCardProps, HeroProps, SwatchProps, Token} from './types';
 
 import './index.css';
@@ -156,9 +156,12 @@ export const ColorPaletteCard = ({
 }: ColorPaletteCardProps) => {
   const [activeStep, setActiveStep] = React.useState(isAlpha ? 'A300' : '500');
 
-  const darkTokens = palette.dark[colorFamily as keyof typeof palette.dark];
-  const useDarkTokens = isDarkMode && !!darkTokens;
-  const tokens: Record<string, Token> = useDarkTokens ? darkTokens : palette[colorFamily];
+  const palette = getTokens('base.palette');
+  const darkTokens = getTokensByStep(palette, ['dark', colorFamily]);
+  const useDarkTokens = isDarkMode && Object.keys(darkTokens).length > 0;
+  const tokens: Record<string, Token> = useDarkTokens
+    ? darkTokens
+    : getTokensByStep(palette, [colorFamily]);
 
   const steps = Object.keys(tokens).filter(step => isAlphaStep(step) === isAlpha);
 

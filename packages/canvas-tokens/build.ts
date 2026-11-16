@@ -6,6 +6,8 @@ import {generateRoot} from './src/formats/generateRoot';
 import {generateJsLevelIndex, generateJsTokenIndex} from './src/formats/generateJsImports';
 import {generateJsTokens} from './src/formats/generateJsTokens';
 import {generateJsTokenFn} from './src/formats/generateJsTokenFn';
+import {generateDocsIndex} from './src/formats/generateDocsIndex';
+import {generateJsTokenArray} from './src/formats/generateJsTokenArray';
 
 import {transforms} from './transforms';
 import {cssFiles, getDocsJsFiles, getJsFiles, getLabsJsFiles, labsCssFiles} from './files';
@@ -95,6 +97,16 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'javascript/css-var',
   format: generateJsTokens,
+});
+
+StyleDictionary.registerFormat({
+  name: 'javascript/token-array',
+  format: generateJsTokenArray,
+});
+
+StyleDictionary.registerFormat({
+  name: 'javascript/docs-index',
+  format: generateDocsIndex,
 });
 
 StyleDictionary.registerFormat({

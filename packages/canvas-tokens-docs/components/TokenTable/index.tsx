@@ -8,13 +8,12 @@ import {SystemIcon} from '@workday/canvas-kit-react/icon';
 import {checkIcon, exclamationTriangleIcon} from '@workday/canvas-system-icons-web';
 import {token as tokenVar} from '@workday/canvas-tokens-web/token';
 
-import tokens from '../../data/tokens';
 import {CodeBlock} from '../CodeBlock';
-import {oklchToHex, oklchToRgba} from '../../util';
+import {getTokens, oklchToHex, oklchToRgba} from '../../util';
 
 import './index.css';
 
-type TokenType = 'color' | 'spacing' | 'typography';
+type TokenType = 'color' | 'spacing' | 'typography' | 'gradient';
 
 type TokenTableProps = {
   group: string;
@@ -43,8 +42,12 @@ type SDToken = {
 };
 
 const SwatchCell = ({token: sdToken, isDark}: {token: SDToken; isDark?: boolean}) => {
-  const tokenName = sdToken.original.$value.replace(/{|}/g, '');
-  const darkValueRef = sdToken.original.$extensions['sana.canvas.tokens'].modes?.dark.$value;
+  const isGradient = sdToken.$type === 'gradient';
+  // Gradients have no single reference (`original.$value` is a list of stops), so use the token itself
+  const tokenName = isGradient
+    ? sdToken.key.replace(/{|}/g, '')
+    : sdToken.original.$value.replace(/{|}/g, '');
+  const darkValueRef = sdToken.original.$extensions?.['sana.canvas.tokens']?.modes?.dark.$value;
   const cleanDarkValue = darkValueRef ? darkValueRef.replace(/{|}/g, '') : undefined;
 
   const value = (isDark && cleanDarkValue
@@ -52,19 +55,21 @@ const SwatchCell = ({token: sdToken, isDark}: {token: SDToken; isDark?: boolean}
     : tokenVar(tokenName as any)) as unknown as string;
 
   // Semi-transparent colors get a checkerboard backdrop so the alpha is visible
-  const hasAlpha = /\/\s*(?!1(\.0+)?\s*\))[\d.]+%?\s*\)/.test(sdToken.$value);
+  const hasAlpha = !isGradient && /\/\s*(?!1(\.0+)?\s*\))[\d.]+%?\s*\)/.test(sdToken.$value);
 
   return (
     <div className="swatch-cell">
       <Card data-part="swatch" data-alpha={hasAlpha ? 'true' : undefined}>
         <div
           data-part="swatch-color"
-          style={{backgroundColor: hasAlpha && !isDark ? sdToken.$value : value}}
+          style={{background: isGradient || (hasAlpha && !isDark) ? sdToken.$value : value}}
         />
       </Card>
-      <CodeBlock data-part="ref" type="link">
-        {tokenName}
-      </CodeBlock>
+      {sdToken.$type === 'color' && (
+        <CodeBlock data-part="ref" type="link">
+          {tokenName}
+        </CodeBlock>
+      )}
     </div>
   );
 };
@@ -87,11 +92,15 @@ const DescriptionCell = ({token}: {token: SDToken}) => {
       <div className="token-values">
         <MultiValueBlock
           title="Computed Values"
-          items={[
-            {id: 'oklch', value: token.$value},
-            {id: 'hex', value: oklchToHex(token.$value as any)},
-            {id: 'rgba', value: oklchToRgba(token.$value as any)},
-          ]}
+          items={
+            token.$type === 'color'
+              ? [
+                  {id: 'oklch', value: token.$value},
+                  {id: 'hex', value: oklchToHex(token.$value as any)},
+                  {id: 'rgba', value: oklchToRgba(token.$value as any)},
+                ]
+              : [{id: 'oklch', value: token.$value}]
+          }
         />
         <MultiValueBlock
           title="Usage"
@@ -144,7 +153,9 @@ const TokenRow = ({token}: TokenRowProps) => {
   const isDeprecated = token.$deprecated;
   return (
     <Table.Row>
-      <Table.Cell>{token.$type === 'color' && <SwatchCell token={token} />}</Table.Cell>
+      <Table.Cell>
+        {(token.$type === 'color' || token.$type === 'gradient') && <SwatchCell token={token} />}
+      </Table.Cell>
       <DescriptionCell token={token} />
       <Table.Cell>
         <Tooltip title={!isDeprecated ? 'Active' : 'Deprecated'}>
@@ -162,15 +173,8 @@ const TokenRow = ({token}: TokenRowProps) => {
   );
 };
 
-const getDeepValue = (obj: Record<string, any>, path: string[]) => {
-  return path.reduce((acc, key) => (acc && acc[key] ? acc[key] : undefined), obj);
-};
-
 export const TokenTable = ({group}: TokenTableProps) => {
-  const path = group.split('.');
-  const tokenGroup = group ? getDeepValue(tokens, path) : {};
-
-  console.log(Object.keys(tokens.brand));
+  const tokens = group ? (getTokens(group) as unknown as SDToken[]) : [];
 
   return (
     <Table aria-label={`${group} tokens table`} className="token-table">
@@ -182,8 +186,8 @@ export const TokenTable = ({group}: TokenTableProps) => {
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {Object.entries(tokenGroup).map(([key, token]) => (
-          <TokenRow key={key} token={token} />
+        {tokens.map(token => (
+          <TokenRow key={token.key} token={token} />
         ))}
       </Table.Body>
     </Table>

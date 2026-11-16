@@ -2,11 +2,7 @@ import React from 'react';
 import {Card} from '@workday/canvas-kit-react/card';
 import {Subtext} from '@workday/canvas-kit-react/text';
 
-import palette from '../../data/tokens/base/palette';
-import pr from '../../data/tokens/brand/primary';
-import ct from '../../data/tokens/brand/caution';
-import cr from '../../data/tokens/brand/critical';
-import ps from '../../data/tokens/brand/positive';
+import {getTokens, getTokensByStep} from '../../util';
 
 import './index.css';
 
@@ -15,27 +11,17 @@ type TestPaletteScaleProps = {
   isDark?: boolean;
 };
 
-const allColors = {
-  palette,
-  brand: {
-    primary: pr.brand.primary,
-    caution: ct.brand.caution,
-    critical: cr.brand.critical,
-    positive: ps.brand.positive,
-  },
-};
-
-const getDeepValue = (obj: any, path: string[]) => {
-  return path.reduce((acc, key) => acc[key], obj);
-};
-
 const Swatch = ({color}: {color: string}) => {
   return <div className="swatch" style={{backgroundColor: color}} />;
 };
 
 export const TestPaletteScale = ({group, isDark}: TestPaletteScaleProps) => {
   const path = group.split('.');
-  const colors = getDeepValue(allColors, path);
+  // `palette.red` is the `red` family of `base.palette`, others are groups like `brand.primary`
+  const colors =
+    path[0] === 'palette'
+      ? getTokensByStep(getTokens('base.palette'), path.slice(1))
+      : getTokensByStep(getTokens(group), path);
 
   return (
     <Card data-theme="sana-canvas" data-color-mode={isDark ? 'dark' : undefined}>
