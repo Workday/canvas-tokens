@@ -2637,6 +2637,14 @@
   },
   "dark": {
     "neutral": {
+      "0": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [0, 0, 0],
+          "hex": "#000000"
+        },
+        "$type": "color"
+      },
       "25": {
         "$value": {
           "colorSpace": "oklch",
@@ -2754,6 +2762,14 @@
           "colorSpace": "oklch",
           "components": [0.9647, 0.0, 0.0],
           "hex": "#f3f3f3"
+        },
+        "$type": "color"
+      },
+      "1000": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [1, 0, 0],
+          "hex": "#ffffff"
         },
         "$type": "color"
       },

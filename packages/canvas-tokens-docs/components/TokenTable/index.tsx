@@ -7,15 +7,17 @@ import tokens from '../../data/tokens';
 import './index.css';
 import {CodeBlock} from '../CodeBlock';
 
+type TokenType = 'color' | 'spacing' | 'typography';
+
 type TokenTableProps = {
   group: string;
-  type?: 'color' | 'spacing' | 'typography';
+  type?: TokenType;
 };
 
 type SDToken = {
   key: string;
   $value: string;
-  $type: string;
+  $type: TokenType;
   $description: string;
   $deprecated?: boolean;
   original: {

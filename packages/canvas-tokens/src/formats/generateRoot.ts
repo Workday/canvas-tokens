@@ -17,6 +17,10 @@ type Format = {
   options: {
     compositeTokens?: string[];
     modeSelector?: string;
+    /** Drop the trailing `-default` from the variable names, `--wdt-color-bg-default` -> `--wdt-color-bg` */
+    omitDefault?: boolean;
+    /** Scope the tokens to the light color mode as well as to the theme itself, so they can be overridden */
+    lightScope?: boolean;
     outputReferences?: OutputReferences;
     prefix?: string;
     themeSelector?: string;
@@ -29,8 +33,16 @@ type Format = {
  * theme and mode selectors, followed by a class for each composite token
  */
 export const generateRoot = async ({dictionary, file, options}: Format) => {
-  const {compositeTokens, prefix, outputReferences, themeSelector, useThemeValues, modeSelector} =
-    options;
+  const {
+    compositeTokens,
+    prefix,
+    outputReferences,
+    themeSelector,
+    useThemeValues,
+    modeSelector,
+    omitDefault,
+    lightScope,
+  } = options;
   const header = await fileHeader({file});
   const allTokens = dictionary.unfilteredTokens;
   const extractOptions = {
@@ -39,13 +51,14 @@ export const generateRoot = async ({dictionary, file, options}: Format) => {
     tokens: allTokens,
     useThemeValues,
     modeSelector,
+    omitDefault,
   };
   const isComposite = (token: TransformedToken) => isCompositeToken(token, compositeTokens);
 
   const tokens = dictionary.allTokens
     .filter(token => !isComposite(token))
     .map(token => {
-      const name = toCSSVarName(token, prefix);
+      const name = toCSSVarName(token, prefix, omitDefault);
       const finalValue = extractValue(token, extractOptions);
 
       const deprecatedWarning = token.$deprecated
@@ -63,7 +76,7 @@ export const generateRoot = async ({dictionary, file, options}: Format) => {
     .map((token: TransformedToken) => generateCompositeTokens(token, {prefix, tokens: allTokens}))
     .join('\n');
 
-  const scope = getScope(themeSelector, modeSelector);
+  const scope = getScope(themeSelector, modeSelector, lightScope);
 
   return header + `${scope} {\n` + tokens + '\n}\n\n' + compositeTokensBlock;
 };
@@ -72,8 +85,13 @@ export const generateRoot = async ({dictionary, file, options}: Format) => {
  * Get the CSS selector a token block is scoped to, based on the theme and mode selectors.
  * Falls back to `:root` when neither is set.
  */
-const getScope = (themeSelector?: string, modeSelector?: string) => {
+const getScope = (themeSelector?: string, modeSelector?: string, lightScope?: boolean) => {
   const mode = `data-color-mode="${modeSelector}"`;
+
+  if (themeSelector && lightScope) {
+    const light = 'data-color-mode="light"';
+    return `${themeSelector},\n${themeSelector}[${light}],\n${themeSelector} [${light}]`;
+  }
 
   if (themeSelector) {
     return modeSelector
@@ -95,16 +113,19 @@ const getTokenSlug = (token: TransformedToken, prefix?: string) => {
 };
 
 /** Build the CSS custom property name (`--prefix-name`) for a token */
-const toCSSVarName = (token: TransformedToken, prefix?: string) =>
-  `--${getTokenSlug(token, prefix)}`;
+const toCSSVarName = (token: TransformedToken, prefix?: string, omitDefault?: boolean) => {
+  const slug = getTokenSlug(token, prefix);
+  return `--${omitDefault ? slug.replace(/-default$/, '') : slug}`;
+};
 
 /** Build a `var(--prefix-name)` reference to a token's CSS custom property */
-const toCSSVarRef = (token: TransformedToken, prefix?: string) =>
-  `var(${toCSSVarName(token, prefix)})`;
+const toCSSVarRef = (token: TransformedToken, prefix?: string, omitDefault?: boolean) =>
+  `var(${toCSSVarName(token, prefix, omitDefault)})`;
 
 type ExtractOptions = {
   modeSelector?: string;
   outputReferences?: OutputReferences;
+  omitDefault?: boolean;
   prefix?: string;
   tokens?: TransformedTokens;
   useThemeValues?: string;
@@ -116,7 +137,7 @@ type ExtractOptions = {
  * References are converted to `var()` when `outputReferences` is enabled.
  */
 const extractValue = (token: TransformedToken, options: ExtractOptions) => {
-  const {prefix, outputReferences, tokens, useThemeValues, modeSelector} = options;
+  const {prefix, outputReferences, tokens, useThemeValues, modeSelector, omitDefault} = options;
 
   if (modeSelector) {
     const modeValue =
@@ -124,7 +145,9 @@ const extractValue = (token: TransformedToken, options: ExtractOptions) => {
     const modeToken = {original: {$value: modeValue}};
 
     if (typeof modeValue === 'string') {
-      return outputReferences ? resolveReferences(modeValue, {prefix, tokens}) : modeValue;
+      return outputReferences
+        ? resolveReferences(modeValue, {prefix, tokens, omitDefault})
+        : modeValue;
     }
 
     if (isOklchToken(modeToken)) {
@@ -134,7 +157,7 @@ const extractValue = (token: TransformedToken, options: ExtractOptions) => {
 
   const initialValue =
     outputReferences && typeof token.original.$value === 'string'
-      ? resolveReferences(token.original.$value, {prefix, tokens})
+      ? resolveReferences(token.original.$value, {prefix, tokens, omitDefault})
       : token.$value;
 
   if (useThemeValues) {
@@ -145,22 +168,22 @@ const extractValue = (token: TransformedToken, options: ExtractOptions) => {
         ? extension.light.$value
         : extension?.$value;
 
-    return value ? resolveReferences(value, {prefix, tokens}) : initialValue;
+    return value ? resolveReferences(value, {prefix, tokens, omitDefault}) : initialValue;
   }
 
   return initialValue;
 };
 
-type ShortenOptions = Pick<ExtractOptions, 'prefix' | 'tokens'>;
+type ShortenOptions = Pick<ExtractOptions, 'omitDefault' | 'prefix' | 'tokens'>;
 
 /** Replace `{token.reference}` placeholders in a value with `var()` references to the tokens */
 const resolveReferences = (value: string, options: ShortenOptions) => {
-  const {prefix, tokens} = options;
+  const {prefix, tokens, omitDefault} = options;
   const ref = tokens ? getReferences(value, tokens) : [];
 
   return value.replace(/\{([\w.$-]+)\}/g, a => {
     const refToken = ref.find(r => r.key === a);
-    return refToken ? toCSSVarRef(refToken, prefix) : a;
+    return refToken ? toCSSVarRef(refToken, prefix, omitDefault) : a;
   });
 };
 
