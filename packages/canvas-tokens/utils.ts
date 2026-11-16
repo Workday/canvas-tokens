@@ -12,6 +12,9 @@ export const getOklchValue = (token: any) => {
 /** Module syntax a generated JS file is written in; `ts` is used for `.d.ts` declarations */
 export type SyntaxStyle = 'es6' | 'commonjs' | 'ts';
 
+/** Turn a token key into a JS property name, the `$root` key is named `default` */
+export const toJsKey = (key: string) => camelCase(key === '$root' ? 'default' : key);
+
 /** Join the non-empty parts with a dash */
 export const joinParts = (...parts: (string | undefined)[]) => parts.filter(Boolean).join('-');
 
@@ -79,7 +82,7 @@ export const getJsPath = (token: TransformedToken): string => {
 
   // Brand files skip their `brand` root, color files keep their `color` root
   const path = /(^|\/)brand\//.test(token.filePath) ? token.path.slice(1) : token.path;
-  return [level, ...path.map(key => camelCase(key))].join('.');
+  return [level, ...path.map(toJsKey)].join('.');
 };
 
 /**

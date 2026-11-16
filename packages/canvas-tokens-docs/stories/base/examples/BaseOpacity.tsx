@@ -33,7 +33,7 @@ const opacityTokens: OpacityToken[] = [
   const percentageValue = `${numericValue / 10}%`; // Convert 80 -> 8%, 200 -> 20%
   // The CSS value is already a decimal (0-1), so use it directly
   const decimalValue = parseFloat(value) || 0;
-  
+
   return {
     ...token,
     value,
@@ -46,14 +46,7 @@ export const OpacityTokens = () => {
   return (
     <TokenGrid
       caption="base opacity tokens"
-      headings={[
-        'Sample',
-        'CSS Variable',
-        'JS Variable',
-        'Value',
-        'Percentage',
-        'Decimal',
-      ]}
+      headings={['Sample', 'CSS Variable', 'JS Variable', 'Value', 'Percentage', 'Decimal']}
       rows={opacityTokens}
     >
       {token => (
@@ -63,7 +56,7 @@ export const OpacityTokens = () => {
               style={{
                 width: '60px',
                 height: '60px',
-                backgroundColor: `var(${system.color.brand.surface.primary.root})`,
+                backgroundColor: `var(${system.color.brand.surface.primary.default})`,
                 opacity: `var(${token.cssVar})`,
               }}
             />

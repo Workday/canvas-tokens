@@ -39,9 +39,9 @@ export const DarkMode = () => {
       flexDirection="column"
       gap="m"
       padding="l"
-      backgroundColor={v(c.surface.root)}
-      color={v(c.fg.root)}
-      border={`1px solid ${v(c.border.root)}`}
+      backgroundColor={v(c.surface.default)}
+      color={v(c.fg.default)}
+      border={`1px solid ${v(c.border.default)}`}
       borderRadius="l"
     >
       <Flex justifyContent="space-between" alignItems="center">
