@@ -30,7 +30,7 @@ export const DownloadLLMFile = ({rawFileLink, filename}: DownloadLLMFileProps) =
 
   return (
     <div className="download-card">
-      <div className="download-card-filename cnvs-sys-type-body-small">
+      <div className="download-card-filename cnvs-sys-type-body-sm">
         <code>📁 {filename}</code>
       </div>
       <div className="download-card-actions">

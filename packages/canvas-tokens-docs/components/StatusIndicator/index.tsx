@@ -11,7 +11,7 @@ const styles = {
 export const StatusIndicator = ({content, type}: {content: string; type: 'ai'}) => {
   return (
     <span className="status-indicator" style={styles[type]}>
-      <div className="status-indicator-content cnvs-sys-type-subtext-large">{content}</div>
+      <div className="status-indicator-content cnvs-sys-type-subtext-lg">{content}</div>
     </span>
   );
 };
