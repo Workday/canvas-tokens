@@ -14,3 +14,8 @@
 .cnvs-docs-theme-control-horizontal {
   --theme-control-columns: repeat(auto-fit, minmax(45%, 1fr));
 }
+
+.cnvs-docs-theme-control-search {
+  margin-top: 16px;
+  max-width: 320px;
+}

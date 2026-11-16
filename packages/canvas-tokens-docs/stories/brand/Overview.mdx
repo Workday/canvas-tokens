@@ -1,5 +1,10 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-import {PrimaryBrandTokens} from './examples/PrimaryBrandTokens';
+import {NavCardStack} from '../../components/NavCardStack';
+import {BrandPrimaryTokens} from './examples/BrandPrimaryTokens';
+import {BrandPositiveTokens} from './examples/BrandPositiveTokens';
+import {BrandCautionTokens} from './examples/BrandCautionTokens';
+import {BrandCriticalTokens} from './examples/BrandCriticalTokens';
+import {BrandNeutralTokens} from './examples/BrandNeutralTokens';
 
 <Meta title="Tokens/Brand/Colors" />
 
@@ -7,16 +12,79 @@ import {PrimaryBrandTokens} from './examples/PrimaryBrandTokens';
 
 # Brand Tokens
 
-Brand tokens are **themed variables** designated for brand / tenant-level customization. They are
-not connected to system tokens, which are intended to be application-wide. They're used for our
-buttons, focus rings, errors, and banners.
+Brand tokens are **themed variables** designed for brand and tenant-level customization. They are
+not connected to system tokens, which apply across the whole application. Brand tokens drive
+buttons, focus rings, status indicators, and banners.
+
+Each brand color category is a scale that references a [base palette](/docs/tokens-base-color-palette--docs)
+color. Tenants can override a whole scale to re-theme the UI. Every scale has the same steps
+(`25` to `975`), plus alpha steps (`a25` to `a300`), and each step has a dark mode value.
+
+- [Primary](#primary)
+- [Positive](#positive)
+- [Caution](#caution)
+- [Critical](#critical)
+- [Neutral](#neutral)
+- [Action](#action)
 
 ## Primary
 
-<PrimaryBrandTokens />
+The main brand color. Use it for the most prominent interactive elements, such as primary buttons,
+links, selected states, and the default focus ring. Defining the primary scale covers most theming
+use cases.
+
+<BrandPrimaryTokens />
+
+## Positive
+
+Communicates success, completion, and confirmation, for example in success banners and status
+indicators.
+
+<BrandPositiveTokens />
+
+## Caution
+
+Communicates warnings and states that need the user's attention but are not errors, for example in
+warning banners and alerts.
+
+<BrandCautionTokens />
+
+## Critical
+
+Communicates errors, invalid input, and destructive actions, for example in error messages and
+the focus ring on elements in an error state.
+
+<BrandCriticalTokens />
+
+## Neutral
+
+A brand-level neutral scale for text, borders, and surfaces that should stay free of brand hues.
+Use it when a color should follow tenant theming but not appear tinted.
+
+<BrandNeutralTokens />
+
+</Unstyled>
 
 ## Action
 
-> **Note:** `--cnvs-brand-action-**` should be used with caution. Defining brand primary colors should cover most of the theming use cases. However, in situations where you want more granular control over actions like `PrimaryButton`, you can define different colors for the action tokens. By Default, the action tokens map to our `--cnvs-brand-primary-**` tokens.
+Action tokens give granular control over action elements, such as the regular, hover, and active
+states of a primary button.
 
-</Unstyled>
+Action tokens are available **only in code packages** (JS / TS). They have no CSS variables, which
+leaves tenants more control over theming. If you reference an action token and it is not defined,
+add a fallback so the UI still shows tenant branding.
+
+> **Note:** Use `brand.action.*` with caution. Defining the brand primary scale covers most theming
+> use cases. Define action colors only when you need more granular control over elements such as
+> `PrimaryButton`.
+
+| Token | Description |
+| --- | --- |
+| `brand.action.lightest` | Lightest action color |
+| `brand.action.lighter` | Lighter action color, such as for subtle backgrounds |
+| `brand.action.light` | Light action color |
+| `brand.action.base` | Main action color, such as for the regular state of a primary button |
+| `brand.action.dark` | Dark action color, such as for the hover state of a primary button |
+| `brand.action.darker` | Darker action color, such as for the active state of a primary button |
+| `brand.action.darkest` | Darkest action color |
+| `brand.action.accent` | Foreground color for content placed on action elements |
