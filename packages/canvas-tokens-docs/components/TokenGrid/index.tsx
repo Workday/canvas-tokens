@@ -33,12 +33,12 @@ export function TokenGrid<T>({caption, children, headings, rows}: TokenGridProps
   return (
     <table className="token-grid">
       {caption && (
-        <caption className="token-grid__caption cnvs-sys-type-subtext-large">{caption}</caption>
+        <caption className="token-grid__caption cnvs-sys-type-subtext-lg">{caption}</caption>
       )}
       <thead className="token-grid__head">
         <tr className="token-grid__row">
           {headings.map((heading, index) => (
-            <th key={index} className="token-grid__head-item cnvs-sys-type-subtext-large">
+            <th key={index} className="token-grid__head-item cnvs-sys-type-subtext-lg">
               {heading}
             </th>
           ))}
@@ -60,14 +60,14 @@ const TokenGridRowItem: React.FC<React.HTMLProps<HTMLTableCellElement>> = ({
   ...props
 }) => (
   <td
-    className={classNames('token-grid__row-item cnvs-sys-type-subtext-medium', className)}
+    className={classNames('token-grid__row-item cnvs-sys-type-subtext-md', className)}
     {...props}
   />
 );
 
 const TokenGridSample: React.FC<React.HTMLProps<HTMLSpanElement>> = ({className, ...props}) => (
   <span
-    className={classNames('token-grid__sample cnvs-sys-type-body-small', className)}
+    className={classNames('token-grid__sample cnvs-sys-type-body-sm', className)}
     {...props}
   />
 );
@@ -83,7 +83,7 @@ const TokenGridMonospaceLabel: React.FC<
     <span
       className={classNames(
         'token-grid__monospace-label',
-        `cnvs-sys-type-subtext-medium ${
+        `cnvs-sys-type-subtext-md ${
           isDeprecated ? 'token-grid__deprecate-monospace-label' : className
         }`
       )}
