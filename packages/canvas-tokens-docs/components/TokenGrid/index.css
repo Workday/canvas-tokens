@@ -2,6 +2,7 @@
   border: solid 1px var(--cnvs-sys-color-border-default);
   border-radius: 0.5rem;
   display: grid;
+  font-family: var(--cnvs-sys-font-family-default);
   min-width: 62.5rem;
   max-width: 80rem;
   overflow-x: auto;
