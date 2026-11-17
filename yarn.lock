@@ -3968,17 +3968,17 @@
   resolved "https://registry.yarnpkg.com/@workday/canvas-expressive-icons-web/-/canvas-expressive-icons-web-1.0.2.tgz#8cd2a75a5a59aed528d5b9c7a004c6478f0d9084"
   integrity sha512-57ao8gTvwy71wyMzuVks95aeRb0HsOx49HweuNM7RnQo9b8LJ/ToV2j7KJJYbekTsAqZxJBkFyFwX9tokja/kA==
 
-"@workday/canvas-kit-popup-stack@^16.2.20":
-  version "16.2.20"
-  resolved "https://registry.yarnpkg.com/@workday/canvas-kit-popup-stack/-/canvas-kit-popup-stack-16.2.20.tgz#f856d241cdc8366f38acaf4afbdb4aca7a08ae52"
-  integrity sha512-qB25EJ+RcmXOKDgge5KIZt/7EGchK0r98iShOsvU5tekbtJaGbQ4aTH037fzam+HlyKdW8zIxeyBo3mZADTK9g==
+"@workday/canvas-kit-popup-stack@^16.2.21":
+  version "16.2.21"
+  resolved "https://registry.yarnpkg.com/@workday/canvas-kit-popup-stack/-/canvas-kit-popup-stack-16.2.21.tgz#39e3d9cdf127c38a3955d987a1f23d5598a13b30"
+  integrity sha512-daHu3AL7n3tVJOOvYbjZ8IIoi7Wp0SKzYkKYwgl2P60SEnOuDpnaxG1t6BQE9Wm4GlVimJmW9IC1XVllK6iCqQ==
   dependencies:
     screenfull "^5.2.0"
 
-"@workday/canvas-kit-react@^16.2.20":
-  version "16.2.20"
-  resolved "https://registry.yarnpkg.com/@workday/canvas-kit-react/-/canvas-kit-react-16.2.20.tgz#51a076d659cff4265f8023182ce38e6e3db435e6"
-  integrity sha512-69d6ReyP96De8e2eAlHEHGglruskRZyPWSwm7LWD7kUfzYPvDV2aCUaBbRHxSUetYlQyN6O5yu6BWZdOZlqj5g==
+"@workday/canvas-kit-react@^16.2.21":
+  version "16.2.21"
+  resolved "https://registry.yarnpkg.com/@workday/canvas-kit-react/-/canvas-kit-react-16.2.21.tgz#ad2585ef6b7a26348e00a1c06c45b466592f35e2"
+  integrity sha512-pHCVyDrrizBTtGWlTFlWPJ6LTrVcUl5SmIu34mj9HX5Cz5dd/n00+yZLHdik2635pCgcFCSF9XK38EPxl7tssA==
   dependencies:
     "@emotion/is-prop-valid" "^1.1.1"
     "@emotion/react" "^11.7.1"
@@ -3987,8 +3987,8 @@
     "@tanstack/react-virtual" "^3.13.9"
     "@workday/canvas-colors-web" "^2.0.0"
     "@workday/canvas-expressive-icons-web" "1.0.2"
-    "@workday/canvas-kit-popup-stack" "^16.2.20"
-    "@workday/canvas-kit-styling" "^16.2.20"
+    "@workday/canvas-kit-popup-stack" "^16.2.21"
+    "@workday/canvas-kit-styling" "^16.2.21"
     "@workday/canvas-system-icons-web" "^5.0.3"
     "@workday/canvas-tokens-web" "^4.4.0"
     "@workday/design-assets-types" "^0.3.0"
@@ -3999,10 +3999,10 @@
     screenfull "^5.2.0"
     use-resize-observer "^9.1.0"
 
-"@workday/canvas-kit-styling@^16.2.20":
-  version "16.2.20"
-  resolved "https://registry.yarnpkg.com/@workday/canvas-kit-styling/-/canvas-kit-styling-16.2.20.tgz#633519e8c76e3042df1d97dea085c32d82d3fdee"
-  integrity sha512-DVnDotdPwTx03GAl1lj3KqKaEto1PdZq70s9urQvKw4gzcMpEWcD8Q6bF4sp1nLmotgsUBrPDsr9K79eFsrVig==
+"@workday/canvas-kit-styling@^16.2.21":
+  version "16.2.21"
+  resolved "https://registry.yarnpkg.com/@workday/canvas-kit-styling/-/canvas-kit-styling-16.2.21.tgz#7c6e4425f68efad8774e0ea56280f8e9059a73e5"
+  integrity sha512-hwyIKWeesRKldNShlhTuwpxWvKnx0MQtJaxRPSbRMWCE34zB0tfbm0g4Qh2k+DHuXvEW32ZF2TN6blhNdmC+Zw==
   dependencies:
     "@emotion/css" "^11.7.1"
     csstype "^3.0.2"

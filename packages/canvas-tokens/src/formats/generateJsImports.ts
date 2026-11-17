@@ -13,7 +13,11 @@ type BaseOptions = {syntaxStyle?: SyntaxStyle};
 
 // Style Dictionary types `options` loosely, so the required options are enforced
 // where the files are defined (see `IndexFile` in files.ts)
-export type LevelIndexOptions = BaseOptions & {levels: string[]};
+export type LevelIndexOptions = BaseOptions & {
+  levels: string[];
+  /** Also export the `token` function from `./token.js` */
+  withTokenFn?: boolean;
+};
 
 export type TokenIndexOptions = BaseOptions & {
   files: string[];
@@ -28,14 +32,14 @@ export type TokenIndexOptions = BaseOptions & {
 
 /** Generate the index that exports each token level as a namespace */
 export const generateJsLevelIndex = async ({file, options}: FormatFnArguments) => {
-  const {levels, syntaxStyle} = options as LevelIndexOptions;
+  const {levels, withTokenFn, syntaxStyle} = options as LevelIndexOptions;
   const header = await fileHeader({file});
 
   return (
     header +
     (syntaxStyle === 'commonjs'
-      ? generateCommonJsLevelImports(levels)
-      : generateEsModuleLevelImports(levels))
+      ? generateCommonJsLevelImports(levels, withTokenFn)
+      : generateEsModuleLevelImports(levels, withTokenFn))
   );
 };
 
@@ -57,19 +61,23 @@ type TokenImportsProps = {
 };
 
 /** Generate Common JS imports for the provided token levels */
-const generateCommonJsLevelImports = (levels: string[]) => {
+const generateCommonJsLevelImports = (levels: string[], withTokenFn?: boolean) => {
   const imports = levels
     .map((level: string) => `const ${level} = require('./${level}/index.js');`)
     .join('\n');
-  return imports + `\nmodule.exports = {${levels.join(', ')}}\n`;
+  return withTokenFn
+    ? `${imports}\nconst {token} = require('./token.js');\nmodule.exports = {${levels.join(', ')}, token}\n`
+    : `${imports}\nmodule.exports = {${levels.join(', ')}}\n`;
 };
 
 /** Generate ES module imports for the provided token levels */
-const generateEsModuleLevelImports = (levels: string[]) => {
+const generateEsModuleLevelImports = (levels: string[], withTokenFn?: boolean) => {
   const imports = levels
     .map((level: string) => `import * as ${level} from './${level}/index.js';`)
     .join('\n');
-  return imports + `\nexport {${levels.join(', ')}}\n`;
+  return `${imports}\nexport {${levels.join(', ')}}\n${
+    withTokenFn ? "export {token} from './token.js';\n" : ''
+  }`;
 };
 
 // Token files come as `level/name.json`; the index sits inside `level/`

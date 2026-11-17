@@ -1,3 +1,10 @@
+/* This Storybook doesn't set data-theme="sana-canvas" on <html>, so the Sana token CSS doesn't apply
+globally. Remove this override if that theme is adopted. */
+:root {
+  --cnvs-base-font-family-50: 'Sana Sans VF', Roboto, sans-serif;
+  --cnvs-base-font-family-100: 'IBM Plex Mono', 'Roboto Mono', monospace;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -82,6 +89,7 @@ h6 {
 
 pre {
   margin: 0;
+  font-family: var(--cnvs-base-font-family-100);
 }
 
 pre > * {

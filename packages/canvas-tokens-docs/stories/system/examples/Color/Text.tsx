@@ -9,11 +9,11 @@ import {
 } from '../../../../components/ColorGrid';
 
 const textPalette = buildPalette('system.color.fg', {
-  default: system.color.fg.root,
+  default: system.color.fg.default,
   strong: system.color.fg.strong,
   stronger: system.color.fg.stronger,
   disabled: system.color.fg.disabled,
-  'muted.default': system.color.fg.muted.root,
+  'muted.default': system.color.fg.muted.default,
   'muted.strong': system.color.fg.muted.strong,
   inverse: system.color.fg.inverse,
   ai: system.color.fg.ai,

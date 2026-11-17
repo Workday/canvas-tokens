@@ -8,8 +8,8 @@ import {
 } from '../../../../components/ColorGrid';
 
 const backgroundPalette = buildPalette('system.color.bg', {
-  default: system.color.bg.root,
-  alt: system.color.bg.alt.root,
+  default: system.color.bg.default,
+  alt: system.color.bg.alt.default,
 }).sort(sortSystemColorPalette);
 
 export const BackgroundColors = () => (

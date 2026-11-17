@@ -37,6 +37,10 @@ export default create({
   </div>`,
   brandUrl: 'https://github.com/Workday/canvas-kit',
 
+  // Typography
+  fontBase: '"Sana Sans VF", Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+  fontCode: '"IBM Plex Mono", "Roboto Mono", monospace',
+
   // Primary UI
   colorPrimary: '#0F2E66',
   colorSecondary: '#B03286',
