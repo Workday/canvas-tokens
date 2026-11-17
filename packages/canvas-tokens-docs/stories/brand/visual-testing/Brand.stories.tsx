@@ -1,12 +1,13 @@
-import {ColorTokens} from '../examples/Color';
+import React from 'react';
+import {BrandColorsExample} from './TestBrandColors';
+import {BrandDarkColorsExample} from './TestBrandDarkColors';
 
 export default {
-  component: ColorTokens,
   title: 'Visual Tests/Brand Tokens',
-};
-
-export const Color = {
   parameters: {
     chromatic: {disableSnapshot: false},
   },
 };
+
+export const BrandColors = () => <BrandColorsExample />;
+export const BrandDarkColors = () => <BrandDarkColorsExample />;

@@ -127,8 +127,10 @@ const palettes = ${JSON.stringify(palettes)};
 
 // Tokens of the root files keep their level, except for system and palette tokens
 const getLevel = id => {
-  const [root] = id.split('.');
+  const [root, second] = id.split('.');
   if (levels.includes(root)) return '';
+  // Dark palettes are \`--<prefix>-base-palette-dark-<name>-<step>\`
+  if (root === 'dark' && palettes.includes(second)) return 'base-palette-';
   return palettes.includes(root) ? 'base-palette-' : 'sys-';
 };
 
@@ -143,9 +145,11 @@ const getTypeTokensText = ({typeTokens}: Config) => {
 /** Text of the function that maps an id to its CSS variable name */
 const getVarNameText = ({prefix, simpleNames}: Config) => {
   const level = simpleNames ? '' : '${getLevel(id)}';
-  const path = simpleNames ? `id.replace(${COMPONENT_ID}, '').replace(${DEFAULT_ID}, '')` : 'id';
+  const path = simpleNames
+    ? `id.replace(${COMPONENT_ID}, '').replace(${DEFAULT_ID}, '')`
+    : 'id';
   return `const toVarName = id =>
-  id.startsWith('--') ? id : \`--${prefix}-${level}\${${path}.replace(/\\./g, '-')}\`;\n\n`;
+  id.startsWith('--') ? id : \`--${prefix}-${level}\${${path}.replace(/\\./g, '-').toLowerCase()}\`;\n\n`;
 };
 
 /** Text of the exported `token` function */
