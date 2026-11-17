@@ -65,11 +65,7 @@ const SwatchCell = ({token: sdToken, isDark}: {token: SDToken; isDark?: boolean}
           style={{background: isGradient || (hasAlpha && !isDark) ? sdToken.$value : value}}
         />
       </Card>
-      {sdToken.$type === 'color' && (
-        <CodeBlock data-part="ref" type="link">
-          {tokenName}
-        </CodeBlock>
-      )}
+      {sdToken.$type === 'color' && <CodeBlock data-part="ref">{tokenName}</CodeBlock>}
     </div>
   );
 };

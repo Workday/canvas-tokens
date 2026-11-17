@@ -92,3 +92,8 @@
   inset: 0;
   border-radius: inherit;
 }
+
+.token-table td [data-uxi-canvas-kit-component-type='system-icon'] {
+  display: flex;
+  justify-content: center;
+}
