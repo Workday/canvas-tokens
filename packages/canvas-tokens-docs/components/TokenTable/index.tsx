@@ -18,6 +18,7 @@ type TokenType = 'color' | 'spacing' | 'typography' | 'gradient';
 type TokenTableProps = {
   group: string;
   type?: TokenType;
+  isDark?: boolean;
 };
 
 type SDToken = {
@@ -41,18 +42,16 @@ type SDToken = {
   };
 };
 
+const cleanRef = (value: string) => value.replace(/{|}/g, '');
+
 const SwatchCell = ({token: sdToken, isDark}: {token: SDToken; isDark?: boolean}) => {
   const isGradient = sdToken.$type === 'gradient';
   // Gradients have no single reference (`original.$value` is a list of stops), so use the token itself
-  const tokenName = isGradient
-    ? sdToken.key.replace(/{|}/g, '')
-    : sdToken.original.$value.replace(/{|}/g, '');
-  const darkValueRef = sdToken.original.$extensions?.['sana.canvas.tokens']?.modes?.dark.$value;
-  const cleanDarkValue = darkValueRef ? darkValueRef.replace(/{|}/g, '') : undefined;
-
-  const value = (isDark && cleanDarkValue
-    ? tokenVar(cleanDarkValue as any)
-    : tokenVar(tokenName as any)) as unknown as string;
+  const tokenName = cleanRef(sdToken.key);
+  const tokenValueRef = cleanRef(sdToken.original.$value);
+  const darkValue = sdToken.original.$extensions?.['sana.canvas.tokens']?.modes?.dark.$value
+    ? cleanRef(sdToken.original.$extensions?.['sana.canvas.tokens']?.modes?.dark.$value)
+    : undefined;
 
   // Semi-transparent colors get a checkerboard backdrop so the alpha is visible
   const hasAlpha = !isGradient && /\/\s*(?!1(\.0+)?\s*\))[\d.]+%?\s*\)/.test(sdToken.$value);
@@ -60,12 +59,11 @@ const SwatchCell = ({token: sdToken, isDark}: {token: SDToken; isDark?: boolean}
   return (
     <div className="swatch-cell">
       <Card data-part="swatch" data-alpha={hasAlpha ? 'true' : undefined}>
-        <div
-          data-part="swatch-color"
-          style={{background: isGradient || (hasAlpha && !isDark) ? sdToken.$value : value}}
-        />
+        <div data-part="swatch-color" style={{background: tokenVar(tokenName as any)}} />
       </Card>
-      {sdToken.$type === 'color' && <CodeBlock data-part="ref">{tokenName}</CodeBlock>}
+      {sdToken.$type === 'color' && (
+        <CodeBlock data-part="ref">{isDark && darkValue ? darkValue : tokenValueRef}</CodeBlock>
+      )}
     </div>
   );
 };
@@ -158,14 +156,17 @@ const MultiValueBlock = ({title, items}: MultiValueBlockProps) => {
 
 type TokenRowProps = {
   token: SDToken;
+  isDark?: boolean;
 };
 
-const TokenRow = ({token}: TokenRowProps) => {
+const TokenRow = ({token, isDark}: TokenRowProps) => {
   const isDeprecated = token.$deprecated;
   return (
     <Table.Row>
       <Table.Cell>
-        {(token.$type === 'color' || token.$type === 'gradient') && <SwatchCell token={token} />}
+        {(token.$type === 'color' || token.$type === 'gradient') && (
+          <SwatchCell token={token} isDark={isDark} />
+        )}
       </Table.Cell>
       <DescriptionCell token={token} />
       <Table.Cell>
@@ -184,7 +185,7 @@ const TokenRow = ({token}: TokenRowProps) => {
   );
 };
 
-export const TokenTable = ({group}: TokenTableProps) => {
+export const TokenTable = ({group, isDark}: TokenTableProps & {isDark?: boolean}) => {
   const tokens = group ? (getTokens(group) as unknown as SDToken[]) : [];
 
   return (
@@ -198,7 +199,7 @@ export const TokenTable = ({group}: TokenTableProps) => {
       </Table.Head>
       <Table.Body>
         {tokens.map(token => (
-          <TokenRow key={token.key} token={token} />
+          <TokenRow key={token.key} token={token} isDark={isDark} />
         ))}
       </Table.Body>
     </Table>
