@@ -60,16 +60,13 @@ const TokenGridRowItem: React.FC<React.HTMLProps<HTMLTableCellElement>> = ({
   ...props
 }) => (
   <td
-    className={classNames('token-grid__row-item cnvs-sys-type-subtext-md', className)}
+    className={classNames('token-grid__row-item cnvs-sys-type-subtext-lg', className)}
     {...props}
   />
 );
 
 const TokenGridSample: React.FC<React.HTMLProps<HTMLSpanElement>> = ({className, ...props}) => (
-  <span
-    className={classNames('token-grid__sample cnvs-sys-type-body-sm', className)}
-    {...props}
-  />
+  <span className={classNames('token-grid__sample cnvs-sys-type-body-sm', className)} {...props} />
 );
 
 const TokenGridSwatch: React.FC<React.HTMLProps<HTMLSpanElement>> = ({className, ...props}) => (
@@ -83,7 +80,7 @@ const TokenGridMonospaceLabel: React.FC<
     <span
       className={classNames(
         'token-grid__monospace-label',
-        `cnvs-sys-type-subtext-md ${
+        `cnvs-sys-type-subtext-lg ${
           isDeprecated ? 'token-grid__deprecate-monospace-label' : className
         }`
       )}
