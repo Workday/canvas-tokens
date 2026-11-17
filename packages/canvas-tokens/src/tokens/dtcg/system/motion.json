@@ -1,23 +1,35 @@
 {
   "motion": {
     "duration": {
-      "instant": {
+      "instant1": {
         "$value": "{duration.0}",
         "$type": "duration"
       },
-      "short": {
+      "instant2": {
+        "$value": "{duration.50}",
+        "$type": "duration"
+      },
+      "short1": {
         "$value": "{duration.100}",
         "$type": "duration"
       },
-      "medium": {
+      "short2": {
+        "$value": "{duration.150}",
+        "$type": "duration"
+      },
+      "medium1": {
+        "$value": "{duration.200}",
+        "$type": "duration"
+      },
+      "medium2": {
         "$value": "{duration.250}",
         "$type": "duration"
       },
-      "long": {
+      "long1": {
         "$value": "{duration.400}",
         "$type": "duration"
       },
-      "xlong": {
+      "xlong1": {
         "$value": "{duration.700}",
         "$type": "duration"
       }

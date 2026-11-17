@@ -18,12 +18,15 @@ System duration tokens provide standardized timing values for animations and tra
 references a base duration token, so you'll need to have the base CSS variables imported in your
 application as well.
 
+Duration tokens are grouped into tiers: instant, short, medium, long, and xlong. Within a tier,
+numbered steps get progressively slower, so `medium2` is longer than `medium1`.
+
 ```ts
 // styles.ts
 import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
-  transition: `transform var(${system.motion.duration.medium})`,
+  transition: `transform var(${system.motion.duration.medium2})`,
 };
 ```
 
@@ -45,7 +48,7 @@ application as well.
 import {system} from '@workday/canvas-tokens-web';
 
 const styles = {
-  transition: `transform var(${system.motion.duration.medium}) var(${system.motion.easing.quick.standard})`,
+  transition: `transform var(${system.motion.duration.medium2}) var(${system.motion.easing.quick.standard})`,
 };
 ```
 
@@ -56,7 +59,7 @@ using CSS variables directly.
 ```css
 /* styles.css */
 .button {
-  transition: transform var(--cnvs-sys-motion-duration-medium) var(--cnvs-sys-motion-easing-quick-standard);
+  transition: transform var(--cnvs-sys-motion-duration-medium2) var(--cnvs-sys-motion-easing-quick-standard);
 }
 ```
 

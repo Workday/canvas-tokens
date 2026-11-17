@@ -10,11 +10,14 @@ interface DurationToken {
 }
 
 const durationTokens: DurationToken[] = [
-  {cssVar: system.motion.duration.instant, jsVar: formatJSVar('system.motion.duration.instant')},
-  {cssVar: system.motion.duration.short, jsVar: formatJSVar('system.motion.duration.short')},
-  {cssVar: system.motion.duration.medium, jsVar: formatJSVar('system.motion.duration.medium')},
-  {cssVar: system.motion.duration.long, jsVar: formatJSVar('system.motion.duration.long')},
-  {cssVar: system.motion.duration.xlong, jsVar: formatJSVar('system.motion.duration.xlong')},
+  {cssVar: system.motion.duration.instant1, jsVar: formatJSVar('system.motion.duration.instant1')},
+  {cssVar: system.motion.duration.instant2, jsVar: formatJSVar('system.motion.duration.instant2')},
+  {cssVar: system.motion.duration.short1, jsVar: formatJSVar('system.motion.duration.short1')},
+  {cssVar: system.motion.duration.short2, jsVar: formatJSVar('system.motion.duration.short2')},
+  {cssVar: system.motion.duration.medium1, jsVar: formatJSVar('system.motion.duration.medium1')},
+  {cssVar: system.motion.duration.medium2, jsVar: formatJSVar('system.motion.duration.medium2')},
+  {cssVar: system.motion.duration.long1, jsVar: formatJSVar('system.motion.duration.long1')},
+  {cssVar: system.motion.duration.xlong1, jsVar: formatJSVar('system.motion.duration.xlong1')},
 ];
 
 export function DurationTokens() {
