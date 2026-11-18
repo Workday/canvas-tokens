@@ -1,48 +1,64 @@
 import {Meta, Unstyled} from '@storybook/blocks';
 import {
-  BrandFocusColors,
-  BrandSurfaceColors,
-  BrandAccentColors,
-  BrandFgColors,
-  BrandBorderColors,
-} from './examples/Color/Brand';
+  BrandSurfaceTokens,
+  BrandAccentTokens,
+  BrandForegroundTokens,
+  BrandBorderTokens,
+  BrandFocusTokens,
+} from './examples/Color/Tables';
 
-<Meta title="Docs/System Tokens/Color/System Brand (New)" />
+<Meta title="Tokens/System/Color/Brand" />
 
 <Unstyled>
 
-## System Brand Colors
+# System Brand Colors
 
-Brand color tokens provide brand-aligned colors for surfaces, accents, foreground, borders, and focus states.
+System brand tokens are **themed variables** that apply [brand tokens](/docs/tokens-brand-colors--docs)
+to the UI. They are the tenant-themeable counterparts of the surface, accent, foreground, border,
+and focus tokens, so components that use them re-theme when a tenant overrides the brand scales.
+They adapt to light and dark mode.
 
-### Brand Surface Colors
+Use system brand tokens in components instead of referencing brand tokens directly. Use the regular
+system color tokens for colors that should not change with the tenant, such as status colors.
 
-<BrandSurfaceColors />
+- [Surface](#surface)
+- [Accent](#accent)
+- [Foreground](#foreground)
+- [Border](#border)
+- [Focus](#brand-focus)
 
----
+## Surface
 
-### Brand Accent Colors
+Container backgrounds for primary, critical, caution, and positive messaging, with a `strong`
+variant of each, plus `selected` for selected items.
 
-<BrandAccentColors />
+<BrandSurfaceTokens />
 
----
+## Accent
 
-### Brand Foreground Colors
+Solid accents for primary, critical, caution, and positive indicators, plus `action` for
+primary calls to action such as buttons.
 
-<BrandFgColors />
+<BrandAccentTokens />
 
----
+## Foreground
 
-### Brand Border Colors
+Text and icon colors for primary, critical, caution, and positive messaging, with a `strong`
+variant of each, plus `selected` for selected items.
 
-<BrandBorderColors />
+<BrandForegroundTokens />
 
----
+## Border
 
-### Brand Focus Colors
+Borders for focused inputs (`primary`) and for error (`critical`) and warning (`caution`) states.
 
-<BrandFocusColors />
+<BrandBorderTokens />
 
----
+## Brand Focus
+
+Focus rings for interactive elements. `primary` is the default focus ring, `critical` is for elements
+in an error state, and `caution` has an `outer` and an `inner` ring for elements in a warning state.
+
+<BrandFocusTokens />
 
 </Unstyled>

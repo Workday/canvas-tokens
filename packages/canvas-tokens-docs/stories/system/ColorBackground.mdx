@@ -1,17 +1,25 @@
 import {Meta, Unstyled} from '@storybook/blocks';
+import {BackgroundTokens} from './examples/Color/Tables';
 
-import {
-  BackgroundColors
-} from './examples/Color/Background';
-
-<Meta title="Docs/System Tokens/Color/Background" />
+<Meta title="Tokens/System/Color/Background" />
 
 <Unstyled>
 
-## Background Colors
+# Background Colors
 
-Background color tokens provide semantic color values for surfaces and containers across the UI.
+Background tokens color the page itself, the layer every other surface sits on. They are
+**themed variables** that adapt to light and dark mode. Use them on the application or page root,
+and use [surface tokens](/docs/docs-system-tokens-color-surface-new--docs) for the containers
+placed on top, such as cards, popovers, and modals.
 
-<BackgroundColors />
+- [Page backgrounds](#page-backgrounds)
+- [Usage](#usage)
+
+## Page backgrounds
+
+`color.bg.default` is the standard page background. `color.bg.alt.default` is an alternative page
+background for views that need to read as a separate area from the default page.
+
+<BackgroundTokens />
 
 </Unstyled>

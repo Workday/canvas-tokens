@@ -32,8 +32,13 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: #fff;
-  background-image: conic-gradient(#ececec 25%, #fff 0 50%, #ececec 0 75%, #fff 0);
+  background-color: var(--cnvs-sys-color-surface-default);
+  background-image: conic-gradient(
+    var(--cnvs-sys-color-surface-raised) 25%,
+    var(--cnvs-sys-color-surface-default) 0 50%,
+    var(--cnvs-sys-color-surface-raised) 0 75%,
+    var(--cnvs-sys-color-surface-default) 0
+  );
   background-size: 12px 12px;
 }
 

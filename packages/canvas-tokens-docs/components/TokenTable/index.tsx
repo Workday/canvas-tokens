@@ -19,9 +19,11 @@ type TokenTableProps = {
   group: string;
   type?: TokenType;
   isDark?: boolean;
+  /** Narrows the group to a subset of its tokens, e.g. one sub-category of `system.color.surface`. */
+  filter?: (token: SDToken) => boolean;
 };
 
-type SDToken = {
+export type SDToken = {
   key: string;
   $value: string;
   $type: TokenType;
@@ -42,12 +44,19 @@ type SDToken = {
   };
 };
 
-const cleanRef = (value: string) => value.replace(/{|}/g, '');
+/** A token reference like `{base.palette.blue.500}`, or the hex of a raw (unreferenced) color value. */
+const cleanRef = (value: unknown) =>
+  typeof value === 'string' && value.startsWith('{') && value.endsWith('}')
+    ? value.replace(/{|}/g, '').replace(/\.\$root$/, '.default')
+    : '';
+
+/** The public token name: a trailing `$root` segment is exposed as `default`, e.g. `color.surface.default`. */
+const getTokenName = (key: string) => cleanRef(key).replace(/\.\$root$/, '.default');
 
 const SwatchCell = ({token: sdToken, isDark}: {token: SDToken; isDark?: boolean}) => {
-  const isGradient = sdToken.$type === 'gradient';
+  const isGradient = sdToken.$type === 'gradient' || sdToken.$value?.startsWith('linear-gradient');
   // Gradients have no single reference (`original.$value` is a list of stops), so use the token itself
-  const tokenName = cleanRef(sdToken.key);
+  const tokenName = getTokenName(sdToken.key);
   const tokenValueRef = cleanRef(sdToken.original.$value);
   const darkValue = sdToken.original.$extensions?.['sana.canvas.tokens']?.modes?.dark.$value
     ? cleanRef(sdToken.original.$extensions?.['sana.canvas.tokens']?.modes?.dark.$value)
@@ -59,9 +68,9 @@ const SwatchCell = ({token: sdToken, isDark}: {token: SDToken; isDark?: boolean}
   return (
     <div className="swatch-cell">
       <Card data-part="swatch" data-alpha={hasAlpha ? 'true' : undefined}>
-        <div data-part="swatch-color" style={{background: tokenVar(tokenName as any)}} />
+        <div data-part="swatch-color" style={{background: tokenVar(tokenName as any)} as any} />
       </Card>
-      {sdToken.$type === 'color' && (
+      {!isGradient && (
         <CodeBlock data-part="ref">{isDark && darkValue ? darkValue : tokenValueRef}</CodeBlock>
       )}
     </div>
@@ -89,9 +98,17 @@ const getMobileTokenName = (path: string[]) => {
   }
 };
 
+const cleanTitle = (name: string) =>
+  name
+    .replace('.default', '')
+    .replace('.bg', '.background')
+    .replace('.fg', '.foreground')
+    .replace('.ai', '.AI')
+    .replace(/\./g, ' ');
+
 const DescriptionCell = ({token}: {token: SDToken}) => {
-  const name = token.key.replace(/{|}/g, '');
-  const title = name.replace(/\./g, ' ');
+  const name = getTokenName(token.key);
+  const title = cleanTitle(name);
   const cssVar = tokenVar(name as any);
 
   return (
@@ -114,10 +131,10 @@ const DescriptionCell = ({token}: {token: SDToken}) => {
         <MultiValueBlock
           title="Usage"
           items={[
+            {id: 'js', value: `token('${name}')`},
             {id: 'css', value: cssVar},
-            {id: 'js', value: `token('${token.key.replace(/{|}/g, '')}')`},
             {id: 'mobile', value: getMobileTokenName(token.path)},
-          ]}
+          ].filter(item => item.value)}
         />
       </div>
     </Table.Cell>
@@ -185,8 +202,9 @@ const TokenRow = ({token, isDark}: TokenRowProps) => {
   );
 };
 
-export const TokenTable = ({group, isDark}: TokenTableProps & {isDark?: boolean}) => {
-  const tokens = group ? (getTokens(group) as unknown as SDToken[]) : [];
+export const TokenTable = ({group, isDark, filter}: TokenTableProps) => {
+  const allTokens = group ? (getTokens(group) as unknown as SDToken[]) : [];
+  const tokens = filter ? allTokens.filter(filter) : allTokens;
 
   return (
     <Table aria-label={`${group} tokens table`} className="token-table">

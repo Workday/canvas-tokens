@@ -86,7 +86,7 @@ const Hero = ({step, token, family, isAlpha, isDark, isDarkMode}: HeroProps) => 
       style={{'--hero-bg-color': token.$value} as React.CSSProperties}
     >
       <div className="cnvs-sys-type-heading-md cnvs-docs-palette-hero-title">{name}</div>
-      <CodeBlock>{token.$value}</CodeBlock>
+      <CodeBlock type="copy">{token.$value}</CodeBlock>
       <div className="cnvs-docs-palette-actions">
         <CopyButton text={hex} variant={buttonVariant}>
           {hex}
