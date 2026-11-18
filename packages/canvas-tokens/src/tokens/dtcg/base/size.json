@@ -98,6 +98,14 @@
       "$type": "dimension",
       "$description": "20px / 1.25rem"
     },
+    "275": {
+      "$value": {
+        "value": 22,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$description": "22px / 1.375rem"
+    },
     "300": {
       "$value": {
         "value": 24,
@@ -105,6 +113,14 @@
       },
       "$type": "dimension",
       "$description": "24px / 1.5rem"
+    },
+    "325": {
+      "$value": {
+        "value": 26,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$description": "26px / 1.625rem"
     },
     "350": {
       "$value": {

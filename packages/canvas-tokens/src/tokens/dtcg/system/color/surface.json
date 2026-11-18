@@ -145,7 +145,7 @@
       },
       "info": {
         "$root": {
-          "$value": "{brand.primary.A25}",
+          "$value": "{blue.A25}",
           "$type": "color",
           "$description": "Container background for informational callouts",
           "$extensions": {
@@ -154,19 +154,12 @@
                 "dark": {
                   "$value": "{dark.blue.A50}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.A25}"
-                  }
-                }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.primary.A50}",
+          "$value": "{blue.A50}",
           "$type": "color",
           "$description": "Stronger container background for info badges and indicators",
           "$extensions": {
@@ -175,13 +168,6 @@
                 "dark": {
                   "$value": "{dark.blue.A100}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.A50}"
-                  }
-                }
               }
             }
           }
@@ -189,7 +175,7 @@
       },
       "danger": {
         "$root": {
-          "$value": "{brand.critical.A25}",
+          "$value": "{red.A25}",
           "$type": "color",
           "$description": "Container background for error states (not tenant themeable)",
           "$extensions": {
@@ -198,19 +184,12 @@
                 "dark": {
                   "$value": "{dark.red.A50}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{red.A25}"
-                  }
-                }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.critical.A50}",
+          "$value": "{red.A50}",
           "$type": "color",
           "$description": "Stronger container background for error states",
           "$extensions": {
@@ -219,13 +198,6 @@
                 "dark": {
                   "$value": "{dark.red.A100}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{red.A50}"
-                  }
-                }
               }
             }
           }
@@ -233,7 +205,7 @@
       },
       "warning": {
         "$root": {
-          "$value": "{brand.caution.A25}",
+          "$value": "{amber.A25}",
           "$type": "color",
           "$description": "Container background for warning states (not tenant themeable)",
           "$extensions": {
@@ -242,19 +214,12 @@
                 "dark": {
                   "$value": "{dark.amber.A50}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{amber.A25}"
-                  }
-                }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.caution.A50}",
+          "$value": "{amber.A50}",
           "$type": "color",
           "$description": "Stronger container background for warning states",
           "$extensions": {
@@ -263,13 +228,6 @@
                 "dark": {
                   "$value": "{dark.amber.A100}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{amber.A50}"
-                  }
-                }
               }
             }
           }
@@ -277,7 +235,7 @@
       },
       "success": {
         "$root": {
-          "$value": "{brand.positive.A25}",
+          "$value": "{green.A25}",
           "$type": "color",
           "$description": "Container background for success states (not tenant themeable)",
           "$extensions": {
@@ -286,19 +244,12 @@
                 "dark": {
                   "$value": "{dark.green.A50}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{green.A25}"
-                  }
-                }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.positive.A50}",
+          "$value": "{green.A50}",
           "$type": "color",
           "$description": "Stronger container background for success states",
           "$extensions": {
@@ -307,13 +258,6 @@
                 "dark": {
                   "$value": "{dark.green.A100}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{green.A50}"
-                  }
-                }
               }
             }
           }
@@ -321,7 +265,7 @@
       },
       "ai": {
         "$root": {
-          "$value": "{brand.primary.A100}",
+          "$value": "{blue.A100}",
           "$type": "color",
           "$description": "Container background indicating AI-generated content",
           "$extensions": {
@@ -330,19 +274,12 @@
                 "dark": {
                   "$value": "{dark.blue.A100}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.A100}"
-                  }
-                }
               }
             }
           }
         },
         "hover": {
-          "$value": "{brand.primary.A200}",
+          "$value": "{blue.A200}",
           "$type": "color",
           "$description": "Hover state for AI-generated content containers",
           "$extensions": {
@@ -350,13 +287,6 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.blue.A200}"
-                }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.A200}"
-                  }
                 }
               }
             }
@@ -431,11 +361,6 @@
           "$description": "High contrast dark container background",
           "$extensions": {
             "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{dark.neutral.A900}"
-                }
-              },
               "themes": {
                 "canvas": {
                   "light": {
@@ -449,18 +374,7 @@
         "strong": {
           "$value": "{brand.neutral.A950}",
           "$type": "color",
-          "$description": "Stronger high contrast dark container background",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{neutral.A950}"
-                  }
-                }
-              }
-            }
-          }
+          "$description": "Stronger high contrast dark container background"
         }
       },
       "loading": {
@@ -508,7 +422,7 @@
       "overlay": {
         "hover": {
           "$root": {
-            "$value": "{brand.neutral.A50}",
+            "$value": "{neutral.A50}",
             "$type": "color",
             "$description": "Hover state overlay for interactive containers",
             "$extensions": {
@@ -552,7 +466,7 @@
         },
         "pressed": {
           "$root": {
-            "$value": "{brand.neutral.A100}",
+            "$value": "{neutral.A100}",
             "$type": "color",
             "$description": "Pressed state overlay for interactive containers",
             "$extensions": {
@@ -616,7 +530,7 @@
           }
         },
         "scrim": {
-          "$value": "{brand.neutral.A400}",
+          "$value": "{neutral.A400}",
           "$type": "color",
           "$description": "Semi-transparent backdrop behind modals and dialogs",
           "$extensions": {
@@ -649,9 +563,7 @@
               },
               "themes": {
                 "canvas": {
-                  "light": {
-                    "$value": ""
-                  }
+                  "$excluded": true
                 }
               }
             }

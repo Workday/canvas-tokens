@@ -21,10 +21,15 @@
           }
         },
         "2": {
-          "$value": "{brand.primary.800}",
+          "$value": "{blue.800}",
           "$type": "color",
           "$extensions": {
             "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{dark.blue.800}"
+                }
+              },
               "themes": {
                 "canvas": {
                   "$excluded": true
@@ -88,10 +93,15 @@
           }
         },
         "6": {
-          "$value": "{brand.positive.600}",
+          "$value": "{green.600}",
           "$type": "color",
           "$extensions": {
             "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{dark.green.600}"
+                }
+              },
               "themes": {
                 "canvas": {
                   "$excluded": true
@@ -119,10 +129,15 @@
           }
         },
         "8": {
-          "$value": "{brand.caution.500}",
+          "$value": "{amber.500}",
           "$type": "color",
           "$extensions": {
             "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{dark.amber.500}"
+                }
+              },
               "themes": {
                 "canvas": {
                   "$excluded": true
@@ -240,10 +255,15 @@
           }
         },
         "15": {
-          "$value": "{brand.positive.800}",
+          "$value": "{green.800}",
           "$type": "color",
           "$extensions": {
             "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{dark.green.800}"
+                }
+              },
               "themes": {
                 "canvas": {
                   "$excluded": true
@@ -253,10 +273,15 @@
           }
         },
         "16": {
-          "$value": "{brand.caution.700}",
+          "$value": "{amber.700}",
           "$type": "color",
           "$extensions": {
             "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{dark.amber.700}"
+                }
+              },
               "themes": {
                 "canvas": {
                   "$excluded": true
