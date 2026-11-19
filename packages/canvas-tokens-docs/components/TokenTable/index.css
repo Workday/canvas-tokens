@@ -238,11 +238,7 @@
   height: 100%;
 }
 
-/* motion previews play once when the play button is pressed */
-.example-cell [data-part='preview'] {
-  display: contents;
-}
-
+/* motion previews play and pause from the play button */
 .example-cell [data-part='example']:has([data-part='play-button']) {
   position: relative;
 }
@@ -259,85 +255,43 @@
   border-radius: 50%;
 }
 
-.example-cell [data-playing='true'] [data-part='curve-x'] {
-  animation-name: token-table-curve-x;
-}
-
-.example-cell [data-playing='true'] [data-part='curve-y'] {
-  animation-name: token-table-curve-y;
-}
-
-/* easing curve: x moves linearly while y follows the easing, so the dot traces the curve */
+/* easing curve: the dot rides the curve at eased speed while a clip reveals the stroke behind it */
 .example-cell [data-part='curve-sample'] {
-  --curve-size: 80px;
-  --curve-dot: 12px;
-  position: relative;
-  width: var(--curve-size);
-  height: var(--curve-size);
-  margin: calc(var(--curve-dot) / 2);
+  display: flex;
+  width: 96px;
+  height: 96px;
+  padding: var(--cnvs-sys-padding-xs);
+  background: var(--cnvs-sys-color-bg-alt-default);
+  border-radius: var(--cnvs-sys-shape-lg);
 }
 
 .example-cell [data-part='curve-sample'] svg {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.example-cell [data-part='curve-linear'] {
-  stroke: var(--cnvs-sys-color-border-strong);
-  stroke-width: 1;
-  stroke-dasharray: 3 3;
-  vector-effect: non-scaling-stroke;
+.example-cell [data-part='curve-track'],
+.example-cell [data-part='curve-stroke'] {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
 }
 
-.example-cell [data-part='curve-x'],
-.example-cell [data-part='curve-y'] {
-  animation-duration: 2000ms;
-  animation-iteration-count: 1;
+.example-cell [data-part='curve-track'] {
+  stroke: var(--cnvs-sys-color-bg-default);
 }
 
-.example-cell [data-part='curve-x'] {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  animation-timing-function: linear;
+.example-cell [data-part='curve-stroke'] {
+  stroke: var(--cnvs-sys-color-fg-default);
 }
 
-.example-cell [data-part='curve-y'] {
-  width: var(--curve-dot);
-  height: var(--curve-dot);
-  margin: calc(var(--curve-dot) / -2);
-  border-radius: 50%;
+.example-cell [data-part='curve-dot'] {
+  fill: var(--cnvs-sys-color-fg-default);
 }
 
-@keyframes token-table-curve-x {
-  0% {
-    transform: translateX(0);
-  }
-  60%,
-  100% {
-    transform: translateX(var(--curve-size));
-  }
-}
-
-@keyframes token-table-curve-y {
-  0% {
-    transform: translateY(0);
-  }
-  60%,
-  100% {
-    transform: translateY(calc(var(--curve-size) * -1));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .example-cell [data-part='curve-x'],
-  .example-cell [data-part='curve-y'] {
-    animation: none;
-  }
+.example-cell [data-part='curve-clip'] {
+  transform-box: fill-box;
+  transform-origin: left center;
 }
 
 /* no example for this token: empty space, without the bordered block */
