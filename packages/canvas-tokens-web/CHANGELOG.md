@@ -1,5 +1,21 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.13
+
+### Major Changes
+
+- ### Components
+
+  - Add Sana Sans and IBM Plex Mono as default fonts in Storybook
+    ([#394](https://github.com/Workday/canvas-tokens/pull/394))
+    ([@sheelah](https://github.com/sheelah))
+
+  ### Tokens
+
+  - feat: Add new tables to showcase new values and dark mode
+    ([#395](https://github.com/Workday/canvas-tokens/pull/395))
+    ([@RayRedGoose](https://github.com/RayRedGoose), Raisa Primerova)
+
 ## 5.0.0-alpha.12
 
 ### Major Changes
