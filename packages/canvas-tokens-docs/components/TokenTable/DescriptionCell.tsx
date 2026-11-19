@@ -40,8 +40,8 @@ export const DescriptionCell = ({
         const color = computed ?? resolveColor(token, theme, isDark).value;
         return [
           {id: 'oklch', value: color},
-          {id: 'hex', value: oklchToHex(color as any)},
-          {id: 'rgba', value: oklchToRgba(color as any)},
+          {id: 'hex', value: oklchToHex(color)},
+          {id: 'rgba', value: oklchToRgba(color)},
         ];
       }
       case 'typography':

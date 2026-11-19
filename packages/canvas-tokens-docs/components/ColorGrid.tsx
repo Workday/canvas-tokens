@@ -144,7 +144,7 @@ export interface ColorGridProps {
 }
 
 /** transform 'camelCase' names into 'spaced case' */
-export function formatName(name: string) {
+function formatName(name: string) {
   return name
     .split(/(?=[A-Z])/)
     .join(' ')

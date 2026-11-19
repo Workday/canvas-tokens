@@ -4,6 +4,6 @@ import {ThemeControl} from '../../../components/ThemeControl';
 
 export const BrandNeutralTokens = () => (
   <ThemeControl>
-    <TokenTable group="brand.neutral" type="color" />
+    <TokenTable group="brand.neutral" />
   </ThemeControl>
 );

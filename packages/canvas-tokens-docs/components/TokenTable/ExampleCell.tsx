@@ -107,7 +107,7 @@ const TokenPreview = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
         <TextSample style={{letterSpacing: cssVar}} />
       ) : (
         <div data-part="opacity-sample">
-          <div data-part="opacity-overlay" style={{opacity: cssVar as any, background: fill}} />
+          <div data-part="opacity-overlay" style={{opacity: cssVar, background: fill}} />
         </div>
       );
     case 'shadow':
@@ -128,7 +128,7 @@ const TokenPreview = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
     case 'cubicBezier':
       return <CurvePreview value={token.$value} cssVar={cssVar} />;
     case 'fontWeight':
-      return <TextSample style={{fontWeight: cssVar as any}} />;
+      return <TextSample style={{fontWeight: cssVar}} />;
     case 'fontFamily':
       return <TextSample style={{fontFamily: cssVar}} />;
     default:
@@ -149,7 +149,7 @@ export const ExampleCell = ({token, level}: {token: SDToken; level?: TokenLevel}
       >
         <TokenPreview token={token} level={level} />
       </Card>
-      {ref && <CodeBlock data-part="ref">{ref}</CodeBlock>}
+      {ref && <CodeBlock>{ref}</CodeBlock>}
     </div>
   );
 };

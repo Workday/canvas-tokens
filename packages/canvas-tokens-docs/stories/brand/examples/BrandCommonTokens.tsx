@@ -4,6 +4,6 @@ import {ThemeControl} from '../../../components/ThemeControl';
 
 export const BrandCommonTokens = () => (
   <ThemeControl>
-    <TokenTable group="brand.common" type="color" />
+    <TokenTable group="brand.common" />
   </ThemeControl>
 );

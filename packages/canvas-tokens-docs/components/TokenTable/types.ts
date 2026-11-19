@@ -1,4 +1,4 @@
-export type TokenType =
+type TokenType =
   | 'color'
   | 'spacing'
   | 'typography'

@@ -6,7 +6,7 @@ import {BodyText} from '@workday/canvas-kit-react/text';
 
 import './index.css';
 
-export type ColorMode = 'light' | 'dark';
+type ColorMode = 'light' | 'dark';
 export type Theme = 'canvas' | 'sana-canvas';
 
 /** `canvas` is the default theme, which has no `data-theme` attribute. */

@@ -27,7 +27,7 @@ const only =
 
 const createTable = (group: string, filter?: Filter) => () => (
   <ThemeControl themeSelect>
-    <TokenTable group={group} type="color" filter={filter} />
+    <TokenTable group={group} filter={filter} />
   </ThemeControl>
 );
 

@@ -10,7 +10,7 @@ export const cleanRef = (value: unknown) =>
 /** The public token name: a trailing `$root` segment is exposed as `default`, e.g. `color.surface.default`. */
 export const getTokenName = (key: string) => cleanRef(key).replace(/\.\$root$/, '.default');
 
-export const toKebab = (part: string) => part.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+const toKebab = (part: string) => part.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 
 /** The `token()` name of a token, e.g. `base.size.100` or `base.font-size.100` (dashes are kept). */
 export const getJsName = (sdToken: SDToken, level?: TokenLevel) =>

@@ -4,6 +4,6 @@ import {ThemeControl} from '../../../components/ThemeControl';
 
 export const BrandPositiveTokens = () => (
   <ThemeControl>
-    <TokenTable group="brand.positive" type="color" />
+    <TokenTable group="brand.positive" />
   </ThemeControl>
 );

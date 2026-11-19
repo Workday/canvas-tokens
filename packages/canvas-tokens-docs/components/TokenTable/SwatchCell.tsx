@@ -1,11 +1,10 @@
 import React from 'react';
 import {Card} from '@workday/canvas-kit-react/card';
-import {token as tokenVar} from '@workday/canvas-tokens-web/token';
 
 import {Theme} from '../ThemeControl';
 import {CodeBlock} from '../CodeBlock';
 import {resolveColor} from './resolveColor';
-import {getTokenName} from './tokenNames';
+import {getCssVar} from './tokenNames';
 import {SDToken} from './types';
 
 /** Matches a color whose alpha is below 1, e.g. `oklch(0.5 0.1 200 / 40%)`. */
@@ -35,10 +34,10 @@ export const SwatchCell = ({token, isDark, theme, swatchRef, computed}: SwatchCe
         <div
           ref={swatchRef}
           data-part="swatch-color"
-          style={{background: tokenVar(getTokenName(token.key) as any) as any}}
+          style={{background: getCssVar(token)}}
         />
       </Card>
-      {!isGradient && <CodeBlock data-part="ref">{ref}</CodeBlock>}
+      {!isGradient && <CodeBlock>{ref}</CodeBlock>}
     </div>
   );
 };
