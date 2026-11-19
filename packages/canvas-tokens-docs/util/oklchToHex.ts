@@ -1,42 +1,14 @@
+import {oklchToSrgb} from './oklchToSrgb';
+
+const toHexByte = (value: number) => value.toString(16).padStart(2, '0');
+
 export function oklchToHex(oklch: string) {
-  const [color, alphaPart] = oklch.replace(/^oklch\(|\)$/g, '').split('/');
-  const [l, c, h] = color.split(/\s+/).filter(Boolean).map(parseFloat);
-  const parsedAlpha = alphaPart === undefined ? 1 : parseFloat(alphaPart);
-  const alpha = Number.isNaN(parsedAlpha) ? 1 : parsedAlpha;
+  const srgb = oklchToSrgb(oklch);
+  if (!srgb) return undefined;
+  const {r, g, b, alpha} = srgb;
 
-  // OKLCH -> OKLab
-  const hr = (h * Math.PI) / 180;
-  const a = c * Math.cos(hr);
-  const b = c * Math.sin(hr);
+  // Alpha is only appended when not fully opaque
+  const alphaHex = alpha >= 1 ? '' : toHexByte(Math.round(alpha * 255));
 
-  // OKLab -> LMS (cube-root space)
-  const l_ = l + 0.3963377774 * a + 0.2158037573 * b;
-  const m_ = l - 0.1055613458 * a - 0.0638541728 * b;
-  const s_ = l - 0.0894841775 * a - 1.291485548 * b;
-
-  const L = l_ ** 3;
-  const M = m_ ** 3;
-  const S = s_ ** 3;
-
-  // LMS -> linear sRGB
-  const lin = [
-    4.0767416621 * L - 3.3077115913 * M + 0.2309699292 * S,
-    -1.2684380046 * L + 2.6097574011 * M - 0.3413193965 * S,
-    -0.0041960863 * L - 0.7034186147 * M + 1.707614701 * S,
-  ];
-
-  // Linear -> gamma-encoded sRGB, clipped to gamut, as a hex byte
-  const toHexByte = (x: number) => {
-    const clamped = Math.min(1, Math.max(0, x));
-    const srgb = clamped <= 0.0031308 ? 12.92 * clamped : 1.055 * clamped ** (1 / 2.4) - 0.055;
-    return Math.round(srgb * 255)
-      .toString(16)
-      .padStart(2, '0');
-  };
-
-  // Alpha -> hex byte (only appended when not fully opaque)
-  const a8 = Math.round(Math.min(1, Math.max(0, alpha)) * 255);
-  const alphaHex = alpha >= 1 ? '' : a8.toString(16).padStart(2, '0');
-
-  return '#' + lin.map(toHexByte).join('') + alphaHex;
+  return '#' + [r, g, b].map(toHexByte).join('') + alphaHex;
 }

@@ -39,7 +39,9 @@ export const TokenRow = ({token, group, isDark, theme, level}: TokenRowProps) =>
   React.useLayoutEffect(() => {
     const element = swatchRef.current;
     if (element && token.$type === 'color') {
-      setComputed(toOklch(getComputedStyle(element).backgroundColor));
+      const css = getComputedStyle(element).backgroundColor;
+      // Show the raw CSS when it can't be converted; DescriptionCell then hides hex and rgba
+      setComputed(toOklch(css) ?? css);
     }
   }, [token, theme, isDark]);
 

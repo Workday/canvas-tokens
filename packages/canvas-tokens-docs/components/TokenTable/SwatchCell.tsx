@@ -31,11 +31,7 @@ export const SwatchCell = ({token, isDark, theme, swatchRef, computed}: SwatchCe
   return (
     <div className="swatch-cell">
       <Card data-part="swatch" data-alpha={hasAlpha ? 'true' : undefined}>
-        <div
-          ref={swatchRef}
-          data-part="swatch-color"
-          style={{background: getCssVar(token)}}
-        />
+        <div ref={swatchRef} data-part="swatch-color" style={{background: getCssVar(token)}} />
       </Card>
       {!isGradient && <CodeBlock>{ref}</CodeBlock>}
     </div>

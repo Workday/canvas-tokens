@@ -17,9 +17,10 @@ const getTokenName = (token: Token): string => token.key.replace(/[{}]/g, '');
 const isHighStep = (step: string) => Number(step.replace(/a/gi, '')) > 400;
 
 /**
- * Whether the copy buttons use the inverse variant. Solid steps below 500 are default in light mode
- * and inverse in dark mode, and steps past 500 are the opposite. Alpha steps are default below 500
- * and inverse past it, in either mode. Some families override both rules (in dark mode alpha black is default and alpha neutral and slate are inverse past 400, matching their hero text).
+ * Whether the copy buttons use the inverse variant. Solid steps up to 400 are default in light mode
+ * and inverse in dark mode, and steps past 400 are the opposite. Alpha steps are default up to 400
+ * and inverse past it, in either mode. White in light mode and black in dark mode override both rules
+ * and always use the default variant.
  */
 const isInverseButton = (family: string, step: string, isAlpha: boolean, isDarkMode: boolean) => {
   if (family === 'white' && !isDarkMode) return false;
@@ -28,7 +29,6 @@ const isInverseButton = (family: string, step: string, isAlpha: boolean, isDarkM
   if (family === 'black' && isDarkMode) return false;
 
   const isHigh = isHighStep(step);
-  if (isAlpha && ['neutral', 'slate'].includes(family) && isDarkMode) return isHigh;
   if (isAlpha) return isHigh;
 
   return isDarkMode ? !isHigh : isHigh;
@@ -165,6 +165,12 @@ export const ColorPaletteCard = ({
 
   const steps = Object.keys(tokens).filter(step => isAlphaStep(step) === isAlpha);
 
+  // The default step may not exist for every family or mode, so fall back to the first available one
+  const currentStep = steps.includes(activeStep) ? activeStep : steps[0];
+  if (!currentStep) {
+    return null;
+  }
+
   return (
     <Card className="cnvs-docs-palette-card">
       <Card.Heading className="cnvs-docs-palette-heading">
@@ -173,8 +179,8 @@ export const ColorPaletteCard = ({
       </Card.Heading>
       <Card.Body>
         <Hero
-          step={activeStep}
-          token={tokens[activeStep]}
+          step={currentStep}
+          token={tokens[currentStep]}
           family={colorFamily as string}
           isAlpha={isAlpha}
           isDark={useDarkTokens}
@@ -186,7 +192,7 @@ export const ColorPaletteCard = ({
               key={step}
               step={step}
               token={tokens[step]}
-              isActive={step === activeStep}
+              isActive={step === currentStep}
               hideName={hideNames}
               onSelect={() => setActiveStep(step)}
             />

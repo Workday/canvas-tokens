@@ -1,26 +1,8 @@
-import React from 'react';
-import {TokenTable} from '../../../components/TokenTable';
-import type {SDToken} from '../../../components/TokenTable';
+import {createTable as createTableWith, isDeprecated, only, under} from '../../tableHelpers';
+import type {Filter} from '../../tableHelpers';
 
-type Filter = (token: SDToken) => boolean;
-
-const pathOf = (token: SDToken) => token.path.join('.');
-
-const under =
-  (prefix: string): Filter =>
-  token =>
-    pathOf(token).startsWith(`${prefix}.`);
-
-const only =
-  (...paths: string[]): Filter =>
-  token =>
-    paths.includes(pathOf(token));
-
-const isDeprecated: Filter = token => Boolean(token.$deprecated);
-
-const createTable = (group: string, filter?: Filter) => () => (
-  <TokenTable group={group} level="base" filter={filter} />
-);
+const createTable = (group: string, filter?: Filter) =>
+  createTableWith(group, filter, {level: 'base'});
 
 // Size
 export const BaseUnitTokens = createTable('base.size', only('baseline', 'fontSize'));

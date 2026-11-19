@@ -35,11 +35,12 @@ const fromSrgb = (r: number, g: number, b: number, alpha: number) => {
 /**
  * Normalizes a computed CSS color (`getComputedStyle(...).backgroundColor`) to `oklch(L C H / A)`.
  * Browsers serialize computed colors as `oklch()`, `oklab()`, `color(srgb ...)` or `rgb()` depending
- * on how the color was authored, so all of them are converted. Unknown formats are returned as is.
+ * on how the color was authored, so all of them are converted. Returns `undefined` for formats
+ * that can't be converted.
  */
-export function toOklch(css: string): string {
+export function toOklch(css: string): string | undefined {
   const match = css.trim().match(/^(oklch|oklab|color|rgba?)\((.*)\)$/i);
-  if (!match) return css;
+  if (!match) return undefined;
 
   const [fn, body] = [match[1].toLowerCase(), match[2]];
   const [channels, alphaPart] = body.split('/').map(part => part.trim());
@@ -61,7 +62,7 @@ export function toOklch(css: string): string {
     );
   }
   if (fn === 'color') {
-    if (parts[0] !== 'srgb') return css;
+    if (parts[0] !== 'srgb') return undefined;
     parts = parts.slice(1);
     return fromSrgb(parseNumber(parts[0]), parseNumber(parts[1]), parseNumber(parts[2]), alpha);
   }

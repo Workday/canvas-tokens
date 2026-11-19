@@ -1,23 +1,4 @@
-import React from 'react';
-import {TokenTable} from '../../../components/TokenTable';
-import type {SDToken} from '../../../components/TokenTable';
-import {ThemeControl} from '../../../components/ThemeControl';
-
-type Filter = (token: SDToken) => boolean;
-
-const pathOf = (token: SDToken) => token.path.join('.');
-
-const under =
-  (prefix: string): Filter =>
-  token =>
-    pathOf(token).startsWith(`${prefix}.`);
-
-const isDeprecated: Filter = token => Boolean(token.$deprecated);
-const active: Filter = token => !isDeprecated(token);
-
-const createTable = (group: string, filter?: Filter) => () => (
-  <TokenTable group={group} filter={filter} />
-);
+import {active, createTable, isDeprecated, under} from '../../tableHelpers';
 
 // Space
 export const SizeTokens = createTable('system.size');
@@ -34,11 +15,7 @@ export const OpacityTokens = createTable('system.opacity', active);
 export const OpacityDeprecatedTokens = createTable('system.opacity', isDeprecated);
 
 // Depth
-export const DepthTokens = () => (
-  <ThemeControl themeSelect>
-    <TokenTable group="system.depth" />
-  </ThemeControl>
-);
+export const DepthTokens = createTable('system.depth', undefined, {controls: 'theme'});
 
 // Motion
 export const EasingTokens = createTable('system.motion', under('motion.easing'));

@@ -1,14 +1,20 @@
 import {token as tokenVar} from '@workday/canvas-tokens-web/token';
 import {SDToken, TokenLevel} from './types';
 
-/** A token reference like `{base.palette.blue.500}`, or the hex of a raw (unreferenced) color value. */
+/** Strips the braces of a reference and exposes a trailing `$root` as `default`, e.g. `{color.surface.$root}` becomes `color.surface.default`. */
+const stripBraces = (ref: string) => ref.replace(/[{}]/g, '').replace(/\.\$root$/, '.default');
+
+/**
+ * The path of a token reference without braces, e.g. `{base.palette.blue.500}` becomes
+ * `base.palette.blue.500`. Returns `''` when the value isn't a reference, such as a raw color value.
+ */
 export const cleanRef = (value: unknown) =>
   typeof value === 'string' && value.startsWith('{') && value.endsWith('}')
-    ? value.replace(/{|}/g, '').replace(/\.\$root$/, '.default')
+    ? stripBraces(value)
     : '';
 
-/** The public token name: a trailing `$root` segment is exposed as `default`, e.g. `color.surface.default`. */
-export const getTokenName = (key: string) => cleanRef(key).replace(/\.\$root$/, '.default');
+/** The public token name of a token key, e.g. `{color.surface.$root}` becomes `color.surface.default`. */
+export const getTokenName = (key: string) => stripBraces(key);
 
 const toKebab = (part: string) => part.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 

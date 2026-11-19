@@ -138,7 +138,12 @@ const Sample = ({token}: {token: DocsToken}) => {
     return (
       <div className="test-token-checker" style={{width: '100%', height: 64, borderRadius: 4}}>
         <div
-          style={{width: '100%', height: '100%', opacity: value, background: 'var(--cnvs-sys-color-accent-info, #0875e1)'}}
+          style={{
+            width: '100%',
+            height: '100%',
+            opacity: value,
+            background: 'var(--cnvs-sys-color-accent-info, #0875e1)',
+          }}
         />
       </div>
     );
@@ -147,9 +152,7 @@ const Sample = ({token}: {token: DocsToken}) => {
   if (type === 'dimension' || type === 'number') {
     switch (root) {
       case 'letter-spacing':
-        return (
-          <div style={{fontSize: '1.5rem', letterSpacing: value}}>Canvas Tokens</div>
-        );
+        return <div style={{fontSize: '1.5rem', letterSpacing: value}}>Canvas Tokens</div>;
       case 'font-size':
         return <div style={{fontSize: value, lineHeight: 1.2}}>{SAMPLE_TEXT}</div>;
       case 'line-height':
@@ -176,7 +179,10 @@ const Sample = ({token}: {token: DocsToken}) => {
         );
       case 'padding':
         return (
-          <div className="test-token-outline" style={{padding: value, borderColor: 'red'}}>
+          <div
+            className="test-token-outline"
+            style={{padding: value, borderColor: 'var(--cnvs-sys-color-border-danger, red)'}}
+          >
             <div className="test-token-box" style={{width: BOX, height: BOX}} />
           </div>
         );

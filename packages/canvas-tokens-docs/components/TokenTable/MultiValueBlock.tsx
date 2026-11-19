@@ -16,6 +16,10 @@ export const MultiValueBlock = ({title, items}: MultiValueBlockProps) => {
   const [selectedId, setSelectedId] = React.useState(items[0]?.id);
   const selected = items.find(item => item.id === selectedId) ?? items[0];
 
+  if (!selected) {
+    return null;
+  }
+
   return (
     <div className="multi-value-block">
       <div>

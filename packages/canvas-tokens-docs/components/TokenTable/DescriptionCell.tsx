@@ -38,11 +38,12 @@ export const DescriptionCell = ({
       case 'color': {
         // Prefer the color the browser computed from the CSS; fall back to the token data until measured
         const color = computed ?? resolveColor(token, theme, isDark).value;
+        // Hex and rgba are undefined for values that aren't valid oklch, which hides their tabs
         return [
           {id: 'oklch', value: color},
           {id: 'hex', value: oklchToHex(color)},
           {id: 'rgba', value: oklchToRgba(color)},
-        ];
+        ].filter(isPresent);
       }
       case 'typography':
         return [{id: 'value', value: formatTypography(token.$value)}];

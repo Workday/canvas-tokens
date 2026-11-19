@@ -63,8 +63,8 @@ export const TestPaletteScale = ({group, isDark, theme}: TestPaletteScaleProps) 
   const colors = isSystem
     ? getSystemTokens(group, path.length > 3)
     : path[0] === 'palette'
-      ? getTokensByStep(getTokens('base.palette'), path.slice(1))
-      : getAllTokens(getTokens(group), path);
+    ? getTokensByStep(getTokens('base.palette'), path.slice(1))
+    : getAllTokens(getTokens(group), path);
 
   return (
     <Card data-theme={getDataTheme(theme)} data-color-mode={isDark ? 'dark' : undefined}>
@@ -72,7 +72,15 @@ export const TestPaletteScale = ({group, isDark, theme}: TestPaletteScaleProps) 
       <div className="swatch-container">
         {Object.entries(colors).map(([key, value]: [string, any]) => (
           <div key={key} className="swatch-item">
-            {value?.$value && <Swatch color={token(value?.key.replace(/{|}/g, '').replace(/\.\$root$/, '.default') as any) as unknown as string} />}
+            {value?.$value && (
+              <Swatch
+                color={
+                  token(
+                    value?.key.replace(/{|}/g, '').replace(/\.\$root$/, '.default') as any
+                  ) as unknown as string
+                }
+              />
+            )}
             <Subtext size="small">{key}</Subtext>
           </div>
         ))}

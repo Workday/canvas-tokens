@@ -99,7 +99,7 @@ const getSystemColorMobileName = (category: string, segments: string[]) => {
 /** Mobile name of a system token, e.g. `SanaCanvasMotion.Duration.n100`. */
 const getSystemMobileName = (group: string, path: string[]) => {
   const [, type, category] = group.split('.');
-  const segments = path[0] === (type === 'color' ? 'color' : type) ? path.slice(1) : path;
+  const segments = path[0] === type ? path.slice(1) : path;
 
   if (type === 'color') return getSystemColorMobileName(category, segments);
 
