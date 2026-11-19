@@ -48,6 +48,8 @@ export const cleanTitle = (name: string) =>
     .replace('.ai', '.AI')
     .replace('base.', '')
     .replace(/\.|-/g, ' ')
+    // numbered steps read as separate words: medium2 becomes medium 2
+    .replace(/([a-z])(\d)/g, '$1 $2')
     // t-shirt sizes read as abbreviations: XS, SM, XXL
     .replace(/\b(x{1,3}[sl]|sm|md|lg)\b/g, size => size.toUpperCase());
 
