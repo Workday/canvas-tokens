@@ -218,9 +218,20 @@
 }
 
 .example-cell [data-part='duration-sample'] {
+  --duration-dot: 12px;
+  position: relative;
   width: 100%;
-  border-radius: 4px;
-  background: var(--cnvs-sys-color-surface-alt-default, transparent);
+  height: var(--duration-dot);
+}
+
+/* track line the dot travels along, matching the easing curve's linear guide */
+.example-cell [data-part='duration-sample']::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px dashed var(--cnvs-sys-color-border-strong);
 }
 
 .example-cell [data-part='opacity-sample'] {
@@ -245,8 +256,9 @@
 }
 
 .example-cell [data-part='duration-sample'] > div {
-  width: var(--cnvs-sys-size-xs);
-  height: var(--cnvs-sys-size-xs);
+  position: relative;
+  width: var(--duration-dot);
+  height: var(--duration-dot);
   border-radius: 50%;
   animation-name: token-table-slide;
   animation-iteration-count: infinite;
@@ -339,7 +351,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(100cqw - var(--cnvs-sys-size-xs)));
+    transform: translateX(calc(100cqw - var(--duration-dot, 12px)));
   }
 }
 
