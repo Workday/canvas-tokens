@@ -16,6 +16,7 @@ const preview: Preview = {
           'Docs',
           [
             'Getting Started',
+            'Token Function',
             'Contributing',
             'Base Tokens',
             'Brand Tokens',
@@ -24,6 +25,7 @@ const preview: Preview = {
             'Sana Theme',
           ],
           'Tokens',
+          ['Base', ['Overview'], 'Brand', ['Overview'], 'System', ['Overview']],
           'Guides',
           ['Upgrade Guides', 'Migrations'],
           'Visual Tests',

@@ -173,7 +173,12 @@ const ExampleCell = ({token: sdToken, level}: {token: SDToken; level?: 'base'}) 
       }
       break;
     case 'shadow':
-      preview = <div data-part="shadow-sample" style={{boxShadow: cssVar}} />;
+      preview = (
+        <div data-part="shadow-sample">
+          <div data-part="shadow-base" />
+          <div data-part="shadow-raised" style={{boxShadow: cssVar}} />
+        </div>
+      );
       break;
     case 'typography':
       preview = (
@@ -226,7 +231,12 @@ const ExampleCell = ({token: sdToken, level}: {token: SDToken; level?: 'base'}) 
 
   return (
     <div className="example-cell">
-      <Card data-part="example">{preview}</Card>
+      <Card
+        data-part="example"
+        style={sdToken.$type === 'shadow' ? {background: 'var(--cnvs-brand-neutral-a50)'} : undefined}
+      >
+        {preview}
+      </Card>
       {ref && <CodeBlock data-part="ref">{ref}</CodeBlock>}
     </div>
   );

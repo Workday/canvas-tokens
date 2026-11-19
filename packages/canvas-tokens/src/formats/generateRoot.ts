@@ -158,6 +158,8 @@ const extractValue = (token: TransformedToken, options: ExtractOptions) => {
   const initialValue =
     outputReferences && typeof token.original.$value === 'string'
       ? resolveReferences(token.original.$value, {prefix, tokens, omitDefault})
+      : outputReferences && token.$type === 'shadow' && Array.isArray(token.original.$value)
+      ? shadowToCss(token.original.$value, {prefix, tokens, omitDefault})
       : token.$value;
 
   if (useThemeValues) {
@@ -185,6 +187,26 @@ const resolveReferences = (value: string, options: ShortenOptions) => {
     const refToken = ref.find(r => r.key === a);
     return refToken ? toCSSVarRef(refToken, prefix, omitDefault) : a;
   });
+};
+
+type ShadowLayer = Record<'offsetX' | 'offsetY' | 'blur' | 'spread' | 'color', unknown>;
+
+/**
+ * Build a `box-shadow` value from the layers of a shadow token. Each part that references another
+ * token (color, offset, blur, spread) stays a `var()` reference instead of a resolved value.
+ */
+const shadowToCss = (layers: ShadowLayer[], options: ShortenOptions) => {
+  const toPart = (part: unknown) => {
+    if (typeof part === 'string') return resolveReferences(part, options);
+    const {value, unit} = (part ?? {}) as {value?: number; unit?: string};
+    return `${value ?? 0}${unit ?? ''}`;
+  };
+
+  return layers
+    .map(({offsetX, offsetY, blur, spread, color}) =>
+      [offsetX, offsetY, blur, spread, color].map(toPart).join(' ')
+    )
+    .join(', ');
 };
 
 /** Generate a CSS class from a composite token, with one declaration per property */

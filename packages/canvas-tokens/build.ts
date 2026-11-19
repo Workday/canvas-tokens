@@ -20,6 +20,7 @@ const jsTransforms = [
   'gradient',
   'cubicBezier/css',
   'shadow/css/shorthand',
+  'css/depth',
 ];
 
 const config = new StyleDictionary({

@@ -151,8 +151,7 @@
   border-bottom-color: transparent;
 }
 
-.example-cell [data-part='padding-sample'],
-.example-cell [data-part='shadow-sample'] {
+.example-cell [data-part='padding-sample'] {
   width: var(--cnvs-sys-size-xl);
   height: var(--cnvs-sys-size-xl);
 }
@@ -180,8 +179,42 @@
 }
 
 .example-cell [data-part='shadow-sample'] {
+  display: grid;
+  place-items: center;
+  width: calc(var(--cnvs-sys-size-xl) * 1.5);
+  height: calc(var(--cnvs-sys-size-xl) * 1.5);
+  flex: none;
+  margin: auto;
+  transform-style: preserve-3d;
+  /* tilt the square so it reads as a raised plane in 3D, with its shadow falling on the card */
+  transform: perspective(180px) rotateX(60deg) rotateZ(-30deg);
+}
+
+/* two squares stacked: a flat base and a raised square above it casting its shadow on the base */
+.example-cell [data-part='shadow-base'],
+.example-cell [data-part='shadow-raised'] {
+  grid-area: 1 / 1;
   border-radius: 4px;
   background: var(--cnvs-sys-color-surface-default);
+}
+
+.example-cell [data-part='shadow-base'] {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-8px) translateX(8px);
+}
+
+.example-cell [data-part='shadow-raised'] {
+  width: calc(var(--cnvs-sys-size-xl) * 1.25);
+  height: calc(var(--cnvs-sys-size-xl) * 1.25);
+  /* lift the square off the base to increase the space between the two */
+  transform: translateZ(18px);
+}
+
+/* smaller example block for the depth tokens */
+.example-cell [data-part='example']:has([data-part='shadow-sample']) {
+  min-height: 0;
+  padding: var(--cnvs-sys-padding-xs);
 }
 
 .example-cell [data-part='duration-sample'] {

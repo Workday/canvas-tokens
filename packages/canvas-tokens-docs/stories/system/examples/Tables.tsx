@@ -1,6 +1,7 @@
 import React from 'react';
 import {TokenTable} from '../../../components/TokenTable';
 import type {SDToken} from '../../../components/TokenTable';
+import {ThemeControl} from '../../../components/ThemeControl';
 
 type Filter = (token: SDToken) => boolean;
 
@@ -33,7 +34,11 @@ export const OpacityTokens = createTable('system.opacity', active);
 export const OpacityDeprecatedTokens = createTable('system.opacity', isDeprecated);
 
 // Depth
-export const DepthTokens = createTable('system.depth');
+export const DepthTokens = () => (
+  <ThemeControl>
+    <TokenTable group="system.depth" />
+  </ThemeControl>
+);
 
 // Motion
 export const EasingTokens = createTable('system.motion', under('motion.easing'));

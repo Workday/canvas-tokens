@@ -86,6 +86,21 @@ export const transforms = [
       return camelCase(name);
     },
   },
+  // transform depth tokens
+  {
+    type: `value`,
+    transitive: true,
+    name: `css/depth`,
+    filter: (token: TransformedToken) =>
+      token.$type === 'boxShadow' && token.path.includes('depth'),
+    transform: (token: TransformedToken) => {
+      const originalValue = token.original.$value;
+
+      console.log(originalValue);
+
+      return `${originalValue.offsetX}px ${originalValue.offsetY}px ${originalValue.blurRadius}px ${originalValue.spreadRadius}px ${originalValue.color}`;
+    },
+  },
 ] as const;
 
 type Stop = {
