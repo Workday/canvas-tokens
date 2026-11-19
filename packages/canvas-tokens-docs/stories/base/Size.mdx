@@ -1,0 +1,27 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {BaseUnitTokens, BaseSizeTokens} from './examples/Tables';
+
+<Meta title="Tokens/Base/Size" />
+
+<Unstyled>
+
+# Base Size Tokens
+
+Base size tokens are the raw dimension scale that system space, size and shape tokens are built
+from. They are **not themed variables**. Prefer [system tokens](/docs/docs-system-tokens-overview--docs)
+unless you are building your own scale.
+
+## Baseline and font size
+
+`base.baseline` is the unit of the 8pt grid. `base.fontSize` is the browser default font size that
+`rem` values resolve against. Treat both as internal: changing them has a drastic effect on the UI.
+
+<BaseUnitTokens />
+
+## Size scale
+
+Each step is a multiple of the baseline, expressed in `rem`.
+
+<BaseSizeTokens />
+
+</Unstyled>

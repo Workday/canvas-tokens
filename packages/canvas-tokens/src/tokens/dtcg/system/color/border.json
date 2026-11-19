@@ -28,11 +28,6 @@
         "$description": "Stronger border for more visible separation",
         "$extensions": {
           "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": "{white.A100}"
-              }
-            },
             "themes": {
               "canvas": {
                 "light": {
@@ -73,7 +68,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{white.A700}"
+                  "$value": "{brand.neutral.A600}"
                 }
               },
               "themes": {
@@ -89,7 +84,7 @@
       },
       "info": {
         "$root": {
-          "$value": "{brand.primary.500}",
+          "$value": "{blue.500}",
           "$type": "color",
           "$description": "Border for informational containers (not tenant themeable)",
           "$extensions": {
@@ -98,20 +93,13 @@
                 "dark": {
                   "$value": "{dark.blue.500}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.500}"
-                  }
-                }
               }
             }
           }
         }
       },
       "danger": {
-        "$value": "{brand.critical.500}",
+        "$value": "{red.500}",
         "$type": "color",
         "$description": "Border for error states (not tenant themeable)",
         "$extensions": {
@@ -120,28 +108,19 @@
               "dark": {
                 "$value": "{dark.red.500}"
               }
-            },
-            "themes": {
-              "canvas": {
-                "light": {
-                  "$value": "{red.500}"
-                }
-              }
             }
           }
         }
       },
       "warning": {
-        "$value": "{brand.caution.500}",
+        "$value": "{amber.400}",
         "$type": "color",
         "$description": "Border for warning states (not tenant themeable)",
         "$extensions": {
           "sana.canvas.tokens": {
-            "themes": {
-              "canvas": {
-                "light": {
-                  "$value": "{amber.400}"
-                }
+            "modes": {
+              "dark": {
+                "$value": "{dark.amber.400}"
               }
             }
           }
@@ -156,7 +135,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{neutral.1000}"
+                  "$value": "{dark.neutral.25}"
                 }
               }
             }
@@ -165,12 +144,21 @@
         "strong": {
           "$value": "{white.A700}",
           "$type": "color",
-          "$description": "Stronger border for use on dark backgrounds"
+          "$description": "Stronger border for use on dark backgrounds",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{black.A700}"
+                }
+              }
+            }
+          }
         }
       },
       "contrast": {
         "$root": {
-          "$value": "{brand.neutral.A900}",
+          "$value": "{neutral.A900}",
           "$type": "color",
           "$description": "High contrast border for maximum visibility",
           "$extensions": {
@@ -206,11 +194,16 @@
         }
       },
       "ai": {
-        "$value": "{brand.primary.950}",
+        "$value": "{blue.950}",
         "$type": "color",
         "$description": "Invisible border for layout spacing",
         "$extensions": {
           "sana.canvas.tokens": {
+            "modes": {
+              "dark": {
+                "$value": "{dark.blue.950}"
+              }
+            },
             "themes": {
               "canvas": {
                 "$excluded": true
@@ -244,16 +237,7 @@
         "primary": {
           "$value": "{brand.primary.500}",
           "$type": "color",
-          "$description": "Tenant-themeable primary border for focused inputs",
-          "$extensions": {
-            "sana.canvas.tokens": {
-              "modes": {
-                "dark": {
-                  "$value": "{brand.neutral.700}"
-                }
-              }
-            }
-          }
+          "$description": "Tenant-themeable primary border for focused inputs"
         },
         "critical": {
           "$value": "{brand.critical.500}",

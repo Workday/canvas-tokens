@@ -5,8 +5,9 @@ import {ThemeControl} from '../../components/ThemeControl';
 import PaletteSolidColors from './examples/PaletteSolidColors';
 import PaletteAlphaColors from './examples/PaletteAlphaColors';
 import PaletteNeutralColors from './examples/PaletteNeutralColors';
+import PaletteUtilityColors from './examples/PaletteUtilityColors';
 
-<Meta title="Tokens/Base/Color Palette" />
+<Meta title="Tokens/Base/Palette" />
 
 <Unstyled>
 
@@ -36,21 +37,13 @@ Alpha colors also adapt to the surface behind them, which helps them sit natural
 
 Accent colors are saturated colors - like blue, red, orange, purple. Accent colors are used to draw attention towards them and should be used sparingly, and for a specific purpose.
 
-<br/>
-
 <PaletteSolidColors />
-
----
 
 ## Alpha Main Colors
 
 Alpha colors are colors with transparency that adaptive dynamically to background colors. This creates a natural layering effect on the background without requiring new color definitions for each background.
 
-<br/>
-
 <PaletteAlphaColors />
-
-<br/>
 
 ## Neutral Colors
 
@@ -59,8 +52,12 @@ Neutrals are greyscale colors, used for backgrounds, foregrounds, or as a base f
 Slate is a tinted neutral built from Workday's brand blue. It's meant for secondary backgrounds, borders, and text for subtle styling that pairs well with brand accents.
 Neutral is an achromatic greyscale with no hue or chroma, from white to black. It's meant for consistent contrast against backgrounds, such as prose text.
 
-<br/>
-
 <PaletteNeutralColors />
+
+## Black and White Colors
+
+Black and white are transparent utility colors that ensure proper contrast against backgrounds and other elements. Built on the clear color, they let you adjust overlays to reach the contrast you need without adding new hues. Their values are the same in light and dark mode and never change between themes.
+
+<PaletteUtilityColors />
 
 </Unstyled>

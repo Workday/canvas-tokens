@@ -1,14 +1,26 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-import {FocusColors } from './examples/Color/Focus';
+import {FocusTokens} from './examples/Color/Tables';
 
-<Meta title="Docs/System Tokens/Color/Focus" />
+<Meta title="Tokens/System/Color/Focus" />
 
 <Unstyled>
 
 # Focus Colors
 
-System focus color tokens provide values to create clear delineations between content.
+Focus tokens are **themed variables** for the focus ring on interactive elements, which shows
+keyboard users where they are. They adapt to light and dark mode. The default focus ring is
+tenant themeable and lives in
+[System Brand colors](/docs/docs-system-tokens-color-system-brand-new--docs#brand-focus). The tokens
+here cover cases that should not change with a tenant's brand.
 
-<FocusColors />
+- [Focus rings](#focus-rings)
+- [Usage](#usage)
+
+## Focus rings
+
+`color.focus.inverse` is the focus ring for use on dark backgrounds. `color.focus.contrast` is a high
+contrast focus ring for accessibility.
+
+<FocusTokens />
 
 </Unstyled>

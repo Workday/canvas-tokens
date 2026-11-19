@@ -83,7 +83,8 @@ export const cssFiles = [
 
 /** Labs CSS Files */
 
-const SANA_CANVAS_LABS_THEME_SELECTOR = '[data-theme~="wdt"][data-theme~="sana-canvas"]';
+const LABS_THEME_SELECTOR = '[data-theme~="wdt"]';
+const SANA_CANVAS_LABS_THEME_SELECTOR = `${LABS_THEME_SELECTOR}[data-theme~="sana-canvas"]`;
 
 const isBaseToken = (token: TransformedToken) =>
   token.filePath.includes('/base/') && !token.$deprecated;
@@ -91,43 +92,59 @@ const isBrandToken = (token: TransformedToken) =>
   token.filePath.includes('/brand/') && !token.$deprecated;
 const isComponentToken = (token: TransformedToken) =>
   token.filePath.includes('/component/') && !token.$deprecated;
+const isSystemColorToken = (token: TransformedToken) =>
+  token.filePath.includes('/system/color/') && !token.$deprecated;
 const isSystemToken = (token: TransformedToken) =>
-  token.filePath.includes('/system/') && !token.$deprecated;
+  token.filePath.includes('/system/') && !isSystemColorToken(token) && !token.$deprecated;
 
 const isDarkToken = (token: TransformedToken) =>
   filters.isSanaDarkTokens(token) && !token.$deprecated;
 
+/** Tokens that do not depend on the theme are scoped to `wdt`, the others to `wdt` and `sana-canvas` */
 const labsFile = (
-  name: string,
+  destination: string,
   filter: Filter['filter'],
   options: Record<string, unknown> = {}
 ): File => ({
-  destination: `sana-canvas/${name}.css`,
+  destination: `${destination}.css`,
   format: 'styles/root',
   filter,
   options: {
     outputReferences: true,
     prefix: 'wdt',
-    themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
+    omitDefault: true,
+    themeSelector: LABS_THEME_SELECTOR,
     ...options,
   },
 });
 
+/** Brand and system color tokens are of the sana-canvas theme and of the light mode, so they can be overridden */
+const sanaCanvasLightFile = (name: string, filter: Filter['filter']) =>
+  labsFile(`sana-canvas/${name}`, filter, {
+    themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
+    lightScope: true,
+  });
+
 export const labsCssFiles = [
-  labsFile('base', isBaseToken),
-  labsFile('brand', isBrandToken),
-  labsFile('component', isComponentToken),
-  labsFile('system', isSystemToken),
-  labsFile('dark', isDarkToken, {modeSelector: 'dark'}),
+  labsFile('wdt/base', isBaseToken),
+  labsFile('wdt/component', isComponentToken),
+  labsFile('wdt/system', isSystemToken),
+  sanaCanvasLightFile('brand', isBrandToken),
+  sanaCanvasLightFile('color', isSystemColorToken),
+  labsFile('sana-canvas/dark', isDarkToken, {
+    themeSelector: SANA_CANVAS_LABS_THEME_SELECTOR,
+    modeSelector: 'dark',
+  }),
   {
     destination: 'index.css',
     format: 'styles/index',
     options: {
       imports: [
-        './sana-canvas/base.css',
+        './wdt/base.css',
+        './wdt/component.css',
+        './wdt/system.css',
         './sana-canvas/brand.css',
-        './sana-canvas/component.css',
-        './sana-canvas/system.css',
+        './sana-canvas/color.css',
         './sana-canvas/dark.css',
       ],
     },
@@ -136,14 +153,21 @@ export const labsCssFiles = [
 
 /** JS Files */
 
+/** Token files that must not be built into the JS output */
+const EXCLUDED_JS_FILES = ['base/shadow.json'];
+const isExcludedFromJs = (token: TransformedToken) =>
+  EXCLUDED_JS_FILES.some(file => token.filePath.endsWith(file));
+
 const tokenFiles = fs
   .readdirSync('src/tokens/dtcg', {recursive: true})
-  .filter(file => typeof file === 'string' && file.endsWith('.json')) as string[];
+  .filter(
+    file => typeof file === 'string' && file.endsWith('.json') && !EXCLUDED_JS_FILES.includes(file)
+  ) as string[];
 
 export const getJsFiles = (platform: 'es6' | 'commonjs') => [
   ...getTokenFiles(platform),
   ...getIndexFiles(platform),
-  ...getTokenFnFiles(platform),
+  ...getTokenFnFiles(platform, {}, token => !isExcludedFromJs(token)),
 ];
 
 /**
@@ -310,12 +334,24 @@ function getIndexFiles(platform: 'es6' | 'commonjs'): IndexFile[] {
   return [...files, ...colorIndexFiles, rootFile, rootTSFile];
 }
 
-/** Get the JavaScript files for the documentation platform */
+/**
+ * Get the JavaScript files for the documentation platform.
+ * Each file default-exports an array of the transformed tokens, and `index.js` imports them all
+ * into one object nested by the file path
+ */
+export function getDocsJsFiles(): File[] {
+  const FORMAT = 'javascript/token-array';
 
-export function getDocsJsFiles() {
-  return tokenFiles.map(file => ({
-    destination: file.replace('.json', '.js'),
-    filter: (token: TransformedToken) => token.filePath.endsWith(file),
-    format: 'javascript/esm',
-  }));
+  return [
+    ...tokenFiles.map(file => ({
+      destination: file.replace('.json', '.js'),
+      filter: (token: TransformedToken) => token.filePath.endsWith(file),
+      format: FORMAT,
+    })),
+    {
+      destination: 'index.js',
+      format: 'javascript/docs-index',
+      options: {imports: tokenFiles.map(file => file.replace('.json', '.js'))},
+    },
+  ];
 }

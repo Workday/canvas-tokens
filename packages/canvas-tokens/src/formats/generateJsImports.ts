@@ -66,7 +66,9 @@ const generateCommonJsLevelImports = (levels: string[], withTokenFn?: boolean) =
     .map((level: string) => `const ${level} = require('./${level}/index.js');`)
     .join('\n');
   return withTokenFn
-    ? `${imports}\nconst {token} = require('./token.js');\nmodule.exports = {${levels.join(', ')}, token}\n`
+    ? `${imports}\nconst {token} = require('./token.js');\nmodule.exports = {${levels.join(
+        ', '
+      )}, token}\n`
     : `${imports}\nmodule.exports = {${levels.join(', ')}}\n`;
 };
 

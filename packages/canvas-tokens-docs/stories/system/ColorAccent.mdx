@@ -1,27 +1,51 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-
 import {
-  AccentColors,
-  AccentMutedColors,
-  AccentOverlayColors,
-} from './examples/Color/Accent';
+  AccentStatusTokens,
+  AccentSpecialTokens,
+  AccentMutedTokens,
+  AccentOverlayTokens,
+} from './examples/Color/Tables';
 
-<Meta title="Docs/System Tokens/Color/Accent (New)" />
+<Meta title="Tokens/System/Color/Accent" />
 
 <Unstyled>
 
-## Accent Colors
+# Accent Colors
 
-Accent color tokens provide semantic color values for UI elements that need to stand out or convey meaning.
+Accent tokens are **themed variables** for solid colors that make small UI elements stand out or
+convey meaning, such as status indicators, badges, and progress. They adapt to light and dark mode.
+Status accents are not tenant themeable. For tenant-themeable accents, see
+[System Brand colors](/docs/docs-system-tokens-color-system-brand-new--docs).
 
-<AccentColors />
+- [Status](#status)
+- [AI and Contrast](#ai-and-contrast)
+- [Muted](#muted)
+- [Overlay](#overlay)
+- [Usage](#usage)
 
----
+## Status
 
-<AccentMutedColors />
+Solid accents for informational, success, error, and warning indicators.
 
----
+<AccentStatusTokens />
 
-<AccentOverlayColors />
+## AI and Contrast
+
+`color.accent.ai` is a dark accent that marks AI-generated content. `color.accent.contrast` is a high
+contrast accent for maximum visibility.
+
+<AccentSpecialTokens />
+
+## Muted
+
+Muted accents for secondary and tertiary visual elements. `soft` is the softer of the two.
+
+<AccentMutedTokens />
+
+## Overlay
+
+Overlays for hover and pressed states on accent-colored elements.
+
+<AccentOverlayTokens />
 
 </Unstyled>

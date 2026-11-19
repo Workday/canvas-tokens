@@ -12,9 +12,6 @@ export const getOklchValue = (token: any) => {
 /** Module syntax a generated JS file is written in; `ts` is used for `.d.ts` declarations */
 export type SyntaxStyle = 'es6' | 'commonjs' | 'ts';
 
-/** Turn a token key into a JS property name, the `$root` key is named `default` */
-export const toJsKey = (key: string) => camelCase(key === '$root' ? 'default' : key);
-
 /** Join the non-empty parts with a dash */
 export const joinParts = (...parts: (string | undefined)[]) => parts.filter(Boolean).join('-');
 
@@ -74,6 +71,9 @@ const getCanvasValue = (token: TransformedToken, tokens?: TransformedTokens) => 
   const resolved: any = resolveReferences(value, tokens);
   return resolved?.$value ?? resolved;
 };
+
+/** Turn a token key into a JS property name; the DTCG `$root` key is exposed as `default` */
+export const toJsKey = (key: string) => (key === '$root' ? 'default' : camelCase(key));
 
 /** Get the JS access path (`brand.primary100`) of a token, as exported from the package index */
 export const getJsPath = (token: TransformedToken): string => {

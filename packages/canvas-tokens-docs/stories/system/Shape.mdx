@@ -1,7 +1,7 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-import {ShapeTokens, DeprecatedShapeTokens} from './examples/Shape';
+import {ShapeTokens} from './examples/Tables';
 
-<Meta title="Docs/System Tokens/Shape/Shape" />
+<Meta title="Tokens/System/Shape" />
 
 <Unstyled>
 
@@ -9,33 +9,6 @@ import {ShapeTokens, DeprecatedShapeTokens} from './examples/Shape';
 
 System shape tokens provide consistent shapes across our UI. They're used in our buttons, labels,
 cards, and more.
-
-## Usage
-
-Shape tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
-CSS variable from a base token, so you'll need to have those CSS variables imported in your
-application as well.
-
-```ts
-// styles.ts
-import {system} from '@workday/canvas-tokens-web';
-
-const styles = {
-  borderRadius: `var(${system.shape.x2})`,
-};
-```
-
-They can also be consumed as CSS variables. In the example below, we're applying the
-same styles using CSS variables directly.
-
-```css
-// styles.css
-.card {
-  border-radius: var(--cnvs-sys-shape-x2);
-}
-```
-
----
 
 ## Tokens
 

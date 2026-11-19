@@ -145,7 +145,7 @@
       },
       "info": {
         "$root": {
-          "$value": "{brand.primary.600}",
+          "$value": "{blue.600}",
           "$type": "color",
           "$description": "Informational text and icons (not tenant themeable)",
           "$extensions": {
@@ -154,19 +154,12 @@
                 "dark": {
                   "$value": "{dark.blue.600}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.600}"
-                  }
-                }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.primary.700}",
+          "$value": "{blue.700}",
           "$type": "color",
           "$description": "Stronger informational text and icons",
           "$extensions": {
@@ -175,13 +168,6 @@
                 "dark": {
                   "$value": "{dark.blue.700}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.700}"
-                  }
-                }
               }
             }
           }
@@ -189,7 +175,7 @@
       },
       "danger": {
         "$root": {
-          "$value": "{brand.critical.600}",
+          "$value": "{red.600}",
           "$type": "color",
           "$description": "Error text and icons (not tenant themeable)",
           "$extensions": {
@@ -198,19 +184,12 @@
                 "dark": {
                   "$value": "{dark.red.600}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{red.600}"
-                  }
-                }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.critical.700}",
+          "$value": "{red.700}",
           "$type": "color",
           "$description": "Stronger error text and icons",
           "$extensions": {
@@ -219,13 +198,6 @@
                 "dark": {
                   "$value": "{dark.red.700}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{red.700}"
-                  }
-                }
               }
             }
           }
@@ -233,7 +205,7 @@
       },
       "warning": {
         "$root": {
-          "$value": "{brand.caution.600}",
+          "$value": "{amber.600}",
           "$type": "color",
           "$description": "Warning text and icons (not tenant themeable)",
           "$extensions": {
@@ -242,19 +214,12 @@
                 "dark": {
                   "$value": "{dark.amber.600}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{amber.600}"
-                  }
-                }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.caution.700}",
+          "$value": "{amber.700}",
           "$type": "color",
           "$description": "Stronger warning text and icons",
           "$extensions": {
@@ -263,13 +228,6 @@
                 "dark": {
                   "$value": "{dark.amber.700}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{amber.700}"
-                  }
-                }
               }
             }
           }
@@ -277,7 +235,7 @@
       },
       "success": {
         "$root": {
-          "$value": "{brand.positive.600}",
+          "$value": "{green.600}",
           "$type": "color",
           "$description": "Success text and icons (not tenant themeable)",
           "$extensions": {
@@ -286,19 +244,12 @@
                 "dark": {
                   "$value": "{dark.green.600}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{green.600}"
-                  }
-                }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.positive.700}",
+          "$value": "{green.700}",
           "$type": "color",
           "$description": "Stronger success text and icons",
           "$extensions": {
@@ -307,20 +258,13 @@
                 "dark": {
                   "$value": "{dark.green.700}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{green.700}"
-                  }
-                }
               }
             }
           }
         }
       },
       "ai": {
-        "$value": "{brand.primary.950}",
+        "$value": "{blue.950}",
         "$type": "color",
         "$description": "Text and icons indicating AI-generated content",
         "$extensions": {
@@ -329,20 +273,13 @@
               "dark": {
                 "$value": "{dark.blue.600}"
               }
-            },
-            "themes": {
-              "canvas": {
-                "light": {
-                  "$value": "{blue.950}"
-                }
-              }
             }
           }
         }
       },
       "contrast": {
         "$root": {
-          "$value": "{brand.neutral.A900}",
+          "$value": "{neutral.A900}",
           "$type": "color",
           "$description": "High contrast text for maximum readability",
           "$extensions": {
@@ -351,19 +288,12 @@
                 "dark": {
                   "$value": "{dark.neutral.A900}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{neutral.A900}"
-                  }
-                }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.neutral.A950}",
+          "$value": "{neutral.A950}",
           "$type": "color",
           "$description": "Stronger high contrast text",
           "$extensions": {
@@ -372,13 +302,6 @@
                 "dark": {
                   "$value": "{dark.neutral.A950}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{neutral.A950}"
-                  }
-                }
               }
             }
           }
@@ -386,7 +309,7 @@
       },
       "link": {
         "$root": {
-          "$value": "{brand.primary.600}",
+          "$value": "{blue.600}",
           "$type": "color",
           "$description": "Link text or icons",
           "$extensions": {
@@ -395,19 +318,12 @@
                 "dark": {
                   "$value": "{dark.blue.600}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.600}"
-                  }
-                }
               }
             }
           }
         },
         "hover": {
-          "$value": "{brand.primary.700}",
+          "$value": "{blue.700}",
           "$type": "color",
           "$description": "Link text and icons on hover or active",
           "$extensions": {
@@ -415,13 +331,6 @@
               "modes": {
                 "dark": {
                   "$value": "{dark.blue.700}"
-                }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.700}"
-                  }
                 }
               }
             }
@@ -438,11 +347,6 @@
             "$description": "Tenant-themeable primary text and icon color",
             "$extensions": {
               "sana.canvas.tokens": {
-                "modes": {
-                  "dark": {
-                    "$value": "{brand.primary.600}"
-                  }
-                },
                 "themes": {
                   "canvas": {
                     "light": {
@@ -459,11 +363,6 @@
             "$description": "Stronger tenant-themeable primary text and icon color",
             "$extensions": {
               "sana.canvas.tokens": {
-                "modes": {
-                  "dark": {
-                    "$value": "{brand.primary.700}"
-                  }
-                },
                 "themes": {
                   "canvas": {
                     "light": {

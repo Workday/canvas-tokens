@@ -1,6 +1,8 @@
 .cnvs-docs-palette-card {
   min-width: 45%;
   width: 100%;
+  margin-top: 16px;
+  margin-bottom: -16px;
 }
 
 .cnvs-docs-palette-heading {

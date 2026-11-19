@@ -1,0 +1,127 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+
+<Meta title="Docs/Token Function" />
+
+<Unstyled>
+
+# The token() Function
+
+`token()` takes a token name and returns a reference to the matching CSS variable. It's an
+alternative to writing CSS variable names by hand: code editors check the token name as you type, so
+a wrong name is caught before the page is built.
+
+Plain CSS variables remain the recommended approach. Use `token()` when code needs to refer to a
+token by name, for example in styles written in JavaScript or TypeScript.
+
+> `token()` was added in v5. See the [v5 upgrade guide](/docs/guides-upgrade-guides-v5-overview--docs).
+
+## Import
+
+```ts
+import {token} from '@workday/canvas-tokens-web/token';
+```
+
+The function lives in its own module, so projects that don't use it don't load it. The package
+declares no side effects, so bundlers remove it when it's unused.
+
+`token()` only returns a reference. The variable resolves when the matching stylesheet is loaded, so
+make sure you import the Canvas Tokens CSS in your application.
+
+```ts
+import '@workday/canvas-tokens-web/css/index.css';
+```
+
+## Token names
+
+A token name is the token's path joined with dots, in the same form used across these docs:
+
+| Level   | Name                    | Returns                                |
+| ------- | ----------------------- | -------------------------------------- |
+| System  | `color.surface.default` | `var(--cnvs-sys-color-surface-default)` |
+| System  | `shape.md`              | `var(--cnvs-sys-shape-md)`             |
+| Palette | `blue.500`              | `var(--cnvs-base-palette-blue-500)`    |
+| Base    | `base.size.100`         | `var(--cnvs-base-size-100)`            |
+| Brand   | `brand.primary.600`     | `var(--cnvs-brand-primary-600)`        |
+
+- **System and palette tokens** don't carry their level in the name. System tokens resolve to
+  `--cnvs-sys-*` and palette tokens to `--cnvs-base-palette-*`.
+- **Base, brand and component tokens** keep their level as the first part of the name.
+- The name is converted to a variable name by replacing dots with dashes and lowercasing.
+
+```ts
+token('color.surface.default');
+// 'var(--cnvs-sys-color-surface-default)'
+
+token('base.size.100');
+// 'var(--cnvs-base-size-100)'
+```
+
+## Fallback
+
+Pass a fallback as the second argument for a value that may be missing. The fallback is a CSS
+variable name, not a token name. A fallback that is already a `var()` is used as is.
+
+```ts
+token('color.surface.default', '--app-surface');
+// 'var(--cnvs-sys-color-surface-default, var(--app-surface))'
+
+token('color.surface.default', 'var(--app-surface)');
+// 'var(--cnvs-sys-color-surface-default, var(--app-surface))'
+```
+
+## Type tokens
+
+A type level token returns a whole text style in one call, covering font family, weight, size, line
+height and letter spacing. Spread it into a style object.
+
+```ts
+token('type.body.md');
+// {
+//   fontFamily:    'var(--cnvs-sys-font-family-default)',
+//   fontWeight:    'var(--cnvs-sys-font-weight-regular)',
+//   fontSize:      'var(--cnvs-sys-font-size-body-md)',
+//   lineHeight:    'var(--cnvs-sys-line-height-body-md)',
+//   letterSpacing: 'var(--cnvs-sys-letter-spacing-body-md)'
+// }
+
+const styles = {
+  ...token('type.body.md'),
+  color: token('color.fg.default'),
+};
+```
+
+The available type tokens are `type.subtext`, `type.body`, `type.heading` and `type.title`, each in
+`sm`, `md` and `lg`. Type level tokens don't accept a fallback.
+
+## TypeScript
+
+Every token name is typed, so an unknown name is a build-time error and editors autocomplete names
+and show each token's raw value on hover. Return types are exact string types. The module also
+exports helper types:
+
+| Type              | Description                                                      |
+| ----------------- | ---------------------------------------------------------------- |
+| `Token`           | Every token name                                                 |
+| `ActiveToken`     | Every token name that isn't deprecated                           |
+| `DeprecatedToken` | Token names that still work but will be removed in a later major |
+| `TypeToken`       | The type level token names, such as `type.body.md`               |
+
+```ts
+import {token} from '@workday/canvas-tokens-web/token';
+import type {ActiveToken} from '@workday/canvas-tokens-web/token';
+
+const getColor = (name: ActiveToken) => token(name);
+```
+
+## Things to know
+
+- A name that isn't a token isn't rejected at run time. In TypeScript the error appears at build
+  time. In plain JavaScript the call returns a reference that resolves to nothing.
+- Deprecated names still return a variable, but they're marked deprecated in editors. Move to the
+  replacement listed in the [v5 upgrade guide](/docs/guides-upgrade-guides-v5-overview--docs#deprecations).
+- Each call takes about 0.2 microseconds. Call `token()` once when the module loads, not on every
+  render.
+- Where code only applies a value to an element, write the CSS variable directly in the stylesheet
+  instead. Keep `token()` for places that build styles in code.
+
+</Unstyled>

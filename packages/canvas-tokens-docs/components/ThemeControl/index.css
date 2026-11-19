@@ -8,9 +8,13 @@
   display: grid;
   grid-template-columns: var(--theme-control-columns);
   gap: 16px;
-  margin-top: 16px;
 }
 
 .cnvs-docs-theme-control-horizontal {
   --theme-control-columns: repeat(auto-fit, minmax(45%, 1fr));
+}
+
+.cnvs-docs-theme-control-search {
+  margin-top: 16px;
+  max-width: 320px;
 }
