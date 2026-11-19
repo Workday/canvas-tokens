@@ -4,6 +4,27 @@ import {camelCase} from 'case-anything';
 import {getOklchValue} from './utils';
 import {isOklchToken} from './filters';
 
+type Dimension = {value: number; unit: string} | number | string;
+type ShadowLayer = {
+  offsetX: Dimension;
+  offsetY: Dimension;
+  blur: Dimension;
+  spread: Dimension;
+  color: string;
+};
+
+// Converts a DTCG dimension ({value, unit}) to a CSS length; px becomes rem.
+const toCssLength = (dimension: Dimension): string => {
+  if (typeof dimension !== 'object') {
+    return String(dimension);
+  }
+  const {value, unit} = dimension;
+  if (value === 0) {
+    return '0';
+  }
+  return unit === 'px' ? `${value / 16}rem` : `${value}${unit}`;
+};
+
 export const transforms = [
   // Transform for duration tokens in the base/motion category
   {
@@ -92,13 +113,18 @@ export const transforms = [
     transitive: true,
     name: `css/depth`,
     filter: (token: TransformedToken) =>
-      token.$type === 'boxShadow' && token.path.includes('depth'),
+      token.$type === 'shadow' && token.path.includes('depth'),
     transform: (token: TransformedToken) => {
-      const originalValue = token.original.$value;
+      const layers: ShadowLayer[] = Array.isArray(token.$value)
+        ? token.$value
+        : [token.$value];
 
-      console.log(originalValue);
-
-      return `${originalValue.offsetX}px ${originalValue.offsetY}px ${originalValue.blurRadius}px ${originalValue.spreadRadius}px ${originalValue.color}`;
+      return layers
+        .map(
+          ({offsetX, offsetY, blur, spread, color}) =>
+            `${toCssLength(offsetX)} ${toCssLength(offsetY)} ${toCssLength(blur)} ${toCssLength(spread)} ${color}`
+        )
+        .join(', ');
     },
   },
 ] as const;
