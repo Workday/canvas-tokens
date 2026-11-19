@@ -26,7 +26,7 @@ const only =
     paths.includes(pathOf(token));
 
 const createTable = (group: string, filter?: Filter) => () => (
-  <ThemeControl>
+  <ThemeControl themeSelect>
     <TokenTable group={group} type="color" filter={filter} />
   </ThemeControl>
 );

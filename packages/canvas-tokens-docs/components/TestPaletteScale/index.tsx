@@ -1,4 +1,5 @@
 import React from 'react';
+import {getDataTheme, Theme} from '../ThemeControl';
 import {Card} from '@workday/canvas-kit-react/card';
 import {Subtext} from '@workday/canvas-kit-react/text';
 import {token} from '@workday/canvas-tokens-web/token';
@@ -11,6 +12,7 @@ import './index.css';
 type TestPaletteScaleProps = {
   group: string;
   isDark?: boolean;
+  theme?: Theme;
 };
 
 const Swatch = ({color}: {color: string}) => {
@@ -54,7 +56,7 @@ const getSystemTokens = (group: string, deep: boolean) => {
   );
 };
 
-export const TestPaletteScale = ({group, isDark}: TestPaletteScaleProps) => {
+export const TestPaletteScale = ({group, isDark, theme}: TestPaletteScaleProps) => {
   const path = group.split('.');
   const isSystem = path[0] === 'system';
   // `palette.red` is the `red` family of `base.palette`, others are groups like `brand.primary`
@@ -65,7 +67,7 @@ export const TestPaletteScale = ({group, isDark}: TestPaletteScaleProps) => {
       : getAllTokens(getTokens(group), path);
 
   return (
-    <Card data-theme="sana-canvas" data-color-mode={isDark ? 'dark' : undefined}>
+    <Card data-theme={getDataTheme(theme)} data-color-mode={isDark ? 'dark' : undefined}>
       <Card.Heading>{group}</Card.Heading>
       <div className="swatch-container">
         {Object.entries(colors).map(([key, value]: [string, any]) => (

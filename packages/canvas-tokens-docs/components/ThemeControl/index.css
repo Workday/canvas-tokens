@@ -8,7 +8,6 @@
   display: grid;
   grid-template-columns: var(--theme-control-columns);
   gap: 16px;
-  margin-top: 16px;
 }
 
 .cnvs-docs-theme-control-horizontal {

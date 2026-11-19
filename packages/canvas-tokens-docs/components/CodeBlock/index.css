@@ -6,7 +6,7 @@
   padding: 2px 8px;
   border: 0;
   border-radius: 4px;
-  background: var(--cnvs-base-palette-neutral-a50);
+  background: var(--cnvs-sys-color-surface-raised);
   color: inherit;
   font: inherit;
   cursor: pointer;
@@ -26,15 +26,6 @@
   font-family: var(--cnvs-sys-font-family-mono);
   width: 100%;
   text-align: start;
-}
-
-[data-color-mode='dark'] .cnvs-docs-code-block {
-  background-color: var(--cnvs-base-palette-white-a100);
-}
-
-/* Nested light scopes (e.g. solid palette heroes) inside a dark page. */
-[data-color-mode='light'] .cnvs-docs-code-block {
-  background-color: var(--cnvs-base-palette-black-a50);
 }
 
 .cnvs-docs-code-block-icon {

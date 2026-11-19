@@ -35,7 +35,7 @@ export const OpacityDeprecatedTokens = createTable('system.opacity', isDeprecate
 
 // Depth
 export const DepthTokens = () => (
-  <ThemeControl>
+  <ThemeControl themeSelect>
     <TokenTable group="system.depth" />
   </ThemeControl>
 );
