@@ -217,8 +217,13 @@
   padding: var(--cnvs-sys-padding-xs);
 }
 
+.example-cell [data-part='example']:has([data-part='duration-sample']) {
+  min-height: calc(var(--cnvs-sys-size-xxl) * 1.5);
+  padding: var(--cnvs-sys-padding-lg) var(--cnvs-sys-padding-md);
+}
+
 .example-cell [data-part='duration-sample'] {
-  --duration-dot: 12px;
+  --duration-dot: 16px;
   position: relative;
   width: 100%;
   height: var(--duration-dot);
@@ -260,17 +265,41 @@
   width: var(--duration-dot);
   height: var(--duration-dot);
   border-radius: 50%;
-  animation-name: token-table-slide;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 20;
   animation-direction: alternate;
-  animation-play-state: paused;
 }
 
-/* motion previews only play while the example block is hovered */
-.example-cell [data-part='example']:hover [data-part='duration-sample'] > div,
-.example-cell [data-part='example']:hover [data-part='curve-x'],
-.example-cell [data-part='example']:hover [data-part='curve-y'] {
-  animation-play-state: running;
+/* motion previews play once when the play button is pressed */
+.example-cell [data-part='preview'] {
+  display: contents;
+}
+
+.example-cell [data-part='example']:has([data-part='play-button']) {
+  position: relative;
+}
+
+.example-cell [data-part='play-button'] {
+  position: absolute;
+  right: var(--cnvs-sys-padding-xxs);
+  bottom: var(--cnvs-sys-padding-xxs);
+  z-index: 1;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.example-cell [data-playing='true'] [data-part='duration-sample'] > div {
+  animation-name: token-table-slide;
+}
+
+.example-cell [data-playing='true'] [data-part='curve-x'] {
+  animation-name: token-table-curve-x;
+}
+
+.example-cell [data-playing='true'] [data-part='curve-y'] {
+  animation-name: token-table-curve-y;
 }
 
 /* easing curve: x moves linearly while y follows the easing, so the dot traces the curve */
@@ -300,8 +329,7 @@
 .example-cell [data-part='curve-x'],
 .example-cell [data-part='curve-y'] {
   animation-duration: 2000ms;
-  animation-iteration-count: infinite;
-  animation-play-state: paused;
+  animation-iteration-count: 1;
 }
 
 .example-cell [data-part='curve-x'] {
@@ -310,7 +338,6 @@
   bottom: 0;
   width: 0;
   height: 0;
-  animation-name: token-table-curve-x;
   animation-timing-function: linear;
 }
 
@@ -319,7 +346,6 @@
   height: var(--curve-dot);
   margin: calc(var(--curve-dot) / -2);
   border-radius: 50%;
-  animation-name: token-table-curve-y;
 }
 
 @keyframes token-table-curve-x {

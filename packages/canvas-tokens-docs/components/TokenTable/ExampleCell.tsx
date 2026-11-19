@@ -1,7 +1,8 @@
 import React from 'react';
+import {TertiaryButton} from '@workday/canvas-kit-react/button';
 import {Card} from '@workday/canvas-kit-react/card';
 import {SystemIcon} from '@workday/canvas-kit-react/icon';
-import {xIcon} from '@workday/canvas-system-icons-web';
+import {playIcon, xIcon} from '@workday/canvas-system-icons-web';
 import {token as tokenVar} from '@workday/canvas-tokens-web/token';
 
 import {CodeBlock} from '../CodeBlock';
@@ -140,6 +141,8 @@ const TokenPreview = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
 export const ExampleCell = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
   // Tokens that alias a single token list their reference, like color swatches do
   const ref = cleanRef(token.original.$value);
+  const isMotion = token.$type === 'duration' || token.$type === 'cubicBezier';
+  const [playing, setPlaying] = React.useState(false);
 
   return (
     <div className="example-cell">
@@ -147,7 +150,23 @@ export const ExampleCell = ({token, level}: {token: SDToken; level?: TokenLevel}
         data-part="example"
         style={token.$type === 'shadow' ? {background: 'var(--cnvs-brand-neutral-a50)'} : undefined}
       >
-        <TokenPreview token={token} level={level} />
+        {isMotion && (
+          <TertiaryButton
+            data-part="play-button"
+            size="small"
+            icon={playIcon}
+            aria-label="Play animation"
+            disabled={playing}
+            onClick={() => setPlaying(true)}
+          />
+        )}
+        <div
+          data-part="preview"
+          data-playing={playing}
+          onAnimationEnd={() => setPlaying(false)}
+        >
+          <TokenPreview token={token} level={level} />
+        </div>
       </Card>
       {ref && <CodeBlock>{ref}</CodeBlock>}
     </div>
