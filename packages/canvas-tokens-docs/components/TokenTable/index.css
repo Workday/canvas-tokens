@@ -1,0 +1,347 @@
+.token-table th {
+  background: var(--cnvs-sys-color-surface-navigation);
+}
+
+.token-table tr {
+  /* minmax(0, …) stops wide previews (e.g. size.1000) from stretching the first column */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3.5fr) minmax(0, 0.5fr);
+}
+
+.token-table td {
+  min-width: 0;
+  align-content: baseline;
+  justify-self: center;
+  width: 100%;
+}
+
+.swatch-cell {
+  height: 100%;
+  padding-block: var(--cnvs-sys-padding-xxs);
+}
+
+.swatch-cell [data-part='swatch'] {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: var(--cnvs-sys-size-xxl);
+  border-radius: 4px;
+  margin-bottom: var(--cnvs-sys-gap-sm);
+}
+
+/* checkerboard backdrop layer, only for semi-transparent (alpha) colors */
+.swatch-cell [data-part='swatch'][data-alpha='true']::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--cnvs-sys-color-surface-default);
+  background-image: conic-gradient(
+    var(--cnvs-sys-color-surface-raised) 25%,
+    var(--cnvs-sys-color-surface-default) 0 50%,
+    var(--cnvs-sys-color-surface-raised) 0 75%,
+    var(--cnvs-sys-color-surface-default) 0
+  );
+  background-size: 12px 12px;
+}
+
+.swatch-cell [data-part='swatch'] [data-part='swatch-color'] {
+  z-index: 1;
+}
+
+.swatch-cell button,
+.example-cell button {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.token-description-cell h2 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.multi-value-block {
+  max-width: 320px;
+  min-width: 320px;
+  margin-bottom: var(--cnvs-sys-gap-md);
+}
+
+.multi-value-block .cnvs-docs-code-block {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.multi-value-block > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cnvs-sys-gap-sm);
+  width: 100%;
+  margin-bottom: var(--cnvs-sys-gap-sm);
+}
+
+.multi-value-block > div:first-child > p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.multi-value-block > div:first-child button[aria-pressed='true'] {
+  text-decoration: underline;
+}
+
+.token-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cnvs-sys-gap-lg);
+  row-gap: 0;
+}
+
+.swatch-cell [data-part='swatch-color'] {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.token-table td [data-uxi-canvas-kit-component-type='system-icon'] {
+  display: flex;
+  justify-content: center;
+}
+
+.example-cell {
+  height: 100%;
+  padding-block: var(--cnvs-sys-padding-xxs);
+}
+
+.example-cell [data-part='example'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  min-height: var(--cnvs-sys-size-xxl);
+  padding: var(--cnvs-sys-padding-sm);
+  margin-bottom: var(--cnvs-sys-gap-sm);
+  border-radius: 4px;
+  font-size: 1.5rem;
+  color: var(--cnvs-sys-color-fg-default);
+}
+
+.example-cell [data-part='size-sample'] {
+  min-height: var(--cnvs-sys-size-xs);
+  min-width: 1px;
+  max-width: 100%;
+  flex-shrink: 1;
+  height: var(--cnvs-sys-size-xs);
+}
+
+.example-cell [data-part='shape-sample'] {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+}
+
+/* blue line following the top-left corner, drawn over the full box */
+.example-cell [data-part='shape-corner'] {
+  position: absolute;
+  /* offset from the box so the line follows the curve without touching it */
+  inset: -4px;
+  border: 2px solid var(--cnvs-sys-color-accent-info);
+  /* keep only the top-left quarter: the line ends halfway along each side */
+  clip-path: inset(0 50% 50% 0);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.example-cell [data-part='padding-sample'] {
+  width: var(--cnvs-sys-size-xl);
+  height: var(--cnvs-sys-size-xl);
+}
+
+.example-cell [data-part='padding-sample'] {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding-block: var(--cnvs-sys-padding-xs);
+  border: 1px dashed;
+}
+
+.example-cell [data-part='padding-sample'] > div {
+  width: var(--cnvs-sys-size-xl);
+  height: var(--cnvs-sys-size-xxs);
+}
+
+.example-cell [data-part='gap-sample'] {
+  display: flex;
+}
+
+.example-cell [data-part='gap-sample'] > div {
+  width: var(--cnvs-sys-size-xxs);
+  height: var(--cnvs-sys-size-xxs);
+}
+
+.example-cell [data-part='shadow-sample'] {
+  display: grid;
+  place-items: center;
+  width: calc(var(--cnvs-sys-size-xl) * 1.5);
+  height: calc(var(--cnvs-sys-size-xl) * 1.5);
+  flex: none;
+  margin: auto;
+  transform-style: preserve-3d;
+  /* tilt the square so it reads as a raised plane in 3D, with its shadow falling on the card */
+  transform: perspective(180px) rotateX(60deg) rotateZ(-30deg);
+}
+
+/* two squares stacked: a flat base and a raised square above it casting its shadow on the base */
+.example-cell [data-part='shadow-base'],
+.example-cell [data-part='shadow-raised'] {
+  grid-area: 1 / 1;
+  border-radius: 4px;
+  background: var(--cnvs-sys-color-surface-default);
+}
+
+.example-cell [data-part='shadow-base'] {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-8px) translateX(8px);
+}
+
+.example-cell [data-part='shadow-raised'] {
+  width: calc(var(--cnvs-sys-size-xl) * 1.25);
+  height: calc(var(--cnvs-sys-size-xl) * 1.25);
+  /* lift the square off the base to increase the space between the two */
+  transform: translateZ(18px);
+}
+
+/* smaller example block for the depth tokens */
+.example-cell [data-part='example']:has([data-part='shadow-sample']) {
+  min-height: 0;
+  padding: var(--cnvs-sys-padding-xs);
+}
+
+.example-cell [data-part='opacity-sample'] {
+  width: 100%;
+  height: var(--cnvs-sys-size-xxl);
+  border-radius: 4px;
+  overflow: hidden;
+  /* checkerboard backdrop so the opacity is visible */
+  background-color: var(--cnvs-sys-color-surface-default);
+  background-image: conic-gradient(
+    var(--cnvs-sys-color-surface-navigation) 25%,
+    var(--cnvs-sys-color-surface-default) 0 50%,
+    var(--cnvs-sys-color-surface-navigation) 0 75%,
+    var(--cnvs-sys-color-surface-default) 0
+  );
+  background-size: 12px 12px;
+}
+
+.example-cell [data-part='opacity-sample'] > div {
+  width: 100%;
+  height: 100%;
+}
+
+/* motion previews play once when the play button is pressed */
+.example-cell [data-part='preview'] {
+  display: contents;
+}
+
+.example-cell [data-part='example']:has([data-part='play-button']) {
+  position: relative;
+}
+
+.example-cell [data-part='play-button'] {
+  position: absolute;
+  right: var(--cnvs-sys-padding-xxs);
+  bottom: var(--cnvs-sys-padding-xxs);
+  z-index: 1;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.example-cell [data-playing='true'] [data-part='curve-x'] {
+  animation-name: token-table-curve-x;
+}
+
+.example-cell [data-playing='true'] [data-part='curve-y'] {
+  animation-name: token-table-curve-y;
+}
+
+/* easing curve: x moves linearly while y follows the easing, so the dot traces the curve */
+.example-cell [data-part='curve-sample'] {
+  --curve-size: 80px;
+  --curve-dot: 12px;
+  position: relative;
+  width: var(--curve-size);
+  height: var(--curve-size);
+  margin: calc(var(--curve-dot) / 2);
+}
+
+.example-cell [data-part='curve-sample'] svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.example-cell [data-part='curve-linear'] {
+  stroke: var(--cnvs-sys-color-border-strong);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.example-cell [data-part='curve-x'],
+.example-cell [data-part='curve-y'] {
+  animation-duration: 2000ms;
+  animation-iteration-count: 1;
+}
+
+.example-cell [data-part='curve-x'] {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  animation-timing-function: linear;
+}
+
+.example-cell [data-part='curve-y'] {
+  width: var(--curve-dot);
+  height: var(--curve-dot);
+  margin: calc(var(--curve-dot) / -2);
+  border-radius: 50%;
+}
+
+@keyframes token-table-curve-x {
+  0% {
+    transform: translateX(0);
+  }
+  60%,
+  100% {
+    transform: translateX(var(--curve-size));
+  }
+}
+
+@keyframes token-table-curve-y {
+  0% {
+    transform: translateY(0);
+  }
+  60%,
+  100% {
+    transform: translateY(calc(var(--curve-size) * -1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .example-cell [data-part='curve-x'],
+  .example-cell [data-part='curve-y'] {
+    animation: none;
+  }
+}
+
+/* no example for this token: empty space, without the bordered block */
+.example-cell [data-part='no-preview'] {
+  min-height: var(--cnvs-sys-size-xxl);
+  margin-bottom: var(--cnvs-sys-gap-sm);
+}

@@ -1,0 +1,42 @@
+.token-table {
+  margin-block: 1rem;
+}
+
+.token-table th {
+  background-color: var(--cnvs-sys-color-surface-raised);
+}
+
+.token-table tr {
+  grid-template-columns: 1.25fr 3.25fr 0.5fr;
+}
+
+.swatch-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  background: var(--cnvs-sys-color-surface-default);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+/* Checkerboard so semi-transparent (alpha) tokens are visible on any surface */
+.swatch-cell > [data-part='swatch-backdrop'] {
+  width: 100%;
+  border-radius: 4px;
+  background-color: #fff;
+  background-image: conic-gradient(#c8c8c8 25%, transparent 0 50%, #c8c8c8 0 75%, transparent 0);
+  background-size: 16px 16px;
+}
+
+.swatch-cell [data-part='swatch'] {
+  width: 100%;
+  height: 4rem;
+  border-radius: 4px;
+}
+
+.swatch-cell > button {
+  justify-content: space-between;
+  width: 100%;
+}

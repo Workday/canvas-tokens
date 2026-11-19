@@ -9,8 +9,6 @@ const PaletteNeutralColors = () => {
       <ColorPaletteCard colorFamily="slate" />
       <ColorPaletteCard colorFamily="neutral" isAlpha />
       <ColorPaletteCard colorFamily="slate" isAlpha />
-      <ColorPaletteCard colorFamily="black" isAlpha />
-      <ColorPaletteCard colorFamily="white" isAlpha />
     </ThemeControl>
   );
 };

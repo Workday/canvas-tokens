@@ -36,7 +36,7 @@
     },
     "surface": {
       "hover": {
-        "$value": "{opacity.100}",
+        "$value": "{opacity.80}",
         "$type": "number",
         "$description": "State layer applied to surface colors on hover"
       },

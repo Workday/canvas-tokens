@@ -10,6 +10,7 @@
   height: 160px;
   border-radius: 4px;
   margin-bottom: 8px;
+  border: 1px solid var(--cnvs-sys-color-border-default);
 }
 
 .swatch-item {

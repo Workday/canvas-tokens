@@ -2,11 +2,37 @@ import {Meta, Unstyled} from '@storybook/blocks';
 
 import {DarkMode} from './examples/Color';
 
-<Meta title="Docs/Dark Sana Theme/Tokens" />
+<Meta title="Docs/Dark Mode/Sana Canvas Theme" />
 
 <Unstyled>
 
 # Dark Tokens
+
+Dark mode is part of the Sana Canvas theme. The same system tokens, such as `system.color.surface.default`
+and `system.color.fg.default`, resolve to different values depending on the color mode, so anything styled
+with tokens switches between light and dark without code changes.
+
+## Setup
+
+1. Import the Sana CSS variables for both modes. Light values are in `sana/_variables.css` and dark values
+   are in `sana/_variables-dark.css`. All CSS can be added through a single `@workday/canvas-tokens-web/css/index.css` import.
+2. Set `data-theme="sana-canvas"` on an element that wraps your layout.
+3. Set `data-color-mode` to `light` or `dark` on that element, or on any element inside it.
+
+```html
+<div data-theme="sana-canvas" data-color-mode="dark">
+  <!-- Your layout -->
+</div>
+```
+
+To switch modes, change the `data-color-mode` value. Because the attribute can also be set on an element
+inside the theme, part of a page, such as a single panel or card, can use dark mode while the rest stays
+light.
+
+## Example
+
+The dashboard below uses only Canvas Kit components and system tokens. Use the switch to toggle
+`data-color-mode` between `light` and `dark`.
 
 <DarkMode />
 

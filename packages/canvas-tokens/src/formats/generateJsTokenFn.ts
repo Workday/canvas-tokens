@@ -13,11 +13,20 @@ export type TokenFnOptions = {
   syntaxStyle?: SyntaxStyle;
 };
 
+/** `fontSize` -> `font-size` */
+const toKebab = (segment: string) => segment.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+
 /** Token levels that keep their name in the CSS variable, any other token is a system token */
 const LEVELS = ['base', 'brand', 'component'];
 
 /** Component tokens keep no level in the simple names, `component.system.icon` is `system-icon` */
 const COMPONENT_ID = /^component\./;
+
+/** Tokens named `*.default` can be used without the suffix in the simple names */
+const DEFAULT_SUFFIX = '.default';
+
+/** The `.default` of a token id is not part of the simple names */
+const DEFAULT_ID = /\.default$/;
 
 type TokenEntry = {id: string; name: string; doc: string; deprecated: boolean};
 
@@ -25,6 +34,8 @@ type Config = {
   prefix: string;
   simpleNames: boolean;
   palettes: string[];
+  /** Ids that can omit their trailing `.default`, only with simple names */
+  defaults: string[];
   tokens: TokenEntry[];
   typeTokens: Record<string, {doc: string; props: Record<string, string>}>;
 };
@@ -40,12 +51,24 @@ export const generateJsTokenFn = async ({dictionary, file, options}: FormatFnArg
   } = options as TokenFnOptions;
   const header = await fileHeader({file});
 
-  /** `--cnvs-sys-opacity-disabled` -> `opacity.disabled`, `--cnvs-base-palette-blue-400` -> `blue.400` */
-  const getId = (token: TransformedToken) =>
-    toCSSVarName(token, prefix)
+  /**
+   * `--cnvs-sys-opacity-disabled` -> `opacity.disabled`, `--cnvs-base-palette-blue-400` -> `blue.400`.
+   * A hyphen inside a path segment stays, `--cnvs-sys-letter-spacing-body-sm` -> `letter-spacing.body.sm`
+   */
+  const getId = (token: TransformedToken) => {
+    const id = toCSSVarName(token, prefix)
       .slice(`--${prefix}-`.length)
       .replace(/^(sys|base-palette)-/, '')
       .replace(/-/g, '.');
+
+    return token.path
+      .map(toKebab)
+      .filter(segment => segment.includes('-'))
+      .reduce((result, segment) => {
+        const dotted = segment.replace(/-/g, '.').replace(/\./g, '\\.');
+        return result.replace(new RegExp(`(^|\\.)${dotted}(?=\\.|$)`), `$1${segment}`);
+      }, id);
+  };
 
   const docOptions = {compositeTokens, tokens: dictionary.unfilteredTokens};
   const getDoc = (token: TransformedToken) => (includeJsDocs ? getJsDoc(token, docOptions) : '');
@@ -69,16 +92,29 @@ export const generateJsTokenFn = async ({dictionary, file, options}: FormatFnArg
     })
   );
 
+  const ids = new Set(valueTokens.map(getId));
+  // A short id that is a token of its own stays that token
+  const defaults = simpleNames
+    ? [...ids]
+        .filter(id => id.endsWith(DEFAULT_SUFFIX))
+        .map(id => id.slice(0, -DEFAULT_SUFFIX.length))
+        .filter(id => !ids.has(id))
+    : [];
+
   const config: Config = {
     prefix,
     simpleNames,
+    defaults,
     palettes: [...new Set(palettes)],
     tokens: valueTokens.map(token => {
       const id = getId(token);
       return {
         id,
         name: simpleNames
-          ? `--${prefix}-${id.replace(COMPONENT_ID, '').replace(/\./g, '-')}`
+          ? `--${prefix}-${id
+              .replace(COMPONENT_ID, '')
+              .replace(DEFAULT_ID, '')
+              .replace(/\./g, '-')}`
           : toCSSVarName(token, prefix),
         doc: getDoc(token),
         deprecated: !!token.$deprecated,
@@ -106,8 +142,10 @@ const palettes = ${JSON.stringify(palettes)};
 
 // Tokens of the root files keep their level, except for system and palette tokens
 const getLevel = id => {
-  const [root] = id.split('.');
+  const [root, second] = id.split('.');
   if (levels.includes(root)) return '';
+  // Dark palettes are \`--<prefix>-base-palette-dark-<name>-<step>\`
+  if (root === 'dark' && palettes.includes(second)) return 'base-palette-';
   return palettes.includes(root) ? 'base-palette-' : 'sys-';
 };
 
@@ -122,9 +160,11 @@ const getTypeTokensText = ({typeTokens}: Config) => {
 /** Text of the function that maps an id to its CSS variable name */
 const getVarNameText = ({prefix, simpleNames}: Config) => {
   const level = simpleNames ? '' : '${getLevel(id)}';
-  const path = simpleNames ? `id.replace(${COMPONENT_ID}, '')` : 'id';
+  const path = simpleNames
+    ? `id.replace(${COMPONENT_ID}, '').replace(${DEFAULT_ID}, '')`
+    : 'id';
   return `const toVarName = id =>
-  id.startsWith('--') ? id : \`--${prefix}-${level}\${${path}.replace(/\\./g, '-')}\`;\n\n`;
+  id.startsWith('--') ? id : \`--${prefix}-${level}\${${path}.replace(/\\./g, '-').toLowerCase()}\`;\n\n`;
 };
 
 /** Text of the exported `token` function */
@@ -182,14 +222,20 @@ const getTypeTokensInterfaceText = ({typeTokens}: Config) => {
 };
 
 /** Text of the helper types that derive the token unions and variable names */
-const getHelperTypesText = ({tokens}: Config) => {
+const getHelperTypesText = ({tokens, defaults}: Config) => {
   const deprecated = tokens.filter(token => token.deprecated).map(({id}) => id);
 
   return `export type TypeToken = keyof TypeTokens;
 export type Token = keyof Tokens;
 export type DeprecatedToken = ${toUnion(deprecated)};
 export type ActiveToken = Exclude<Token, DeprecatedToken>;
-
+${
+  defaults.length
+    ? `\n// Tokens named \`*.default\` can omit the suffix\nexport type DefaultToken = ${toUnion(
+        defaults
+      )};\n`
+    : ''
+}
 // A referenced token missing from \`Tokens\` has no variable
 type VarName<T> = T extends Token ? Tokens[T] : never;
 
@@ -203,7 +249,7 @@ type FallbackVar<F extends Fallback> = F extends \`var(\${string})\` ? F : \`var
  * Text of the `token` overloads. Each token gets its own so the JS Doc of the token
  * (raw value, deprecation) shows up for the call, followed by the overloads for any token
  */
-const getOverloadsText = ({tokens, typeTokens}: Config) => {
+const getOverloadsText = ({tokens, typeTokens, defaults}: Config) => {
   const names = new Map(tokens.map(({id, name}) => [id, name]));
 
   const typeOverloads = Object.entries(typeTokens).map(([id, {doc, props}]) => {
@@ -221,12 +267,36 @@ const getOverloadsText = ({tokens, typeTokens}: Config) => {
 ): \`var(${name}, \${FallbackVar<F>})\`;\n`,
   ]);
 
-  return `${[...typeOverloads, ...tokenOverloads].join('')}
+  const defaultOverloads = defaults.flatMap(short => {
+    const full = `${short}${DEFAULT_SUFFIX}`;
+    const name = names.get(full);
+    const doc = tokens.find(({id}) => id === full)?.doc ?? '';
+    return [
+      `${doc}export declare function token(token: '${short}'): \`var(${name})\`;\n`,
+      `${doc}export declare function token<F extends Fallback>(
+  token: '${short}',
+  fallback: F
+): \`var(${name}, \${FallbackVar<F>})\`;\n`,
+    ];
+  });
+
+  return `${[...typeOverloads, ...tokenOverloads, ...defaultOverloads].join('')}
 // Overloads of a union of tokens, which have no single JS Doc
 export declare function token<T extends TypeToken>(
   token: T
 ): {[K in keyof TypeTokens[T]]: \`var(\${VarName<TypeTokens[T][K]>})\`};
-export declare function token<T extends Token>(token: T): \`var(\${Tokens[T]})\`;
+${
+  defaults.length
+    ? `export declare function token<T extends DefaultToken>(
+  token: T
+): \`var(\${Tokens[\`\${T}.default\`]})\`;
+export declare function token<T extends DefaultToken, F extends Fallback>(
+  token: T,
+  fallback: F
+): \`var(\${Tokens[\`\${T}.default\`]}, \${FallbackVar<F>})\`;
+`
+    : ''
+}export declare function token<T extends Token>(token: T): \`var(\${Tokens[T]})\`;
 export declare function token<T extends Token, F extends Fallback>(
   token: T,
   fallback: F

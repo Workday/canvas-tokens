@@ -4,12 +4,16 @@ import {Avatar} from '@workday/canvas-kit-react/avatar';
 import {Banner} from '@workday/canvas-kit-react/banner';
 import {PrimaryButton, SecondaryButton, TertiaryButton} from '@workday/canvas-kit-react/button';
 import {Card} from '@workday/canvas-kit-react/card';
+import {Checkbox} from '@workday/canvas-kit-react/checkbox';
+import {FormField} from '@workday/canvas-kit-react/form-field';
 import {Box, Flex, Grid} from '@workday/canvas-kit-react/layout';
 import {Pill} from '@workday/canvas-kit-react/pill';
 import {Switch} from '@workday/canvas-kit-react/switch';
 import {Table} from '@workday/canvas-kit-react/table';
 import {Tabs} from '@workday/canvas-kit-react/tabs';
+import {TextInput} from '@workday/canvas-kit-react/text-input';
 import {Heading, Text} from '@workday/canvas-kit-react/text';
+import {userFillIcon} from '@workday/canvas-system-icons-web';
 
 const v = (token: string) => `var(${token})`;
 const c = system.color;
@@ -26,29 +30,36 @@ const people = [
   {name: 'Noah Patel', role: 'Data Analyst', status: 'On leave'},
 ];
 
+const teams = [
+  {name: 'Design Systems', lead: 'Ava Thompson', members: 8, tag: 'Product'},
+  {name: 'Platform', lead: 'Liam Carter', members: 14, tag: 'Engineering'},
+  {name: 'People Analytics', lead: 'Noah Patel', members: 5, tag: 'Data'},
+];
+
 export const DarkMode = () => {
   const [dark, setDark] = React.useState(false);
   const mode = dark ? 'dark' : 'light';
 
   return (
-    // The Sana CSS applies dark values to `[data-theme="sana-canvas"][data-mode="dark"]`
+    // The Sana CSS applies dark values to `[data-theme="sana-canvas"][data-color-mode="dark"]`
     <Flex
       data-theme="sana-canvas"
       data-color-mode={mode}
-      data-mode={mode}
-      flexDirection="column"
-      gap="m"
-      padding="l"
-      backgroundColor={v(c.surface.default)}
-      color={v(c.fg.default)}
-      border={`1px solid ${v(c.border.default)}`}
-      borderRadius="l"
+      cs={{
+        flexDirection: 'column',
+        gap: v(system.gap.lg),
+        padding: v(system.padding.xl),
+        backgroundColor: v(c.surface.default),
+        color: v(c.fg.default),
+        border: `1px solid ${v(c.border.default)}`,
+        borderRadius: v(system.shape.xl),
+      }}
     >
-      <Flex justifyContent="space-between" alignItems="center">
+      <Flex cs={{justifyContent: 'space-between', alignItems: 'center'}}>
         <Heading size="medium" as="h3">
           Workforce dashboard
         </Heading>
-        <Flex alignItems="center" gap="xs">
+        <Flex cs={{alignItems: 'center', gap: v(system.gap.sm)}}>
           <Text typeLevel="body.medium">Dark mode</Text>
           <Switch checked={dark} onChange={e => setDark(e.currentTarget.checked)} />
           <Avatar name="Raisa Primerova" size="extraSmall" />
@@ -61,12 +72,12 @@ export const DarkMode = () => {
         <Banner.ActionText>Review</Banner.ActionText>
       </Banner>
 
-      <Grid gridTemplateColumns="repeat(3, 1fr)" gridGap="m">
+      <Grid cs={{gridTemplateColumns: 'repeat(3, 1fr)', gap: v(system.gap.lg)}}>
         {stats.map(stat => (
           <Card key={stat.label}>
             <Card.Heading>{stat.label}</Card.Heading>
             <Card.Body>
-              <Flex alignItems="center" gap="xs">
+              <Flex cs={{alignItems: 'center', gap: v(system.gap.sm)}}>
                 <Heading size="large" as="p">
                   {stat.value}
                 </Heading>
@@ -83,7 +94,7 @@ export const DarkMode = () => {
           <Tabs.Item>Teams</Tabs.Item>
           <Tabs.Item>Reports</Tabs.Item>
         </Tabs.List>
-        <Box marginTop="m">
+        <Box cs={{marginBlockStart: v(system.gap.lg)}}>
           <Tabs.Panel>
             <Table>
               <Table.Head>
@@ -106,13 +117,63 @@ export const DarkMode = () => {
               </Table.Body>
             </Table>
           </Tabs.Panel>
+          <Tabs.Panel>
+            <Grid cs={{gridTemplateColumns: 'repeat(3, 1fr)', gap: v(system.gap.lg)}}>
+              {teams.map(team => (
+                <Card key={team.name}>
+                  <Card.Heading>{team.name}</Card.Heading>
+                  <Card.Body>
+                    <Flex cs={{flexDirection: 'column', gap: v(system.gap.sm)}}>
+                      <Flex cs={{alignItems: 'center', gap: v(system.gap.sm)}}>
+                        <Avatar name={team.lead} size="extraSmall" />
+                        <Text typeLevel="body.medium">{team.lead}</Text>
+                      </Flex>
+                      <Text typeLevel="subtext.large">{team.members} members</Text>
+                      <Box>
+                        <Pill>{team.tag}</Pill>
+                      </Box>
+                    </Flex>
+                  </Card.Body>
+                </Card>
+              ))}
+            </Grid>
+          </Tabs.Panel>
+          <Tabs.Panel>
+            <Flex cs={{flexDirection: 'column', gap: v(system.gap.md), maxWidth: '24rem'}}>
+              <FormField>
+                <FormField.Label>Report name</FormField.Label>
+                <FormField.Field>
+                  <FormField.Input as={TextInput} placeholder="Quarterly headcount" />
+                </FormField.Field>
+              </FormField>
+              <Checkbox label="Include terminated employees" />
+              <Checkbox label="Group by department" defaultChecked />
+              <Flex cs={{alignItems: 'center', gap: v(system.gap.sm)}}>
+                <Switch defaultChecked />
+                <Text typeLevel="body.medium">Email me a weekly summary</Text>
+              </Flex>
+            </Flex>
+          </Tabs.Panel>
         </Box>
       </Tabs>
 
-      <Flex gap="xs" justifyContent="flex-end">
+      <Flex cs={{gap: v(system.gap.sm), justifyContent: 'flex-end'}}>
         <TertiaryButton>Cancel</TertiaryButton>
         <SecondaryButton>Save draft</SecondaryButton>
         <PrimaryButton>Submit</PrimaryButton>
+      </Flex>
+
+      <Flex
+        cs={{
+          justifyContent: 'flex-end',
+          padding: v(system.padding.md),
+          borderRadius: v(system.shape.md),
+          backgroundColor: v(c.surface.contrast.default),
+        }}
+      >
+        <PrimaryButton icon={userFillIcon} variant="inverse">
+          Logout
+        </PrimaryButton>
       </Flex>
     </Flex>
   );

@@ -1,8 +1,7 @@
 import {Meta, Unstyled} from '@storybook/blocks';
-import {DurationTokens} from './examples/Duration';
-import {EasingTokens} from './examples/Easing';
+import {DurationTokens, EasingTokens} from './examples/Tables';
 
-<Meta title="Docs/System Tokens/Motion" />
+<Meta title="Tokens/System/Motion" />
 
 <Unstyled>
 
@@ -36,32 +35,6 @@ const styles = {
 
 System easing tokens provide standardized cubic-bezier curves for animations and transitions across
 our UI.
-
-### Usage
-
-Easing tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
-CSS variable from a base token, so you'll need to have those CSS variables imported in your
-application as well.
-
-```ts
-// styles.ts
-import {system} from '@workday/canvas-tokens-web';
-
-const styles = {
-  transition: `transform var(${system.motion.duration.medium2}) var(${system.motion.easing.quick.standard})`,
-};
-```
-
-They can also be consumed as CSS variables. In the example below, we're applying the same styles
-using CSS variables directly.
-
-{/* prettier-ignore */}
-```css
-/* styles.css */
-.button {
-  transition: transform var(--cnvs-sys-motion-duration-medium2) var(--cnvs-sys-motion-easing-quick-standard);
-}
-```
 
 ### Categories
 

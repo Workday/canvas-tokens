@@ -1,0 +1,62 @@
+.test-token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+
+.test-token-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.test-token-sample {
+  display: flex;
+  align-items: flex-end;
+  min-height: 48px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.test-token-label {
+  text-align: center;
+  word-break: break-word;
+}
+
+.test-token-box {
+  flex: none;
+  background: var(--cnvs-sys-color-border-contrast-default, #5b6670);
+}
+
+.test-token-outline {
+  box-sizing: border-box;
+  border: 1px solid var(--cnvs-sys-color-border-contrast-default, #5b6670);
+}
+
+.test-token-checker {
+  overflow: hidden;
+  background-color: var(--cnvs-sys-color-surface-default);
+  background-image: conic-gradient(
+    var(--cnvs-sys-color-surface-raised) 25%,
+    var(--cnvs-sys-color-surface-default) 0 50%,
+    var(--cnvs-sys-color-surface-raised) 0 75%,
+    var(--cnvs-sys-color-surface-default) 0
+  );
+  background-size: 12px 12px;
+}
+
+.test-token-bar {
+  height: 16px;
+  max-width: 100%;
+}
+
+.test-token-curve {
+  width: 96px;
+  height: 96px;
+  flex: none;
+  border: 1px solid var(--cnvs-sys-color-border-default, #ccc);
+  background: var(--cnvs-sys-color-surface-default, #fff);
+}

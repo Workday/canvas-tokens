@@ -1,0 +1,23 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {BreakpointTokens, BreakpointDeprecatedTokens} from './examples/Tables';
+
+<Meta title="Tokens/System/Breakpoint" />
+
+<Unstyled>
+
+# System Breakpoint Tokens
+
+Breakpoint tokens define the viewport widths where layouts change. CSS variables can't be used
+inside media queries, so use these as a reference for your values.
+
+## Tokens
+
+<BreakpointTokens />
+
+### Deprecated
+
+These breakpoint tokens are deprecated. Use the singular `breakpoint` tokens above.
+
+<BreakpointDeprecatedTokens />
+
+</Unstyled>
