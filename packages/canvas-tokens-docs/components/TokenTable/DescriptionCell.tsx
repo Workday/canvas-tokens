@@ -18,7 +18,7 @@ type DescriptionCellProps = {
   level?: TokenLevel;
   theme?: Theme;
   isDark?: boolean;
-  /** The computed oklch color of the token, read from the rendered swatch. */
+  /** The value computed by the browser: an oklch color for colors, a `box-shadow` for shadows. */
   computed?: string;
 };
 
@@ -47,6 +47,13 @@ export const DescriptionCell = ({
       }
       case 'typography':
         return [{id: 'value', value: formatTypography(token.$value)}];
+      case 'shadow': {
+        // The token data has no resolved value for some themes, so prefer the browser's computed value
+        const value = computed ?? resolveColor(token, theme, isDark).value;
+        return [{id: 'value', value: value.includes('undefined') ? undefined : value}].filter(
+          isPresent
+        );
+      }
       case 'dimension':
         return [
           {id: 'value', value: String(token.$value)},

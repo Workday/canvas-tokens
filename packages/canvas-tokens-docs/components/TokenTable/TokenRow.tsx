@@ -10,6 +10,7 @@ import {toOklch} from '../../util';
 import {DescriptionCell} from './DescriptionCell';
 import {ExampleCell} from './ExampleCell';
 import {SwatchCell} from './SwatchCell';
+import {getCssVar} from './tokenNames';
 import {SDToken, TokenLevel} from './types';
 
 const StatusCell = ({isDeprecated}: {isDeprecated?: boolean}) => (
@@ -33,20 +34,27 @@ type TokenRowProps = {
 
 export const TokenRow = ({token, group, isDark, theme, level}: TokenRowProps) => {
   const swatchRef = React.useRef<HTMLDivElement>(null);
+  const rowRef = React.useRef<HTMLTableRowElement>(null);
   const [computed, setComputed] = React.useState<string>();
 
-  // Read the top level token's color from the CSS, so it reflects the active theme and color mode
+  // Read the computed value from the CSS, so it reflects the active theme and color mode
   React.useLayoutEffect(() => {
-    const element = swatchRef.current;
-    if (element && token.$type === 'color') {
-      const css = getComputedStyle(element).backgroundColor;
+    if (token.$type === 'color' && swatchRef.current) {
+      const css = getComputedStyle(swatchRef.current).backgroundColor;
       // Show the raw CSS when it can't be converted; DescriptionCell then hides hex and rgba
       setComputed(toOklch(css) ?? css);
+    } else if (token.$type === 'shadow' && rowRef.current) {
+      // Composite shadows aren't resolved in the token data for every theme, so let the browser resolve the variable
+      const probe = document.createElement('div');
+      probe.style.boxShadow = getCssVar(token, level);
+      rowRef.current.appendChild(probe);
+      setComputed(getComputedStyle(probe).boxShadow);
+      probe.remove();
     }
-  }, [token, theme, isDark]);
+  }, [token, level, theme, isDark]);
 
   return (
-    <Table.Row>
+    <Table.Row ref={rowRef}>
       <Table.Cell>
         {token.$type === 'color' || token.$type === 'gradient' ? (
           <SwatchCell
