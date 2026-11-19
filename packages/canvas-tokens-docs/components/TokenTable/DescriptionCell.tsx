@@ -6,7 +6,7 @@ import {Theme} from '../ThemeControl';
 import {oklchToHex, oklchToRgba} from '../../util';
 import {MultiValueBlock, ValueItem} from './MultiValueBlock';
 import {getMobileTokenName} from './mobileNames';
-import {resolveColor} from './resolveColor';
+import {isGradientValue, resolveColor} from './resolveColor';
 import {cleanTitle, formatTypography, getCssVar, getDimensionPx, getJsName} from './tokenNames';
 import {SDToken, TokenLevel} from './types';
 
@@ -36,6 +36,10 @@ export const DescriptionCell = ({
   const getComputedItems = (): ValueItem[] => {
     switch (token.$type) {
       case 'color': {
+        // Gradients have no oklch, hex or rgba equivalent, so show the gradient itself
+        if (isGradientValue(token)) {
+          return [{id: 'value', value: resolveColor(token, theme, isDark).value}].filter(isPresent);
+        }
         // Prefer the color the browser computed from the CSS; fall back to the token data until measured
         const color = computed ?? resolveColor(token, theme, isDark).value;
         // Hex and rgba are undefined for values that aren't valid oklch, which hides their tabs

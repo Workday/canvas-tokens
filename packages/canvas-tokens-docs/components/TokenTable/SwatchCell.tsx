@@ -3,7 +3,7 @@ import {Card} from '@workday/canvas-kit-react/card';
 
 import {Theme} from '../ThemeControl';
 import {CodeBlock} from '../CodeBlock';
-import {resolveColor} from './resolveColor';
+import {isGradientValue, resolveColor} from './resolveColor';
 import {getCssVar} from './tokenNames';
 import {SDToken} from './types';
 
@@ -21,7 +21,7 @@ type SwatchCellProps = {
 };
 
 export const SwatchCell = ({token, isDark, theme, swatchRef, computed}: SwatchCellProps) => {
-  const isGradient = token.$type === 'gradient' || token.$value?.startsWith('linear-gradient');
+  const isGradient = isGradientValue(token);
   // Gradients have no single reference (`original.$value` is a list of stops), so use the token itself
   const {value, ref} = resolveColor(token, theme, isDark);
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import {TertiaryButton} from '@workday/canvas-kit-react/button';
 import {Card} from '@workday/canvas-kit-react/card';
-import {SystemIcon} from '@workday/canvas-kit-react/icon';
-import {playIcon, xIcon} from '@workday/canvas-system-icons-web';
+import {playIcon} from '@workday/canvas-system-icons-web';
 import {token as tokenVar} from '@workday/canvas-tokens-web/token';
 
 import {CodeBlock} from '../CodeBlock';
@@ -63,9 +62,6 @@ const DimensionPreview = ({group, cssVar}: {group: string; cssVar: string}) => {
           <div style={{background: fill}} />
         </div>
       );
-    case 'breakpoint':
-    case 'breakpoints':
-      return <SystemIcon icon={xIcon} />;
     default:
       return <div data-part="size-sample" style={{width: cssVar, background: fill}} />;
   }
@@ -96,6 +92,10 @@ const CurvePreview = ({value, cssVar}: {value: string; cssVar: string}) => {
   );
 };
 
+/** Breakpoint and duration tokens have nothing to preview. */
+const hasPreview = (token: SDToken) =>
+  token.$type !== 'duration' && !['breakpoint', 'breakpoints'].includes(token.path[0]);
+
 const TokenPreview = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
   const cssVar = getCssVar(token, level);
   const [group] = token.path;
@@ -120,8 +120,6 @@ const TokenPreview = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
       );
     case 'typography':
       return <TextSample className={getTypeClass(token)} />;
-    case 'duration':
-      return <SystemIcon icon={xIcon} />;
     case 'cubicBezier':
       return <CurvePreview value={token.$value} cssVar={cssVar} />;
     case 'fontWeight':
@@ -142,28 +140,30 @@ export const ExampleCell = ({token, level}: {token: SDToken; level?: TokenLevel}
 
   return (
     <div className="example-cell">
-      <Card
-        data-part="example"
-        style={token.$type === 'shadow' ? {background: 'var(--cnvs-brand-neutral-a50)'} : undefined}
-      >
-        {isMotion && (
-          <TertiaryButton
-            data-part="play-button"
-            size="small"
-            icon={playIcon}
-            aria-label="Play animation"
-            disabled={playing}
-            onClick={() => setPlaying(true)}
-          />
-        )}
-        <div
-          data-part="preview"
-          data-playing={playing}
-          onAnimationEnd={() => setPlaying(false)}
+      {!hasPreview(token) ? (
+        <div data-part="no-preview" />
+      ) : (
+        <Card
+          data-part="example"
+          style={
+            token.$type === 'shadow' ? {background: 'var(--cnvs-brand-neutral-a50)'} : undefined
+          }
         >
-          <TokenPreview token={token} level={level} />
-        </div>
-      </Card>
+          {isMotion && (
+            <TertiaryButton
+              data-part="play-button"
+              size="small"
+              icon={playIcon}
+              aria-label="Play animation"
+              disabled={playing}
+              onClick={() => setPlaying(true)}
+            />
+          )}
+          <div data-part="preview" data-playing={playing} onAnimationEnd={() => setPlaying(false)}>
+            <TokenPreview token={token} level={level} />
+          </div>
+        </Card>
+      )}
       {ref && <CodeBlock>{ref}</CodeBlock>}
     </div>
   );

@@ -339,3 +339,9 @@
     animation: none;
   }
 }
+
+/* no example for this token: empty space, without the bordered block */
+.example-cell [data-part='no-preview'] {
+  min-height: var(--cnvs-sys-size-xxl);
+  margin-bottom: var(--cnvs-sys-gap-sm);
+}

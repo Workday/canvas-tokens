@@ -32,3 +32,7 @@ export const resolveColor = (sdToken: SDToken, theme?: Theme, isDark?: boolean) 
 
   return {value: sdToken.$value, ref: cleanRef(sdToken.original.$value)};
 };
+
+/** A color token whose value is a gradient, like `color.surface.elevated`: it has no single color. */
+export const isGradientValue = (sdToken: SDToken) =>
+  sdToken.$type === 'gradient' || Boolean(sdToken.$value?.startsWith?.('linear-gradient'));

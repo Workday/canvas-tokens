@@ -11,6 +11,7 @@ import {DescriptionCell} from './DescriptionCell';
 import {ExampleCell} from './ExampleCell';
 import {SwatchCell} from './SwatchCell';
 import {getCssVar} from './tokenNames';
+import {isGradientValue} from './resolveColor';
 import {SDToken, TokenLevel} from './types';
 
 const StatusCell = ({isDeprecated}: {isDeprecated?: boolean}) => (
@@ -39,7 +40,7 @@ export const TokenRow = ({token, group, isDark, theme, level}: TokenRowProps) =>
 
   // Read the computed value from the CSS, so it reflects the active theme and color mode
   React.useLayoutEffect(() => {
-    if (token.$type === 'color' && swatchRef.current) {
+    if (token.$type === 'color' && !isGradientValue(token) && swatchRef.current) {
       const css = getComputedStyle(swatchRef.current).backgroundColor;
       // Show the raw CSS when it can't be converted; DescriptionCell then hides hex and rgba
       setComputed(toOklch(css) ?? css);
