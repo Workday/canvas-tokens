@@ -31,24 +31,25 @@ export const DarkMode = () => {
   const mode = dark ? 'dark' : 'light';
 
   return (
-    // The Sana CSS applies dark values to `[data-theme="sana-canvas"][data-mode="dark"]`
+    // The Sana CSS applies dark values to `[data-theme="sana-canvas"][data-color-mode="dark"]`
     <Flex
       data-theme="sana-canvas"
       data-color-mode={mode}
-      data-mode={mode}
-      flexDirection="column"
-      gap="m"
-      padding="l"
-      backgroundColor={v(c.surface.root)}
-      color={v(c.fg.root)}
-      border={`1px solid ${v(c.border.root)}`}
-      borderRadius="l"
+      cs={{
+        flexDirection: 'column',
+        gap: v(system.gap.lg),
+        padding: v(system.padding.xl),
+        backgroundColor: v(c.surface.root),
+        color: v(c.fg.root),
+        border: `1px solid ${v(c.border.root)}`,
+        borderRadius: v(system.shape.xl),
+      }}
     >
-      <Flex justifyContent="space-between" alignItems="center">
+      <Flex cs={{justifyContent: 'space-between', alignItems: 'center'}}>
         <Heading size="medium" as="h3">
           Workforce dashboard
         </Heading>
-        <Flex alignItems="center" gap="xs">
+        <Flex cs={{alignItems: 'center', gap: v(system.gap.sm)}}>
           <Text typeLevel="body.medium">Dark mode</Text>
           <Switch checked={dark} onChange={e => setDark(e.currentTarget.checked)} />
           <Avatar name="Raisa Primerova" size="extraSmall" />
@@ -61,12 +62,12 @@ export const DarkMode = () => {
         <Banner.ActionText>Review</Banner.ActionText>
       </Banner>
 
-      <Grid gridTemplateColumns="repeat(3, 1fr)" gridGap="m">
+      <Grid cs={{gridTemplateColumns: 'repeat(3, 1fr)', gap: v(system.gap.lg)}}>
         {stats.map(stat => (
           <Card key={stat.label}>
             <Card.Heading>{stat.label}</Card.Heading>
             <Card.Body>
-              <Flex alignItems="center" gap="xs">
+              <Flex cs={{alignItems: 'center', gap: v(system.gap.sm)}}>
                 <Heading size="large" as="p">
                   {stat.value}
                 </Heading>
@@ -83,7 +84,7 @@ export const DarkMode = () => {
           <Tabs.Item>Teams</Tabs.Item>
           <Tabs.Item>Reports</Tabs.Item>
         </Tabs.List>
-        <Box marginTop="m">
+        <Box cs={{marginBlockStart: v(system.gap.lg)}}>
           <Tabs.Panel>
             <Table>
               <Table.Head>
@@ -109,17 +110,19 @@ export const DarkMode = () => {
         </Box>
       </Tabs>
 
-      <Flex gap="xs" justifyContent="flex-end">
+      <Flex cs={{gap: v(system.gap.sm), justifyContent: 'flex-end'}}>
         <TertiaryButton>Cancel</TertiaryButton>
         <SecondaryButton>Save draft</SecondaryButton>
         <PrimaryButton>Submit</PrimaryButton>
       </Flex>
 
       <Flex
-        justifyContent="flex-end"
-        padding="s"
-        borderRadius="m"
-        backgroundColor={v(c.surface.contrast.root)}
+        cs={{
+          justifyContent: 'flex-end',
+          padding: v(system.padding.md),
+          borderRadius: v(system.shape.md),
+          backgroundColor: v(c.surface.contrast.root),
+        }}
       >
         <PrimaryButton variant="inverse">Submit</PrimaryButton>
       </Flex>
