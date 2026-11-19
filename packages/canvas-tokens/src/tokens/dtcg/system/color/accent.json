@@ -16,7 +16,7 @@
         }
       },
       "contrast": {
-        "$value": "{neutral.900}",
+        "$value": "{neutral.A900}",
         "$type": "color",
         "$description": "High contrast accent for maximum visibility",
         "$extensions": {

@@ -293,7 +293,7 @@
           }
         },
         "pressed": {
-          "$value": "{brand.primary.400}",
+          "$value": "{blue.400}",
           "$type": "color",
           "$description": "Pressed state for AI-generated content containers",
           "$extensions": {
@@ -302,43 +302,15 @@
                 "dark": {
                   "$value": "{dark.blue.400}"
                 }
-              },
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{blue.400}"
-                  }
-                }
               }
             }
           }
         }
       },
       "transparent": {
-        "$value": "{white.A0}",
+        "$value": "{neutral.A0}",
         "$type": "color",
-        "$description": "Fully transparent container background",
-        "$extensions": {
-          "sana.canvas.tokens": {
-            "modes": {
-              "dark": {
-                "$value": {
-                  "colorSpace": "oklch",
-                  "components": [0.2002, 0, 0],
-                  "hex": "#16161600",
-                  "alpha": 0
-                }
-              }
-            },
-            "themes": {
-              "canvas": {
-                "light": {
-                  "$value": "{neutral.A0}"
-                }
-              }
-            }
-          }
-        }
+        "$description": "Fully transparent container background"
       },
       "inverse": {
         "$value": "{neutral.0}",

@@ -135,7 +135,7 @@
             "sana.canvas.tokens": {
               "modes": {
                 "dark": {
-                  "$value": "{neutral.1000}"
+                  "$value": "{dark.neutral.25}"
                 }
               }
             }
@@ -144,7 +144,16 @@
         "strong": {
           "$value": "{white.A700}",
           "$type": "color",
-          "$description": "Stronger border for use on dark backgrounds"
+          "$description": "Stronger border for use on dark backgrounds",
+          "$extensions": {
+            "sana.canvas.tokens": {
+              "modes": {
+                "dark": {
+                  "$value": "{black.A700}"
+                }
+              }
+            }
+          }
         }
       },
       "contrast": {

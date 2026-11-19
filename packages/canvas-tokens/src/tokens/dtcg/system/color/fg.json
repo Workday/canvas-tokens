@@ -279,32 +279,28 @@
       },
       "contrast": {
         "$root": {
-          "$value": "{brand.neutral.A900}",
+          "$value": "{neutral.A900}",
           "$type": "color",
           "$description": "High contrast text for maximum readability",
           "$extensions": {
             "sana.canvas.tokens": {
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{neutral.A900}"
-                  }
+              "modes": {
+                "dark": {
+                  "$value": "{dark.neutral.A900}"
                 }
               }
             }
           }
         },
         "strong": {
-          "$value": "{brand.neutral.A950}",
+          "$value": "{neutral.A950}",
           "$type": "color",
           "$description": "Stronger high contrast text",
           "$extensions": {
             "sana.canvas.tokens": {
-              "themes": {
-                "canvas": {
-                  "light": {
-                    "$value": "{neutral.A950}"
-                  }
+              "modes": {
+                "dark": {
+                  "$value": "{dark.neutral.A950}"
                 }
               }
             }

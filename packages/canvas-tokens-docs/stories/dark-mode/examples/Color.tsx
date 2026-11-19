@@ -114,6 +114,15 @@ export const DarkMode = () => {
         <SecondaryButton>Save draft</SecondaryButton>
         <PrimaryButton>Submit</PrimaryButton>
       </Flex>
+
+      <Flex
+        justifyContent="flex-end"
+        padding="s"
+        borderRadius="m"
+        backgroundColor={v(c.surface.contrast.root)}
+      >
+        <PrimaryButton variant="inverse">Submit</PrimaryButton>
+      </Flex>
     </Flex>
   );
 };
