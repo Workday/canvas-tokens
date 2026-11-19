@@ -19,7 +19,7 @@ export const CodeBlock = ({children, type = 'readonly'}: CodeBlockProps) => {
 
   if (type === 'readonly') {
     return (
-      <Subtext size="small" as="code" className="cnvs-docs-code-block cnvs-docs-code-block-text ">
+      <Subtext size="small" as="code" className="cnvs-docs-code-block cnvs-docs-code-block-text">
         {children}
       </Subtext>
     );
