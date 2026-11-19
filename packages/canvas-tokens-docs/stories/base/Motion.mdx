@@ -24,11 +24,17 @@ Durations range from 0ms to 1000ms in 50ms steps.
 
 ## Easing
 
-Easing tokens are cubic-bezier curves in two categories: **Quick (A)** for shorter, faster
-interactions and **Purposeful (B)** for longer, more meaningful transitions. Each has standard
-(`100`), acceleration (`200`) and deceleration (`300`) variants.
+Easing tokens define timing functions (cubic-bezier curves) for animations and transitions. There
+are two categories:
 
-Prefer system easing tokens over base easing tokens for animations and transitions.
+- **Quick (A)** - For shorter, faster interactions
+- **Purposeful (B)** - For longer, more meaningful transitions
+
+Each category includes three variants:
+
+- **Standard** - Balanced easing for general use
+- **Acceleration** - Starts slowly and speeds up
+- **Deceleration** - Starts quickly and slows down
 
 <BaseEasingTokens />
 
