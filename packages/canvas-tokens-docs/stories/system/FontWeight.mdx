@@ -9,28 +9,6 @@ import {FontWeightTokens} from './examples/Tables';
 
 Font weight tokens are useful for adjusting the font weight without overwriting other font styles.
 
-## Usage
-
-These tokens can be consumed as a JavaScript / TypeScript object.
-
-```ts
-// styles.ts
-import {system} from '@workday/canvas-tokens-web';
-
-const styles = {
-  fontWeight: `var(${system.fontWeight.bold})`,
-};
-```
-
-They can also be consumed as CSS variables.
-
-```css
-// styles.css
-.bold {
-  font-weight: var(--cnvs-sys-font-weight-bold);
-}
-```
-
 ## Tokens
 
 Font weight token names follow web-standard font-weight names.

@@ -10,30 +10,6 @@ import {BreakpointTokens, BreakpointDeprecatedTokens} from './examples/Tables';
 Breakpoint tokens define the viewport widths where layouts change. CSS variables can't be used
 inside media queries, so use these as a reference for your values.
 
-## Usage
-
-Breakpoint tokens can be consumed as a JavaScript / TypeScript object.
-
-```ts
-// styles.ts
-import {system} from '@workday/canvas-tokens-web';
-
-const styles = {
-  width: `var(${system.breakpoint.md})`,
-};
-```
-
-They can also be consumed as CSS variables.
-
-```css
-// styles.css
-.container {
-  max-width: var(--cnvs-sys-breakpoint-md);
-}
-```
-
----
-
 ## Tokens
 
 <BreakpointTokens />

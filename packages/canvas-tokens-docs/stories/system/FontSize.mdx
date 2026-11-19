@@ -9,28 +9,6 @@ import {FontSizeTokens} from './examples/Tables';
 
 Font size tokens are useful for adjusting the font size without overwriting other font styles.
 
-## Usage
-
-These tokens can be consumed as a JavaScript / TypeScript object.
-
-```ts
-// styles.ts
-import {system} from '@workday/canvas-tokens-web';
-
-const styles = {
-  fontSize: `var(${system.fontSize.heading.sm})`,
-};
-```
-
-They can also be consumed as CSS variables.
-
-```css
-// styles.css
-h2 {
-  font-size: var(--cnvs-sys-font-size-heading-sm);
-}
-```
-
 ## Tokens
 
 Font size token names correlate the the the type level where they're used.

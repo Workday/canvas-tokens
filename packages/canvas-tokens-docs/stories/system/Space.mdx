@@ -9,36 +9,6 @@ import {SizeTokens, PaddingTokens, GapTokens} from './examples/Tables';
 
 System space tokens create consistent layout spacing across our UI. In v4, space tokens have been reorganized into semantic `padding`, `gap`, and `size` tokens to provide clearer intent and better alignment with common CSS properties.
 
-## Usage
-
-Space tokens can be consumed as a JavaScript / TypeScript object. Each token value references the CSS variable from a base token, so you'll need to have those CSS variables imported in your application as well.
-
-```ts
-// styles.ts
-import {system} from '@workday/canvas-tokens-web';
-
-const styles = {
-  display: 'grid',
-  gap: `var(${system.gap.md})`,
-  padding: `var(${system.padding.md})`,
-  height: `var(${system.size.lg})`,
-};
-```
-
-They can also be consumed as CSS variables. In the example below, we're applying the same styles using CSS variables directly.
-
-```css
-// styles.css
-.card {
-  display: grid;
-  gap: var(--cnvs-sys-gap-md);
-  padding: var(--cnvs-sys-padding-md);
-  height: var(--cnvs-sys-size-lg);
-}
-```
-
----
-
 ## Size Tokens
 
 Size tokens provide semantic size values for height and width of elements. These tokens are used for component dimensions, not spacing.

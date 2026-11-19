@@ -12,33 +12,6 @@ height, and letter spacing) into levels. They should be your go-to type tokens. 
 tokens are intended for further customization when our type levels don't meet your particular use
 case.
 
-## Usage
-
-These tokens can be consumed as a JavaScript / TypeScript object.
-
-```ts
-// styles.ts
-import {system} from '@workday/canvas-tokens-web';
-
-const headingStyles = {
-  ...system.type.levels.heading.small,
-}
-
-const bodyStyles = {
-  minWidth: 48rem;
-  ...system.type.levels.body.small,
-};
-```
-
-They can also be consumed as CSS variables. However, in CSS type level tokens are CSS
-classes, not variables. In the example below, we're applying the same type styles using CSS
-variables directly.
-
-```tsx
-<h2 className="cnvs-sys-type-heading-sm">Heading</h2>
-<p className="cnvs-sys-type-body-sm">Body text</p>
-```
-
 ## Tokens
 
 There are four type levels: `subtext`, `body`, `heading`, and `title`. Each level has three sizes:

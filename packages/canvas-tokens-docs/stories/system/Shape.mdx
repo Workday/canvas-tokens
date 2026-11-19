@@ -10,33 +10,6 @@ import {ShapeTokens} from './examples/Tables';
 System shape tokens provide consistent shapes across our UI. They're used in our buttons, labels,
 cards, and more.
 
-## Usage
-
-Shape tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
-CSS variable from a base token, so you'll need to have those CSS variables imported in your
-application as well.
-
-```ts
-// styles.ts
-import {system} from '@workday/canvas-tokens-web';
-
-const styles = {
-  borderRadius: `var(${system.shape.x2})`,
-};
-```
-
-They can also be consumed as CSS variables. In the example below, we're applying the
-same styles using CSS variables directly.
-
-```css
-// styles.css
-.card {
-  border-radius: var(--cnvs-sys-shape-x2);
-}
-```
-
----
-
 ## Tokens
 
 These tokens use a multiplier scale and reference our `baseUnit` token, which is `0.25rem` / `4px`.
