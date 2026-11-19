@@ -1,0 +1,27 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {LetterSpacingTokens} from './examples/Tables';
+
+<Meta title="Tokens/System/Type/Letter Spacing" />
+
+<Unstyled>
+
+# System Letter Spacing Tokens
+
+Letter spacing tokens are useful for adjusting the letter spacing without overwriting other font styles.
+
+## Usage
+
+```css
+// styles.css
+p {
+  letter-spacing: var(--cnvs-sys-letter-spacing-body-md);
+}
+```
+
+## Tokens
+
+Letter spacing token names match the type levels, e.g. `body.md`.
+
+<LetterSpacingTokens />
+
+</Unstyled>

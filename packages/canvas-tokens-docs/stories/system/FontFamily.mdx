@@ -1,0 +1,41 @@
+import {Meta, Unstyled} from '@storybook/blocks';
+import {FontFamilyTokens} from './examples/Tables';
+
+<Meta title="Tokens/System/Type/Font Family" />
+
+<Unstyled>
+
+# System Font Family Tokens
+
+Font family tokens are useful for adjusting the font family without overwriting other font styles.
+
+## Usage
+
+These tokens can be consumed as a JavaScript / TypeScript object.
+
+```ts
+// styles.ts
+import {system} from '@workday/canvas-tokens-web';
+
+const styles = {
+  fontFamily: `var(${system.fontFamily.mono})`,
+};
+```
+
+They can also be consumed as CSS variables.
+
+```css
+// styles.css
+code {
+  font-family: var(--cnvs-sys-font-family-mono);
+}
+```
+
+## Tokens
+
+There are three font family tokens, `default`, `mono`, and `global`. You will mostly use `default`
+and `mono`, but `global` is useful for internationalization.
+
+<FontFamilyTokens />
+
+</Unstyled>

@@ -5,7 +5,7 @@ import {Card} from '@workday/canvas-kit-react/card';
 import {Table} from '@workday/canvas-kit-react/table';
 import {Tooltip} from '@workday/canvas-kit-react/tooltip';
 import {SystemIcon} from '@workday/canvas-kit-react/icon';
-import {checkIcon, exclamationTriangleIcon} from '@workday/canvas-system-icons-web';
+import {checkIcon, exclamationTriangleIcon, xIcon} from '@workday/canvas-system-icons-web';
 import {token as tokenVar} from '@workday/canvas-tokens-web/token';
 
 import {CodeBlock} from '../CodeBlock';
@@ -23,7 +23,8 @@ type TokenType =
   | 'duration'
   | 'cubicBezier'
   | 'fontWeight'
-  | 'fontFamily';
+  | 'fontFamily'
+  | 'shadow';
 
 type TokenTableProps = {
   group: string;
@@ -75,7 +76,12 @@ const getJsName = (sdToken: SDToken, level?: 'base') =>
 const getCssVar = (sdToken: SDToken, level?: 'base') =>
   level
     ? `var(--cnvs-${level}-${sdToken.path.map(toKebab).join('-')})`
-    : tokenVar(getTokenName(sdToken.key) as any);
+    : sdToken.$type === 'typography'
+    ? `.${getTypeClass(sdToken)}`
+    : (tokenVar(getTokenName(sdToken.key) as any) as string);
+
+/** Type level tokens are CSS classes, not variables, e.g. `cnvs-sys-type-body-sm`. */
+const getTypeClass = (sdToken: SDToken) => `cnvs-sys-${sdToken.path.map(toKebab).join('-')}`;
 
 const getDimensionPx = (sdToken: SDToken) => {
   const original = sdToken.original.$value as unknown as {value: number; unit: string};
@@ -88,35 +94,92 @@ const getDimensionPx = (sdToken: SDToken) => {
 const ExampleCell = ({token: sdToken, level}: {token: SDToken; level?: 'base'}) => {
   const cssVar = getCssVar(sdToken, level);
   const [group] = sdToken.path;
-  const fill = tokenVar('color.accent.contrast' as any);
+  const fill = tokenVar('color.accent.info' as any);
   let preview: React.ReactNode = null;
+
+  const sample = (style: React.CSSProperties, text = 'Aa') => (
+    <span data-part="text-sample" style={style}>
+      {text}
+    </span>
+  );
 
   switch (sdToken.$type) {
     case 'dimension':
-      if (group === 'letter-spacing') {
-        preview = (
-          <span data-part="text-sample" style={{letterSpacing: cssVar}}>
-            Aa-Zz
-          </span>
-        );
-      } else if (group === 'fontSize') {
-        preview = (
-          <span data-part="text-sample" style={{fontSize: cssVar}}>
-            Aa
-          </span>
-        );
-      } else {
-        preview = <div data-part="size-sample" style={{width: cssVar, background: fill}} />;
+      switch (group) {
+        case 'letter-spacing':
+          preview = sample({letterSpacing: cssVar});
+          break;
+        case 'fontSize':
+        case 'font-size':
+          preview = sample({fontSize: cssVar});
+          break;
+        case 'line-height':
+          preview = (
+            <span data-part="text-sample" style={{lineHeight: cssVar, fontSize: '1rem'}}>
+              Aa
+              <br />
+              Aa
+            </span>
+          );
+          break;
+        case 'shape':
+          preview = (
+            <div
+              data-part="shape-sample"
+              style={{
+                borderRadius: cssVar,
+                background: `color-mix(in srgb, ${fill} 30%, transparent)`,
+              }}
+            >
+              <div data-part="shape-corner" style={{borderRadius: `calc(${cssVar} + 4px)`}} />
+            </div>
+          );
+          break;
+        case 'padding':
+          preview = (
+            <div data-part="padding-sample" style={{paddingInline: cssVar, borderColor: tokenVar('color.fg.default' as any)}}>
+              <div style={{background: fill}} />
+            </div>
+          );
+          break;
+        case 'gap':
+          preview = (
+            <div data-part="gap-sample" style={{gap: cssVar}}>
+              <div style={{background: fill}} />
+              <div style={{background: fill}} />
+            </div>
+          );
+          break;
+        case 'breakpoint':
+        case 'breakpoints':
+          preview = <SystemIcon icon={xIcon} />;
+          break;
+        default:
+          preview = <div data-part="size-sample" style={{width: cssVar, background: fill}} />;
       }
       break;
     case 'number':
+      if (group === 'letter-spacing') {
+        preview = sample({letterSpacing: cssVar});
+      } else {
+        preview = (
+          <div data-part="opacity-sample">
+            <div
+              data-part="opacity-overlay"
+              style={{opacity: cssVar as any, background: tokenVar('color.accent.info' as any)}}
+            />
+          </div>
+        );
+      }
+      break;
+    case 'shadow':
+      preview = <div data-part="shadow-sample" style={{boxShadow: cssVar}} />;
+      break;
+    case 'typography':
       preview = (
-        <div data-part="opacity-sample">
-          <div
-            data-part="opacity-overlay"
-            style={{opacity: cssVar as any, background: tokenVar('color.accent.info' as any)}}
-          />
-        </div>
+        <span data-part="text-sample" className={getTypeClass(sdToken)}>
+          Aa
+        </span>
       );
       break;
     case 'duration':
@@ -127,7 +190,10 @@ const ExampleCell = ({token: sdToken, level}: {token: SDToken; level?: 'base'}) 
       );
       break;
     case 'cubicBezier': {
-      const [x1, y1, x2, y2] = (sdToken.original.$value as unknown as number[]).map(n => n * 100);
+      // System easing aliases a base token, so read the points from the resolved `cubic-bezier()` value
+      const [x1, y1, x2, y2] = (String(sdToken.$value).match(/-?[\d.]+/g) ?? [0, 0, 1, 1]).map(
+        n => Number(n) * 100
+      );
       preview = (
         <div data-part="curve-sample">
           <svg viewBox="0 0 100 100" aria-hidden="true" overflow="visible">
@@ -148,24 +214,20 @@ const ExampleCell = ({token: sdToken, level}: {token: SDToken; level?: 'base'}) 
       break;
     }
     case 'fontWeight':
-      preview = (
-        <span data-part="text-sample" style={{fontWeight: cssVar as any}}>
-          Aa
-        </span>
-      );
+      preview = sample({fontWeight: cssVar as any});
       break;
     case 'fontFamily':
-      preview = (
-        <span data-part="text-sample" style={{fontFamily: cssVar}}>
-          Aa-Zz
-        </span>
-      );
+      preview = sample({fontFamily: cssVar});
       break;
   }
+
+  // Tokens that alias a single token list their reference, like color swatches do
+  const ref = cleanRef(sdToken.original.$value);
 
   return (
     <div className="example-cell">
       <Card data-part="example">{preview}</Card>
+      {ref && <CodeBlock data-part="ref">{ref}</CodeBlock>}
     </div>
   );
 };
@@ -222,7 +284,14 @@ const cleanTitle = (name: string) =>
     .replace('.fg', '.foreground')
     .replace('.ai', '.AI')
     .replace('base.', '')
-    .replace(/\.|-/g, ' ');
+    .replace(/\.|-/g, ' ')
+    // t-shirt sizes read as abbreviations: XS, SM, XXL
+    .replace(/\b(x{1,3}[sl]|sm|md|lg)\b/g, size => size.toUpperCase());
+
+const formatTypography = (value: unknown) =>
+  Object.entries(value as Record<string, string | number>)
+    .map(([prop, v]) => `${prop}: ${v}`)
+    .join('\n');
 
 const DescriptionCell = ({token, level}: {token: SDToken; level?: 'base'}) => {
   const name = getJsName(token, level);
@@ -244,6 +313,8 @@ const DescriptionCell = ({token, level}: {token: SDToken; level?: 'base'}) => {
                   {id: 'hex', value: oklchToHex(token.$value as any)},
                   {id: 'rgba', value: oklchToRgba(token.$value as any)},
                 ]
+              : token.$type === 'typography'
+              ? [{id: 'value', value: formatTypography(token.$value)}]
               : [
                   {id: 'value', value: String(token.$value)},
                   {id: 'px', value: px},
@@ -254,7 +325,7 @@ const DescriptionCell = ({token, level}: {token: SDToken; level?: 'base'}) => {
           title="Usage"
           items={[
             {id: 'js', value: `token('${name}')`},
-            {id: 'css', value: cssVar},
+            {id: token.$type === 'typography' ? 'class' : 'css', value: cssVar},
             {id: 'mobile', value: getMobileTokenName(token.path)},
           ].filter(item => item.value)}
         />
