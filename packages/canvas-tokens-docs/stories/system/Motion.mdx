@@ -16,8 +16,7 @@ Prefer using system duration and easing tokens over using base tokens directly.
 ## Duration Tokens
 
 System duration tokens provide standardized timing values for animations and transitions. Each token
-references a base duration token, so you'll need to have the base CSS variables imported in your
-application as well.
+references a base duration token.
 
 Duration tokens are grouped into tiers: instant, short, medium, long, and xlong. Within a tier,
 numbered steps get progressively slower, so `medium2` is longer than `medium1`.
@@ -54,9 +53,8 @@ our UI.
 
 ### Usage
 
-Easing tokens can be consumed as a JavaScript / TypeScript object. Each token value references the
-CSS variable from a base token, so you'll need to have those CSS variables imported in your
-application as well.
+Easing tokens can be consumed as a JavaScript / TypeScript object. Each token references a base
+easing token.
 
 ```ts
 // styles.ts
