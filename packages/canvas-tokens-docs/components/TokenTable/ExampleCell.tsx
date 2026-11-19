@@ -121,11 +121,7 @@ const TokenPreview = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
     case 'typography':
       return <TextSample className={getTypeClass(token)} />;
     case 'duration':
-      return (
-        <div data-part="duration-sample">
-          <div style={{animationDuration: cssVar, background: fill}} />
-        </div>
-      );
+      return <SystemIcon icon={xIcon} />;
     case 'cubicBezier':
       return <CurvePreview value={token.$value} cssVar={cssVar} />;
     case 'fontWeight':
@@ -141,7 +137,7 @@ const TokenPreview = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
 export const ExampleCell = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
   // Tokens that alias a single token list their reference, like color swatches do
   const ref = cleanRef(token.original.$value);
-  const isMotion = token.$type === 'duration' || token.$type === 'cubicBezier';
+  const isMotion = token.$type === 'cubicBezier';
   const [playing, setPlaying] = React.useState(false);
 
   return (

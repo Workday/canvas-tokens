@@ -217,28 +217,6 @@
   padding: var(--cnvs-sys-padding-xs);
 }
 
-.example-cell [data-part='example']:has([data-part='duration-sample']) {
-  min-height: calc(var(--cnvs-sys-size-xxl) * 1.5);
-  padding: var(--cnvs-sys-padding-lg) var(--cnvs-sys-padding-md);
-}
-
-.example-cell [data-part='duration-sample'] {
-  --duration-dot: 16px;
-  position: relative;
-  width: 100%;
-  height: var(--duration-dot);
-}
-
-/* track line the dot travels along, matching the easing curve's linear guide */
-.example-cell [data-part='duration-sample']::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  border-top: 1px dashed var(--cnvs-sys-color-border-strong);
-}
-
 .example-cell [data-part='opacity-sample'] {
   width: 100%;
   height: var(--cnvs-sys-size-xxl);
@@ -260,15 +238,6 @@
   height: 100%;
 }
 
-.example-cell [data-part='duration-sample'] > div {
-  position: relative;
-  width: var(--duration-dot);
-  height: var(--duration-dot);
-  border-radius: 50%;
-  animation-iteration-count: 20;
-  animation-direction: alternate;
-}
-
 /* motion previews play once when the play button is pressed */
 .example-cell [data-part='preview'] {
   display: contents;
@@ -288,10 +257,6 @@
   height: 24px;
   padding: 0;
   border-radius: 50%;
-}
-
-.example-cell [data-playing='true'] [data-part='duration-sample'] > div {
-  animation-name: token-table-slide;
 }
 
 .example-cell [data-playing='true'] [data-part='curve-x'] {
@@ -368,25 +333,7 @@
   }
 }
 
-.example-cell [data-part='duration-sample'] > div {
-  animation-timing-function: linear;
-}
-
-@keyframes token-table-slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(100cqw - var(--duration-dot, 12px)));
-  }
-}
-
-.example-cell [data-part='duration-sample'] {
-  container-type: inline-size;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .example-cell [data-part='duration-sample'] > div,
   .example-cell [data-part='curve-x'],
   .example-cell [data-part='curve-y'] {
     animation: none;
