@@ -72,6 +72,9 @@ const getCanvasValue = (token: TransformedToken, tokens?: TransformedTokens) => 
   return resolved?.$value ?? resolved;
 };
 
+/** Turn a token key into a JS property name; the DTCG `$root` key is exposed as `default` */
+export const toJsKey = (key: string) => (key === '$root' ? 'default' : camelCase(key));
+
 /** Get the JS access path (`brand.primary100`) of a token, as exported from the package index */
 export const getJsPath = (token: TransformedToken): string => {
   const level = token.filePath.split('/')[3];
@@ -79,7 +82,7 @@ export const getJsPath = (token: TransformedToken): string => {
 
   // Brand files skip their `brand` root, color files keep their `color` root
   const path = /(^|\/)brand\//.test(token.filePath) ? token.path.slice(1) : token.path;
-  return [level, ...path.map(key => camelCase(key))].join('.');
+  return [level, ...path.map(toJsKey)].join('.');
 };
 
 /**

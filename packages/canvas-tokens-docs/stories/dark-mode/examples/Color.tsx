@@ -49,9 +49,9 @@ export const DarkMode = () => {
         flexDirection: 'column',
         gap: v(system.gap.lg),
         padding: v(system.padding.xl),
-        backgroundColor: v(c.surface.root),
-        color: v(c.fg.root),
-        border: `1px solid ${v(c.border.root)}`,
+        backgroundColor: v(c.surface.default),
+        color: v(c.fg.default),
+        border: `1px solid ${v(c.border.default)}`,
         borderRadius: v(system.shape.xl),
       }}
     >
@@ -168,7 +168,7 @@ export const DarkMode = () => {
           justifyContent: 'flex-end',
           padding: v(system.padding.md),
           borderRadius: v(system.shape.md),
-          backgroundColor: v(c.surface.contrast.root),
+          backgroundColor: v(c.surface.contrast.default),
         }}
       >
         <PrimaryButton icon={userFillIcon} variant="inverse">
