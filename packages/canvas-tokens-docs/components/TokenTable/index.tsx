@@ -13,12 +13,24 @@ import {getTokens, oklchToHex, oklchToRgba} from '../../util';
 
 import './index.css';
 
-type TokenType = 'color' | 'spacing' | 'typography' | 'gradient';
+type TokenType =
+  | 'color'
+  | 'spacing'
+  | 'typography'
+  | 'gradient'
+  | 'dimension'
+  | 'number'
+  | 'duration'
+  | 'cubicBezier'
+  | 'fontWeight'
+  | 'fontFamily';
 
 type TokenTableProps = {
   group: string;
   type?: TokenType;
   isDark?: boolean;
+  /** Set to `base` for base tokens, whose keys don't carry their level, e.g. `{size.100}`. */
+  level?: 'base';
   /** Narrows the group to a subset of its tokens, e.g. one sub-category of `system.color.surface`. */
   filter?: (token: SDToken) => boolean;
 };
@@ -52,6 +64,115 @@ const cleanRef = (value: unknown) =>
 
 /** The public token name: a trailing `$root` segment is exposed as `default`, e.g. `color.surface.default`. */
 const getTokenName = (key: string) => cleanRef(key).replace(/\.\$root$/, '.default');
+
+const toKebab = (part: string) => part.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+
+/** The `token()` name of a token, e.g. `base.size.100` or `base.font-size.100` (dashes are kept). */
+const getJsName = (sdToken: SDToken, level?: 'base') =>
+  level ? [level, ...sdToken.path.map(toKebab)].join('.') : getTokenName(sdToken.key);
+
+/** The `var()` reference of a token. */
+const getCssVar = (sdToken: SDToken, level?: 'base') =>
+  level
+    ? `var(--cnvs-${level}-${sdToken.path.map(toKebab).join('-')})`
+    : tokenVar(getTokenName(sdToken.key) as any);
+
+const getDimensionPx = (sdToken: SDToken) => {
+  const original = sdToken.original.$value as unknown as {value: number; unit: string};
+  return original && typeof original === 'object' && original.unit === 'px'
+    ? `${original.value}px`
+    : undefined;
+};
+
+/** Preview of a non-color token, rendered from the token's own CSS variable. */
+const ExampleCell = ({token: sdToken, level}: {token: SDToken; level?: 'base'}) => {
+  const cssVar = getCssVar(sdToken, level);
+  const [group] = sdToken.path;
+  const fill = tokenVar('color.accent.contrast' as any);
+  let preview: React.ReactNode = null;
+
+  switch (sdToken.$type) {
+    case 'dimension':
+      if (group === 'letter-spacing') {
+        preview = (
+          <span data-part="text-sample" style={{letterSpacing: cssVar}}>
+            Aa Bb Cc
+          </span>
+        );
+      } else if (group === 'fontSize') {
+        preview = (
+          <span data-part="text-sample" style={{fontSize: cssVar}}>
+            Aa
+          </span>
+        );
+      } else {
+        preview = <div data-part="size-sample" style={{width: cssVar, background: fill}} />;
+      }
+      break;
+    case 'number':
+      preview = (
+        <div data-part="opacity-sample">
+          <div
+            data-part="opacity-base"
+            style={{background: `color-mix(in oklch, ${fill} 85%, white)`}}
+          />
+          <div
+            data-part="opacity-overlay"
+            style={{opacity: cssVar as any, background: tokenVar('color.accent.info' as any)}}
+          />
+        </div>
+      );
+      break;
+    case 'duration':
+      preview = (
+        <div data-part="duration-sample">
+          <div style={{animationDuration: cssVar, background: fill}} />
+        </div>
+      );
+      break;
+    case 'cubicBezier': {
+      const [x1, y1, x2, y2] = (sdToken.original.$value as unknown as number[]).map(n => n * 100);
+      preview = (
+        <div data-part="curve-sample">
+          <svg viewBox="0 0 100 100" aria-hidden="true" overflow="visible">
+            <line x1="0" y1="100" x2="100" y2="0" data-part="curve-linear" />
+            <path
+              d={`M0 100 C${x1} ${100 - y1} ${x2} ${100 - y2} 100 0`}
+              fill="none"
+              stroke={fill}
+              strokeWidth="2"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+          <div data-part="curve-x">
+            <div data-part="curve-y" style={{animationTimingFunction: cssVar, background: fill}} />
+          </div>
+        </div>
+      );
+      break;
+    }
+    case 'fontWeight':
+      preview = (
+        <span data-part="text-sample" style={{fontWeight: cssVar as any}}>
+          Aa
+        </span>
+      );
+      break;
+    case 'fontFamily':
+      preview = (
+        <span data-part="text-sample" style={{fontFamily: cssVar}}>
+          Aa Bb Cc
+        </span>
+      );
+      break;
+  }
+
+  return (
+    <div className="example-cell">
+      <Card data-part="example">{preview}</Card>
+    </div>
+  );
+};
 
 const SwatchCell = ({token: sdToken, isDark}: {token: SDToken; isDark?: boolean}) => {
   const isGradient = sdToken.$type === 'gradient' || sdToken.$value?.startsWith('linear-gradient');
@@ -104,12 +225,14 @@ const cleanTitle = (name: string) =>
     .replace('.bg', '.background')
     .replace('.fg', '.foreground')
     .replace('.ai', '.AI')
-    .replace(/\./g, ' ');
+    .replace('base.', '')
+    .replace(/\.|-/g, ' ');
 
-const DescriptionCell = ({token}: {token: SDToken}) => {
-  const name = getTokenName(token.key);
+const DescriptionCell = ({token, level}: {token: SDToken; level?: 'base'}) => {
+  const name = getJsName(token, level);
   const title = cleanTitle(name);
-  const cssVar = tokenVar(name as any);
+  const cssVar = getCssVar(token, level);
+  const px = token.$type === 'dimension' ? getDimensionPx(token) : undefined;
 
   return (
     <Table.Cell className="token-description-cell">
@@ -125,7 +248,10 @@ const DescriptionCell = ({token}: {token: SDToken}) => {
                   {id: 'hex', value: oklchToHex(token.$value as any)},
                   {id: 'rgba', value: oklchToRgba(token.$value as any)},
                 ]
-              : [{id: 'oklch', value: token.$value}]
+              : [
+                  {id: 'value', value: String(token.$value)},
+                  {id: 'px', value: px},
+                ].filter(item => item.value)
           }
         />
         <MultiValueBlock
@@ -154,16 +280,17 @@ const MultiValueBlock = ({title, items}: MultiValueBlockProps) => {
       <div>
         <Subtext size="large">{title}</Subtext>
         <div>
-          {items.map((item, index) => (
-            <TertiaryButton
-              key={index}
-              size="extraSmall"
-              onClick={() => setSelected(item)}
-              aria-pressed={selected.id === item.id}
-            >
-              {item.id}
-            </TertiaryButton>
-          ))}
+          {items.length > 1 &&
+            items.map((item, index) => (
+              <TertiaryButton
+                key={index}
+                size="extraSmall"
+                onClick={() => setSelected(item)}
+                aria-pressed={selected.id === item.id}
+              >
+                {item.id}
+              </TertiaryButton>
+            ))}
         </div>
       </div>
       <CodeBlock type="copy">{selected.value}</CodeBlock>
@@ -174,18 +301,21 @@ const MultiValueBlock = ({title, items}: MultiValueBlockProps) => {
 type TokenRowProps = {
   token: SDToken;
   isDark?: boolean;
+  level?: 'base';
 };
 
-const TokenRow = ({token, isDark}: TokenRowProps) => {
+const TokenRow = ({token, isDark, level}: TokenRowProps) => {
   const isDeprecated = token.$deprecated;
   return (
     <Table.Row>
       <Table.Cell>
-        {(token.$type === 'color' || token.$type === 'gradient') && (
+        {token.$type === 'color' || token.$type === 'gradient' ? (
           <SwatchCell token={token} isDark={isDark} />
+        ) : (
+          <ExampleCell token={token} level={level} />
         )}
       </Table.Cell>
-      <DescriptionCell token={token} />
+      <DescriptionCell token={token} level={level} />
       <Table.Cell>
         <Tooltip title={!isDeprecated ? 'Active' : 'Deprecated'}>
           <SystemIcon
@@ -202,12 +332,17 @@ const TokenRow = ({token, isDark}: TokenRowProps) => {
   );
 };
 
-export const TokenTable = ({group, isDark, filter}: TokenTableProps) => {
+export const TokenTable = ({group, isDark, level, filter}: TokenTableProps) => {
   const allTokens = group ? (getTokens(group) as unknown as SDToken[]) : [];
   const tokens = filter ? allTokens.filter(filter) : allTokens;
 
   return (
-    <Table aria-label={`${group} tokens table`} className="token-table">
+    <Table
+      aria-label={`${group} tokens table`}
+      className="token-table"
+      data-theme="sana-canvas"
+      cs={{marginBlock: tokenVar('gap.lg')}}
+    >
       <Table.Head>
         <Table.Row>
           <Table.Header scope="col">Preview</Table.Header>
@@ -217,7 +352,7 @@ export const TokenTable = ({group, isDark, filter}: TokenTableProps) => {
       </Table.Head>
       <Table.Body>
         {tokens.map(token => (
-          <TokenRow key={token.key} token={token} isDark={isDark} />
+          <TokenRow key={token.key} token={token} isDark={isDark} level={level} />
         ))}
       </Table.Body>
     </Table>

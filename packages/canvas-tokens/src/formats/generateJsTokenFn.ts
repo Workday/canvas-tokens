@@ -13,6 +13,9 @@ export type TokenFnOptions = {
   syntaxStyle?: SyntaxStyle;
 };
 
+/** `fontSize` -> `font-size` */
+const toKebab = (segment: string) => segment.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+
 /** Token levels that keep their name in the CSS variable, any other token is a system token */
 const LEVELS = ['base', 'brand', 'component'];
 
@@ -48,12 +51,24 @@ export const generateJsTokenFn = async ({dictionary, file, options}: FormatFnArg
   } = options as TokenFnOptions;
   const header = await fileHeader({file});
 
-  /** `--cnvs-sys-opacity-disabled` -> `opacity.disabled`, `--cnvs-base-palette-blue-400` -> `blue.400` */
-  const getId = (token: TransformedToken) =>
-    toCSSVarName(token, prefix)
+  /**
+   * `--cnvs-sys-opacity-disabled` -> `opacity.disabled`, `--cnvs-base-palette-blue-400` -> `blue.400`.
+   * A hyphen inside a path segment stays, `--cnvs-sys-letter-spacing-body-sm` -> `letter-spacing.body.sm`
+   */
+  const getId = (token: TransformedToken) => {
+    const id = toCSSVarName(token, prefix)
       .slice(`--${prefix}-`.length)
       .replace(/^(sys|base-palette)-/, '')
       .replace(/-/g, '.');
+
+    return token.path
+      .map(toKebab)
+      .filter(segment => segment.includes('-'))
+      .reduce((result, segment) => {
+        const dotted = segment.replace(/-/g, '.').replace(/\./g, '\\.');
+        return result.replace(new RegExp(`(^|\\.)${dotted}(?=\\.|$)`), `$1${segment}`);
+      }, id);
+  };
 
   const docOptions = {compositeTokens, tokens: dictionary.unfilteredTokens};
   const getDoc = (token: TransformedToken) => (includeJsDocs ? getJsDoc(token, docOptions) : '');
