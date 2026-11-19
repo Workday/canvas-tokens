@@ -4,11 +4,14 @@ import {Avatar} from '@workday/canvas-kit-react/avatar';
 import {Banner} from '@workday/canvas-kit-react/banner';
 import {PrimaryButton, SecondaryButton, TertiaryButton} from '@workday/canvas-kit-react/button';
 import {Card} from '@workday/canvas-kit-react/card';
+import {Checkbox} from '@workday/canvas-kit-react/checkbox';
+import {FormField} from '@workday/canvas-kit-react/form-field';
 import {Box, Flex, Grid} from '@workday/canvas-kit-react/layout';
 import {Pill} from '@workday/canvas-kit-react/pill';
 import {Switch} from '@workday/canvas-kit-react/switch';
 import {Table} from '@workday/canvas-kit-react/table';
 import {Tabs} from '@workday/canvas-kit-react/tabs';
+import {TextInput} from '@workday/canvas-kit-react/text-input';
 import {Heading, Text} from '@workday/canvas-kit-react/text';
 import {userFillIcon} from '@workday/canvas-system-icons-web';
 
@@ -25,6 +28,12 @@ const people = [
   {name: 'Ava Thompson', role: 'Product Designer', status: 'Active'},
   {name: 'Liam Carter', role: 'Software Engineer', status: 'Onboarding'},
   {name: 'Noah Patel', role: 'Data Analyst', status: 'On leave'},
+];
+
+const teams = [
+  {name: 'Design Systems', lead: 'Ava Thompson', members: 8, tag: 'Product'},
+  {name: 'Platform', lead: 'Liam Carter', members: 14, tag: 'Engineering'},
+  {name: 'People Analytics', lead: 'Noah Patel', members: 5, tag: 'Data'},
 ];
 
 export const DarkMode = () => {
@@ -107,6 +116,43 @@ export const DarkMode = () => {
                 ))}
               </Table.Body>
             </Table>
+          </Tabs.Panel>
+          <Tabs.Panel>
+            <Grid cs={{gridTemplateColumns: 'repeat(3, 1fr)', gap: v(system.gap.lg)}}>
+              {teams.map(team => (
+                <Card key={team.name}>
+                  <Card.Heading>{team.name}</Card.Heading>
+                  <Card.Body>
+                    <Flex cs={{flexDirection: 'column', gap: v(system.gap.sm)}}>
+                      <Flex cs={{alignItems: 'center', gap: v(system.gap.sm)}}>
+                        <Avatar name={team.lead} size="extraSmall" />
+                        <Text typeLevel="body.medium">{team.lead}</Text>
+                      </Flex>
+                      <Text typeLevel="subtext.large">{team.members} members</Text>
+                      <Box>
+                        <Pill>{team.tag}</Pill>
+                      </Box>
+                    </Flex>
+                  </Card.Body>
+                </Card>
+              ))}
+            </Grid>
+          </Tabs.Panel>
+          <Tabs.Panel>
+            <Flex cs={{flexDirection: 'column', gap: v(system.gap.md), maxWidth: '24rem'}}>
+              <FormField>
+                <FormField.Label>Report name</FormField.Label>
+                <FormField.Field>
+                  <FormField.Input as={TextInput} placeholder="Quarterly headcount" />
+                </FormField.Field>
+              </FormField>
+              <Checkbox label="Include terminated employees" />
+              <Checkbox label="Group by department" defaultChecked />
+              <Flex cs={{alignItems: 'center', gap: v(system.gap.sm)}}>
+                <Switch defaultChecked />
+                <Text typeLevel="body.medium">Email me a weekly summary</Text>
+              </Flex>
+            </Flex>
           </Tabs.Panel>
         </Box>
       </Tabs>
