@@ -28,11 +28,39 @@ const getAllTokens = (tokens: DocsToken[], prefix: string[]) =>
     })
   );
 
+/**
+ * Tokens of a system color group, e.g. `system.color.surface` (direct children only) or
+ * `system.color.surface.alt` (whole subtree). The `$root` token is shown as `default`.
+ */
+const getSystemTokens = (group: string, deep: boolean) => {
+  const [, ...prefix] = group.split('.');
+  const parts = group.split('.');
+  // `color.brand.surface` tokens live in the `surface` file, not in a `brand` one
+  const file = parts[2] === 'brand' ? `system.color.${parts[3]}` : parts.slice(0, 3).join('.');
+  return Object.fromEntries(
+    getTokens(file)
+      .filter(
+        token =>
+          prefix.every((part, i) => token.path[i] === part) &&
+          (deep || token.path.length === prefix.length + 1)
+      )
+      .map(token => [
+        token.path
+          .slice(prefix.length)
+          .map(part => (part === '$root' ? 'default' : part))
+          .join('.') || 'default',
+        token,
+      ])
+  );
+};
+
 export const TestPaletteScale = ({group, isDark}: TestPaletteScaleProps) => {
   const path = group.split('.');
+  const isSystem = path[0] === 'system';
   // `palette.red` is the `red` family of `base.palette`, others are groups like `brand.primary`
-  const colors =
-    path[0] === 'palette'
+  const colors = isSystem
+    ? getSystemTokens(group, path.length > 3)
+    : path[0] === 'palette'
       ? getTokensByStep(getTokens('base.palette'), path.slice(1))
       : getAllTokens(getTokens(group), path);
 
@@ -42,7 +70,7 @@ export const TestPaletteScale = ({group, isDark}: TestPaletteScaleProps) => {
       <div className="swatch-container">
         {Object.entries(colors).map(([key, value]: [string, any]) => (
           <div key={key} className="swatch-item">
-            {value?.$value && <Swatch color={token(value?.key.replace(/{|}/g, '') as any) as unknown as string} />}
+            {value?.$value && <Swatch color={token(value?.key.replace(/{|}/g, '').replace(/\.\$root$/, '.default') as any) as unknown as string} />}
             <Subtext size="small">{key}</Subtext>
           </div>
         ))}
