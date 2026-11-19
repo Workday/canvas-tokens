@@ -96,7 +96,7 @@ const ExampleCell = ({token: sdToken, level}: {token: SDToken; level?: 'base'}) 
       if (group === 'letter-spacing') {
         preview = (
           <span data-part="text-sample" style={{letterSpacing: cssVar}}>
-            Aa Bb Cc
+            Aa-Zz
           </span>
         );
       } else if (group === 'fontSize') {
@@ -112,10 +112,6 @@ const ExampleCell = ({token: sdToken, level}: {token: SDToken; level?: 'base'}) 
     case 'number':
       preview = (
         <div data-part="opacity-sample">
-          <div
-            data-part="opacity-base"
-            style={{background: `color-mix(in oklch, ${fill} 85%, white)`}}
-          />
           <div
             data-part="opacity-overlay"
             style={{opacity: cssVar as any, background: tokenVar('color.accent.info' as any)}}
@@ -161,7 +157,7 @@ const ExampleCell = ({token: sdToken, level}: {token: SDToken; level?: 'base'}) 
     case 'fontFamily':
       preview = (
         <span data-part="text-sample" style={{fontFamily: cssVar}}>
-          Aa Bb Cc
+          Aa-Zz
         </span>
       );
       break;
