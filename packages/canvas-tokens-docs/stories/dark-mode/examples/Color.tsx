@@ -10,6 +10,7 @@ import {Switch} from '@workday/canvas-kit-react/switch';
 import {Table} from '@workday/canvas-kit-react/table';
 import {Tabs} from '@workday/canvas-kit-react/tabs';
 import {Heading, Text} from '@workday/canvas-kit-react/text';
+import {userFillIcon} from '@workday/canvas-system-icons-web';
 
 const v = (token: string) => `var(${token})`;
 const c = system.color;
@@ -124,7 +125,9 @@ export const DarkMode = () => {
           backgroundColor: v(c.surface.contrast.root),
         }}
       >
-        <PrimaryButton variant="inverse">Submit</PrimaryButton>
+        <PrimaryButton icon={userFillIcon} variant="inverse">
+          Logout
+        </PrimaryButton>
       </Flex>
     </Flex>
   );
