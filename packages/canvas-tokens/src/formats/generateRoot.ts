@@ -8,7 +8,7 @@ import type {
 import {fileHeader, getReferences} from 'style-dictionary/utils';
 import {kebabCase} from 'case-anything';
 
-import {isOklchToken} from '../../filters';
+import {isBaseShadowToken, isOklchToken} from '../../filters';
 import {getOklchValue, isComposite as isCompositeToken, joinParts} from '../../utils';
 
 type Format = {
@@ -185,6 +185,7 @@ const resolveReferences = (value: string, options: ShortenOptions) => {
 
   return value.replace(/\{([\w.$-]+)\}/g, a => {
     const refToken = ref.find(r => r.key === a);
+    if (refToken && isBaseShadowToken(refToken)) return String(refToken.$value);
     return refToken ? toCSSVarRef(refToken, prefix, omitDefault) : a;
   });
 };

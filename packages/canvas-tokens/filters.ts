@@ -1,7 +1,14 @@
 import type {TransformedToken} from 'style-dictionary';
 
+/** Base shadow tokens are not output to CSS, the depth tokens get their values inlined */
+export const isBaseShadowToken = (token: TransformedToken) =>
+  token.filePath.includes('/base/') && token.path[0] === 'shadow';
+
 export const isOldBaseTokens = (token: TransformedToken) =>
-  token.filePath.includes('/base/') && token.path[0] !== 'dark' && !checkExcluded(token);
+  token.filePath.includes('/base/') &&
+  token.path[0] !== 'dark' &&
+  !isBaseShadowToken(token) &&
+  !checkExcluded(token);
 
 export const isOldBrandTokens = (token: TransformedToken) =>
   token.filePath.includes('/brand/') && token.path[1] !== 'action';

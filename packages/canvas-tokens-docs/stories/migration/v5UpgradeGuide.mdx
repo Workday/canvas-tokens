@@ -1,0 +1,166 @@
+import {Markdown, Meta, Unstyled} from '@storybook/blocks';
+import {DownloadLLMFile} from '../../components/DownloadLLMFile';
+import {NavCard} from '../../components/NavCard';
+import {StatusIndicator} from '../../components/StatusIndicator';
+
+<Meta title="Guides/Upgrade Guides/v5/Overview" />
+
+## What's New in v5
+
+Sana Canvas Tokens v5 is mainly about making the token system easier to use and to keep up to date.
+The headline feature is dark mode for the sana-canvas theme. The package is also lighter, and the
+cleanup of names, sizes and older tokens makes it simpler to understand and to maintain.
+
+Most changes exist to make the system more consistent. Names follow a clearer pattern, old
+overlapping tokens are removed, and newer ones are marked deprecated so teams can move in their own
+time. A new `token()` function makes it easier to work with tokens by name without relying on JS
+imports or long CSS names.
+
+### Why move to v5
+
+- **Dark mode without extra work.** The sana-canvas theme now includes a dark mode version. Colors
+  follow the active theme, so products can offer dark mode without setting every dark color by hand.
+
+- **A lighter package and better tree-shaking.** Token code is split into smaller modules, and a
+  project can load only the groups it uses. The compressed package is about 10% smaller, and the
+  stylesheet is about 21% smaller, even with the dark theme included.
+
+- **The old system is removed or deprecated**: the old palette names, numbered type sizes, space
+  tokens, multiplier shape names, role-based brand names, and older color groups. Additional tokens
+  are deprecated that no longer fit the new naming conventions or usage patterns.
+
+- **New tokens take their place**: gap and padding replace space tokens, surface and foreground
+  replace the older color groups, t-shirt names replace multiplier and long-form names, and numbered
+  brand steps replace role names.
+
+- **Use tokens by name in code**. The new `token()` function returns a `var`-wrapped reference to a
+  token by its name, and code editors check the name as you type.
+
+### Changes in package structure
+
+#### JavaScript slash imports
+
+Token code is now split into one module per group. The groups include base, brand, system and
+component, with smaller groups for color, size, gap and padding. A package exports map lets a
+project import a single group, such as only the color group, without loading everything else. The
+package declares no side effects, which lets bundlers remove any code you do not use. It still has
+no runtime dependencies.
+
+```javascript
+/* In a JavaScript or TypeScript entry file */
+import {size100, blue400} from '@workday/canvas-tokens-web/base';
+import {color} from '@workday/canvas-tokens-web/color';
+import {shape} from '@workday/canvas-tokens-web/shape';
+```
+
+#### Stylesheets
+
+The legacy stylesheets are removed. One entry stylesheet imports every group, including the light
+and dark sana files. Each group also has its own stylesheet for projects that need only part of the
+set. The dark theme is a separate file of about 45 KB uncompressed. A project that needs light mode
+only can skip it and load about 83 KB of stylesheet. CSS files can be imported through a single
+`index.css` file in v5, instead of multiple group files. Use the previous way of importing files if
+you need a different css file order or don't need extra files.
+
+```css
+@import '@workday/canvas-tokens-web/css/base/_variables.css';
+@import '@workday/canvas-tokens-web/css/system/_variables.css';
+@import '@workday/canvas-tokens-web/css/brand/_variables.css';
+
+<!-- Multiple group imports can be replaced by the single index.css import -->
+
+@import '@workday/canvas-tokens-web/css/index.css';
+```
+
+```javascript
+import '@workday/canvas-tokens-web/css/base/_variables.css';
+import '@workday/canvas-tokens-web/css/system/_variables.css';
+import '@workday/canvas-tokens-web/css/brand/_variables.css';
+
+// Multiple group imports can be replaced by the single index.css import
+import '@workday/canvas-tokens-web/css/index.css';
+```
+
+### Token Values Changes
+
+#### Base palette adjustments
+
+The base palette has been adjusted to better align with Sana colors and supporting dark mode. Some
+color values have changed, and some tokens have been added. Projects using the base palette should
+review these changes to ensure visual consistency.
+
+- All tokens in the neutral palette have been updated. The neutral palette moved from a warm tint to
+  true neutral gray.
+- The slate palette has been changed in hue and lightness across its scale.
+- Transparent white tokens have been changed in hue and alpha.
+- New color sets (like, `dark.azure.*`, `dark.coral.*`, `dark.green.*`, etc.) for dark mode have
+  been added to the base palette.
+
+The main color palette adjustments are listed in the following table:
+
+| Token               | v4 value                | v5 value                | What changed                         |
+| ------------------- | ----------------------- | ----------------------- | ------------------------------------ |
+| `base.amber.300`    | `#fec10b`               | `#fec10c`               | Minor color tweak (blue +1)          |
+| `base.amber.a25`    | `#e1b919` &alpha; 0.1   | `#ddb100` &alpha; 0.09  | Slightly more transparent            |
+| `base.amber.a100`   | `#ffdd06` &alpha; 0.349 | `#ffdc00` &alpha; 0.341 | Slightly more transparent            |
+| `base.amber.a200`   | `#fcd803` &alpha; 0.64  | `#fcd700` &alpha; 0.631 | Slightly more transparent            |
+| `base.amber.a300`   | `#febe00` &alpha; 0.95  | `#febe00` &alpha; 0.954 | Slightly more opaque                 |
+| `base.azure.a25`    | `#05bcff` &alpha; 0.06  | `#00bbff` &alpha; 0.06  | Minor color tweak (red -5, green -1) |
+| `base.azure.a50`    | `#05b8ff` &alpha; 0.14  | `#00b6ff` &alpha; 0.137 | Slightly more transparent            |
+| `base.blue.a25`     | `#1e8fff` &alpha; 0.08  | `#0080ff` &alpha; 0.071 | Slightly more transparent            |
+| `base.blue.a100`    | `#0e83ff` &alpha; 0.17  | `#007dff` &alpha; 0.161 | Slightly more transparent            |
+| `base.coral.a25`    | `#ff5005` &alpha; 0.04  | `#ff4c00` &alpha; 0.039 | Slightly more transparent            |
+| `base.coral.a50`    | `#ff4412` &alpha; 0.08  | `#ff3500` &alpha; 0.074 | Slightly more transparent            |
+| `base.coral.a100`   | `#ff3e08` &alpha; 0.15  | `#ff3700` &alpha; 0.145 | Slightly more transparent            |
+| `base.coral.a200`   | `#ff3f05` &alpha; 0.36  | `#ff3c00` &alpha; 0.353 | Slightly more transparent            |
+| `base.green.a25`    | `#1eff37` &alpha; 0.08  | `#01ff1e` &alpha; 0.071 | Slightly more transparent            |
+| `base.green.a50`    | `#0fff37` &alpha; 0.15  | `#00ff2a` &alpha; 0.145 | Slightly more transparent            |
+| `base.green.a100`   | `#03f130` &alpha; 0.29  | `#00f12e` &alpha; 0.287 | Slightly more transparent            |
+| `base.green.a200`   | `#02e33f` &alpha; 0.6   | `#00e33e` &alpha; 0.596 | Slightly more transparent            |
+| `base.green.a300`   | `#00ce4b` &alpha; 0.78  | `#00ce4b` &alpha; 0.777 | Slightly more transparent            |
+| `base.indigo.a25`   | `#2323ff` &alpha; 0.05  | `#0001ff` &alpha; 0.043 | Slightly more transparent            |
+| `base.indigo.a50`   | `#051eff` &alpha; 0.08  | `#001aff` &alpha; 0.079 | Slightly more transparent            |
+| `base.indigo.a100`  | `#1120ff` &alpha; 0.13  | `#0011ff` &alpha; 0.122 | Slightly more transparent            |
+| `base.indigo.a200`  | `#091eff` &alpha; 0.24  | `#0016ff` &alpha; 0.232 | Slightly more transparent            |
+| `base.magenta.a25`  | `#ff23ff` &alpha; 0.05  | `#fe00ff` &alpha; 0.043 | Slightly more transparent            |
+| `base.magenta.a50`  | `#ff12ff` &alpha; 0.08  | `#ff00ff` &alpha; 0.074 | Slightly more transparent            |
+| `base.magenta.a100` | `#ff0be6` &alpha; 0.16  | `#ff00e5` &alpha; 0.153 | Slightly more transparent            |
+| `base.magenta.a200` | `#ff01f7` &alpha; 0.24  | `#ff00f7` &alpha; 0.239 | Slightly more transparent            |
+| `base.orange.a25`   | `#f57d05` &alpha; 0.1   | `#f57a00` &alpha; 0.098 | Slightly more transparent            |
+| `base.orange.a50`   | `#ff8f08` &alpha; 0.17  | `#ff8c00` &alpha; 0.164 | Slightly more transparent            |
+| `base.orange.a100`  | `#ff8303` &alpha; 0.25  | `#ff8100` &alpha; 0.247 | Slightly more transparent            |
+| `base.orange.a200`  | `#ff7f01` &alpha; 0.46  | `#ff7e00` &alpha; 0.459 | Slightly more transparent            |
+| `base.purple.a25`   | `#9b05ff` &alpha; 0.04  | `#9900ff` &alpha; 0.039 | Slightly more transparent            |
+| `base.purple.a50`   | `#9b0bff` &alpha; 0.09  | `#9600ff` &alpha; 0.086 | Slightly more transparent            |
+| `base.purple.a100`  | `#ad08ff` &alpha; 0.17  | `#aa00ff` &alpha; 0.165 | Slightly more transparent            |
+| `base.purple.a200`  | `#bb07ff` &alpha; 0.25  | `#b900ff` &alpha; 0.243 | Slightly more transparent            |
+| `base.red.25`       | `#fff0ef`               | `#fff5f4`               | Slightly lighter                     |
+| `base.red.a25`      | `#ff0505` &alpha; 0.04  | `#fe1600` &alpha; 0.043 | Slightly more opaque                 |
+| `base.red.a50`      | `#ff2d19` &alpha; 0.1   | `#ff1600` &alpha; 0.09  | Slightly more transparent            |
+| `base.red.a100`     | `#ff240b` &alpha; 0.16  | `#ff1a00` &alpha; 0.153 | Slightly more transparent            |
+| `base.red.a200`     | `#ff2304` &alpha; 0.35  | `#ff2000` &alpha; 0.345 | Slightly more transparent            |
+| `base.teal.a25`     | `#16f4ff` &alpha; 0.09  | `#01f3ff` &alpha; 0.083 | Slightly more transparent            |
+| `base.teal.a50`     | `#0de5fa` &alpha; 0.19  | `#00e3fa` &alpha; 0.18  | Slightly more transparent            |
+| `base.teal.a200`    | `#01b6c9` &alpha; 0.37  | `#00b6c9` &alpha; 0.369 | Slightly more transparent            |
+
+#### Motion tokens changes
+
+Here are the motion token changes in v5:
+
+#### Other tokens adjustments
+
+- Three opacity values changed to align with Sana:
+
+  - `base.opacity.100` rose from 0.08 to 0.10,
+  - `system.opacity.accent.hover` rose from 0.045 to 0.18,
+  - `system.opacity.accent.pressed` rose from 0.118 to 0.36.
+
+- Two base sizes added: `base.size.275` (22px) and `base.size.325` (26px).
+- The full-round shape changed from 37.5rem to 62.5rem to sync with Figma value and provide
+  consistency across tokens.
+- Breakpoints tokens are deprecated and should be replaced with the new `breakpoint` tokens to
+  ensure consistency and alignment with the design system and naming conventions.
+- Sana divirging chart colors are flattened and no longer placed under `azure-coral` group.
+- Shape scale is extended by adding `xs` (0.25rem) value.
+- The font-family fallback order changed and Avenir was added.
+- Brand neutral colors have been adjusted to use neutral colors instead of stale.

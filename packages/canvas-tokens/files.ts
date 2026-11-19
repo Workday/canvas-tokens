@@ -87,7 +87,7 @@ const LABS_THEME_SELECTOR = '[data-theme~="wdt"]';
 const SANA_CANVAS_LABS_THEME_SELECTOR = `${LABS_THEME_SELECTOR}[data-theme~="sana-canvas"]`;
 
 const isBaseToken = (token: TransformedToken) =>
-  token.filePath.includes('/base/') && !token.$deprecated;
+  token.filePath.includes('/base/') && !filters.isBaseShadowToken(token) && !token.$deprecated;
 const isBrandToken = (token: TransformedToken) =>
   token.filePath.includes('/brand/') && !token.$deprecated;
 const isComponentToken = (token: TransformedToken) =>
