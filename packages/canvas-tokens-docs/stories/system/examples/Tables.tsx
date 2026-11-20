@@ -18,6 +18,7 @@ export const OpacityDeprecatedTokens = createTable('system.opacity', isDeprecate
 export const DepthTokens = createTable('system.depth', undefined, {controls: 'theme'});
 
 // Motion
+export const DurationTokens = createTable('system.motion', under('motion.duration'));
 export const EasingTokens = createTable('system.motion', under('motion.easing'));
 
 // Type

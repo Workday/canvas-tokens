@@ -1,10 +1,9 @@
 import React from 'react';
-import {TertiaryButton} from '@workday/canvas-kit-react/button';
 import {Card} from '@workday/canvas-kit-react/card';
-import {playIcon} from '@workday/canvas-system-icons-web';
 import {token as tokenVar} from '@workday/canvas-tokens-web/token';
 
 import {CodeBlock} from '../CodeBlock';
+import {CurvePreview} from './CurvePreview';
 import {cleanRef, getCssVar, getTypeClass} from './tokenNames';
 import {SDToken, TokenLevel} from './types';
 
@@ -67,31 +66,6 @@ const DimensionPreview = ({group, cssVar}: {group: string; cssVar: string}) => {
   }
 };
 
-const CurvePreview = ({value, cssVar}: {value: string; cssVar: string}) => {
-  // System easing aliases a base token, so read the points from the resolved `cubic-bezier()` value
-  const [x1, y1, x2, y2] = (String(value).match(/-?[\d.]+/g) ?? [0, 0, 1, 1]).map(
-    n => Number(n) * 100
-  );
-
-  return (
-    <div data-part="curve-sample">
-      <svg viewBox="0 0 100 100" aria-hidden="true" overflow="visible">
-        <line x1="0" y1="100" x2="100" y2="0" data-part="curve-linear" />
-        <path
-          d={`M0 100 C${x1} ${100 - y1} ${x2} ${100 - y2} 100 0`}
-          fill="none"
-          stroke={fill}
-          strokeWidth="2"
-          vectorEffect="non-scaling-stroke"
-        />
-      </svg>
-      <div data-part="curve-x">
-        <div data-part="curve-y" style={{animationTimingFunction: cssVar, background: fill}} />
-      </div>
-    </div>
-  );
-};
-
 /** Breakpoint and duration tokens have nothing to preview. */
 const hasPreview = (token: SDToken) =>
   token.$type !== 'duration' && !['breakpoint', 'breakpoints'].includes(token.path[0]);
@@ -121,7 +95,7 @@ const TokenPreview = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
     case 'typography':
       return <TextSample className={getTypeClass(token)} />;
     case 'cubicBezier':
-      return <CurvePreview value={token.$value} cssVar={cssVar} />;
+      return <CurvePreview value={token.$value} />;
     case 'fontWeight':
       return <TextSample style={{fontWeight: cssVar}} />;
     case 'fontFamily':
@@ -135,8 +109,6 @@ const TokenPreview = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
 export const ExampleCell = ({token, level}: {token: SDToken; level?: TokenLevel}) => {
   // Tokens that alias a single token list their reference, like color swatches do
   const ref = cleanRef(token.original.$value);
-  const isMotion = token.$type === 'cubicBezier';
-  const [playing, setPlaying] = React.useState(false);
 
   return (
     <div className="example-cell">
@@ -149,19 +121,7 @@ export const ExampleCell = ({token, level}: {token: SDToken; level?: TokenLevel}
             token.$type === 'shadow' ? {background: 'var(--cnvs-brand-neutral-a50)'} : undefined
           }
         >
-          {isMotion && (
-            <TertiaryButton
-              data-part="play-button"
-              size="small"
-              icon={playIcon}
-              aria-label="Play animation"
-              disabled={playing}
-              onClick={() => setPlaying(true)}
-            />
-          )}
-          <div data-part="preview" data-playing={playing} onAnimationEnd={() => setPlaying(false)}>
-            <TokenPreview token={token} level={level} />
-          </div>
+          <TokenPreview token={token} level={level} />
         </Card>
       )}
       {ref && <CodeBlock>{ref}</CodeBlock>}
