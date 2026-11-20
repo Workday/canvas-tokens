@@ -1,0 +1,10 @@
+import{j as o}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as n}from"./index-Pe1yh6Xi.js";import{M as t,U as i}from"./index-QYG3jjN8.js";import{F as c}from"./Tables-BI4RFRRG.js";import"./index-vY1YAP7G.js";import"./iframe-DkM-Sfu9.js";import"./index-hc8kBFl4.js";import"./index-BQ6uszir.js";import"./index-XY87pEJy.js";import"./index-DgH-xKnr.js";import"./index-Bhqu_tAV.js";import"./tableHelpers-CMyWSjTR.js";import"./token-BaEEYujI.js";import"./index-D5m-MVG0.js";import"./Menu-BnwInP0h.js";import"./SystemIcon-8VNoNPjy.js";import"./cs-DaNmsJLN.js";import"./Card-CLHJSwyV.js";import"./TypeLevelComponents-SbEamjDu.js";import"./tokens-BwKzFjd_.js";import"./index-BC_18Vw6.js";import"./Table-wgeJD4P5.js";function e(r){const s={a:"a",code:"code",h1:"h1",h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...n(),...r.components};return o.jsxs(o.Fragment,{children:[o.jsx(t,{title:"Tokens/System/Color/Focus"}),`
+`,o.jsxs(i,{children:[o.jsx(s.h1,{id:"focus-colors",children:"Focus Colors"}),o.jsxs(s.p,{children:["Focus tokens are ",o.jsx(s.strong,{children:"themed variables"}),` for the focus ring on interactive elements, which shows
+keyboard users where they are. They adapt to light and dark mode. The default focus ring is
+tenant themeable and lives in
+`,o.jsx(s.a,{href:"/docs/docs-system-tokens-color-system-brand-new--docs#brand-focus",children:"System Brand colors"}),`. The tokens
+here cover cases that should not change with a tenant's brand.`]}),o.jsxs(s.ul,{children:[`
+`,o.jsx(s.li,{children:o.jsx(s.a,{href:"#focus-rings",children:"Focus rings"})}),`
+`,o.jsx(s.li,{children:o.jsx(s.a,{href:"#usage",children:"Usage"})}),`
+`]}),o.jsx(s.h2,{id:"focus-rings",children:"Focus rings"}),o.jsxs(s.p,{children:[o.jsx(s.code,{children:"color.focus.inverse"})," is the focus ring for use on dark backgrounds. ",o.jsx(s.code,{children:"color.focus.contrast"}),` is a high
+contrast focus ring for accessibility.`]}),o.jsx(c,{})]})]})}function X(r={}){const{wrapper:s}={...n(),...r.components};return s?o.jsx(s,{...r,children:o.jsx(e,{...r})}):e(r)}export{X as default};

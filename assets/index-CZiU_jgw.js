@@ -1,0 +1,9 @@
+import{r as e}from"./index-vY1YAP7G.js";import{C as a}from"./Card-CLHJSwyV.js";import{C as o,S as l}from"./SystemIcon-8VNoNPjy.js";const c={name:"arrow-right",type:o.System,svg:'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="wd-icon wd-icon-arrow-right" viewBox="0 0 24 24" role="presentation" focusable="false"><path fill="oklch(0.3523 0 0 / 1)" d="M12.293 5.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L16.586 13H4a1 1 0 0 1 0-2h12.586l-4.293-4.293a1 1 0 0 1 0-1.414" class="wd-icon-fill"/></svg>',filename:"wd-icon-arrow-right.svg",category:"Navigation",tags:["forward","navigation","ui"]},s=({description:r,title:t,link:n})=>e.createElement(a,{as:"a",href:n,target:"_blank",rel:"noopener noreferrer",style:{textDecoration:"none"}},e.createElement(a.Heading,{cs:{display:"flex",alignItems:"center",justifyContent:"space-between"}},t,e.createElement(l,{icon:c})),r&&e.createElement(a.Body,null,r)),p=({items:r})=>e.createElement("div",{style:{display:"flex",gap:"16px",flexWrap:"wrap"}},r.map(({title:t,description:n,link:i})=>e.createElement(s,{key:i,title:t,description:n,link:i})));s.__docgenInfo={description:"",methods:[],displayName:"NavCard",props:{description:{required:!1,tsType:{name:"string"},description:""},title:{required:!0,tsType:{name:"string"},description:""},link:{required:!0,tsType:{name:"string"},description:""}}};p.__docgenInfo={description:"",methods:[],displayName:"NavCardStack",props:{items:{required:!0,tsType:{name:"Array",elements:[{name:"signature",type:"object",raw:`{
+  title: string;
+  description?: string;
+  link: string;
+}`,signature:{properties:[{key:"title",value:{name:"string",required:!0}},{key:"description",value:{name:"string",required:!1}},{key:"link",value:{name:"string",required:!0}}]}}],raw:`{
+  title: string;
+  description?: string;
+  link: string;
+}[]`},description:""}}};export{p as N};

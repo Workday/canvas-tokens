@@ -1,0 +1,32 @@
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as o}from"./index-Pe1yh6Xi.js";import{M as i,U as a}from"./index-QYG3jjN8.js";import"./index-CZiU_jgw.js";import{c}from"./tableHelpers-CMyWSjTR.js";import"./index-vY1YAP7G.js";import"./iframe-DkM-Sfu9.js";import"./index-hc8kBFl4.js";import"./index-BQ6uszir.js";import"./index-XY87pEJy.js";import"./index-DgH-xKnr.js";import"./index-Bhqu_tAV.js";import"./Card-CLHJSwyV.js";import"./cs-DaNmsJLN.js";import"./SystemIcon-8VNoNPjy.js";import"./token-BaEEYujI.js";import"./index-D5m-MVG0.js";import"./Menu-BnwInP0h.js";import"./TypeLevelComponents-SbEamjDu.js";import"./tokens-BwKzFjd_.js";import"./index-BC_18Vw6.js";import"./Table-wgeJD4P5.js";const t=r=>c(r,void 0,{controls:"mode"}),d=t("brand.primary"),l=t("brand.positive"),h=t("brand.caution"),x=t("brand.critical"),j=t("brand.neutral"),m=t("brand.common");function s(r){const n={a:"a",blockquote:"blockquote",code:"code",h1:"h1",h2:"h2",li:"li",p:"p",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul",...o(),...r.components};return e.jsxs(e.Fragment,{children:[e.jsx(i,{title:"Tokens/Brand/Colors"}),`
+`,e.jsxs(a,{children:[e.jsx(n.h1,{id:"brand-tokens",children:"Brand Tokens"}),e.jsxs(n.p,{children:["Brand tokens are ",e.jsx(n.strong,{children:"themed variables"}),` designed for brand and tenant-level customization. They are
+not connected to system tokens, which apply across the whole application. Brand tokens drive
+buttons, focus rings, status indicators, and banners.`]}),e.jsxs(n.p,{children:["Each brand color category is a scale that references a ",e.jsx(n.a,{href:"/docs/tokens-base-color-palette--docs",children:"base palette"}),`
+color. Tenants can override a whole scale to re-theme the UI. Every scale has the same steps
+(`,e.jsx(n.code,{children:"25"})," to ",e.jsx(n.code,{children:"975"}),"), plus alpha steps (",e.jsx(n.code,{children:"a25"})," to ",e.jsx(n.code,{children:"a300"}),"), and each step has a dark mode value."]}),e.jsxs(n.ul,{children:[`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"#primary",children:"Primary"})}),`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"#positive",children:"Positive"})}),`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"#caution",children:"Caution"})}),`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"#critical",children:"Critical"})}),`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"#neutral",children:"Neutral"})}),`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"#common",children:"Common"})}),`
+`,e.jsx(n.li,{children:e.jsx(n.a,{href:"#action",children:"Action"})}),`
+`]}),e.jsx(n.h2,{id:"primary",children:"Primary"}),e.jsx(n.p,{children:`The main brand color. Use it for the most prominent interactive elements, such as primary buttons,
+links, selected states, and the default focus ring. Defining the primary scale covers most theming
+use cases.`}),e.jsx(d,{}),e.jsx(n.h2,{id:"positive",children:"Positive"}),e.jsx(n.p,{children:`Communicates success, completion, and confirmation, for example in success banners and status
+indicators.`}),e.jsx(l,{}),e.jsx(n.h2,{id:"caution",children:"Caution"}),e.jsx(n.p,{children:`Communicates warnings and states that need the user's attention but are not errors, for example in
+warning banners and alerts.`}),e.jsx(h,{}),e.jsx(n.h2,{id:"critical",children:"Critical"}),e.jsx(n.p,{children:`Communicates errors, invalid input, and destructive actions, for example in error messages and
+the focus ring on elements in an error state.`}),e.jsx(x,{}),e.jsx(n.h2,{id:"neutral",children:"Neutral"}),e.jsx(n.p,{children:`A brand-level neutral scale for text, borders, and surfaces that should stay free of brand hues.
+Use it when a color should follow tenant theming but not appear tinted.`}),e.jsx(j,{}),e.jsx(n.h2,{id:"common",children:"Common"}),e.jsx(n.p,{children:"Common tokens are shared across different brand color categories and provide a consistent foundation for theming."}),e.jsx(m,{})]}),`
+`,e.jsx(n.h2,{id:"action",children:"Action"}),`
+`,e.jsx(n.p,{children:`Action tokens give granular control over action elements, such as the regular, hover, and active
+states of a primary button.`}),`
+`,e.jsxs(n.p,{children:["Action tokens are available ",e.jsx(n.strong,{children:"only in code packages"}),` (JS / TS). They have no CSS variables, which
+leaves tenants more control over theming. If you reference an action token and it is not defined,
+add a fallback so the UI still shows tenant branding.`]}),`
+`,e.jsxs(n.blockquote,{children:[`
+`,e.jsxs(n.p,{children:[e.jsx(n.strong,{children:"Note:"})," Use ",e.jsx(n.code,{children:"brand.action.*"}),` with caution. Defining the brand primary scale covers most theming
+use cases. Define action colors only when you need more granular control over elements such as
+`,e.jsx(n.code,{children:"PrimaryButton"}),"."]}),`
+`]}),`
+`,e.jsxs(n.table,{children:[e.jsx(n.thead,{children:e.jsxs(n.tr,{children:[e.jsx(n.th,{children:"Token"}),e.jsx(n.th,{children:"Description"})]})}),e.jsxs(n.tbody,{children:[e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:"brand.action.lightest"})}),e.jsx(n.td,{children:"Lightest action color"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:"brand.action.lighter"})}),e.jsx(n.td,{children:"Lighter action color, such as for subtle backgrounds"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:"brand.action.light"})}),e.jsx(n.td,{children:"Light action color"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:"brand.action.base"})}),e.jsx(n.td,{children:"Main action color, such as for the regular state of a primary button"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:"brand.action.dark"})}),e.jsx(n.td,{children:"Dark action color, such as for the hover state of a primary button"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:"brand.action.darker"})}),e.jsx(n.td,{children:"Darker action color, such as for the active state of a primary button"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:"brand.action.darkest"})}),e.jsx(n.td,{children:"Darkest action color"})]}),e.jsxs(n.tr,{children:[e.jsx(n.td,{children:e.jsx(n.code,{children:"brand.action.accent"})}),e.jsx(n.td,{children:"Foreground color for content placed on action elements"})]})]})]})]})}function I(r={}){const{wrapper:n}={...o(),...r.components};return n?e.jsx(n,{...r,children:e.jsx(s,{...r})}):s(r)}export{I as default};

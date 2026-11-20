@@ -1,0 +1,37 @@
+.cnvs-docs-code-block {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 22px;
+  padding: 2px 8px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--cnvs-sys-color-surface-raised);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.cnvs-docs-code-block[data-block-type='readonly'] {
+  cursor: default;
+}
+
+.cnvs-docs-code-block:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.cnvs-docs-code-block-text {
+  margin-right: 8px;
+  font-family: var(--cnvs-sys-font-family-mono);
+  width: 100%;
+  text-align: start;
+}
+
+.cnvs-docs-code-block-icon {
+  opacity: 0.2;
+}
+
+.cnvs-docs-code-block:hover .cnvs-docs-code-block-icon {
+  opacity: 1;
+}
