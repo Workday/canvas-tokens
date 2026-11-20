@@ -44,10 +44,6 @@ jobs:
           node-version: 26.x
           # Do NOT set registry-url - it creates token-based auth that conflicts with OIDC
       
-      - uses: Workday/canvas-kit-actions/install@v2
-        with:
-          node_version: 26.x
-      
       # Upgrade npm to 11.5.1+ for OIDC support
       - name: Upgrade npm for OIDC support
         run: npm install -g npm@11.10.1
@@ -62,6 +58,10 @@ jobs:
         if: ${{  inputs.version == 'minor' || inputs.version == 'major' }}
         run: |
           git pull origin prerelease/${{ inputs.version }}
+
+      - uses: Workday/canvas-kit-actions/install@v2
+        with:
+          node_version: 24.x
       
       - name: Set version output
         id: set_version
