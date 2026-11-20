@@ -17,6 +17,7 @@
     "lint": "eslint -c ./.eslintrc.js --ext=ts,js .",
     "fetch-tokens": "node scripts/utils/fetch-figma-variables.js",
     "parse-tokens": "node scripts/utils/generate-dtcg-tokens.js",
+    "format:docs": "prettier --write \"**/*.{md,mdx}\"",
     "precommit": "lint-staged",
     "prepare": "husky install",
     "prestorybook": "yarn build:tokens",
@@ -73,7 +74,7 @@
   ],
   "lint-staged": {
     "*.ts": "eslint --cache --fix",
-    "*.{ts,tsx,md}": "prettier --write"
+    "*.{ts,tsx,md,mdx}": "prettier --write"
   },
   "config": {
     "commitizen": {

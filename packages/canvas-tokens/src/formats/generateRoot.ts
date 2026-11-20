@@ -8,7 +8,7 @@ import type {
 import {fileHeader, getReferences} from 'style-dictionary/utils';
 import {kebabCase} from 'case-anything';
 
-import {isOklchToken} from '../../filters';
+import {isBaseShadowToken, isOklchToken} from '../../filters';
 import {getOklchValue, isComposite as isCompositeToken, joinParts} from '../../utils';
 
 type Format = {
@@ -178,6 +178,13 @@ const extractValue = (token: TransformedToken, options: ExtractOptions) => {
 
 type ShortenOptions = Pick<ExtractOptions, 'omitDefault' | 'prefix' | 'tokens'>;
 
+/** Format a value that may be a DTCG dimension (`{value, unit}`) or an already transformed string */
+const toCssValue = (part: unknown) => {
+  if (typeof part !== 'object' || part === null) return String(part);
+  const {value, unit} = part as {value?: number; unit?: string};
+  return `${value ?? 0}${unit ?? ''}`;
+};
+
 /** Replace `{token.reference}` placeholders in a value with `var()` references to the tokens */
 const resolveReferences = (value: string, options: ShortenOptions) => {
   const {prefix, tokens, omitDefault} = options;
@@ -185,6 +192,7 @@ const resolveReferences = (value: string, options: ShortenOptions) => {
 
   return value.replace(/\{([\w.$-]+)\}/g, a => {
     const refToken = ref.find(r => r.key === a);
+    if (refToken && isBaseShadowToken(refToken)) return toCssValue(refToken.$value);
     return refToken ? toCSSVarRef(refToken, prefix, omitDefault) : a;
   });
 };
@@ -196,11 +204,8 @@ type ShadowLayer = Record<'offsetX' | 'offsetY' | 'blur' | 'spread' | 'color', u
  * token (color, offset, blur, spread) stays a `var()` reference instead of a resolved value.
  */
 const shadowToCss = (layers: ShadowLayer[], options: ShortenOptions) => {
-  const toPart = (part: unknown) => {
-    if (typeof part === 'string') return resolveReferences(part, options);
-    const {value, unit} = (part ?? {}) as {value?: number; unit?: string};
-    return `${value ?? 0}${unit ?? ''}`;
-  };
+  const toPart = (part: unknown) =>
+    typeof part === 'string' ? resolveReferences(part, options) : toCssValue(part ?? 0);
 
   return layers
     .map(({offsetX, offsetY, blur, spread, color}) =>

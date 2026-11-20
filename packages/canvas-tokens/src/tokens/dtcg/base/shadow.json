@@ -1,50 +1,6 @@
 {
   "shadow": {
     "1": {
-      "100": {
-        "y": {
-          "$value": {
-            "value": 1,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 4,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "spread": {
-          "$value": {
-            "value": -1,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
-      "200": {
-        "y": {
-          "$value": {
-            "value": 2,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 8,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
       "key": {
         "y": {
           "$value": {
@@ -86,50 +42,6 @@
       }
     },
     "2": {
-      "100": {
-        "y": {
-          "$value": {
-            "value": 2,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 8,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "spread": {
-          "$value": {
-            "value": -1,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
-      "200": {
-        "y": {
-          "$value": {
-            "value": 4,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 16,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
       "key": {
         "y": {
           "$value": {
@@ -171,50 +83,6 @@
       }
     },
     "3": {
-      "100": {
-        "y": {
-          "$value": {
-            "value": 3,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 12,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "spread": {
-          "$value": {
-            "value": -1,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
-      "200": {
-        "y": {
-          "$value": {
-            "value": 6,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 24,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
       "key": {
         "y": {
           "$value": {
@@ -256,50 +124,6 @@
       }
     },
     "4": {
-      "100": {
-        "y": {
-          "$value": {
-            "value": 4,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 16,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "spread": {
-          "$value": {
-            "value": -2,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
-      "200": {
-        "y": {
-          "$value": {
-            "value": 8,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 32,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
       "key": {
         "y": {
           "$value": {
@@ -341,50 +165,6 @@
       }
     },
     "5": {
-      "100": {
-        "y": {
-          "$value": {
-            "value": 8,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 24,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "spread": {
-          "$value": {
-            "value": -2,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
-      "200": {
-        "y": {
-          "$value": {
-            "value": 16,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 48,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
       "key": {
         "y": {
           "$value": {
@@ -426,50 +206,6 @@
       }
     },
     "6": {
-      "100": {
-        "y": {
-          "$value": {
-            "value": 16,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 48,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "spread": {
-          "$value": {
-            "value": -3,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
-      "200": {
-        "y": {
-          "$value": {
-            "value": 32,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        },
-        "blur": {
-          "$value": {
-            "value": 96,
-            "unit": "px"
-          },
-          "$type": "dimension",
-          "$deprecated": true
-        }
-      },
       "key": {
         "y": {
           "$value": {
