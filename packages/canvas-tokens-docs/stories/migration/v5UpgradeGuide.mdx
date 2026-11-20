@@ -1,7 +1,4 @@
-import {Markdown, Meta, Unstyled} from '@storybook/blocks';
-import {DownloadLLMFile} from '../../components/DownloadLLMFile';
-import {NavCard} from '../../components/NavCard';
-import {StatusIndicator} from '../../components/StatusIndicator';
+import {Meta} from '@storybook/blocks';
 
 <Meta title="Guides/Upgrade Guides/v5/Overview" />
 
@@ -37,6 +34,45 @@ imports or long CSS names.
 
 - **Use tokens by name in code**. The new `token()` function returns a `var`-wrapped reference to a
   token by its name, and code editors check the name as you type.
+
+### Themes
+
+Since v4.4, the package has two color themes, default and `sana-canvas`. The default canvas theme is
+applied at the `:root` level and needs no setup. The sana-canvas theme is scoped to the
+`data-theme="sana-canvas"` attribute and overrides the tokens that differ in Sana. Both themes are
+included in the `css/index.css` import.
+
+To apply a theme, set the `data-theme` attribute on an element that wraps your layout. Tokens inside
+that element resolve to the theme values:
+
+```html
+<!-- Default canvas theme: no attribute is needed -->
+<body>
+  <!-- Your layout -->
+</body>
+
+<!-- sana-canvas theme for the whole app -->
+<body data-theme="sana-canvas">
+  <!-- Your layout -->
+</body>
+
+<!-- sana-canvas theme for one part of the page -->
+<section data-theme="sana-canvas">
+  <!-- Your layout -->
+</section>
+```
+
+Changes made to the sana-canvas theme in v5:
+
+- Some tokens were moved to the `:root` level, so that tokens that do not change between themes are
+  defined in the same place and the theme only contains the values that differ.
+- Chart diverging tokens are flattened to remove unnecessary wrapping, so they are no longer placed
+  under the `azure-coral` group.
+- Dark mode is added to the theme. See [Dark mode](#dark-mode) for the setup.
+- The sana-canvas theme colors are extended to support a color mode override to light. Light values
+  also apply under `[data-theme="sana-canvas"][data-color-mode="light"]` and to a
+  `[data-color-mode="light"]` element nested inside the theme, so a light area can be placed inside
+  a dark page.
 
 ### Changes in package structure
 
