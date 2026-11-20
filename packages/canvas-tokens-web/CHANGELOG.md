@@ -2,11 +2,64 @@
 
 ## 5.0.0
 
-### Major Changes
+# Sana Canvas Tokens v5
 
-- ### Components
+Dark mode is the headline. The `sana-canvas` theme now includes a dark version, and colors follow the active theme.
 
-  - chore: Fix release order ([@](https://github.com/))
+## Added
+
+- **Dark mode** for `sana-canvas` theme. Set `data-color-mode="dark"` with `data-theme="sana-canvas"`.
+- **Motion tokens:** `duration0` base token and system duration tokens.
+- **Sizes:** `base.size.275` (22px) and `base.size.325` (26px).
+- **Shape:** `xs` (0.25rem).
+- **Shadow colors:** numbered `color.shadow.N.key` and `color.shadow.N.ambient`.
+- **Palette sets:** `dark.azure.*`, `dark.coral.*`, `dark.green.*`, and an alpha black set.
+- **`token()`** returns a `var()` reference or a text-style object by token name.
+- **`css/index.css`** as a single stylesheet entry.
+- Slash imports for tokens groups
+
+## Changed
+
+- **Palette values:** neutral and slate scales, plus alpha steps across amber, azure, blue, coral, green, indigo, magenta, orange, purple, red and teal.
+- **Brand neutral** now uses the neutral palette instead of slate.
+- **Purposeful easing** (`base.easing.b.*`) uses new cubic-bezier values.
+- **Opacity:** `base.opacity.100` 0.08 → 0.10, `system.opacity.accent.hover` 0.045 → 0.18, `system.opacity.accent.pressed` 0.118 → 0.36.
+- **Full-round shape** 37.5rem → 62.5rem.
+- **Shape scale:** `sm` uses `base.size.75`, `xxl` uses `base.size.250`, `xxxl` uses `base.size.350`.
+- **Sana diverging chart colors** are flattened out of the `azure-coral` group.
+- **Font family fallback** order fixed.
+- **Typography composites** use `font-weight.regular`.
+
+## Deprecated
+
+Still available in v5 and will be removed in a future major release.
+
+- `font.weight.normal` → `font.weight.regular`
+- `breakpoints.*` -> `breakpoint.*`
+- `base.letter.spacing` 50, 100, 150, 200 → `base.letter.spacing` 1 to 12
+- `component.expressive.icon.*`, no replacement, as expressive icons are being retired
+- `opacity.shadow.first` and `opacity.shadow.second` → shadow tokens
+
+## Removed
+
+Renamed or replaced in v5. Update your code to the new names.
+
+- **Type sizes:** `body.small/medium/large` → `body.sm/md/lg`
+- **Breakpoints:** `s/m/l` → `sm/md/lg`
+- **Base unit:** `baseUnit` → `base.baseline`
+- **Brand groups:** `brand.alert/error/success` → `brand.caution/critical/positive`
+- **Shadow tokens:** `base.shadow.x.100` and `base.shadow.x.200` → `base.shadow.x.key` and `base.shadow.x.ambient`
+- **Shadow colors:** `color.shadow.base` and `color.shadow.ambient` → `color.shadow.N.key` and `color.shadow.N.ambient`
+- **Opacity steps:** `base.opacity` 250, 300, 500 → `base.opacity` 200, 400, 840
+- **Fruit-themed palette families:** 28 families, such as `cinnamon`, `grapeSoda` and `berrySmoothie`, now map to standard palettes
+- **Six more palette families:** `blackPepper`, `coconut`, `cappuccino`, `extendedDragonFruit`, `frenchVanilla`, `soap`
+- **Numbered type scales:** base font-size and line-height steps, replaced by named size tokens such as `body-md`
+- **Typescale tokens**
+- **Multiplier shapes:** `x1`, `x2`, `x4`, `x6`, `x1-half`, `half`, `round`, `zero`, replaced by `xs` to `xxxl`, `none`, `sm` or `full`
+- **Space tokens:** `x1` to `x20`, `half`, `zero`, replaced by gap and padding tokens
+- **Semantic color groups:** `text` and `icon` (moved to `fg`), `static` (moved to base palette), and reduced `bg`, `fg` and `border` groups
+- Sass and Less files, `legacy.css` 
+- `legacy` and `sana` JS objects
 
 ## 5.0.0-alpha.14
 
