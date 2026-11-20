@@ -1,5 +1,13 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0
+
+### Major Changes
+
+- ### Components
+
+  - chore: Fix release order ([@](https://github.com/))
+
 ## 5.0.0-alpha.14
 
 ### Major Changes
