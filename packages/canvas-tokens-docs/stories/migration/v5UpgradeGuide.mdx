@@ -27,7 +27,7 @@ imports or long CSS names.
 
 - **The old system is removed or deprecated**: the old palette names, numbered type sizes, space
   tokens, multiplier shape names, role-based brand names, and older color groups. Additional tokens
-  are deprecated that no longer fit the new naming conventions or usage patterns.
+  that no longer fit the new naming conventions or usage patterns are deprecated.
 
 - **New tokens take their place**: gap and padding replace space tokens, surface and foreground
   replace the older color groups, t-shirt names replace multiplier and long-form names, and numbered
@@ -58,17 +58,16 @@ import {shape} from '@workday/canvas-tokens-web/shape';
 The legacy stylesheets are removed. One entry stylesheet imports every group, including the light
 and dark sana files. Each group also has its own stylesheet for projects that need only part of the
 set. The dark theme is a separate file of about 45 KB uncompressed. A project that needs light mode
-only can skip it and load about 83 KB of stylesheet. CSS files can be imported through a single
-`index.css` file in v5, instead of multiple group files. Use the previous way of importing files if
-you need a different css file order or don't need extra files.
+only can skip it and load about 83 KB of stylesheet. In v5, all CSS can be imported through a single
+`index.css` file instead of multiple group files. Import the group files individually if you need a
+different CSS file order or only some of the files.
 
 ```css
 @import '@workday/canvas-tokens-web/css/base/_variables.css';
 @import '@workday/canvas-tokens-web/css/system/_variables.css';
 @import '@workday/canvas-tokens-web/css/brand/_variables.css';
 
-<!-- Multiple group imports can be replaced by the single index.css import -->
-
+/* Multiple group imports can be replaced by the single index.css import */
 @import '@workday/canvas-tokens-web/css/index.css';
 ```
 
@@ -85,7 +84,7 @@ import '@workday/canvas-tokens-web/css/index.css';
 
 #### Base palette adjustments
 
-The base palette has been adjusted to better align with Sana colors and supporting dark mode. Some
+The base palette has been adjusted to better align with Sana colors and support dark mode. Some
 color values have changed, and some tokens have been added. Projects using the base palette should
 review these changes to ensure visual consistency.
 
@@ -93,8 +92,9 @@ review these changes to ensure visual consistency.
   true neutral gray.
 - The slate palette has been changed in hue and lightness across its scale.
 - Transparent white tokens have been changed in hue and alpha.
-- New color sets (like, `dark.azure.*`, `dark.coral.*`, `dark.green.*`, etc.) for dark mode have
-  been added to the base palette.
+- New color sets for dark mode (such as `dark.azure.*`, `dark.coral.*` and `dark.green.*`) have been
+  added to the base palette.
+- A new alpha black color set has been added to the base palette.
 
 The main color palette adjustments are listed in the following table:
 
@@ -147,6 +147,12 @@ The main color palette adjustments are listed in the following table:
 
 Here are the motion token changes in v5:
 
+- The purposeful (B) base easing tokens were updated to use new cubic bezier curve values that more
+  closely align with Sana
+- A `duration0` base duration token has been added
+- System duration tokens have been added, so that consumers can use semantic durations alongside the
+  existing system easing tokens instead of reaching for base duration values directly
+
 #### Other tokens adjustments
 
 - Three opacity values changed to align with Sana:
@@ -156,11 +162,166 @@ Here are the motion token changes in v5:
   - `system.opacity.accent.pressed` rose from 0.118 to 0.36.
 
 - Two base sizes added: `base.size.275` (22px) and `base.size.325` (26px).
-- The full-round shape changed from 37.5rem to 62.5rem to sync with Figma value and provide
-  consistency across tokens.
-- Breakpoints tokens are deprecated and should be replaced with the new `breakpoint` tokens to
-  ensure consistency and alignment with the design system and naming conventions.
-- Sana divirging chart colors are flattened and no longer placed under `azure-coral` group.
-- Shape scale is extended by adding `xs` (0.25rem) value.
-- The font-family fallback order changed and Avenir was added.
-- Brand neutral colors have been adjusted to use neutral colors instead of stale.
+- The full-round shape changed from 37.5rem to 62.5rem to match the Figma value and keep tokens
+  consistent.
+- The `breakpoints` tokens are deprecated. Replace them with the new `breakpoint` tokens for
+  consistency with the design system and its naming conventions.
+- Sana diverging chart colors are flattened and no longer placed under the `azure-coral` group.
+- The shape scale is extended with a new `xs` (0.25rem) value. The `sm` value changed to
+  `base.size.75`, `xxl` to `base.size.250`, and `xxxl` to `base.size.350`, reducing the radius on
+  larger shapes to align with the Sana design system.
+- The font-family fallback order is fixed so that it resolves correctly.
+- Brand neutral colors now use neutral colors instead of slate.
+- The `font-weight` property in the typography composite tokens now uses `font-weight.regular`
+  instead of `font-weight.normal`.
+
+### `token()` function
+
+`token()` takes a token name and returns a reference to the matching CSS variable. Plain CSS
+variables remain the recommended approach. `token()` is useful when code needs to refer to a token
+by name. Code editors check token names as you type, so a wrong name is caught before the page is
+built. A type token returns a whole text style in one call, covering font family, weight, size, line
+height and letter spacing. An optional fallback can be given for a value that may be missing, and
+the fallback is a CSS variable name, not a token name. For example, a call to `token('color.bg')`
+returns a reference to the default background variable:
+
+```javascript
+import {token} from '@workday/canvas-tokens-web/token';
+
+token('color.bg');
+// 'var(--cnvs-sys-color-bg-default)'
+
+token('color.bg', '--app-surface');
+// 'var(--cnvs-sys-color-bg-default, var(--app-surface))'
+
+token('type.body.md');
+// {
+//   fontFamily:    'var(--cnvs-sys-font-family-default)',
+//   fontWeight:    'var(--cnvs-sys-font-weight-regular)',
+//   fontSize:      'var(--cnvs-sys-font-size-body-md)',
+//   lineHeight:    'var(--cnvs-sys-line-height-body-md)',
+//   letterSpacing: 'var(--cnvs-sys-letter-spacing-body-md)'
+// }
+```
+
+A name that is not in the list is not rejected at run time. In TypeScript the error appears at build
+time, while in plain JavaScript the call returns a reference that resolves to nothing. The reference
+only works when the matching stylesheet is loaded.
+
+### Deprecations
+
+Deprecated names still work in v5. They will be removed in a later major release, so move to the
+replacement when your team has time. The table lists each deprecated name with its replacement.
+
+| Deprecated                                         | Replacement                                       | Notes                                                            |
+| -------------------------------------------------- | ------------------------------------------------- | ---------------------------------------------------------------- |
+| `base.shadow.x.100` and `base.shadow.x.200`        | `base.shadow.x.key` and `base.shadow.x.ambient`   | Clearer names for the two shadow layers. These were added in v5. |
+| `base.letter.spacing` 50, 100, 150, 200            | `base.letter.spacing` 1 to 12                     | One consistent 1 to 12 scale.                                    |
+| `base.opacity` 250, 300 and 500                    | `base.opacity` 200, 400 and 840                   | Closest steps on the opacity scale.                              |
+| `component.expressive.icon.*`                      | None                                              | Expressive icons are being retired. Plan to remove this styling. |
+| `breakpoints.x`                                    | `breakpoint.x`                                    | Singular name, matching the other object names.                  |
+| `font.weight.normal`                               | `font.weight.regular`                             | Matches the standard weight naming.                              |
+| `opacity.shadow.first` and `opacity.shadow.second` | Shadow tokens                                     | Shadow values have their own tokens.                             |
+| `color.shadow.base` and `color.shadow.ambient`     | `color.shadow.N.key` and `color.shadow.N.ambient` | Shadow colors are numbered by level.                             |
+
+### Removals
+
+For more details on the mapping from old tokens to new tokens, see
+[the migration guide](https://workday.github.io/canvas-tokens/?path=/docs/guides-upgrade-guides-v3-visual-changes-base-deprecated-palette--docs)
+or
+[the codemod documentation](https://workday.github.io/canvas-kit/?path=/docs/guides-tokens-migration-migration-codemod--docs).
+Migration docs are also available in
+[the Canvas Kit MCP](https://workday.github.io/canvas-kit/?path=/docs/ai-for-llms-mcp-docs--docs).
+
+#### Old palette tokens
+
+The fruit-themed color families are removed. There were 28 families and 168 JavaScript names in
+total. Each family now maps to one or two standard palettes, as shown below.
+
+| Old family (v4)      | Standard palette (v5) |
+| -------------------- | --------------------- |
+| `cinnamon`           | red                   |
+| `grapeSoda`          | magenta, purple       |
+| `peach`              | coral, red            |
+| `pomegranate`        | magenta, red          |
+| `chiliMango`         | coral, orange         |
+| `fruitPunch`         | red                   |
+| `cantaloupe`         | amber                 |
+| `rootBeer`           | coral, amber          |
+| `sourLemon`          | amber                 |
+| `toastedMarshmallow` | amber, orange         |
+| `juicyPear`          | amber, green          |
+| `licorice`           | slate                 |
+| `kiwi`               | green                 |
+| `berrySmoothie`      | indigo, blue          |
+| `greenApple`         | green                 |
+| `blackberry`         | indigo                |
+| `watermelon`         | teal, green           |
+| `islandPunch`        | purple                |
+| `jewel`              | teal                  |
+| `blueberry`          | blue                  |
+| `toothpaste`         | azure                 |
+| `plum`               | blue                  |
+
+Six more families (`blackPepper`, `coconut`, `cappuccino`, `extendedDragonFruit`, `frenchVanilla`,
+`soap`) also move to the standard palette. Their exact step mapping has not been confirmed, so teams
+using them should define it.
+
+#### Base type tokens: font size and line height
+
+The numbered base font-size and line-height scales are removed. There were 15 font-size names and 13
+line-height names. Use the named size tokens by role instead. For example, `body-md` replaces the
+numbered steps for body text. Set both the size and the line height from the same role.
+
+#### Old utility tokens and renamed tokens
+
+The `baseUnit` token is renamed to `base.baseline`. Typescale tokens are removed. The `legacy` and
+`sana` utility objects are removed, and the Sana JavaScript export is removed with them. Use regular
+JavaScript tokens instead.
+
+#### Semi-semantic brand tokens
+
+Named brand roles such as `brand.primary.base` and `brand.neutral.dark` are replaced by numbered
+steps. Choose the step that matches the shade you need. For example, `brand.primary.base` is
+replaced by `brand.primary.600`, as named in the v4 type declarations. The `alert`, `error`,
+`success` and `neutral` brand groups are replaced by `caution`, `critical`, `positive` and `neutral`
+groups, each with numbered steps. The top-level `alert`, `error` and `success` color objects are
+replaced by brand `caution`, `critical` and `positive`.
+
+#### T-shirt step names: type and breakpoints
+
+Type sizes and breakpoints use short t-shirt names. The long forms are removed: `body.small` becomes
+`body.sm`, `body.medium` becomes `body.md`, and `body.large` becomes `body.lg`. The single-letter
+breakpoint names `s`, `m` and `l` are removed in favor of `sm`, `md` and `lg`.
+
+#### Multiplier shape names
+
+The shape names based on multipliers are removed, such as `x1`, `x2`, `x4`, `x6` and `x1-half`. The
+`half`, `round` and `zero` shapes are also removed. Use the closest t-shirt size, from `xs` to
+`xxxl`, for the multiplier names. Use `none`, `sm` or `full` for the others, depending on the shape
+you need. These replacements are the closest match and have not been checked against exact values.
+
+#### Space tokens
+
+All 13 space tokens are removed, from `x1` to `x20`, plus `half` and `zero`. Use gap tokens for
+spacing between items. Use padding tokens for spacing inside a container.
+
+#### Semantic color groups
+
+The background, text, icon and static color groups are reduced or removed. The table below shows the
+count in each version and what to use now.
+
+| Group             | v4 names | v5 names | What to use in v5                                                               |
+| ----------------- | -------- | -------- | ------------------------------------------------------------------------------- |
+| `bg` (background) | 51       | 2        | Surface tokens. `bg-default` and `bg-alt-default` remain.                       |
+| `text`            | 32       | 0        | Foreground (`fg`) tokens                                                        |
+| `icon`            | 28       | 0        | Foreground (`fg`) tokens                                                        |
+| `static`          | 41       | 0        | Base palette tokens, for fixed colors that do not change with the theme         |
+| `fg` (foreground) | 45       | 20       | Remaining `fg` roles, such as `fg-ai`, `fg-contrast`, `fg-danger` and `fg-info` |
+| `border`          | 23       | 13       | Remaining border roles                                                          |
+| `surface`         | 32       | 32       | Same count; several values changed (see Token Values Changes)                   |
+| `shadow` color    | 5        | 14       | Numbered key and ambient shadow colors                                          |
+| `chart` color     | 50       | 50       | Categorical, sequential and diverging chart sets                                |
+
+The mapping from removed `text` and `icon` roles to `fg` roles is by intent, not by value. Confirm
+each one before use.

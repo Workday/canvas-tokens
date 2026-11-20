@@ -203,11 +203,6 @@
               "dark": {
                 "$value": "{dark.blue.950}"
               }
-            },
-            "themes": {
-              "canvas": {
-                "$excluded": true
-              }
             }
           }
         }
