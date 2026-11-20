@@ -1,5 +1,19 @@
 # @workday/canvas-tokens-web
 
+## 5.0.0-alpha.14
+
+### Major Changes
+
+- ### Tokens
+
+  - feat: Add system duration motion tokens
+    ([#391](https://github.com/Workday/canvas-tokens/pull/391))
+    ([@sheelah](https://github.com/sheelah)) System duration tokens have been added, so that
+    consumers can use semantic durations alongside the existing system easing tokens instead of
+    reaching for base duration values directly.
+
+    A base duration0 token was also added.
+
 ## 5.0.0-alpha.13
 
 ### Major Changes
